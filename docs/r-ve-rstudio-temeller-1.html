@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 R ve Rstudio Temeller | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="2.1 R Temel Özellikler R konsolda gorunen &gt; isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur. 2+2 [1] 4 R boşluklara duyarlı...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 2 R ve Rstudio Temeller | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/r-ve-rstudio-temeller-1.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="2.1 R Temel Özellikler R konsolda gorunen &gt; isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur. 2+2 [1] 4 R boşluklara duyarlı...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 R ve Rstudio Temeller | OLC731">
+<meta name="twitter:description" content="2.1 R Temel Özellikler R konsolda gorunen &gt; isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur. 2+2 [1] 4 R boşluklara duyarlı...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="active" href="r-ve-rstudio-temeller-1.html"><span class="header-section-number">2</span> R ve Rstudio Temeller</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-ve-rstudio-temeller-1" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> R ve Rstudio Temeller<a class="anchor" aria-label="anchor" href="#r-ve-rstudio-temeller-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="r-temel-özellikler" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> R Temel Özellikler<a class="anchor" aria-label="anchor" href="#r-temel-%C3%B6zellikler"><i class="fas fa-link"></i></a>
+</h2>
+<p>R konsolda gorunen <strong>&gt;</strong> isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<p>R boşluklara duyarlı değildir.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span>  <span class="op">+</span><span class="fl">2</span> </span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<p>R boşluklara duyarlı değildir.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span></span>
+<span>  <span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+</div>
+<div id="atama-operatoru" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Atama Operatoru<a class="anchor" aria-label="anchor" href="#atama-operatoru"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Atama operatörü olarak "küçüktür" simgesi ile "kısa çizgi" simgesi <strong><code>&lt;-</code></strong> simgeleri kullanılabilir.</p></li>
+<li><p><strong><code>&lt;-</code></strong> yerine "eşittir" <strong><code>=</code></strong> simgesi de atama operatörü olarak kullanılabilir.</p></li>
+<li><p>Ancak <strong><code>=</code></strong> operatörü programlama yaparken matematiksel eşitlikle karışabilmektedir.</p></li>
+</ul>
+</div>
+<div id="nesne-isimleri" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Nesne Isimleri<a class="anchor" aria-label="anchor" href="#nesne-isimleri"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Atama yapılacak nesne isimlendirilirken harflerle (A* Z veya a* z) başlamalıdır.</p></li>
+<li><p>İsimlendirmeye harfle başlandıktan sonra rakamlar (0* 9), nokta (.) ve alt cizgi (_) ile devam edilebilmektedir.</p></li>
+<li><p>R harflerin küçük ve ya büyük olmasına karşı duyarlıdır.</p></li>
+<li><p>R fonksiyonlarına benzer isimlerde nesne ismi kullanmamaya <strong>dikkat edilmelidir.</strong></p></li>
+<li><p>Ayrıca <strong>c,C,D,F,I,q,t,T</strong> gibi tek harfli nesne ismi kullanmaktan kaçınılmalıdır; bunların R'da özel anlamları bulunmaktadır.</p></li>
+</ul>
+</div>
+<div id="yorum-satırları" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Yorum Satırları<a class="anchor" aria-label="anchor" href="#yorum-sat%C4%B1rlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R yazılımında <strong>#</strong> işareti ile başlayan satir, yorum satırıdır.</p></li>
+<li><p>Genellikle komutların anlamını açıklamak için kullanılmaktadır.</p></li>
+<li><p>R, bu satırları dikkate almaz, bunlar sadece kullanıcılar için bilgi ve hatırlatıcı açıklamaları içermektedir.</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Yorum satirlari kodlarinizi anlamli hale getirir.</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span>  <span class="fl">2</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span>  <span class="va">a</span> <span class="op">*</span> <span class="va">a</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+</div>
+<div id="basit-islemler" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Basit İslemler<a class="anchor" aria-label="anchor" href="#basit-islemler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>toplama işlemi için <strong>+</strong>,</p></li>
+<li><p>çıkarma işlemi için *** **,</p></li>
+<li><p>çarpma işlemi için <strong>*</strong>,</p></li>
+<li><p>bölme işlemi için <strong>/</strong>,</p></li>
+<li><p>üs alma işlemi için <strong>^</strong> veya <strong>**</strong></p></li>
+<li><p>mod alma icin ise <strong>%%</strong> operatorleri kullanılmaktadır.</p></li>
+</ul>
+</div>
+<div id="basit-islemler-1" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Basit İslemler<a class="anchor" aria-label="anchor" href="#basit-islemler-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Eni 4 cm, boyu 10 cm bir dikdörtgenin alanı hesaplayınız.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># en nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># boy nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># alan nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># alan nesnesini yazdirma</span></span></code></pre></div>
+<pre><code>[1] 40</code></pre>
+</div>
+<div id="basit-islemler-2" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Basit İslemler<a class="anchor" aria-label="anchor" href="#basit-islemler-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Eni 4 cm, boyu 10 cm bir dikdörtgenin köşegen uzunluğunu hesaplayınız.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># en nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># boy nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># kosegen nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># kosegen nesnesini yazdirma</span></span></code></pre></div>
+<pre><code>[1] 10.77033</code></pre>
+</div>
+<div id="r-paketler" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> R Paketler<a class="anchor" aria-label="anchor" href="#r-paketler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R fonksiyonları ayrı paketler halinde düzenlenmişlerdir. Böylece gerekli paketlerle çalışarak daha az bellek kullanımı ve hızlı işlem gücü sağlanır.</p></li>
+<li><p>Bu paketlerin bir başka avantajı da yazılan fonksiyonlardan oluşan paketlerin CRAN'den temin edilerek yüklenebilmesidir.</p></li>
+<li><p>Her paketin bir yaratıcısı ve kendisine ait bir yardım dosyası bulunur.</p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># paket yukleme</span></span>
+<span><span class="co"># install.packages("CTT")</span></span>
+<span><span class="co"># paket aktive etme</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CTT</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Paket yükleme işlemi Rstudio'da yer alan menüler aracılığı ile de yapılabilmektedir.</li>
+</ul>
+</div>
+<div id="r-paketler-1" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> R Paketler<a class="anchor" aria-label="anchor" href="#r-paketler-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R yüklenirken temel (base) paket yüklenir.</p></li>
+<li><p>R paketleri R fonksiyonlarının, verilerinin ve iyi derlenmiş bir formatta kodların kombinasyonlarından oluşmaktadır. <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> komutu ile kişisel kütüphanenizdeki yüklü paketleri görebilirsiniz.</p></li>
+<li><p>Sadece temel pakette 1000'den fazla fonksiyon bulunmaktadır.</p></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># temel paket fonksiyonlarina ulasimak icin  </span></span>
+<span><span class="va">fonksiyonlar</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/builtins.html">builtins</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">fonksiyonlar</span><span class="op">)</span></span>
+<span><span class="va">fonksiyonlar</span><span class="op">[</span><span class="fl">910</span><span class="op">:</span><span class="fl">920</span><span class="op">]</span></span></code></pre></div>
+<pre><code>[1] 1380
+ [1] "Cstack_info"                "crossprod"                 
+ [3] "cospi"                      "cosh"                      
+ [5] "cos"                        "contributors"              
+ [7] "Conj"                       "conflicts"                 
+ [9] "conflictRules"              "conditionMessage.condition"
+[11] "conditionMessage"          </code></pre>
+</div>
+<div id="r-paketler-2" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> R Paketler<a class="anchor" aria-label="anchor" href="#r-paketler-2"><i class="fas fa-link"></i></a>
+</h2>
+<div class="float">
+<img src="figs/packagebulb.png" alt="yükle* etkinleştir)"><div class="figcaption">yükle* etkinleştir)</div>
+</div>
+</div>
+<div id="yardım-sayfaları" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Yardım Sayfaları<a class="anchor" aria-label="anchor" href="#yard%C4%B1m-sayfalar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>R'da temel ve diğer paketlerde yer alan fonksiyonların işlevleri görmek için yardım sayfalarını inceleyebilirsiniz. <code>?</code> ve <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> fonksiyonları ayni işleve sahiptir.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">is.na</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">sqrt</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Örneğin CTT paketini hem yüklediniz hem de etkinleştirdiniz. Paket fonksiyon ve veri içeriğini aşağıdaki komutlarla görebilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages(CTT)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">CTT</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="st">"package:CTT"</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"CTT"</span><span class="op">)</span> <span class="co"># yeni bir sekmede acilir.</span></span>
+<span><span class="op">?</span><span class="va">reliability</span></span></code></pre></div>
+<ul>
+<li>Etkinleştirdiğiniz paketlerde yer alan fonksiyonların yardım sayfalarına ulaşabilirsiniz.</li>
+</ul>
+</div>
+<div id="fonksiyon-nedir" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Fonksiyon belli bir görevi yerine getirmek için yazılan bir grup komuttur.</p></li>
+<li><p>Fonksiyonların çalışması için girdilerinin olması gerekmektedir. Fonksiyonlar girdileri ile yaptıkları işlem sonucunda bir çıktı oluştururlar.</p></li>
+<li><p>Fonksiyonlar girdileri o fonksiyonun çalışması için önceden belirlenen argümanlar ve o argümanların değerlerinden oluşur.</p></li>
+<li><p>Fonksiyonların kullanımında uç noktaya dikkat edilmelidir.</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>argümanların sırası</li>
+<li>argümanların olağan (default) değerleri</li>
+<li>bazı argümanların zorunlu, bazı argümanların opsiyonel olmasıdır</li>
+</ol>
+</div>
+<div id="fonksiyon-nedir-1" class="section level2" number="2.13">
+<h2>
+<span class="header-section-number">2.13</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Kişisel tanımlı fonksiyon yazılması şablonu aşağıdaki gibidir.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-ve-rstudio-temeller-1.html#cb19-1" tabindex="-1"></a>fonksiyonadi<span class="ot">&lt;-</span>  <span class="cf">function</span>(argumanlar ve olagan degerleri){</span>
+<span id="cb19-2"><a href="r-ve-rstudio-temeller-1.html#cb19-2" tabindex="-1"></a>  kodlar</span>
+<span id="cb19-3"><a href="r-ve-rstudio-temeller-1.html#cb19-3" tabindex="-1"></a>  <span class="fu">return</span>()</span>
+<span id="cb19-4"><a href="r-ve-rstudio-temeller-1.html#cb19-4" tabindex="-1"></a>}</span></code></pre></div>
+<p>Oluşturulan fonksiyon çalıştırılırken ise aşağıdaki seklinde çalıştırılır.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-ve-rstudio-temeller-1.html#cb20-1" tabindex="-1"></a><span class="fu">fonksiyonadi</span>(argumanlar ve degerleri)</span></code></pre></div>
+</div>
+<div id="fonksiyon-nedir-2" class="section level2" number="2.14">
+<h2>
+<span class="header-section-number">2.14</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-2"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Kare alma işlemi aşağıdaki şekilde yapılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sayi</span> <span class="op">&lt;-</span>  <span class="fl">4</span></span>
+<span><span class="va">sayi</span> <span class="op">*</span> <span class="va">sayi</span></span>
+<span><span class="va">sayi</span> <span class="op">^</span><span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 16
+[1] 16</code></pre>
+<ul>
+<li>Bu işlem sürekli yapılacaksa fonksiyon olarak yazılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># kare alma fonksiyonu</span></span>
+<span><span class="va">kare_al</span> <span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">sayi</span><span class="op">*</span><span class="va">sayi</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">kare_al</span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 16</code></pre>
+</div>
+<div id="fonksiyon-nedir-3" class="section level2" number="2.15">
+<h2>
+<span class="header-section-number">2.15</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>Farklı dereceden üsler alabilen bir fonksiyon yazalım.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#üs alma</span></span>
+<span><span class="va">üs_al</span><span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">us</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="va">us</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">üs_al</span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 81</code></pre>
+<p>Argümanlardan birine olağan değer girilmesi</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#üs alma</span></span>
+<span><span class="va">üs_al</span><span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">us</span><span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="va">us</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">üs_al</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co"># us argumanin olagan degeri olan 2 olduğu için argumana deger girilmediginde kare alir.</span></span></code></pre></div>
+<pre><code>[1] 9</code></pre>
+</div>
+<div id="fonksiyon-nedir-4" class="section level2" number="2.16">
+<h2>
+<span class="header-section-number">2.16</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>Aşağıdaki fonksiyona 3 ve 4 değerleri girilirse çıktı ne olur?</p>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">myfunc</span> <span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
+<span><span class="op">{</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span>  <span class="va">x</span><span class="op">+</span><span class="va">y</span></span>
+<span><span class="va">b</span> <span class="op">&lt;-</span>  <span class="va">x</span><span class="op">*</span> <span class="va">y</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">a</span><span class="op">*</span><span class="va">b</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">myfunc</span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="fonksiyon-nedir-5" class="section level2" number="2.17">
+<h2>
+<span class="header-section-number">2.17</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-5"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonu en sık kullandığımız fonksiyonlardan biridir.</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 2</code></pre>
+</div>
+<div id="fonksiyon-nedir-6" class="section level2" number="2.18">
+<h2>
+<span class="header-section-number">2.18</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-6"><i class="fas fa-link"></i></a>
+</h2>
+<p>.pull* left[</p>
+<p>R base pakette yer alan bu fonksiyonu kendiniz de yazabilirsiniz.
+R' da deneyim kazandıkça, yaptığınız işlemler karmaşıklaştıkça
+kendi fonksiyonlarınızı yazma ihtiyacı duyacaksınız.</p>
+<p><code>avg()</code> isminde vektör ortalaması hesaplayan fonksiyon yazınız.</p>
+<p>]</p>
+<p>.pull* right[</p>
+<p>Yazdığınız fonksiyon ile aşağıdaki işlemi yapınız.</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span>  <span class="fl">1</span><span class="op">:</span><span class="fl">1000</span></span>
+<span><span class="fu">avg</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 500.5</code></pre>
+<p>Yazdığınız fonksiyon temel pakette yer alan <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonu ile ayni sonucu verdi mi?</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="fu">avg</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] TRUE</code></pre>
+<p>]</p>
+</div>
+<div id="fonksiyon-nedir-7" class="section level2" number="2.19">
+<h2>
+<span class="header-section-number">2.19</span> Fonksiyon nedir?<a class="anchor" aria-label="anchor" href="#fonksiyon-nedir-7"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Fonksiyon içinde tanımlanan nesneler çalışma alanına kaydedilmezler.</p></li>
+<li><p>Fonksiyonlar da R nesnesidir.</p></li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code> [1] "a"                 "alan"              "avg"              
+ [4] "backtick"          "boy"               "en"               
+ [7] "fonksiyonlar"      "hl"                "kare_al"          
+[10] "kosegen"           "path"              "pkg"              
+[13] "psyteachr_colors"  "psyteachr_colours" "sayi"             
+[16] "üs_al"             "x"                 "y"                </code></pre>
+</div>
+<div id="r-çalışma-alanı" class="section level2" number="2.20">
+<h2>
+<span class="header-section-number">2.20</span> R Çalışma Alanı<a class="anchor" aria-label="anchor" href="#r-%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>çalışma alanı, nesnelerin ve bilgilerin kaydedildiği alandır.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> ve <code><a href="https://rdrr.io/r/base/ls.html">objects()</a></code> fonksiyonları çalışma alanında kayıtlı nesneleri konsolda göstermektedir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> fonksiyonu ile nesneleri çağırma işlemi özelleştirilebilir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/utils/ls_str.html">ls.str()</a></code> fonksiyonu ise hafızadaki nesneleri ayrıntıları ile göstermektedir.</p></li>
+<li><p>Çalışma alanından nesne silmek için <code>rm("nesneadi")</code> fonksiyonu kullanılabilir.</p></li>
+<li><p>Çalışma alanındaki tüm nesneleri silmek icin <strong><code>rm</code></strong><code>(list=ls())</code> ya da süpürge işareti kullanılabilir.</p></li>
+<li><p>Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.</p></li>
+</ul>
+</div>
+<div id="r-çalışma-dizini" class="section level2" number="2.21">
+<h2>
+<span class="header-section-number">2.21</span> R Çalışma Dizini<a class="anchor" aria-label="anchor" href="#r-%C3%A7al%C4%B1%C5%9Fma-dizini"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R yazılımı Start/Baslangic menusu üzerinden çalıştırıldığında çalışma dizini <strong>C:/Users/<kullanici adi>/Documents</kullanici></strong></p></li>
+<li><p>Çalışma dizinini sorgulamak için kullanılacak olan fonksiyon</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> (get working directory)</p></li>
+<li><p>Çalışma dizinini değiştirmek için kullanılacak olan fonksiyon</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> (set working directory)</p></li>
+<li><p>Bu işlem Rstudio menusu <strong>"Session"</strong> sekmesinden ya da <strong>CTRL +Shift + H</strong> tuşları ile de yapılabilmektedir.</p></li>
+</ul>
+</div>
+<div id="ri-kapatma" class="section level2" number="2.22">
+<h2>
+<span class="header-section-number">2.22</span> R'i Kapatma<a class="anchor" aria-label="anchor" href="#ri-kapatma"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Kaydet (Save) ya da CTLR + S <code>dosyadi.R</code> uzantısıyla kaydedilebilmektedir.</p></li>
+<li><p>Bu sayede tekrar kullanılabilmekte ya da başkaları ile kolaylıkla paylaşılabilmektedir.</p></li>
+<li><p>Tüm programlar gibi <strong>"x"</strong> işareti ile ya da <strong>q()</strong> fonksiyonunu ile sonlandırılabilir.</p></li>
+<li><p>R'dan çıkış yaparken, program çalışma alanının kaydedilip kaydedilmeyeceğini sormaktadır.</p></li>
+<li><p>Eger R'in çalışma alanını kaydetmesini istenirse, R çalışma dizinine `.Rdata uzantılı bir dosya kaydeder.</p></li>
+<li><p>Çalışma alanı kaydı için <code>save.image("dosyaadi")</code> komutu da kullanılabilmektedir.</p></li>
+<li><p>R'dan çıkış yapmadan yapılan işlem durdurulmak istenirse, konsol bölümündeki <strong>"Stop"</strong> işareti veya <strong>Esc</strong> tuşları kullanılabilir.</p></li>
+</ul>
+</div>
+<div id="r-kaynakları-1" class="section level2" number="2.23">
+<h2>
+<span class="header-section-number">2.23</span> R Kaynakları<a class="anchor" aria-label="anchor" href="#r-kaynaklar%C4%B1-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>🔗<a href="https://cran.r*%20project.org/web/views/Psychometrics.html">Alana ozgu paketler</a>
+</li>
+<li>Paket yardım sayfaları ve paket vignetteleri</li>
+<li>e* posta gruplarindaki e* postalara <code>RSiteSearch ("sample.int")</code> "</li>
+<li>
+<code>ltm reliability</code> gibi fonskiyon isimler argumansiz kullanirlirsa icerigi gorunur. Karmasik gorunse de siz de yapabilirsiniz. Ogrenmek icin iyi bir yoldur.</li>
+<li>🔗<a href="https://www.learnr4free.com/tr/index.html" class="uri">https://www.learnr4free.com/tr/index.html</a>
+</li>
+<li>🔗<a href="http://cran.r*%20project.org/doc/contrib/Short*%20refcard.pdf">Referans kartları</a>
+</li>
+<li>🔗<a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a>
+</li>
+<li>🔗<a href="http://adv*%20r.had.co.nz/">Hadley Wickham</a>
+</li>
+<li>🔗<a href="http://r4stats.com/">rforstats</a>
+</li>
+<li>🔗<a href="https://blog.revolutionanalytics.com/r*%20is*%20hot/">r is hot</a>
+</li>
+<li>🔗<a href="http://www.matthewckeller.com/">paralel programlama</a>
+</li>
+</ul>
+</div>
+<div id="kaynaklar" class="section level2" number="2.24">
+<h2>
+<span class="header-section-number">2.24</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Atar, B., Atalay Kabasakal, K, Ünsal Özberk, E. B., Özberk, E. H. Ve Kıbrıslıoğlu Uysal, N. (2020). R ile Veri Analizi ve Psikometri Uygulamaları, Editör, Pegem Akademi, Ankara.</p>
+</div>
+<div id="ödev" class="section level2" number="2.25">
+<h2>
+<span class="header-section-number">2.25</span> Ödev<a class="anchor" aria-label="anchor" href="#%C3%B6dev"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.</p></li>
+<li><p><a href="https://learnr*%20examples.shinyapps.io/ex*%20setup*%20r/#section*%20welcome">R kurulumu ile ilgili</a> learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.</p></li>
+<li><p>Kitap Bölüm 1 alıştırmalarını tamamlayınız.</p></li>
+<li><p>Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.</p></li>
+<li><p>swirl package * learn R in R paketi yükleyerek alıştırma yapmayı deneyiniz.</p></li>
+<li><p><a href="https://cran.r*%20project.org/doc/contrib/Short*%20refcard.pdf">Referens kart</a> sayfasının çıktısını alarak duvarınıza asmanızı öneririm.</p></li>
+</ul>
+</div>
+<div id="s1" class="section level2" number="2.26">
+<h2>
+<span class="header-section-number">2.26</span> <strong>S1</strong><a class="anchor" aria-label="anchor" href="#s1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>İki farklı kişisel tanımlı fonksiyon yazabilirsiniz. Fonksiyon1, kullanıcının girdiği harfle başlayan çalışma alanındaki nesneleri listelesin. Fonksiyon2, kullanıcının girdiği harfi içeren çalışma alanındaki nesneleri listelesin. Eğer kendinizi biraz da zorlamak isterseniz, bu iki işlevi birlikte yapan bir fonksiyon yazmayı deneyebilirsiniz.</li>
+</ul>
+<p>.large[.hand[Teşekkürler]]</p>
+
+</div>
+</div>
+
+
+
+<div class="chapter-nav">
+<div class="prev"><a href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></div>
+<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-ve-rstudio-temeller-1"><span class="header-section-number">2</span> R ve Rstudio Temeller</a></li>
+<li><a class="nav-link" href="#r-temel-%C3%B6zellikler"><span class="header-section-number">2.1</span> R Temel Özellikler</a></li>
+<li><a class="nav-link" href="#atama-operatoru"><span class="header-section-number">2.2</span> Atama Operatoru</a></li>
+<li><a class="nav-link" href="#nesne-isimleri"><span class="header-section-number">2.3</span> Nesne Isimleri</a></li>
+<li><a class="nav-link" href="#yorum-sat%C4%B1rlar%C4%B1"><span class="header-section-number">2.4</span> Yorum Satırları</a></li>
+<li><a class="nav-link" href="#basit-islemler"><span class="header-section-number">2.5</span> Basit İslemler</a></li>
+<li><a class="nav-link" href="#basit-islemler-1"><span class="header-section-number">2.6</span> Basit İslemler</a></li>
+<li><a class="nav-link" href="#basit-islemler-2"><span class="header-section-number">2.7</span> Basit İslemler</a></li>
+<li><a class="nav-link" href="#r-paketler"><span class="header-section-number">2.8</span> R Paketler</a></li>
+<li><a class="nav-link" href="#r-paketler-1"><span class="header-section-number">2.9</span> R Paketler</a></li>
+<li><a class="nav-link" href="#r-paketler-2"><span class="header-section-number">2.10</span> R Paketler</a></li>
+<li><a class="nav-link" href="#yard%C4%B1m-sayfalar%C4%B1"><span class="header-section-number">2.11</span> Yardım Sayfaları</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir"><span class="header-section-number">2.12</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-1"><span class="header-section-number">2.13</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-2"><span class="header-section-number">2.14</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-3"><span class="header-section-number">2.15</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-4"><span class="header-section-number">2.16</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-5"><span class="header-section-number">2.17</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-6"><span class="header-section-number">2.18</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#fonksiyon-nedir-7"><span class="header-section-number">2.19</span> Fonksiyon nedir?</a></li>
+<li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1"><span class="header-section-number">2.20</span> R Çalışma Alanı</a></li>
+<li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">2.21</span> R Çalışma Dizini</a></li>
+<li><a class="nav-link" href="#ri-kapatma"><span class="header-section-number">2.22</span> R'i Kapatma</a></li>
+<li><a class="nav-link" href="#r-kaynaklar%C4%B1-1"><span class="header-section-number">2.23</span> R Kaynakları</a></li>
+<li><a class="nav-link" href="#kaynaklar"><span class="header-section-number">2.24</span> Kaynaklar</a></li>
+<li><a class="nav-link" href="#%C3%B6dev"><span class="header-section-number">2.25</span> Ödev</a></li>
+<li><a class="nav-link" href="#s1"><span class="header-section-number">2.26</span> S1</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/02-temeller.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/02-temeller.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+
+</div>
+ <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

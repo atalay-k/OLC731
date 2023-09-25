@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 R ve Rstudio Temeller | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Bu bölümde, R ve RStudio'nun nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 1 R ve Rstudio Temeller | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/r-ve-rstudio-temeller.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Bu bölümde, R ve RStudio'nun nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 R ve Rstudio Temeller | OLC731">
+<meta name="twitter:description" content="Bu bölümde, R ve RStudio'nun nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="active" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-ve-rstudio-temeller" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> R ve Rstudio Temeller<a class="anchor" aria-label="anchor" href="#r-ve-rstudio-temeller"><i class="fas fa-link"></i></a>
+</h1>
+<p>Bu bölümde, <strong>R ve RStudio'nun</strong> nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele alacağız. Programlama deneyimi olmayanlar bu bölümü özellikle yararlı bulacaktır, ancak daha önce R kullanmış olsanız bile bazı yararlı ipuçları ve püf noktaları bulabilirsiniz.</p>
+<p>Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:) Biraz sabretmenizi bekliyorum !</p>
+<div id="r-nedir" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> R Nedir?<a class="anchor" aria-label="anchor" href="#r-nedir"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R istatistiksel hesaplamalar yapabilen bir programlama dilidir.</p></li>
+<li><p>1996 yılında Auckland Universitesi'nde <strong>R</strong>oss Ihaka ve <strong>R</strong>obert Gentleman tarafından geliştirilmiştir.</p></li>
+<li><p>1960 yılında Bell Laboratories'de John Chambers ve arkadaşları tarafından geliştirilen <strong>S dilinin</strong> açık kaynak kodlu halidir.</p></li>
+<li><p>R yazılımı Genel Kamu Lisansi (GNU* General Public Licence) koşulları altında ücretsiz dağıtılmaktadır.</p></li>
+<li><p>R ve Temel Gelistirme Takimi (R core team) ile ilgili bilgilere R'in internet sitesinden (<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>) ulaşılabilir.</p></li>
+<li><p>R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki* üç ayda bir sürümler güncellenmektedir.</p></li>
+<li><p>The latest release (2022* 06* 23, Funny* Looking Kid) R* 4.2.1.tar.gz, read what's new in the latest version</p></li>
+<li><p>RStudio, R ile çalışmayı kolaylaştıran bir Entegre Geliştirme Ortamıdır (Integrated Development Environment[IDE]).</p></li>
+<li><p>Bunu İngilizce bilmek ve kitap yazmak için NotePad gibi düz bir metin editörü kullanmak ile Microsoft Word gibi bir kelime işlemci kullanmak gibi düşünün. Bunu yapabilirsiniz, ancak bu kadar iyi görünmez ve yazım denetimi ve biçimlendirme gibi şeyler olmadan çok daha zor olur. Benzer bir şekilde, <strong>R Studio olmadan da R kullanabilirsiniz ancak bunu tavsiye etmiyorum.</strong></p></li>
+<li><p>Unutmamanız gereken en önemli şey, bu ders için tüm çalışmalarınızı RStudio kullanarak yapacak olsanız da, aslında iki yazılım parçası kullanıyorsunuz, bu da zaman zaman her ikisinin de <strong>ayrı güncellemeleri</strong> olabileceği anlamına geliyor.</p></li>
+<li><p>R'yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R'nin çevrimiçi bir sürümünü kullanabilirsiniz ve bunu <strong>R server/sunucusu</strong> olarak adlandıracağız. İkincisi, R ve RStudio'yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.</p></li>
+</ul>
+</div>
+<div id="avantajları" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Avantajları<a class="anchor" aria-label="anchor" href="#avantajlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R özgür istatiksel bir programlama dilidir.</p></li>
+<li><p>R aynı zamanda bir yorumlayıcıdır (interpreter).</p></li>
+<li><p>R, bir veri tabanı <strong>değildir</strong> ama veri tabanlarına bağlanabilir.</p></li>
+<li><p>Önceki sürümleri kullancı dostu olmasa da, son zamanlarda kod editörlerine çok sayıda işlev eklenmiştir.</p></li>
+<li><p>Ayrıca java gibi diller aracılığı ile ara yüz desteğine sahip bir yazılım geliştirme ortamıdır.</p></li>
+<li><p>Tablolardan oluşan yazılım paketlerine (Excel, Minitab gibi) benzememekle birlikte, yeni geliştiren bazı paketler farklı ara yüzler sağlamaktadır.</p></li>
+<li><p>Ücretsiz olması nedeniyle, ticari desteğe tabi bir yazılım değildir. Ancak destek alınabilecek çok sayıda kaynağa erisilebilir. (stackoverflow, mail listeleri)</p></li>
+</ul>
+</div>
+<div id="neden-r" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> Neden R?<a class="anchor" aria-label="anchor" href="#neden-r"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R istatistiksel programlama, veri analizi ve grafiksel gösterim için kullanılan ve ticari bir amaç gütmeyen ücretsiz bir yazılımdır.</p></li>
+<li><p>R, UNIX, Windows ve MacOS gibi çeşitli platformlarda kodları derlemekte ve çalıştırmaktadır.</p></li>
+<li><p>SPSS, SAS gibi veri analizi programları ücretlidir, ayrıca bazı özel psikometri analizleri için yeterli değildir.</p></li>
+<li><p>R, açık kaynak kodlu olduğu için program kodlarına istenildiği zaman erişilebilir.</p></li>
+<li><p>Diğer istatistiksel yazılımlar ile karşılaştırıldığında R <strong>komut satırı</strong> ara yüzünü kullanmaktadır.</p></li>
+<li><p><strong>Basit koşullar, döngüler ve kişi</strong> tanımlı fonksiyonlar yazmaya uyumlu basit ve etkili bir yazım diline sahiptir.</p></li>
+<li><p>R'in ayrıca <strong>grafiksel imkânları</strong> oldukça fazladır; bu nedenle yayınlanabilir/basma uygun grafikler oluşturmak kolaydır.</p></li>
+<li><p>R ekibi birçok alanda ayrıntılı dokümantasyonu yapılmış R paketleri geliştirmektedir.</p></li>
+<li><p>Klasik istatistik yazılımlarında analiz sonuçları bir kez elde edilir. R yazılımında ise sonuçlar çalışma alanına kaydedilerek, ileriki analiz aşamalarında tekrar kullanabilir.</p></li>
+<li><p>R, psikometri alanında sıklıkla kullanılan simülasyon çalışmaları için (tekrarlı işlemler için) de avantaj sağlamaktadır.</p></li>
+<li><p>R, diğer programlama dilleri ve istatistik paket programları ile uyumludur.</p></li>
+</ul>
+</div>
+<div id="dezavantajları" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> Dezavantajları<a class="anchor" aria-label="anchor" href="#dezavantajlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Basta öğrenilmesi kolay görünse de, R'da uzmanlaşmak oldukça zordur.</p></li>
+<li><p>Menu ile kullanılan programlara alışkın olan kişiler için başlangıçta korkutucu olabilir.</p></li>
+<li><p>R ile bir analizi yapabilmek için planlama yapılması gerekmektedir.</p></li>
+<li><p>R kullanıcıları çoğunlukla programlamacı <strong>değildir.</strong> Programlamaya hâkim olmayan kişiler tarafından hazırlanan, okunması ve sürdürülebilirliği zor kodlar oluşturulabilir.</p></li>
+<li><p>Başlangıçta kodları yazmak yıldırıcı olabilir; ancak çalışmaların tekrarlanabilirliği açısından avantaj sağlamaktadır.</p></li>
+<li><p>Bu duruma bir örnek vermek gerekirse, 20 adet regresyon denklemi kurulup regresyon katsayıları karşılaştırılmak istenirse, R yazılımı sadece regresyon kat sayılarını gösterebilir ve tek bir satırda tüm regresyon sonuçlarını karşılaştırmaya olanak verir. Aynı işlem için diğer istatistiksel yazılımlarda 20 ayrı pencereden elde edilen sonuçların elle yazılarak karşılaştırılması gerekecektir.</p></li>
+<li><p>R'da hata yapma olasılığı diğer programlara göre daha fazladır. Hata kaynağı için varsayımların iyi bilinmesi gerekmektedir.</p></li>
+<li><p>Hız konusunda SPSS ve SAS'a göre avantajlı olsa da diğer dillere göre (Python, Matlab gibi) daha yavaştır.</p></li>
+<li><p>Geliştirilen çok fazla paket olduğu icin, ihtiyaca uygun en iyi paketin seçimi zor olabilmektedir.</p></li>
+<li><p>Bu bir dezavantaj gibi görünse de istatistiksel işlemlerin arka planını anlamaya yardımcı olur.</p></li>
+<li><p>Bu tarz zayıf hazırlanmış kodlar farklı koşullarda yavaş çalışabilmektedir.</p></li>
+<li><p>Çoğu kullanıcı bu eksiklikleri gidermek için kodları değiştiremez. Özellikle çok iyi yapılandırılmamış olan kodlar R'da yavaş çalışabilmektedir.</p></li>
+</ul>
+</div>
+<div id="r-ve-rstudio-yüklenmesi" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> R ve Rstudio Yüklenmesi<a class="anchor" aria-label="anchor" href="#r-ve-rstudio-y%C3%BCklenmesi"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Internet tarayıcısına R yazılımın internet sitesinin ana sayfasının adresi yazılır. <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></p></li>
+<li><p>Sol menüde yer alan "download CRAN" bölümüne tıkladıktan sonra ülke seçilir. Seçilen ülkenin yakinliği sadece yükleme hızını değiştirecektir.</p></li>
+<li><p>Çıkan sayfada "Download and Install R" baslığı altından işletim sistemine uygun olan bağlantı seçilir.</p></li>
+<li><p>R konsolda çalışmaya doğrudan başlanabilir; ancak konsol kullanımı bir kod editörü olmadığı için çok kullanışlı değildir.</p></li>
+<li><p>Rstudio hata ayıklama, görselleştirme araçları ile birlikte yüklenen modern bir kod editörüdür.</p></li>
+<li><p><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a> internet sitesinden kullanılan bilgisayar ve işletim sistemine uygun olarak seçilip indirilebilmektedir.</p></li>
+<li>
+<p>Rstudio R ile daha üretken olmanıza yardımcı olacak bir dizi araç içerir, örneğin:</p>
+<ul>
+<li><p>R kodlarınızı vurgulamak için bir sözdizimi vurgulama düzenleyicisi</p></li>
+<li><p>R kodlarını yazmanıza yardımcı olacak işlevler (otomatik tamamlama)</p></li>
+<li><p>Çeşitli grafikler oluşturmak ve kaydetmek için çeşitli araçlar (ör. histogramlar, dağılım grafiği)</p></li>
+<li><p>Verileri içe veya dışa aktarmak için bir çalışma alanı yönetim aracı</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="diğer-gerekli-yüklemeler" class="section level2" number="1.6">
+<h2>
+<span class="header-section-number">1.6</span> Diğer Gerekli Yüklemeler<a class="anchor" aria-label="anchor" href="#di%C4%9Fer-gerekli-y%C3%BCklemeler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Benim açıklamalarım yetmediyse R'yi bilgisayarınızda kullanmak için, lütfen daha ayrıntılı talimatlar ve indirmeniz gereken dosyaların bağlantılarının yanı sıra R'yi farklı bilgisayar türlerine yüklemek için bir dizi kılavuza bağlantılar içeren <a href="https://psyteachr.github.io/data-skills-v1/installing-r.html">Installing R</a> adresine bakın!!</p></li>
+<li><p>Yüklemeler konusunda daha da fazlasına ihtiyacımız var <a href="https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html">R studio R</a> !</p></li>
+<li><p>Verilen linkte yer alsa da ayrıca eklemeye ihtiyaç duyduğum bağlantılar:</p></li>
+<li><p><a href="https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935">Java</a></p></li>
+<li><p><a href="https://cloud.r*%20project.org/bin/windows/Rtools">Rtools</a> Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. <strong>Önemli:</strong> Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.</p></li>
+<li><p>devtools</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="r-studio" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> R STUDIO<a class="anchor" aria-label="anchor" href="#r-studio"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Rstudio'da panellerin yerlerini değiştirebiliriz.</p></li>
+<li><p>Bunun yanı sıra yazı tipi, büyüklüğü gibi özellikleri de değiştirebiliriz.</p></li>
+<li><p>Varsayılan olarak, R Studio'yu açtığınızda, kodunuz ve oluşturduğunuz tüm nesneler dahil olmak üzere en son ne üzerinde çalıştığınızı gösterir. Bu yararlı gibi görünebilir, ancak aslında değerinden daha fazla soruna neden olma eğilimindedir, çünkü yanlışlıkla bir nesnenin eski bir sürümünü kullanma riskiniz olduğu anlamına gelir. R Studio'yu her başlattığınızda yeni bir kopya açacak şekilde ayarları değiştirmenizi öneririz. Bunu <code>Araçlar</code> - <code>Global Seçenekler</code> seçeneğine tıklayarak ve ardından aşağıdaki gibi görünmesi için kutuların seçimini kaldırarak yapabilirsiniz.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-options"></span>
+<img src="images/global_options.jpg" alt="Global options" width="100%"><p class="caption">
+Figure 1.1: Global options
+</p>
+</div>
+<ul>
+<li><p>Dönem boyunca Rstudio kullanımına aşina olacaksınız. Bu süreci kolaylaştırmak için bağlantıları verilen dökümanlara göz atabilirsiniz.</p></li>
+<li><p><a href="Kaynaklar/rstudio-ide.pdf">Rstudio cheatsheet</a></p></li>
+<li><p><a href="Kaynaklar/rstudio_tutorial.pdf">Oscar Torres* Reyna tutorial</a></p></li>
+</ul>
+</div>
+<div id="hangi-r-sürümünü-kullanmalısınız" class="section level2" number="1.8">
+<h2>
+<span class="header-section-number">1.8</span> Hangi R sürümünü kullanmalısınız?<a class="anchor" aria-label="anchor" href="#hangi-r-s%C3%BCr%C3%BCm%C3%BCn%C3%BC-kullanmal%C4%B1s%C4%B1n%C4%B1z"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R'yi bilgisayarınıza kurmanın avantajı, kullanmak için internete bağlı olmanız gerekmemesi, dosyalarınızı kaydetmenin ve yönetmenin daha kolay olması ve sunucunun çökmesi durumunda sorun yaşanmamasıdır (bu nadirdir, ancak olmuştur).</p></li>
+<li><p>R sunucusunu kullanmanın avantajı, bilgisayraına herhangi bir şey yüklemenize gerek olmaması, sadece web tarayıcınız üzerinden erişebilmenizdir.</p></li>
+<li><p>R'yi yükleyemeyeceğiniz bir bilgisayarınız varsa (örneğin Chromebook) veya R'yi bilgisayarınıza yüklemeyle ilgili ciddi sorunlarınız varsa sunucuyu kullanmanızı öneririz.</p></li>
+</ul>
+</div>
+<div id="r-studio-hakkında" class="section level2" number="1.9">
+<h2>
+<span class="header-section-number">1.9</span> R Studio Hakkında<a class="anchor" aria-label="anchor" href="#r-studio-hakk%C4%B1nda"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R Studio, kodu deneyebileceğiniz bir konsola sahiptir (Şekil'de sol alt pencerede yer alır<a href="r-ve-rstudio-temeller.html#fig:img-rstudio">1.2</a>).</p></li>
+<li><p>Ayrıca kod editörü (sol üst), "Ortam" sekmesinde oluşturduğunuz fonksiyonları ve nesneleri gösteren bir pencere ( sağ üst pencere) ve grafikleri, dosya paketlerini ve yardım belgelerini gösteren bir pencere ise (sağ alt) bulunur.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-rstudio"></span>
+<img src="images/Rstudio.png" alt="RStudio arayüzü" width="100%"><p class="caption">
+Figure 1.2: RStudio arayüzü
+</p>
+</div>
+<ul>
+<li>Bu ders boyunca R Studio'da bulunan özelliklerin nasıl kullanılacağı hakkında daha fazla bilgi edineceksiniz, ancak R Studio ekibinden <a href="https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/">RStudio Essentials 1</a> izlemenizi şiddetle tavsiye ederim. Video yaklaşık 30 dakika sürmekte ve R Studio'nun ana bölümlerini tanıtmaktadır.</li>
+</ul>
+</div>
+<div id="r-temel-özellikler" class="section level2" number="1.10">
+<h2>
+<span class="header-section-number">1.10</span> R Temel Özellikler<a class="anchor" aria-label="anchor" href="#r-temel-%C3%B6zellikler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>R konsolda gorunen <strong>&gt;</strong> isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<ul>
+<li>R boşluklara duyarlı değildir.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span>  <span class="op">+</span>       <span class="fl">2</span> </span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span></span>
+<span>  <span class="fl">2</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+</div>
+<div id="atama-operatoru" class="section level2" number="1.11">
+<h2>
+<span class="header-section-number">1.11</span> Atama Operatoru<a class="anchor" aria-label="anchor" href="#atama-operatoru"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Atama operatörü olarak "küçüktür" simgesi ile "kısa çizgi" simgesi <strong><code>&lt;-</code></strong> simgeleri kullanılabilir.</p></li>
+<li><p><strong><code>&lt;-</code></strong> yerine "eşittir" <strong><code>=</code></strong> simgesi de atama operatörü olarak kullanılabilir.</p></li>
+<li><p>Ancak <strong><code>=</code></strong> operatörü programlama yaparken matematiksel eşitlikle karışabilmektedir.</p></li>
+<li><p>Atama yapılacak nesne isimlendirilirken harflerle (A* Z veya a* z) başlamalıdır.</p></li>
+<li><p>İsimlendirmeye harfle başlandıktan sonra rakamlar (0* 9), nokta (.) ve alt cizgi (_) ile devam edilebilmektedir.</p></li>
+<li><p>R harflerin küçük ve ya büyük olmasına karşı duyarlıdır.</p></li>
+<li><p>R fonksiyonlarına benzer isimlerde nesne ismi kullanmamaya <strong>dikkat edilmelidir.</strong></p></li>
+<li><p>Ayrıca <strong>c,C,D,F,I,q,t,T</strong> gibi tek harfli nesne ismi kullanmaktan kaçınılmalıdır; bunların R'da özel anlamları bulunmaktadır.</p></li>
+<li><p>R yazılımında <strong>#</strong> işareti ile başlayan satir, yorum satırıdır.</p></li>
+<li><p>Genellikle komutların anlamını açıklamak için kullanılmaktadır.</p></li>
+<li><p>R, bu satırları dikkate almaz, bunlar sadece kullanıcılar için bilgi ve hatırlatıcı açıklamaları içermektedir.</p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Yorum satirlari kodlarinizi anlamli hale getirir.</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span>  <span class="fl">2</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span>  <span class="va">a</span> <span class="op">*</span> <span class="va">a</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code>[1] 4</code></pre>
+</div>
+<div id="basit-islemler" class="section level2" number="1.12">
+<h2>
+<span class="header-section-number">1.12</span> Basit İslemler<a class="anchor" aria-label="anchor" href="#basit-islemler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>toplama işlemi için <strong>+</strong>,</p></li>
+<li><p>çıkarma işlemi için <strong>-</strong>,</p></li>
+<li><p>çarpma işlemi için <strong>*</strong>,</p></li>
+<li><p>bölme işlemi için <strong>/</strong>,</p></li>
+<li><p>üs alma işlemi için <strong>^</strong> veya *</p></li>
+<li><p>mod alma icin ise <strong>%%</strong> operatorleri kullanılmaktadır.</p></li>
+<li><p>Kodlamanızın büyük bir kısmı nesne oluşturmayı ve nesneleri manipüle etmeyi içerecektir. Nesneler bir şeyler içerir. Bu şeyler sayılar, kelimeler veya işlemlerin ve analizlerin sonucu olabilir</p></li>
+</ul>
+<p><strong>Alıştırma Nesneler oluşturma</strong></p>
+<ul>
+<li>Aşağıdaki kodu kopyalayıp konsola yapıştırın, kodu kendi adınızı ve yaşınızı kullanacak şekilde değiştirin ve çalıştırın. Enviroment bölmesinde <code>ad</code>, <code>yas</code>, <code>gun</code>, <code>yeniyil</code> ve <code>veri</code> nesnelerinin göründüğünü göreceksiniz.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ad</span> <span class="op">&lt;-</span> <span class="st">"ada"</span></span>
+<span><span class="va">yas</span> <span class="op">&lt;-</span> <span class="fl">16</span> <span class="op">+</span> <span class="fl">20</span> </span>
+<span><span class="va">gun</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">yeniyil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2024-01-01"</span><span class="op">)</span></span>
+<span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">10</span>, mean <span class="op">=</span> <span class="fl">15</span>, sd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-objects-enviro"></span>
+<img src="images/objects-enviro.png" alt="Calisma alanındaki nesneler" width="100%"><p class="caption">
+Figure 1.3: Calisma alanındaki nesneler
+</p>
+</div>
+<ul>
+<li><p>Bu örneklerde, <code>ad</code>, <code>yas</code> ve <code>yeniyil</code> her zaman <code>ada</code>, <code>36</code> değerlerini ve 2024 Yeni Yıl Günü tarihini içerecektir, ancak <code>gun</code> tarihi işletim sisteminden alacaktır ve <code>veri</code> rastgele oluşturulmuş bir veri kümesi olacaktır, bu nedenle bu nesnelerin değerleri statik olmayacaktır.</p></li>
+<li><p>Daha da önemlisi, nesneler hesaplamalara dahil olabilir ve birbirleriyle etkileşime girebilir. Örneğin:</p></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">yas</span> <span class="op">+</span> <span class="fl">10</span></span>
+<span><span class="va">yeniyil</span> <span class="op">-</span> <span class="va">gun</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
+<pre><code>[1] 46
+Time difference of 98 days
+[1] 16.0044</code></pre>
+<ul>
+<li>Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n1</span> <span class="op">&lt;-</span> <span class="va">yas</span> <span class="op">+</span> <span class="fl">10</span></span></code></pre></div>
+<div class="try">
+<p>
+&lt;-<code>ifadesini</code>içerir<code>şeklinde okumak faydalı olabilir, örneğin</code>ad<code>ifadesi</code>ada`
+metnini içerir.
+</p>
+</div>
+<ul>
+<li>Bu ders boyunca sürekli olarak nesneler yaratacaksınız ve ilerledikçe onlar ve nasıl davrandıkları hakkında daha fazla bilgi edineceksiniz, ancak şimdilik bunların değerleri kaydetmenin bir yolu olduğunu, bu değerlerin sayı, metin veya işlemlerin sonucu olabileceğini ve yeni değişkenler oluşturmak için başka işlemlerde kullanılabileceğini anlamak yeterlidir.</li>
+</ul>
+<div class="info">
+<p>
+Nesnelerin ‘değişkenler’ olarak adlandırıldığını da görebilirsiniz.
+Programlama terimlerinde ikisi arasında fark vardır, ancak çok sık
+eşanlamlı olarak kullanılırlar.
+</p>
+</div>
+<p><strong>Alıştırma Nesneler oluşturma</strong></p>
+<ul>
+<li>Aşağıdaki kodu kopyalayıp konsola yapıştırın.</li>
+<li>Eni 4 cm, boyu 10 cm bir dikdörtgenin alanı hesaplayınız.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># en nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># boy nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># alan nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># alan nesnesini yazdirma</span></span></code></pre></div>
+<pre><code>[1] 40</code></pre>
+<ul>
+<li>Eni 4 cm, boyu 10 cm bir dikdörtgenin köşegen uzunluğunu hesaplayınız.</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># en nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># boy nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># kosegen nesnesi tanimlama</span></span>
+<span></span>
+<span><span class="co"># kosegen nesnesini yazdirma</span></span></code></pre></div>
+<pre><code>[1] 10.77033</code></pre>
+<div id="ödev" class="section level3" number="1.12.1">
+<h3>
+<span class="header-section-number">1.12.1</span> Ödev<a class="anchor" aria-label="anchor" href="#%C3%B6dev"><i class="fas fa-link"></i></a>
+</h3>
+<p>Datacamp hesapınızda yer alan 🔗<a href="https://app.datacamp.com/workspace/w/27893d74-f669-4ea4-964d-d8c367b6345e/edit">01_Temeller workspaceni</a> tamamlayınız.</p>
+
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="index.html">Ders Hakkında</a></div>
+<div class="next"><a href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-ve-rstudio-temeller"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="nav-link" href="#r-nedir"><span class="header-section-number">1.1</span> R Nedir?</a></li>
+<li><a class="nav-link" href="#avantajlar%C4%B1"><span class="header-section-number">1.2</span> Avantajları</a></li>
+<li><a class="nav-link" href="#neden-r"><span class="header-section-number">1.3</span> Neden R?</a></li>
+<li><a class="nav-link" href="#dezavantajlar%C4%B1"><span class="header-section-number">1.4</span> Dezavantajları</a></li>
+<li><a class="nav-link" href="#r-ve-rstudio-y%C3%BCklenmesi"><span class="header-section-number">1.5</span> R ve Rstudio Yüklenmesi</a></li>
+<li><a class="nav-link" href="#di%C4%9Fer-gerekli-y%C3%BCklemeler"><span class="header-section-number">1.6</span> Diğer Gerekli Yüklemeler</a></li>
+<li><a class="nav-link" href="#r-studio"><span class="header-section-number">1.7</span> R STUDIO</a></li>
+<li><a class="nav-link" href="#hangi-r-s%C3%BCr%C3%BCm%C3%BCn%C3%BC-kullanmal%C4%B1s%C4%B1n%C4%B1z"><span class="header-section-number">1.8</span> Hangi R sürümünü kullanmalısınız?</a></li>
+<li><a class="nav-link" href="#r-studio-hakk%C4%B1nda"><span class="header-section-number">1.9</span> R Studio Hakkında</a></li>
+<li><a class="nav-link" href="#r-temel-%C3%B6zellikler"><span class="header-section-number">1.10</span> R Temel Özellikler</a></li>
+<li><a class="nav-link" href="#atama-operatoru"><span class="header-section-number">1.11</span> Atama Operatoru</a></li>
+<li>
+<a class="nav-link" href="#basit-islemler"><span class="header-section-number">1.12</span> Basit İslemler</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%C3%B6dev"><span class="header-section-number">1.12.1</span> Ödev</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/01-Kurulum.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/01-Kurulum.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

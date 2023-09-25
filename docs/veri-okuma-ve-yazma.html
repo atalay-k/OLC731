@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Veri Okuma ve Yazma | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Veri Okuma ve Yazma | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-okuma-ve-yazma.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Veri Okuma ve Yazma | OLC731">
+<meta name="twitter:description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="active" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-okuma-ve-yazma" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Veri Okuma ve Yazma<a class="anchor" aria-label="anchor" href="#veri-okuma-ve-yazma"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Veri girişi istatistiksel analiz sürecinin ilk adımıdır.</p></li>
+<li><p>R'da veri girişi diğer yazılımlarla kıyaslandığında <strong>çok kullanışlı değildir.</strong></p></li>
+<li><p>Bu nedenle aktarma/import yolu tercih edilir.</p></li>
+<li><p>Veri aktarımı için çok sayıda fonksiyon ve paket bulunmaktadır.</p></li>
+<li><p>Ayrıca <strong>menü ile de aktarma</strong> yapılabilir.</p></li>
+<li><p>Bilgisayardan internetten farklı formattaki veriler okunabilir.</p></li>
+<li><p>Veri setleri genellikle Excel, SPSS veya metin dosyaları (.txt, .csv, .dat, vb.) gibi uygun veri biçimlerinde kaydedilir</p></li>
+<li><p>R, çeşitli veri formatlarını içe aktarabilir (yani okuyabilir).</p></li>
+</ul>
+<p>Bir veri setini R'ye aktarmanın iki yolu vardır:</p>
+<ol style="list-style-type: decimal">
+<li>RStudio'da "Veri Kümesini İçe Aktar" menü seçeneğini kullanarak</li>
+</ol>
+<div class="float">
+<img src="images/importmenu.png" alt="R studio"><div class="figcaption">R studio</div>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Belirli bir R komutunu kullanarak</li>
+</ol>
+<ul>
+<li><p>İçe aktarmak istediğiniz dosyaya göz atın.</p></li>
+<li><p>Veri seti için bir isim verin.</p></li>
+<li><p>İçe aktarılacak sayfayı seçin.</p></li>
+<li><p>Değişken isimleri dosyanın ilk satırındaysa "First Row as Names".</p></li>
+</ul>
+<div class="float">
+<img src="images/excel1.png" alt="Excel dosylarını içe aktarma"><div class="figcaption">Excel dosylarını içe aktarma</div>
+</div>
+<div id="spss-dosylarını-içe-aktarma" class="section level3" number="7.0.1">
+<h3>
+<span class="header-section-number">7.0.1</span> SPSS dosylarını içe aktarma<a class="anchor" aria-label="anchor" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>İçe aktarmak istediğiniz dosyaya göz atın.</p></li>
+<li><p>Veri seti için bir isim verin.</p></li>
+</ul>
+<div class="float">
+<img src="images/spss1.png" alt="SPSS dosylarını içe aktarma"><div class="figcaption">SPSS dosylarını içe aktarma</div>
+</div>
+</div>
+<div id="veri-okuma" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Veri Okuma<a class="anchor" aria-label="anchor" href="#veri-okuma"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<p>En temel veri okuma/aktarma fonksiyonları</p>
+<ul>
+<li><code><a href="https://rdrr.io/r/base/scan.html">scan()</a></code></li>
+<li><code>read.*</code></li>
+<li><code><a href="https://rdrr.io/r/utils/read.table.html">read.table()</a></code></li>
+<li><code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code></li>
+<li><code><a href="https://rdrr.io/r/utils/read.table.html">read.csv2()</a></code></li>
+<li><code><a href="https://rdrr.io/r/utils/read.table.html">read.delim()</a></code></li>
+<li><code><a href="https://rdrr.io/r/utils/read.table.html">read.delim2()</a></code></li>
+<li><code><a href="https://rdrr.io/r/base/readLines.html">readLines()</a></code></li>
+</ul>
+</li>
+<li><p>Verinin düzgün girilmiş olması okumayı kolaylaştırır.</p></li>
+<li><p>İlk satırda genellikle değişken adlarına (header), ilk sütunda ise kimlik veya sıra numarasına yer verilir.</p></li>
+<li><p>Gözlemlere ve değişkenlere ilişkin veri girilirken karakterler veya sayısal değerler arasında boşluk bırakmaktan kaçınmak gerekmektedir. Değişken adı boşluklu yazılmışsa ne olur?</p></li>
+<li><p>Eksik veri boyunca aynı şekilde girilmelidir.</p></li>
+<li><p>Değişkenlerin birinden nasıl ayrıldığı önemlidir. (, ; :  / )</p></li>
+<li><p>Tercihimiz <strong>.csv</strong> uzantılı veriler ama büyük veri setleri az yer kalması icin <strong>.txt,.prn</strong> formatında karşımıza çıkabilmektedir.</p></li>
+<li><p>Temel pakette <strong>read.csv</strong> ve <strong>read.table</strong> gibi bazı fonksiyonlar bulunmaktadır.</p></li>
+<li><p>Ayrıca, belirli formatlarını içe aktarmak için R paketleri bulunmaktadır.Örneğin, SPSS dosyaları için <strong>foreign</strong> ve Excel dosyaları için <strong>xlsx</strong> gibi</p></li>
+</ul>
+</div>
+<div id="read.-fonksiyonları" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> read.*() fonksiyonları<a class="anchor" aria-label="anchor" href="#read.-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"><strong>Argüman</strong></th>
+<th align="left"><strong>Açıklama</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>header</strong></td>
+<td align="left">Mantıksal değerler ile verinin ilk satırında değişken isimlerinin olup olmadığını test eder.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>sep</strong></td>
+<td align="left">Sütun ayracıdır.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>na.strings</strong></td>
+<td align="left">Kayıp değerleri belirtmek için kullanılır.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>dec</strong></td>
+<td align="left">Ondalık sayıların ne ile ayrıldığını gösteren argümandır.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>nrows</strong></td>
+<td align="left">Okunmak istenilen satır sayısını belirtmek için kullanılır.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>skip</strong></td>
+<td align="left">Bir dosya okunurken okunmadan atlanmak istenilen satır sayısı için kullanılır.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="excel-dosyası-aktarma" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Excel dosyası aktarma<a class="anchor" aria-label="anchor" href="#excel-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"xlsx"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/colearendt/xlsx">"xlsx"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># read.xlsx fonksiyonunun kullanımı</span></span>
+<span><span class="va">my_excel_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.xlsx"</span>,sheetName <span class="op">=</span> <span class="st">"sheetname"</span><span class="op">)</span></span></code></pre></div>
+<div id="spss-dosyası-aktarma" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> SPSS dosyası aktarma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"foreign"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://svn.r-project.org/R-packages/trunk/foreign/">"foreign"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># read.spss fonksiyonunun kullanımı</span></span>
+<span><span class="va">my_spss_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/foreign/man/read.spss.html">read.spss</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.sav"</span>,</span>
+<span>                to.data.frame <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="text-dosyası-aktarma" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> text dosyası aktarma<a class="anchor" aria-label="anchor" href="#text-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>text dosyaları okumak için paket yüklemeye gerek yoktur.</li>
+</ul>
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># , ile ayrılmış csv dosyaları</span></span>
+<span><span class="va">csv_dosya</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.csv"</span>,header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># tab ile ayrılmış txt dosyaları</span></span>
+<span><span class="va">txt_dosya</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.txt"</span>,header <span class="op">=</span> <span class="cn">TRUE</span>, sep <span class="op">=</span> <span class="st">"\t"</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>Dikkat</p></li>
+<li><p><code>header = TRUE</code></p></li>
+<li><p><code>sep="\t"</code></p></li>
+<li><p><code>sep=","</code> for comma-separated files</p></li>
+<li>
+</ul>
+</div>
+</div>
+<div id="uygulama" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Uygulama<a class="anchor" aria-label="anchor" href="#uygulama"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>🔗Dosyaları buradan klasor halinde indirebilirsiniz. <a href="import/import.rar">DOSYALAR</a></p></li>
+<li><p>🔗<a href="import/veri1.txt">veri1.txt</a></p></li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">no</th>
+<th align="right">m_1</th>
+<th align="right">m_2</th>
+<th align="right">m_3</th>
+<th align="right">m_4</th>
+<th align="right">m_5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">522</td>
+<td align="right">12</td>
+<td align="right">14.0</td>
+<td align="right">16</td>
+<td align="right">20.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">222</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">20</td>
+<td align="right">10.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">454</td>
+<td align="right">5</td>
+<td align="right">10.2</td>
+<td align="right">6</td>
+<td align="right">4.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">567</td>
+<td align="right">10</td>
+<td align="right">20.0</td>
+<td align="right">NA</td>
+<td align="right">12.2</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>🔗<a href="import/veri1.csv">veri1.csv</a>
+</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">no</th>
+<th align="right">m_1</th>
+<th align="right">m_2</th>
+<th align="right">m_3</th>
+<th align="right">m_4</th>
+<th align="right">m_5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">522</td>
+<td align="right">12</td>
+<td align="right">14.0</td>
+<td align="right">16</td>
+<td align="right">20.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">222</td>
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">20</td>
+<td align="right">10.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">454</td>
+<td align="right">5</td>
+<td align="right">10.2</td>
+<td align="right">6</td>
+<td align="right">4.0</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">567</td>
+<td align="right">10</td>
+<td align="right">20.0</td>
+<td align="right">NA</td>
+<td align="right">12.2</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul><li>
+<div class="kable-table">
+
+
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">No</th>
+<th align="right">M1</th>
+<th align="left">M2</th>
+<th align="right">M3</th>
+<th align="left">M4</th>
+<th align="right">M5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">001</td>
+<td align="right">522</td>
+<td align="right">12</td>
+<td align="left">14</td>
+<td align="right">16</td>
+<td align="left">20</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">002</td>
+<td align="right">222</td>
+<td align="right">5</td>
+<td align="left">NA</td>
+<td align="right">20</td>
+<td align="left">10</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">003</td>
+<td align="right">454</td>
+<td align="right">5</td>
+<td align="left">10,2</td>
+<td align="right">6</td>
+<td align="left">4</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">004</td>
+<td align="right">567</td>
+<td align="right">10</td>
+<td align="left">20</td>
+<td align="right">NA</td>
+<td align="left">12,2</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul><li>
+<div class="kable-table">
+
+
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">M1</th>
+<th align="left">M2</th>
+<th align="right">M3</th>
+<th align="left">M4</th>
+<th align="right">M5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">001</td>
+<td align="right">12</td>
+<td align="left">14</td>
+<td align="right">16</td>
+<td align="left">20</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">002</td>
+<td align="right">5</td>
+<td align="left">NA</td>
+<td align="right">20</td>
+<td align="left">10</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="left">003</td>
+<td align="right">5</td>
+<td align="left">10,2</td>
+<td align="right">6</td>
+<td align="left">4</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">004</td>
+<td align="right">10</td>
+<td align="left">20</td>
+<td align="right">NA</td>
+<td align="left">12,2</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>🔗<a href="import/fwf.txt">verifwf.txt</a>
+</li>
+<li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">V1</th>
+<th align="right">V2</th>
+<th align="left">V3</th>
+<th align="right">V4</th>
+<th align="right">V5</th>
+<th align="right">V6</th>
+<th align="right">V7</th>
+<th align="right">V8</th>
+<th align="right">V9</th>
+<th align="right">V10</th>
+<th align="right">V11</th>
+<th align="right">V12</th>
+<th align="right">V13</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">689</td>
+<td align="left">A</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">654</td>
+<td align="left">B</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">436</td>
+<td align="left">A</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul><li>
+<div class="kable-table">
+
+
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">sira</th>
+<th align="right">no</th>
+<th align="left">kitapcik</th>
+<th align="right">m1</th>
+<th align="right">m2</th>
+<th align="right">m3</th>
+<th align="right">m4</th>
+<th align="right">m5</th>
+<th align="right">m6</th>
+<th align="right">m7</th>
+<th align="right">m8</th>
+<th align="right">m9</th>
+<th align="right">m10</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">689</td>
+<td align="left">A</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">654</td>
+<td align="left">B</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">436</td>
+<td align="left">A</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>🔗<a href="import/factor.sav">factor.sav</a>
+</li>
+</ul>
+<pre><code>## tibble [50 × 3] (S3: tbl_df/tbl/data.frame)
+##  $ id   : num [1:50] 1 2 3 4 5 6 7 8 9 10 ...
+##   ..- attr(*, "format.spss")= chr "F6.2"
+##  $ bolge: num [1:50] 1 1 1 1 1 1 1 1 1 1 ...
+##   ..- attr(*, "format.spss")= chr "F6.2"
+##  $ puan : num [1:50] 9 8 6 8 10 4 6 5 7 7 ...
+##   ..- attr(*, "format.spss")= chr "F6.2"</code></pre>
+<ul>
+<li>🔗 <a href="https://www.statmodel.com/usersguide/chap3/ex3.1.dat" class="uri">https://www.statmodel.com/usersguide/chap3/ex3.1.dat</a>
+</li>
+</ul>
+<pre><code>##  [1] -0.354517  0.561655  0.315551  3.347049 -0.122389 -0.251276 -0.517996
+##  [8]  1.888854  0.461254  2.237483</code></pre>
+<ul>
+<li>
+</ul>
+<pre><code>##  [1] "   -0.354517     0.573051    -0.175230"
+##  [2] "    0.561655    -0.368095     1.090042"
+##  [3] "    0.315551    -0.577052     0.425472"
+##  [4] "    3.347049     1.088520     1.149353"
+##  [5] "   -0.122389    -0.694153    -0.766538"
+##  [6] "   -0.251276    -0.017487    -1.367410"
+##  [7] "   -0.517996    -0.817974    -1.559255"
+##  [8] "    1.888854    -0.658335     1.007614"
+##  [9] "    0.461254     0.463916    -0.898300"
+## [10] "    2.237483     1.533398     0.180512"</code></pre>
+</li></ul>
+</li></ul>
+</li></ul>
+</div>
+<div id="veri-yazma" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
+<span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
+<span><span class="va">kilo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>,<span class="fl">55</span>,<span class="fl">57</span>,<span class="fl">50</span>,<span class="fl">48</span>,<span class="fl">65</span>,<span class="fl">58</span>,<span class="fl">62</span>,<span class="fl">45</span>,<span class="fl">47</span><span class="op">)</span></span>
+<span><span class="va">beden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S"</span>,<span class="st">"M"</span>,<span class="st">"S"</span>,<span class="st">"M"</span>,<span class="st">"S"</span>,<span class="st">"L"</span>,<span class="st">"M"</span>,<span class="st">"L"</span>,<span class="st">"S"</span>,<span class="st">"S"</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">ad</span>, <span class="va">boy</span>, <span class="va">kilo</span>, <span class="va">beden</span><span class="op">)</span></span>
+<span><span class="va">df</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">ad</th>
+<th align="right">boy</th>
+<th align="right">kilo</th>
+<th align="left">beden</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ali</td>
+<td align="right">160</td>
+<td align="right">50</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Elif</td>
+<td align="right">165</td>
+<td align="right">55</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Su</td>
+<td align="right">170</td>
+<td align="right">57</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Deniz</td>
+<td align="right">155</td>
+<td align="right">50</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Aras</td>
+<td align="right">167</td>
+<td align="right">48</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Berk</td>
+<td align="right">162</td>
+<td align="right">65</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Can</td>
+<td align="right">169</td>
+<td align="right">58</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="left">Ece</td>
+<td align="right">158</td>
+<td align="right">62</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Efe</td>
+<td align="right">160</td>
+<td align="right">45</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Arda</td>
+<td align="right">164</td>
+<td align="right">47</td>
+<td align="left">S</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span><span class="op">)</span><span class="co"># df dosyasi nerede, gorunumu nasil</span></span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co"># karakter nesnler tirnak icinde ne yapmali?</span></span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span>,quote<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<p>yeni gözlem eklemek istiyorsaniz append argümanı kullanılabilir.</p>
+<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="va">ek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ad<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ahmet"</span>,<span class="st">"Ali"</span><span class="op">)</span>, boy<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">170</span><span class="op">)</span>, kilo<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">70</span><span class="op">)</span>, </span>
+<span>                 beden<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S"</span>,<span class="st">"L"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">ek</span>, <span class="st">"df.txt"</span>,row.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>            col.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
+<span>            quote<span class="op">=</span><span class="cn">FALSE</span>,append<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p><strong>write.csv()</strong> fonksiyonu kullanılarak yazılan veri dosyaları "," ile,</p></li>
+<li><p><strong>write.csv2()</strong> fonksiyonu kullanılarak yazılan veri dosyaları ise ";" ile ayrılır iki fonksiyonun bir diğer farkı ise ondalık sayı ayıracıdır.</p></li>
+<li><p>write.csv ile yazdırılan dosyaların excelde açılması</p></li>
+</ul>
+<div id="cat-fonksiyonu" class="section level3" number="7.5.1">
+<h3>
+<span class="header-section-number">7.5.1</span> <strong>cat()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#cat-fonksiyonu"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Döngülerde sıklıkla ekrana bilgi yazdırmak amacıyla kullanılır, ancak dosya yazdırmak amacıyla da kullanabilmektedir.</li>
+<li>fonksiyonlarla yapılan hesaplama çıktısı da yazabilmektedir.</li>
+<li>Bu nedenle bir R oturumu sırasında not alınmak istenilen bilgileri bir dosyaya yazdırmak için kullanılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi "</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
+<span>      <span class="st">"ogrencilerin kilo ortalamasi"</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">kilo</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
+<span>     file<span class="op">=</span><span class="st">"bilgi.txt"</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>ne ise yaradi?</li>
+</ul>
+</div>
+</div>
+<div id="writelines-fonksiyonu" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi: 163 cm\n"</span>,</span>
+<span>            <span class="st">"ogrencilerin kilo ortalamasi: 53.7 kg"</span>,</span>
+<span>            con<span class="op">=</span><span class="st">"bilgi2.txt"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="odev-2" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> ODEV<a class="anchor" aria-label="anchor" href="#odev-2"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>🔗 <a href="https://psyteachr.github.io/data-skills-v1/getting-to-know-the-data.html">Linkte</a> yer alan sayfayı inceleyiniz. Bu sayfada bir veri setini incelemeniz ve bu veri seti ile ilgili sorulara cevap vermeniz beklenemketedir.</p></li>
+<li><p>🔗<a href="https://psyteachr.github.io/data-skills-v1/loading-data.html">Linkte</a> yer alan sayfada sizden iki veri setini okumanız beklenmeketdir. Bu iki veri setini okuduktan sonra da hazır kodları incelemeniz ve bu kodlar ile ilgili sorulara cevap vermeniz beklenmektedir.</p></li>
+</ul>
+<p>☕</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></div>
+<div class="next"><a href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#veri-okuma-ve-yazma"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><span class="header-section-number">7.0.1</span> SPSS dosylarını içe aktarma</a></li></ul>
+</li>
+<li><a class="nav-link" href="#veri-okuma"><span class="header-section-number">7.1</span> Veri Okuma</a></li>
+<li><a class="nav-link" href="#read.-fonksiyonlar%C4%B1"><span class="header-section-number">7.2</span> read.*() fonksiyonları</a></li>
+<li>
+<a class="nav-link" href="#excel-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3</span> Excel dosyası aktarma</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#spss-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3.1</span> SPSS dosyası aktarma</a></li>
+<li><a class="nav-link" href="#text-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3.2</span> text dosyası aktarma</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#uygulama"><span class="header-section-number">7.4</span> Uygulama</a></li>
+<li>
+<a class="nav-link" href="#veri-yazma"><span class="header-section-number">7.5</span> Veri Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cat-fonksiyonu"><span class="header-section-number">7.5.1</span> cat() fonksiyonu</a></li></ul>
+</li>
+<li><a class="nav-link" href="#writelines-fonksiyonu"><span class="header-section-number">7.6</span> writeLines fonksiyonu</a></li>
+<li><a class="nav-link" href="#odev-2"><span class="header-section-number">7.7</span> ODEV</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/07-veriokumayazma.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/07-veriokumayazma.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

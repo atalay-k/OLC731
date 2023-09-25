@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Veri Setleri | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Veri setleri iki boyutludur. R'da bir çok fonksiyonun veri setleri ile çalışmaktadır. Veri setleri R ortamında data.frame() fonksiyonu ile oluşturulabilir. data.frame() fonksiyonu ile aynı...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Veri Setleri | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-setleri.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Veri setleri iki boyutludur. R'da bir çok fonksiyonun veri setleri ile çalışmaktadır. Veri setleri R ortamında data.frame() fonksiyonu ile oluşturulabilir. data.frame() fonksiyonu ile aynı...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Veri Setleri | OLC731">
+<meta name="twitter:description" content="Veri setleri iki boyutludur. R'da bir çok fonksiyonun veri setleri ile çalışmaktadır. Veri setleri R ortamında data.frame() fonksiyonu ile oluşturulabilir. data.frame() fonksiyonu ile aynı...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="active" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-setleri" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Veri Setleri<a class="anchor" aria-label="anchor" href="#veri-setleri"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Veri setleri iki boyutludur.</p></li>
+<li><p>R'da bir çok fonksiyonun veri setleri ile çalışmaktadır.</p></li>
+<li><p>Veri setleri R ortamında <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> fonksiyonu ile oluşturulabilir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> fonksiyonu ile aynı uzunluktaki vektörlerden bir veri seti oluşturulabilir.</p></li>
+</ul>
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>, <span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
+<span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>, <span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
+<span><span class="va">kilo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">55</span>,<span class="fl">57</span>,<span class="fl">50</span>,<span class="fl">48</span>,<span class="fl">65</span>, <span class="fl">58</span>,<span class="fl">62</span>,<span class="fl">45</span>,<span class="fl">47</span><span class="op">)</span></span>
+<span><span class="va">beden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S"</span>,<span class="st">"M"</span>,<span class="st">"S"</span>,<span class="st">"M"</span>,<span class="st">"S"</span>, <span class="st">"L"</span>,<span class="st">"M"</span>,<span class="st">"L"</span>,<span class="st">"S"</span>,<span class="st">"S"</span><span class="op">)</span></span>
+<span><span class="va">beden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">beden</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="op">(</span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">ad</span>,<span class="va">boy</span>, <span class="va">kilo</span>, <span class="va">beden</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">ad</th>
+<th align="right">boy</th>
+<th align="right">kilo</th>
+<th align="left">beden</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ali</td>
+<td align="right">160</td>
+<td align="right">55</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Elif</td>
+<td align="right">165</td>
+<td align="right">55</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Su</td>
+<td align="right">170</td>
+<td align="right">57</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Deniz</td>
+<td align="right">155</td>
+<td align="right">50</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Aras</td>
+<td align="right">167</td>
+<td align="right">48</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Berk</td>
+<td align="right">162</td>
+<td align="right">65</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Can</td>
+<td align="right">169</td>
+<td align="right">58</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="left">Ece</td>
+<td align="right">158</td>
+<td align="right">62</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Efe</td>
+<td align="right">160</td>
+<td align="right">45</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Arda</td>
+<td align="right">164</td>
+<td align="right">47</td>
+<td align="left">S</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>Eğer uzunlukları farklı olan vektörlerle veri setleri oluşturulmaya çalışılırsa kısa vektör, uzun vektör uzunluğunda tekrar eder.</li>
+</ul>
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># 4 farklı uzunlukta vektör oluşturulması</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">11</span><span class="op">:</span><span class="fl">14</span>; <span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">10</span>; <span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">35</span><span class="op">)</span>; <span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">2</span><span class="op">:</span><span class="fl">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="co"># (4,1)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">x</th>
+<th align="right">y</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">M</span><span class="op">)</span> <span class="co"># (4,2)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">x</th>
+<th align="right">M</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">35</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">N</span><span class="op">)</span>  <span class="co">#(4,3) hata</span></span></code></pre></div>
+<pre><code>## Error in data.frame(x, N): arguments imply differing number of rows: 4, 3</code></pre>
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">M</span><span class="op">)</span> <span class="co">#(1,2)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">y</th>
+<th align="right">M</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">35</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">N</span><span class="op">)</span> <span class="co">#(1,3)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">y</th>
+<th align="right">N</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">M</span>, <span class="va">N</span><span class="op">)</span> <span class="co">#(2,3)</span></span></code></pre></div>
+<pre><code>## Error in data.frame(M, N): arguments imply differing number of rows: 2, 3</code></pre>
+<div id="hazır-veri-setleri" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Hazır Veri Setleri<a class="anchor" aria-label="anchor" href="#haz%C4%B1r-veri-setleri"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Temel pakette yer alan veri setlerinin bir listesine aşağıdaki komutla ulaşabilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># yeni bir pencerede açılır.</span></span></code></pre></div>
+<ul>
+<li>Veri setlerinin yer aldığı paketlerde bulunmaktadır.</li>
+</ul>
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("datasets")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span>
+<span><span class="co"># install.packages("dslabs")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="va">dslabs</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Hazır veri setleri çalışma ortamına <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> fonksiyonu ile aktarılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">WorldPhones</span><span class="op">)</span> <span class="co"># environmete kontrol ediniz. </span></span></code></pre></div>
+<ul>
+<li>hazır veri setlerini incelememek için aşağıdaki komutlar kullanılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span> <span class="co"># enviromente ekler</span></span>
+<span><span class="va">iris</span>      <span class="co"># enviromente eklemez!</span></span></code></pre></div>
+</div>
+<div id="inceleme" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> İnceleme<a class="anchor" aria-label="anchor" href="#inceleme"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Boyut sorgulamamak için farklı fonksiyonlar kullanılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span> <span class="co"># satir Sutun</span></span></code></pre></div>
+<pre><code>## [1] 50  2</code></pre>
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ul>
+<li>Veri setlerin ilk satırları <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, son satırları ise <code><a href="https://rdrr.io/r/utils/head.html">tail()</a></code> fonksiyonu ile incelenebilir. <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code> fonksiyonu olağan olarak ilk 6 satırı yazdırır.</li>
+</ul>
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">WorldPhones</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      N.Amer Europe Asia S.Amer Oceania Africa Mid.Amer
+## 1951  45939  21574 2876   1815    1646     89      555
+## 1956  60423  29990 4708   2568    2366   1411      733
+## 1957  64721  32510 5230   2695    2526   1546      773
+## 1958  68484  35218 6662   2845    2691   1663      836
+## 1959  71799  37598 6856   3000    2868   1769      911
+## 1960  76036  40341 8220   3145    3054   1905     1008</code></pre>
+<ul>
+<li>Yazdırılacak satır sayısı <code>n</code> argümanı ile ayarlanır.</li>
+</ul>
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">WorldPhones</span>,n<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      N.Amer Europe Asia S.Amer Oceania Africa Mid.Amer
+## 1951  45939  21574 2876   1815    1646     89      555
+## 1956  60423  29990 4708   2568    2366   1411      733</code></pre>
+<ul>
+<li><p>WorldPhones veri setinin son 8 satırını yazdıracak kodu yazınız. <input class="webex-solveme nospaces" size="21" data-answer='["tail(WorldPhones,n=8)"]'></p></li>
+<li><p><code>datasets</code> paketinde yer alan veri setlerinde <code>examples()</code> bölümünde çeşitli örneklere yer verilmiştir. Örneğin <code>example(WorldPhones)</code></p></li>
+</ul>
+<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/matplot.html">matplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">WorldPhones</span><span class="op">)</span>, <span class="va">WorldPhones</span>, type <span class="op">=</span> <span class="st">"b"</span>, log <span class="op">=</span> <span class="st">"y"</span>,</span>
+<span>        xlab <span class="op">=</span> <span class="st">"Year"</span>, ylab <span class="op">=</span> <span class="st">"Number of telephones (1000's)"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span><span class="op">(</span><span class="st">"bottomright"</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">WorldPhones</span><span class="op">)</span>, col <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>, lty <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,</span>
+<span>       pch <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">21</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span><span class="op">(</span>main <span class="op">=</span> <span class="st">"World phones data: log scale for response"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="06-veriseti_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li>Temel paket hariç diğer paketlerdeki veri setlerine <code>data(veriseti, package="packagename")</code> şeklinde ulaşılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">CTTdata</span>, package<span class="op">=</span><span class="st">"CTT"</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">CTTdata</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>🔗<a href="http://r-tutorials.com/famous-useful-pre-installed-exercise-datasets-r/">sık kullanılan veri setleri ile ilgili bir yazı:</a></p></li>
+<li><p>🔗<a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">tüm veri setlerine ulaşabilmek için ise:</a></p></li>
+<li><p>Kullanışlı olmasa da excel, spps gibi veri girişi sağlayan bir arayüz bulunmaktadır.</p></li>
+<li><p>Ali, Su ve Ece'nin boylarının ve kilolarının seçilmesi</p></li>
+</ul>
+<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/edit.html">edit</a></span><span class="op">(</span><span class="va">df1</span><span class="op">)</span></span>
+<span><span class="co"># duzenlemek icin</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/fix.html">fix</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="co"># gozatmak icin </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="elaman-seçme" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Elaman Seçme<a class="anchor" aria-label="anchor" href="#elaman-se%C3%A7me"><i class="fas fa-link"></i></a>
+</h2>
+<p>Veri setlerinde eleman seçme matrislerdeki gibidir.</p>
+<p><code>df[satirindeks, sutunindeks]</code></p>
+<ul>
+<li>df'nin birinci satir elemanlarının seçilmesi <input class="webex-solveme nospaces" size="6" data-answer='["df[1,]"]'>
+</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">ad</th>
+<th align="right">boy</th>
+<th align="right">kilo</th>
+<th align="left">beden</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">Ali</td>
+<td align="right">160</td>
+<td align="right">55</td>
+<td align="left">S</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>df'nin birinci sütun elemanlarının seçilmesi <input class="webex-solveme nospaces" size="6" data-answer='["df[,1]"]'>
+</li>
+</ul>
+<pre><code>##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+## [10] "Arda"</code></pre>
+<ul>
+<li>df'nin ikinci satir elemanlarının seçilmesi <input class="webex-solveme nospaces" size="6" data-answer='["df[2,]"]'>
+</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="left">ad</th>
+<th align="right">boy</th>
+<th align="right">kilo</th>
+<th align="left">beden</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="left">2</td>
+<td align="left">Elif</td>
+<td align="right">165</td>
+<td align="right">55</td>
+<td align="left">M</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>df'nin ikinci sütun elemanlarının seçilmesi <input class="webex-solveme nospaces" size="6" data-answer='["df[,2]"]'>
+</li>
+</ul>
+<pre><code>##  [1] 160 165 170 155 167 162 169 158 160 164</code></pre>
+<ul>
+<li>df'nin birinci satir üçüncü sütun elemanlarının seçilmesi <input class="webex-solveme nospaces" size="7" data-answer='["df[1,3]"]'>
+</li>
+</ul>
+<pre><code>## [1] 55</code></pre>
+<ul>
+<li>Veri setlerinde satır elemanları yazdırıldığında veri seti (<code>data.frame)</code>, sütun elemanları yazdırıldığında ise vektör (<code>vector)</code> oluşmaktadır.</li>
+</ul>
+<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># satir secimi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">is.data.frame</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># sutun secimi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">is.data.frame</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<ul>
+<li>Sütun seçimi veri seti (<code>data.frame</code>) olarak yapılmak istenirse, <code>drop</code> argümanı FALSE değeri ile kullanılır.</li>
+</ul>
+<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span><span class="op">[</span>,<span class="fl">1</span>,drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">ad</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ali</td>
+</tr>
+<tr class="even">
+<td align="left">Elif</td>
+</tr>
+<tr class="odd">
+<td align="left">Su</td>
+</tr>
+<tr class="even">
+<td align="left">Deniz</td>
+</tr>
+<tr class="odd">
+<td align="left">Aras</td>
+</tr>
+<tr class="even">
+<td align="left">Berk</td>
+</tr>
+<tr class="odd">
+<td align="left">Can</td>
+</tr>
+<tr class="even">
+<td align="left">Ece</td>
+</tr>
+<tr class="odd">
+<td align="left">Efe</td>
+</tr>
+<tr class="even">
+<td align="left">Arda</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><p>Veri seçim işlemi için <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code> fonksiyonu kullanılabilir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/subset.html">?subset</a></code> bir fonksiyonu ilk daha kullanıyorsanız, mutlaka yardım sayfasını inceleyin.</p></li>
+</ul>
+<p><code>subset(veriseti, kosul/Kosullar)</code></p>
+<ul>
+<li>Boyu 165cm den uzun öğrencilerin bilgilerinin seçilmesi</li>
+</ul>
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">boy</span> <span class="op">&gt;</span><span class="fl">165</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="left">ad</th>
+<th align="right">boy</th>
+<th align="right">kilo</th>
+<th align="left">beden</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Su</td>
+<td align="right">170</td>
+<td align="right">57</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">Aras</td>
+<td align="right">167</td>
+<td align="right">48</td>
+<td align="left">S</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">Can</td>
+<td align="right">169</td>
+<td align="right">58</td>
+<td align="left">M</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code> Fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">airquality</span>, <span class="va">Temp</span> <span class="op">&gt;</span> <span class="fl">90</span>,select <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Ozone</span>, <span class="va">Temp</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">Ozone</th>
+<th align="right">Temp</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">42</td>
+<td align="right">NA</td>
+<td align="right">93</td>
+</tr>
+<tr class="even">
+<td align="left">43</td>
+<td align="right">NA</td>
+<td align="right">92</td>
+</tr>
+<tr class="odd">
+<td align="left">69</td>
+<td align="right">97</td>
+<td align="right">92</td>
+</tr>
+<tr class="even">
+<td align="left">70</td>
+<td align="right">97</td>
+<td align="right">92</td>
+</tr>
+<tr class="odd">
+<td align="left">75</td>
+<td align="right">NA</td>
+<td align="right">91</td>
+</tr>
+<tr class="even">
+<td align="left">102</td>
+<td align="right">NA</td>
+<td align="right">92</td>
+</tr>
+<tr class="odd">
+<td align="left">120</td>
+<td align="right">76</td>
+<td align="right">97</td>
+</tr>
+<tr class="even">
+<td align="left">121</td>
+<td align="right">118</td>
+<td align="right">94</td>
+</tr>
+<tr class="odd">
+<td align="left">122</td>
+<td align="right">84</td>
+<td align="right">96</td>
+</tr>
+<tr class="even">
+<td align="left">123</td>
+<td align="right">85</td>
+<td align="right">94</td>
+</tr>
+<tr class="odd">
+<td align="left">124</td>
+<td align="right">96</td>
+<td align="right">91</td>
+</tr>
+<tr class="even">
+<td align="left">125</td>
+<td align="right">78</td>
+<td align="right">92</td>
+</tr>
+<tr class="odd">
+<td align="left">126</td>
+<td align="right">73</td>
+<td align="right">93</td>
+</tr>
+<tr class="even">
+<td align="left">127</td>
+<td align="right">91</td>
+<td align="right">93</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">airquality</span>, <span class="va">Day</span> <span class="op">==</span> <span class="fl">1</span>, select <span class="op">=</span> <span class="op">-</span><span class="va">Temp</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">Ozone</th>
+<th align="right">Solar.R</th>
+<th align="right">Wind</th>
+<th align="right">Month</th>
+<th align="right">Day</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">41</td>
+<td align="right">190</td>
+<td align="right">7.4</td>
+<td align="right">5</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">32</td>
+<td align="right">NA</td>
+<td align="right">286</td>
+<td align="right">8.6</td>
+<td align="right">6</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="right">135</td>
+<td align="right">269</td>
+<td align="right">4.1</td>
+<td align="right">7</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">93</td>
+<td align="right">39</td>
+<td align="right">83</td>
+<td align="right">6.9</td>
+<td align="right">8</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">124</td>
+<td align="right">96</td>
+<td align="right">167</td>
+<td align="right">6.9</td>
+<td align="right">9</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><p>df verisinde beden değişkeni "S" olan satırların seçimi <code>subset(df,beden =="S")</code></p></li>
+<li><p>df verisinde kilosu 50'in altında olan kişilerden oluşan veri seti oluşturma kodunu tamamlayınız <code>subset(df,.......)</code> <input class="webex-solveme nospaces" size="7" data-answer='["kilo&lt;50"]'></p></li>
+</ul>
+</div>
+<div id="eleman-ekleme" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Eleman ekleme<a class="anchor" aria-label="anchor" href="#eleman-ekleme"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Veri setine yeni sütun ekleme isleme <code>$</code> operatörü ile <code>[[]]</code> operatörü ile <code><a href="https://rdrr.io/r/base/cbind.html">cbind()</a></code> fonksiyonları ile yapılabilmektedir.</li>
+</ul>
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>      S1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">20</span><span class="op">)</span>,</span>
+<span>      S2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">20</span> ,min<span class="op">=</span> <span class="fl">50</span> , max<span class="op">=</span><span class="fl">70</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+</tr>
+<tr class="even">
+<td align="right">74</td>
+<td align="right">56.95043</td>
+</tr>
+<tr class="odd">
+<td align="right">44</td>
+<td align="right">69.24268</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">65.60265</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>$</code> operatörü ile sütun ekleme</li>
+</ul>
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span><span class="op">$</span><span class="va">S3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">60</span><span class="op">:</span><span class="fl">80</span>,<span class="fl">20</span>,replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+<td align="right">67</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+<td align="right">79</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="right">74</td>
+<td align="right">56.95043</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="right">44</td>
+<td align="right">69.24268</td>
+<td align="right">74</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">65.60265</td>
+<td align="right">65</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><p><code>[[]]</code> operatörü ile sütun ekleme</p></li>
+<li><p>df2 veri setinin ilk üç sütunun <code><a href="https://rdrr.io/r/base/colSums.html">rowMeans()</a></code> fonksiyonu ile ortalamasının alınarak ort isimi ile veri setine eklenmesi</p></li>
+</ul>
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span><span class="op">[[</span><span class="st">"ort"</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowMeans</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+<th align="right">ort</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+<td align="right">67</td>
+<td align="right">43.08</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+<td align="right">79</td>
+<td align="right">71.97</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+<td align="right">78</td>
+<td align="right">54.90</td>
+</tr>
+<tr class="even">
+<td align="right">74</td>
+<td align="right">56.95043</td>
+<td align="right">60</td>
+<td align="right">63.65</td>
+</tr>
+<tr class="odd">
+<td align="right">44</td>
+<td align="right">69.24268</td>
+<td align="right">74</td>
+<td align="right">62.41</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">65.60265</td>
+<td align="right">65</td>
+<td align="right">50.20</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/cbind.html">cbind()</a></code> fonksiyonu ile sütun ekleme</li>
+</ul>
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span> <span class="va">df2</span>, S4 <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+<th align="right">ort</th>
+<th align="right">S4</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+<td align="right">67</td>
+<td align="right">43.08</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+<td align="right">79</td>
+<td align="right">71.97</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+<td align="right">78</td>
+<td align="right">54.90</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">74</td>
+<td align="right">56.95043</td>
+<td align="right">60</td>
+<td align="right">63.65</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">44</td>
+<td align="right">69.24268</td>
+<td align="right">74</td>
+<td align="right">62.41</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">65.60265</td>
+<td align="right">65</td>
+<td align="right">50.20</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">21</td>
+<td align="right">57.91485</td>
+<td align="right">80</td>
+<td align="right">52.97</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">88</td>
+<td align="right">60.27958</td>
+<td align="right">75</td>
+<td align="right">74.43</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">85</td>
+<td align="right">60.68826</td>
+<td align="right">78</td>
+<td align="right">74.56</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">51</td>
+<td align="right">68.49464</td>
+<td align="right">62</td>
+<td align="right">60.50</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">52</td>
+<td align="right">51.98583</td>
+<td align="right">60</td>
+<td align="right">54.66</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">84</td>
+<td align="right">58.95490</td>
+<td align="right">66</td>
+<td align="right">69.65</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">16</td>
+<td align="right">55.42254</td>
+<td align="right">62</td>
+<td align="right">44.47</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">11</td>
+<td align="right">61.21870</td>
+<td align="right">75</td>
+<td align="right">49.07</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="right">61.22623</td>
+<td align="right">64</td>
+<td align="right">50.08</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">96</td>
+<td align="right">62.61182</td>
+<td align="right">75</td>
+<td align="right">77.87</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">93</td>
+<td align="right">64.44205</td>
+<td align="right">66</td>
+<td align="right">74.48</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="right">63.86585</td>
+<td align="right">70</td>
+<td align="right">46.29</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">57</td>
+<td align="right">53.62309</td>
+<td align="right">60</td>
+<td align="right">56.87</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">91</td>
+<td align="right">63.56812</td>
+<td align="right">62</td>
+<td align="right">72.19</td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="eleman-çıkarma" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Eleman çıkarma<a class="anchor" aria-label="anchor" href="#eleman-%C3%A7%C4%B1karma"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Veri setinden istenilen sütunun çıkarılabilir. Bu işlemi yapmak için iki farklı yol kullanılabilir.</p></li>
+<li><p><code>-</code> operatörü</p></li>
+</ul>
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+<th align="right">ort</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+<td align="right">67</td>
+<td align="right">43.08</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+<td align="right">79</td>
+<td align="right">71.97</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+<td align="right">78</td>
+<td align="right">54.90</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="va">df2</span><span class="op">[</span>,<span class="op">-</span><span class="fl">4</span><span class="op">]</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+<td align="right">67</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+<td align="right">79</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+<td align="right">78</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>NULL</code> operatörü</li>
+</ul>
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span><span class="op">$</span><span class="va">S3</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df2</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">S1</th>
+<th align="right">S2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">58.23695</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="right">63.90657</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">56.70219</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="satır-ekleme" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Satır ekleme<a class="anchor" aria-label="anchor" href="#sat%C4%B1r-ekleme"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Veri setlerine değişken ekleyip, çıkarabileceğiniz gibi gözlem de ekleyip, çıkarabilirsiniz. Veri setine iki satır ekleme</li>
+</ul>
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 20  2</code></pre>
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># eklenecek iki satırlık veri seti oluşturma</span></span>
+<span><span class="va">df3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>S1<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>,<span class="fl">60</span><span class="op">)</span>,S2<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">55.3</span>,<span class="fl">65.5</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># yeni veri seti</span></span>
+<span><span class="va">df4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span> <span class="op">(</span><span class="va">df2</span>,<span class="va">df3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">df4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 22  2</code></pre>
+</div>
+<div id="veri-yapısı-inceleme" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Veri yapısı inceleme<a class="anchor" aria-label="anchor" href="#veri-yap%C4%B1s%C4%B1-inceleme"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Veri setlerinin yapısını incelemek icin <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> fonksiyonundan yararlanılmaktadır.</li>
+</ul>
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 'data.frame':    10 obs. of  4 variables:
+##  $ ad   : chr  "Ali" "Elif" "Su" "Deniz" ...
+##  $ boy  : num  160 165 170 155 167 162 169 158 160 164
+##  $ kilo : num  55 55 57 50 48 65 58 62 45 47
+##  $ beden: Factor w/ 3 levels "L","M","S": 3 2 3 2 3 1 2 1 3 3</code></pre>
+<ul>
+<li><p>"df" veri seti 10 gözlemden, 4 değişken. Her bir değişkenin önünde <code>$</code> operatörü olduğuna dikkat ediniz.</p></li>
+<li><p>veri setinin incelenmek için kullanılabilecek diğer fonksiyon ise <code><a href="https://rdrr.io/r/base/attributes.html">attributes()</a></code></p></li>
+</ul>
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/attributes.html">attributes</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## $names
+## [1] "ad"    "boy"   "kilo"  "beden"
+## 
+## $class
+## [1] "data.frame"
+## 
+## $row.names
+##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div id="isimlendirme" class="section level2" number="6.8">
+<h2>
+<span class="header-section-number">6.8</span> Isimlendirme<a class="anchor" aria-label="anchor" href="#isimlendirme"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Veri setleri vektör birleştirme üzerinden yapılırsa, vektör adları sütun ismi olarak kullanılır. Ancak bu isimler değiştirilebilir. Bu işlem <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> fonksiyonu içinde yapılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>isim <span class="op">=</span> <span class="va">ad</span>,</span>
+<span>                 boyolcum <span class="op">=</span> <span class="va">boy</span>,</span>
+<span>                 kiloolcum<span class="op">=</span> <span class="va">kilo</span>, </span>
+<span>                 bedenolcum<span class="op">=</span><span class="va">beden</span><span class="op">)</span></span>
+<span><span class="va">df</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">isim</th>
+<th align="right">boyolcum</th>
+<th align="right">kiloolcum</th>
+<th align="left">bedenolcum</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ali</td>
+<td align="right">160</td>
+<td align="right">55</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Elif</td>
+<td align="right">165</td>
+<td align="right">55</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Su</td>
+<td align="right">170</td>
+<td align="right">57</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Deniz</td>
+<td align="right">155</td>
+<td align="right">50</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Aras</td>
+<td align="right">167</td>
+<td align="right">48</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Berk</td>
+<td align="right">162</td>
+<td align="right">65</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Can</td>
+<td align="right">169</td>
+<td align="right">58</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="left">Ece</td>
+<td align="right">158</td>
+<td align="right">62</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Efe</td>
+<td align="right">160</td>
+<td align="right">45</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Arda</td>
+<td align="right">164</td>
+<td align="right">47</td>
+<td align="left">S</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>Veri seti isimlendirme de diğer bir yol ise <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> ya da <code><a href="https://rdrr.io/r/base/colnames.html">colnames()</a></code> fonksiyonlarıdır.</li>
+</ul>
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">ad</span>,<span class="va">boy</span>,<span class="va">kilo</span>,<span class="va">beden</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"isim"</span>,<span class="st">"boyolcum "</span>,<span class="st">"kiloolcum"</span>,<span class="st">"bedenolcum"</span><span class="op">)</span></span>
+<span><span class="va">df</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">isim</th>
+<th align="right">boyolcum</th>
+<th align="right">kiloolcum</th>
+<th align="left">bedenolcum</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ali</td>
+<td align="right">160</td>
+<td align="right">55</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Elif</td>
+<td align="right">165</td>
+<td align="right">55</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Su</td>
+<td align="right">170</td>
+<td align="right">57</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Deniz</td>
+<td align="right">155</td>
+<td align="right">50</td>
+<td align="left">M</td>
+</tr>
+<tr class="odd">
+<td align="left">Aras</td>
+<td align="right">167</td>
+<td align="right">48</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Berk</td>
+<td align="right">162</td>
+<td align="right">65</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Can</td>
+<td align="right">169</td>
+<td align="right">58</td>
+<td align="left">M</td>
+</tr>
+<tr class="even">
+<td align="left">Ece</td>
+<td align="right">158</td>
+<td align="right">62</td>
+<td align="left">L</td>
+</tr>
+<tr class="odd">
+<td align="left">Efe</td>
+<td align="right">160</td>
+<td align="right">45</td>
+<td align="left">S</td>
+</tr>
+<tr class="even">
+<td align="left">Arda</td>
+<td align="right">164</td>
+<td align="right">47</td>
+<td align="left">S</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="betimsel-istatistikler" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Betimsel istatistikler<a class="anchor" aria-label="anchor" href="#betimsel-istatistikler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Veri setinin tümüne ilişkin betimsel istatistikler</li>
+</ul>
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<ul>
+<li>Veri setinin tek değişkenine ilişkin betimsel istatistikler</li>
+</ul>
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">$</span><span class="va">speed</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     4.0    12.0    15.0    15.4    19.0    25.0</code></pre>
+<p><code><a href="https://rdrr.io/r/base/attach.html">attach()</a></code> fonksiyonu ile bir veri setinin sütunları sütun isimi ile enviromente eklenir. Aynı işlem <code><a href="https://rdrr.io/r/base/detach.html">detach()</a></code> fonksiyonu ile tersine alınabilir.</p>
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">women</span><span class="op">$</span><span class="va">height</span><span class="op">)</span>   </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">women</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>   <span class="co"># Ayni nesne isimi ile çağırılır.</span></span>
+<span><span class="va">height</span> <span class="op">&lt;-</span> <span class="va">height</span><span class="op">*</span><span class="fl">2.54</span>   <span class="co"># Bunu yapmamaya calisin!!</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/apropos.html">find</a></span><span class="op">(</span><span class="st">"height"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    58.0    61.5    65.0    65.0    68.5    72.0 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    58.0    61.5    65.0    65.0    68.5    72.0 
+## [1] ".GlobalEnv" "women"</code></pre>
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span>         <span class="co"># Yeni değişken</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/detach.html">detach</a></span><span class="op">(</span><span class="st">"women"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">women</span><span class="op">$</span><span class="va">height</span><span class="op">)</span>   <span class="co"># unchanged</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   147.3   156.2   165.1   165.1   174.0   182.9 
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    58.0    61.5    65.0    65.0    68.5    72.0</code></pre>
+<div id="kendinizi-test-edin-1" class="section level3" number="6.9.1">
+<h3>
+<span class="header-section-number">6.9.1</span> Kendinizi Test Edin<a class="anchor" aria-label="anchor" href="#kendinizi-test-edin-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>S1.</strong> Sırayla değişken adları TamSayi, OndalikSayi, Karakter, Mantıksal, Faktör olan 5 değişkenli hiçbir gözlemi olmayan bir data.frame oluşturmanızı ve bu data.framenin yapısını yazdırmanızı bekliyorum. Beklenen çıktı aşağıdaki gibi olmalıdır.</p>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="veri-setleri.html#cb288-1" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Bos data.framenin yapısı:"</span></span>
+<span id="cb288-2"><a href="veri-setleri.html#cb288-2" tabindex="-1"></a><span class="st">'data.frame'</span><span class="sc">:</span>   <span class="dv">0</span> obs. of  <span class="dv">5</span> variables<span class="sc">:</span>  </span>
+<span id="cb288-3"><a href="veri-setleri.html#cb288-3" tabindex="-1"></a> <span class="er">$</span> TamSayi    <span class="sc">:</span> int   </span>
+<span id="cb288-4"><a href="veri-setleri.html#cb288-4" tabindex="-1"></a> <span class="sc">$</span> OndalikSayi<span class="sc">:</span> num  </span>
+<span id="cb288-5"><a href="veri-setleri.html#cb288-5" tabindex="-1"></a> <span class="sc">$</span> Karakter   <span class="sc">:</span> chr  </span>
+<span id="cb288-6"><a href="veri-setleri.html#cb288-6" tabindex="-1"></a> <span class="sc">$</span> Mantiksal  <span class="sc">:</span> logi  </span>
+<span id="cb288-7"><a href="veri-setleri.html#cb288-7" tabindex="-1"></a> <span class="sc">$</span> Faktor     <span class="sc">:</span> Factor w<span class="sc">/</span> <span class="dv">0</span> levels<span class="sc">:</span>  </span>
+<span id="cb288-8"><a href="veri-setleri.html#cb288-8" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p><strong>S2.</strong> Aşağıda size verilen dört vektörden bir veri seti oluşturunuz. Oluşturduğunuz veri setinin deneme sütunundaki eksik veri sayısını hesaplayan komut yazınız.</p>
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ad</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Su'</span>,<span class="st">'Pera'</span>,<span class="st">'Sule'</span>,<span class="st">'Can'</span>,<span class="st">'Cem'</span>,<span class="st">'Name'</span>,<span class="st">'Aras'</span>,<span class="st">'Mete'</span>,<span class="st">'Kaan'</span>,<span class="st">'Pelin'</span><span class="op">)</span></span>
+<span><span class="va">puan</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12.5</span>, <span class="fl">9</span>, <span class="fl">16.5</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">20</span>, <span class="fl">14.5</span>, <span class="fl">13.5</span>, <span class="fl">8</span>, <span class="fl">19</span><span class="op">)</span></span>
+<span><span class="va">deneme</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="cn">NA</span>, <span class="fl">2</span>, <span class="cn">NA</span>, <span class="fl">2</span>, <span class="cn">NA</span>, <span class="fl">1</span>, <span class="cn">NA</span>, <span class="fl">2</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">bonus</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span>,<span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p>"Deneme sütunundaki NA sayısı:"
+[1] 4</p>
+</div>
+</div>
+<div id="odev-1" class="section level2" number="6.10">
+<h2>
+<span class="header-section-number">6.10</span> Odev<a class="anchor" aria-label="anchor" href="#odev-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Lütfen aşağıdaki bölümleri haftaya kadar okuyunuz.</p>
+<ul>
+<li><p><a href="http://adv-r.had.co.nz/Data-structures.html" class="uri">http://adv-r.had.co.nz/Data-structures.html</a></p></li>
+<li><p><a href="http://adv-r.had.co.nz/Subsetting.html" class="uri">http://adv-r.had.co.nz/Subsetting.html</a></p></li>
+<li><p>Veri düzenleme konusunda 🔗 <a href="https://dillonhammill.github.io/DataEditR/"><strong>DataEditR</strong></a> paketini inceleyiniz.</p></li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></div>
+<div class="next"><a href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-setleri"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="nav-link" href="#haz%C4%B1r-veri-setleri"><span class="header-section-number">6.1</span> Hazır Veri Setleri</a></li>
+<li><a class="nav-link" href="#inceleme"><span class="header-section-number">6.2</span> İnceleme</a></li>
+<li><a class="nav-link" href="#elaman-se%C3%A7me"><span class="header-section-number">6.3</span> Elaman Seçme</a></li>
+<li><a class="nav-link" href="#eleman-ekleme"><span class="header-section-number">6.4</span> Eleman ekleme</a></li>
+<li><a class="nav-link" href="#eleman-%C3%A7%C4%B1karma"><span class="header-section-number">6.5</span> Eleman çıkarma</a></li>
+<li><a class="nav-link" href="#sat%C4%B1r-ekleme"><span class="header-section-number">6.6</span> Satır ekleme</a></li>
+<li><a class="nav-link" href="#veri-yap%C4%B1s%C4%B1-inceleme"><span class="header-section-number">6.7</span> Veri yapısı inceleme</a></li>
+<li><a class="nav-link" href="#isimlendirme"><span class="header-section-number">6.8</span> Isimlendirme</a></li>
+<li>
+<a class="nav-link" href="#betimsel-istatistikler"><span class="header-section-number">6.9</span> Betimsel istatistikler</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#kendinizi-test-edin-1"><span class="header-section-number">6.9.1</span> Kendinizi Test Edin</a></li></ul>
+</li>
+<li><a class="nav-link" href="#odev-1"><span class="header-section-number">6.10</span> Odev</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/06-veriseti.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/06-veriseti.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

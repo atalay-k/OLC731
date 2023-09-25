@@ -1,0 +1,515 @@
+# Veri duzenleme - I
+
+
+```{r  include=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(dplyr)
+library(tuev)
+library(emo)
+
+# devtools::install_github("tuevpaket/tuev")
+library("tuev")
+```
+
+## dplyr paket tanıtımı 
+
+-   Veri düzenlemede en sık kullanılan paketlerden biri **dplyr** paketidir.
+
+-   Veri manipulasyonunun `grammeri` paketin tanıtımında kullanılmıştır. 
+  
+-  Paketin en sık kullanılan fonksiyonları ise
+
+    - `select():`   istenilen değişkenlere gore yeni bir veri seti oluşturma
+    
+    - `mutate():`   yeni degişkenlerin veri setine eklenmesi
+    <br>
+    
+    - `filter():`   istenilen gözlemlerle yeni bir veri oluşturma
+    
+    - `arrange():`  gözlemlerin seçilen degişkenlere göre yeniden sıralanması
+    
+    - `group_by():`  veride grup bazinda işlem yapma
+    
+    - `summarise():` veriden özet istatisikleri elde etme
+    
+    - `baglama (pipe)` `%>%` - işlemleri bağlama
+    
+    - `join()` - veri birleştirme
+
+
+## Paket vignetteleri `r emo::ji("stats")`
+
+- `r emo::ji('link')` [From base R to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/base.html)
+
+-  `r emo::ji('link')` [colwise](https://cran.r-project.org/web/packages/dplyr/vignettes/colwise.html)
+
+- `r emo::ji('link')` [dplyr compatibility](https://cran.r-project.org/web/packages/dplyr/vignettes/compatibility.html)
+
+- `r emo::ji('link')` [Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+
+- `r emo::ji('link')` [Grouped data](https://cran.r-project.org/web/packages/dplyr/vignettes/grouping.html)
+
+- `r emo::ji('link')` [Programming with dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html)
+
+- `r emo::ji('link')` [rowwise](https://cran.r-project.org/web/packages/dplyr/vignettes/rowwise.html)
+
+- `r emo::ji('link')`  [Two-table verbs](https://cran.r-project.org/web/packages/dplyr/vignettes/two-table.html)
+
+- `r emo::ji('link')`  [Window functions](https://cran.r-project.org/web/packages/dplyr/vignettes/window-functions.html)
+
+
+- `r emo::ji('link')` paketin cran sayfası  [link](https://cran.r-project.org/web/packages/dplyr/index.html)
+
+-  `r emo::ji('link')` paketin indirilme  istatistikleri [link](https://ipub.com/dev-corner/apps/r-package-downloads/)
+
+
+## Uluslararası Eğitim Araştırmaları
+
+### PISA
+
+- Program for International Student Assessment-PISA (Uluslararası Öğrenci Değerlendirme Programı)
+
+- 15 yaş grubundaki öğrencilerin matematik, fen ve okuma
+becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.
+
+- Ekonomik İşbirliği ve Kalkınma Örgütü (OECD) tarafından düzenlenir.
+
+
+
+### TIMSS
+
+- Trends in International Mathematics and Science Study (Uluslararası Matematik ve Fen Eğilimleri Araştırması)
+
+- Öğrencilerin matematik ve fen alanlarında kazandıkları bilgi ve becerilerin değerlendirilmesine yönelik bir tarama araştırmasıdır. 
+
+- Uluslararası Eğitim Başarılarını Değerlendirme Kuruluşu'nun bir projesidir.
+
+
+## Veri Setleri
+
+- `r emo::ji('link')` [PISA database](https://www.oecd.org/pisa/data/) <br>
+
+
+- `r emo::ji('link')` [TIMSS 2019 database](https://timss2019.org/international-database/) 
+
+- `r emo::ji('link')` [TIMSS 2015 database](https://timssandpirls.bc.edu/timss2015/international-database/) 
+- `r emo::ji('link')` [TIMSS 2015 database](https://timssandpirls.bc.edu/timss2011/international-database.html)
+
+## Uluslararası Sınavlarla İlgili R paketleri
+
+### **instvy** paketi: International Assessment Data Manager 
+- **intsvy** paketi (Caro ve Biecek, 2017) TIMSS, PIRLS, PISA ve ICILS gibi uluslararası değerlendirme çalışmalarının verilerini aktarma, birleştirme ve analiz etme amacıyla geliştirilmiştir. 
+
+- **intsvy** paketindeki **pisa.select.merge()** fonksiyonuyla aşağıdaki komutlar kullanılarak istenilen ülke/ülkelerin istenilen değişkenlerine ilişkin veri seti oluşturulabilir.
+
+- İlgili fonksiyon bir SPSS dosyası okuduğu için **.sav** uzantılı dosyaların okunmasında kullanılan **foreign**  paketi  sistemde yüklü olmalıdır. 
+
+
+- Türkiye öğrenci anketi veri dosyasında yer alan sekiz ve Türkiye okul anketi veri dosyasında yer alan üç değişken seçilerek ve “pisa2015” nesnesi oluşturmuştur.
+
+```{r eval=FALSE}
+library("intsvy")
+library("foreign")
+pisa2015 <- pisa.select.merge(folder="F:\\PISA", # folder=getwd()
+student.file="CY6_MS_CMB_STU_QQQ.sav",
+school.file="CY6_MS_CMB_SCH_QQQ.sav",
+student=c("ST001D01T","ST004D01T","STRATUM","MISCED","FISCED","IMMIG","LANGN","ESCS",)
+school=c("SCHSIZE","CLSIZE","STRATIO"),
+  countries=c("TUR"))
+```
+
+Komutların çalısması uzun zaman alabilir. Büyük dosyaların okunması sırasında, dosya büyüklüğüne ve bilgisayar özelliklerine bağlı olarak, mevcut  **bellek (memory)** hata mesajı alınabilir.
+
+### **EdSurvey** paketi
+
+- PISA, TALIS, PIAAC, TIMSS, PIRLS, ICILS gibi sınavların veri setlerini indirmede, karmaşık veri setlerini **olası puanları** dikkate alarak analiz etmede kullanılan bir pakettir. 
+
+```{r eval=FALSE}
+library(EdSurvey)
+```
+
+- Örnek olarak aşağıda yer alan kod 2012 yılı PISA veri setini, bilgisayarınızda istediğiniz yere indirecektir.
+
+```{r  eval=FALSE}
+downloadPISA(years = 2012, database = c("INT"), root=getwd())
+
+```
+
+- bu işlem de bilgisayar özelliklerine bağlı da olsa **zaman alan** bir işlemdir.
+
+
+- Aşağıdaki kod sgp olarak kodlu olan Singapur ülkesine ilişkin verileri çeker.
+ 
+```{r eval =FALSE }
+sgp2012 <- readPISA(path = "sunum/PISA/2012", database = "INT", countries = "sgp")
+```
+
+- bu işlem de bilgisayar özelliklerine bağlı da olsa zaman alan bir işlemdir.
+
+- Bu tarz uzun süren işlemleri tekrarlamamak için, oluşan veriyi daha sonra R  ortamına kolayca aktarmak için **saveRDS()** fonkisyonu ile **.Rds**, **save()** ile **.Rdata** bir dosyaya kaydedebilirsiniz.
+
+- Oluşan dosya tekrar R ortamına **readRDS()** ya da **load()** fonksiyonu ile aktarılabilir.
+
+- Oluşan sgp2012 verisinden istediğiniz sütunları **getData()** fonksiyonu ile seçebilirsiniz.
+
+```{r eval =FALSE}
+# okuma ve agirlandirma degiskenlerini gg nesnesine atama
+gg <- EdSurvey::getData(sgp2012, c("cnt","read","w_fstuwt"))  
+head(gg)
+```
+
+```{r eval =FALSE}
+edsurveyTable(read ~ st04q01 + st20q01, data = sgp2012)
+
+```
+
+
+### RALSA
+
+- `r emo::ji('link')` [RALSA](http://ralsa.ineri.org/user-guide/)
+
+- The R Analyzer for Large-Scale Assessments (RALSA)
+```{r eval=FALSE}
+library(RALSA)
+```
+
+
+## Olası Değer
+
+- 450 kişilik bir grupta 150 kadın 300 erkek olduğu bir evrenden 60 kişinin oluşturduğu bir örneklemin rastgele seçildiğini düşünelim.
+
+- Bu seçim sonucu 30 kadın 30 erkek seçilmiş olsun. 
+
+- Evrende erkekler kadınlardan daha çok temsil edilirken örneklemde eşit temsil edilmektedirler. 
+
+- Kadınların örnekleme seçilme olasılığı = 30/150=0.2
+- Erkeklerin örnekleme seçilme olasılığı = 30/300=0.1
+
+-  örnekleme ilişkin ölçümler
+```{r}
+set.seed(41)
+kadin <- sample(50:90,30)
+erkek <- sample(30:70,30)
+
+kadin
+
+```
+
+```{r}
+erkek
+```
+
+
+```{r}
+mean(kadin)
+```
+
+```{r}
+mean(erkek)
+```
+
+- örneklem ağırlıklandırılması **kullanılmadan** ortalama
+```{r}
+(sum(kadin)+sum(erkek))/60
+```
+
+- örneklem ağırlıklandırılması **kullanılarak** ortalama
+```{r}
+(sum(kadin)*(1/0.2) + sum(erkek)*(1/0.1))/450
+```
+
+
+## Türkiye Veri Setleri
+
+- Türkiye Uluslararası Eğitim Verisi **(tuev)** geniş kapsamlı uluslararası başarı değerlendirme programlarından **PISA** ve **TIMSS** Türkiye verilerini depolayan bir R kütüphanesidir. 
+
+- Bu eğitimde 
+  - **PISA 2018** (OECD, 2019) <br>      
+  - **TIMSS 2019** (Mullis, Martin, Foy, Kelly, & Fishbein; 2020) <br>  
+veri setleri kullanılacaktır. 
+
+
+
+## **tuev** paketin yüklenmesi
+
+
+- githubdan paket yükleyebilmek için yüklenmesi gereken paket `r emo::ji("package")` <br>
+```{r eval=FALSE}
+install.packages("devtools")
+# devtools paketinin etkinleştirilmesi
+library(devtools)
+```
+
+- tuev paketinin yüklenmesi `r emo::ji("package")` <br>
+```{r eval=FALSE}
+devtools::install_github("tuevpaket/tuev")
+#paketin etkinleştirilmesi
+library(tuev)
+```
+
+-
+
+## PISA 2018 Verisi
+
+- bilissel veri seti
+```{r}
+load("import/PISA_COG_2018.rda")
+```
+- ogrenci veri seti
+```{r}
+load("import/PISA_STU_2018.rda") # ogrenci verisi
+```
+- okul veri seti
+```{r}
+load("import/PISA_SCH_2018.rda") # okul verisi
+```
+
+
+## pipe **%>%**
+
+- **dplyr()** paketindeki tüm fonksiyonlar daha az değişken oluşturmak amacıyla pipe operatorü **%>%** ile kullanılabilir.
+
+- **%>%** operatorü sık kullanılan bir operatördür.
+- kısa yolu: **Ctrl+Shift+M**
+- kısa yolu(mac) :**Cmd + Shift + M**
+
+
+- **%>%** operatorün yer aldığı paket ise **magrittr**
+
+```{r message=FALSE, warning=FALSE}
+library(magrittr)
+```
+
+
+- **%>%** solundaki nesneye sağındaki fonksiyonu uygular.
+```{r eval=FALSE}
+x %>% f(y) = f(x, y)
+```
+
+- **%>%**  `r emo::ji("point_right")`<br>
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+library(gapminder)
+gapminder %>%
+  filter(country == "Canada") %>%
+  head(2)
+```
+
+  - bizi fazla yazmaktan kurtarır.
+  - kodu okunabilir kılar.
+  - zincirlemeye/bağlamaya izin verir.
+  - Veri düzenleme işlerinde her zaman kullanışlıdır.
+
+
+
+
+
+- pipe, her bir fonksiyonu ayrı bir satırda bulundurduğunuzda en net şekilde okunur.
+
+```{r eval=FALSE}
+veri %>%
+  ilk_fonksiyon(.....) %>%
+  ikinci_fonksiyon(.....) %>%
+  ucuncu_fonksiyon(.....) %>% ...
+
+```
+
+
+- pipenin solundaki öğeler, sağdaki fonksiyonun ilk argümanına iletilir.
+
+- Fonksiyon ilk argümanı olan veriyi pipenin **solundan** alır, kalan argümanlar fonksiyonun **sağındadır.**
+
+
+
+
+- Bazı fonksiyonların, ilk argümanı veri seti olmayabilir. Bu durumda veri seti argüman değeri  **.**  olarak kullanılabilir.
+
+- Veri seti regresyon modelinde ilk argüman değildir.
+
+
+```{r eval=FALSE}
+
+veri %>% lm(degisken1 ~ degisken2, data= .)
+
+```
+
+
+
+
+- pipe kullanımı ile oluşan çıktıdan yeni bir nesne oluşturmak istiyorsanız, atama operatorü **<-**
+kullanmalısınız `r emo::ji("link")`.
+
+```{r eval=FALSE}
+
+yeninesne <- veri %>% lm(degisken1 ~ degisken2, data= .)
+
+```
+
+Bağlama işlemleri ne kadar uzun olursa olsun **<-** operatorü en başta olmalıdır.
+
+
+
+
+- Veri setlerinde yapı incelemek için **glimpse()**, **str()** gibi fonksiyonlar kullanılabilir.
+
+```{r eval=FALSE}
+glimpse(PISA_COG_2018)
+```
+
+
+- Veri setlerinde yapı incelemek için **glimpse()**, **str()** gibi fonksiyonlar kullanılabilir.
+
+```{r eval=FALSE}
+glimpse(PISA_STU_2018)
+```
+
+
+```{r eval=FALSE}
+glimpse(PISA_SCH_2018)
+```
+
+
+## **select()**
+
+- Veri setinden sütun bazında seçim yapmak için **select()** fonksiyonu kullanılabilir.
+
+- **select()** fonksiyonu kullanımı
+```{r eval=FALSE}
+select(veri_seti, degisken_adi, degisken_adi,..)
+```
+
+- **select()** fonksiyonunun pipe ile kullanımı
+```{r eval=FALSE}
+veri_seti %>% select(degisken_adi, degisken_adi,..)
+```
+
+
+-  6890 satır 1119 sütunlu veri seti
+PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.
+
+```{r}
+PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS) %>%
+head(6)
+```
+
+## **arrange()**
+
+- **arrange()** veri setini satırlara göre tekrar sıralar.
+- Bu sıralamayı alfabetik yapar.
+
+- **arrange()** fonksiyonu kullanımı
+```{r eval=FALSE}
+arrange(veri_seti, degisken_adi) %>% head(3)
+```
+
+- **arrange()** fonksiyonunun pipe ile kullanımı
+
+```{r eval=FALSE}
+veri_seti %>% arrange(degisken_adi)
+```
+
+- Veri setinden dört değişken seçip yeni bir veri setine atama
+
+```{r}
+
+df1 <- PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS)
+
+```
+
+- Yeni oluşan df1 veri setini ESCS (sosyaekonomik düzey) puanlarına göre sıralama
+
+```{r}
+arrange(df1,ESCS) %>% head(6)
+```
+
+
+- **desc()** fonksiyonu ile sıralama büyükten küçüğe de yapılabilir.
+
+```{r}
+arrange(df1,desc(ESCS)) %>% head(6)
+
+```
+
+
+- Yaptığımız işlemleri pipe operatoru ile bağlayabilirsiniz.
+
+```{r}
+PISA_STU_2018 %>%
+  select(CNTSTUID,ST001D01T,ST004D01T,ESCS) %>%
+  arrange(ESCS) %>%
+  head(6)
+```
+
+## **filter()**
+
+- Satır bazında veri seçim işlemi yapmak amacıyla kullanılır.
+
+- **filter()** fonksiyonu kullanımı
+```{r eval=FALSE}
+filter(veri_seti, kosul ve/veya kosullar)
+```
+
+- **filter()** fonksiyonunun pipe ile kullanımı
+```{r eval=FALSE}
+veri_seti %>% filter(kosul ve/veya kosullar)
+```
+
+
+
+- **filter()** fonksiyonunu **mantıksal operatorler** kullanarak satır bazında seçim yapar.
+
+- **mantıksal operatorler** koşulları test eder.
+
+```{r}
+x <- 1
+x==1
+```
+
+```{r}
+x <- 1
+x!=1
+```
+
+- TRUE, FALSE ve NA değerleri alırlar.
+- **filter()** fonksiyonunu ise koşulun sağlandığı satırları seçer.
+
+  - **==**         : eşittir.
+  - **!= **        : eşit değildir.
+  - **>,>=,<,<= ** : büyüktür, büyük eşittir,....
+  - **%in%**       : bir ya da birden fazla değerin varlığını kontrol eder.
+
+- Mantıksal Operatörlerin kombinasyonları da kullanılabilir.
+  - **&**: ve
+  - **|**: ve ya
+  - **!**: değil
+
+
+
+- PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
+
+```{r}
+PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
+```
+
+
+
+- PISA verisinde anne eğitim düzeyi **ve** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
+
+```{r}
+PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
+
+```
+
+
+- PISA verisinde anne eğitim düzeyi **ve ya** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
+
+```{r}
+PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
+
+```
+
+
+

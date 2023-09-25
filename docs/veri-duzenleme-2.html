@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Veri duzenleme | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="10.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Veri duzenleme | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme-2.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="10.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Veri duzenleme | OLC731">
+<meta name="twitter:description" content="10.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme.html"><span class="header-section-number">8</span> Veri duzenleme</a></li>
+<li><a class="" href="veri-duzenleme-1.html"><span class="header-section-number">9</span> Veri duzenleme</a></li>
+<li><a class="active" href="veri-duzenleme-2.html"><span class="header-section-number">10</span> Veri duzenleme</a></li>
+<li><a class="" href="veri-duzenleme-3.html"><span class="header-section-number">11</span> Veri duzenleme</a></li>
+<li><a class="" href="veri-duzenleme-4.html"><span class="header-section-number">12</span> Veri duzenleme</a></li>
+<li><a class="" href="veri-duzenleme-5.html"><span class="header-section-number">13</span> Veri duzenleme</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme-2" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Veri duzenleme<a class="anchor" aria-label="anchor" href="#veri-duzenleme-2"><i class="fas fa-link"></i></a>
+</h1>
+<div id="dplyr-paket-tanıtımı-1" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> dplyr paket tanıtımı<a class="anchor" aria-label="anchor" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Veri düzenlemede en sık kullanılan paketlerden biri <strong>dplyr</strong> paketidir.</p></li>
+<li><p>Veri manipulasyonunun <code>grammeri</code> paketin tanıtımında kullanılmıştır.</p></li>
+<li>
+<p>Paketin en sık kullanılan fonksiyonları ise</p>
+<ul>
+<li><p><code>select():</code> istenilen değişkenlere gore yeni bir veri seti oluşturma</p></li>
+<li><p><code>mutate():</code> yeni degişkenlerin veri setine eklenmesi
+<br></p></li>
+<li><p><code>filter():</code> istenilen gözlemlerle yeni bir veri oluşturma</p></li>
+<li><p><code>arrange():</code> gözlemlerin seçilen degişkenlere göre yeniden sıralanması</p></li>
+<li><p><code>group_by():</code> veride grup bazinda işlem yapma</p></li>
+<li><p><code>summarise():</code> veriden özet istatisikleri elde etme</p></li>
+<li><p><code>baglama (pipe)</code> <code>%&gt;%</code> - işlemleri bağlama</p></li>
+<li><p><code>join()</code> - veri birleştirme</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="paket-vignetteleri-1" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Paket vignetteleri 📊<a class="anchor" aria-label="anchor" href="#paket-vignetteleri-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/base.html">From base R to dplyr</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/colwise.html">colwise</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/compatibility.html">dplyr compatibility</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html">Introduction to dplyr</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/grouping.html">Grouped data</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html">Programming with dplyr</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/rowwise.html">rowwise</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/two-table.html">Two-table verbs</a></p></li>
+<li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/window-functions.html">Window functions</a></p></li>
+<li><p>🔗 paketin cran sayfası <a href="https://cran.r-project.org/web/packages/dplyr/index.html">link</a></p></li>
+<li><p>🔗 paketin indirilme istatistikleri <a href="https://ipub.com/dev-corner/apps/r-package-downloads/">link</a></p></li>
+</ul>
+</div>
+<div id="uluslararası-eğitim-araştırmaları-1" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Uluslararası Eğitim Araştırmaları<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="pisa-1" class="section level3" number="10.3.1">
+<h3>
+<span class="header-section-number">10.3.1</span> PISA<a class="anchor" aria-label="anchor" href="#pisa-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Program for International Student Assessment-PISA (Uluslararası Öğrenci Değerlendirme Programı)</p></li>
+<li><p>15 yaş grubundaki öğrencilerin matematik, fen ve okuma
+becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
+<li><p>Ekonomik İşbirliği ve Kalkınma Örgütü (OECD) tarafından düzenlenir.</p></li>
+</ul>
+</div>
+<div id="timss-1" class="section level3" number="10.3.2">
+<h3>
+<span class="header-section-number">10.3.2</span> TIMSS<a class="anchor" aria-label="anchor" href="#timss-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Trends in International Mathematics and Science Study (Uluslararası Matematik ve Fen Eğilimleri Araştırması)</p></li>
+<li><p>Öğrencilerin matematik ve fen alanlarında kazandıkları bilgi ve becerilerin değerlendirilmesine yönelik bir tarama araştırmasıdır.</p></li>
+<li><p>Uluslararası Eğitim Başarılarını Değerlendirme Kuruluşu'nun bir projesidir.</p></li>
+</ul>
+</div>
+</div>
+<div id="veri-setleri-2" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> Veri Setleri<a class="anchor" aria-label="anchor" href="#veri-setleri-2"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>🔗 <a href="https://www.oecd.org/pisa/data/">PISA database</a> <br></p></li>
+<li><p>🔗 <a href="https://timss2019.org/international-database/">TIMSS 2019 database</a></p></li>
+<li><p>🔗 <a href="https://timssandpirls.bc.edu/timss2015/international-database/">TIMSS 2015 database</a></p></li>
+<li><p>🔗 <a href="https://timssandpirls.bc.edu/timss2011/international-database.html">TIMSS 2015 database</a></p></li>
+</ul>
+</div>
+<div id="uluslararası-sınavlarla-ilgili-r-paketleri-1" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> Uluslararası Sınavlarla İlgili R paketleri<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="instvy-paketi-international-assessment-data-manager-1" class="section level3" number="10.5.1">
+<h3>
+<span class="header-section-number">10.5.1</span> <strong>instvy</strong> paketi: International Assessment Data Manager<a class="anchor" aria-label="anchor" href="#instvy-paketi-international-assessment-data-manager-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p><strong>intsvy</strong> paketi (Caro ve Biecek, 2017) TIMSS, PIRLS, PISA ve ICILS gibi uluslararası değerlendirme çalışmalarının verilerini aktarma, birleştirme ve analiz etme amacıyla geliştirilmiştir.</p></li>
+<li><p><strong>intsvy</strong> paketindeki <strong>pisa.select.merge()</strong> fonksiyonuyla aşağıdaki komutlar kullanılarak istenilen ülke/ülkelerin istenilen değişkenlerine ilişkin veri seti oluşturulabilir.</p></li>
+<li><p>İlgili fonksiyon bir SPSS dosyası okuduğu için <strong>.sav</strong> uzantılı dosyaların okunmasında kullanılan <strong>foreign</strong> paketi sistemde yüklü olmalıdır.</p></li>
+<li><p>Türkiye öğrenci anketi veri dosyasında yer alan sekiz ve Türkiye okul anketi veri dosyasında yer alan üç değişken seçilerek ve “pisa2015” nesnesi oluşturmuştur.</p></li>
+</ul>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="veri-duzenleme-2.html#cb376-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"intsvy"</span>)</span>
+<span id="cb376-2"><a href="veri-duzenleme-2.html#cb376-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"foreign"</span>)</span>
+<span id="cb376-3"><a href="veri-duzenleme-2.html#cb376-3" tabindex="-1"></a>pisa2015 <span class="ot">&lt;-</span> <span class="fu">pisa.select.merge</span>(<span class="at">folder=</span><span class="st">"F:</span><span class="sc">\\</span><span class="st">PISA"</span>, <span class="co"># folder=getwd()</span></span>
+<span id="cb376-4"><a href="veri-duzenleme-2.html#cb376-4" tabindex="-1"></a><span class="at">student.file=</span><span class="st">"CY6_MS_CMB_STU_QQQ.sav"</span>,</span>
+<span id="cb376-5"><a href="veri-duzenleme-2.html#cb376-5" tabindex="-1"></a><span class="at">school.file=</span><span class="st">"CY6_MS_CMB_SCH_QQQ.sav"</span>,</span>
+<span id="cb376-6"><a href="veri-duzenleme-2.html#cb376-6" tabindex="-1"></a><span class="at">student=</span><span class="fu">c</span>(<span class="st">"ST001D01T"</span>,<span class="st">"ST004D01T"</span>,<span class="st">"STRATUM"</span>,<span class="st">"MISCED"</span>,<span class="st">"FISCED"</span>,<span class="st">"IMMIG"</span>,<span class="st">"LANGN"</span>,<span class="st">"ESCS"</span>,)</span>
+<span id="cb376-7"><a href="veri-duzenleme-2.html#cb376-7" tabindex="-1"></a><span class="at">school=</span><span class="fu">c</span>(<span class="st">"SCHSIZE"</span>,<span class="st">"CLSIZE"</span>,<span class="st">"STRATIO"</span>),</span>
+<span id="cb376-8"><a href="veri-duzenleme-2.html#cb376-8" tabindex="-1"></a>  <span class="at">countries=</span><span class="fu">c</span>(<span class="st">"TUR"</span>))</span></code></pre></div>
+<p>Komutların çalısması uzun zaman alabilir. Büyük dosyaların okunması sırasında, dosya büyüklüğüne ve bilgisayar özelliklerine bağlı olarak, mevcut <strong>bellek (memory)</strong> hata mesajı alınabilir.</p>
+</div>
+<div id="edsurvey-paketi-1" class="section level3" number="10.5.2">
+<h3>
+<span class="header-section-number">10.5.2</span> <strong>EdSurvey</strong> paketi<a class="anchor" aria-label="anchor" href="#edsurvey-paketi-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>PISA, TALIS, PIAAC, TIMSS, PIRLS, ICILS gibi sınavların veri setlerini indirmede, karmaşık veri setlerini <strong>olası puanları</strong> dikkate alarak analiz etmede kullanılan bir pakettir.</li>
+</ul>
+<div class="sourceCode" id="cb377"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.air.org/project/nces-data-r-project-edsurvey">EdSurvey</a></span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Örnek olarak aşağıda yer alan kod 2012 yılı PISA veri setini, bilgisayarınızda istediğiniz yere indirecektir.</li>
+</ul>
+<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">downloadPISA</span><span class="op">(</span>years <span class="op">=</span> <span class="fl">2012</span>, database <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"INT"</span><span class="op">)</span>, root<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa <strong>zaman alan</strong> bir işlemdir.</p></li>
+<li><p>Aşağıdaki kod sgp olarak kodlu olan Singapur ülkesine ilişkin verileri çeker.</p></li>
+</ul>
+<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sgp2012</span> <span class="op">&lt;-</span> <span class="fu">readPISA</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"sunum/PISA/2012"</span>, database <span class="op">=</span> <span class="st">"INT"</span>, countries <span class="op">=</span> <span class="st">"sgp"</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa zaman alan bir işlemdir.</p></li>
+<li><p>Bu tarz uzun süren işlemleri tekrarlamamak için, oluşan veriyi daha sonra R ortamına kolayca aktarmak için <strong>saveRDS()</strong> fonkisyonu ile <strong>.Rds</strong>, <strong>save()</strong> ile <strong>.Rdata</strong> bir dosyaya kaydedebilirsiniz.</p></li>
+<li><p>Oluşan dosya tekrar R ortamına <strong>readRDS()</strong> ya da <strong>load()</strong> fonksiyonu ile aktarılabilir.</p></li>
+<li><p>Oluşan sgp2012 verisinden istediğiniz sütunları <strong>getData()</strong> fonksiyonu ile seçebilirsiniz.</p></li>
+</ul>
+<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># okuma ve agirlandirma degiskenlerini gg nesnesine atama</span></span>
+<span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu">EdSurvey</span><span class="fu">::</span><span class="fu">getData</span><span class="op">(</span><span class="va">sgp2012</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cnt"</span>,<span class="st">"read"</span>,<span class="st">"w_fstuwt"</span><span class="op">)</span><span class="op">)</span>  </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gg</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">edsurveyTable</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">st04q01</span> <span class="op">+</span> <span class="va">st20q01</span>, data <span class="op">=</span> <span class="va">sgp2012</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="ralsa-1" class="section level3" number="10.5.3">
+<h3>
+<span class="header-section-number">10.5.3</span> RALSA<a class="anchor" aria-label="anchor" href="#ralsa-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>🔗 <a href="http://ralsa.ineri.org/user-guide/">RALSA</a></p></li>
+<li><p>The R Analyzer for Large-Scale Assessments (RALSA)</p></li>
+</ul>
+<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ralsa.ineri.org/">RALSA</a></span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="olası-değer-1" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> Olası Değer<a class="anchor" aria-label="anchor" href="#olas%C4%B1-de%C4%9Fer-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>450 kişilik bir grupta 150 kadın 300 erkek olduğu bir evrenden 60 kişinin oluşturduğu bir örneklemin rastgele seçildiğini düşünelim.</p></li>
+<li><p>Bu seçim sonucu 30 kadın 30 erkek seçilmiş olsun.</p></li>
+<li><p>Evrende erkekler kadınlardan daha çok temsil edilirken örneklemde eşit temsil edilmektedirler.</p></li>
+<li><p>Kadınların örnekleme seçilme olasılığı = 30/150=0.2</p></li>
+<li><p>Erkeklerin örnekleme seçilme olasılığı = 30/300=0.1</p></li>
+<li><p>örnekleme ilişkin ölçümler</p></li>
+</ul>
+<div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
+<span><span class="va">kadin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">50</span><span class="op">:</span><span class="fl">90</span>,<span class="fl">30</span><span class="op">)</span></span>
+<span><span class="va">erkek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">70</span>,<span class="fl">30</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">kadin</span></span></code></pre></div>
+<pre><code>##  [1] 89 84 54 81 57 78 55 71 80 62 87 67 70 83 82 61 66 53 50 69 79 64 85 51 73
+## [26] 74 88 52 72 90</code></pre>
+<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">erkek</span></span></code></pre></div>
+<pre><code>##  [1] 45 56 57 39 37 42 47 50 68 49 62 63 58 69 31 59 52 64 65 66 55 48 30 33 46
+## [26] 53 51 67 40 41</code></pre>
+<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 70.9</code></pre>
+<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 51.43333</code></pre>
+<ul>
+<li>örneklem ağırlıklandırılması <strong>kullanılmadan</strong> ortalama</li>
+</ul>
+<div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">60</span></span></code></pre></div>
+<pre><code>## [1] 61.16667</code></pre>
+<ul>
+<li>örneklem ağırlıklandırılması <strong>kullanılarak</strong> ortalama</li>
+</ul>
+<div class="sourceCode" id="cb393"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">0.1</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">450</span></span></code></pre></div>
+<pre><code>## [1] 57.92222</code></pre>
+</div>
+<div id="türkiye-veri-setleri-1" class="section level2" number="10.7">
+<h2>
+<span class="header-section-number">10.7</span> Türkiye Veri Setleri<a class="anchor" aria-label="anchor" href="#t%C3%BCrkiye-veri-setleri-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Türkiye Uluslararası Eğitim Verisi <strong>(tuev)</strong> geniş kapsamlı uluslararası başarı değerlendirme programlarından <strong>PISA</strong> ve <strong>TIMSS</strong> Türkiye verilerini depolayan bir R kütüphanesidir.</p></li>
+<li>
+<p>Bu eğitimde</p>
+<ul>
+<li>
+<strong>PISA 2018</strong> (OECD, 2019) <br><br>
+</li>
+<li>
+<strong>TIMSS 2019</strong> (Mullis, Martin, Foy, Kelly, &amp; Fishbein; 2020) <br><br>
+veri setleri kullanılacaktır.</li>
+</ul>
+</li>
+</ul>
+<!-- - --><!-- ## **tuev** paketin yüklenmesi --><!-- - githubdan paket yükleyebilmek için yüklenmesi gereken paket 📦 <br> --><!-- ```{r eval=FALSE} --><!-- install.packages("devtools") --><!-- # devtools paketinin etkinleştirilmesi --><!-- library(devtools) --><!-- ``` --><!-- - tuev paketinin yüklenmesi 📦 <br> --><!-- ```{r eval=FALSE} --><!-- devtools::install_github("tuevpaket/tuev") --><!-- #paketin etkinleştirilmesi --><!-- library(tuev) --><!-- ``` --><!-- - --><!-- ## PISA 2018 Verisi --><!-- - bilissel veri seti --><!-- ```{r} --><!-- data(PISA_COG_2018)  --><!-- ``` --><!-- - ogrenci veri seti --><!-- ```{r} --><!-- data(PISA_STU_2018) # ogrenci verisi --><!-- ``` --><!-- - okul veri seti --><!-- ```{r} --><!-- data(PISA_SCH_2018) # okul verisi --><!-- ``` --><!-- - --><!-- ## İlk önce pipe **%>%** --><!-- - **dplyr()** paketindeki tüm fonksiyonlar daha az değişken oluşturmak amacıyla pipe operatorü **%>%** ile kullanılabilir. --><!-- - **%>%** operatorü sık kullanılan bir operatördür. --><!-- - kısa yolu: **Ctrl+Shift+M** --><!-- - kısa yolu(mac) :**Cmd + Shift + M** --><!-- - **%>%** operatorün yer aldığı paket ise **magrittr**  --><!-- ```{r message=FALSE, warning=FALSE} --><!-- library(magrittr) --><!-- ``` --><!-- - --><!-- ## İlk önce pipe %>% --><!-- .pull-left-narrow[ --><!-- - **%>%** solundaki nesneye sağındaki fonksiyonu uygular. --><!-- ```{r eval=FALSE} --><!-- x %>% f(y) = f(x, y) --><!-- ``` --><!-- - **%>%**  👉<br>   --><!-- ] --><!-- .pull-right-wide[ --><!-- ```{r message=FALSE, warning=FALSE} --><!-- library(gapminder) --><!-- gapminder %>%  --><!--   filter(country == "Canada") %>%  --><!--   head(2) --><!-- ``` --><!--   - bizi fazla yazmaktan kurtarır. --><!--   - kodu okunabilir kılar. --><!--   - zincirlemeye/bağlamaya izin verir. --><!--   - Veri düzenleme işlerinde her zaman kullanışlıdır. --><!-- ] --><!-- - --><!-- ## **%>%** pipe kullanımı --><!-- - pipe, her bir fonksiyonu ayrı bir satırda bulundurduğunuzda en net şekilde okunur. --><!-- ```{r eval=FALSE} --><!-- veri %>%  --><!--   ilk_fonksiyon(.....) %>%  --><!--   ikinci_fonksiyon(.....) %>%  --><!--   ucuncu_fonksiyon(.....) %>% ... --><!-- ``` --><!-- - pipenin solundaki öğeler, sağdaki fonksiyonun ilk argümanına iletilir.  --><!-- - Fonksiyon ilk argümanı olan veriyi pipenin **solundan** alır, kalan argümanlar fonksiyonun **sağındadır.** --><!-- - --><!-- ## **%>%** pipe kullanımı --><!-- - Bazı fonksiyonların, ilk argümanı veri seti olmayabilir. Bu durumda veri seti argüman değeri  .large["**.**"]  olarak kullanılabilir. --><!-- - Veri seti regresyon modelinde ilk argüman değildir. --><!-- ```{r eval=FALSE} --><!-- veri %>% lm(degisken1 ~ degisken2, data= .) --><!-- ``` --><!-- - --><!-- ## **%>%** pipe kullanımı --><!-- pipe kullanımı ile oluşan çıktıdan yeni bir nesne oluşturmak istiyorsanız, atama operatorü **<-** --><!-- kullanmalısınız 🔗. --><!-- ```{r eval=FALSE} --><!-- yeninesne <- veri %>% lm(degisken1 ~ degisken2, data= .) --><!-- ``` --><!-- Bağlama işlemleri ne kadar uzun olursa olsun **<-** operatorü en başta olmalıdır. --><!-- - --><!-- ## Veri seti yapısını inceleme --><!-- Veri setlerinde yapı incelemek için **glimpse()**, **str()** gibi fonksiyonlar kullanılabilir. --><!-- ```{r} --><!-- glimpse(PISA_COG_2018) --><!-- ``` --><!-- - --><!-- ## Veri seti yapısını inceleme --><!-- Veri setlerinde yapı incelemek için **glimpse()**, **str()** gibi fonksiyonlar kullanılabilir. --><!-- ```{r} --><!-- glimpse(PISA_STU_2018) --><!-- ``` --><!-- - --><!-- ## Veri seti yapısını inceleme --><!-- Veri setlerinde yapı incelemek için **glimpse()**, **str()** gibi fonksiyonlar kullanılabilir. --><!-- ```{r} --><!-- glimpse(PISA_SCH_2018) --><!-- ``` --><!-- - --><!-- ## Yeni Veri Seti Oluşturma --><!-- - Veri setinden sütun bazında seçim yapmak için **select()** fonksiyonu kullanılabilir. --><!-- - **select()** fonksiyonu kullanımı --><!-- ```{r eval=FALSE} --><!-- select(veri_seti, degisken_adi, degisken_adi,..) --><!-- ``` --><!-- - **select()** fonksiyonunun pipe ile kullanımı --><!-- ```{r eval=FALSE} --><!-- veri_seti %>% select(degisken_adi, degisken_adi,..) --><!-- ``` --><!-- - --><!-- ## Yeni Veri Seti Oluşturma --><!-- -  6890 satır 1119 sütunlu veri seti --><!-- PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım. --><!-- ```{r} --><!-- PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS) --><!-- ``` --><!-- - --><!-- ## **arrange()** fonksiyonu --><!-- - **arrange()** veri setini satırlara göre tekrar sıralar.  --><!-- - Bu sıralamayı alfabetik yapar.  --><!-- - **arrange()** fonksiyonu kullanımı --><!-- ```{r eval=FALSE} --><!-- arrange(veri_seti, degisken_adi) %>% head(3) --><!-- ``` --><!-- - **arrange()** fonksiyonunun pipe ile kullanımı --><!-- ```{r eval=FALSE} --><!-- veri_seti %>% arrange(degisken_adi) --><!-- ```   --><!-- - --><!-- ## **arrange()** fonksiyonu --><!-- - Veri setinden dört değişken seçip yeni bir veri setine atama  --><!-- ```{r} --><!-- df1 <- PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS) --><!-- ```   --><!-- - Yeni oluşan df1 veri setini ESCS (sosyaekonomik düzey) puanlarına göre sıralama --><!-- ```{r} --><!-- arrange(df1,ESCS) --><!-- ``` --><!-- - --><!-- ## **arrange()** fonksiyonu --><!-- - **desc()** fonksiyonu ile sıralama büyükten küçüğe de yapılabilir. --><!-- ```{r} --><!-- arrange(df1,desc(ESCS)) --><!-- ``` --><!-- - --><!-- ## **select()** ve **arrange()**  fonksiyonu --><!-- Yaptığımız işlemleri pipe operatoru ile bağlayabilirsiniz. --><!-- ```{r} --><!-- PISA_STU_2018 %>%  --><!--   select(CNTSTUID,ST001D01T,ST004D01T,ESCS) %>% --><!--   arrange(ESCS) --><!-- ``` --><!-- - --><!-- ## **filter()** fonksiyonu --><!-- - Satır bazında veri seçim işlemi yapmak amacıyla kullanılır. --><!-- - **filter()** fonksiyonu kullanımı --><!-- ```{r eval=FALSE} --><!-- filter(veri_seti, kosul ve/veya kosullar) --><!-- ``` --><!-- - **filter()** fonksiyonunun pipe ile kullanımı --><!-- ```{r eval=FALSE} --><!-- veri_seti %>% filter(kosul ve/veya kosullar) --><!-- ``` --><!-- - --><!-- ## Mantıksal Operatorler --><!-- - **filter()** fonksiyonunu **mantıksal operatorler** kullanarak satır bazında seçim yapar. --><!-- - **mantıksal operatorler** koşulları test eder.  --><!-- ```{r} --><!-- x <- 1 --><!-- x==1 --><!-- ``` --><!-- ```{r} --><!-- x <- 1 --><!-- x!=1 --><!-- ``` --><!-- - --><!-- ## Mantıksal Operatorler --><!-- - TRUE, FALSE ve NA değerleri alırlar. --><!-- - **filter()** fonksiyonunu ise koşulun sağlandığı satırları seçer. --><!--   - **==**         : eşittir. --><!--   - **!= **        : eşit değildir. --><!--   - **>,>=,<,<= ** : büyüktür, büyük eşittir,.... --><!--   - **%in%**       : bir ya da birden fazla değerin varlığını kontrol eder.  --><!-- - Mantıksal Operatörlerin kombinasyonları da kullanılabilir. --><!--   - **&**: ve --><!--   - **|**: ve ya --><!--   - **!**: değil --><!-- - --><!-- ## **filter()** fonksiyonu --><!-- PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi --><!-- ```{r} --><!-- PISA_STU_2018 %>% filter(MISCED==6) %>% head(4) --><!-- ``` --><!-- - --><!-- ## **filter()** fonksiyonu --><!-- PISA verisinde anne eğitim düzeyi **ve** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi --><!-- ```{r} --><!-- PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4) --><!-- ``` --><!-- - --><!-- ## **filter()** fonksiyonu --><!-- PISA verisinde anne eğitim düzeyi **ve ya** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi --><!-- ```{r} --><!-- PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) --><!-- ``` --><!-- - --><!-- .hand-large[teşekkürler !] --><!-- .large[😕] --><!-- <br> --><!-- .large[😃] --><!-- - --><!-- ## KAYNAKLAR --><!-- - Caro, D. H. & Biecek, P. (2017). intsvy: An R Package for analyzing ınternational large-scale assessment data. Journal of Statistical Software, 81(7), 1-44. doi: 10.18637/jss.v081.i07 (URL:http://doi.org/10.18637/jss.v081.i07) --><!-- - Martin, M. O., von Davier, M., & Mullis, I. V. S. (Eds.). (2020). Methods and Procedures: TIMSS 2019 Technical Report. Boston College, TIMSS & PIRLS International Study Center website:   https://timssandpirls.bc.edu/timss2019/methods adresinden erişildi. --><!-- - Mullis, I. V. S., Martin, M. O., Foy, P., Kelly, D. L., & Fishbein, B. (2020). TIMSS 2019 International Results in Mathematics and Science. Boston College, TIMSS & PIRLS International Study Center website: https://timssandpirls.bc.edu/timss2019/international-results/ adresinden erişildi. --><!-- - --><!-- ## KAYNAKLAR --><!-- -  "Atar, B., Atalay Kabasakal, K., Ünsal Özberk, E. B. , Özberk, E.. H. ve Kıbrıslıoğlu Uysal, N. (2019). **R ile Veri Analizi ve Psikometri Uygulamaları**. PegemA Akademi --><!-- - OECD (2019). PISA 2018 Assessment and Analytical Framework. PISA, OECD Publishing, Paris, https://doi.org/10.1787/b25efab8-en adresinden erişildi. --><!-- - Wickham, H.  François, R., Henry L. & Müller, K. (2021). dplyr: A Grammar of Data   Manipulation. R package   version 1.0.7. https://CRAN.R-project.org/package=dplyr -->
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="veri-duzenleme-1.html"><span class="header-section-number">9</span> Veri duzenleme</a></div>
+<div class="next"><a href="veri-duzenleme-3.html"><span class="header-section-number">11</span> Veri duzenleme</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-duzenleme-2"><span class="header-section-number">10</span> Veri duzenleme</a></li>
+<li><a class="nav-link" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1-1"><span class="header-section-number">10.1</span> dplyr paket tanıtımı</a></li>
+<li><a class="nav-link" href="#paket-vignetteleri-1"><span class="header-section-number">10.2</span> Paket vignetteleri 📊</a></li>
+<li>
+<a class="nav-link" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1-1"><span class="header-section-number">10.3</span> Uluslararası Eğitim Araştırmaları</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pisa-1"><span class="header-section-number">10.3.1</span> PISA</a></li>
+<li><a class="nav-link" href="#timss-1"><span class="header-section-number">10.3.2</span> TIMSS</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#veri-setleri-2"><span class="header-section-number">10.4</span> Veri Setleri</a></li>
+<li>
+<a class="nav-link" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri-1"><span class="header-section-number">10.5</span> Uluslararası Sınavlarla İlgili R paketleri</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#instvy-paketi-international-assessment-data-manager-1"><span class="header-section-number">10.5.1</span> instvy paketi: International Assessment Data Manager</a></li>
+<li><a class="nav-link" href="#edsurvey-paketi-1"><span class="header-section-number">10.5.2</span> EdSurvey paketi</a></li>
+<li><a class="nav-link" href="#ralsa-1"><span class="header-section-number">10.5.3</span> RALSA</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#olas%C4%B1-de%C4%9Fer-1"><span class="header-section-number">10.6</span> Olası Değer</a></li>
+<li><a class="nav-link" href="#t%C3%BCrkiye-veri-setleri-1"><span class="header-section-number">10.7</span> Türkiye Veri Setleri</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/10-hipoteztestleri.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/10-hipoteztestleri.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-18.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

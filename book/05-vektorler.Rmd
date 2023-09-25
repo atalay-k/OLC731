@@ -1,0 +1,350 @@
+# Vektörler
+
+-   R lineer cebir temelli bir programlama dilidir.
+
+-   Vektörler tek boyutludur.
+
+-   R'da vektörler birleştirmek (combine/concatenate) anlamına gelen `c()` fonksiyonu ile oluşturulmaktadır.
+
+-   R da veriler bir araya gelerek veri yapılarını oluşturur.
+
+    -   vektör (vector)
+    -   liste (list)
+    -   matris (matrix)
+    -   veri seti (data.frame)
+    -   dizi (array)
+
+## Vektör Oluşturma
+
+```{r echo=TRUE}
+(sayisal_vektor <-  c(1,2,3))
+```
+
+```{r echo=TRUE}
+(karakter_vektor <-  c("a","b","c"))  ## cift tirnak
+```
+
+```{r echo=TRUE}
+(mantiksal_vektor <- c(TRUE,TRUE,FALSE))
+```
+
+## Vektör İşlemleri
+
+-   Vektör uzunluğu `length()` fonksiyonu ile vektör türleri ise `class()`, `mode()` ya da `typeof()` fonksiyonları ise tur belirlemek için kullanılmaktadır.
+
+-   Vektörler bir veya daha fazla elemandan oluşabilmektedir.
+
+```{r}
+a <- 1  # tek elemandan oluşur.
+# Vektör uzunluğunu öğrenmek icin length() fonksiyonu
+length(a)
+```
+
+```{r}
+x <- 1:10
+```
+
+-   bir vektöründeki verilerin toplanması `sum(x)` `r sum(x)`
+
+-   bir vektöründeki verilerin çarpılması `prod(x)` `r prod(x)`
+
+-   bir vektöründeki verilerin küçükten büyüğe sıralanması `sort(x)` `r sort(x)`
+
+-   bir vektörünün elemanların sıralarının tersine çevrilmesi `rev(x)` `r rev(x)`
+
+-   bir vektöründeki verilerin standart sapmasının hesaplanması `sd(x)` `r sd(x)`
+
+-   bir vektöründeki en büyük verinin gösterilmesi `max(x)` `r max(x)`
+
+-   bir vektöründeki en küçük verinin gösterilmesi `min(x)` `r min(x)`
+
+-   En büyük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi `which.max(x)` `r which.max(x)`
+
+-   En küçük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi `which.min(x)` `r which.min(x)`
+
+-   Vektörlerden eleman sırası, isim ve mantıksal operatörler olmak üzere üç farklı yolla eleman seçilebilir.
+
+```{r}
+ad  <-  c("Ali","Elif","Su","Deniz",
+"Aras","Berk","Can","Ece","Efe","Arda")
+```
+
+-   ad vektörünün 1. elemanı `ad[1]` `r ad[1]`
+
+-   ad vektörünün 5. elemanını yazdıracak kodu oluşturunuz. `r fitb("ad[5]")`
+
+-   ad vektörünün son elemanını yazdıracak kodu oluşturunuz. `r fitb("ad[10]")`
+
+-   ad vektörünün son elemanını yazdıracak kodu vektörün 10 elemanlı olduğunu bilmediğiniz de ne yaparsınız? `r fitb("ad[length(ad)]")`
+
+-   Vektörün sadece 1., 5. 8 elemanının yazdıracak kodu oluşturunuz.`r fitb("ad[c(1,5,8)]")`
+
+-   Vektörün sadece 1. elemanının hariç tutacak kodu oluşturunuz `r fitb("ad[-1]")`
+
+-   Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz `r fitb("ad[-c(1,5)]")`
+
+-   Vektörün son üç elemanını yazdıracak kodu oluşturunuz `r `fitb("ad[8:10]")`
+
+## Vektöre eleman eklenmesi
+
+```{r}
+ad[11] <- "Asu"; ad
+```
+
+-   vektöre birden fazla eleman eklenmesi
+
+```{r}
+ad[12:13] <- c("Ahu","Han"); ad
+
+```
+
+-   Vektörün ortasına eleman eklenmesi **append()** fonksiyonu ile yapılabilir. Fonksiyon yardım sayfasını inceleyiniz.
+
+```{r}
+
+(ad <- append(ad, "Taha", after = 3))
+
+```
+
+-   ya da `c()` fonksiyonu ile yapılabilir.
+
+```{r}
+
+ad <- c(ad[1:5],"Selim",ad[7:length(ad)]); ad
+```
+
+## Alıştırma
+
+-   10 kişiden oluşan bir gruptaki kişilerinin boy ve kilo ölçümleri için ise aşağıdaki vektör oluşturulmuştur.
+
+```{r}
+ad  <-  c("Ali","Elif","Su","Deniz",
+"Aras","Berk","Can","Ece","Efe","Arda")
+boy <- c(160,165,170,155,167,162,169,158,160,164)
+kilo <-c(50,55,57,50,48,65,58,62,45,47)
+
+```
+
+-   Eğer elimizdeki vektör isimlendirilmiş bir vektör ise eleman seçimini isimle de yapabiliriz.
+
+```{r}
+#isimsiz boy vektoru
+names(boy) # names() fonksiyonu ile isimlendirme yapılabilir.
+```
+
+-   ad vektörünü boy vektörünü isimlendirirken nasıl kullanabiliriz? `r fitb("names(boy) <- ad")`
+
+-   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? `r `fitb("boy["Arda"]")`
+
+## Örüntülerle Vektör Oluşturma
+
+-   Vektör oluşturmanın farklı yolları bulunmaktadır.
+
+-   En basit yolu iki nokta `":"` operatörünü kullanmaktır.
+
+```{r}
+
+rakamlar <- 0:9
+rakamlar
+```
+
+-   büyükten küçüğe rakamlardan vektör oluşturulması
+
+```{r}
+
+rakamlar <- 9:0
+rakamlar
+```
+
+### seq()
+
+-   Belirli bir kurala göre sayı dizileri oluşturmak için ise `seq()`, `rep()` ve `paste()` fonksiyonlarından yararlanılabilir. İlk olarak bu fonksiyonların yardım sayfalarını inceleyelim.
+
+-   1'den 10'a kadar birer birer artan sayılardan dizi oluşturulacak kodu oluşturunuz. `seq(from=1,to=10,by=...)` `r fitb("1")`
+
+-   Bir önceki işlemi argümansız olarak oluşturunuz. `r  fitb("seq(1,10,1)")`
+
+-   Aynı çıktıyı tek bir argümanla elde edebilir misiniz? `r fitb("seq(to=10)")`
+
+-   length argümanını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. `r fitb("seq(from=1,to=3,length=6)")`
+
+```{r echo=FALSE}
+seq(from = 1, to=3, length = 6)
+```
+
+-   by argümanını ile artış miktarını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. `r fitb("seq(from=1,to=3,by=0.5)")`
+
+```{r echo=FALSE}
+seq(from=1,to=3,by=0.5)
+```
+
+-   Belirli bir aralıkta kaç elemanın yer alacağını length.out argümanı kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. `r fitb("seq(from=1,to=3,length.out=5)")`
+
+```{r echo=FALSE}
+seq(from=1,to=3,length.out=5)
+```
+
+### rep()
+
+`rep()` fonksiyonu için örnekler
+
+```{r echo=TRUE}
+# üç elemanlı bir vektörün üç kere tekrar ettirilmesi
+rep(c(3,4,5), 3)
+```
+
+```{r echo=TRUE}
+# rakamların üç kere tekrar ettirilmesi
+rep(0:9, times = 3) 
+```
+
+-   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(a,each=3)")`
+
+```{r echo=FALSE}
+a <- c(3,5,7)
+rep(a, each = 3) 
+```
+
+-   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(a,each=3,times=3)")`
+
+```{r echo=FALSE}
+rep(a,each=3,times=3) 
+```
+
+-   Çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(1:4,c(2,2,2,2))")`
+
+```{r echo=FALSE}
+# Çıktıyı elde edecek kodlar hazırlayınız.
+rep(1:4,c(2,2,2,2))
+
+```
+
+-   Çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(1:3,1:3)")`
+
+```{r echo=FALSE}
+# Çıktıyı elde edecek kodlar hazırlayınız.
+rep(1:3,1:3)
+
+```
+
+### paste()
+
+-   `paste()`fonksiyonu çıktısı her zaman için karakterdir.
+
+```{r}
+paste(1:4) # çıktısı karakterdir
+```
+
+```{r}
+class(paste(1:4))
+```
+   
+-   Çıktıyı elde edecek kodu tamamlayınız `paste("test",...)` `r fitb("1:10")`
+
+```{r echo=FALSE}
+paste("test",1:10) 
+```
+
+
+-   Çıktıyı elde edecek kodu tamamlayınız`paste("test",1:10,"...",sep="_")` `r fitb("puan")`
+
+```{r echo=FALSE}
+paste("test",1:10,"puan",sep="_")
+```
+
+-   Çıktıyı elde edecek kodu tamamlayınız `paste("test",c("A","B","C","D",...))`  `r fitb("1:4")` 
+
+```{r echo=FALSE}
+
+paste("test",c("A","B","C","D",1:4)) 
+```
+
+## Rasgele Veri Oluşturma
+
+-   Farklı fonksiyonlarla rastgele veri üretilebilir. Örneğin 0-100 arasında 20 farklı değer elde edilmek istenilsin. Bunu yapmak için `sample()`,`runif()` ya da `rnorm()` fonksiyonlarından yararlanılabilir.
+
+```{r}
+sample(0:100,5)
+```
+
+```{r}
+runif(10,  0, 5)
+```
+
+```{r}
+rnorm(10,50,5)
+```
+
+-   Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
+
+## İşlemler
+
+BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  `r fitb("20.44")` 
+
+```{r}
+ad  <-  c("Ali","Elif","Su","Deniz","Aras","Berk","Can","Ece","Efe","Arda")
+boy <- c(160,165,170,155,167,162,169,158,160,164)
+kilo <- c(55,55,57,50,48,65,58,62,45,47)
+```
+
+`r hide("Çözüm!,bakmadan yapmalısın!")`
+
+```{r, eval = TRUE}
+# BKI  hesaplanması
+boy_m  <- boy/100
+BKI <- kilo/( boy_m * boy_m)
+BKI
+round(mean(BKI),2)
+```
+`r unhide()`
+
+### Kendinizi Test Edin
+
+**S1.** Aşağıdaki tabloda yer alan üç sütun için birer vektör oluşturunuz. Öğrencilerin geçme notu her iki sınavın ortalaması olarak hesaplanacaktır. Bu öğrencilerin geçme notlarını hesaplayınız. Geçme notlarının betimsel istatistiklerini hesaplayınız.
+
+| Öğrenci | Vize | Final |
+|---|---|---|
+| Ogrenci1 | 50 | 45 | 
+| Ogrenci2 | 55 | 65 | 
+| Ogrenci3 | 60 | 85 | 
+| Ogrenci4 | 70 | 90 | 
+| Ogrenci5 | 80 | 85 |
+
+Geçme notlarının minumum değeri: `r fitb("47.5")`
+
+Geçme notlarının ortalama değeri: `r fitb("68.5")`
+
+Geçme notlarının maksimum değeri: `r fitb("82.5")`
+
+
+```{r eval=FALSE, include=FALSE}
+Vize <- c(50,55,60,70,80)
+Final <- c(45,65,85,90,85)
+Gecmenot <- (Vize + Final) / 2 
+summary(Gecmenot)
+```
+
+
+**S2.**  Birden n'e kadar olan sayların toplamını hesaplayan fonksiyon yazımı `toplam()` tek argümanlı fonksiyon oluşturunuz. Argüman değeri 5 olduğunda 1+2+3+4+5=15 değerini versin.
+
+-   birden n'e kadar olan sayların toplamı: (n\*(n+1))/2
+
+
+**S3.** 1'den n' e kadar olan sayıların toplamını hesaplayan fonksiyonu argümansız olarak aşağıdaki şekilde yazmayı deneyiniz. Fonksiyonu çalıştırdığınızda ekranda/konsolda kaça kadar olan sayların toplamı hesaplansın: yazsın, kullanıcının girdiği değere göre aşağıda çıktısı çıksın.
+
+```{r include=TRUE, eval=FALSE,}
+toplam()
+
+kaça kadar olan sayların toplamı hesaplansın: 10
+
+[1 " 10 'e kadar olan sayların toplamı: 55
+```
+
+
+## **ODEV**
+
+-   Kitap Bölüm 2 1. Soruyu tamamlayınız.
+
+-   swirl package - learn R in R (Programming ilk 6 modul)
+
+-   datacamp ödevinizi yapmayını unutmayın `r emo::ji('smile')`

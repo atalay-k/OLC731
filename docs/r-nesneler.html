@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 R Nesneler | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Örnek bir veri seti library(tidyverse) data(diamonds) head(diamonds) carat cut color clarity depth table price x y z 0.23 Ideal E SI2 61.5 55 326 3.95 3.98 2.43 0.21 Premium E SI1 59.8 61 326 3.89...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 4 R Nesneler | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/r-nesneler.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Örnek bir veri seti library(tidyverse) data(diamonds) head(diamonds) carat cut color clarity depth table price x y z 0.23 Ideal E SI2 61.5 55 326 3.95 3.98 2.43 0.21 Premium E SI1 59.8 61 326 3.89...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 R Nesneler | OLC731">
+<meta name="twitter:description" content="Örnek bir veri seti library(tidyverse) data(diamonds) head(diamonds) carat cut color clarity depth table price x y z 0.23 Ideal E SI2 61.5 55 326 3.95 3.98 2.43 0.21 Premium E SI1 59.8 61 326 3.89...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="active" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="r-nesneler" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> R Nesneler<a class="anchor" aria-label="anchor" href="#r-nesneler"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li>Örnek bir veri seti</li>
+</ul>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">diamonds</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">diamonds</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<colgroup>
+<col width="9%">
+<col width="15%">
+<col width="9%">
+<col width="12%">
+<col width="9%">
+<col width="9%">
+<col width="9%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th align="right">carat</th>
+<th align="left">cut</th>
+<th align="left">color</th>
+<th align="left">clarity</th>
+<th align="right">depth</th>
+<th align="right">table</th>
+<th align="right">price</th>
+<th align="right">x</th>
+<th align="right">y</th>
+<th align="right">z</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.23</td>
+<td align="left">Ideal</td>
+<td align="left">E</td>
+<td align="left">SI2</td>
+<td align="right">61.5</td>
+<td align="right">55</td>
+<td align="right">326</td>
+<td align="right">3.95</td>
+<td align="right">3.98</td>
+<td align="right">2.43</td>
+</tr>
+<tr class="even">
+<td align="right">0.21</td>
+<td align="left">Premium</td>
+<td align="left">E</td>
+<td align="left">SI1</td>
+<td align="right">59.8</td>
+<td align="right">61</td>
+<td align="right">326</td>
+<td align="right">3.89</td>
+<td align="right">3.84</td>
+<td align="right">2.31</td>
+</tr>
+<tr class="odd">
+<td align="right">0.23</td>
+<td align="left">Good</td>
+<td align="left">E</td>
+<td align="left">VS1</td>
+<td align="right">56.9</td>
+<td align="right">65</td>
+<td align="right">327</td>
+<td align="right">4.05</td>
+<td align="right">4.07</td>
+<td align="right">2.31</td>
+</tr>
+<tr class="even">
+<td align="right">0.29</td>
+<td align="left">Premium</td>
+<td align="left">I</td>
+<td align="left">VS2</td>
+<td align="right">62.4</td>
+<td align="right">58</td>
+<td align="right">334</td>
+<td align="right">4.20</td>
+<td align="right">4.23</td>
+<td align="right">2.63</td>
+</tr>
+<tr class="odd">
+<td align="right">0.31</td>
+<td align="left">Good</td>
+<td align="left">J</td>
+<td align="left">SI2</td>
+<td align="right">63.3</td>
+<td align="right">58</td>
+<td align="right">335</td>
+<td align="right">4.34</td>
+<td align="right">4.35</td>
+<td align="right">2.75</td>
+</tr>
+<tr class="even">
+<td align="right">0.24</td>
+<td align="left">Very Good</td>
+<td align="left">J</td>
+<td align="left">VVS2</td>
+<td align="right">62.8</td>
+<td align="right">57</td>
+<td align="right">336</td>
+<td align="right">3.94</td>
+<td align="right">3.96</td>
+<td align="right">2.48</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>R nesne (object) yönelimli bir programlama dilidir.</p>
+<ul>
+<li>Karakter (character)</li>
+<li>Sayısal (numeric)
+<ul>
+<li>tam sayı (integer)</li>
+<li>ondalıklı sayı (double)</li>
+<li>karmaşık sayı (complex)</li>
+</ul>
+</li>
+<li>Mantıksal (logical)</li>
+<li>Faktör (factor)</li>
+<li>Liste (list)</li>
+<li>Fonksiyon (function)</li>
+</ul>
+<div id="tam-sayi" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> tam sayi<a class="anchor" aria-label="anchor" href="#tam-sayi"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>tamsayı nesnesi oluşturulması</li>
+</ul>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tamsayi</span> <span class="op">&lt;-</span> <span class="fl">2L</span></span></code></pre></div>
+<ul>
+<li>tamsayi nesnesinin türünün sorgulanması</li>
+</ul>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">tamsayi</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "integer"</code></pre>
+<ul>
+<li>tamsayı nesnesinin yazdırılması</li>
+</ul>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tamsayi</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="ondalık-sayı" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> ondalık sayı<a class="anchor" aria-label="anchor" href="#ondal%C4%B1k-say%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>ondaliksayi nesnesinin oluşturulması</li>
+</ul>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ondaliksayi</span> <span class="op">&lt;-</span> <span class="fl">2.5</span></span></code></pre></div>
+<ul>
+<li>ondaliksayi nesnesinin türünün sorgulanması</li>
+</ul>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">ondaliksayi</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "double"</code></pre>
+<ul>
+<li>ondaliksayi nesnesinin yazdırılması</li>
+</ul>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ondaliksayi</span></span></code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+</div>
+<div id="işlemler" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> İşlemler<a class="anchor" aria-label="anchor" href="#i%C5%9Flemler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>tek elemanlı vektörler</li>
+</ul>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">+</span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ul>
+<li>çok elemanlı vektörler</li>
+</ul>
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co"># vektör eleman sayıları aynı mı?</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">==</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">+</span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 4 6 8</code></pre>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">-</span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 2 2 2</code></pre>
+<ul>
+<li>çok elemanlı vektörler</li>
+</ul>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co"># vektör eleman sayıları farklı mı?</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">+</span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1]  2  4  6  5  7  9  8 10 12</code></pre>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">/</span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 1.0 1.0 1.0 4.0 2.5 2.0 7.0 4.0 3.0</code></pre>
+<ul>
+<li>çok elemanlı vektörler</li>
+</ul>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co"># vektör eleman sayıları farklı olduğunda</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+<ul>
+<li>
+<code>x+y</code> işleminin sonucu nedir? <input class="webex-solveme nospaces" size="9" data-answer='["2 4 4 6 6"]'>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Çözüm
+</button>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span></span></code></pre></div>
+<pre><code>## Warning in x + y: longer object length is not a multiple of shorter object
+## length</code></pre>
+<pre><code>## [1] 2 4 4 6 6</code></pre>
+</div>
+</div>
+<div id="karakter-nesneler" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Karakter Nesneler<a class="anchor" aria-label="anchor" href="#karakter-nesneler"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>karakter nesnesi oluşturulması</li>
+</ul>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">karakter</span> <span class="op">&lt;-</span> <span class="st">"olcme"</span></span></code></pre></div>
+<ul>
+<li>Oluşturulan nesnenin türünün sorgulanmasa</li>
+</ul>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">karakter</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "character"</code></pre>
+<ul>
+<li>nesne yazdırılması</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">karakter</span></span></code></pre></div>
+<pre><code>## [1] "olcme"</code></pre>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># karakter nesnesi oluşturulması</span></span>
+<span><span class="va">ad</span> <span class="op">&lt;-</span> <span class="st">"Su"</span></span>
+<span><span class="va">soyad</span> <span class="op">&lt;-</span> <span class="st">"Sevim"</span></span></code></pre></div>
+<ul>
+<li>iki nesneyi arada boşluk bırakarak birleştirir.</li>
+</ul>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">ad</span>,<span class="va">soyad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Su Sevim"</code></pre>
+<ul>
+<li>sep argümanı farklı şekillerde özelleştirilebilir.</li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">ad</span>,<span class="va">soyad</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "SuSevim"</code></pre>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">ad</span>,<span class="va">soyad</span>,sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Su_Sevim"</code></pre>
+<ul>
+<li>base pakette yer alan bazı karakter vektörler bulunmaktadır.</li>
+</ul>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">letters</span></span></code></pre></div>
+<pre><code>##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
+## [20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">LETTERS</span></span></code></pre></div>
+<pre><code>##  [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S"
+## [20] "T" "U" "V" "W" "X" "Y" "Z"</code></pre>
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">month.name</span></span></code></pre></div>
+<pre><code>##  [1] "January"   "February"  "March"     "April"     "May"       "June"     
+##  [7] "July"      "August"    "September" "October"   "November"  "December"</code></pre>
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">month.abb</span></span></code></pre></div>
+<pre><code>##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"</code></pre>
+<ul>
+<li>Nesne birleştirme fonksiyonlarından en sık kullananı <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code>
+</li>
+<li>
+<code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonunun temel argümanları ise <code>sep</code> ve <code>collapse</code>'dir.</li>
+</ul>
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">harf5</span><span class="op">&lt;-</span> <span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
+<span><span class="op">(</span><span class="va">harf51</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">harf5</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,sep<span class="op">=</span><span class="st">"_"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "a_1" "b_2" "c_3" "d_4" "e_5"</code></pre>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">harf51</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">harf52</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">harf5</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,sep<span class="op">=</span><span class="st">"_"</span>,</span>
+<span>                 collapse<span class="op">=</span><span class="st">" "</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "a_1 b_2 c_3 d_4 e_5"</code></pre>
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">harf52</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonun yardım sayfasını inceleyiniz.</li>
+</ul>
+<div id="günün-sorusu" class="section level3" number="4.4.1">
+<h3>
+<span class="header-section-number">4.4.1</span> Günün Sorusu<a class="anchor" aria-label="anchor" href="#g%C3%BCn%C3%BCn-sorusu"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz.</li>
+</ul>
+<pre><code>##  [1] "1. maddenin guclugu: 0.11" "2. maddenin guclugu: 0.62"
+##  [3] "3. maddenin guclugu: 0.56" "4. maddenin guclugu: 0.13"
+##  [5] "5. maddenin guclugu: 0.89" "6. maddenin guclugu: 0.3" 
+##  [7] "7. maddenin guclugu: 0.53" "8. maddenin guclugu: 0.68"
+##  [9] "9. maddenin guclugu: 0.98" "10. maddenin guclugu: 0.2"</code></pre>
+<p>Bunun birden fazla yolu olabilir, farklı şekillerde yapabilirsiniz.</p>
+<p><strong>Büyük Küçük Harf Düzenleme Fonksiyonları</strong> <code><a href="https://rdrr.io/r/base/chartr.html">toupper()</a></code> ve <code><a href="https://rdrr.io/r/base/chartr.html">tolower()</a></code></p>
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">toupper</a></span><span class="op">(</span><span class="va">harf5</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "A" "B" "C" "D" "E"</code></pre>
+<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">tolower</a></span><span class="op">(</span><span class="va">harf5</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "a" "b" "c" "d" "e"</code></pre>
+<p><code><a href="https://rdrr.io/r/base/chartr.html">casefold()</a></code> fonksiyonu da upper argümanı ile birlikte kullanılabilir.</p>
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">casefold</a></span><span class="op">(</span><span class="va">harf5</span>, upper <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "a" "b" "c" "d" "e"</code></pre>
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html">casefold</a></span><span class="op">(</span><span class="va">harf5</span>, upper <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "A" "B" "C" "D" "E"</code></pre>
+<ul>
+<li>Karakter nesnelerin kaç harften oluştuğu <code><a href="https://rdrr.io/r/base/nchar.html">nchar()</a></code> fonksiyonu ile belirlenebilir.</li>
+</ul>
+<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">month.name</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1] 7 8 5 5 3 4 4 6 9 7 8 8</code></pre>
+<ul>
+<li>Karakter nesneleri belli bir yerden bölmek icin <code><a href="https://rdrr.io/r/base/substr.html">substr()</a></code> ve <code><a href="https://rdrr.io/r/base/substr.html">substring()</a></code> fonksiyonları kullanılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="st">"YILMAZ"</span>, <span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "YIL"</code></pre>
+<ul>
+<li><p><code>substring("YILMAZ", 1:.. , 1:6)</code> kodunda "Y" "I" "L" "M" "A" "Z" çıktısı oluşturacak kodu yazınız <input class="webex-solveme nospaces" size="1" data-answer='["6"]'></p></li>
+<li><p>`<code>substring("YILMAZ", ... , 4:6)</code> kodunda "ILM" "ILMA" "ILMAZ"` çıktınısı oluşturacak kodu yazınız <input class="webex-solveme nospaces" size="1" data-answer='["2"]'></p></li>
+<li><p>Karakter nesnelerde daha fazlası için aşağıdaki fonksiyonları inceleyebilirsiniz.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/strsplit.html">strsplit()</a></code></p></li>
+<li><p><code><a href="https://rdrr.io/r/base/noquote.html">noquote()</a></code></p></li>
+<li><p><code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code></p></li>
+<li><p><code><a href="https://rdrr.io/r/base/grep.html">grep()</a></code></p></li>
+<li><p><code><a href="https://rdrr.io/r/base/duplicated.html">duplicated()</a></code></p></li>
+<li><p><code><a href="https://rdrr.io/r/base/agrep.html">agrep()</a></code></p></li>
+</ul>
+</div>
+</div>
+<div id="mantıksal-nesneler" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Mantıksal Nesneler<a class="anchor" aria-label="anchor" href="#mant%C4%B1ksal-nesneler"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mantiksal1</span> <span class="op">&lt;-</span><span class="cn">TRUE</span></span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">mantiksal1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "logical"</code></pre>
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mantiksal1</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Mantıksal operatörler programlamanın temeli ve vazgeçilmezidir.</p>
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># eşitlik sınaması</span></span>
+<span><span class="cn">T</span><span class="op">==</span><span class="cn">TRUE</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<ul>
+<li><p><code>4==5</code> kodunun sonucu nedir? <input class="webex-solveme nospaces" size="5" data-answer='["FALSE"]'></p></li>
+<li><p><code>4&lt;5</code> kodunun sonucu nedir? <input class="webex-solveme nospaces" size="4" data-answer='["TRUE"]'></p></li>
+<li><p><code>10&gt;100</code> kodunun sonucu nedir? <input class="webex-solveme nospaces" size="5" data-answer='["FALSE"]'></p></li>
+<li><p>Mantıksal operatörlerle yapılan sınamalar ile mantıksal nesneler oluşturulur.</p></li>
+</ul>
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sonuc</span> <span class="op">&lt;-</span> <span class="fl">4</span><span class="op">&lt;</span><span class="fl">5</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">sonuc</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "logical"</code></pre>
+<ul>
+<li>Nesne türleri arasındaki değişim uygunluk durumuna göre <code>as.*()</code>fonksiyonları ile sağlanır.</li>
+</ul>
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Karakter veri numerik veriye</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="st">"3.14"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 3.14</code></pre>
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># ondalık verin tam sayıya</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">pi</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># karakter veri numerik veriye (NA)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="st">"olcme"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># mantıksal veri karakter veriye (NA)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "TRUE"</code></pre>
+<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># numerik veri karakter veriye</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "10"</code></pre>
+<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># mantıksal veri numerik veriye</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="nesne-türleri-sorgulama" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Nesne Türleri Sorgulama<a class="anchor" aria-label="anchor" href="#nesne-t%C3%BCrleri-sorgulama"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Nesne türleri sorgulamak için ise <code><a href="https://rdrr.io/r/base/class.html">class()</a></code> ya da <code><a href="https://rdrr.io/r/base/mode.html">mode()</a></code> fonksiyonları kullanabilir. Ancak bir nesne türüne ait olup olmadığını sorgulamak için ise <code>is.*()</code> fonksiyonları kullanılır.</li>
+</ul>
+<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span><span class="op">&lt;-</span> <span class="fl">3.14</span>; <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "numeric"</code></pre>
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/logical.html">is.logical</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<ul>
+<li>Sayısal nesnelerin türü için <code><a href="https://rdrr.io/r/base/typeof.html">typeof()</a></code> fonksiyonu da kullanılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">2L</span>; <span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span> <span class="co"># satir içi kod ayırma</span></span></code></pre></div>
+<pre><code>## [1] "integer"
+## [1] "integer"</code></pre>
+<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/integer.html">is.integer</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/double.html">is.double</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div id="günün-sorusu-1" class="section level3" number="4.6.1">
+<h3>
+<span class="header-section-number">4.6.1</span> Günün Sorusu<a class="anchor" aria-label="anchor" href="#g%C3%BCn%C3%BCn-sorusu-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>aşağıda yer alan <strong>ad_soyad</strong> nesnesini kullanarak</li>
+</ul>
+<div class="sourceCode" id="cb170"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ad_soyad</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ayse-Sel"</span>,<span class="st">"Can-Yucel"</span>,<span class="st">"Cem-Togay"</span>,<span class="st">"Banu-Cift"</span><span class="op">)</span></span></code></pre></div>
+<p>aşağıdaki çıktıyı oluşturmaya calisiniz.</p>
+<pre><code>## [1] "Ayse" "Can"  "Cem"  "Banu"
+## [1] "Sel"   "Yucel" "Togay" "Cift"</code></pre>
+
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></div>
+<div class="next"><a href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#r-nesneler"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="nav-link" href="#tam-sayi"><span class="header-section-number">4.1</span> tam sayi</a></li>
+<li><a class="nav-link" href="#ondal%C4%B1k-say%C4%B1"><span class="header-section-number">4.2</span> ondalık sayı</a></li>
+<li><a class="nav-link" href="#i%C5%9Flemler"><span class="header-section-number">4.3</span> İşlemler</a></li>
+<li>
+<a class="nav-link" href="#karakter-nesneler"><span class="header-section-number">4.4</span> Karakter Nesneler</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#g%C3%BCn%C3%BCn-sorusu"><span class="header-section-number">4.4.1</span> Günün Sorusu</a></li></ul>
+</li>
+<li><a class="nav-link" href="#mant%C4%B1ksal-nesneler"><span class="header-section-number">4.5</span> Mantıksal Nesneler</a></li>
+<li>
+<a class="nav-link" href="#nesne-t%C3%BCrleri-sorgulama"><span class="header-section-number">4.6</span> Nesne Türleri Sorgulama</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#g%C3%BCn%C3%BCn-sorusu-1"><span class="header-section-number">4.6.1</span> Günün Sorusu</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/04-nesneler.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/04-nesneler.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

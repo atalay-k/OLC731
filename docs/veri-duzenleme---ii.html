@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 Veri duzenleme - II | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Veri duzenleme - II | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---ii.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 Veri duzenleme - II | OLC731">
+<meta name="twitter:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="active" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---ii" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Veri duzenleme - II<a class="anchor" aria-label="anchor" href="#veri-duzenleme---ii"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Veriyi üst düzeyde toplama 📊</p></li>
+<li><p><strong>count()</strong> fonksiyonu</p></li>
+<li><p><strong>grup_by()</strong> ve <strong>summarize()</strong></p></li>
+<li><p><strong>summarize_all()</strong> ve <strong>summarize_if()</strong> ve <strong>summarize_at()</strong></p></li>
+<li><p><strong>top_n()</strong></p></li>
+</ul>
+<div id="count-fonksiyonu" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> count() fonksiyonu<a class="anchor" aria-label="anchor" href="#count-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>count()</strong> fonksiyonu frekans tablosu oluşturmak için kullanılabilir.</p></li>
+<li><p><strong>count()</strong> fonksiyonunun pipe ile kullanımıı</p></li>
+</ul>
+<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri_seti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">degisken_adı</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_OGR_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_STU_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
+<span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">n</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">6890</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>Cinsiyete göre dağılım
+👦 👧</li>
+</ul>
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ST004D01T</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">ST004D01T</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3396</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3494</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>Cinsiyete göre dağılım - <strong>sort</strong> argümanı ile sıralanabilir.
+👦 👧</li>
+</ul>
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ST004D01T</span>,sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">ST004D01T</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">3494</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">3396</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><p>PISA_OGR_2018 öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.</p></li>
+<li><p>Bu veri setini kullanarak öğrencilerin göçmenlik durumları ve cinsiyetlere göre dağılımını inceleyelim.</p></li>
+</ul>
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">Gocmenlik</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">Gocmenlik</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3306</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">63</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3357</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">110</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>PISA_OGR_2018 %&gt;% count(CINSIYET,Gocmenlik) %&gt;% ...</code> birey sayısını büyükten küçüğe sıralayınız.
+<input class="webex-solveme nospaces" size="11" data-answer='["arrange(-n)"]'>
+</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">Gocmenlik</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3357</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3306</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">110</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">63</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">SINIF</span>, sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">SINIF</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">10</td>
+<td align="right">5360</td>
+</tr>
+<tr class="even">
+<td align="right">9</td>
+<td align="right">1295</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">207</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">7</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>PISA_OGR_2018 %&gt;% count(.....)</code> siz de SINIF ve CINSIYET'e göre dağılımı bulunuz? <input class="webex-solveme nospaces" size="24" data-answer='["CINSIYET,SINIF,sort=TRUE"]'>
+</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">SINIF</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">2707</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">2653</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">9</td>
+<td align="right">747</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">9</td>
+<td align="right">548</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">11</td>
+<td align="right">124</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">11</td>
+<td align="right">83</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">12</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">7</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">7</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">12</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<strong>count()</strong> fonksiyonunun yardım sayfasını inceleyiniz <strong>wt</strong> argümanını ne amaçala kullanılmıştır açıklayınız.</li>
+</ul>
+</div>
+<div id="summarize-fonksiyonları" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> summarize() fonksiyonları<a class="anchor" aria-label="anchor" href="#summarize-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><strong>summarize()</strong> seçilen sütunlar için her satırı kullanarak istatistikler hesaplar.</p></li>
+<li><p>kaç satır olduğu</p></li>
+<li><p>ortalamanın ne olduğu</p></li>
+<li><p>toplamın ne olduğu</p></li>
+<li><p>minumum ve maksimum değerlerin ne olduğu gibi..</p></li>
+<li>
+<p>Tek satırlık veri setini özetleyerek yeni bir veri seti oluşturan fonksiyondur.</p>
+<ul>
+<li>
+<strong>min(x)</strong> x vektöründeki minumum değer</li>
+<li>
+<strong>max(x)</strong> x vektöründeki maksimum değer</li>
+<li>
+<strong>mean(x)</strong> x vektöründeki ortalama değer</li>
+<li>
+<strong>median(x)</strong> x vektöründeki ortanca değer</li>
+<li>
+<strong>quantile(x, p)</strong> x vektöründeki q. yuzdelik</li>
+<li>
+<strong>sd(x)</strong> x vektöründeki standart sapma</li>
+<li>
+<strong>var(x)</strong> x vektöründeki varyans</li>
+<li>
+<strong>diff(range(x))</strong> x vektöründeki değiskenlik</li>
+<li>
+<strong>first(x)</strong> x vektöründeki ilk eleman</li>
+<li>
+<strong>last(x)</strong> x vektöründeki son eleman</li>
+<li>
+<strong>nth(x, n)</strong> x vektöründeki n. eleman</li>
+<li>
+<strong>n()</strong> x vektöründeki eleman sayısı</li>
+<li>
+<strong>n_distinct(x)</strong> x vektöründeki farklı değerlerin sayısı</li>
+</ul>
+</li>
+<li><p>PISA veri setindeki başarısı için hesaplanan 10 olası puan değerinden (plausible value) ilki kullanılmıştır.</p></li>
+</ul>
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">mean(ODOKUMA1)</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">464.2299</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li><p><strong>summarise()</strong> fonksiyonu içinde isimlendirme yapmazsanız, oluşan veri setinde isimlendirme fonksiyon adı/ları olacaktır.</p></li>
+<li><p>isimlendirilmiş çıktı</p></li>
+</ul>
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">ortalama</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">464.2299</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>Özet bilgiler elde etmek için birden fazla özetleyici fonksiyon kullanabilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>            ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,</span>
+<span>            sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,</span>
+<span>            min<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,</span>
+<span>            max<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">n</th>
+<th align="right">ortalama</th>
+<th align="right">sd</th>
+<th align="right">min</th>
+<th align="right">max</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">6890</td>
+<td align="right">464.2299</td>
+<td align="right">87.78006</td>
+<td align="right">175.608</td>
+<td align="right">771.508</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li><p>Özet bilgileri veri setinde yer alan alt gruplar için ise ayrı ayrı <strong>group_by()</strong> fonksiyonu ile hesaplayabilirsiniz.</p></li>
+<li><p><strong>group_by()</strong> dan sonra kullanılan fonksiyonlar her grup için hesaplanır. Fonksiyonu içinde sürekli değişken <strong>kullanılmaz.</strong></p></li>
+<li><p>Cinsiyete göre ODOKUMA1 puanlarına ilişkin istatistikler</p></li>
+</ul>
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,min<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,max<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">n</th>
+<th align="right">ortalama</th>
+<th align="right">sd</th>
+<th align="right">min</th>
+<th align="right">max</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3396</td>
+<td align="right">478.1378</td>
+<td align="right">83.65322</td>
+<td align="right">236.389</td>
+<td align="right">771.508</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3494</td>
+<td align="right">450.7121</td>
+<td align="right">89.57864</td>
+<td align="right">175.608</td>
+<td align="right">747.491</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><p>siz de bu işlemi göçmenlik statüsüne göre yapınız.</p></li>
+<li><p>Özet bilgileri veri setinde yer alan birden fazla kategorik değişken içinde hesaplayabilirsiniz.</p></li>
+<li><p>Öğrencilerin cinsiyet ve sınıf düzeylerine göre elde edilen betimsel istatistikleri ortalamaya göre sıralandırılmıştır.</p></li>
+</ul>
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">betimsel</span>  <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">SINIF</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ortalama</span><span class="op">)</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">betimsel</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">SINIF</th>
+<th align="right">n</th>
+<th align="right">ortalama</th>
+<th align="right">sd</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">2707</td>
+<td align="right">482.2966</td>
+<td align="right">79.87708</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">11</td>
+<td align="right">124</td>
+<td align="right">472.6618</td>
+<td align="right">84.95710</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">9</td>
+<td align="right">548</td>
+<td align="right">462.0539</td>
+<td align="right">96.90558</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">2653</td>
+<td align="right">459.2322</td>
+<td align="right">85.00155</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">11</td>
+<td align="right">83</td>
+<td align="right">447.9737</td>
+<td align="right">87.87190</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">9</td>
+<td align="right">747</td>
+<td align="right">422.1915</td>
+<td align="right">98.74913</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">12</td>
+<td align="right">5</td>
+<td align="right">421.8288</td>
+<td align="right">96.60689</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">362.9183</td>
+<td align="right">82.82819</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">355.5180</td>
+<td align="right">62.47101</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">7</td>
+<td align="right">1</td>
+<td align="right">343.5010</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="right">330.3725</td>
+<td align="right">62.13135</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">12</td>
+<td align="right">1</td>
+<td align="right">322.0710</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<strong>group_by()</strong> fonksiyonu ile elde ettiğiniz çıktılarda aşağıdaki gibi
+gruplandırılmış veri <strong>Groups</strong> çıktısı ile alınır.</li>
+</ul>
+<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># A tibble: 12 x 5</span></span>
+<span><span class="co"># Groups:   CINSIYET [2]</span></span></code></pre></div>
+<ul>
+<li>Gruplandırılmış elde edilen veri setlerinde tekrar işlem yapmak istiyorsanız bunu <strong>ungroup()</strong> fonksiyonu ile yapabilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">SINIF</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ortalama</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">SINIF</th>
+<th align="right">n</th>
+<th align="right">ortalama</th>
+<th align="right">sd</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">2707</td>
+<td align="right">482.2966</td>
+<td align="right">79.87708</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">11</td>
+<td align="right">124</td>
+<td align="right">472.6618</td>
+<td align="right">84.95710</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">9</td>
+<td align="right">548</td>
+<td align="right">462.0539</td>
+<td align="right">96.90558</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">2653</td>
+<td align="right">459.2322</td>
+<td align="right">85.00155</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">11</td>
+<td align="right">83</td>
+<td align="right">447.9737</td>
+<td align="right">87.87190</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">9</td>
+<td align="right">747</td>
+<td align="right">422.1915</td>
+<td align="right">98.74913</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">12</td>
+<td align="right">5</td>
+<td align="right">421.8288</td>
+<td align="right">96.60689</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">362.9183</td>
+<td align="right">82.82819</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">355.5180</td>
+<td align="right">62.47101</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">7</td>
+<td align="right">1</td>
+<td align="right">343.5010</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="right">330.3725</td>
+<td align="right">62.13135</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">12</td>
+<td align="right">1</td>
+<td align="right">322.0710</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="summarize_at" class="section level3" number="9.2.1">
+<h3>
+<span class="header-section-number">9.2.1</span> summarize_at()<a class="anchor" aria-label="anchor" href="#summarize_at"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>dplyr paket fonksiyonlarının **_at<strong>, </strong>_if<strong>, </strong>_all** uzantılı varyasyonları bulunmaktadır.</p></li>
+<li><p>Sadece bir grup sütunun ortalamasını ve standart sapmasını hesaplamanız gerektiğinde <strong>summarize_at()</strong> fonksiyonunu kullanabilirsiniz.</p></li>
+<li><p><strong>summarize_at()</strong> fonksiyonu ile secilecek değişkenler <strong>vars()</strong>
+fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yerine geçmektedir.</p></li>
+<li><p>Hesaplama işlemlerini ise <strong>list()</strong> fonksiyonu içinde tanımlayabilirsiniz.</p></li>
+</ul>
+<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># adlandırmaya dikkat edin!</span></span>
+<span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_at</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html">vars</a></span><span class="op">(</span><span class="va">ODOKUMA1</span>, <span class="va">ODFEN1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">ODOKUMA1_mean</th>
+<th align="right">ODFEN1_mean</th>
+<th align="right">ODOKUMA1_sd</th>
+<th align="right">ODFEN1_sd</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">464.2299</td>
+<td align="right">467.4865</td>
+<td align="right">87.78006</td>
+<td align="right">83.11351</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div id="summarize_all-ve-summarize_if" class="section level3" number="9.2.2">
+<h3>
+<span class="header-section-number">9.2.2</span> summarize_all() ve summarize_if()<a class="anchor" aria-label="anchor" href="#summarize_all-ve-summarize_if"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Elinizde tüm sütunları sayısal (numeric) olan bir veri seti olsun. Tüm sütunların ortalamasını <strong>summarize_all()</strong> fonksiyonu ile hesaplayabilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veriseti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_all</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/funs.html">funs</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını <strong>summarize_if()</strong> fonksiyonu ile hesaplayabilirsiniz.</li>
+</ul>
+<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">Gocmenlik</span>,<span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_if</a></span><span class="op">(</span><span class="va">is.numeric</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/funs.html">funs</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="17%">
+<col width="18%">
+<col width="17%">
+<col width="15%">
+<col width="16%">
+<col width="15%">
+</colgroup>
+<thead><tr class="header">
+<th align="right">CINSIYET_mean</th>
+<th align="right">Gocmenlik_mean</th>
+<th align="right">ODOKUMA1_mean</th>
+<th align="right">CINSIYET_sd</th>
+<th align="right">Gocmenlik_sd</th>
+<th align="right">ODOKUMA1_sd</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">1.507112</td>
+<td align="right">NA</td>
+<td align="right">464.2299</td>
+<td align="right">0.4999857</td>
+<td align="right">NA</td>
+<td align="right">87.78006</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="top_n" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> top_n()<a class="anchor" aria-label="anchor" href="#top_n"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>top_n()</strong> fonksiyonu ile istediğiniz bir değişkenin <strong>en yüksek</strong> ya da <strong>en düşük</strong> değerlerine göre verisetinde seçim yapılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">4</span>, <span class="fl">1</span>, <span class="fl">6</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Selecting by x</code></pre>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">x</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>Okuma puanı <strong>en yüksek</strong> olan üç kız ve üç erkek öğrencinin bilgileri</li>
+</ul>
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">3</span>,<span class="va">ODOKUMA1</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">ODOKUMA1</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">771.508</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">748.371</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">747.491</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">742.969</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">737.448</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">713.531</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="top_n---operatoru" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> top_n() &amp; - operatoru<a class="anchor" aria-label="anchor" href="#top_n---operatoru"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Okuma puanı <strong>en düşük</strong> olan üç kız ve beş erkek öğrencinin bilgileri</li>
+</ul>
+<div class="sourceCode" id="cb374"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="va">ODOKUMA1</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">CINSIYET</th>
+<th align="right">ODOKUMA1</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">249.789</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">241.820</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">236.389</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">198.944</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">176.962</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">175.608</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="dataeditr-paketi" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> DataEditR paketi<a class="anchor" aria-label="anchor" href="#dataeditr-paketi"><i class="fas fa-link"></i></a>
+</h2>
+<p>Bu paketi paketin <a href="https://github.com/DillonHammill/DataEditR">github sayfasından</a> inceleyelim.</p>
+<p>teşekkürler !</p>
+<p>🍵</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></div>
+<div class="next"><a href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-duzenleme---ii"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="nav-link" href="#count-fonksiyonu"><span class="header-section-number">9.1</span> count() fonksiyonu</a></li>
+<li>
+<a class="nav-link" href="#summarize-fonksiyonlar%C4%B1"><span class="header-section-number">9.2</span> summarize() fonksiyonları</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#summarize_at"><span class="header-section-number">9.2.1</span> summarize_at()</a></li>
+<li><a class="nav-link" href="#summarize_all-ve-summarize_if"><span class="header-section-number">9.2.2</span> summarize_all() ve summarize_if()</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#top_n"><span class="header-section-number">9.3</span> top_n()</a></li>
+<li><a class="nav-link" href="#top_n---operatoru"><span class="header-section-number">9.4</span> top_n() &amp; - operatoru</a></li>
+<li><a class="nav-link" href="#dataeditr-paketi"><span class="header-section-number">9.5</span> DataEditR paketi</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/09-veri_duzenlemeII.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/09-veri_duzenlemeII.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

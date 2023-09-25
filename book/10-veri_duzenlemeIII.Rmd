@@ -1,0 +1,316 @@
+# Veri duzenleme  - III
+
+
+```{r  include=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(dplyr)
+library(emo)
+
+```
+
+- Seçme ve Dönüştürme `r emo::ji("stats")`
+
+- **select()** fonksiyonu
+- **select()** fonksiyonu içinde çalışan fonksiyonlar
+- **rename()** fonksiyonu
+- **mutate()** ve **transmute()** fonksiyonları
+
+## select() fonksiyonu
+
+- **select()** fonksiyonu ile sütun bazında seçim yapılabilir.
+
+- Veri yapısının incelenmesi.
+
+```{r}
+library(dplyr)
+load("import/PISA_OGR_2018.rda") # ogrenci verisi
+dim(PISA_OGR_2018)
+```
+
+- 673 sütunla çalışmayacaksanız, problem durumunuza uygun sütunları seçebilirsiniz. Fonksiyon içinde degişkenler tek tek virgül `,` ile ayrılarak seçim yapılabilir.
+
+``` {r eval=FALSE}
+select(veri seti, degisken adi, degisken adi,..)
+veri seti %>% select(degisken adi, degisken adi,..)
+
+```
+
+
+- OKULID, OGRENCIID, CINSIYET ,SES değişkenlerinin seçimi
+
+```{r}
+select(PISA_OGR_2018, OKULID, OGRENCIID, CINSIYET ,SES) %>% head(6)
+```
+
+Aynı işlem `c()` fonksiyonu içinde de yapılabilir.
+
+```{r eval=FALSE}
+select(PISA_OGR_2018, c(OKULID, OGRENCIID, CINSIYET ,SES))
+``` 
+
+- **select()** fonksiyonu ile sütun bazında seçim yapılabilir.
+
+```{r}
+PISA_OGR_2018 %>% select(OKULID, OGRENCIID, CINSIYET ,SES) %>% head(6)
+```
+
+
+- **select()** fonksiyonu belirli bir aralıktaki değişkenler iki nokta `:` opertorü ile seçilebilir.
+
+- örneğin okumadan alınan zevke ilişkin maddeler aşağıdaki şekilde seçilebilir.
+
+```{r}
+PISA_OGR_2018 %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
+```
+
+
+- **select()**  fonksiyonu belirli bir aralıkta yer alan değişkenler iki nokta **:** opertorü ile seçilirken, bu aralıkta dahil edilmek istenmeyen degişkenler kısa çizgi **-** operatorü ile hariç tutulabilir.
+
+```{r}
+PISA_OGR_2018 %>% select(OKULID:SINIF,-KITAPCIK) %>% head(6)
+
+```
+
+
+### **starts_with()**
+
+- Sadece **select()** fonksiyonu içinde çalışan birtakım fonksiyonlar değişken seçim işini kolaylaştırır.
+
+- **ST097** ile başlayan degişkenlerin seçilmesi
+
+```{r}
+select(PISA_OGR_2018, starts_with("ST097")) %>% head(6)
+```
+
+
+### **ends_with()**
+
+- **NA** ile **biten** degişkenlerin seçilmesi
+
+```{r}
+select(PISA_OGR_2018, ends_with("NA")) %>% head(6)
+
+```
+
+
+### **contains()**
+
+- **OKUMA** geçen değişkenlerin seçilmesi
+
+```{r}
+select(PISA_OGR_2018,contains("OKUMA")) %>% head(6)
+
+```
+
+
+###  **matches()**
+
+- içinde **02** geçen değişkenlerin seçilmesi
+
+```{r}
+select(PISA_OGR_2018,matches("02")) %>% head(6)
+```
+
+
+### **num_range()**
+
+-  ardışık ilerleyen değişkenlerin seçilmesi
+
+```{r}
+select(PISA_OGR_2018,num_range("AGIRLIKLANDIRMA",1:5)) %>% head(6)
+
+```
+
+
+###  Matıksal operatorler ile seçim
+
+- farklı fonksiyonları aynı anda mantıksal operatörlerle kullanarak da seçim yapabilirsiniz.
+
+- veya **|** operatorünün kullanılması
+
+```{r}
+select(PISA_OGR_2018,contains("OKUMA") | matches("2")) %>% head(6)
+```
+
+
+- ve **&** operatorunun kullanılması
+
+```{r}
+select(PISA_OGR_2018,contains("OKUMA") & matches("2")) %>% head(6)
+```
+
+
+
+- hariç tutmak amacıyla **-** operatorü kullanılabilir.
+
+```{r}
+select(PISA_OGR_2018,-contains("OKUMA"),-matches("02"))  %>% head(5)
+
+```
+
+
+### **rename()** fonksiyonu
+
+- **select()** fonksiyonu icinde değişken seçimi sırasında değişken adı değişimi yapılabilir.
+
+- Örnekte **ODOKUMA1** degişkeninin adını **okumapuan** olarak değiştirip seçebilirsiniz.
+
+```{r}
+PISA_OGR_2018 %>%
+select(OGRENCIID,OKUL_TUR,CINSIYET,SES,okumapuan = ODOKUMA1) %>%
+head(2)
+```
+
+
+- Örnekte ise **ODOKUMA1** degişkeninin adı okumapuan olarak **rename()** fonksiyonu ile de değiştirilebilir.
+
+```{r}
+PISA_OGR_2018 %>%
+select(OGRENCIID,OKUL_TUR,CINSIYET,SES,ODOKUMA1) %>%
+rename(okumapuan=ODOKUMA1)%>%
+head(2)
+```
+
+
+### mutate fonksiyonu
+
+- **mutate()** fonksiyonu ile veri setine yeni değişken ekleyebilirsiniz.
+
+- **transmute()** fonksiyonu ile veri setine yeni değişken eklenirken, eski değişken/ler veri setiden çıkarılır.
+
+- Okumadan zevk alma maddelerinden bir veri seti oluşturup, bu veri setine toplam puan ekleme
+
+```{r}
+zevk  <- select(PISA_OGR_2018, starts_with("ST097"))
+zevk  <- expss::drop_var_labs(zevk)
+zevk %>%
+mutate(toplam =ST097Q01TA+ST097Q02TA+ST097Q03TA+ST097Q04TA+ ST097Q05TA) %>% head(2)
+```
+
+
+
+- Değişken değerleri bir önceki örnekteki gibi tek tek **+** ile toplanacağı gibi **rowSums()** fonksiyonu ile de aşağıdaki gibi toplanabilir
+```{r }
+zevk %>%
+mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA))) %>%
+head(2)
+```
+
+
+
+- Yeni eklenecek yeri `.before` ya da `.after` argumanları ile düzenleyebilirsiniz.
+
+```{r}
+zevk %>%
+mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA)),.before= ST097Q01TA)%>% head(2)
+```
+
+
+### transmute() fonksiyonu
+
+- **transmute()** fonksiyonu kullanılarak yeni değişken oluşturulduğunda, işlemde kullanılan değişkenler veri setinden çıkarılır.
+
+```{r}
+zevk %>%
+transmute(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA))) %>%
+head(2)
+```
+
+
+
+- Fonksiyonda üretilen ilk değişken kullanılarak da yeni değişken üretilebilir.
+
+- Ilk olarak özyeterliği ölçen maddelerden yeni bir veri oluşturulmuş, daha sonra bu puanların önce toplam puanları daha sonra toplam puanların kareleri alınmıştır.
+
+```{r  eval=FALSE}
+ozyeterlik <- PISA_OGR_2018 %>%
+  expss::drop_var_labs() %>%
+  select(ST196Q02HA:ST196Q07HA)
+
+ozyeterlik%>%
+  rowwise() %>%
+  mutate(toplam = sum(across()))%>%
+  mutate(toplam_kare=toplam*toplam) %>% head(2)
+```
+
+### ifelse()
+
+- **ifelse()** programlama dillerinde sıklıkla kullanılan koşullu önermelerden biridir.
+
+```{r eval=FALSE}
+ifelse(test = x<0, evet = ilkdeger , hayır = ikincideger)
+
+```
+
+```{r }
+x <- c(-2,1,-1,-3,3)
+ifelse(x<0,"Negatif", "Pozitif")
+
+```
+
+
+
+- Uygulama 7.,8.,9.,10.,11. ve 12. sınıf öğrencileri katılmaktadır.
+
+```{r}
+table(PISA_OGR_2018$SINIF)
+```
+
+- **SINIF** değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli **OKUL** adlı bir değişken oluşturalım.
+
+
+
+```{r}
+PISA_OGR_2018 %>%
+  select(1:5) %>%
+  mutate(okul = ifelse(SINIF == 7 | SINIF == 8,
+                       "Ortaokul", "Lise")) %>%
+    head(3)
+```
+
+
+## case_when()
+
+- **case_when()** fonksiyonu çoklu **ifelse() ** kullanımı ile benzer işlevi sağlar.
+
+- **case_when()** birden fazla koşula dayalı karşılaştırmalarda yeni bir değişken oluşturmak amacıyla kullanılır.
+
+- Sosyoekomik düzeye ilişikin betimsel istatistikler
+```{r}
+summary(PISA_OGR_2018$SES)
+```
+
+
+- SES değişkeninin kategorik hale getirilmesi
+
+```{r}
+
+v1 <- PISA_OGR_2018 %>%
+  mutate(SES_kategorik =
+    case_when(
+      SES <=  -2 ~ "dusuk",
+      SES > -2 & SES <  0 ~ "orta",
+      SES >=0 ~ "yuksek" )) %>%
+      select(SES,SES_kategorik)
+
+
+```
+
+
+- Olusturulan yeni SES_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme
+
+
+```{r}
+v1 %>% group_by(SES_kategorik) %>% summarize(f=n())
+```
+
+
+teşekkürler !
+
+
+- [Siz de yapın](https://learnr-examples.shinyapps.io/ex-data-filter/#section-welcome>)
+
+- [Siz de yapın](https://learnr-examples.shinyapps.io/ex-data-summarise/)
+--
+
+

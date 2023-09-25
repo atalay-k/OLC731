@@ -1,0 +1,446 @@
+# Veri Setleri
+
+- Veri setleri iki boyutludur.
+
+- R'da bir çok fonksiyonun veri setleri ile çalışmaktadır. 
+
+- Veri setleri R ortamında `data.frame()` fonksiyonu ile oluşturulabilir.
+
+- `data.frame()` fonksiyonu ile aynı uzunluktaki vektörlerden bir veri seti oluşturulabilir.
+
+
+```{r}
+ad  <-  c("Ali","Elif","Su","Deniz","Aras", "Berk","Can","Ece","Efe","Arda")
+boy <- c(160,165,170,155,167,162, 169,158,160,164)
+kilo <- c(55,55,57,50,48,65, 58,62,45,47)
+beden <- c("S","M","S","M","S", "L","M","L","S","S")
+beden <- factor(beden)
+
+
+(df <- data.frame(ad,boy, kilo, beden))
+```
+
+- Eğer uzunlukları farklı olan vektörlerle veri setleri oluşturulmaya çalışılırsa kısa vektör, uzun vektör uzunluğunda tekrar eder.
+
+```{r}
+# 4 farklı uzunlukta vektör oluşturulması
+x <- 11:14; y <- 10; M <- c(10,35); N <- 2:4
+```
+
+
+```{r error=TRUE}
+data.frame(x, y) # (4,1)
+```
+
+
+```{r error=TRUE}
+data.frame(x, M) # (4,2)
+```
+
+
+
+```{r error=TRUE}
+data.frame(x,N)  #(4,3) hata
+```
+
+
+```{r error=TRUE}
+data.frame(y, M) #(1,2)
+```
+
+
+```{r error=TRUE}
+data.frame(y, N) #(1,3)
+```
+
+```{r error=TRUE}
+data.frame(M, N) #(2,3)
+```
+
+## Hazır Veri Setleri
+
+- Temel pakette yer alan veri setlerinin bir listesine aşağıdaki komutla ulaşabilirsiniz.
+
+```{r eval=FALSE, include=TRUE}
+data() # yeni bir pencerede açılır.
+```
+
+- Veri setlerinin yer aldığı paketlerde bulunmaktadır.
+
+```{r}
+# install.packages("datasets")
+library (datasets)
+# install.packages("dslabs")
+library (dslabs)
+```
+
+- Hazır veri setleri çalışma ortamına `data()` fonksiyonu ile aktarılabilir.
+
+```{r}
+data(WorldPhones) # environmete kontrol ediniz. 
+```
+
+- hazır veri setlerini incelememek için aşağıdaki komutlar kullanılabilir. 
+
+```{r eval=FALSE, include=TRUE}
+data(cars) # enviromente ekler
+iris      # enviromente eklemez!
+```
+
+## İnceleme
+
+- Boyut sorgulamamak için farklı fonksiyonlar kullanılabilir.
+
+```{r}
+dim(cars) # satir Sutun
+```
+
+```{r}
+nrow(cars)
+
+```
+
+```{r}
+ncol(cars)
+```
+
+
+- Veri setlerin ilk satırları `head()`, son satırları ise `tail()` fonksiyonu ile incelenebilir. `head()` fonksiyonu olağan olarak ilk 6 satırı yazdırır.
+
+```{r}
+head(WorldPhones)
+```
+
+- Yazdırılacak satır sayısı `n` argümanı ile ayarlanır.
+```{r}
+head(WorldPhones,n=2)
+```
+
+- WorldPhones veri setinin son 8 satırını yazdıracak kodu yazınız. `r fitb("tail(WorldPhones,n=8)")`
+
+- `datasets` paketinde yer alan veri setlerinde `examples()` bölümünde çeşitli örneklere yer verilmiştir. Örneğin `example(WorldPhones)`
+
+```{r }
+
+matplot(rownames(WorldPhones), WorldPhones, type = "b", log = "y",
+        xlab = "Year", ylab = "Number of telephones (1000's)")
+legend("bottomright", colnames(WorldPhones), col = 1:6, lty = 1:5,
+       pch = rep(21, 7))
+title(main = "World phones data: log scale for response")
+```
+
+
+-  Temel paket hariç diğer paketlerdeki veri setlerine `data(veriseti, package="packagename")` şeklinde ulaşılabilir.
+
+```{r eval=FALSE, include=TRUE}
+data(CTTdata, package="CTT") 
+head(CTTdata)
+```
+
+- `r emo::ji("link")`[sık kullanılan veri setleri ile ilgili bir yazı:](http://r-tutorials.com/famous-useful-pre-installed-exercise-datasets-r/)
+
+- `r emo::ji("link")`[tüm veri setlerine ulaşabilmek için ise:](https://vincentarelbundock.github.io/Rdatasets/datasets.html)
+
+
+
+- Kullanışlı olmasa da excel, spps gibi veri girişi sağlayan bir arayüz bulunmaktadır.
+
+
+- Ali, Su ve Ece'nin boylarının ve kilolarının seçilmesi
+```{r eval=FALSE, include=TRUE}
+df1<- data.frame() 
+df1 <- edit(df1)
+# duzenlemek icin
+fix(df)
+# gozatmak icin 
+View(df)
+```
+
+
+## Elaman Seçme
+
+Veri setlerinde eleman seçme matrislerdeki gibidir.
+
+`df[satirindeks, sutunindeks]`
+
+
+
+- df'nin birinci satir elemanlarının seçilmesi  `r fitb("df[1,]")`
+
+```{r echo=FALSE}
+df[1,]
+```
+
+- df'nin birinci sütun elemanlarının seçilmesi  `r fitb("df[,1]")`
+ 
+```{r echo=FALSE}
+df[,1]
+```
+
+- df'nin ikinci satir elemanlarının seçilmesi  `r fitb("df[2,]")`
+
+ 
+```{r echo=FALSE}
+df[2,]
+```
+
+- df'nin ikinci sütun elemanlarının seçilmesi   `r fitb("df[,2]")`
+
+```{r echo=FALSE}
+df[,2]
+```
+
+- df'nin birinci satir üçüncü sütun elemanlarının seçilmesi  `r fitb("df[1,3]")`
+
+```{r echo=FALSE}
+df[1,3]
+```
+
+- Veri setlerinde satır elemanları yazdırıldığında veri seti (`data.frame)`, sütun elemanları yazdırıldığında ise vektör (`vector)` oluşmaktadır.
+
+```{r}
+# satir secimi
+is.data.frame(df[1,])
+```
+
+```{r}
+# sutun secimi
+is.data.frame(df[,1])
+```
+
+- Sütun seçimi veri seti (`data.frame`) olarak yapılmak istenirse, `drop` argümanı FALSE değeri ile kullanılır.
+
+```{r}
+df[,1,drop=FALSE]
+```
+
+
+- Veri seçim işlemi için `subset()` fonksiyonu kullanılabilir.
+
+- `?subset` bir fonksiyonu ilk daha kullanıyorsanız, mutlaka yardım sayfasını inceleyin. 
+
+`subset(veriseti, kosul/Kosullar)`
+
+- Boyu 165cm den uzun öğrencilerin bilgilerinin seçilmesi
+
+```{r}
+subset(df, boy >165)
+```
+
+
+- `subset()` Fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
+
+```{r}
+subset(airquality, Temp > 90,select = c(Ozone, Temp))
+```
+
+
+```{r}
+subset(airquality, Day == 1, select = -Temp)
+```
+
+- df verisinde beden değişkeni "S" olan satırların seçimi  `subset(df,beden =="S")` 
+
+
+- df verisinde kilosu 50'in altında olan kişilerden oluşan veri seti oluşturma kodunu tamamlayınız `subset(df,.......)` `r fitb("kilo<50")`
+
+
+## Eleman ekleme 
+
+- Veri setine yeni sütun ekleme isleme `$` operatörü ile `[[]]` operatörü ile `cbind()` fonksiyonları ile yapılabilmektedir.
+
+```{r}
+df2 <- data.frame(
+      S1 = sample(0:100,20),
+      S2 = runif(n=20 ,min= 50 , max=70)
+)
+head(df2)
+```
+
+
+- `$` operatörü ile sütun ekleme
+
+```{r}
+df2$S3 <- sample(60:80,20,replace = TRUE)
+head(df2)
+```
+
+- `[[]]` operatörü ile sütun ekleme
+
+- df2 veri setinin ilk üç sütunun `rowMeans()` fonksiyonu ile ortalamasının alınarak ort isimi ile veri setine eklenmesi
+
+```{r}
+df2[["ort"]] <- round(rowMeans(df2),2)
+head(df2)
+```
+
+
+- `cbind()` fonksiyonu ile sütun ekleme
+
+```{r}
+cbind( df2, S4 = 10)
+```
+
+
+## Eleman çıkarma 
+
+- Veri setinden istenilen sütunun çıkarılabilir. Bu işlemi yapmak için iki farklı yol kullanılabilir. 
+
+- `-` operatörü
+
+```{r}
+head(df2,3)
+```
+
+```{r}
+df2 <- df2[,-4] 
+head(df2,3)
+```
+
+- `NULL` operatörü
+
+```{r}
+df2$S3 <- NULL
+head(df2,3)
+
+```
+
+
+## Satır ekleme 
+
+- Veri setlerine değişken ekleyip, çıkarabileceğiniz gibi gözlem de ekleyip, çıkarabilirsiniz. Veri setine iki satır ekleme
+
+```{r}
+dim(df2)
+```
+
+```{r}
+# eklenecek iki satırlık veri seti oluşturma
+df3 <- data.frame(S1=c(50,60),S2=c(55.3,65.5))
+# yeni veri seti
+df4 <- rbind (df2,df3)
+dim(df4)
+
+```
+
+## Veri yapısı inceleme
+
+- Veri setlerinin yapısını incelemek icin `str()` fonksiyonundan yararlanılmaktadır.
+
+```{r}
+str(df)
+```
+
+- "df" veri seti 10 gözlemden, 4 değişken. Her bir değişkenin önünde `$` operatörü olduğuna dikkat ediniz.
+
+
+
+- veri setinin incelenmek için kullanılabilecek diğer fonksiyon ise `attributes()`
+
+```{r}
+attributes(df)
+```
+
+
+## Isimlendirme
+
+- Veri setleri vektör birleştirme üzerinden yapılırsa, vektör adları sütun ismi olarak kullanılır. Ancak bu isimler değiştirilebilir. Bu işlem `data.frame()` fonksiyonu içinde yapılabilir.
+
+```{r}
+df <- data.frame(isim = ad,
+                 boyolcum = boy,
+                 kiloolcum= kilo, 
+                 bedenolcum=beden)
+df
+```
+
+
+- Veri seti isimlendirme de diğer bir yol ise `names()` ya da `colnames()` fonksiyonlarıdır.
+
+```{r}
+df <- data.frame(ad,boy,kilo,beden)
+names(df) <- c("isim","boyolcum ","kiloolcum","bedenolcum")
+df
+```
+
+
+## Betimsel istatistikler
+
+- Veri setinin tümüne ilişkin betimsel istatistikler
+
+```{r}
+summary(cars)
+```
+
+
+- Veri setinin tek değişkenine ilişkin betimsel istatistikler
+
+```{r}
+summary(cars$speed)
+```
+
+
+`attach()` fonksiyonu ile bir veri setinin sütunları sütun isimi ile enviromente eklenir. Aynı işlem `detach()` fonksiyonu ile tersine alınabilir.
+
+```{r}
+summary(women$height)   
+attach(women)
+summary(height)   # Ayni nesne isimi ile çağırılır.
+height <- height*2.54   # Bunu yapmamaya calisin!!
+find("height")
+
+```
+
+
+```{r}
+summary(height)         # Yeni değişken
+rm(height)
+detach("women")
+summary(women$height)   # unchanged
+```
+
+
+
+### Kendinizi Test Edin
+
+**S1.** Sırayla değişken adları TamSayi, OndalikSayi, Karakter, Mantıksal, Faktör olan 5 değişkenli hiçbir gözlemi olmayan bir data.frame oluşturmanızı ve bu data.framenin yapısını yazdırmanızı bekliyorum. Beklenen çıktı aşağıdaki gibi olmalıdır.
+
+```{r eval=FALSE, include=TRUE, error =TRUE}
+[1] "Bos data.framenin yapısı:"
+'data.frame':	0 obs. of  5 variables:  
+ $ TamSayi    : int   
+ $ OndalikSayi: num  
+ $ Karakter   : chr  
+ $ Mantiksal  : logi  
+ $ Faktor     : Factor w/ 0 levels:  
+NULL
+
+```
+
+
+
+**S2.** Aşağıda size verilen dört vektörden bir veri seti oluşturunuz. Oluşturduğunuz veri setinin deneme sütunundaki eksik veri sayısını hesaplayan komut yazınız.
+
+```{r}
+ad = c('Su','Pera','Sule','Can','Cem','Name','Aras','Mete','Kaan','Pelin')
+puan = c(12.5, 9, 16.5, 12, 9, 20, 14.5, 13.5, 8, 19)
+deneme = c(1, NA, 2, NA, 2, NA, 1, NA, 2, 1)
+bonus = c(1,0,1, 0, 0, 1, 1, 0,0, 1)
+
+
+```
+
+"Deneme sütunundaki NA sayısı:"
+[1] 4
+
+
+
+## Odev
+
+Lütfen aşağıdaki bölümleri haftaya kadar okuyunuz.
+
+-   <http://adv-r.had.co.nz/Data-structures.html>
+
+-   <http://adv-r.had.co.nz/Subsetting.html>
+
+- Veri düzenleme konusunda `r emo::ji("link")` [**DataEditR**](https://dillonhammill.github.io/DataEditR/) paketini inceleyiniz. 

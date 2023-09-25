@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Fonksiyonlar | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Fonksiyon belli bir görevi yerine getirmek için yazılan bir grup komuttur. Fonksiyonların çalışması için girdilerinin olması gerekmektedir. Fonksiyonlar girdileri ile yaptıkları işlem sonucunda...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Fonksiyonlar | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/fonksiyonlar.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Fonksiyon belli bir görevi yerine getirmek için yazılan bir grup komuttur. Fonksiyonların çalışması için girdilerinin olması gerekmektedir. Fonksiyonlar girdileri ile yaptıkları işlem sonucunda...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Fonksiyonlar | OLC731">
+<meta name="twitter:description" content="Fonksiyon belli bir görevi yerine getirmek için yazılan bir grup komuttur. Fonksiyonların çalışması için girdilerinin olması gerekmektedir. Fonksiyonlar girdileri ile yaptıkları işlem sonucunda...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="active" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="fonksiyonlar" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Fonksiyonlar<a class="anchor" aria-label="anchor" href="#fonksiyonlar"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Fonksiyon belli bir görevi yerine getirmek için yazılan bir grup komuttur.</p></li>
+<li><p>Fonksiyonların çalışması için girdilerinin olması gerekmektedir. Fonksiyonlar girdileri ile yaptıkları işlem sonucunda bir çıktı oluştururlar.</p></li>
+<li><p>Fonksiyonlar girdileri o fonksiyonun çalışması için önceden belirlenen <strong>argümanlar</strong> ve o argümanların değerlerinden oluşur. (dilbilimle ilgileniyorsanız, bunları bir özne ve nesne gerektiren fiiller olarak düşünmek isteyebilirsiniz)</p></li>
+<li>
+<p>Fonksiyonların kullanımında üç noktaya dikkat edilmelidir.</p>
+<ol style="list-style-type: decimal">
+<li>argümanların sırası</li>
+<li>argümanların olağan (default) değerleri</li>
+<li>bazı argümanların zorunlu, bazı argümanların opsiyonel olmasıdır</li>
+</ol>
+</li>
+<li><p>Bir fonksiyonun aldığı tüm argümanlara yardım dokümantasyonunu kullanarak <code>?function</code> formatını kullanarak bakabilirsiniz. Bazı argümanlar zorunlu, bazıları ise isteğe bağlıdır. İsteğe bağlı bağımsız değişkenler, herhangi bir değer girmezseniz genellikle varsayılan/olağan (normalde yardım belgelerinde belirtilen) bir değer kullanır.</p></li>
+<li><p>Örnek olarak, normal dağılıma sahip bir sayı kümesini rastgele üreten <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> fonksiyonunun yardım belgelerine bakalım.</p></li>
+<li><p>Bir fonksiyonun aldığı tüm argümanlara yardım dokümantasyonunu kullanarak <code>?function</code> formatını kullanarak bakabilirsiniz. Bazı argümanlar zorunlu, bazıları ise isteğe bağlıdır. İsteğe bağlı bağımsız değişkenler, herhangi bir değer girmezseniz genellikle varsayılan/olağan (normalde yardım belgelerinde belirtilen) bir değer kullanır.</p></li>
+</ul>
+<p><strong>Alıştırma </strong></p>
+<ul>
+<li>R Studio'yu açın ve konsola aşağıdaki kodu yazın:</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">rnorm</span></span></code></pre></div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> için yardım belgeleri sağ alt yardım panelinde görünmelidir. Kullanım bölümünde, <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>un aşağıdaki formu aldığını görüyoruz:</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>Argümanlar bölümünde, her bir argüman için açıklamalar bulunmaktadır. <code>n</code> oluşturmak istediğimiz gözlem sayısı, <code>mean</code> oluşturacağımız veri noktalarının ortalaması ve <code>sd</code> verinin standart sapmasıdır. Ayrıntılar bölümünde, <code>mean</code> ve <code>sd</code> için herhangi bir değer girilmezse, bu değerler için varsayılan olarak 0 ve 1 kullanılacağı belirtilir. <code>n</code> için varsayılan bir değer olmadığından, belirtilmesi gerekir, aksi takdirde kod çalışmaz.</p></li>
+<li><p>Bir örnek deneyelim ve R'den 5 rastgele sayı üretmesini istemek için gerekli <code>n</code> argümanını değiştirelim.</p></li>
+</ul>
+<p><strong>Alıştırma II</strong></p>
+<ul>
+<li>Aşağıdaki kodu kopyalayıp konsola yapıştırın.</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12042016</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] -0.2896163 -0.6428964  0.5829221 -0.3286728 -0.5110101</code></pre>
+<ul>
+<li>Bu sayıların ortalaması 0 ve SD'si 1'dir. Şimdi farklı bir sayı kümesi üretmek için ek argümanları değiştirebiliriz.</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span>, mean <span class="op">=</span> <span class="fl">10</span>, sd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 13.320853  9.377956 10.235461  9.811793 13.019102</code></pre>
+<ul>
+<li>Bu kez R yine 5 rastgele sayı üretti, ancak şimdi bu sayı kümesi belirtildiği gibi 10 ortalama ve 2 sd değerine sahip. Bir fonksiyonun hangi argümanları gerektirdiğini anlamanıza yardımcı olması için yardım belgelerini kullanmayı her zaman unutmayın.</li>
+</ul>
+<div class="info">
+<p>
+Eğer internette kod örneklerine bakıyorsanız, sık sık
+<code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> fonksiyonu ile başlayan kodlar görebilirsiniz.
+Bu fonksiyon rastgele sayı üretecini kontrol eder - rastgele sayı üreten
+herhangi bir fonksiyon kullanıyorsanız (<code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> gibi),
+<code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> fonksiyonunu çalıştırmak aynı sonucu almanızı
+sağlayacaktır (bazı durumlarda yapmak istediğiniz şey bu olmayabilir).
+Bu örnekte <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> diyoruz, bu aynı rastgele sayıları
+alacağınız anlamına geliyor.
+</p>
+</div>
+<div id="argüman-isimleri" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Argüman isimleri<a class="anchor" aria-label="anchor" href="#arg%C3%BCman-isimleri"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Yukarıdaki örneklerde, kodumuzdaki bağımsız değişken adlarını yazdık (örneğin, <code>n</code>, <code>mean</code>, <code>sd</code>), ancak bu kesinlikle gerekli değildir. Aşağıdaki iki kod satırının her ikisi de aynı sonucu üretecektir (<code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> fonksiyonunu her çalıştırdığınızda rastgele olduğu için biraz farklı bir sayı kümesi üretecektir, ancak yine de aynı ortalama ve SD'ye sahip olacaklardır):</li>
+</ul>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">6</span>, mean <span class="op">=</span> <span class="fl">3</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">6</span>, <span class="fl">3</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>Önemli olarak, eğer argüman isimlerini yazmazsanız, R argümanların varsayılan sırasını kullanacaktır, yani <code>rnorm</code> için girdiğiniz ilk sayının <code>n</code> olduğunu varsayacaktır. ikinci sayı <code>mean</code> ve üçüncü sayı <code>sd</code>dir.</p></li>
+<li><p>Eğer argüman isimlerini yazarsanız, argümanları istediğiniz sırada yazabilirsiniz:</p></li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>sd <span class="op">=</span> <span class="fl">1</span>, n <span class="op">=</span> <span class="fl">6</span>, mean <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>R'yi ilk öğrenirken, fonksiyonun her bir parçasının ne yaptığını hatırlamanıza ve anlamanıza yardımcı olabileceğinden, argüman adlarını yazmayı yararlı bulabilirsiniz. Ancak, becerileriniz ilerledikçe argüman adlarını atlamayı daha hızlı bulabilirsiniz ve ayrıca argüman adlarını kullanmayan çevrimiçi kod örnekleri göreceksiniz, bu nedenle her bir kod parçasının hangi argümana atıfta bulunduğunu anlayabilmek önemlidir (veya kontrol etmek için yardım belgelerine bakın).</p></li>
+<li><p>Bu derste, her bir fonksiyonu ilk kez kullandığımızda argüman adlarını her zaman yazacağız, ancak sonraki kullanımlarda bunlar atlanabilir.</p></li>
+</ul>
+</div>
+<div id="tab-ile-otomatik-tamamlama" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> TAB ile otomatik tamamlama<a class="anchor" aria-label="anchor" href="#tab-ile-otomatik-tamamlama"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>R Studio'nun çok kullanışlı bir özelliği, fonksiyonlar için TAB otomatik tamamlama özelliğidir (bkz. Şekil <a href="fonksiyonlar.html#fig:img-autocomplete">3.1</a>). Fonksiyonun adını yazıp tab tuşuna basarsanız, R Studio size fonksiyonun aldığı argümanları kısa bir açıklama ile birlikte gösterecektir. Argüman adının üzerinde enter tuşuna basarsanız, tıpkı telefonunuzdaki otomatik tamamlama gibi adı sizin için dolduracaktır. Bu, R'yi ilk öğrenirken inanılmaz derecede kullanışlıdır ve bu özelliği sık sık kullanmayı <strong>unutmamalısınız.</strong>
+</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-autocomplete"></span>
+<img src="images/autocomplete.png" alt="Tab ile otomatik durdurma" width="100%"><p class="caption">
+Figure 3.1: Tab ile otomatik durdurma
+</p>
+</div>
+</div>
+<div id="kişisel-tanımlı-fonksiyon" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Kişisel tanımlı fonksiyon<a class="anchor" aria-label="anchor" href="#ki%C5%9Fisel-tan%C4%B1ml%C4%B1-fonksiyon"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Kişisel tanımlı fonksiyon yazılması şablonu aşağıdaki gibidir.</li>
+</ul>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="fonksiyonlar.html#cb44-1" tabindex="-1"></a>fonksiyonadi<span class="ot">&lt;-</span>  <span class="cf">function</span>(argumanlar ve olagan degerleri){</span>
+<span id="cb44-2"><a href="fonksiyonlar.html#cb44-2" tabindex="-1"></a>  kodlar</span>
+<span id="cb44-3"><a href="fonksiyonlar.html#cb44-3" tabindex="-1"></a>  <span class="fu">return</span>()</span>
+<span id="cb44-4"><a href="fonksiyonlar.html#cb44-4" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>Oluşturulan fonksiyon çalıştırılırken ise aşağıdaki şeklinde çalıştırılır.</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="fonksiyonlar.html#cb45-1" tabindex="-1"></a><span class="fu">fonksiyonadi</span>(argumanlar ve degerleri)</span></code></pre></div>
+<ul>
+<li>Kare alma işlemi aşağıdaki şekilde yapılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sayi</span> <span class="op">&lt;-</span>  <span class="fl">4</span></span>
+<span><span class="va">sayi</span> <span class="op">*</span> <span class="va">sayi</span></span>
+<span><span class="va">sayi</span> <span class="op">^</span><span class="fl">2</span></span></code></pre></div>
+<pre><code>## [1] 16
+## [1] 16</code></pre>
+<ul>
+<li>Bu işlem sürekli yapılacaksa fonksiyon olarak yazılabilir.</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># kare alma fonksiyonu</span></span>
+<span><span class="va">kare_al</span> <span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">sayi</span><span class="op">*</span><span class="va">sayi</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">kare_al</span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<ul>
+<li>Farklı dereceden üsler alabilen bir fonksiyon yazalım.</li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#üs alma</span></span>
+<span><span class="va">üs_al</span><span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">us</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="va">us</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">üs_al</span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 81</code></pre>
+<ul>
+<li>Argümanlardan birine olağan değer girilmesi</li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#üs alma</span></span>
+<span><span class="va">üs_al</span><span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">us</span><span class="op">=</span><span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">^</span><span class="va">us</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="fu">üs_al</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co"># us argumanin olagan degeri olan</span></span>
+<span><span class="co"># 2 olduğu için argumana </span></span>
+<span><span class="co"># deger girilmediginde kare alir.</span></span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<ul>
+<li>Aşağıdaki fonksiyona 3 ve 4 değerleri girilirse çıktı ne olur?</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">myfunc</span> <span class="op">&lt;-</span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span></span>
+<span><span class="op">{</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span>  <span class="va">x</span><span class="op">+</span><span class="va">y</span></span>
+<span><span class="va">b</span> <span class="op">&lt;-</span>  <span class="va">x</span><span class="op">*</span> <span class="va">y</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">a</span><span class="op">*</span><span class="va">b</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">myfunc</span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonu en sık kullandığımız fonksiyonlardan biridir.</li>
+</ul>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ul>
+<li><p>R base pakette yer alan bu fonksiyonu kendiniz de yazabilirsiniz.</p></li>
+<li><p>R' da deneyim kazandıkça, yaptığınız işlemler karmaşıklaştıkça
+kendi fonksiyonlarınızı yazma ihtiyacı duyacaksınız.</p></li>
+<li><p><code>avg()</code> isminde vektör ortalaması hesaplayan fonksiyon yazınız.</p></li>
+<li><p>Yazdığınız fonksiyon ile aşağıdaki işlemi yapınız.</p></li>
+</ul>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span>  <span class="fl">1</span><span class="op">:</span><span class="fl">1000</span></span>
+<span><span class="fu">avg</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 500.5</code></pre>
+<ul>
+<li>Yazdığınız fonksiyon temel pakette yer alan <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonu ile aynı sonucu verdi mi?</li>
+</ul>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="fu">avg</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<ul>
+<li><p>Fonksiyon içinde tanımlanan nesneler çalışma alanına kaydedilmezler.</p></li>
+<li><p>Fonksiyonlar da R nesnesidir.</p></li>
+</ul>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1] "avg"               "backtick"          "hl"               
+##  [4] "kare_al"           "path"              "pkg"              
+##  [7] "psyteachr_colors"  "psyteachr_colours" "sayi"             
+## [10] "üs_al"             "x"</code></pre>
+</div>
+<div id="r-çalışma-alanı" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> R Çalışma Alanı<a class="anchor" aria-label="anchor" href="#r-%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>çalışma alanı, nesnelerin ve bilgilerin kaydedildiği alandır.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> ve <code><a href="https://rdrr.io/r/base/ls.html">objects()</a></code> fonksiyonları çalışma alanında kayıtlı nesneleri konsolda göstermektedir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> fonksiyonu ile nesneleri çağırma işlemi özelleştirilebilir.</p></li>
+<li><p><code><a href="https://rdrr.io/r/utils/ls_str.html">ls.str()</a></code> fonksiyonu ise hafızadaki nesneleri ayrıntıları ile göstermektedir.</p></li>
+<li><p>Çok fazla kod yazıyorsanız, enviroment (veya çalışma alanının) birçok nesne ile darmadağın olduğunu fark edebilirsiniz. Bu, hangi nesneye ihtiyacınız olduğunu bulmanızı zorlaştırabilir ve bu nedenle yanlış veri seti kullanma riskiyle karşı karşıya kalabilirsiniz. Yeni bir veri kümesi üzerinde çalışıyorsanız veya son sürümü elde etmeden önce çok sayıda farklı kod denediyseniz, yanlış nesneyi kullanmaktan kaçınmak için ortamı/çalışma alanını temizlemeyi unutmamak iyi bir uygulamadır. Bunu birkaç şekilde yapabilirsiniz.</p></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Nesneleri tek tek kaldırmak için konsola <code>rm(nesne_adı)</code> yazabilirsiniz. Önceki bölümde oluşturduğunuz nesnelerden birini kaldırmak için bunu şimdi deneyin.</p></li>
+<li><p>Ortamdaki tüm nesneleri temizlemek için konsolda <code>rm(liste = ls())</code> komutunu çalıştırın.</p></li>
+<li><p>Ortamdaki tüm nesneleri temizlemek için ortam bölmesindeki süpürge simgesine de tıklayabilirsiniz.</p></li>
+<li><ul>
+<li>Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.</li>
+</ul></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-broom"></span>
+<img src="images/broom.png" alt="Clearing the workspace" width="100%"><p class="caption">
+Figure 3.2: Clearing the workspace
+</p>
+</div>
+</div>
+<div id="r-çalışma-dizini" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> R Çalışma Dizini<a class="anchor" aria-label="anchor" href="#r-%C3%A7al%C4%B1%C5%9Fma-dizini"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R yazılımı Start/Baslangic menusu üzerinden çalıştırıldığında çalışma dizini <strong>C:/Users/<kullanici adi>/Documents</kullanici></strong></p></li>
+<li>
+<p>Çalışma dizinini sorgulamak için kullanılacak olan fonksiyon</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code> (get working directory)</li>
+</ul>
+</li>
+<li>
+<p>Çalışma dizinini değiştirmek için kullanılacak olan fonksiyon</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> (set working directory)</li>
+</ul>
+</li>
+<li><p>Bu işlem Rstudio menusu <strong>"Session"</strong> sekmesinden ya da <strong>CTRL +Shift + H</strong> tuşları ile de yapılabilmektedir.</p></li>
+</ul>
+</div>
+<div id="ri-kapatma" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> R'i Kapatma<a class="anchor" aria-label="anchor" href="#ri-kapatma"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Kaydet (Save) ya da CTLR + S <code>dosyadi.R</code> uzantısıyla kaydedilebilmektedir.</p></li>
+<li><p>Bu sayede tekrar kullanılabilmekte ya da başkaları ile kolaylıkla paylaşılabilmektedir.</p></li>
+<li><p>Tüm programlar gibi <strong>"x"</strong> işareti ile ya da <strong>q()</strong> fonksiyonunu ile sonlandırılabilir.</p></li>
+<li><p>R'dan çıkış yaparken, program çalışma alanının kaydedilip kaydedilmeyeceğini sormaktadır.</p></li>
+<li><p>Eger R'in çalışma alanını kaydetmesini istenirse, R çalışma dizinine `.Rdata uzantılı bir dosya kaydeder.</p></li>
+<li><p>Çalışma alanı kaydı için <code>save.image("dosyaadi")</code> komutu da kullanılabilmektedir.</p></li>
+<li><p>R'dan çıkış yapmadan yapılan işlem durdurulmak istenirse, konsol bölümündeki <strong>"Stop"</strong> işareti veya <strong>Esc</strong> tuşları kullanılabilir.</p></li>
+</ul>
+</div>
+<div id="r-kaynakları" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> R Kaynakları<a class="anchor" aria-label="anchor" href="#r-kaynaklar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>🔗<a href="https://cran.r*%20project.org/web/views/Psychometrics.html">Alana ozgu paketler</a>
+</li>
+<li>Paket yardım sayfaları ve paket vignetteleri</li>
+<li>e* posta gruplarindaki e* postalara <code>RSiteSearch ("sample.int")</code> "</li>
+<li>
+<code>ltm reliability</code> gibi fonskiyon isimler argumansiz kullanirlirsa icerigi gorunur. Karmasik gorunse de siz de yapabilirsiniz. Öğrenmek için iyi bir yoldur.</li>
+<li>🔗<a href="https://www.learnr4free.com/tr/index.html" class="uri">https://www.learnr4free.com/tr/index.html</a>
+</li>
+<li>🔗<a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Referans kartları</a>
+</li>
+<li>🔗<a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a>
+</li>
+<li>🔗<a href="https://hadley.nz/">Hadley Wickham</a>
+</li>
+<li>🔗<a href="http://r4stats.com/">rforstats</a>
+</li>
+<li>🔗<a href="https://blog.revolutionanalytics.com/r*%20is*%20hot/">r is hot</a>
+</li>
+<li>🔗<a href="http://www.matthewckeller.com/">paralel programlama</a>
+</li>
+</ul>
+</div>
+<div id="ödev-1" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> Ödev<a class="anchor" aria-label="anchor" href="#%C3%B6dev-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.</p></li>
+<li><p><a href="https://learnr-examples.shinyapps.io/ex-setup-r/">R kurulumu ile ilgili</a> learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.</p></li>
+<li><p>Kitap Bölüm 1 alıştırmalarını tamamlayınız.</p></li>
+<li><p>Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.</p></li>
+<li><p>swirl package <strong>learn R in R</strong> paketi yükleyerek alıştırma yapmayı deneyiniz.</p></li>
+<li><p><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Referens kart</a> sayfasının çıktısını alarak duvarınıza asmanızı öneririm.</p></li>
+</ul>
+</div>
+<div id="r-oturumları" class="section level2" number="3.9">
+<h2>
+<span class="header-section-number">3.9</span> R oturumları<a class="anchor" aria-label="anchor" href="#r-oturumlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>R'yi açıp kod yazmaya, paketleri yüklemeye ve nesneler oluşturmaya başladığınızda, bunu yeni bir <strong>oturumda</strong> yaparsınız. Çalışma alanını temizlemeye ek olarak, bazen yeni bir oturum başlatmak yararlı olabilir. Bu, bilgisayarınızda R'yi her başlattığınızda otomatik olarak gerçekleşir, ancak oturumlar sunucuda kalıcı olabilir. Kodunuzun çalışmadığını fark ederseniz ve nedenini bulamazsanız, yeni bir oturum başlatmaya değer olabilir. Bu, ortamı temizleyecek ve yüklü tüm paketleri ayıracaktır - bunu telefonunuzu yeniden başlatmak gibi düşünün.</li>
+</ul>
+</div>
+<div id="alıştırma" class="section level2" number="3.10">
+<h2>
+<span class="header-section-number">3.10</span> Alıştırma<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma"><i class="fas fa-link"></i></a>
+</h2>
+<p>'Oturum - R'yi Yeniden Başlat'a tıklayın.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-session"></span>
+<img src="images/new_session.png" alt="The truth about programming" width="100%"><p class="caption">
+Figure 3.3: The truth about programming
+</p>
+</div>
+</div>
+<div id="hata-ayıklama-ipuçları" class="section level2" number="3.11">
+<h2>
+<span class="header-section-number">3.11</span> Hata ayıklama ipuçları<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>-Kodlamanın büyük bir kısmı kodunuzun neden çalışmadığını anlamaya çalışmaktır ve bu acemi ya da uzman olmanız fark etmeksizin geçerlidir.</p>
+<ul>
+<li><p>Bu kurs boyunca ilerlerken yaptığınız hataların ve bunları nasıl düzelttiğinizin kaydını tutmalısınız.</p></li>
+<li><p>Her bölümde dikkat etmeniz gereken bir dizi yaygın hata sunacağız, ancak şüphesiz kendiniz de yeni hatalar yapacaksınız (ve düzelteceksiniz!).</p></li>
+<li><p>Kullanmaya çalıştığınız fonksiyonlar için doğru paketleri yüklediniz mi? Çok yaygın bir hata, paketi yüklemek için kodu yazmaktır, örneğin <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> ancak daha sonra çalıştırmayı unutmaktır.</p></li>
+<li><p>Bir yazım hatası mı yaptınız? Unutmayın <code>data</code> ile <code>DATA</code> aynı şey değildir ve <code>t.test</code> ile <code>t_test</code> aynı şey değildir.</p></li>
+<li><p>Bir paket çakışması mı var? Paket ve fonksiyonu <code>package::function</code> ile belirtmeyi denediniz mi?</p></li>
+<li><p>Bu kesinlikle bir hata mı? R'deki tüm kırmızı metinler hata anlamına gelmez - bazen size sadece bilgi içeren bir mesaj verir.</p></li>
+</ul>
+</div>
+<div id="yardımcı-kaynaklar" class="section level2" number="3.12">
+<h2>
+<span class="header-section-number">3.12</span> Yardımcı Kaynaklar<a class="anchor" aria-label="anchor" href="#yard%C4%B1mc%C4%B1-kaynaklar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve kopyalanacak kod örnekleri bulmak demektir. B</p>
+<ul>
+<li><p>etkili bir şekilde problem çözmeyi öğrenmek, bu kurs boyunca geliştirmeniz gereken temel bir beceridir.</p></li>
+<li><p>Yardım belgelerini kullanın. Bir fonksiyonun nasıl çalıştığını anlamakta zorlanıyorsanız, <code>?function</code> komutunu hatırlayın.</p></li>
+<li><p>Bir hata mesajı alırsanız, kopyalayıp Google'a yapıştırın - büyük olasılıkla başka biri de aynı sorunu yaşamıştır.</p></li>
+<li>
+<p>Bu ders materyallerine ek olarak, R öğrenmek için bir dizi mükemmel kaynak vardır:</p>
+<ul>
+<li><a href="http://www.cookbook-r.com/">R Cookbook</a></li>
+<li><a href="https://stackoverflow.com/">StackOverflow</a></li>
+<li><a href="https://r4ds.had.co.nz/">Veri Bilimi için R</a></li>
+<li>Twitter'da <a href="https://twitter.com/search?f=tweets&amp;q=%23rstats&amp;src=typd">#rstats</a> hashtag'ini arayın veya kullanın</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="alıştırma-kendini-test-et" class="section level2" number="3.13">
+<h2>
+<span class="header-section-number">3.13</span> Alıştırma : Kendini test et<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Soru 1.</strong> Neden <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> kodunu analiz kodlarında asla dahil <strong>etmemelisiniz</strong>? <select class="webex-select"><option value="blank"></option>
+<option value="">Bunun yerine library() kullanmalısınız</option>
+<option value="">Paketler zaten temel R'ın bir parçasıdır</option>
+<option value="answer">Siz (veya bir başkası) yanlışlıkla kodunuzun çalışmasını durduran bir paket güncellemesi yükleyebilirsiniz</option>
+<option value="">Paketin en son sürümüne zaten sahipsiniz</option></select></p>
+<div class="webex-solution">
+<button>
+Açıklama
+</button>
+<p>Unutmayın, <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> işlevini çalıştırdığınızda her zaman paketin en son sürümü yüklenir ve yüklemiş olabileceğiniz eski sürümlerin üzerine yazılır.</p>
+</div>
+<p><br><strong>Soru 2.</strong>Aşağıdaki kod ne üretecektir?</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">6</span>, <span class="fl">50</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Ortalaması 6 ve SD'si 50 olan 10 sayıdan oluşan bir veri seti</option>
+<option value="answer">Ortalaması 50 ve SD'si 10 olan 6 sayıdan oluşan bir veri seti</option>
+<option value="">Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti</option>
+<option value="">Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti</option></select></p>
+<div class="webex-solution">
+<button>
+Açıklama
+</button>
+<p><code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> için varsayılan biçim <code>rnorm(n, mean, sd)</code> şeklindedir. Bir fonksiyonun her bir argümanının ne işe yaradığını hatırlamak için yardıma ihtiyacınız varsa, <code><a href="https://rdrr.io/r/stats/Normal.html">?rnorm</a></code> komutunu çalıştırarak yardım belgelerine bakın</p>
+</div>
+<p><br><strong>Soru 3.</strong> Aynı isimde fonksiyonlara sahip iki paketiniz varsa ve tam olarak hangi paketin kullanılacağını belirtmek istiyorsanız, hangi kodu kullanırsınız?</p>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">package::function</option>
+<option value="">function::package</option>
+<option value="">library(package)</option>
+<option value="">install.packages(package)</option></select></p>
+<div class="webex-solution">
+<button>
+Açıklama
+</button>
+<p>Örneğin <code><a href="https://dplyr.tidyverse.org/reference/select.html">dplyr::select</a></code> gibi <code>package::function</code> biçimini kullanmalısınız. Paketlerinizi ilk yüklediğinizde, herhangi bir fonksiyon aynı isme sahipse R'nin sizi uyaracağını unutmayın - buna dikkat etmeyi unutmayın!</p>
+</div>
+<p><strong>Soru 4.</strong> Aşağıdakilerden hangisinin bir arguman olması en muhtemeldir? <select class="webex-select"><option value="blank"></option>
+<option value="answer">35</option>
+<option value="">read_csv()</option>
+<option value="">&lt;-</option></select></p>
+<p><strong>Soru 5.</strong> Fonksiyonları belirlemenin kolay bir yolu aşağıdakilerden hangisine bakmaktır <select class="webex-select"><option value="blank"></option>
+<option value="">()</option>
+<option value="">[]</option>
+<option value="answer">{}</option></select>.</p>
+<p><strong>Soru 6.</strong> &lt;-`'nin görevi, fonksiyondan elde edilen çıktıyı bir/bir ..................... atamaktır. <select class="webex-select"><option value="blank"></option>
+<option value="answer">nesne</option>
+<option value="">atama</option>
+<option value="">arguman</option></select>.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></div>
+<div class="next"><a href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fonksiyonlar"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman-isimleri"><span class="header-section-number">3.1</span> Argüman isimleri</a></li>
+<li><a class="nav-link" href="#tab-ile-otomatik-tamamlama"><span class="header-section-number">3.2</span> TAB ile otomatik tamamlama</a></li>
+<li><a class="nav-link" href="#ki%C5%9Fisel-tan%C4%B1ml%C4%B1-fonksiyon"><span class="header-section-number">3.3</span> Kişisel tanımlı fonksiyon</a></li>
+<li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1"><span class="header-section-number">3.4</span> R Çalışma Alanı</a></li>
+<li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">3.5</span> R Çalışma Dizini</a></li>
+<li><a class="nav-link" href="#ri-kapatma"><span class="header-section-number">3.6</span> R'i Kapatma</a></li>
+<li><a class="nav-link" href="#r-kaynaklar%C4%B1"><span class="header-section-number">3.7</span> R Kaynakları</a></li>
+<li><a class="nav-link" href="#%C3%B6dev-1"><span class="header-section-number">3.8</span> Ödev</a></li>
+<li><a class="nav-link" href="#r-oturumlar%C4%B1"><span class="header-section-number">3.9</span> R oturumları</a></li>
+<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma"><span class="header-section-number">3.10</span> Alıştırma</a></li>
+<li><a class="nav-link" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><span class="header-section-number">3.11</span> Hata ayıklama ipuçları</a></li>
+<li><a class="nav-link" href="#yard%C4%B1mc%C4%B1-kaynaklar"><span class="header-section-number">3.12</span> Yardımcı Kaynaklar</a></li>
+<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><span class="header-section-number">3.13</span> Alıştırma : Kendini test et</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/03-fonksiyonlar.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/03-fonksiyonlar.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
