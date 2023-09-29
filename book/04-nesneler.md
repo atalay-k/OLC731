@@ -9,18 +9,17 @@ data(diamonds)
 head(diamonds)
 ```
 
-<div class="kable-table">
-
-| carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
-|-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|  0.23|Ideal     |E     |SI2     |  61.5|    55|   326| 3.95| 3.98| 2.43|
-|  0.21|Premium   |E     |SI1     |  59.8|    61|   326| 3.89| 3.84| 2.31|
-|  0.23|Good      |E     |VS1     |  56.9|    65|   327| 4.05| 4.07| 2.31|
-|  0.29|Premium   |I     |VS2     |  62.4|    58|   334| 4.20| 4.23| 2.63|
-|  0.31|Good      |J     |SI2     |  63.3|    58|   335| 4.34| 4.35| 2.75|
-|  0.24|Very Good |J     |VVS2    |  62.8|    57|   336| 3.94| 3.96| 2.48|
-
-</div>
+```
+## # A tibble: 6 x 10
+##   carat cut       color clarity depth table price     x     y     z
+##   <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
+## 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+## 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+## 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+## 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
+```
 
 
 R nesne (object) yönelimli bir programlama dilidir.
@@ -189,7 +188,7 @@ length(x)/length(y)
 ## [1] 2.5
 ```
 
--   `x+y` işleminin sonucu nedir? <input class='webex-solveme nospaces' size='9' data-answer='["2 4 4 6 6"]'/>
+-   `x+y` işleminin sonucu nedir? _________
 
 
 <div class='webex-solution'><button>Çözüm</button>
@@ -370,11 +369,11 @@ length(harf52)
 
 
 ```
-##  [1] "1. maddenin guclugu: 0.77"  "2. maddenin guclugu: 0.49" 
-##  [3] "3. maddenin guclugu: 0.85"  "4. maddenin guclugu: 0.5"  
-##  [5] "5. maddenin guclugu: 0.61"  "6. maddenin guclugu: 0.72" 
-##  [7] "7. maddenin guclugu: 0.03"  "8. maddenin guclugu: 0.17" 
-##  [9] "9. maddenin guclugu: 0.55"  "10. maddenin guclugu: 0.64"
+##  [1] "1. maddenin guclugu: 0.93"  "2. maddenin guclugu: 0.91" 
+##  [3] "3. maddenin guclugu: 0.63"  "4. maddenin guclugu: 0.44" 
+##  [5] "5. maddenin guclugu: 0.51"  "6. maddenin guclugu: 0.91" 
+##  [7] "7. maddenin guclugu: 0.52"  "8. maddenin guclugu: 0.01" 
+##  [9] "9. maddenin guclugu: 0.3"   "10. maddenin guclugu: 0.81"
 ```
 
 Bunun birden fazla yolu olabilir, farklı şekillerde yapabilirsiniz. 
@@ -445,9 +444,9 @@ substr("YILMAZ", 1,3)
 ```
 
 
--  ```substring("YILMAZ", 1:.. , 1:6)``` kodunda  "Y" "I" "L" "M" "A" "Z" çıktısı oluşturacak kodu yazınız <input class='webex-solveme nospaces' size='1' data-answer='["6"]'/>
+-  ```substring("YILMAZ", 1:.. , 1:6)``` kodunda  "Y" "I" "L" "M" "A" "Z" çıktısı oluşturacak kodu yazınız _
 
--   ````substring("YILMAZ", ... , 4:6)``` kodunda "ILM"   "ILMA"  "ILMAZ"` çıktınısı oluşturacak kodu yazınız <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/>
+-   ````substring("YILMAZ", ... , 4:6)``` kodunda "ILM"   "ILMA"  "ILMAZ"` çıktınısı oluşturacak kodu yazınız _
 
 - Karakter nesnelerde daha fazlası için aşağıdaki fonksiyonları inceleyebilirsiniz.
 
@@ -499,11 +498,11 @@ T==TRUE
 ## [1] TRUE
 ```
 
--   `4==5` kodunun sonucu nedir? <input class='webex-solveme nospaces' size='5' data-answer='["FALSE"]'/>
+-   `4==5` kodunun sonucu nedir? _____
 
--   `4<5` kodunun sonucu nedir? <input class='webex-solveme nospaces' size='4' data-answer='["TRUE"]'/>
+-   `4<5` kodunun sonucu nedir? ____
 
--   `10>100` kodunun sonucu nedir? <input class='webex-solveme nospaces' size='5' data-answer='["FALSE"]'/>
+-   `10>100` kodunun sonucu nedir? _____
 
 
 
