@@ -336,23 +336,6 @@ ls()
 
 
 
-## R Kaynakları
-
-* 🔗[Alana ozgu paketler](https://cran.r* project.org/web/views/Psychometrics.html)
-* Paket yardım sayfaları ve paket vignetteleri
-* e* posta gruplarindaki e* postalara `RSiteSearch ("sample.int")` "
-* `ltm reliability` gibi fonskiyon isimler argumansiz kullanirlirsa icerigi gorunur. Karmasik gorunse de siz de yapabilirsiniz. Öğrenmek için iyi bir yoldur.
-* 🔗[https://www.learnr4free.com/tr/index.html](https://www.learnr4free.com/tr/index.html){.uri}
-* 🔗[Referans kartları](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
-* 🔗[Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
-* 🔗[Hadley Wickham](https://hadley.nz/)
-*   🔗[rforstats](http://r4stats.com/)
-* 🔗[r is hot](https://blog.revolutionanalytics.com/r* is* hot/)
-* 🔗[paralel programlama](http://www.matthewckeller.com/)
-
-
-
-
 ## Ödev 
 
 *  Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.

@@ -33,11 +33,10 @@
 | ...    | `glossary("ellipsis")`| dots     |
 
 
-```{r img-soundimals-hash, echo=FALSE, fig.cap="[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)"}
-
-knitr::include_graphics("images/soundimals_hash.png")
-
-```
+<div class="figure" style="text-align: center">
+<img src="images/soundimals_hash.png" alt="[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)" width="100%" />
+<p class="caption">(\#fig:img-soundimals-hash)[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)</p>
+</div>
 
 
 

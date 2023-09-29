@@ -88,7 +88,7 @@
 <li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
-<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
 <li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
 <li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
 <li><a class="" href="license.html">License</a></li>
@@ -105,7 +105,15 @@
 <span class="header-section-number">1</span> R ve Rstudio Temeller<a class="anchor" aria-label="anchor" href="#r-ve-rstudio-temeller"><i class="fas fa-link"></i></a>
 </h1>
 <p>Bu bölümde, <strong>R ve RStudio'nun</strong> nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele alacağız. Programlama deneyimi olmayanlar bu bölümü özellikle yararlı bulacaktır, ancak daha önce R kullanmış olsanız bile bazı yararlı ipuçları ve püf noktaları bulabilirsiniz.</p>
-<p>Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:) Biraz sabretmenizi bekliyorum !</p>
+<div class="info">
+<p>
+Bu bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade
+etmeyebilir:)
+</p>
+<p>
+Biraz sabretmenizi bekliyorum !
+</p>
+</div>
 <div id="r-nedir" class="section level2" number="1.1">
 <h2>
 <span class="header-section-number">1.1</span> R Nedir?<a class="anchor" aria-label="anchor" href="#r-nedir"><i class="fas fa-link"></i></a>
@@ -116,12 +124,17 @@
 <li><p>1960 yılında Bell Laboratories'de John Chambers ve arkadaşları tarafından geliştirilen <strong>S dilinin</strong> açık kaynak kodlu halidir.</p></li>
 <li><p>R yazılımı Genel Kamu Lisansi (GNU* General Public Licence) koşulları altında ücretsiz dağıtılmaktadır.</p></li>
 <li><p>R ve Temel Gelistirme Takimi (R core team) ile ilgili bilgilere R'in internet sitesinden (<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>) ulaşılabilir.</p></li>
-<li><p>R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki* üç ayda bir sürümler güncellenmektedir.</p></li>
-<li><p>The latest release (2022* 06* 23, Funny* Looking Kid) R* 4.2.1.tar.gz, read what's new in the latest version</p></li>
+<li>
+<p>R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki-üç ayda bir sürümler güncellenmektedir.</p>
+<ul>
+<li>
+<a href="https://cran.r-project.org/src/base/R-4"><strong>R version 4.3.1 (Beagle Scouts)</strong></a> has been released on 2023-06-16.</li>
+</ul>
+</li>
 <li><p>RStudio, R ile çalışmayı kolaylaştıran bir Entegre Geliştirme Ortamıdır (Integrated Development Environment[IDE]).</p></li>
 <li><p>Bunu İngilizce bilmek ve kitap yazmak için NotePad gibi düz bir metin editörü kullanmak ile Microsoft Word gibi bir kelime işlemci kullanmak gibi düşünün. Bunu yapabilirsiniz, ancak bu kadar iyi görünmez ve yazım denetimi ve biçimlendirme gibi şeyler olmadan çok daha zor olur. Benzer bir şekilde, <strong>R Studio olmadan da R kullanabilirsiniz ancak bunu tavsiye etmiyorum.</strong></p></li>
 <li><p>Unutmamanız gereken en önemli şey, bu ders için tüm çalışmalarınızı RStudio kullanarak yapacak olsanız da, aslında iki yazılım parçası kullanıyorsunuz, bu da zaman zaman her ikisinin de <strong>ayrı güncellemeleri</strong> olabileceği anlamına geliyor.</p></li>
-<li><p>R'yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R'nin çevrimiçi bir sürümünü kullanabilirsiniz ve bunu <strong>R server/sunucusu</strong> olarak adlandıracağız. İkincisi, R ve RStudio'yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.</p></li>
+<li><p>R'yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R'nin çevrimiçi bir sürümünü kullanabilirsiniz (<strong>R server/sunucusu)</strong>. İkincisi, R ve RStudio'yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.</p></li>
 </ul>
 </div>
 <div id="avantajları" class="section level2" number="1.2">
@@ -169,7 +182,7 @@
 <li><p>Bu duruma bir örnek vermek gerekirse, 20 adet regresyon denklemi kurulup regresyon katsayıları karşılaştırılmak istenirse, R yazılımı sadece regresyon kat sayılarını gösterebilir ve tek bir satırda tüm regresyon sonuçlarını karşılaştırmaya olanak verir. Aynı işlem için diğer istatistiksel yazılımlarda 20 ayrı pencereden elde edilen sonuçların elle yazılarak karşılaştırılması gerekecektir.</p></li>
 <li><p>R'da hata yapma olasılığı diğer programlara göre daha fazladır. Hata kaynağı için varsayımların iyi bilinmesi gerekmektedir.</p></li>
 <li><p>Hız konusunda SPSS ve SAS'a göre avantajlı olsa da diğer dillere göre (Python, Matlab gibi) daha yavaştır.</p></li>
-<li><p>Geliştirilen çok fazla paket olduğu icin, ihtiyaca uygun en iyi paketin seçimi zor olabilmektedir.</p></li>
+<li><p>Geliştirilen çok fazla paket olduğu için, ihtiyaca uygun en iyi paketin seçimi zor olabilmektedir.</p></li>
 <li><p>Bu bir dezavantaj gibi görünse de istatistiksel işlemlerin arka planını anlamaya yardımcı olur.</p></li>
 <li><p>Bu tarz zayıf hazırlanmış kodlar farklı koşullarda yavaş çalışabilmektedir.</p></li>
 <li><p>Çoğu kullanıcı bu eksiklikleri gidermek için kodları değiştiremez. Özellikle çok iyi yapılandırılmamış olan kodlar R'da yavaş çalışabilmektedir.</p></li>
@@ -181,7 +194,7 @@
 </h2>
 <ul>
 <li><p>Internet tarayıcısına R yazılımın internet sitesinin ana sayfasının adresi yazılır. <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></p></li>
-<li><p>Sol menüde yer alan "download CRAN" bölümüne tıkladıktan sonra ülke seçilir. Seçilen ülkenin yakinliği sadece yükleme hızını değiştirecektir.</p></li>
+<li><p>Sol menüde yer alan "download CRAN" bölümüne tıkladıktan sonra ülke seçilir. Seçilen ülkenin yakınlığı sadece yükleme hızını değiştirecektir.</p></li>
 <li><p>Çıkan sayfada "Download and Install R" baslığı altından işletim sistemine uygun olan bağlantı seçilir.</p></li>
 <li><p>R konsolda çalışmaya doğrudan başlanabilir; ancak konsol kullanımı bir kod editörü olmadığı için çok kullanışlı değildir.</p></li>
 <li><p>Rstudio hata ayıklama, görselleştirme araçları ile birlikte yüklenen modern bir kod editörüdür.</p></li>
@@ -203,7 +216,7 @@
 </h2>
 <ul>
 <li><p>Benim açıklamalarım yetmediyse R'yi bilgisayarınızda kullanmak için, lütfen daha ayrıntılı talimatlar ve indirmeniz gereken dosyaların bağlantılarının yanı sıra R'yi farklı bilgisayar türlerine yüklemek için bir dizi kılavuza bağlantılar içeren <a href="https://psyteachr.github.io/data-skills-v1/installing-r.html">Installing R</a> adresine bakın!!</p></li>
-<li><p>Yüklemeler konusunda daha da fazlasına ihtiyacımız var <a href="https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html">R studio R</a> !</p></li>
+<li><p>Yüklemeler konusunda daha da fazlasına ihtiyacımız var ise <a href="https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html">R studio R</a> !</p></li>
 <li><p>Verilen linkte yer alsa da ayrıca eklemeye ihtiyaç duyduğum bağlantılar:</p></li>
 <li><p><a href="https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935">Java</a></p></li>
 <li><p><a href="https://cloud.r*%20project.org/bin/windows/Rtools">Rtools</a> Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. <strong>Önemli:</strong> Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.</p></li>
@@ -239,7 +252,7 @@ Figure 1.1: Global options
 </h2>
 <ul>
 <li><p>R'yi bilgisayarınıza kurmanın avantajı, kullanmak için internete bağlı olmanız gerekmemesi, dosyalarınızı kaydetmenin ve yönetmenin daha kolay olması ve sunucunun çökmesi durumunda sorun yaşanmamasıdır (bu nadirdir, ancak olmuştur).</p></li>
-<li><p>R sunucusunu kullanmanın avantajı, bilgisayraına herhangi bir şey yüklemenize gerek olmaması, sadece web tarayıcınız üzerinden erişebilmenizdir.</p></li>
+<li><p>R sunucusunu kullanmanın avantajı, bilgisayarına herhangi bir şey yüklemenize gerek olmaması, sadece web tarayıcınız üzerinden erişebilmenizdir.</p></li>
 <li><p>R'yi yükleyemeyeceğiniz bir bilgisayarınız varsa (örneğin Chromebook) veya R'yi bilgisayarınıza yüklemeyle ilgili ciddi sorunlarınız varsa sunucuyu kullanmanızı öneririz.</p></li>
 </ul>
 </div>
@@ -266,7 +279,7 @@ Figure 1.2: RStudio arayüzü
 <span class="header-section-number">1.10</span> R Temel Özellikler<a class="anchor" aria-label="anchor" href="#r-temel-%C3%B6zellikler"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>R konsolda gorunen <strong>&gt;</strong> isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur.</li>
+<li>R konsolda gorunen <strong>&gt;</strong> isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></span></code></pre></div>
@@ -295,7 +308,7 @@ Figure 1.2: RStudio arayüzü
 <li><p>R harflerin küçük ve ya büyük olmasına karşı duyarlıdır.</p></li>
 <li><p>R fonksiyonlarına benzer isimlerde nesne ismi kullanmamaya <strong>dikkat edilmelidir.</strong></p></li>
 <li><p>Ayrıca <strong>c,C,D,F,I,q,t,T</strong> gibi tek harfli nesne ismi kullanmaktan kaçınılmalıdır; bunların R'da özel anlamları bulunmaktadır.</p></li>
-<li><p>R yazılımında <strong>#</strong> işareti ile başlayan satir, yorum satırıdır.</p></li>
+<li><p>R yazılımında <strong>#</strong> işareti ile başlayan satır, yorum satırıdır.</p></li>
 <li><p>Genellikle komutların anlamını açıklamak için kullanılmaktadır.</p></li>
 <li><p>R, bu satırları dikkate almaz, bunlar sadece kullanıcılar için bilgi ve hatırlatıcı açıklamaları içermektedir.</p></li>
 </ul>
@@ -344,8 +357,8 @@ Figure 1.3: Calisma alanındaki nesneler
 <span><span class="va">yeniyil</span> <span class="op">-</span> <span class="va">gun</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 46
-Time difference of 98 days
-[1] 16.0044</code></pre>
+Time difference of 94 days
+[1] 14.63746</code></pre>
 <ul>
 <li>Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:</li>
 </ul>
@@ -641,7 +654,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-25.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-09-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

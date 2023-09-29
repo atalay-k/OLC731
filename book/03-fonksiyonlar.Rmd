@@ -284,23 +284,6 @@ knitr::include_graphics("images/broom.png")
 
 
 
-## R Kaynakları
-
-* `r emo::ji("link")`[Alana ozgu paketler](https://cran.r* project.org/web/views/Psychometrics.html)
-* Paket yardım sayfaları ve paket vignetteleri
-* e* posta gruplarindaki e* postalara `RSiteSearch ("sample.int")` "
-* `ltm reliability` gibi fonskiyon isimler argumansiz kullanirlirsa icerigi gorunur. Karmasik gorunse de siz de yapabilirsiniz. Öğrenmek için iyi bir yoldur.
-* `r emo::ji("link")`[https://www.learnr4free.com/tr/index.html](https://www.learnr4free.com/tr/index.html){.uri}
-* `r emo::ji("link")`[Referans kartları](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
-* `r emo::ji("link")`[Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
-* `r emo::ji("link")`[Hadley Wickham](https://hadley.nz/)
-*   `r emo::ji("link")`[rforstats](http://r4stats.com/)
-* `r emo::ji("link")`[r is hot](https://blog.revolutionanalytics.com/r* is* hot/)
-* `r emo::ji("link")`[paralel programlama](http://www.matthewckeller.com/)
-
-
-
-
 ## Ödev 
 
 *  Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.

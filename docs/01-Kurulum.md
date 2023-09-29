@@ -2,7 +2,11 @@
 
 Bu bölümde, **R ve RStudio'nun** nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele alacağız. Programlama deneyimi olmayanlar bu bölümü özellikle yararlı bulacaktır, ancak daha önce R kullanmış olsanız bile bazı yararlı ipuçları ve püf noktaları bulabilirsiniz.
 
-Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:) Biraz sabretmenizi bekliyorum !
+<div class="info">
+<p>Bu bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade
+etmeyebilir:)</p>
+<p>Biraz sabretmenizi bekliyorum !</p>
+</div>
 
 
 
@@ -18,9 +22,9 @@ Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:
 
 -   R ve Temel Gelistirme Takimi (R core team) ile ilgili bilgilere R'in internet sitesinden (<https://www.r-project.org/>) ulaşılabilir.
 
--   R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki\* üç ayda bir sürümler güncellenmektedir.
+-   R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki-üç ayda bir sürümler güncellenmektedir.
 
--   The latest release (2022\* 06\* 23, Funny\* Looking Kid) R\* 4.2.1.tar.gz, read what's new in the latest version
+    -   [**R version 4.3.1 (Beagle Scouts)**](https://cran.r-project.org/src/base/R-4) has been released on 2023-06-16.
 
 -   RStudio, R ile çalışmayı kolaylaştıran bir Entegre Geliştirme Ortamıdır (Integrated Development Environment[IDE]).
 
@@ -28,7 +32,7 @@ Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:
 
 -   Unutmamanız gereken en önemli şey, bu ders için tüm çalışmalarınızı RStudio kullanarak yapacak olsanız da, aslında iki yazılım parçası kullanıyorsunuz, bu da zaman zaman her ikisinin de **ayrı güncellemeleri** olabileceği anlamına geliyor.
 
--   R'yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R'nin çevrimiçi bir sürümünü kullanabilirsiniz ve bunu **R server/sunucusu** olarak adlandıracağız. İkincisi, R ve RStudio'yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.
+-   R'yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R'nin çevrimiçi bir sürümünü kullanabilirsiniz (**R server/sunucusu)**. İkincisi, R ve RStudio'yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.
 
 ## Avantajları
 
@@ -88,7 +92,7 @@ Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:
 
 -   Hız konusunda SPSS ve SAS'a göre avantajlı olsa da diğer dillere göre (Python, Matlab gibi) daha yavaştır.
 
--   Geliştirilen çok fazla paket olduğu icin, ihtiyaca uygun en iyi paketin seçimi zor olabilmektedir.
+-   Geliştirilen çok fazla paket olduğu için, ihtiyaca uygun en iyi paketin seçimi zor olabilmektedir.
 
 -   Bu bir dezavantaj gibi görünse de istatistiksel işlemlerin arka planını anlamaya yardımcı olur.
 
@@ -100,7 +104,7 @@ Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:
 
 -   Internet tarayıcısına R yazılımın internet sitesinin ana sayfasının adresi yazılır. <https://www.r-project.org/>
 
--   Sol menüde yer alan "download CRAN" bölümüne tıkladıktan sonra ülke seçilir. Seçilen ülkenin yakinliği sadece yükleme hızını değiştirecektir.
+-   Sol menüde yer alan "download CRAN" bölümüne tıkladıktan sonra ülke seçilir. Seçilen ülkenin yakınlığı sadece yükleme hızını değiştirecektir.
 
 -   Çıkan sayfada "Download and Install R" baslığı altından işletim sistemine uygun olan bağlantı seçilir.
 
@@ -124,7 +128,7 @@ Bı bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade etmeyebilir:
 
 -   Benim açıklamalarım yetmediyse R'yi bilgisayarınızda kullanmak için, lütfen daha ayrıntılı talimatlar ve indirmeniz gereken dosyaların bağlantılarının yanı sıra R'yi farklı bilgisayar türlerine yüklemek için bir dizi kılavuza bağlantılar içeren [Installing R](https://psyteachr.github.io/data-skills-v1/installing-r.html) adresine bakın!!
 
--   Yüklemeler konusunda daha da fazlasına ihtiyacımız var [R studio R](https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html) !
+-   Yüklemeler konusunda daha da fazlasına ihtiyacımız var ise [R studio R](https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html) !
 
 -   Verilen linkte yer alsa da ayrıca eklemeye ihtiyaç duyduğum bağlantılar:
 
@@ -162,7 +166,7 @@ install.packages("devtools")
 
 -   R'yi bilgisayarınıza kurmanın avantajı, kullanmak için internete bağlı olmanız gerekmemesi, dosyalarınızı kaydetmenin ve yönetmenin daha kolay olması ve sunucunun çökmesi durumunda sorun yaşanmamasıdır (bu nadirdir, ancak olmuştur).
 
--   R sunucusunu kullanmanın avantajı, bilgisayraına herhangi bir şey yüklemenize gerek olmaması, sadece web tarayıcınız üzerinden erişebilmenizdir.
+-   R sunucusunu kullanmanın avantajı, bilgisayarına herhangi bir şey yüklemenize gerek olmaması, sadece web tarayıcınız üzerinden erişebilmenizdir.
 
 -   R'yi yükleyemeyeceğiniz bir bilgisayarınız varsa (örneğin Chromebook) veya R'yi bilgisayarınıza yüklemeyle ilgili ciddi sorunlarınız varsa sunucuyu kullanmanızı öneririz.
 
@@ -181,7 +185,7 @@ install.packages("devtools")
 
 ## R Temel Özellikler
 
--   R konsolda gorunen **\>** isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanim ornekleri sunulmustur.
+-   R konsolda gorunen **\>** isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.
 
 
 ```r
@@ -231,7 +235,7 @@ install.packages("devtools")
 
 -   Ayrıca **c,C,D,F,I,q,t,T** gibi tek harfli nesne ismi kullanmaktan kaçınılmalıdır; bunların R'da özel anlamları bulunmaktadır.
 
--   R yazılımında **\#** işareti ile başlayan satir, yorum satırıdır.
+-   R yazılımında **\#** işareti ile başlayan satır, yorum satırıdır.
 
 -   Genellikle komutların anlamını açıklamak için kullanılmaktadır.
 
@@ -296,8 +300,8 @@ mean(veri)
 
 ```
 [1] 46
-Time difference of 98 days
-[1] 16.0044
+Time difference of 94 days
+[1] 15.53519
 ```
 
 -   Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:
