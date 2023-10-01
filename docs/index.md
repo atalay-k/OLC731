@@ -2,7 +2,7 @@
 title: "OLC731" # edit
 subtitle: "R YAZILIMI ILE VERI ANALIZI" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2023-09-29"
+date: "2023-10-01"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -34,7 +34,7 @@ Bu dersin amacı, R yazılımını kullanarak veri üzerinde istenilen çok değ
 
 Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı ile hiçbir paket programa ihtiyaç duymadan kendi başlarına yapmalarını sağlamaktır.
 
-(İzlence) [**İzlence**](https://akts.hacettepe.edu.tr/ders_detay.php?ders_ref=DRSTNM_0000000000000000000018497&ders_kod=OLC731&zs_link=2&prg_kod=21134&submenuheader=2).
+(İzlence) [**İzlence**](Izlence.html).
 
 ## Eğitmen {.unnumbered}
 
