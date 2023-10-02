@@ -293,7 +293,7 @@ ls()
 2. Ortamdaki tüm nesneleri temizlemek için konsolda `rm(liste = ls())` komutunu çalıştırın.
 3. Ortamdaki tüm nesneleri temizlemek için ortam bölmesindeki süpürge simgesine de tıklayabilirsiniz. 
 
-4. * Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.
+4. Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.
 
 
 \begin{figure}
@@ -344,20 +344,6 @@ ls()
 
 
 
-## Ödev 
-
-*  Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.
-
-*  [R kurulumu ile ilgili](https://learnr-examples.shinyapps.io/ex-setup-r/) learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.
-
-* Kitap Bölüm 1 alıştırmalarını tamamlayınız.
-
-* Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.
-
-*  swirl package **learn R in R** paketi yükleyerek alıştırma yapmayı deneyiniz.
-
-*  [Referens kart](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) sayfasının çıktısını alarak duvarınıza asmanızı öneririm. 
-
 
 ## R oturumları
 
@@ -378,9 +364,9 @@ ls()
 
 ## Hata ayıklama ipuçları
 
--Kodlamanın büyük bir kısmı kodunuzun neden çalışmadığını anlamaya çalışmaktır ve bu acemi ya da uzman olmanız fark etmeksizin geçerlidir. 
+- Kodlamanın büyük bir kısmı kodunuzun neden çalışmadığını anlamaya çalışmaktır ve bu acemi ya da uzman olmanız fark etmeksizin geçerlidir. 
 
-- Bu kurs boyunca ilerlerken yaptığınız hataların ve bunları nasıl düzelttiğinizin kaydını tutmalısınız. 
+- Bu ders boyunca ilerlerken yaptığınız hataların ve bunları nasıl düzelttiğinizin kaydını tutmalısınız. 
 
 - Her bölümde dikkat etmeniz gereken bir dizi yaygın hata sunacağız, ancak şüphesiz kendiniz de yeni hatalar yapacaksınız (ve düzelteceksiniz!).
 
@@ -395,7 +381,7 @@ ls()
 ## Yardımcı Kaynaklar
 
 
-Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve kopyalanacak kod örnekleri bulmak demektir. B
+Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve kopyalanacak kod örnekleri bulmak demektir. 
 
 -  etkili bir şekilde problem çözmeyi öğrenmek, bu kurs boyunca geliştirmeniz gereken temel bir beceridir. 
 
@@ -499,3 +485,19 @@ rnorm(6, 50, 10)
 * (C) arguman  
 
 .
+
+
+## Ödev 
+
+*  Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.
+
+*  [R kurulumu ile ilgili](https://learnr-examples.shinyapps.io/ex-setup-r/) learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.
+
+* Kitap Bölüm 1 alıştırmalarını tamamlayınız.
+
+* Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.
+
+*  swirl package **learn R in R** paketi yükleyerek alıştırma yapmayı deneyiniz.
+
+*  [Referens kart](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) sayfasının çıktısını alarak duvarınıza asmanızı öneririm. 
+

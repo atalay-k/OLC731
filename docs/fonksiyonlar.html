@@ -319,9 +319,7 @@ kendi fonksiyonlarınızı yazma ihtiyacı duyacaksınız.</p></li>
 <li><p>Nesneleri tek tek kaldırmak için konsola <code>rm(nesne_adı)</code> yazabilirsiniz. Önceki bölümde oluşturduğunuz nesnelerden birini kaldırmak için bunu şimdi deneyin.</p></li>
 <li><p>Ortamdaki tüm nesneleri temizlemek için konsolda <code>rm(liste = ls())</code> komutunu çalıştırın.</p></li>
 <li><p>Ortamdaki tüm nesneleri temizlemek için ortam bölmesindeki süpürge simgesine de tıklayabilirsiniz.</p></li>
-<li><ul>
-<li>Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.</li>
-</ul></li>
+<li><p>Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.</p></li>
 </ol>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-broom"></span>
@@ -367,30 +365,17 @@ Figure 3.2: Clearing the workspace
 <li><p>R'dan çıkış yapmadan yapılan işlem durdurulmak istenirse, konsol bölümündeki <strong>"Stop"</strong> işareti veya <strong>Esc</strong> tuşları kullanılabilir.</p></li>
 </ul>
 </div>
-<div id="ödev-1" class="section level2" number="3.7">
+<div id="r-oturumları" class="section level2" number="3.7">
 <h2>
-<span class="header-section-number">3.7</span> Ödev<a class="anchor" aria-label="anchor" href="#%C3%B6dev-1"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li><p>Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.</p></li>
-<li><p><a href="https://learnr-examples.shinyapps.io/ex-setup-r/">R kurulumu ile ilgili</a> learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.</p></li>
-<li><p>Kitap Bölüm 1 alıştırmalarını tamamlayınız.</p></li>
-<li><p>Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.</p></li>
-<li><p>swirl package <strong>learn R in R</strong> paketi yükleyerek alıştırma yapmayı deneyiniz.</p></li>
-<li><p><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Referens kart</a> sayfasının çıktısını alarak duvarınıza asmanızı öneririm.</p></li>
-</ul>
-</div>
-<div id="r-oturumları" class="section level2" number="3.8">
-<h2>
-<span class="header-section-number">3.8</span> R oturumları<a class="anchor" aria-label="anchor" href="#r-oturumlar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.7</span> R oturumları<a class="anchor" aria-label="anchor" href="#r-oturumlar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>R'yi açıp kod yazmaya, paketleri yüklemeye ve nesneler oluşturmaya başladığınızda, bunu yeni bir <strong>oturumda</strong> yaparsınız. Çalışma alanını temizlemeye ek olarak, bazen yeni bir oturum başlatmak yararlı olabilir. Bu, bilgisayarınızda R'yi her başlattığınızda otomatik olarak gerçekleşir, ancak oturumlar sunucuda kalıcı olabilir. Kodunuzun çalışmadığını fark ederseniz ve nedenini bulamazsanız, yeni bir oturum başlatmaya değer olabilir. Bu, ortamı temizleyecek ve yüklü tüm paketleri ayıracaktır - bunu telefonunuzu yeniden başlatmak gibi düşünün.</li>
 </ul>
 </div>
-<div id="alıştırma" class="section level2" number="3.9">
+<div id="alıştırma" class="section level2" number="3.8">
 <h2>
-<span class="header-section-number">3.9</span> Alıştırma<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.8</span> Alıştırma<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma"><i class="fas fa-link"></i></a>
 </h2>
 <p>'Oturum - R'yi Yeniden Başlat'a tıklayın.</p>
 <div class="figure" style="text-align: center">
@@ -400,13 +385,13 @@ Figure 3.3: The truth about programming
 </p>
 </div>
 </div>
-<div id="hata-ayıklama-ipuçları" class="section level2" number="3.10">
+<div id="hata-ayıklama-ipuçları" class="section level2" number="3.9">
 <h2>
-<span class="header-section-number">3.10</span> Hata ayıklama ipuçları<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.9</span> Hata ayıklama ipuçları<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
-<p>-Kodlamanın büyük bir kısmı kodunuzun neden çalışmadığını anlamaya çalışmaktır ve bu acemi ya da uzman olmanız fark etmeksizin geçerlidir.</p>
 <ul>
-<li><p>Bu kurs boyunca ilerlerken yaptığınız hataların ve bunları nasıl düzelttiğinizin kaydını tutmalısınız.</p></li>
+<li><p>Kodlamanın büyük bir kısmı kodunuzun neden çalışmadığını anlamaya çalışmaktır ve bu acemi ya da uzman olmanız fark etmeksizin geçerlidir.</p></li>
+<li><p>Bu ders boyunca ilerlerken yaptığınız hataların ve bunları nasıl düzelttiğinizin kaydını tutmalısınız.</p></li>
 <li><p>Her bölümde dikkat etmeniz gereken bir dizi yaygın hata sunacağız, ancak şüphesiz kendiniz de yeni hatalar yapacaksınız (ve düzelteceksiniz!).</p></li>
 <li><p>Kullanmaya çalıştığınız fonksiyonlar için doğru paketleri yüklediniz mi? Çok yaygın bir hata, paketi yüklemek için kodu yazmaktır, örneğin <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> ancak daha sonra çalıştırmayı unutmaktır.</p></li>
 <li><p>Bir yazım hatası mı yaptınız? Unutmayın <code>data</code> ile <code>DATA</code> aynı şey değildir ve <code>t.test</code> ile <code>t_test</code> aynı şey değildir.</p></li>
@@ -414,11 +399,11 @@ Figure 3.3: The truth about programming
 <li><p>Bu kesinlikle bir hata mı? R'deki tüm kırmızı metinler hata anlamına gelmez - bazen size sadece bilgi içeren bir mesaj verir.</p></li>
 </ul>
 </div>
-<div id="yardımcı-kaynaklar" class="section level2" number="3.11">
+<div id="yardımcı-kaynaklar" class="section level2" number="3.10">
 <h2>
-<span class="header-section-number">3.11</span> Yardımcı Kaynaklar<a class="anchor" aria-label="anchor" href="#yard%C4%B1mc%C4%B1-kaynaklar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.10</span> Yardımcı Kaynaklar<a class="anchor" aria-label="anchor" href="#yard%C4%B1mc%C4%B1-kaynaklar"><i class="fas fa-link"></i></a>
 </h2>
-<p>Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve kopyalanacak kod örnekleri bulmak demektir. B</p>
+<p>Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve kopyalanacak kod örnekleri bulmak demektir.</p>
 <ul>
 <li><p>etkili bir şekilde problem çözmeyi öğrenmek, bu kurs boyunca geliştirmeniz gereken temel bir beceridir.</p></li>
 <li><p>Yardım belgelerini kullanın. Bir fonksiyonun nasıl çalıştığını anlamakta zorlanıyorsanız, <code>?function</code> komutunu hatırlayın.</p></li>
@@ -434,9 +419,9 @@ Figure 3.3: The truth about programming
 </li>
 </ul>
 </div>
-<div id="alıştırma-kendini-test-et" class="section level2" number="3.12">
+<div id="alıştırma-kendini-test-et" class="section level2" number="3.11">
 <h2>
-<span class="header-section-number">3.12</span> Alıştırma : Kendini test et<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.11</span> Alıştırma : Kendini test et<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Soru 1.</strong> Neden <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> kodunu analiz kodlarında asla dahil <strong>etmemelisiniz</strong>? <select class="webex-select"><option value="blank"></option>
 <option value="">Bunun yerine library() kullanmalısınız</option>
@@ -487,7 +472,19 @@ Açıklama
 <option value="answer">nesne</option>
 <option value="">atama</option>
 <option value="">arguman</option></select>.</p>
-
+</div>
+<div id="ödev-1" class="section level2" number="3.12">
+<h2>
+<span class="header-section-number">3.12</span> Ödev<a class="anchor" aria-label="anchor" href="#%C3%B6dev-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Sadece temel pakette 1500'e yakın fonksiyon bulunduğu için ders dışı alıştırmalar yapmanız gereklidir.</p></li>
+<li><p><a href="https://learnr-examples.shinyapps.io/ex-setup-r/">R kurulumu ile ilgili</a> learnr paketi hazırlanmış bir interaktif alıştırma örneğini inceleyeniz.</p></li>
+<li><p>Kitap Bölüm 1 alıştırmalarını tamamlayınız.</p></li>
+<li><p>Datacamp da üzerine atanan bölüm alıştırmalarını tamamlayınız.</p></li>
+<li><p>swirl package <strong>learn R in R</strong> paketi yükleyerek alıştırma yapmayı deneyiniz.</p></li>
+<li><p><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Referens kart</a> sayfasının çıktısını alarak duvarınıza asmanızı öneririm.</p></li>
+</ul>
 </div>
 </div>
 <script>
@@ -704,12 +701,12 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-alan%C4%B1"><span class="header-section-number">3.4</span> R Çalışma Alanı</a></li>
 <li><a class="nav-link" href="#r-%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">3.5</span> R Çalışma Dizini</a></li>
 <li><a class="nav-link" href="#ri-kapatma"><span class="header-section-number">3.6</span> R'i Kapatma</a></li>
-<li><a class="nav-link" href="#%C3%B6dev-1"><span class="header-section-number">3.7</span> Ödev</a></li>
-<li><a class="nav-link" href="#r-oturumlar%C4%B1"><span class="header-section-number">3.8</span> R oturumları</a></li>
-<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma"><span class="header-section-number">3.9</span> Alıştırma</a></li>
-<li><a class="nav-link" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><span class="header-section-number">3.10</span> Hata ayıklama ipuçları</a></li>
-<li><a class="nav-link" href="#yard%C4%B1mc%C4%B1-kaynaklar"><span class="header-section-number">3.11</span> Yardımcı Kaynaklar</a></li>
-<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><span class="header-section-number">3.12</span> Alıştırma : Kendini test et</a></li>
+<li><a class="nav-link" href="#r-oturumlar%C4%B1"><span class="header-section-number">3.7</span> R oturumları</a></li>
+<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma"><span class="header-section-number">3.8</span> Alıştırma</a></li>
+<li><a class="nav-link" href="#hata-ay%C4%B1klama-ipu%C3%A7lar%C4%B1"><span class="header-section-number">3.9</span> Hata ayıklama ipuçları</a></li>
+<li><a class="nav-link" href="#yard%C4%B1mc%C4%B1-kaynaklar"><span class="header-section-number">3.10</span> Yardımcı Kaynaklar</a></li>
+<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma-kendini-test-et"><span class="header-section-number">3.11</span> Alıştırma : Kendini test et</a></li>
+<li><a class="nav-link" href="#%C3%B6dev-1"><span class="header-section-number">3.12</span> Ödev</a></li>
 </ul>
 
       <div class="book-extra">
@@ -727,7 +724,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-01.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -2,7 +2,7 @@
 title: "OLC731" # edit
 subtitle: "R YAZILIMI ILE VERI ANALIZI" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2023-10-01"
+date: "2023-10-02"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -46,9 +46,13 @@ Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı i
 
 ## Kitaplar {.unnumbered}
 
--   Atar, B., Atalay Kabasakal, K, Unsal Ozberk, E. B., Ozberk, E. H. & Kibrislioglu Uysal, N. (2020). R ile Veri Analizi ve Psikometri Uygulamaları, Pegem Akademi, Ankara.
+-   Atar, B., Atalay Kabasakal, K, Unsal Ozberk, E. B., Ozberk, E. H. & Kibrislioglu Uysal, N. (2020). R ile Veri Analizi ve Psikometri Uygulamaları, Pegem Akademi, Ankara.🔗 [📖](https://pegem.net/urun/R-ile-Veri-Analizi-ve-Psikometri-Uygulamalari/60801)
 
--   Desjardins, C. D., & Bulut, O. (2018). [Handbook of educational measurement and psychometrics using R](https://www.routledge.com/Handbook-of-Educational-Measurement-and-Psychometrics-Using-R/Desjardins-Bulut/p/book/9780367734671). Boca Raton, FL: CRC Press.
+
+-   Desjardins, C. D., & Bulut, O. (2018). Handbook of educational measurement and psychometrics using R. Boca Raton, FL: CRC Press. 🔗[📖](https://www.routledge.com/Handbook-of-Educational-Measurement-and-Psychometrics-Using-R/Desjardins-Bulut/p/book/9780367734671)
+
+- Demir, E. R Diliyle İstatistik Uygulamaları. Pegem Akademi, Ankara.(2021). 🔗[📖](https://pegem.net/urun/R-Diliyle-Istatistik-Uygulamalari/61912)
+
 
 ## Kaynaklar {.unnumbered}
 

@@ -21,7 +21,7 @@ Biraz sabretmenizi bekliyorum !
 
 -   R yazılımı Genel Kamu Lisansi (GNU\* General Public Licence) koşulları altında ücretsiz dağıtılmaktadır.
 
--   R ve Temel Gelistirme Takimi (R core team) ile ilgili bilgilere R'in internet sitesinden (<https://www.r-project.org/>) ulaşılabilir.
+-   R ve Temel Geliştirme Takımı (R core team) ile ilgili bilgilere R'in internet sitesinden (<https://www.r-project.org/>) ulaşılabilir.
 
 -   R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki-üç ayda bir sürümler güncellenmektedir.
 
@@ -194,7 +194,7 @@ install.packages("devtools")
 
 ## R Temel Özellikler
 
--   R konsolda gorunen **\>** isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.
+-   R konsolda görünen **\>** işareti, R yazılımının sizden komut beklediğini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.
 
 
 ```r
@@ -313,8 +313,8 @@ mean(veri)
 
 ```
 [1] 46
-Time difference of 92 days
-[1] 14.63807
+Time difference of 91 days
+[1] 13.66585
 ```
 
 -   Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:
@@ -378,4 +378,4 @@ eşanlamlı olarak kullanılırlar.
 
 ### Ödev
 
-Datacamp hesapınızda yer alan 🔗[01_Temeller workspaceni](https://app.datacamp.com/workspace/w/27893d74-f669-4ea4-964d-d8c367b6345e/edit) tamamlayınız.
+Datacamp hesapınızda yer alan 🔗 datacamptan size atanan bölümü tamamlayınız ve kitabın ilk bölümünü tamamlayınız.

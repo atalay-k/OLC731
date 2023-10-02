@@ -34,7 +34,7 @@ knitr::write_bib(x = c(.packages(), "ggplot2"), file = "packages.bib")
 
 -   R yazılımı Genel Kamu Lisansi (GNU\* General Public Licence) koşulları altında ücretsiz dağıtılmaktadır.
 
--   R ve Temel Gelistirme Takimi (R core team) ile ilgili bilgilere R'in internet sitesinden (<https://www.r-project.org/>) ulaşılabilir.
+-   R ve Temel Geliştirme Takımı (R core team) ile ilgili bilgilere R'in internet sitesinden (<https://www.r-project.org/>) ulaşılabilir.
 
 -   R dilinin ilk sürümü 29 Subat 2000 tarihinde yayınlanmıştır. Her iki-üç ayda bir sürümler güncellenmektedir.
 
@@ -200,7 +200,7 @@ knitr::include_graphics("images/Rstudio.png")
 
 ## R Temel Özellikler
 
--   R konsolda gorunen **\>** isareti, R yaziliminin sizden komut bekledigini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.
+-   R konsolda görünen **\>** işareti, R yazılımının sizden komut beklediğini belirtir. R'in hesap makinesi olarak kullanım örnekleri sunulmuştur.
 
 ```{r}
 2+2
@@ -369,4 +369,4 @@ kosegen
 
 ### Ödev
 
-Datacamp hesapınızda yer alan `r emo::ji("link")`[01_Temeller workspaceni](https://app.datacamp.com/workspace/w/27893d74-f669-4ea4-964d-d8c367b6345e/edit) tamamlayınız.
+Datacamp hesapınızda yer alan `r emo::ji("link")` datacamptan size atanan bölümü tamamlayınız ve kitabın ilk bölümünü tamamlayınız.
