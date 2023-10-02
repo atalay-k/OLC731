@@ -148,7 +148,7 @@ knitr::write_bib(x = c(.packages(), "ggplot2"), file = "packages.bib")
 
 -   [Java](https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935)
 
--   [Rtools](https://cloud.r*%20project.org/bin/windows/Rtools) Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. **Önemli:** Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.
+-   [Rtools](https://cloud.r-project.org/bin/windows/Rtools/) Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. **Önemli:** Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.
 
 -   devtools
 

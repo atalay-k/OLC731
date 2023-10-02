@@ -135,7 +135,7 @@ Biraz sabretmenizi bekliyorum !
 
 -   [Java](https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935)
 
--   [Rtools](https://cloud.r*%20project.org/bin/windows/Rtools) Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. **Önemli:** Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.
+-   [Rtools](https://cloud.r-project.org/bin/windows/Rtools/) Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. **Önemli:** Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.
 
 -   devtools
 
@@ -314,7 +314,7 @@ mean(veri)
 ```
 [1] 46
 Time difference of 91 days
-[1] 14.48025
+[1] 14.23814
 ```
 
 -   Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:
