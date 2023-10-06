@@ -1,50 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Chapter 10 Veri duzenleme - III | OLC731</title>
-
-    <meta name="author" content="Kubra Atalay Kabasakal" />
-  
-   <meta name="description" content="Bu notlar OLC731 dersi için hazırlanmıştır." />
-   <meta name="generator" content="placeholder" />
-  <meta property="og:title" content="Chapter 10 Veri duzenleme - III | OLC731" />
-  <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/atalay-k/OLC731" />
-  <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png" />
-  <meta property="og:description" content="Bu notlar OLC731 dersi için hazırlanmıştır." />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Veri duzenleme - III | OLC731" />
-  
-  <meta name="twitter:description" content="Bu notlar OLC731 dersi için hazırlanmıştır." />
-  <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png" />
-  <!-- JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
-    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
-    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
-    <script src="libs/bs3compat-0.4.2/transition.js"></script>
-    <script src="libs/bs3compat-0.4.2/tabs.js"></script>
-    <script src="libs/bs3compat-0.4.2/bs3compat.js"></script>
-    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
-    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
-    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
-
-  <!-- CSS -->
-  <style type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 10 Veri duzenleme - III | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Veri duzenleme - III | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---iii.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 10 Veri duzenleme - III | OLC731">
+<meta name="twitter:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
-    <style type="text/css">
+<style type="text/css">
     /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
     div.csl-bib-body { }
     div.csl-entry {
@@ -66,18 +47,15 @@
       margin-left: 2em;
     }
   </style>
-      <link rel="stylesheet" href="include/psyteachr.css" />
-    <link rel="stylesheet" href="include/webex.css" />
-    <link rel="stylesheet" href="include/style.css" />
-  
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
 </head>
-
 <body data-spy="scroll" data-target="#toc">
 
 <div class="container-fluid">
 <div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
-    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
@@ -90,22 +68,42 @@
     <div id="main-nav" class="collapse-lg">
       <form role="search">
         <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-      </form>
+</form>
 
-      <nav aria-label="Table of contents">
-        <h2>Table of contents</h2>
-        <div id="book-toc"></div>
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
+<li><a class="active" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
-    </div>
-  </header>
-
-  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
-<div id="veri-duzenleme---iii" class="section level1" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Veri duzenleme - III</h1>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---iii" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Veri duzenleme - III<a class="anchor" aria-label="anchor" href="#veri-duzenleme---iii"><i class="fas fa-link"></i></a>
+</h1>
 <ul>
 <li><p>Seçme ve Dönüştürme 📊</p></li>
 <li><p><strong>select()</strong> fonksiyonu</p></li>
@@ -114,14 +112,17 @@
 <li><p><strong>mutate()</strong> ve <strong>transmute()</strong> fonksiyonları</p></li>
 </ul>
 <div id="select-fonksiyonu" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> select() fonksiyonu</h2>
+<h2>
+<span class="header-section-number">10.1</span> select() fonksiyonu<a class="anchor" aria-label="anchor" href="#select-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
 <ul>
 <li><p><strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</p></li>
 <li><p>Veri yapısının incelenmesi.</p></li>
 </ul>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="veri-duzenleme---iii.html#cb375-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb375-2"><a href="veri-duzenleme---iii.html#cb375-2" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;import/PISA_OGR_2018.rda&quot;</span>) <span class="co"># ogrenci verisi</span></span>
-<span id="cb375-3"><a href="veri-duzenleme---iii.html#cb375-3" tabindex="-1"></a><span class="fu">dim</span>(PISA_OGR_2018)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_OGR_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 6890  673</code></pre>
 <ul>
 <li>673 sütunla çalışmayacaksanız, problem durumunuza uygun sütunları seçebilirsiniz. Fonksiyon içinde degişkenler tek tek virgül <code>,</code> ile ayrılarak seçim yapılabilir.</li>
@@ -131,17 +132,16 @@
 <ul>
 <li>OKULID, OGRENCIID, CINSIYET ,SES değişkenlerinin seçimi</li>
 </ul>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="veri-duzenleme---iii.html#cb378-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018, OKULID, OGRENCIID, CINSIYET ,SES) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OKULID</th>
 <th align="right">OGRENCIID</th>
 <th align="right">CINSIYET</th>
 <th align="right">SES</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200001</td>
@@ -180,24 +180,25 @@
 <td align="right">0.3978</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
-<p>Aynı işlem <code>c()</code> fonksiyonu içinde de yapılabilir.</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="veri-duzenleme---iii.html#cb379-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018, <span class="fu">c</span>(OKULID, OGRENCIID, CINSIYET ,SES))</span></code></pre></div>
+<p>Aynı işlem <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> fonksiyonu içinde de yapılabilir.</p>
+<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
-<li><strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</li>
+<li>
+<strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="veri-duzenleme---iii.html#cb380-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(OKULID, OGRENCIID, CINSIYET ,SES) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OKULID</th>
 <th align="right">OGRENCIID</th>
 <th align="right">CINSIYET</th>
 <th align="right">SES</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200001</td>
@@ -236,24 +237,23 @@
 <td align="right">0.3978</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li><p><strong>select()</strong> fonksiyonu belirli bir aralıktaki değişkenler iki nokta <code>:</code> opertorü ile seçilebilir.</p></li>
 <li><p>örneğin okumadan alınan zevke ilişkin maddeler aşağıdaki şekilde seçilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="veri-duzenleme---iii.html#cb381-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(ST097Q01TA<span class="sc">:</span>ST097Q05TA) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">ST097Q01TA</th>
 <th align="right">ST097Q02TA</th>
 <th align="right">ST097Q03TA</th>
 <th align="right">ST097Q04TA</th>
 <th align="right">ST097Q05TA</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
@@ -298,22 +298,22 @@
 <td align="right">3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
-<li><strong>select()</strong> fonksiyonu belirli bir aralıkta yer alan değişkenler iki nokta <strong>:</strong> opertorü ile seçilirken, bu aralıkta dahil edilmek istenmeyen degişkenler kısa çizgi <strong>-</strong> operatorü ile hariç tutulabilir.</li>
+<li>
+<strong>select()</strong> fonksiyonu belirli bir aralıkta yer alan değişkenler iki nokta <strong>:</strong> opertorü ile seçilirken, bu aralıkta dahil edilmek istenmeyen degişkenler kısa çizgi <strong>-</strong> operatorü ile hariç tutulabilir.</li>
 </ul>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="veri-duzenleme---iii.html#cb382-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span> <span class="fu">select</span>(OKULID<span class="sc">:</span>SINIF,<span class="sc">-</span>KITAPCIK) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span><span class="op">:</span><span class="va">SINIF</span>,<span class="op">-</span><span class="va">KITAPCIK</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OKULID</th>
 <th align="right">OGRENCIID</th>
 <th align="left">OKUL_TUR</th>
 <th align="right">SINIF</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200001</td>
@@ -352,26 +352,27 @@
 <td align="right">10</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <div id="starts_with" class="section level3" number="10.1.1">
-<h3><span class="header-section-number">10.1.1</span> <strong>starts_with()</strong></h3>
+<h3>
+<span class="header-section-number">10.1.1</span> <strong>starts_with()</strong><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li><p>Sadece <strong>select()</strong> fonksiyonu içinde çalışan birtakım fonksiyonlar değişken seçim işini kolaylaştırır.</p></li>
 <li><p><strong>ST097</strong> ile başlayan degişkenlerin seçilmesi</p></li>
 </ul>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="veri-duzenleme---iii.html#cb383-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018, <span class="fu">starts_with</span>(<span class="st">&quot;ST097&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">ST097Q01TA</th>
 <th align="right">ST097Q02TA</th>
 <th align="right">ST097Q03TA</th>
 <th align="right">ST097Q04TA</th>
 <th align="right">ST097Q05TA</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
@@ -416,69 +417,72 @@
 <td align="right">3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="ends_with" class="section level3" number="10.1.2">
-<h3><span class="header-section-number">10.1.2</span> <strong>ends_with()</strong></h3>
+<h3>
+<span class="header-section-number">10.1.2</span> <strong>ends_with()</strong><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><strong>NA</strong> ile <strong>biten</strong> degişkenlerin seçilmesi</li>
+<li>
+<strong>NA</strong> ile <strong>biten</strong> degişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="veri-duzenleme---iii.html#cb384-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018, <span class="fu">ends_with</span>(<span class="st">&quot;NA&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">ends_with</a></span><span class="op">(</span><span class="st">"NA"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
+<div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
-<col width="2%" />
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
+<col width="2%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">ST104Q02NA</th>
 <th align="right">ST104Q03NA</th>
 <th align="right">ST104Q04NA</th>
@@ -527,8 +531,7 @@
 <th align="right">IC016Q04NA</th>
 <th align="right">IC016Q05NA</th>
 <th align="right">IC016Q07NA</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">2</td>
@@ -831,33 +834,36 @@
 <td align="right">3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="contains" class="section level3" number="10.1.3">
-<h3><span class="header-section-number">10.1.3</span> <strong>contains()</strong></h3>
+<h3>
+<span class="header-section-number">10.1.3</span> <strong>contains()</strong><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><strong>OKUMA</strong> geçen değişkenlerin seçilmesi</li>
+<li>
+<strong>OKUMA</strong> geçen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="veri-duzenleme---iii.html#cb385-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="fu">contains</span>(<span class="st">&quot;OKUMA&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
+<div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="13%" />
-<col width="9%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="8%" />
+<col width="13%">
+<col width="9%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="7%">
+<col width="8%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">OKUMA_BAGLILIGI</th>
 <th align="right">OKUMA_ZEVK</th>
 <th align="right">ODOKUMA1</th>
@@ -870,8 +876,7 @@
 <th align="right">ODOKUMA8</th>
 <th align="right">ODOKUMA9</th>
 <th align="right">ODOKUMA10</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">-0.9225</td>
@@ -958,80 +963,82 @@
 <td align="right">439.851</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="matches" class="section level3" number="10.1.4">
-<h3><span class="header-section-number">10.1.4</span> <strong>matches()</strong></h3>
+<h3>
+<span class="header-section-number">10.1.4</span> <strong>matches()</strong><a class="anchor" aria-label="anchor" href="#matches"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>içinde <strong>02</strong> geçen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="veri-duzenleme---iii.html#cb386-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="fu">matches</span>(<span class="st">&quot;02&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"02"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table style="width:100%;">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
+<col width="1%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">ST097Q02TA</th>
 <th align="right">ST100Q02TA</th>
 <th align="right">ST102Q01TA</th>
@@ -1091,8 +1098,7 @@
 <th align="right">IC011Q02TA</th>
 <th align="right">IC015Q02NA</th>
 <th align="right">IC016Q02NA</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">2</td>
@@ -1461,33 +1467,34 @@
 <td align="right">3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="num_range" class="section level3" number="10.1.5">
-<h3><span class="header-section-number">10.1.5</span> <strong>num_range()</strong></h3>
+<h3>
+<span class="header-section-number">10.1.5</span> <strong>num_range()</strong><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>ardışık ilerleyen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="veri-duzenleme---iii.html#cb387-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="fu">num_range</span>(<span class="st">&quot;AGIRLIKLANDIRMA&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">num_range</a></span><span class="op">(</span><span class="st">"AGIRLIKLANDIRMA"</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
+<div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">AGIRLIKLANDIRMA1</th>
 <th align="right">AGIRLIKLANDIRMA2</th>
 <th align="right">AGIRLIKLANDIRMA3</th>
 <th align="right">AGIRLIKLANDIRMA4</th>
 <th align="right">AGIRLIKLANDIRMA5</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">71.0286</td>
@@ -1532,220 +1539,222 @@
 <td align="right">71.0286</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="matıksal-operatorler-ile-seçim" class="section level3" number="10.1.6">
-<h3><span class="header-section-number">10.1.6</span> Matıksal operatorler ile seçim</h3>
+<h3>
+<span class="header-section-number">10.1.6</span> Matıksal operatorler ile seçim<a class="anchor" aria-label="anchor" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li><p>farklı fonksiyonları aynı anda mantıksal operatörlerle kullanarak da seçim yapabilirsiniz.</p></li>
 <li><p>veya <strong>|</strong> operatorünün kullanılması</p></li>
 </ul>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="veri-duzenleme---iii.html#cb388-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="fu">contains</span>(<span class="st">&quot;OKUMA&quot;</span>) <span class="sc">|</span> <span class="fu">matches</span>(<span class="st">&quot;2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span> <span class="op">|</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table style="width:100%;">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">OKUMA_BAGLILIGI</th>
 <th align="right">OKUMA_ZEVK</th>
 <th align="right">ODOKUMA1</th>
@@ -1944,8 +1953,7 @@
 <th align="right">PV2RCER</th>
 <th align="right">PV2RTSN</th>
 <th align="right">PV2RTML</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">-0.9225</td>
@@ -3148,19 +3156,18 @@
 <td align="right">486.874</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li>ve <strong>&amp;</strong> operatorunun kullanılması</li>
 </ul>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="veri-duzenleme---iii.html#cb389-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="fu">contains</span>(<span class="st">&quot;OKUMA&quot;</span>) <span class="sc">&amp;</span> <span class="fu">matches</span>(<span class="st">&quot;2&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">ODOKUMA2</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">417.746</td>
@@ -3181,620 +3188,620 @@
 <td align="right">415.682</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li>hariç tutmak amacıyla <strong>-</strong> operatorü kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="veri-duzenleme---iii.html#cb390-1" tabindex="-1"></a><span class="fu">select</span>(PISA_OGR_2018,<span class="sc">-</span><span class="fu">contains</span>(<span class="st">&quot;OKUMA&quot;</span>),<span class="sc">-</span><span class="fu">matches</span>(<span class="st">&quot;02&quot;</span>))  <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="op">-</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span>,<span class="op">-</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"02"</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table style="width:100%;">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
-<col width="0%" />
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
+<col width="0%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th align="right">OKULID</th>
 <th align="right">OGRENCIID</th>
 <th align="left">OKUL_TUR</th>
@@ -4397,8 +4404,7 @@
 <th align="right">PV10RTML</th>
 <th align="right">SENWT</th>
 <th align="left">VER_DAT</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200001</td>
@@ -7421,29 +7427,30 @@
 <td align="left">02MAY19:09:49:49</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="rename-fonksiyonu" class="section level3" number="10.1.7">
-<h3><span class="header-section-number">10.1.7</span> <strong>rename()</strong> fonksiyonu</h3>
+<h3>
+<span class="header-section-number">10.1.7</span> <strong>rename()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#rename-fonksiyonu"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li><p><strong>select()</strong> fonksiyonu icinde değişken seçimi sırasında değişken adı değişimi yapılabilir.</p></li>
 <li><p>Örnekte <strong>ODOKUMA1</strong> degişkeninin adını <strong>okumapuan</strong> olarak değiştirip seçebilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="veri-duzenleme---iii.html#cb391-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb391-2"><a href="veri-duzenleme---iii.html#cb391-2" tabindex="-1"></a><span class="fu">select</span>(OGRENCIID,OKUL_TUR,CINSIYET,SES,<span class="at">okumapuan =</span> ODOKUMA1) <span class="sc">%&gt;%</span></span>
-<span id="cb391-3"><a href="veri-duzenleme---iii.html#cb391-3" tabindex="-1"></a><span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">OKUL_TUR</span>,<span class="va">CINSIYET</span>,<span class="va">SES</span>,okumapuan <span class="op">=</span> <span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OGRENCIID</th>
 <th align="left">OKUL_TUR</th>
 <th align="right">CINSIYET</th>
 <th align="right">SES</th>
 <th align="right">okumapuan</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200768</td>
@@ -7460,26 +7467,25 @@
 <td align="right">512.316</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li>Örnekte ise <strong>ODOKUMA1</strong> degişkeninin adı okumapuan olarak <strong>rename()</strong> fonksiyonu ile de değiştirilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="veri-duzenleme---iii.html#cb392-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb392-2"><a href="veri-duzenleme---iii.html#cb392-2" tabindex="-1"></a><span class="fu">select</span>(OGRENCIID,OKUL_TUR,CINSIYET,SES,ODOKUMA1) <span class="sc">%&gt;%</span></span>
-<span id="cb392-3"><a href="veri-duzenleme---iii.html#cb392-3" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">okumapuan=</span>ODOKUMA1)<span class="sc">%&gt;%</span></span>
-<span id="cb392-4"><a href="veri-duzenleme---iii.html#cb392-4" tabindex="-1"></a><span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">OKUL_TUR</span>,<span class="va">CINSIYET</span>,<span class="va">SES</span>,<span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>okumapuan<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OGRENCIID</th>
 <th align="left">OKUL_TUR</th>
 <th align="right">CINSIYET</th>
 <th align="right">SES</th>
 <th align="right">okumapuan</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200768</td>
@@ -7496,32 +7502,33 @@
 <td align="right">512.316</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="mutate-fonksiyonu" class="section level3" number="10.1.8">
-<h3><span class="header-section-number">10.1.8</span> mutate fonksiyonu</h3>
+<h3>
+<span class="header-section-number">10.1.8</span> mutate fonksiyonu<a class="anchor" aria-label="anchor" href="#mutate-fonksiyonu"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li><p><strong>mutate()</strong> fonksiyonu ile veri setine yeni değişken ekleyebilirsiniz.</p></li>
 <li><p><strong>transmute()</strong> fonksiyonu ile veri setine yeni değişken eklenirken, eski değişken/ler veri setiden çıkarılır.</p></li>
 <li><p>Okumadan zevk alma maddelerinden bir veri seti oluşturup, bu veri setine toplam puan ekleme</p></li>
 </ul>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="veri-duzenleme---iii.html#cb393-1" tabindex="-1"></a>zevk  <span class="ot">&lt;-</span> <span class="fu">select</span>(PISA_OGR_2018, <span class="fu">starts_with</span>(<span class="st">&quot;ST097&quot;</span>))</span>
-<span id="cb393-2"><a href="veri-duzenleme---iii.html#cb393-2" tabindex="-1"></a>zevk  <span class="ot">&lt;-</span> expss<span class="sc">::</span><span class="fu">drop_var_labs</span>(zevk)</span>
-<span id="cb393-3"><a href="veri-duzenleme---iii.html#cb393-3" tabindex="-1"></a>zevk <span class="sc">%&gt;%</span></span>
-<span id="cb393-4"><a href="veri-duzenleme---iii.html#cb393-4" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">toplam =</span>ST097Q01TA<span class="sc">+</span>ST097Q02TA<span class="sc">+</span>ST097Q03TA<span class="sc">+</span>ST097Q04TA<span class="sc">+</span> ST097Q05TA) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">zevk</span><span class="op">)</span></span>
+<span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam <span class="op">=</span><span class="va">ST097Q01TA</span><span class="op">+</span><span class="va">ST097Q02TA</span><span class="op">+</span><span class="va">ST097Q03TA</span><span class="op">+</span><span class="va">ST097Q04TA</span><span class="op">+</span> <span class="va">ST097Q05TA</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">ST097Q01TA</th>
 <th align="right">ST097Q02TA</th>
 <th align="right">ST097Q03TA</th>
 <th align="right">ST097Q04TA</th>
 <th align="right">ST097Q05TA</th>
 <th align="right">toplam</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
@@ -7540,26 +7547,25 @@
 <td align="right">14</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li>Değişken değerleri bir önceki örnekteki gibi tek tek <strong>+</strong> ile toplanacağı gibi <strong>rowSums()</strong> fonksiyonu ile de aşağıdaki gibi toplanabilir</li>
 </ul>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="veri-duzenleme---iii.html#cb394-1" tabindex="-1"></a>zevk <span class="sc">%&gt;%</span></span>
-<span id="cb394-2"><a href="veri-duzenleme---iii.html#cb394-2" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">toplam=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., ST097Q01TA<span class="sc">:</span>ST097Q05TA))) <span class="sc">%&gt;%</span></span>
-<span id="cb394-3"><a href="veri-duzenleme---iii.html#cb394-3" tabindex="-1"></a><span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">ST097Q01TA</th>
 <th align="right">ST097Q02TA</th>
 <th align="right">ST097Q03TA</th>
 <th align="right">ST097Q04TA</th>
 <th align="right">ST097Q05TA</th>
 <th align="right">toplam</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
@@ -7578,25 +7584,24 @@
 <td align="right">14</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li>Yeni eklenecek yeri <code>.before</code> ya da <code>.after</code> argumanları ile düzenleyebilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="veri-duzenleme---iii.html#cb395-1" tabindex="-1"></a>zevk <span class="sc">%&gt;%</span></span>
-<span id="cb395-2"><a href="veri-duzenleme---iii.html#cb395-2" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">toplam=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., ST097Q01TA<span class="sc">:</span>ST097Q05TA)),<span class="at">.before=</span> ST097Q01TA)<span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span>,.before<span class="op">=</span> <span class="va">ST097Q01TA</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">toplam</th>
 <th align="right">ST097Q01TA</th>
 <th align="right">ST097Q02TA</th>
 <th align="right">ST097Q03TA</th>
 <th align="right">ST097Q04TA</th>
 <th align="right">ST097Q05TA</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">6</td>
@@ -7615,24 +7620,26 @@
 <td align="right">3</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 <div id="transmute-fonksiyonu" class="section level3" number="10.1.9">
-<h3><span class="header-section-number">10.1.9</span> transmute() fonksiyonu</h3>
+<h3>
+<span class="header-section-number">10.1.9</span> transmute() fonksiyonu<a class="anchor" aria-label="anchor" href="#transmute-fonksiyonu"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><strong>transmute()</strong> fonksiyonu kullanılarak yeni değişken oluşturulduğunda, işlemde kullanılan değişkenler veri setinden çıkarılır.</li>
+<li>
+<strong>transmute()</strong> fonksiyonu kullanılarak yeni değişken oluşturulduğunda, işlemde kullanılan değişkenler veri setinden çıkarılır.</li>
 </ul>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="veri-duzenleme---iii.html#cb396-1" tabindex="-1"></a>zevk <span class="sc">%&gt;%</span></span>
-<span id="cb396-2"><a href="veri-duzenleme---iii.html#cb396-2" tabindex="-1"></a><span class="fu">transmute</span>(<span class="at">toplam=</span><span class="fu">rowSums</span>(<span class="fu">select</span>(., ST097Q01TA<span class="sc">:</span>ST097Q05TA))) <span class="sc">%&gt;%</span></span>
-<span id="cb396-3"><a href="veri-duzenleme---iii.html#cb396-3" tabindex="-1"></a><span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">toplam</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">6</td>
@@ -7641,57 +7648,64 @@
 <td align="right">14</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <ul>
 <li><p>Fonksiyonda üretilen ilk değişken kullanılarak da yeni değişken üretilebilir.</p></li>
 <li><p>Ilk olarak özyeterliği ölçen maddelerden yeni bir veri oluşturulmuş, daha sonra bu puanların önce toplam puanları daha sonra toplam puanların kareleri alınmıştır.</p></li>
 </ul>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="veri-duzenleme---iii.html#cb397-1" tabindex="-1"></a>ozyeterlik <span class="ot">&lt;-</span> PISA_OGR_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb397-2"><a href="veri-duzenleme---iii.html#cb397-2" tabindex="-1"></a>  expss<span class="sc">::</span><span class="fu">drop_var_labs</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb397-3"><a href="veri-duzenleme---iii.html#cb397-3" tabindex="-1"></a>  <span class="fu">select</span>(ST196Q02HA<span class="sc">:</span>ST196Q07HA)</span>
-<span id="cb397-4"><a href="veri-duzenleme---iii.html#cb397-4" tabindex="-1"></a></span>
-<span id="cb397-5"><a href="veri-duzenleme---iii.html#cb397-5" tabindex="-1"></a>ozyeterlik<span class="sc">%&gt;%</span></span>
-<span id="cb397-6"><a href="veri-duzenleme---iii.html#cb397-6" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb397-7"><a href="veri-duzenleme---iii.html#cb397-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">toplam =</span> <span class="fu">sum</span>(<span class="fu">across</span>()))<span class="sc">%&gt;%</span></span>
-<span id="cb397-8"><a href="veri-duzenleme---iii.html#cb397-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">toplam_kare=</span>toplam<span class="sc">*</span>toplam) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ozyeterlik</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ST196Q02HA</span><span class="op">:</span><span class="va">ST196Q07HA</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ozyeterlik</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam_kare<span class="op">=</span><span class="va">toplam</span><span class="op">*</span><span class="va">toplam</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="ifelse" class="section level3" number="10.1.10">
-<h3><span class="header-section-number">10.1.10</span> ifelse()</h3>
+<h3>
+<span class="header-section-number">10.1.10</span> ifelse()<a class="anchor" aria-label="anchor" href="#ifelse"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><strong>ifelse()</strong> programlama dillerinde sıklıkla kullanılan koşullu önermelerden biridir.</li>
+<li>
+<strong>ifelse()</strong> programlama dillerinde sıklıkla kullanılan koşullu önermelerden biridir.</li>
 </ul>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="veri-duzenleme---iii.html#cb398-1" tabindex="-1"></a><span class="fu">ifelse</span>(<span class="at">test =</span> x<span class="sc">&lt;</span><span class="dv">0</span>, <span class="at">evet =</span> ilkdeger , hayır <span class="ot">=</span> ikincideger)</span></code></pre></div>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="veri-duzenleme---iii.html#cb399-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span>
-<span id="cb399-2"><a href="veri-duzenleme---iii.html#cb399-2" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">0</span>,<span class="st">&quot;Negatif&quot;</span>, <span class="st">&quot;Pozitif&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Negatif&quot; &quot;Pozitif&quot; &quot;Negatif&quot; &quot;Negatif&quot; &quot;Pozitif&quot;</code></pre>
+<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span>test <span class="op">=</span> <span class="va">x</span><span class="op">&lt;</span><span class="fl">0</span>, evet <span class="op">=</span> <span class="va">ilkdeger</span> , hayır <span class="op">=</span> <span class="va">ikincideger</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">x</span><span class="op">&lt;</span><span class="fl">0</span>,<span class="st">"Negatif"</span>, <span class="st">"Pozitif"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Negatif" "Pozitif" "Negatif" "Negatif" "Pozitif"</code></pre>
 <ul>
 <li>Uygulama 7.,8.,9.,10.,11. ve 12. sınıf öğrencileri katılmaktadır.</li>
 </ul>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="veri-duzenleme---iii.html#cb401-1" tabindex="-1"></a><span class="fu">table</span>(PISA_OGR_2018<span class="sc">$</span>SINIF)</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">$</span><span class="va">SINIF</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##    7    8    9   10   11   12 
 ##    3   19 1295 5360  207    6</code></pre>
 <ul>
-<li><strong>SINIF</strong> değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli <strong>OKUL</strong> adlı bir değişken oluşturalım.</li>
+<li>
+<strong>SINIF</strong> değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli <strong>OKUL</strong> adlı bir değişken oluşturalım.</li>
 </ul>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="veri-duzenleme---iii.html#cb403-1" tabindex="-1"></a>PISA_OGR_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb403-2"><a href="veri-duzenleme---iii.html#cb403-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb403-3"><a href="veri-duzenleme---iii.html#cb403-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">okul =</span> <span class="fu">ifelse</span>(SINIF <span class="sc">==</span> <span class="dv">7</span> <span class="sc">|</span> SINIF <span class="sc">==</span> <span class="dv">8</span>,</span>
-<span id="cb403-4"><a href="veri-duzenleme---iii.html#cb403-4" tabindex="-1"></a>                       <span class="st">&quot;Ortaokul&quot;</span>, <span class="st">&quot;Lise&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb403-5"><a href="veri-duzenleme---iii.html#cb403-5" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>okul <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">SINIF</span> <span class="op">==</span> <span class="fl">7</span> <span class="op">|</span> <span class="va">SINIF</span> <span class="op">==</span> <span class="fl">8</span>,</span>
+<span>                       <span class="st">"Ortaokul"</span>, <span class="st">"Lise"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="right">OKULID</th>
 <th align="right">OGRENCIID</th>
 <th align="left">OKUL_TUR</th>
 <th align="right">KITAPCIK</th>
 <th align="right">SINIF</th>
 <th align="left">okul</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="right">79200001</td>
@@ -7718,42 +7732,45 @@
 <td align="left">Lise</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
 </div>
 <div id="case_when" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> case_when()</h2>
+<h2>
+<span class="header-section-number">10.2</span> case_when()<a class="anchor" aria-label="anchor" href="#case_when"><i class="fas fa-link"></i></a>
+</h2>
 <ul>
 <li><p><strong>case_when()</strong> fonksiyonu çoklu <strong>ifelse() </strong> kullanımı ile benzer işlevi sağlar.</p></li>
 <li><p><strong>case_when()</strong> birden fazla koşula dayalı karşılaştırmalarda yeni bir değişken oluşturmak amacıyla kullanılır.</p></li>
 <li><p>Sosyoekomik düzeye ilişikin betimsel istatistikler</p></li>
 </ul>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="veri-duzenleme---iii.html#cb404-1" tabindex="-1"></a><span class="fu">summary</span>(PISA_OGR_2018<span class="sc">$</span>SES)</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+<div class="sourceCode" id="cb404"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">$</span><span class="va">SES</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
 ## -4.7546 -2.0633 -1.3002 -1.1712 -0.3228  2.7617      35</code></pre>
 <ul>
 <li>SES değişkeninin kategorik hale getirilmesi</li>
 </ul>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="veri-duzenleme---iii.html#cb406-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> PISA_OGR_2018 <span class="sc">%&gt;%</span></span>
-<span id="cb406-2"><a href="veri-duzenleme---iii.html#cb406-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SES_kategorik =</span></span>
-<span id="cb406-3"><a href="veri-duzenleme---iii.html#cb406-3" tabindex="-1"></a>    <span class="fu">case_when</span>(</span>
-<span id="cb406-4"><a href="veri-duzenleme---iii.html#cb406-4" tabindex="-1"></a>      SES <span class="sc">&lt;=</span>  <span class="sc">-</span><span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;dusuk&quot;</span>,</span>
-<span id="cb406-5"><a href="veri-duzenleme---iii.html#cb406-5" tabindex="-1"></a>      SES <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">&amp;</span> SES <span class="sc">&lt;</span>  <span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;orta&quot;</span>,</span>
-<span id="cb406-6"><a href="veri-duzenleme---iii.html#cb406-6" tabindex="-1"></a>      SES <span class="sc">&gt;=</span><span class="dv">0</span> <span class="sc">~</span> <span class="st">&quot;yuksek&quot;</span> )) <span class="sc">%&gt;%</span></span>
-<span id="cb406-7"><a href="veri-duzenleme---iii.html#cb406-7" tabindex="-1"></a>      <span class="fu">select</span>(SES,SES_kategorik)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">v1</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>SES_kategorik <span class="op">=</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>      <span class="va">SES</span> <span class="op">&lt;=</span>  <span class="op">-</span><span class="fl">2</span> <span class="op">~</span> <span class="st">"dusuk"</span>,</span>
+<span>      <span class="va">SES</span> <span class="op">&gt;</span> <span class="op">-</span><span class="fl">2</span> <span class="op">&amp;</span> <span class="va">SES</span> <span class="op">&lt;</span>  <span class="fl">0</span> <span class="op">~</span> <span class="st">"orta"</span>,</span>
+<span>      <span class="va">SES</span> <span class="op">&gt;=</span><span class="fl">0</span> <span class="op">~</span> <span class="st">"yuksek"</span> <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">SES</span>,<span class="va">SES_kategorik</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Olusturulan yeni SES_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme</li>
 </ul>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="veri-duzenleme---iii.html#cb407-1" tabindex="-1"></a>v1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(SES_kategorik) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">f=</span><span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">v1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">SES_kategorik</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>f<span class="op">=</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<table>
-<thead>
-<tr class="header">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
 <th align="left">SES_kategorik</th>
 <th align="right">f</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td align="left">dusuk</td>
@@ -7772,14 +7789,13 @@
 <td align="right">35</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 <p>teşekkürler !</p>
 <ul>
 <li><p><a href="https://learnr-examples.shinyapps.io/ex-data-filter/#section-welcome%3E">Siz de yapın</a></p></li>
 <li><h2 id="siz-de-yapın"><a href="https://learnr-examples.shinyapps.io/ex-data-summarise/">Siz de yapın</a></h2></li>
 </ul>
-
 </div>
 </div>
 <script>
@@ -7955,8 +7971,7 @@ window.onload = function() {
   update_total_correct();
 }
 
-</script>
-<script>
+</script><script>
 $( document ).ready(function() {
   var cite = ' ';
   var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
@@ -7984,28 +7999,43 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script>
-  </main>
-
-  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page">
-      <h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+</script><div class="chapter-nav">
+<div class="prev"><a href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></div>
+<div class="next"><a href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-duzenleme---iii"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li>
+<a class="nav-link" href="#select-fonksiyonu"><span class="header-section-number">10.1</span> select() fonksiyonu</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#starts_with"><span class="header-section-number">10.1.1</span> starts_with()</a></li>
+<li><a class="nav-link" href="#ends_with"><span class="header-section-number">10.1.2</span> ends_with()</a></li>
+<li><a class="nav-link" href="#contains"><span class="header-section-number">10.1.3</span> contains()</a></li>
+<li><a class="nav-link" href="#matches"><span class="header-section-number">10.1.4</span> matches()</a></li>
+<li><a class="nav-link" href="#num_range"><span class="header-section-number">10.1.5</span> num_range()</a></li>
+<li><a class="nav-link" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><span class="header-section-number">10.1.6</span> Matıksal operatorler ile seçim</a></li>
+<li><a class="nav-link" href="#rename-fonksiyonu"><span class="header-section-number">10.1.7</span> rename() fonksiyonu</a></li>
+<li><a class="nav-link" href="#mutate-fonksiyonu"><span class="header-section-number">10.1.8</span> mutate fonksiyonu</a></li>
+<li><a class="nav-link" href="#transmute-fonksiyonu"><span class="header-section-number">10.1.9</span> transmute() fonksiyonu</a></li>
+<li><a class="nav-link" href="#ifelse"><span class="header-section-number">10.1.10</span> ifelse()</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#case_when"><span class="header-section-number">10.2</span> case_when()</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/12-veri_duzenlemeIII.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/12-veri_duzenlemeIII.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
-      </div>
+</div>
     </nav>
-  </div>
+</div>
 
 </div>
 </div> <!-- .container -->
 
-<footer class="bg-primary text-light mt-5">
-  <div class="container"><div class="row">
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
@@ -8017,8 +8047,5 @@ $( document ).ready(function() {
 
 </div></div>
 </footer>
-
-
 </body>
-
 </html>

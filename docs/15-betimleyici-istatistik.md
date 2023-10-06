@@ -9,7 +9,7 @@
 ## Veri Yükleme
 
 
-- `PISA_STU_2018` ve PISA_STU_2018` veri setlerini kullanacağız. 
+-  🔗 [PISA_STU_2018](import/PISA_STU_2018.rda) ve 🔗 [PISA_OGR_2018]((import/PISA_OGR_2018.rda)) veri setlerini kullanacağız. 
 
 - veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:
 
@@ -33,29 +33,6 @@ head(PISA_STU_2018)
 </div>
 - Veri seti 6890 gözlem ve 1119 değişken içermektedir. 
 
-- Grafiklerle iyi bilinen **ggplot2** paketi grafikleri üzerinden işleyeceğiz.
-
-- **ggplot2** paketindeki grafikler genellikle daha iyi bir görünüme sahiptir ancak daha gelişmiş kodlama becerileri gerektirir (daha fazla bilgi edinmek için "Graphics in R with ggplot2" makalesine bakın). 
-
-- Grafiklerinizi yayınlamanız veya paylaşmanız gerekiyorsa, mümkünse **ggplot2** kullanmanızı öneririm, aksi takdirde varsayılan grafikler işinizi görecektir.
-
-:::{.info data-latex=""}
-İpucu: Yakın zamanda **esquisse** eklentilerinden ggplot2 oluşturucusunu keşfettim. Kendiniz kodlamak zorunda kalmadan **ggplot2** paketinden nasıl kolayca grafik çizebileceğinizi görün.
-:::
-
-- Bu sayfa görüntülenen tüm grafikler özelleştirilebilir. Örneğin, başlığı, x ve y ekseni etiketlerini, rengi vb. düzenlemek mümkündür. 
-
-
-```r
-library(ggplot2)
-ggplot(PISA_STU_2018,aes(x=PV1READ)) + geom_histogram()
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
-
-<img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### Minimum and maximum
 
@@ -108,7 +85,8 @@ mean(PISA_STU_2018$PV1READ)
 İpuçları:
 
 - Veri setinizde en az bir eksik değer varsa, ortalamayı NA hariç tutarak hesaplamak için `mean(PISA_STU_2018$PV1READ, na.rm = TRUE)` kullanın. Bu argüman sadece ortalama için değil, R'da sunulan çoğu fonksiyon için kullanılabilir.
-- Kırpılmış  bir ortalama için `mean(PISA_STU_2018$PV1READ, trim = 0.10)` kullanın ve trim bağımsız değişkenini ihtiyaçlarınıza göre değiştirin.:::
+- Kırpılmış  bir ortalama için `mean(PISA_STU_2018$PV1READ, trim = 0.10)` kullanın ve trim bağımsız değişkenini ihtiyaçlarınıza göre değiştirin.
+:::
 
 
 ### Medyan
@@ -432,10 +410,10 @@ PISA_STU_2018 %>%
 
 ## Görselleştirme
 
-![](images\v1.PNG)
+![](images\v1.PNG){width=50%}
 
 
-![](images\v2.PNG)
+![](images\v2.PNG){width=50%}
 
 - Grafikler bir **veri kümesini anlamamıza yardımcı olur ve örüntüyü yorumlayabilmek** önemli bir araçtır.
 
@@ -476,7 +454,8 @@ library(expss)
 ```r
 load("import/PISA_OGR_2018.rda")
 df1 <- PISA_OGR_2018 %>%
-dplyr::select(SINIF,CINSIYET,OK_YETERLIK,ODOKUMA1,starts_with("ST097"))  %>%   na.omit()%>%
+dplyr::select(SINIF,CINSIYET,OK_YETERLIK,ODOKUMA1,starts_with("ST097"))  %>%   
+  na.omit()%>%
  expss::drop_var_labs() 
 
 head(df1)
@@ -512,6 +491,30 @@ df2 <- df1 %>%
 
 
 ## ggplot
+
+- Grafikleri iyi bilinen **ggplot2** paketi grafikleri üzerinden işleyeceğiz.
+
+- **ggplot2** paketindeki grafikler genellikle daha iyi bir görünüme sahiptir ancak daha gelişmiş kodlama becerileri gerektirir (daha fazla bilgi edinmek için "Graphics in R with ggplot2" makalesine bakın). 
+
+- Grafiklerinizi yayınlamanız veya paylaşmanız gerekiyorsa, mümkünse **ggplot2** kullanmanızı öneririm, aksi takdirde varsayılan grafikler işinizi görecektir.
+
+:::{.info data-latex=""}
+İpucu: Yakın zamanda [**esquisse**](https://dreamrs.github.io/esquisse/index.html) eklentilerinden ggplot2 oluşturucusunu keşfettim. Kendiniz kodlamak zorunda kalmadan **ggplot2** paketinden nasıl kolayca grafik çizebileceğinizi görün.
+:::
+
+- Bu sayfa görüntülenen tüm grafikler özelleştirilebilir. Örneğin, başlığı, x ve y ekseni etiketlerini, rengi vb. düzenlemek mümkündür. 
+
+
+```r
+library(ggplot2)
+ggplot(PISA_STU_2018,aes(x=PV1READ)) + geom_histogram()
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;" />
 
 -   **ggplot2** paketi, **lattice** paketi gibi verilerdeki birden çok değişkeni aynı grafik üzerinde göstermek ve veriler arasındaki çok düzeyli ilişkileri özetlemek amacıyla geliştirilmiştir.
 
@@ -844,7 +847,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" />
@@ -868,7 +871,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;" />
@@ -881,7 +884,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;" />
@@ -901,7 +904,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" />
@@ -919,7 +922,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
@@ -939,7 +942,7 @@ ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
@@ -954,7 +957,7 @@ grafik1 +geom_point(alpha = 1.2)
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
@@ -967,7 +970,7 @@ grafik1 +geom_point(aes(shape=CINSIYET))
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1013,7 +1016,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1031,7 +1034,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1050,7 +1053,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1071,7 +1074,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1090,7 +1093,7 @@ geom_point(position = "jitter") +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1114,7 +1117,8 @@ ggplot(df, aes(CINSIYET, fill = SINIF)) +
   geom_bar() +
    labs(x = "Cinsiyet",
        y = "Frekans") +
-  scale_fill_manual("CINSIYET", values = c("red","blue","orange","green","darkblue"))
+  scale_fill_manual("CINSIYET", values = c("red","blue","orange","green",
+                                           "darkblue","purple"))
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1186,7 +1190,7 @@ ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
 
 - 😕
 
-- 🙋
+- 😄
 
 
 
