@@ -377,9 +377,19 @@ cat("Örneğin `dplyr::select` gibi `package::function` biçimini kullanmalısı
 
 **Soru 4.** Aşağıdakilerden hangisinin bir arguman olması en muhtemeldir? `r mcq(sample(c("read_csv()", answer = "35", "<-")))`
 
-**Soru 5.** Fonksiyonları belirlemenin kolay bir yolu aşağıdakilerden hangisine bakmaktır `r mcq(sample(c(answer = "{}", "()", "[]")))`.
+**Soru 5.** Fonksiyonları oluşturmanın için aşağıdakilerden hangisini kullanmalıyız? `r mcq(sample(c(answer = "{}", "()", "[]")))`.
 
 **Soru 6.** <-`'nin görevi, fonksiyondan elde edilen çıktıyı bir/bir  ..................... atamaktır. `r mcq(sample(c("atama", "arguman", answer = "nesne")))`.
+
+
+
+::: {.try data-latex=""}
+`r emo::ji("link")`[Sıra Markdownda](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)
+:::
+
+::: {.try data-latex=""}
+`r emo::ji("link")`[Codeacedemy](https://www.codecademy.com/learn)
+:::
 
 
 ## Ödev 

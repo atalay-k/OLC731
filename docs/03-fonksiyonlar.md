@@ -431,9 +431,19 @@ rnorm(6, 50, 10)
 
 **Soru 4.** Aşağıdakilerden hangisinin bir arguman olması en muhtemeldir? <select class='webex-select'><option value='blank'></option><option value='answer'>35</option><option value=''>read_csv()</option><option value=''><-</option></select>
 
-**Soru 5.** Fonksiyonları belirlemenin kolay bir yolu aşağıdakilerden hangisine bakmaktır <select class='webex-select'><option value='blank'></option><option value=''>()</option><option value=''>[]</option><option value='answer'>{}</option></select>.
+**Soru 5.** Fonksiyonları oluşturmanın için aşağıdakilerden hangisini kullanmalıyız? <select class='webex-select'><option value='blank'></option><option value=''>()</option><option value=''>[]</option><option value='answer'>{}</option></select>.
 
 **Soru 6.** <-`'nin görevi, fonksiyondan elde edilen çıktıyı bir/bir  ..................... atamaktır. <select class='webex-select'><option value='blank'></option><option value='answer'>nesne</option><option value=''>atama</option><option value=''>arguman</option></select>.
+
+
+
+::: {.try data-latex=""}
+🔗[Sıra Markdownda](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)
+:::
+
+::: {.try data-latex=""}
+🔗[Codeacedemy](https://www.codecademy.com/learn)
+:::
 
 
 ## Ödev 

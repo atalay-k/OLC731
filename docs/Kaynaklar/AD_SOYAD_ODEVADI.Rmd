@@ -1,0 +1,36 @@
+---
+title: "Ödev Başlığı"
+author: "Yazar"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Soru 1. 
+
+"Veri.xlsx" dosyasını R ortamına "veri" adıyla aktarınız. "veri" nesnesinin türünü sorgulayınız. (10 puan)
+
+```{r }
+library(readr)
+dataWBT <- read_csv("dataWBT.csv")
+class(dataWBT)
+```
+
+Çıktı ile ilgi yorum eklencek
+
+
+# Soru 2.  
+
+Yazılan `kare_toplam()` fonksiyonu 1'den n'e kadar olan sayıların karelerinin toplamını versin. 1 + 2^2 + ...+ n^2
+
+```{r}
+kare_toplam <- function(n){
+  n <- 1:n
+  sum(n^2)
+}
+kare_toplam(10)
+kare_toplam(15)
+```
+
