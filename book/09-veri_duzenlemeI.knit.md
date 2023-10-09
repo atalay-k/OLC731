@@ -334,13 +334,14 @@ gapminder %>%
   head(2)
 ```
 
-```
-## # A tibble: 2 x 6
-##   country continent  year lifeExp      pop gdpPercap
-##   <fct>   <fct>     <int>   <dbl>    <int>     <dbl>
-## 1 Canada  Americas   1952    68.8 14785584    11367.
-## 2 Canada  Americas   1957    70.0 17010154    12490.
-```
+<div class="kable-table">
+
+|country |continent | year| lifeExp|      pop| gdpPercap|
+|:-------|:---------|----:|-------:|--------:|---------:|
+|Canada  |Americas  | 1952|   68.75| 14785584|  11367.16|
+|Canada  |Americas  | 1957|   69.96| 17010154|  12489.95|
+
+</div>
 
   - bizi fazla yazmaktan kurtarır.
   - kodu okunabilir kılar.
@@ -443,17 +444,18 @@ PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS) %>%
 head(6)
 ```
 
-```
-## # A tibble: 6 x 4
-##   CNTSTUID ST001D01T     ST004D01T  ESCS     
-##      <dbl> <dbl+lbl>     <dbl+lbl>  <dbl+lbl>
-## 1 79200768 10 [Grade 10] 2 [Male]   -2.45    
-## 2 79201064 10 [Grade 10] 2 [Male]   -2.10    
-## 3 79201118 10 [Grade 10] 1 [Female] -2.27    
-## 4 79201275  9 [Grade 9]  2 [Male]    0.0324  
-## 5 79201481  9 [Grade 9]  2 [Male]   -0.0674  
-## 6 79201556 10 [Grade 10] 2 [Male]    0.398
-```
+<div class="kable-table">
+
+| CNTSTUID| ST001D01T| ST004D01T|    ESCS|
+|--------:|---------:|---------:|-------:|
+| 79200768|        10|         2| -2.4521|
+| 79201064|        10|         2| -2.1042|
+| 79201118|        10|         1| -2.2700|
+| 79201275|         9|         2|  0.0324|
+| 79201481|         9|         2| -0.0674|
+| 79201556|        10|         2|  0.3978|
+
+</div>
 
 ## **arrange()**
 
@@ -487,17 +489,18 @@ df1 <- PISA_STU_2018 %>% select(CNTSTUID,ST001D01T,ST004D01T,ESCS)
 arrange(df1,ESCS) %>% head(6)
 ```
 
-```
-## # A tibble: 6 x 4
-##   CNTSTUID ST001D01T     ST004D01T  ESCS     
-##      <dbl> <dbl+lbl>     <dbl+lbl>  <dbl+lbl>
-## 1 79201575 11 [Grade 11] 2 [Male]   -4.75    
-## 2 79205397 10 [Grade 10] 1 [Female] -4.72    
-## 3 79200690  8 [Grade 8]  2 [Male]   -4.29    
-## 4 79201907 10 [Grade 10] 2 [Male]   -4.29    
-## 5 79206542 10 [Grade 10] 2 [Male]   -4.20    
-## 6 79200541 11 [Grade 11] 2 [Male]   -4.19
-```
+<div class="kable-table">
+
+| CNTSTUID| ST001D01T| ST004D01T|    ESCS|
+|--------:|---------:|---------:|-------:|
+| 79201575|        11|         2| -4.7546|
+| 79205397|        10|         1| -4.7171|
+| 79200690|         8|         2| -4.2914|
+| 79201907|        10|         2| -4.2855|
+| 79206542|        10|         2| -4.1966|
+| 79200541|        11|         2| -4.1934|
+
+</div>
 
 
 - **desc()** fonksiyonu ile sıralama büyükten küçüğe de yapılabilir.
@@ -507,17 +510,18 @@ arrange(df1,ESCS) %>% head(6)
 arrange(df1,desc(ESCS)) %>% head(6)
 ```
 
-```
-## # A tibble: 6 x 4
-##   CNTSTUID ST001D01T     ST004D01T  ESCS     
-##      <dbl> <dbl+lbl>     <dbl+lbl>  <dbl+lbl>
-## 1 79201409 10 [Grade 10] 2 [Male]   2.76     
-## 2 79207242 10 [Grade 10] 2 [Male]   2.62     
-## 3 79203361 10 [Grade 10] 2 [Male]   2.28     
-## 4 79206271 10 [Grade 10] 2 [Male]   2.18     
-## 5 79203677  9 [Grade 9]  1 [Female] 1.99     
-## 6 79200191  9 [Grade 9]  1 [Female] 1.92
-```
+<div class="kable-table">
+
+| CNTSTUID| ST001D01T| ST004D01T|   ESCS|
+|--------:|---------:|---------:|------:|
+| 79201409|        10|         2| 2.7617|
+| 79207242|        10|         2| 2.6174|
+| 79203361|        10|         2| 2.2757|
+| 79206271|        10|         2| 2.1771|
+| 79203677|         9|         1| 1.9913|
+| 79200191|         9|         1| 1.9197|
+
+</div>
 
 
 - Yaptığımız işlemleri pipe operatoru ile bağlayabilirsiniz.
@@ -530,17 +534,18 @@ PISA_STU_2018 %>%
   head(6)
 ```
 
-```
-## # A tibble: 6 x 4
-##   CNTSTUID ST001D01T     ST004D01T  ESCS     
-##      <dbl> <dbl+lbl>     <dbl+lbl>  <dbl+lbl>
-## 1 79201575 11 [Grade 11] 2 [Male]   -4.75    
-## 2 79205397 10 [Grade 10] 1 [Female] -4.72    
-## 3 79200690  8 [Grade 8]  2 [Male]   -4.29    
-## 4 79201907 10 [Grade 10] 2 [Male]   -4.29    
-## 5 79206542 10 [Grade 10] 2 [Male]   -4.20    
-## 6 79200541 11 [Grade 11] 2 [Male]   -4.19
-```
+<div class="kable-table">
+
+| CNTSTUID| ST001D01T| ST004D01T|    ESCS|
+|--------:|---------:|---------:|-------:|
+| 79201575|        11|         2| -4.7546|
+| 79205397|        10|         1| -4.7171|
+| 79200690|         8|         2| -4.2914|
+| 79201907|        10|         2| -4.2855|
+| 79206542|        10|         2| -4.1966|
+| 79200541|        11|         2| -4.1934|
+
+</div>
 
 ## **filter()**
 
@@ -602,77 +607,8 @@ x!=1
 - PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 
-```r
-PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
-```
-
-```
-## # A tibble: 4 x 1,119
-##   CNTRYID     CNT       CNTSCHID CNTSTUID CYC   NatCen     STRATUM    SUBNATIO  
-##   <dbl+lbl>   <chr+lbl>    <dbl>    <dbl> <chr> <chr+lbl>  <chr+lbl>  <chr+lbl> 
-## 1 792 [Turke~ TUR [Tur~ 79200001 79201275 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 2 792 [Turke~ TUR [Tur~ 79200001 79202343 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 3 792 [Turke~ TUR [Tur~ 79200001 79203553 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 4 792 [Turke~ TUR [Tur~ 79200001 79204714 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## # i 1,111 more variables: OECD <dbl+lbl>, ADMINMODE <dbl+lbl>,
-## #   LANGTEST_QQQ <dbl+lbl>, LANGTEST_COG <dbl+lbl>, LANGTEST_PAQ <dbl+lbl>,
-## #   BOOKID <dbl+lbl>, ST001D01T <dbl+lbl>, ST003D02T <dbl+lbl>,
-## #   ST003D03T <dbl+lbl>, ST004D01T <dbl+lbl>, ST005Q01TA <dbl+lbl>,
-## #   ST006Q01TA <dbl+lbl>, ST006Q02TA <dbl+lbl>, ST006Q03TA <dbl+lbl>,
-## #   ST006Q04TA <dbl+lbl>, ST007Q01TA <dbl+lbl>, ST008Q01TA <dbl+lbl>,
-## #   ST008Q02TA <dbl+lbl>, ST008Q03TA <dbl+lbl>, ST008Q04TA <dbl+lbl>, ...
-```
 
 
-
-- PISA verisinde anne eğitim düzeyi **ve** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
-
-
-```r
-PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
-```
-
-```
-## # A tibble: 4 x 1,119
-##   CNTRYID     CNT       CNTSCHID CNTSTUID CYC   NatCen     STRATUM    SUBNATIO  
-##   <dbl+lbl>   <chr+lbl>    <dbl>    <dbl> <chr> <chr+lbl>  <chr+lbl>  <chr+lbl> 
-## 1 792 [Turke~ TUR [Tur~ 79200001 79201275 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 2 792 [Turke~ TUR [Tur~ 79200001 79202343 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 3 792 [Turke~ TUR [Tur~ 79200002 79201796 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 4 792 [Turke~ TUR [Tur~ 79200002 79202928 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## # i 1,111 more variables: OECD <dbl+lbl>, ADMINMODE <dbl+lbl>,
-## #   LANGTEST_QQQ <dbl+lbl>, LANGTEST_COG <dbl+lbl>, LANGTEST_PAQ <dbl+lbl>,
-## #   BOOKID <dbl+lbl>, ST001D01T <dbl+lbl>, ST003D02T <dbl+lbl>,
-## #   ST003D03T <dbl+lbl>, ST004D01T <dbl+lbl>, ST005Q01TA <dbl+lbl>,
-## #   ST006Q01TA <dbl+lbl>, ST006Q02TA <dbl+lbl>, ST006Q03TA <dbl+lbl>,
-## #   ST006Q04TA <dbl+lbl>, ST007Q01TA <dbl+lbl>, ST008Q01TA <dbl+lbl>,
-## #   ST008Q02TA <dbl+lbl>, ST008Q03TA <dbl+lbl>, ST008Q04TA <dbl+lbl>, ...
-```
-
-
-- PISA verisinde anne eğitim düzeyi **ve ya** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
-
-
-```r
-PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
-```
-
-```
-## # A tibble: 4 x 1,119
-##   CNTRYID     CNT       CNTSCHID CNTSTUID CYC   NatCen     STRATUM    SUBNATIO  
-##   <dbl+lbl>   <chr+lbl>    <dbl>    <dbl> <chr> <chr+lbl>  <chr+lbl>  <chr+lbl> 
-## 1 792 [Turke~ TUR [Tur~ 79200001 79201275 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 2 792 [Turke~ TUR [Tur~ 79200001 79201556 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 3 792 [Turke~ TUR [Tur~ 79200001 79202343 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## 4 792 [Turke~ TUR [Tur~ 79200001 79203553 07MS  079~ [Tur~ TUR~ [TUR~ 792~ [Tur~
-## # i 1,111 more variables: OECD <dbl+lbl>, ADMINMODE <dbl+lbl>,
-## #   LANGTEST_QQQ <dbl+lbl>, LANGTEST_COG <dbl+lbl>, LANGTEST_PAQ <dbl+lbl>,
-## #   BOOKID <dbl+lbl>, ST001D01T <dbl+lbl>, ST003D02T <dbl+lbl>,
-## #   ST003D03T <dbl+lbl>, ST004D01T <dbl+lbl>, ST005Q01TA <dbl+lbl>,
-## #   ST006Q01TA <dbl+lbl>, ST006Q02TA <dbl+lbl>, ST006Q03TA <dbl+lbl>,
-## #   ST006Q04TA <dbl+lbl>, ST007Q01TA <dbl+lbl>, ST008Q01TA <dbl+lbl>,
-## #   ST008Q02TA <dbl+lbl>, ST008Q03TA <dbl+lbl>, ST008Q04TA <dbl+lbl>, ...
-```
 
 
 

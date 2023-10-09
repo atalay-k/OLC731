@@ -86,6 +86,19 @@ library(tidyverse)
 
 - Şimdi `tidyverse` paketini etkinleştirdiğimize göre, içerdiği fonksiyonlardan herhangi birini kullanabiliriz, ancak unutmayın, R'yi her başlattığınızda `library()` fonksiyonunu çalıştırmanız gerekir.
 
+
+## Github paketleri yükleme
+
+- Bazı R paketleri github üzerinden yayınlanmaktadır. Bu paketleri standart yollarla yükleyemiyiz. Bu paketleri yüklemek için ilk olarak devtools paketinin yüklü olmasına ihtiyaç vardır.
+
+- Bu paketlere bir örnek yapısal eşitlik modelleri ile ilgili APA formatında tablolar üreten semtools verilebilir. Paketin github sayfası 🔗[linkte](https://github.com/dr-JT/semoutput) yer almaktadır.  Paketin yüklenemsi için örnek kod aşağıda verilmiştir.
+
+
+```r
+devtools::install_github("dr-JT/semoutput")
+```
+
+
 ## Yardım Sayfaları
 
 *  R'da temel ve diğer paketlerde yer alan fonksiyonların işlevleri görmek için yardım sayfalarını inceleyebilirsiniz. `?` ve `help()` fonksiyonları ayni işleve sahiptir.

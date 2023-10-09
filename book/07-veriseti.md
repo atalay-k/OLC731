@@ -21,19 +21,22 @@ beden <- factor(beden)
 (df <- data.frame(ad,boy, kilo, beden))
 ```
 
-```
-##       ad boy kilo beden
-## 1    Ali 160   55     S
-## 2   Elif 165   55     M
-## 3     Su 170   57     S
-## 4  Deniz 155   50     M
-## 5   Aras 167   48     S
-## 6   Berk 162   65     L
-## 7    Can 169   58     M
-## 8    Ece 158   62     L
-## 9    Efe 160   45     S
-## 10  Arda 164   47     S
-```
+<div class="kable-table">
+
+|ad    | boy| kilo|beden |
+|:-----|---:|----:|:-----|
+|Ali   | 160|   55|S     |
+|Elif  | 165|   55|M     |
+|Su    | 170|   57|S     |
+|Deniz | 155|   50|M     |
+|Aras  | 167|   48|S     |
+|Berk  | 162|   65|L     |
+|Can   | 169|   58|M     |
+|Ece   | 158|   62|L     |
+|Efe   | 160|   45|S     |
+|Arda  | 164|   47|S     |
+
+</div>
 
 - Eğer uzunlukları farklı olan vektörlerle veri setleri oluşturulmaya çalışılırsa kısa vektör, uzun vektör uzunluğunda tekrar eder.
 
@@ -49,13 +52,16 @@ x <- 11:14; y <- 10; M <- c(10,35); N <- 2:4
 data.frame(x, y) # (4,1)
 ```
 
-```
-##    x  y
-## 1 11 10
-## 2 12 10
-## 3 13 10
-## 4 14 10
-```
+<div class="kable-table">
+
+|  x|  y|
+|--:|--:|
+| 11| 10|
+| 12| 10|
+| 13| 10|
+| 14| 10|
+
+</div>
 
 
 
@@ -63,13 +69,16 @@ data.frame(x, y) # (4,1)
 data.frame(x, M) # (4,2)
 ```
 
-```
-##    x  M
-## 1 11 10
-## 2 12 35
-## 3 13 10
-## 4 14 35
-```
+<div class="kable-table">
+
+|  x|  M|
+|--:|--:|
+| 11| 10|
+| 12| 35|
+| 13| 10|
+| 14| 35|
+
+</div>
 
 
 
@@ -88,11 +97,14 @@ data.frame(x,N)  #(4,3) hata
 data.frame(y, M) #(1,2)
 ```
 
-```
-##    y  M
-## 1 10 10
-## 2 10 35
-```
+<div class="kable-table">
+
+|  y|  M|
+|--:|--:|
+| 10| 10|
+| 10| 35|
+
+</div>
 
 
 
@@ -100,12 +112,15 @@ data.frame(y, M) #(1,2)
 data.frame(y, N) #(1,3)
 ```
 
-```
-##    y N
-## 1 10 2
-## 2 10 3
-## 3 10 4
-```
+<div class="kable-table">
+
+|  y|  N|
+|--:|--:|
+| 10|  2|
+| 10|  3|
+| 10|  4|
+
+</div>
 
 
 ```r
@@ -211,7 +226,7 @@ head(WorldPhones,n=2)
 ## 1956  60423  29990 4708   2568    2366   1411      733
 ```
 
-- WorldPhones veri setinin son 8 satırını yazdıracak kodu yazınız. _____________________
+- WorldPhones veri setinin son 8 satırını yazdıracak kodu yazınız. <input class='webex-solveme nospaces' size='21' data-answer='["tail(WorldPhones,n=8)"]'/>
 
 - `datasets` paketinde yer alan veri setlerinde `examples()` bölümünde çeşitli örneklere yer verilmiştir. Örneğin `example(WorldPhones)`
 
@@ -224,9 +239,7 @@ legend("bottomright", colnames(WorldPhones), col = 1:6, lty = 1:5,
 title(main = "World phones data: log scale for response")
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{07-veriseti_files/figure-latex/unnamed-chunk-18-1} \end{center}
+<img src="07-veriseti_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 -  Temel paket hariç diğer paketlerdeki veri setlerine `data(veriseti, package="packagename")` şeklinde ulaşılabilir.
@@ -266,15 +279,17 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 
 
-- df'nin birinci satir elemanlarının seçilmesi  ______
+- df'nin birinci satir elemanlarının seçilmesi  <input class='webex-solveme nospaces' size='6' data-answer='["df[1,]"]'/>
 
+<div class="kable-table">
 
-```
-##    ad boy kilo beden
-## 1 Ali 160   55     S
-```
+|ad  | boy| kilo|beden |
+|:---|---:|----:|:-----|
+|Ali | 160|   55|S     |
 
-- df'nin birinci sütun elemanlarının seçilmesi  ______
+</div>
+
+- df'nin birinci sütun elemanlarının seçilmesi  <input class='webex-solveme nospaces' size='6' data-answer='["df[,1]"]'/>
  
 
 ```
@@ -282,23 +297,25 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 ## [10] "Arda"
 ```
 
-- df'nin ikinci satir elemanlarının seçilmesi  ______
+- df'nin ikinci satir elemanlarının seçilmesi  <input class='webex-solveme nospaces' size='6' data-answer='["df[2,]"]'/>
 
  
+<div class="kable-table">
 
-```
-##     ad boy kilo beden
-## 2 Elif 165   55     M
-```
+|   |ad   | boy| kilo|beden |
+|:--|:----|---:|----:|:-----|
+|2  |Elif | 165|   55|M     |
 
-- df'nin ikinci sütun elemanlarının seçilmesi   ______
+</div>
+
+- df'nin ikinci sütun elemanlarının seçilmesi   <input class='webex-solveme nospaces' size='6' data-answer='["df[,2]"]'/>
 
 
 ```
 ##  [1] 160 165 170 155 167 162 169 158 160 164
 ```
 
-- df'nin birinci satir üçüncü sütun elemanlarının seçilmesi  _______
+- df'nin birinci satir üçüncü sütun elemanlarının seçilmesi  <input class='webex-solveme nospaces' size='7' data-answer='["df[1,3]"]'/>
 
 
 ```
@@ -334,19 +351,22 @@ is.data.frame(df[,1])
 df[,1,drop=FALSE]
 ```
 
-```
-##       ad
-## 1    Ali
-## 2   Elif
-## 3     Su
-## 4  Deniz
-## 5   Aras
-## 6   Berk
-## 7    Can
-## 8    Ece
-## 9    Efe
-## 10  Arda
-```
+<div class="kable-table">
+
+|ad    |
+|:-----|
+|Ali   |
+|Elif  |
+|Su    |
+|Deniz |
+|Aras  |
+|Berk  |
+|Can   |
+|Ece   |
+|Efe   |
+|Arda  |
+
+</div>
 
 
 - Veri seçim işlemi için `subset()` fonksiyonu kullanılabilir.
@@ -362,12 +382,15 @@ df[,1,drop=FALSE]
 subset(df, boy >165)
 ```
 
-```
-##     ad boy kilo beden
-## 3   Su 170   57     S
-## 5 Aras 167   48     S
-## 7  Can 169   58     M
-```
+<div class="kable-table">
+
+|   |ad   | boy| kilo|beden |
+|:--|:----|---:|----:|:-----|
+|3  |Su   | 170|   57|S     |
+|5  |Aras | 167|   48|S     |
+|7  |Can  | 169|   58|M     |
+
+</div>
 
 
 - `subset()` Fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
@@ -377,23 +400,26 @@ subset(df, boy >165)
 subset(airquality, Temp > 90,select = c(Ozone, Temp))
 ```
 
-```
-##     Ozone Temp
-## 42     NA   93
-## 43     NA   92
-## 69     97   92
-## 70     97   92
-## 75     NA   91
-## 102    NA   92
-## 120    76   97
-## 121   118   94
-## 122    84   96
-## 123    85   94
-## 124    96   91
-## 125    78   92
-## 126    73   93
-## 127    91   93
-```
+<div class="kable-table">
+
+|    | Ozone| Temp|
+|:---|-----:|----:|
+|42  |    NA|   93|
+|43  |    NA|   92|
+|69  |    97|   92|
+|70  |    97|   92|
+|75  |    NA|   91|
+|102 |    NA|   92|
+|120 |    76|   97|
+|121 |   118|   94|
+|122 |    84|   96|
+|123 |    85|   94|
+|124 |    96|   91|
+|125 |    78|   92|
+|126 |    73|   93|
+|127 |    91|   93|
+
+</div>
 
 
 
@@ -401,19 +427,22 @@ subset(airquality, Temp > 90,select = c(Ozone, Temp))
 subset(airquality, Day == 1, select = -Temp)
 ```
 
-```
-##     Ozone Solar.R Wind Month Day
-## 1      41     190  7.4     5   1
-## 32     NA     286  8.6     6   1
-## 62    135     269  4.1     7   1
-## 93     39      83  6.9     8   1
-## 124    96     167  6.9     9   1
-```
+<div class="kable-table">
+
+|    | Ozone| Solar.R| Wind| Month| Day|
+|:---|-----:|-------:|----:|-----:|---:|
+|1   |    41|     190|  7.4|     5|   1|
+|32  |    NA|     286|  8.6|     6|   1|
+|62  |   135|     269|  4.1|     7|   1|
+|93  |    39|      83|  6.9|     8|   1|
+|124 |    96|     167|  6.9|     9|   1|
+
+</div>
 
 - df verisinde beden değişkeni "S" olan satırların seçimi  `subset(df,beden =="S")` 
 
 
-- df verisinde kilosu 50'in altında olan kişilerden oluşan veri seti oluşturma kodunu tamamlayınız `subset(df,.......)` _______
+- df verisinde kilosu 50'in altında olan kişilerden oluşan veri seti oluşturma kodunu tamamlayınız `subset(df,.......)` <input class='webex-solveme nospaces' size='7' data-answer='["kilo<50"]'/>
 
 
 ## Eleman ekleme 
@@ -429,15 +458,18 @@ df2 <- data.frame(
 head(df2)
 ```
 
-```
-##   S1       S2
-## 1 49 53.95505
-## 2 93 62.20838
-## 3 96 69.75785
-## 4 48 64.22256
-## 5 60 69.59127
-## 6 38 55.56736
-```
+<div class="kable-table">
+
+| S1|       S2|
+|--:|--------:|
+| 81| 63.32197|
+|  5| 58.54852|
+| 85| 68.15635|
+| 74| 57.75348|
+| 44| 60.54011|
+| 16| 55.91666|
+
+</div>
 
 
 - `$` operatörü ile sütun ekleme
@@ -448,15 +480,18 @@ df2$S3 <- sample(60:80,20,replace = TRUE)
 head(df2)
 ```
 
-```
-##   S1       S2 S3
-## 1 49 53.95505 69
-## 2 93 62.20838 74
-## 3 96 69.75785 73
-## 4 48 64.22256 72
-## 5 60 69.59127 66
-## 6 38 55.56736 63
-```
+<div class="kable-table">
+
+| S1|       S2| S3|
+|--:|--------:|--:|
+| 81| 63.32197| 80|
+|  5| 58.54852| 77|
+| 85| 68.15635| 79|
+| 74| 57.75348| 73|
+| 44| 60.54011| 65|
+| 16| 55.91666| 66|
+
+</div>
 
 - `[[]]` operatörü ile sütun ekleme
 
@@ -468,15 +503,18 @@ df2[["ort"]] <- round(rowMeans(df2),2)
 head(df2)
 ```
 
-```
-##   S1       S2 S3   ort
-## 1 49 53.95505 69 57.32
-## 2 93 62.20838 74 76.40
-## 3 96 69.75785 73 79.59
-## 4 48 64.22256 72 61.41
-## 5 60 69.59127 66 65.20
-## 6 38 55.56736 63 52.19
-```
+<div class="kable-table">
+
+| S1|       S2| S3|   ort|
+|--:|--------:|--:|-----:|
+| 81| 63.32197| 80| 74.77|
+|  5| 58.54852| 77| 46.85|
+| 85| 68.15635| 79| 77.39|
+| 74| 57.75348| 73| 68.25|
+| 44| 60.54011| 65| 56.51|
+| 16| 55.91666| 66| 45.97|
+
+</div>
 
 
 - `cbind()` fonksiyonu ile sütun ekleme
@@ -486,29 +524,32 @@ head(df2)
 cbind( df2, S4 = 10)
 ```
 
-```
-##    S1       S2 S3   ort S4
-## 1  49 53.95505 69 57.32 10
-## 2  93 62.20838 74 76.40 10
-## 3  96 69.75785 73 79.59 10
-## 4  48 64.22256 72 61.41 10
-## 5  60 69.59127 66 65.20 10
-## 6  38 55.56736 63 52.19 10
-## 7  62 60.84259 60 60.95 10
-## 8  64 69.83192 75 69.61 10
-## 9  24 57.82843 79 53.61 10
-## 10 15 55.39902 79 49.80 10
-## 11 80 59.76468 79 72.92 10
-## 12 45 62.79239 73 60.26 10
-## 13 95 51.21374 64 70.07 10
-## 14 25 62.80943 69 52.27 10
-## 15  5 60.78060 67 44.26 10
-## 16 69 65.74352 68 67.58 10
-## 17 50 57.69060 69 58.90 10
-## 18 59 51.07321 72 60.69 10
-## 19 56 69.69829 79 68.23 10
-## 20 74 57.23105 67 66.08 10
-```
+<div class="kable-table">
+
+| S1|       S2| S3|   ort| S4|
+|--:|--------:|--:|-----:|--:|
+| 81| 63.32197| 80| 74.77| 10|
+|  5| 58.54852| 77| 46.85| 10|
+| 85| 68.15635| 79| 77.39| 10|
+| 74| 57.75348| 73| 68.25| 10|
+| 44| 60.54011| 65| 56.51| 10|
+| 16| 55.91666| 66| 45.97| 10|
+| 22| 59.44794| 60| 47.15| 10|
+|  0| 62.74922| 76| 46.25| 10|
+| 59| 53.22741| 76| 62.74| 10|
+|  9| 58.02268| 64| 43.67| 10|
+| 84| 67.07753| 79| 76.69| 10|
+| 31| 51.62363| 60| 47.54| 10|
+| 23| 52.91240| 64| 46.64| 10|
+| 30| 59.23797| 66| 51.75| 10|
+| 18| 66.21350| 76| 53.40| 10|
+| 70| 66.69595| 80| 72.23| 10|
+| 47| 50.56714| 66| 54.52| 10|
+| 27| 69.54940| 67| 54.52| 10|
+| 54| 67.60474| 62| 61.20| 10|
+| 20| 60.65394| 64| 48.22| 10|
+
+</div>
 
 
 ## Eleman çıkarma 
@@ -522,12 +563,15 @@ cbind( df2, S4 = 10)
 head(df2,3)
 ```
 
-```
-##   S1       S2 S3   ort
-## 1 49 53.95505 69 57.32
-## 2 93 62.20838 74 76.40
-## 3 96 69.75785 73 79.59
-```
+<div class="kable-table">
+
+| S1|       S2| S3|   ort|
+|--:|--------:|--:|-----:|
+| 81| 63.32197| 80| 74.77|
+|  5| 58.54852| 77| 46.85|
+| 85| 68.15635| 79| 77.39|
+
+</div>
 
 
 ```r
@@ -535,12 +579,15 @@ df2 <- df2[,-4]
 head(df2,3)
 ```
 
-```
-##   S1       S2 S3
-## 1 49 53.95505 69
-## 2 93 62.20838 74
-## 3 96 69.75785 73
-```
+<div class="kable-table">
+
+| S1|       S2| S3|
+|--:|--------:|--:|
+| 81| 63.32197| 80|
+|  5| 58.54852| 77|
+| 85| 68.15635| 79|
+
+</div>
 
 - `NULL` operatörü
 
@@ -550,12 +597,15 @@ df2$S3 <- NULL
 head(df2,3)
 ```
 
-```
-##   S1       S2
-## 1 49 53.95505
-## 2 93 62.20838
-## 3 96 69.75785
-```
+<div class="kable-table">
+
+| S1|       S2|
+|--:|--------:|
+| 81| 63.32197|
+|  5| 58.54852|
+| 85| 68.15635|
+
+</div>
 
 
 ## Satır ekleme 
@@ -637,19 +687,22 @@ df <- data.frame(isim = ad,
 df
 ```
 
-```
-##     isim boyolcum kiloolcum bedenolcum
-## 1    Ali      160        55          S
-## 2   Elif      165        55          M
-## 3     Su      170        57          S
-## 4  Deniz      155        50          M
-## 5   Aras      167        48          S
-## 6   Berk      162        65          L
-## 7    Can      169        58          M
-## 8    Ece      158        62          L
-## 9    Efe      160        45          S
-## 10  Arda      164        47          S
-```
+<div class="kable-table">
+
+|isim  | boyolcum| kiloolcum|bedenolcum |
+|:-----|--------:|---------:|:----------|
+|Ali   |      160|        55|S          |
+|Elif  |      165|        55|M          |
+|Su    |      170|        57|S          |
+|Deniz |      155|        50|M          |
+|Aras  |      167|        48|S          |
+|Berk  |      162|        65|L          |
+|Can   |      169|        58|M          |
+|Ece   |      158|        62|L          |
+|Efe   |      160|        45|S          |
+|Arda  |      164|        47|S          |
+
+</div>
 
 
 - Veri seti isimlendirme de diğer bir yol ise `names()` ya da `colnames()` fonksiyonlarıdır.
@@ -661,19 +714,22 @@ names(df) <- c("isim","boyolcum ","kiloolcum","bedenolcum")
 df
 ```
 
-```
-##     isim boyolcum  kiloolcum bedenolcum
-## 1    Ali       160        55          S
-## 2   Elif       165        55          M
-## 3     Su       170        57          S
-## 4  Deniz       155        50          M
-## 5   Aras       167        48          S
-## 6   Berk       162        65          L
-## 7    Can       169        58          M
-## 8    Ece       158        62          L
-## 9    Efe       160        45          S
-## 10  Arda       164        47          S
-```
+<div class="kable-table">
+
+|isim  | boyolcum | kiloolcum|bedenolcum |
+|:-----|---------:|---------:|:----------|
+|Ali   |       160|        55|S          |
+|Elif  |       165|        55|M          |
+|Su    |       170|        57|S          |
+|Deniz |       155|        50|M          |
+|Aras  |       167|        48|S          |
+|Berk  |       162|        65|L          |
+|Can   |       169|        58|M          |
+|Ece   |       158|        62|L          |
+|Efe   |       160|        45|S          |
+|Arda  |       164|        47|S          |
+
+</div>
 
 
 ## Betimsel istatistikler
