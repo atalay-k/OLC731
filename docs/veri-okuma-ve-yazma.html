@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Veri Okuma ve Yazma | OLC731</title>
+<title>Chapter 8 Veri Okuma ve Yazma | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Veri Okuma ve Yazma | OLC731">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 8 Veri Okuma ve Yazma | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-okuma-ve-yazma.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <meta property="og:description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Veri Okuma ve Yazma | OLC731">
+<meta name="twitter:title" content="Chapter 8 Veri Okuma ve Yazma | OLC731">
 <meta name="twitter:description" content="Veri girişi istatistiksel analiz sürecinin ilk adımıdır. R'da veri girişi diğer yazılımlarla kıyaslandığında çok kullanışlı değildir. Bu nedenle aktarma/import yolu tercih edilir. Veri aktarımı...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="active" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="active" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-okuma-ve-yazma" class="section level1" number="7">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-okuma-ve-yazma" class="section level1" number="8">
 <h1>
-<span class="header-section-number">7</span> Veri Okuma ve Yazma<a class="anchor" aria-label="anchor" href="#veri-okuma-ve-yazma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8</span> Veri Okuma ve Yazma<a class="anchor" aria-label="anchor" href="#veri-okuma-ve-yazma"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p>Veri girişi istatistiksel analiz sürecinin ilk adımıdır.</p></li>
@@ -133,9 +134,9 @@
 <div class="float">
 <img src="images/excel1.png" alt="Excel dosylarını içe aktarma"><div class="figcaption">Excel dosylarını içe aktarma</div>
 </div>
-<div id="spss-dosylarını-içe-aktarma" class="section level3" number="7.0.1">
+<div id="spss-dosylarını-içe-aktarma" class="section level3" number="8.0.1">
 <h3>
-<span class="header-section-number">7.0.1</span> SPSS dosylarını içe aktarma<a class="anchor" aria-label="anchor" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.0.1</span> SPSS dosylarını içe aktarma<a class="anchor" aria-label="anchor" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>İçe aktarmak istediğiniz dosyaya göz atın.</p></li>
@@ -145,9 +146,9 @@
 <img src="images/spss1.png" alt="SPSS dosylarını içe aktarma"><div class="figcaption">SPSS dosylarını içe aktarma</div>
 </div>
 </div>
-<div id="veri-okuma" class="section level2" number="7.1">
+<div id="veri-okuma" class="section level2" number="8.1">
 <h2>
-<span class="header-section-number">7.1</span> Veri Okuma<a class="anchor" aria-label="anchor" href="#veri-okuma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1</span> Veri Okuma<a class="anchor" aria-label="anchor" href="#veri-okuma"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -173,9 +174,9 @@
 <li><p>Ayrıca, belirli formatlarını içe aktarmak için R paketleri bulunmaktadır.Örneğin, SPSS dosyaları için <strong>foreign</strong> ve Excel dosyaları için <strong>xlsx</strong> gibi</p></li>
 </ul>
 </div>
-<div id="read.-fonksiyonları" class="section level2" number="7.2">
+<div id="read.-fonksiyonları" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">7.2</span> read.*() fonksiyonları<a class="anchor" aria-label="anchor" href="#read.-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> read.*() fonksiyonları<a class="anchor" aria-label="anchor" href="#read.-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -214,22 +215,22 @@
 </tbody>
 </table></div>
 </div>
-<div id="excel-dosyası-aktarma" class="section level2" number="7.3">
+<div id="excel-dosyası-aktarma" class="section level2" number="8.3">
 <h2>
-<span class="header-section-number">7.3</span> Excel dosyası aktarma<a class="anchor" aria-label="anchor" href="#excel-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3</span> Excel dosyası aktarma<a class="anchor" aria-label="anchor" href="#excel-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"xlsx"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/colearendt/xlsx">"xlsx"</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># read.xlsx fonksiyonunun kullanımı</span></span>
 <span><span class="va">my_excel_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/xlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.xlsx"</span>,sheetName <span class="op">=</span> <span class="st">"sheetname"</span><span class="op">)</span></span></code></pre></div>
-<div id="spss-dosyası-aktarma" class="section level3" number="7.3.1">
+<div id="spss-dosyası-aktarma" class="section level3" number="8.3.1">
 <h3>
-<span class="header-section-number">7.3.1</span> SPSS dosyası aktarma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.1</span> SPSS dosyası aktarma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"foreign"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://svn.r-project.org/R-packages/trunk/foreign/">"foreign"</a></span><span class="op">)</span></span>
@@ -238,14 +239,14 @@
 <span><span class="va">my_spss_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/foreign/man/read.spss.html">read.spss</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.sav"</span>,</span>
 <span>                to.data.frame <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="text-dosyası-aktarma" class="section level3" number="7.3.2">
+<div id="text-dosyası-aktarma" class="section level3" number="8.3.2">
 <h3>
-<span class="header-section-number">7.3.2</span> text dosyası aktarma<a class="anchor" aria-label="anchor" href="#text-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.3.2</span> text dosyası aktarma<a class="anchor" aria-label="anchor" href="#text-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>text dosyaları okumak için paket yüklemeye gerek yoktur.</li>
 </ul>
-<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># , ile ayrılmış csv dosyaları</span></span>
 <span><span class="va">csv_dosya</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.csv"</span>,header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -260,9 +261,9 @@
 </ul>
 </div>
 </div>
-<div id="uygulama" class="section level2" number="7.4">
+<div id="uygulama" class="section level2" number="8.4">
 <h2>
-<span class="header-section-number">7.4</span> Uygulama<a class="anchor" aria-label="anchor" href="#uygulama"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4</span> Uygulama<a class="anchor" aria-label="anchor" href="#uygulama"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗Dosyaları buradan klasor halinde indirebilirsiniz. <a href="import/import.rar">DOSYALAR</a></p></li>
@@ -641,11 +642,11 @@
 </li></ul>
 </li></ul>
 </div>
-<div id="veri-yazma" class="section level2" number="7.5">
+<div id="veri-yazma" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">7.5</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
 <span><span class="va">kilo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>,<span class="fl">55</span>,<span class="fl">57</span>,<span class="fl">50</span>,<span class="fl">48</span>,<span class="fl">65</span>,<span class="fl">58</span>,<span class="fl">62</span>,<span class="fl">45</span>,<span class="fl">47</span><span class="op">)</span></span>
@@ -724,18 +725,18 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span><span class="op">)</span><span class="co"># df dosyasi nerede, gorunumu nasil</span></span></code></pre></div>
-<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co"># karakter nesnler tirnak icinde ne yapmali?</span></span></code></pre></div>
-<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span>,quote<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>yeni gözlem eklemek istiyorsaniz append argümanı kullanılabilir.</p>
-<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">ek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ad<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ahmet"</span>,<span class="st">"Ali"</span><span class="op">)</span>, boy<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">170</span><span class="op">)</span>, kilo<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">70</span><span class="op">)</span>, </span>
 <span>                 beden<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S"</span>,<span class="st">"L"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">ek</span>, <span class="st">"df.txt"</span>,row.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>            col.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>            quote<span class="op">=</span><span class="cn">FALSE</span>,append<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -744,16 +745,16 @@
 <li><p><strong>write.csv2()</strong> fonksiyonu kullanılarak yazılan veri dosyaları ise ";" ile ayrılır iki fonksiyonun bir diğer farkı ise ondalık sayı ayıracıdır.</p></li>
 <li><p>write.csv ile yazdırılan dosyaların excelde açılması</p></li>
 </ul>
-<div id="cat-fonksiyonu" class="section level3" number="7.5.1">
+<div id="cat-fonksiyonu" class="section level3" number="8.5.1">
 <h3>
-<span class="header-section-number">7.5.1</span> <strong>cat()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#cat-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5.1</span> <strong>cat()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#cat-fonksiyonu"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Döngülerde sıklıkla ekrana bilgi yazdırmak amacıyla kullanılır, ancak dosya yazdırmak amacıyla da kullanabilmektedir.</li>
 <li>fonksiyonlarla yapılan hesaplama çıktısı da yazabilmektedir.</li>
 <li>Bu nedenle bir R oturumu sırasında not alınmak istenilen bilgileri bir dosyaya yazdırmak için kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi "</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
 <span>      <span class="st">"ogrencilerin kilo ortalamasi"</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">kilo</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
 <span>     file<span class="op">=</span><span class="st">"bilgi.txt"</span><span class="op">)</span></span></code></pre></div>
@@ -762,18 +763,18 @@
 </ul>
 </div>
 </div>
-<div id="writelines-fonksiyonu" class="section level2" number="7.6">
+<div id="writelines-fonksiyonu" class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">7.6</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi: 163 cm\n"</span>,</span>
 <span>            <span class="st">"ogrencilerin kilo ortalamasi: 53.7 kg"</span>,</span>
 <span>            con<span class="op">=</span><span class="st">"bilgi2.txt"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="odev-2" class="section level2" number="7.7">
+<div id="odev-2" class="section level2" number="8.7">
 <h2>
-<span class="header-section-number">7.7</span> ODEV<a class="anchor" aria-label="anchor" href="#odev-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.7</span> ODEV<a class="anchor" aria-label="anchor" href="#odev-2"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗 <a href="https://psyteachr.github.io/data-skills-v1/getting-to-know-the-data.html">Linkte</a> yer alan sayfayı inceleyiniz. Bu sayfada bir veri setini incelemeniz ve bu veri seti ile ilgili sorulara cevap vermeniz beklenemketedir.</p></li>
@@ -985,28 +986,28 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></div>
-<div class="next"><a href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></div>
+<div class="prev"><a href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></div>
+<div class="next"><a href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li>
-<a class="nav-link" href="#veri-okuma-ve-yazma"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><span class="header-section-number">7.0.1</span> SPSS dosylarını içe aktarma</a></li></ul>
+<a class="nav-link" href="#veri-okuma-ve-yazma"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#spss-dosylar%C4%B1n%C4%B1-i%C3%A7e-aktarma"><span class="header-section-number">8.0.1</span> SPSS dosylarını içe aktarma</a></li></ul>
 </li>
-<li><a class="nav-link" href="#veri-okuma"><span class="header-section-number">7.1</span> Veri Okuma</a></li>
-<li><a class="nav-link" href="#read.-fonksiyonlar%C4%B1"><span class="header-section-number">7.2</span> read.*() fonksiyonları</a></li>
+<li><a class="nav-link" href="#veri-okuma"><span class="header-section-number">8.1</span> Veri Okuma</a></li>
+<li><a class="nav-link" href="#read.-fonksiyonlar%C4%B1"><span class="header-section-number">8.2</span> read.*() fonksiyonları</a></li>
 <li>
-<a class="nav-link" href="#excel-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3</span> Excel dosyası aktarma</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#spss-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3.1</span> SPSS dosyası aktarma</a></li>
-<li><a class="nav-link" href="#text-dosyas%C4%B1-aktarma"><span class="header-section-number">7.3.2</span> text dosyası aktarma</a></li>
+<a class="nav-link" href="#excel-dosyas%C4%B1-aktarma"><span class="header-section-number">8.3</span> Excel dosyası aktarma</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#spss-dosyas%C4%B1-aktarma"><span class="header-section-number">8.3.1</span> SPSS dosyası aktarma</a></li>
+<li><a class="nav-link" href="#text-dosyas%C4%B1-aktarma"><span class="header-section-number">8.3.2</span> text dosyası aktarma</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#uygulama"><span class="header-section-number">7.4</span> Uygulama</a></li>
+<li><a class="nav-link" href="#uygulama"><span class="header-section-number">8.4</span> Uygulama</a></li>
 <li>
-<a class="nav-link" href="#veri-yazma"><span class="header-section-number">7.5</span> Veri Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cat-fonksiyonu"><span class="header-section-number">7.5.1</span> cat() fonksiyonu</a></li></ul>
+<a class="nav-link" href="#veri-yazma"><span class="header-section-number">8.5</span> Veri Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cat-fonksiyonu"><span class="header-section-number">8.5.1</span> cat() fonksiyonu</a></li></ul>
 </li>
-<li><a class="nav-link" href="#writelines-fonksiyonu"><span class="header-section-number">7.6</span> writeLines fonksiyonu</a></li>
-<li><a class="nav-link" href="#odev-2"><span class="header-section-number">7.7</span> ODEV</a></li>
+<li><a class="nav-link" href="#writelines-fonksiyonu"><span class="header-section-number">8.6</span> writeLines fonksiyonu</a></li>
+<li><a class="nav-link" href="#odev-2"><span class="header-section-number">8.7</span> ODEV</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1024,7 +1025,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

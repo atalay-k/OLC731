@@ -491,7 +491,8 @@ x!=1
 - PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 ```{r}
-PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
+df2 <- expss::drop_var_labs(PISA_STU_2018)
+df2 %>%  filter(MISCED== 6) %>% head(4)
 ```
 
 
@@ -499,7 +500,7 @@ PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
 - PISA verisinde anne eğitim düzeyi **ve** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 ```{r}
-PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
+df2 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 
 ```
 
@@ -507,7 +508,7 @@ PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 - PISA verisinde anne eğitim düzeyi **ve ya** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 ```{r}
-PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
+df2 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
 
 ```
 

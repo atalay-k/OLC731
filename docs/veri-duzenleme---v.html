@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 12 Veri duzenleme - V | OLC731</title>
+<title>Chapter 13 Veri duzenleme - V | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  12.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 12 Veri duzenleme - V | OLC731">
+<meta name="description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  13.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 13 Veri duzenleme - V | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---v.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  12.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
+<meta property="og:description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  13.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 12 Veri duzenleme - V | OLC731">
-<meta name="twitter:description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  12.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
+<meta name="twitter:title" content="Chapter 13 Veri duzenleme - V | OLC731">
+<meta name="twitter:description" content="tiydr paketi gather() fonksiyonu separete() fonksiyonu spread() fonksiyonu unite() fonksiyonu  13.1 Veriyi İnceleme  Bir veriyi R ortamamına aktardıktan sonra Veri setinizde yer alan tüm...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="active" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="active" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---v" class="section level1" number="12">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---v" class="section level1" number="13">
 <h1>
-<span class="header-section-number">12</span> Veri duzenleme - V<a class="anchor" aria-label="anchor" href="#veri-duzenleme---v"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13</span> Veri duzenleme - V<a class="anchor" aria-label="anchor" href="#veri-duzenleme---v"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li>
@@ -116,9 +117,9 @@
 <li>
 <strong>unite()</strong> fonksiyonu</li>
 </ul>
-<div id="veriyi-inceleme" class="section level2" number="12.1">
+<div id="veriyi-inceleme" class="section level2" number="13.1">
 <h2>
-<span class="header-section-number">12.1</span> Veriyi İnceleme<a class="anchor" aria-label="anchor" href="#veriyi-inceleme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.1</span> Veriyi İnceleme<a class="anchor" aria-label="anchor" href="#veriyi-inceleme"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -146,9 +147,9 @@
 <li><p>character ve factor değişkenler düzgün tanımlanımış mı?</p></li>
 </ul>
 </div>
-<div id="dağınık-veri" class="section level2" number="12.2">
+<div id="dağınık-veri" class="section level2" number="13.2">
 <h2>
-<span class="header-section-number">12.2</span> Dağınık Veri<a class="anchor" aria-label="anchor" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.2</span> Dağınık Veri<a class="anchor" aria-label="anchor" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><i class="fas fa-link"></i></a>
 </h2>
 <p>.pull-left-narrow[</p>
 <div class="inline-table"><table class="table table-sm">
@@ -205,9 +206,9 @@
 </li>
 </ul>
 </div>
-<div id="düzgün-veri" class="section level2" number="12.3">
+<div id="düzgün-veri" class="section level2" number="13.3">
 <h2>
-<span class="header-section-number">12.3</span> Düzgün Veri<a class="anchor" aria-label="anchor" href="#d%C3%BCzg%C3%BCn-veri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.3</span> Düzgün Veri<a class="anchor" aria-label="anchor" href="#d%C3%BCzg%C3%BCn-veri"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -276,20 +277,20 @@
 </li>
 </ul>
 </div>
-<div id="gather-fonksiyonu" class="section level2" number="12.4">
+<div id="gather-fonksiyonu" class="section level2" number="13.4">
 <h2>
-<span class="header-section-number">12.4</span> <strong>gather()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#gather-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4</span> <strong>gather()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#gather-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Fonksiyonun kullanım şekli</li>
 </ul>
-<div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">key</span>, <span class="va">value</span>, <span class="va">...</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>       convert <span class="op">=</span> <span class="cn">FALSE</span>, factor_key <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Fonksiyonun kullanımı göstermek için veri seti oluşturma</li>
 </ul>
-<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">=</span><span class="fl">20</span></span>
 <span><span class="va">genisveri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>  ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"ID"</span>,<span class="fl">101</span><span class="op">:</span><span class="fl">120</span>,sep<span class="op">=</span><span class="st">""</span><span class="op">)</span>,</span>
@@ -297,7 +298,7 @@
 <span>  Sure_2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">40</span><span class="op">:</span><span class="fl">55</span>,<span class="fl">20</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>  Sure_3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">35</span><span class="op">:</span><span class="fl">50</span>,<span class="fl">20</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -310,39 +311,39 @@
 <tbody>
 <tr class="odd">
 <td align="left">ID101</td>
-<td align="right">54</td>
-<td align="right">43</td>
+<td align="right">51</td>
+<td align="right">47</td>
 <td align="right">35</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
-<td align="right">50</td>
 <td align="right">51</td>
-<td align="right">41</td>
+<td align="right">47</td>
+<td align="right">47</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
-<td align="right">51</td>
-<td align="right">55</td>
-<td align="right">39</td>
+<td align="right">53</td>
+<td align="right">54</td>
+<td align="right">35</td>
 </tr>
 <tr class="even">
 <td align="left">ID104</td>
 <td align="right">52</td>
-<td align="right">47</td>
+<td align="right">50</td>
 <td align="right">42</td>
 </tr>
 <tr class="odd">
 <td align="left">ID105</td>
-<td align="right">55</td>
-<td align="right">41</td>
-<td align="right">38</td>
+<td align="right">53</td>
+<td align="right">49</td>
+<td align="right">50</td>
 </tr>
 <tr class="even">
 <td align="left">ID106</td>
-<td align="right">55</td>
-<td align="right">52</td>
-<td align="right">43</td>
+<td align="right">51</td>
+<td align="right">54</td>
+<td align="right">42</td>
 </tr>
 </tbody>
 </table></div>
@@ -350,12 +351,12 @@
 <ul>
 <li>gather() fonksiyonu geniş veriyi, uzun veri haline getirir.</li>
 </ul>
-<div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">Sure</span>, <span class="va">Zaman</span>, <span class="va">Sure_1</span><span class="op">:</span><span class="va">Sure_3</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Olusan veride Sure_1,Sure_2 ve Sure_3, Sure değişkenin değerleri haline geldi.</li>
 </ul>
-<div class="sourceCode" id="cb443"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -368,22 +369,22 @@
 <tr class="odd">
 <td align="left">ID101</td>
 <td align="left">Sure_1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure_1</td>
-<td align="right">50</td>
+<td align="right">51</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
 <td align="left">Sure_1</td>
-<td align="right">51</td>
+<td align="right">53</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -398,19 +399,19 @@
 <td align="left">58</td>
 <td align="left">ID118</td>
 <td align="left">Sure_3</td>
-<td align="right">41</td>
+<td align="right">46</td>
 </tr>
 <tr class="even">
 <td align="left">59</td>
 <td align="left">ID119</td>
 <td align="left">Sure_3</td>
-<td align="right">44</td>
+<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td align="left">60</td>
 <td align="left">ID120</td>
 <td align="left">Sure_3</td>
-<td align="right">37</td>
+<td align="right">43</td>
 </tr>
 </tbody>
 </table></div>
@@ -419,16 +420,16 @@
 <li>Gördüğünüz gibi, şimdi iki sütunumuz var: Biri <em>Sure</em> için, diğeri <strong>Zaman</strong> için. Her katılımcı icin üc farkli süre degeri olduğu için her bir ID değeri üç kere tekrarlamaktadır.</li>
 </ul>
 </div>
-<div id="separate" class="section level2" number="12.5">
+<div id="separate" class="section level2" number="13.5">
 <h2>
-<span class="header-section-number">12.5</span> <strong>separate()</strong><a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5</span> <strong>separate()</strong><a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>separate()</strong> bir sütunu birden çok sütuna ayırır.</p></li>
 <li><p>değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır.</p></li>
 <li><p>Olusan veride Sure_1,Sure_2 ve Sure_3 değerlerinin karakter ve sayısal değerlerini ayırmak için <strong>separate():</strong> fonkisyonu kullanabilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb445"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_ayrı</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>            <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">Sure</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sure"</span>,<span class="st">"Sayı"</span><span class="op">)</span>,<span class="st">"_"</span><span class="op">)</span> </span>
 <span></span>
@@ -446,33 +447,33 @@
 <td align="left">ID101</td>
 <td align="left">Sure</td>
 <td align="left">1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure</td>
 <td align="left">1</td>
-<td align="right">50</td>
+<td align="right">51</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
 <td align="left">Sure</td>
 <td align="left">1</td>
-<td align="right">51</td>
+<td align="right">53</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 </div>
-<div id="unite-fonksiyonu" class="section level2" number="12.6">
+<div id="unite-fonksiyonu" class="section level2" number="13.6">
 <h2>
-<span class="header-section-number">12.6</span> <strong>unite()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#unite-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.6</span> <strong>unite()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#unite-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>**gather*()** fonksiyonun tam tersi olarak iki sütunu alıp
 tek sutunda birlestirir.</li>
 </ul>
-<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_ayrı</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">SURE</span>, <span class="va">Sure</span>, <span class="va">Sayı</span>, sep <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></span>
 <span><span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -486,31 +487,31 @@ tek sutunda birlestirir.</li>
 <tr class="odd">
 <td align="left">ID101</td>
 <td align="left">Sure.1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure.1</td>
-<td align="right">50</td>
+<td align="right">51</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
 <td align="left">Sure.1</td>
-<td align="right">51</td>
+<td align="right">53</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 </div>
-<div id="spread-fonksiyonu" class="section level2" number="12.7">
+<div id="spread-fonksiyonu" class="section level2" number="13.7">
 <h2>
-<span class="header-section-number">12.7</span> <strong>spread()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#spread-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.7</span> <strong>spread()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#spread-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
 <strong>spread():</strong> **gather*()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.</li>
 </ul>
-<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">SURE</span>, <span class="va">Zaman</span><span class="op">)</span></span>
 <span><span class="va">tekrar_genis</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -524,39 +525,39 @@ tek sutunda birlestirir.</li>
 <tbody>
 <tr class="odd">
 <td align="left">ID101</td>
-<td align="right">54</td>
-<td align="right">43</td>
+<td align="right">51</td>
+<td align="right">47</td>
 <td align="right">35</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
-<td align="right">50</td>
 <td align="right">51</td>
-<td align="right">41</td>
+<td align="right">47</td>
+<td align="right">47</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
-<td align="right">51</td>
-<td align="right">55</td>
-<td align="right">39</td>
+<td align="right">53</td>
+<td align="right">54</td>
+<td align="right">35</td>
 </tr>
 <tr class="even">
 <td align="left">ID104</td>
 <td align="right">52</td>
-<td align="right">47</td>
+<td align="right">50</td>
 <td align="right">42</td>
 </tr>
 <tr class="odd">
 <td align="left">ID105</td>
-<td align="right">55</td>
-<td align="right">41</td>
-<td align="right">38</td>
+<td align="right">53</td>
+<td align="right">49</td>
+<td align="right">50</td>
 </tr>
 <tr class="even">
 <td align="left">ID106</td>
-<td align="right">55</td>
-<td align="right">52</td>
-<td align="right">43</td>
+<td align="right">51</td>
+<td align="right">54</td>
+<td align="right">42</td>
 </tr>
 </tbody>
 </table></div>
@@ -766,19 +767,19 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></div>
-<div class="next"><a href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></div>
+<div class="prev"><a href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></div>
+<div class="next"><a href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#veri-duzenleme---v"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="nav-link" href="#veriyi-inceleme"><span class="header-section-number">12.1</span> Veriyi İnceleme</a></li>
-<li><a class="nav-link" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><span class="header-section-number">12.2</span> Dağınık Veri</a></li>
-<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">12.3</span> Düzgün Veri</a></li>
-<li><a class="nav-link" href="#gather-fonksiyonu"><span class="header-section-number">12.4</span> gather() fonksiyonu</a></li>
-<li><a class="nav-link" href="#separate"><span class="header-section-number">12.5</span> separate()</a></li>
-<li><a class="nav-link" href="#unite-fonksiyonu"><span class="header-section-number">12.6</span> unite() fonksiyonu</a></li>
-<li><a class="nav-link" href="#spread-fonksiyonu"><span class="header-section-number">12.7</span> spread() fonksiyonu</a></li>
+<li><a class="nav-link" href="#veri-duzenleme---v"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="nav-link" href="#veriyi-inceleme"><span class="header-section-number">13.1</span> Veriyi İnceleme</a></li>
+<li><a class="nav-link" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><span class="header-section-number">13.2</span> Dağınık Veri</a></li>
+<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">13.3</span> Düzgün Veri</a></li>
+<li><a class="nav-link" href="#gather-fonksiyonu"><span class="header-section-number">13.4</span> gather() fonksiyonu</a></li>
+<li><a class="nav-link" href="#separate"><span class="header-section-number">13.5</span> separate()</a></li>
+<li><a class="nav-link" href="#unite-fonksiyonu"><span class="header-section-number">13.6</span> unite() fonksiyonu</a></li>
+<li><a class="nav-link" href="#spread-fonksiyonu"><span class="header-section-number">13.7</span> spread() fonksiyonu</a></li>
 </ul>
 
       <div class="book-extra">
@@ -796,7 +797,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -227,6 +227,7 @@ summary(PISA_STU_2018$PV1READ)
 
 
 ```r
+PISA_STU_2018 <- expss::drop_var_labs(PISA_STU_2018)
 by(PISA_STU_2018$PV1READ, PISA_STU_2018$IMMIG, summary)
 ```
 
@@ -847,7 +848,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" />
@@ -871,7 +872,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;" />
@@ -884,7 +885,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;" />
@@ -904,7 +905,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" />
@@ -922,7 +923,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
@@ -942,7 +943,7 @@ ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
@@ -957,7 +958,7 @@ grafik1 +geom_point(alpha = 1.2)
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
@@ -970,7 +971,7 @@ grafik1 +geom_point(aes(shape=CINSIYET))
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1016,7 +1017,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1034,7 +1035,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1053,7 +1054,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1074,7 +1075,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1093,7 +1094,7 @@ geom_point(position = "jitter") +
 ```
 
 ```
-## Warning: Removed 4 rows containing missing values (`geom_point()`).
+## Warning: Removed 3 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1137,11 +1138,6 @@ dat <- PISA_STU_2018 %>%
 
 ggplot(data = PISA_STU_2018, mapping = aes(x = ST004D01T)) +
   geom_bar()
-```
-
-```
-## Don't know how to automatically pick scale for object of type
-## <haven_labelled/vctrs_vctr/double>. Defaulting to continuous.
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1190,7 +1186,7 @@ ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
 
 - 😕
 
-- 😄
+- 😆
 
 
 

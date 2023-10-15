@@ -233,7 +233,7 @@ veriseti %>% summarize_all(funs(mean, sd))
 - Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını **summarize_if()** fonksiyonu ile hesaplayabilirsiniz.
 
 ```{r message=FALSE, warning=FALSE}
-PISA_OGR_2018 %>% 
+expss::drop_var_labs(PISA_OGR_2018) %>% 
     select(CINSIYET,Gocmenlik,ODOKUMA1) %>% 
     summarize_if(is.numeric, funs(mean, sd))
 ```

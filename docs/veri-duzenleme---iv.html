@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 11 Veri duzenleme - IV | OLC731</title>
+<title>Chapter 12 Veri duzenleme - IV | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  11.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 11 Veri duzenleme - IV | OLC731">
+<meta name="description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  12.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Veri duzenleme - IV | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---iv.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  11.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
+<meta property="og:description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  12.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 11 Veri duzenleme - IV | OLC731">
-<meta name="twitter:description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  11.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
+<meta name="twitter:title" content="Chapter 12 Veri duzenleme - IV | OLC731">
+<meta name="twitter:description" content="join() fonksiyonlari left_join() right_join() full_join() inner_join() semi_join() anti_join()  12.1 join() fonksiyonu join() fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="active" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="active" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---iv" class="section level1" number="11">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---iv" class="section level1" number="12">
 <h1>
-<span class="header-section-number">11</span> Veri duzenleme - IV<a class="anchor" aria-label="anchor" href="#veri-duzenleme---iv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12</span> Veri duzenleme - IV<a class="anchor" aria-label="anchor" href="#veri-duzenleme---iv"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li>
@@ -117,9 +118,9 @@
 </ul>
 </li>
 </ul>
-<div id="join-fonksiyonu" class="section level2" number="11.1">
+<div id="join-fonksiyonu" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">11.1</span> <strong>join()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#join-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> <strong>join()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#join-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>join()</strong> fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla kullanılırlar..</p></li>
@@ -133,9 +134,9 @@
 </li>
 </ul>
 </div>
-<div id="join-türleri" class="section level2" number="11.2">
+<div id="join-türleri" class="section level2" number="12.2">
 <h2>
-<span class="header-section-number">11.2</span> Join Türleri<a class="anchor" aria-label="anchor" href="#join-t%C3%BCrleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2</span> Join Türleri<a class="anchor" aria-label="anchor" href="#join-t%C3%BCrleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Çok sayıda <strong>join()</strong> fonksiyonu bulunmaktadır.</li>
@@ -177,7 +178,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 <li><p>Eğer birleştirme yapmak istediğimiz sütun/ların isimleri aynı ise <strong>by =</strong> argümanını kullanmaya gerek yoktur.</p></li>
 </ul>
 <p>cinsiyet1</p>
-<div class="sourceCode" id="cb408"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinsiyet1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -202,7 +203,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>kangrubu1</p>
-<div class="sourceCode" id="cb409"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kangrubu1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -226,7 +227,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb410"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb442"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -255,7 +256,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -285,7 +286,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>cinsiyet1</p>
-<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinsiyet1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -310,7 +311,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>kangrubu1</p>
-<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kangrubu1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -334,7 +335,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -358,7 +359,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb450"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -393,7 +394,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>cinsiyet1</p>
-<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb452"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinsiyet1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -418,7 +419,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>kangrubu1</p>
-<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb453"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kangrubu1</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -442,7 +443,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -463,7 +464,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join</a></span><span class="op">(</span><span class="va">cinsiyet1</span>,<span class="va">kangrubu1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Joining with `by = join_by(ogrenci)`</code></pre>
 <div class="kable-table">
@@ -479,7 +480,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>cinsiyet1</p>
-<div class="sourceCode" id="cb426"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinsiyet2</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -504,7 +505,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <p>kangrubu1</p>
-<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kangrubu2</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -528,7 +529,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cinsiyet2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">kangrubu2</span>,by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ogrenci"</span><span class="op">=</span><span class="st">"ad"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -557,7 +558,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kangrubu2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">cinsiyet2</span>,by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ad"</span><span class="op">=</span><span class="st">"ogrenci"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -587,7 +588,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </table></div>
 </div>
 <div class="inline-figure"><img src="images/kumeislemleri.png" width="70%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb430"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">intersect</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">4</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">union</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">4</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">setdiff</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">4</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span></span>
@@ -597,11 +598,11 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 ## [1] 1 2 3
 ## [1] 6 7 8</code></pre>
 </div>
-<div id="aynı-değişken-adları" class="section level2" number="11.3">
+<div id="aynı-değişken-adları" class="section level2" number="12.3">
 <h2>
-<span class="header-section-number">11.3</span> Aynı değişken adları<a class="anchor" aria-label="anchor" href="#ayn%C4%B1-de%C4%9Fi%C5%9Fken-adlar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3</span> Aynı değişken adları<a class="anchor" aria-label="anchor" href="#ayn%C4%B1-de%C4%9Fi%C5%9Fken-adlar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb432"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_STU_2018.rda"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_SCH_2018.rda"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_COG_2018.rda"</span><span class="op">)</span></span>
@@ -609,17 +610,17 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 <span><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">intersect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PISA_SCH_2018</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  [1] "CNTRYID"   "CNT"       "CNTSCHID"  "CYC"       "NatCen"    "STRATUM"  
 ##  [7] "SUBNATIO"  "OECD"      "ADMINMODE" "BOOKID"    "SENWT"     "VER_DAT"</code></pre>
-<div class="sourceCode" id="cb434"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://generics.r-lib.org/reference/setops.html">intersect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">PISA_COG_2018</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  [1] "CNTRYID"      "CNT"          "CNTSCHID"     "CNTSTUID"     "CYC"         
 ##  [6] "NatCen"       "STRATUM"      "SUBNATIO"     "OECD"         "ADMINMODE"   
 ## [11] "LANGTEST_QQQ" "LANGTEST_COG" "LANGTEST_PAQ" "BOOKID"       "VER_DAT"</code></pre>
 </div>
-<div id="join" class="section level2" number="11.4">
+<div id="join" class="section level2" number="12.4">
 <h2>
-<span class="header-section-number">11.4</span> join<a class="anchor" aria-label="anchor" href="#join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4</span> join<a class="anchor" aria-label="anchor" href="#join"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniOGR</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span>,<span class="va">OGRENCIID</span>,<span class="va">CINSIYET</span>,<span class="va">KITAPSAYISI</span>,<span class="va">ST196Q02HA</span><span class="op">:</span><span class="va">ST196Q07HA</span><span class="op">)</span></span>
 <span><span class="va">miniOGR</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -676,7 +677,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniSCH</span> <span class="op">&lt;-</span> <span class="va">PISA_SCH_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CNTSCHID</span>,okulbuyukluk <span class="op">=</span> <span class="va">SCHSIZE</span>,sinifbuyuk<span class="op">=</span> <span class="va">CLSIZE</span><span class="op">)</span></span>
 <span><span class="va">miniSCH</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -703,7 +704,7 @@ yanlızca <code>A</code> ve <code>B</code> nin eşleşen satırlarını birleşt
 <ul>
 <li>veri setinde eşleştirme yapılması istenilen değişkenin farklı adları olduğunda</li>
 </ul>
-<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">miniOGR</span>,<span class="va">miniSCH</span>,by<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"OKULID"</span><span class="op">=</span><span class="st">"CNTSCHID"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1032,16 +1033,16 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></div>
-<div class="next"><a href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></div>
+<div class="prev"><a href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></div>
+<div class="next"><a href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#veri-duzenleme---iv"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="nav-link" href="#join-fonksiyonu"><span class="header-section-number">11.1</span> join() fonksiyonu</a></li>
-<li><a class="nav-link" href="#join-t%C3%BCrleri"><span class="header-section-number">11.2</span> Join Türleri</a></li>
-<li><a class="nav-link" href="#ayn%C4%B1-de%C4%9Fi%C5%9Fken-adlar%C4%B1"><span class="header-section-number">11.3</span> Aynı değişken adları</a></li>
-<li><a class="nav-link" href="#join"><span class="header-section-number">11.4</span> join</a></li>
+<li><a class="nav-link" href="#veri-duzenleme---iv"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="nav-link" href="#join-fonksiyonu"><span class="header-section-number">12.1</span> join() fonksiyonu</a></li>
+<li><a class="nav-link" href="#join-t%C3%BCrleri"><span class="header-section-number">12.2</span> Join Türleri</a></li>
+<li><a class="nav-link" href="#ayn%C4%B1-de%C4%9Fi%C5%9Fken-adlar%C4%B1"><span class="header-section-number">12.3</span> Aynı değişken adları</a></li>
+<li><a class="nav-link" href="#join"><span class="header-section-number">12.4</span> join</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1059,7 +1060,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

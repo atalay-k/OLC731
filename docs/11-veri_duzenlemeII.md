@@ -394,7 +394,7 @@ veriseti %>% summarize_all(funs(mean, sd))
 
 
 ```r
-PISA_OGR_2018 %>% 
+expss::drop_var_labs(PISA_OGR_2018) %>% 
     select(CINSIYET,Gocmenlik,ODOKUMA1) %>% 
     summarize_if(is.numeric, funs(mean, sd))
 ```

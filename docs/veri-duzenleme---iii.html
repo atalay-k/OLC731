@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Veri duzenleme - III | OLC731</title>
+<title>Chapter 11 Veri duzenleme - III | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Veri duzenleme - III | OLC731">
+<meta name="description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  11.1 select() fonksiyonu select() fonksiyonu...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 11 Veri duzenleme - III | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---iii.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
+<meta property="og:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  11.1 select() fonksiyonu select() fonksiyonu...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Veri duzenleme - III | OLC731">
-<meta name="twitter:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  10.1 select() fonksiyonu select() fonksiyonu...">
+<meta name="twitter:title" content="Chapter 11 Veri duzenleme - III | OLC731">
+<meta name="twitter:description" content="Seçme ve Dönüştürme 📊 select() fonksiyonu select() fonksiyonu içinde çalışan fonksiyonlar rename() fonksiyonu mutate() ve transmute() fonksiyonları  11.1 select() fonksiyonu select() fonksiyonu...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="active" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="active" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---iii" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---iii" class="section level1" number="11">
 <h1>
-<span class="header-section-number">10</span> Veri duzenleme - III<a class="anchor" aria-label="anchor" href="#veri-duzenleme---iii"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> Veri duzenleme - III<a class="anchor" aria-label="anchor" href="#veri-duzenleme---iii"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p>Seçme ve Dönüştürme 📊</p></li>
@@ -111,15 +112,15 @@
 <li><p><strong>rename()</strong> fonksiyonu</p></li>
 <li><p><strong>mutate()</strong> ve <strong>transmute()</strong> fonksiyonları</p></li>
 </ul>
-<div id="select-fonksiyonu" class="section level2" number="10.1">
+<div id="select-fonksiyonu" class="section level2" number="11.1">
 <h2>
-<span class="header-section-number">10.1</span> select() fonksiyonu<a class="anchor" aria-label="anchor" href="#select-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1</span> select() fonksiyonu<a class="anchor" aria-label="anchor" href="#select-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</p></li>
 <li><p>Veri yapısının incelenmesi.</p></li>
 </ul>
-<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_OGR_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">)</span></span></code></pre></div>
@@ -127,12 +128,12 @@
 <ul>
 <li>673 sütunla çalışmayacaksanız, problem durumunuza uygun sütunları seçebilirsiniz. Fonksiyon içinde degişkenler tek tek virgül <code>,</code> ile ayrılarak seçim yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="veri-duzenleme---iii.html#cb377-1" tabindex="-1"></a><span class="fu">select</span>(veri seti, degisken adi, degisken adi,..)</span>
-<span id="cb377-2"><a href="veri-duzenleme---iii.html#cb377-2" tabindex="-1"></a>veri seti <span class="sc">%&gt;%</span> <span class="fu">select</span>(degisken adi, degisken adi,..)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="veri-duzenleme---iii.html#cb409-1" tabindex="-1"></a><span class="fu">select</span>(veri seti, degisken adi, degisken adi,..)</span>
+<span id="cb409-2"><a href="veri-duzenleme---iii.html#cb409-2" tabindex="-1"></a>veri seti <span class="sc">%&gt;%</span> <span class="fu">select</span>(degisken adi, degisken adi,..)</span></code></pre></div>
 <ul>
 <li>OKULID, OGRENCIID, CINSIYET ,SES değişkenlerinin seçimi</li>
 </ul>
-<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb410"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -183,13 +184,13 @@
 </table></div>
 </div>
 <p>Aynı işlem <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> fonksiyonu içinde de yapılabilir.</p>
-<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb411"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span>, <span class="va">OGRENCIID</span>, <span class="va">CINSIYET</span> ,<span class="va">SES</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -243,7 +244,7 @@
 <li><p><strong>select()</strong> fonksiyonu belirli bir aralıktaki değişkenler iki nokta <code>:</code> opertorü ile seçilebilir.</p></li>
 <li><p>örneğin okumadan alınan zevke ilişkin maddeler aşağıdaki şekilde seçilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb381"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -304,8 +305,9 @@
 <li>
 <strong>select()</strong> fonksiyonu belirli bir aralıkta yer alan değişkenler iki nokta <strong>:</strong> opertorü ile seçilirken, bu aralıkta dahil edilmek istenmeyen degişkenler kısa çizgi <strong>-</strong> operatorü ile hariç tutulabilir.</li>
 </ul>
-<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span><span class="op">:</span><span class="va">SINIF</span>,<span class="op">-</span><span class="va">KITAPCIK</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">)</span></span>
+<span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OKULID</span><span class="op">:</span><span class="va">SINIF</span>,<span class="op">-</span><span class="va">KITAPCIK</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -354,15 +356,15 @@
 </tbody>
 </table></div>
 </div>
-<div id="starts_with" class="section level3" number="10.1.1">
+<div id="starts_with" class="section level3" number="11.1.1">
 <h3>
-<span class="header-section-number">10.1.1</span> <strong>starts_with()</strong><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.1</span> <strong>starts_with()</strong><a class="anchor" aria-label="anchor" href="#starts_with"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Sadece <strong>select()</strong> fonksiyonu içinde çalışan birtakım fonksiyonlar değişken seçim işini kolaylaştırır.</p></li>
 <li><p><strong>ST097</strong> ile başlayan degişkenlerin seçilmesi</p></li>
 </ul>
-<div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -420,15 +422,15 @@
 </table></div>
 </div>
 </div>
-<div id="ends_with" class="section level3" number="10.1.2">
+<div id="ends_with" class="section level3" number="11.1.2">
 <h3>
-<span class="header-section-number">10.1.2</span> <strong>ends_with()</strong><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.2</span> <strong>ends_with()</strong><a class="anchor" aria-label="anchor" href="#ends_with"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <strong>NA</strong> ile <strong>biten</strong> degişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">ends_with</a></span><span class="op">(</span><span class="st">"NA"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -837,15 +839,15 @@
 </table></div>
 </div>
 </div>
-<div id="contains" class="section level3" number="10.1.3">
+<div id="contains" class="section level3" number="11.1.3">
 <h3>
-<span class="header-section-number">10.1.3</span> <strong>contains()</strong><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.3</span> <strong>contains()</strong><a class="anchor" aria-label="anchor" href="#contains"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <strong>OKUMA</strong> geçen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb417"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -966,14 +968,14 @@
 </table></div>
 </div>
 </div>
-<div id="matches" class="section level3" number="10.1.4">
+<div id="matches" class="section level3" number="11.1.4">
 <h3>
-<span class="header-section-number">10.1.4</span> <strong>matches()</strong><a class="anchor" aria-label="anchor" href="#matches"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.4</span> <strong>matches()</strong><a class="anchor" aria-label="anchor" href="#matches"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>içinde <strong>02</strong> geçen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb386"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"02"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -1470,14 +1472,14 @@
 </table></div>
 </div>
 </div>
-<div id="num_range" class="section level3" number="10.1.5">
+<div id="num_range" class="section level3" number="11.1.5">
 <h3>
-<span class="header-section-number">10.1.5</span> <strong>num_range()</strong><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.5</span> <strong>num_range()</strong><a class="anchor" aria-label="anchor" href="#num_range"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>ardışık ilerleyen değişkenlerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb419"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">num_range</a></span><span class="op">(</span><span class="st">"AGIRLIKLANDIRMA"</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1542,15 +1544,15 @@
 </table></div>
 </div>
 </div>
-<div id="matıksal-operatorler-ile-seçim" class="section level3" number="10.1.6">
+<div id="matıksal-operatorler-ile-seçim" class="section level3" number="11.1.6">
 <h3>
-<span class="header-section-number">10.1.6</span> Matıksal operatorler ile seçim<a class="anchor" aria-label="anchor" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.6</span> Matıksal operatorler ile seçim<a class="anchor" aria-label="anchor" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>farklı fonksiyonları aynı anda mantıksal operatörlerle kullanarak da seçim yapabilirsiniz.</p></li>
 <li><p>veya <strong>|</strong> operatorünün kullanılması</p></li>
 </ul>
-<div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span> <span class="op">|</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -3161,7 +3163,7 @@
 <ul>
 <li>ve <strong>&amp;</strong> operatorunun kullanılması</li>
 </ul>
-<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -3193,7 +3195,7 @@
 <ul>
 <li>hariç tutmak amacıyla <strong>-</strong> operatorü kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="op">-</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">contains</a></span><span class="op">(</span><span class="st">"OKUMA"</span><span class="op">)</span>,<span class="op">-</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">matches</a></span><span class="op">(</span><span class="st">"02"</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -7430,15 +7432,15 @@
 </table></div>
 </div>
 </div>
-<div id="rename-fonksiyonu" class="section level3" number="10.1.7">
+<div id="rename-fonksiyonu" class="section level3" number="11.1.7">
 <h3>
-<span class="header-section-number">10.1.7</span> <strong>rename()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#rename-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.7</span> <strong>rename()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#rename-fonksiyonu"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p><strong>select()</strong> fonksiyonu icinde değişken seçimi sırasında değişken adı değişimi yapılabilir.</p></li>
 <li><p>Örnekte <strong>ODOKUMA1</strong> degişkeninin adını <strong>okumapuan</strong> olarak değiştirip seçebilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">OKUL_TUR</span>,<span class="va">CINSIYET</span>,<span class="va">SES</span>,okumapuan <span class="op">=</span> <span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -7472,7 +7474,7 @@
 <ul>
 <li>Örnekte ise <strong>ODOKUMA1</strong> degişkeninin adı okumapuan olarak <strong>rename()</strong> fonksiyonu ile de değiştirilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">OKUL_TUR</span>,<span class="va">CINSIYET</span>,<span class="va">SES</span>,<span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>okumapuan<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -7505,16 +7507,16 @@
 </table></div>
 </div>
 </div>
-<div id="mutate-fonksiyonu" class="section level3" number="10.1.8">
+<div id="mutate-fonksiyonu" class="section level3" number="11.1.8">
 <h3>
-<span class="header-section-number">10.1.8</span> mutate fonksiyonu<a class="anchor" aria-label="anchor" href="#mutate-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.8</span> mutate fonksiyonu<a class="anchor" aria-label="anchor" href="#mutate-fonksiyonu"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p><strong>mutate()</strong> fonksiyonu ile veri setine yeni değişken ekleyebilirsiniz.</p></li>
 <li><p><strong>transmute()</strong> fonksiyonu ile veri setine yeni değişken eklenirken, eski değişken/ler veri setiden çıkarılır.</p></li>
 <li><p>Okumadan zevk alma maddelerinden bir veri seti oluşturup, bu veri setine toplam puan ekleme</p></li>
 </ul>
-<div class="sourceCode" id="cb393"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">zevk</span><span class="op">)</span></span>
 <span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -7552,7 +7554,7 @@
 <ul>
 <li>Değişken değerleri bir önceki örnekteki gibi tek tek <strong>+</strong> ile toplanacağı gibi <strong>rowSums()</strong> fonksiyonu ile de aşağıdaki gibi toplanabilir</li>
 </ul>
-<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb426"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -7589,7 +7591,7 @@
 <ul>
 <li>Yeni eklenecek yeri <code>.before</code> ya da <code>.after</code> argumanları ile düzenleyebilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb395"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span>,.before<span class="op">=</span> <span class="va">ST097Q01TA</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -7623,15 +7625,15 @@
 </table></div>
 </div>
 </div>
-<div id="transmute-fonksiyonu" class="section level3" number="10.1.9">
+<div id="transmute-fonksiyonu" class="section level3" number="11.1.9">
 <h3>
-<span class="header-section-number">10.1.9</span> transmute() fonksiyonu<a class="anchor" aria-label="anchor" href="#transmute-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.9</span> transmute() fonksiyonu<a class="anchor" aria-label="anchor" href="#transmute-fonksiyonu"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <strong>transmute()</strong> fonksiyonu kullanılarak yeni değişken oluşturulduğunda, işlemde kullanılan değişkenler veri setinden çıkarılır.</li>
 </ul>
-<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -7654,7 +7656,7 @@
 <li><p>Fonksiyonda üretilen ilk değişken kullanılarak da yeni değişken üretilebilir.</p></li>
 <li><p>Ilk olarak özyeterliği ölçen maddelerden yeni bir veri oluşturulmuş, daha sonra bu puanların önce toplam puanları daha sonra toplam puanların kareleri alınmıştır.</p></li>
 </ul>
-<div class="sourceCode" id="cb397"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ozyeterlik</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ST196Q02HA</span><span class="op">:</span><span class="va">ST196Q07HA</span><span class="op">)</span></span>
@@ -7664,24 +7666,24 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam_kare<span class="op">=</span><span class="va">toplam</span><span class="op">*</span><span class="va">toplam</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="ifelse" class="section level3" number="10.1.10">
+<div id="ifelse" class="section level3" number="11.1.10">
 <h3>
-<span class="header-section-number">10.1.10</span> ifelse()<a class="anchor" aria-label="anchor" href="#ifelse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.10</span> ifelse()<a class="anchor" aria-label="anchor" href="#ifelse"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <strong>ifelse()</strong> programlama dillerinde sıklıkla kullanılan koşullu önermelerden biridir.</li>
 </ul>
-<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb430"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span>test <span class="op">=</span> <span class="va">x</span><span class="op">&lt;</span><span class="fl">0</span>, evet <span class="op">=</span> <span class="va">ilkdeger</span> , hayır <span class="op">=</span> <span class="va">ikincideger</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">x</span><span class="op">&lt;</span><span class="fl">0</span>,<span class="st">"Negatif"</span>, <span class="st">"Pozitif"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "Negatif" "Pozitif" "Negatif" "Negatif" "Pozitif"</code></pre>
 <ul>
 <li>Uygulama 7.,8.,9.,10.,11. ve 12. sınıf öğrencileri katılmaktadır.</li>
 </ul>
-<div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">$</span><span class="va">SINIF</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##    7    8    9   10   11   12 
@@ -7690,7 +7692,7 @@
 <li>
 <strong>SINIF</strong> değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli <strong>OKUL</strong> adlı bir değişken oluşturalım.</li>
 </ul>
-<div class="sourceCode" id="cb403"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>okul <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">SINIF</span> <span class="op">==</span> <span class="fl">7</span> <span class="op">|</span> <span class="va">SINIF</span> <span class="op">==</span> <span class="fl">8</span>,</span>
@@ -7736,23 +7738,23 @@
 </div>
 </div>
 </div>
-<div id="case_when" class="section level2" number="10.2">
+<div id="case_when" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">10.2</span> case_when()<a class="anchor" aria-label="anchor" href="#case_when"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2</span> case_when()<a class="anchor" aria-label="anchor" href="#case_when"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>case_when()</strong> fonksiyonu çoklu <strong>ifelse() </strong> kullanımı ile benzer işlevi sağlar.</p></li>
 <li><p><strong>case_when()</strong> birden fazla koşula dayalı karşılaştırmalarda yeni bir değişken oluşturmak amacıyla kullanılır.</p></li>
 <li><p>Sosyoekomik düzeye ilişikin betimsel istatistikler</p></li>
 </ul>
-<div class="sourceCode" id="cb404"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">$</span><span class="va">SES</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
 ## -4.7546 -2.0633 -1.3002 -1.1712 -0.3228  2.7617      35</code></pre>
 <ul>
 <li>SES değişkeninin kategorik hale getirilmesi</li>
 </ul>
-<div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v1</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>SES_kategorik <span class="op">=</span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
@@ -7763,7 +7765,7 @@
 <ul>
 <li>Olusturulan yeni SES_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme</li>
 </ul>
-<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">SES_kategorik</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>f<span class="op">=</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -8000,27 +8002,27 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></div>
-<div class="next"><a href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></div>
+<div class="prev"><a href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></div>
+<div class="next"><a href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#veri-duzenleme---iii"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
+<li><a class="nav-link" href="#veri-duzenleme---iii"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
 <li>
-<a class="nav-link" href="#select-fonksiyonu"><span class="header-section-number">10.1</span> select() fonksiyonu</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#starts_with"><span class="header-section-number">10.1.1</span> starts_with()</a></li>
-<li><a class="nav-link" href="#ends_with"><span class="header-section-number">10.1.2</span> ends_with()</a></li>
-<li><a class="nav-link" href="#contains"><span class="header-section-number">10.1.3</span> contains()</a></li>
-<li><a class="nav-link" href="#matches"><span class="header-section-number">10.1.4</span> matches()</a></li>
-<li><a class="nav-link" href="#num_range"><span class="header-section-number">10.1.5</span> num_range()</a></li>
-<li><a class="nav-link" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><span class="header-section-number">10.1.6</span> Matıksal operatorler ile seçim</a></li>
-<li><a class="nav-link" href="#rename-fonksiyonu"><span class="header-section-number">10.1.7</span> rename() fonksiyonu</a></li>
-<li><a class="nav-link" href="#mutate-fonksiyonu"><span class="header-section-number">10.1.8</span> mutate fonksiyonu</a></li>
-<li><a class="nav-link" href="#transmute-fonksiyonu"><span class="header-section-number">10.1.9</span> transmute() fonksiyonu</a></li>
-<li><a class="nav-link" href="#ifelse"><span class="header-section-number">10.1.10</span> ifelse()</a></li>
+<a class="nav-link" href="#select-fonksiyonu"><span class="header-section-number">11.1</span> select() fonksiyonu</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#starts_with"><span class="header-section-number">11.1.1</span> starts_with()</a></li>
+<li><a class="nav-link" href="#ends_with"><span class="header-section-number">11.1.2</span> ends_with()</a></li>
+<li><a class="nav-link" href="#contains"><span class="header-section-number">11.1.3</span> contains()</a></li>
+<li><a class="nav-link" href="#matches"><span class="header-section-number">11.1.4</span> matches()</a></li>
+<li><a class="nav-link" href="#num_range"><span class="header-section-number">11.1.5</span> num_range()</a></li>
+<li><a class="nav-link" href="#mat%C4%B1ksal-operatorler-ile-se%C3%A7im"><span class="header-section-number">11.1.6</span> Matıksal operatorler ile seçim</a></li>
+<li><a class="nav-link" href="#rename-fonksiyonu"><span class="header-section-number">11.1.7</span> rename() fonksiyonu</a></li>
+<li><a class="nav-link" href="#mutate-fonksiyonu"><span class="header-section-number">11.1.8</span> mutate fonksiyonu</a></li>
+<li><a class="nav-link" href="#transmute-fonksiyonu"><span class="header-section-number">11.1.9</span> transmute() fonksiyonu</a></li>
+<li><a class="nav-link" href="#ifelse"><span class="header-section-number">11.1.10</span> ifelse()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#case_when"><span class="header-section-number">10.2</span> case_when()</a></li>
+<li><a class="nav-link" href="#case_when"><span class="header-section-number">11.2</span> case_when()</a></li>
 </ul>
 
       <div class="book-extra">
@@ -8038,7 +8040,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

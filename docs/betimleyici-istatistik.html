@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Betimleyici İstatistik | OLC731</title>
+<title>Chapter 14 Betimleyici İstatistik | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="13.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Betimleyici İstatistik | OLC731">
+<meta name="description" content="14.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 14 Betimleyici İstatistik | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/betimleyici-istatistik.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="13.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
+<meta property="og:description" content="14.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Betimleyici İstatistik | OLC731">
-<meta name="twitter:description" content="13.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
+<meta name="twitter:title" content="Chapter 14 Betimleyici İstatistik | OLC731">
+<meta name="twitter:description" content="14.1 Veri Yükleme 🔗 PISA_STU_2018 ve 🔗 PISA_OGR_2018 veri setlerini kullanacağız. veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="active" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="active" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,22 +101,22 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="betimleyici-istatistik" class="section level1" number="13">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="betimleyici-istatistik" class="section level1" number="14">
 <h1>
-<span class="header-section-number">13</span> Betimleyici İstatistik<a class="anchor" aria-label="anchor" href="#betimleyici-istatistik"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14</span> Betimleyici İstatistik<a class="anchor" aria-label="anchor" href="#betimleyici-istatistik"><i class="fas fa-link"></i></a>
 </h1>
 <!-- https://statsandr.com/blog/descriptive-statistics-in-r/ -->
 <!-- https://rpubs.com/williamsurles/298945 -->
 <p><!-- https://rpubs.com/odenipinedo/introduction-to-data-visualization-with-ggplot2 --></p>
-<div id="veri-yükleme" class="section level2" number="13.1">
+<div id="veri-yükleme" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">13.1</span> Veri Yükleme<a class="anchor" aria-label="anchor" href="#veri-y%C3%BCkleme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> Veri Yükleme<a class="anchor" aria-label="anchor" href="#veri-y%C3%BCkleme"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗 <a href="import/PISA_STU_2018.rda">PISA_STU_2018</a> ve 🔗 <a href="(import/PISA_OGR_2018.rda)">PISA_OGR_2018</a> veri setlerini kullanacağız.</p></li>
 <li><p>veri seti R'de varsayılan olarak içe aktarılır, yalnızca PISA_STU_2018 çalıştırarak yüklemeniz gerekir:</p></li>
 </ul>
-<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_STU_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -9095,33 +9096,33 @@
 <ul>
 <li>Veri seti 6890 gözlem ve 1119 değişken içermektedir.</li>
 </ul>
-<div id="minimum-and-maximum" class="section level3" number="13.1.1">
+<div id="minimum-and-maximum" class="section level3" number="14.1.1">
 <h3>
-<span class="header-section-number">13.1.1</span> Minimum and maximum<a class="anchor" aria-label="anchor" href="#minimum-and-maximum"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1.1</span> Minimum and maximum<a class="anchor" aria-label="anchor" href="#minimum-and-maximum"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code> ve <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code> fonksiyonları sayesinde minimum ve maksimum bulunabilir:</li>
 </ul>
-<div class="sourceCode" id="cb449"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 175.608</code></pre>
-<div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 771.508</code></pre>
 <ul>
 <li>Alternatif olarak <code><a href="https://rdrr.io/r/base/range.html">range()</a></code> fonksiyonu: size doğrudan minimum ve maksimum değerleri verir. <code><a href="https://rdrr.io/r/base/range.html">range()</a></code> fonksiyonunun çıktısının aslında minimum ve maksimum değerleri (bu sırayla) içeren bir nesne olduğuna dikkat edin. Bu, aslında minimuma şu şekilde erişebileceğiniz anlamına gelir:</li>
 </ul>
-<div class="sourceCode" id="cb453"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] 175.608</code></pre>
 </div>
-<div id="ortalama" class="section level3" number="13.1.2">
+<div id="ortalama" class="section level3" number="14.1.2">
 <h3>
-<span class="header-section-number">13.1.2</span> Ortalama<a class="anchor" aria-label="anchor" href="#ortalama"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1.2</span> Ortalama<a class="anchor" aria-label="anchor" href="#ortalama"><i class="fas fa-link"></i></a>
 </h3>
 <p>Ortalama, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonu ile hesaplanabilir:</p>
-<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 464.2299</code></pre>
 <div class="info">
@@ -9132,51 +9133,51 @@
 </ul>
 </div>
 </div>
-<div id="medyan" class="section level3" number="13.1.3">
+<div id="medyan" class="section level3" number="14.1.3">
 <h3>
-<span class="header-section-number">13.1.3</span> Medyan<a class="anchor" aria-label="anchor" href="#medyan"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1.3</span> Medyan<a class="anchor" aria-label="anchor" href="#medyan"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Medyan, <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code> fonksiyonu sayesinde hesaplanabilir:</li>
 </ul>
-<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb489"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 463.403</code></pre>
 <ul>
 <li>veya quantile() fonksiyonu ile:</li>
 </ul>
-<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb491"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     50% 
 ## 463.403</code></pre>
 </div>
 </div>
-<div id="i.-ve-iii.-çeyrek" class="section level2" number="13.2">
+<div id="i.-ve-iii.-çeyrek" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">13.2</span> I. ve III. Çeyrek<a class="anchor" aria-label="anchor" href="#i.-ve-iii.-%C3%A7eyrek"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> I. ve III. Çeyrek<a class="anchor" aria-label="anchor" href="#i.-ve-iii.-%C3%A7eyrek"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Medyan gibi, birinci ve üçüncü çeyrekler de <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code> işlevi sayesinde ve ikinci bağımsız değişkenin 0.25 veya 0.75 olarak ayarlanmasıyla hesaplanabilir:</li>
 </ul>
-<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb493"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="fl">0.25</span><span class="op">)</span> <span class="co"># birinci çeyrek</span></span></code></pre></div>
 <pre><code>##      25% 
 ## 402.5635</code></pre>
-<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="fl">0.75</span><span class="op">)</span> <span class="co"># ücüncü çeyrek</span></span></code></pre></div>
 <pre><code>##      75% 
 ## 525.7188</code></pre>
-<div id="standart-sapma-ve-varyans" class="section level3" number="13.2.1">
+<div id="standart-sapma-ve-varyans" class="section level3" number="14.2.1">
 <h3>
-<span class="header-section-number">13.2.1</span> Standart sapma ve varyans<a class="anchor" aria-label="anchor" href="#standart-sapma-ve-varyans"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2.1</span> Standart sapma ve varyans<a class="anchor" aria-label="anchor" href="#standart-sapma-ve-varyans"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Standart sapma ve varyans <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> ve <code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code> fonksiyonları ile hesaplanır:</li>
 </ul>
-<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span> <span class="co"># standard deviation</span></span></code></pre></div>
 <pre><code>## [1] 87.78006</code></pre>
-<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span> <span class="co"># standard deviation</span></span></code></pre></div>
 <pre><code>## [1] 7705.339</code></pre>
 <ul>
@@ -9185,7 +9186,7 @@
 <div class="info">
 <p>İpucu: Birden fazla değişkenin standart sapmasını (veya varyansını) aynı anda hesaplamak için, ikinci bağımsız değişken olarak uygun istatistiklerle birlikte lapply() fonksiyonu ile kullanın</p>
 </div>
-<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"PV"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">ends_with</a></span><span class="op">(</span><span class="st">"READ"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -9220,19 +9221,20 @@
 ## $PV10READ
 ## [1] 87.37984</code></pre>
 </div>
-<div id="tüm-özet-istatistikler" class="section level3" number="13.2.2">
+<div id="tüm-özet-istatistikler" class="section level3" number="14.2.2">
 <h3>
-<span class="header-section-number">13.2.2</span> Tüm özet istatistikler<a class="anchor" aria-label="anchor" href="#t%C3%BCm-%C3%B6zet-istatistikler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2.2</span> Tüm özet istatistikler<a class="anchor" aria-label="anchor" href="#t%C3%BCm-%C3%B6zet-istatistikler"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb503"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   175.6   402.6   463.4   464.2   525.7   771.5</code></pre>
 <div class="info">
 <p>İpucu: Bu tanımlayıcı istatistikleri gruba göre hesaplamak istiyorsanız <code><a href="https://rdrr.io/r/base/by.html">by()</a></code> fonksiyonunu kullanın:</p>
 </div>
-<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">IMMIG</span>, <span class="va">summary</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">IMMIG</span>, <span class="va">summary</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## PISA_STU_2018$IMMIG: 1
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   175.6   404.7   465.4   465.8   526.9   771.5 
@@ -9244,7 +9246,7 @@
 ## PISA_STU_2018$IMMIG: 3
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   353.9   401.8   417.5   438.1   458.2   597.6</code></pre>
-<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb507"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">PV1READ</span>, <span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">ST004D01T</span>, <span class="va">summary</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## PISA_STU_2018$ST004D01T: 1
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -9257,7 +9259,7 @@
 <li><p><code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> kullanımında bağımsız değişkenler veri setinin adı, gruplama değişkeni ve özet fonksiyonudur. Bu sırayı takip edin veya bu sırayı takip etmiyorsanız argümanların adını belirtin.</p></li>
 <li><p>Daha açıklayıcı istatistiklere ihtiyacınız varsa, <strong>psych</strong> paketindeki <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> fonksiyonunu kullanın:</p></li>
 </ul>
-<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ESCS</span>,<span class="va">JOYREAD</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -9332,14 +9334,14 @@
 </table></div>
 </div>
 </div>
-<div id="değişkenlik-katsayısı" class="section level3" number="13.2.3">
+<div id="değişkenlik-katsayısı" class="section level3" number="14.2.3">
 <h3>
-<span class="header-section-number">13.2.3</span> Değişkenlik katsayısı<a class="anchor" aria-label="anchor" href="#de%C4%9Fi%C5%9Fkenlik-katsay%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2.3</span> Değişkenlik katsayısı<a class="anchor" aria-label="anchor" href="#de%C4%9Fi%C5%9Fkenlik-katsay%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Değişkenlik katsayısı <code><a href="https://rdrr.io/pkg/pastecs/man/stat.desc.html">stat.desc()</a></code> ile veya manuel olarak hesaplanarak bulunabilir (Değişkenlik katsayısının standart sapmanın ortalamaya bölünmesi olduğunu unutmayın):</li>
 </ul>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/phgrosjean/pastecs">pastecs</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/pastecs/man/stat.desc.html">stat.desc</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">ESCS</span>,<span class="va">JOYREAD</span><span class="op">)</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -9425,16 +9427,16 @@
 </table></div>
 </div>
 </div>
-<div id="mod" class="section level3" number="13.2.4">
+<div id="mod" class="section level3" number="14.2.4">
 <h3>
-<span class="header-section-number">13.2.4</span> Mod<a class="anchor" aria-label="anchor" href="#mod"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2.4</span> Mod<a class="anchor" aria-label="anchor" href="#mod"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Bildiğim kadarıyla bir değişkenin modunu bulmak için bir fonksiyon yok. Ancak <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> ve <code><a href="https://rdrr.io/r/base/sort.html">sort()</a></code> fonksiyonları sayesinde bunu kolayca bulabiliriz:</li>
 </ul>
-<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">MISCED</span><span class="op">)</span> <span class="co"># her benzersiz değer için oluşum sayısı</span></span></code></pre></div>
-<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb512"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">tab</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># en yüksekten en düşüğe doğru sırala</span></span></code></pre></div>
 <pre><code>## 
 ##    1    2    6    5    0    4    3 
@@ -9443,16 +9445,16 @@
 <li>
 <code><a href="https://rdrr.io/r/base/table.html">table()</a></code> her bir benzersiz değer için oluşum sayısını verir, ardından <code>sort() decreasing  = TRUE</code> argümanı ile oluşum sayısını en yüksekten en düşüğe doğru görüntüler.</li>
 </ul>
-<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">$</span><span class="va">MISCED</span><span class="op">)</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##    1    2    6    5    0    4    3 
 ## 1882 1362  887  759  695  675  575</code></pre>
 </div>
 </div>
-<div id="frekans-tablosu-oluşturma" class="section level2" number="13.3">
+<div id="frekans-tablosu-oluşturma" class="section level2" number="14.3">
 <h2>
-<span class="header-section-number">13.3</span> Frekans tablosu oluşturma<a class="anchor" aria-label="anchor" href="#frekans-tablosu-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.3</span> Frekans tablosu oluşturma<a class="anchor" aria-label="anchor" href="#frekans-tablosu-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -9465,7 +9467,7 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb484"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -9517,7 +9519,7 @@
 <li><p>Bu nedenle yukarıdaki kod, MISCED değişkeninin her bir grubundaki gözlem sayısını sayar. Eğer sadece toplam gözlem sayısına ihtiyacınız varsa, group_by() ve ungroup() satırlarını kaldırabilirsiniz, böylece işlemi gruplar yerine tüm veri seti üzerinde gerçekleştirebilirsiniz:</p></li>
 <li><p>Benzer şekilde, örneklemin ortalama başarısını (ve SD'sini) hesaplamak isteyebiliriz ve bunu dplyr/tidyverse paketindeki <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> fonkisyonu kullanarak yapabiliriz.</p></li>
 </ul>
-<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>ort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">PV1READ</span><span class="op">)</span>,</span>
 <span>            sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">PV1READ</span><span class="op">)</span>,</span>
@@ -9543,9 +9545,9 @@
 <li><p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> fonksiyonundan sonra çağrılan işlevin çıktısı gruplama değişkeninin her düzeyi için üretilecektir.</p></li>
 </ul>
 </div>
-<div id="görselleştirme" class="section level2" number="13.4">
+<div id="görselleştirme" class="section level2" number="14.4">
 <h2>
-<span class="header-section-number">13.4</span> Görselleştirme<a class="anchor" aria-label="anchor" href="#g%C3%B6rselle%C5%9Ftirme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.4</span> Görselleştirme<a class="anchor" aria-label="anchor" href="#g%C3%B6rselle%C5%9Ftirme"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="images/v1.PNG" style="width:50.0%"></div>
 <div class="inline-figure"><img src="images/v2.PNG" style="width:50.0%"></div>
@@ -9565,7 +9567,7 @@
 </li>
 <li><p><code>tidyverse</code> paketi veri düzenlemeleri, görselleştirmeleri, modellemeleri kolay bir şekilde yapabilmemizi sağlayan, R'ın birçok paketini içinde bulunduran pakettir. Bu paketin içeriğinde veri görselleştirme amacıyla <code>ggplot2</code> paketi de yer almaktadır.</p></li>
 </ul>
-<div class="sourceCode" id="cb486"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("tidyverse", repos="https://cran.rstudio.com")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gdemin.github.io/expss/">expss</a></span><span class="op">)</span></span></code></pre></div>
@@ -9574,7 +9576,7 @@
 <li><p>Grafiklerin kolay okunması adına <code>PISA_OGR_2018</code> veri setinden veri sayısının azaltılması amacıyla sınıf düzeylerine ilişkin değişkenin her düzeyinden 15'şer kişilik örneklem seçilip toplam 60 gözlemle "df1" nesnesi oluşturulmuştur.</p></li>
 <li><p>Grafik çizimlerinde grup değişkenlerine ihtiyaç duyulduğu için sınıf düzeylerine ve cinsiyete ilişkin değişkenler <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>fonksiyonuyla kategorik hale getirilmiştir.</p></li>
 </ul>
-<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb519"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_OGR_2018.rda"</span><span class="op">)</span></span>
 <span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">SINIF</span>,<span class="va">CINSIYET</span>,<span class="va">OK_YETERLIK</span>,<span class="va">ODOKUMA1</span>,<span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>   </span>
@@ -9676,7 +9678,7 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">SINIF</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">10</span>,<span class="fl">11</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -9685,9 +9687,9 @@
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>SINIF<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">SINIF</span><span class="op">)</span>, CINSIYET<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
 </div>
-<div id="ggplot" class="section level2" number="13.5">
+<div id="ggplot" class="section level2" number="14.5">
 <h2>
-<span class="header-section-number">13.5</span> ggplot<a class="anchor" aria-label="anchor" href="#ggplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.5</span> ggplot<a class="anchor" aria-label="anchor" href="#ggplot"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Grafikleri iyi bilinen <strong>ggplot2</strong> paketi grafikleri üzerinden işleyeceğiz.</p></li>
@@ -9700,7 +9702,7 @@
 <ul>
 <li>Bu sayfa görüntülenen tüm grafikler özelleştirilebilir. Örneğin, başlığı, x ve y ekseni etiketlerini, rengi vb. düzenlemek mümkündür.</li>
 </ul>
-<div class="sourceCode" id="cb489"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb521"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">PV1READ</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
@@ -9739,7 +9741,7 @@
 </li>
 <li><p>ggplot2 paketinde yer alan tüm grafikler aşağıda listelenmiştir.</p></li>
 </ul>
-<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb524"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">'^geom_'</span>, env <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.environment.html">as.environment</a></span><span class="op">(</span><span class="st">'package:ggplot2'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  [1] "geom_abline"            "geom_area"              "geom_bar"              
@@ -9761,37 +9763,37 @@
 ## [49] "geom_step"              "geom_text"              "geom_tile"             
 ## [52] "geom_violin"            "geom_vline"</code></pre>
 </div>
-<div id="saçılım-grafiği" class="section level2" number="13.6">
+<div id="saçılım-grafiği" class="section level2" number="14.6">
 <h2>
-<span class="header-section-number">13.6</span> Saçılım Grafiği<a class="anchor" aria-label="anchor" href="#sa%C3%A7%C4%B1l%C4%B1m-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6</span> Saçılım Grafiği<a class="anchor" aria-label="anchor" href="#sa%C3%A7%C4%B1l%C4%B1m-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Aşağıdaki kod sadece ilk katmanı oluşturur.</li>
 </ul>
-<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">grafik_1</span> </span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-26-1.png" width="80%" style="display: block; margin: auto;"></div>
-<div id="katman-eklenmesi" class="section level3" number="13.6.1">
+<div id="katman-eklenmesi" class="section level3" number="14.6.1">
 <h3>
-<span class="header-section-number">13.6.1</span> Katman eklenmesi<a class="anchor" aria-label="anchor" href="#katman-eklenmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6.1</span> Katman eklenmesi<a class="anchor" aria-label="anchor" href="#katman-eklenmesi"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb527"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik_1</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-27-1.png" width="50%" style="display: block; margin: auto;"></div>
 </div>
-<div id="yüzey-eklenmesi" class="section level3" number="13.6.2">
+<div id="yüzey-eklenmesi" class="section level3" number="14.6.2">
 <h3>
-<span class="header-section-number">13.6.2</span> Yüzey eklenmesi<a class="anchor" aria-label="anchor" href="#y%C3%BCzey-eklenmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6.2</span> Yüzey eklenmesi<a class="anchor" aria-label="anchor" href="#y%C3%BCzey-eklenmesi"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik_1</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span>  <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">CINSIYET</span>, nrow<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-28-1.png" width="50%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik_1</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">SINIF</span>, nrow<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -9808,12 +9810,12 @@
 </li>
 <li><p>Yüzeyde kategorik değişkenlerin düzeylerini görebilmek için <strong>factor</strong> değişken olarak tanımlamak gerekir.</p></li>
 </ul>
-<div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://haven.tidyverse.org">haven</a></span><span class="op">)</span></span>
 <span><span class="va">PISA_OGR_2018</span> <span class="op">&lt;-</span> </span>
 <span>  <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span><span class="op">(</span><span class="va">is.labelled</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/funs.html">funs</a></span><span class="op">(</span><span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">SINIF</span><span class="op">~</span><span class="va">CINSIYET</span><span class="op">)</span></span></code></pre></div>
@@ -9822,7 +9824,7 @@
 <ul>
 <li>Yüzeylerin sütunda oluşturulması</li>
 </ul>
-<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">CINSIYET</span><span class="op">)</span></span></code></pre></div>
@@ -9830,39 +9832,39 @@
 <ul>
 <li>Yüzeylerin satırlarda oluşturulması</li>
 </ul>
-<div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">~</span><span class="va">.</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-33-1.png" width="40%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">SINIF</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-34-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">SINIF</span><span class="op">~</span><span class="va">.</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="gruplama-değişkenleri" class="section level3" number="13.6.3">
+<div id="gruplama-değişkenleri" class="section level3" number="14.6.3">
 <h3>
-<span class="header-section-number">13.6.3</span> gruplama değişkenleri<a class="anchor" aria-label="anchor" href="#gruplama-de%C4%9Fi%C5%9Fkenleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6.3</span> gruplama değişkenleri<a class="anchor" aria-label="anchor" href="#gruplama-de%C4%9Fi%C5%9Fkenleri"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Renklendirme, sembol şekli, sembol büyüklüğü ve çizgi türü belirleyen fonksiyonlar yardımıyla gruplama yapılmaktadır.</li>
 </ul>
-<div id="color-ile-gruplandırma" class="section level4" number="13.6.3.1">
+<div id="color-ile-gruplandırma" class="section level4" number="14.6.3.1">
 <h4>
-<span class="header-section-number">13.6.3.1</span> color ile gruplandırma<a class="anchor" aria-label="anchor" href="#color-ile-grupland%C4%B1rma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6.3.1</span> color ile gruplandırma<a class="anchor" aria-label="anchor" href="#color-ile-grupland%C4%B1rma"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>Açıklama kutucukları otomatik çıkar!</li>
 </ul>
-<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>      <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">SINIF</span>,<span class="va">CINSIYET</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -9877,7 +9879,7 @@
 <ul>
 <li>Yüzey eklenmiş garfiklerde de gruplama değişkeni kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">ODOKUMA1</span>,y<span class="op">=</span><span class="va">OK_YETERLIK</span>,color<span class="op">=</span><span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">SINIF</span><span class="op">)</span>   </span></code></pre></div>
@@ -9886,15 +9888,15 @@
 </div>
 </div>
 </div>
-<div id="grafik-nesnesi" class="section level2" number="13.7">
+<div id="grafik-nesnesi" class="section level2" number="14.7">
 <h2>
-<span class="header-section-number">13.7</span> Grafik nesnesi<a class="anchor" aria-label="anchor" href="#grafik-nesnesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.7</span> Grafik nesnesi<a class="anchor" aria-label="anchor" href="#grafik-nesnesi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Oluşturulan grafik <strong>p</strong> nesnesine atanmıştır. <strong>p</strong> nesnesine <strong>+</strong> ile katmanlar eklenebilir.</li>
 <li>Kategorik degişkenler eksen değerlerini belirler.</li>
 </ul>
-<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">cyl</span>, <span class="va">mpg</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">p</span></span></code></pre></div>
@@ -9902,7 +9904,7 @@
 <ul>
 <li>cyl değişkenin sadece 4,6 ve 8 değerlerini eksende belirtmek için factor olarak tanımlamak gerekir.</li>
 </ul>
-<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">mpg</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-39-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -9911,9 +9913,9 @@
 </ul>
 <div class="inline-figure"><img src="images/v3.PNG"></div>
 </div>
-<div id="aesthetics" class="section level2" number="13.8">
+<div id="aesthetics" class="section level2" number="14.8">
 <h2>
-<span class="header-section-number">13.8</span> <strong>AESTHETICS</strong><a class="anchor" aria-label="anchor" href="#aesthetics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.8</span> <strong>AESTHETICS</strong><a class="anchor" aria-label="anchor" href="#aesthetics"><i class="fas fa-link"></i></a>
 </h2>
 <pre><code>-   fill
 -   color
@@ -9922,24 +9924,24 @@
 -   alpha
 -   linetype
 -   labels</code></pre>
-<div id="color-parametresi" class="section level3" number="13.8.1">
+<div id="color-parametresi" class="section level3" number="14.8.1">
 <h3>
-<span class="header-section-number">13.8.1</span> <strong>color</strong> parametresi<a class="anchor" aria-label="anchor" href="#color-parametresi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.8.1</span> <strong>color</strong> parametresi<a class="anchor" aria-label="anchor" href="#color-parametresi"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: Removed 199 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-40-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="size-ve-shape-parametresi" class="section level3" number="13.8.2">
+<div id="size-ve-shape-parametresi" class="section level3" number="14.8.2">
 <h3>
-<span class="header-section-number">13.8.2</span> <strong>size</strong> ve <strong>shape</strong> parametresi<a class="anchor" aria-label="anchor" href="#size-ve-shape-parametresi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.8.2</span> <strong>size</strong> ve <strong>shape</strong> parametresi<a class="anchor" aria-label="anchor" href="#size-ve-shape-parametresi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>her iki parametrenin de olağan değeri 1 dir.</li>
 </ul>
-<div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"blue"</span>,size<span class="op">=</span><span class="fl">5</span>,shape<span class="op">=</span><span class="st">"a"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: Removed 199 rows containing missing values (`geom_point()`).</code></pre>
@@ -9947,12 +9949,12 @@
 <ul>
 <li>Veri seti her bir okul türünden 5 kişi alınarak veri seti boyutu küçültülmüştür.</li>
 </ul>
-<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">OKUL_TUR</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html">sample_n</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>Üstüse gelen noktalar için <strong>position</strong></p></li>
@@ -9964,88 +9966,88 @@
 <li><p>jitterdodge</p></li>
 <li><p>nudge</p></li>
 </ul>
-<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb524"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb556"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"jitter"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="size-parametresi" class="section level3" number="13.8.3">
+<div id="size-parametresi" class="section level3" number="14.8.3">
 <h3>
-<span class="header-section-number">13.8.3</span> <strong>size</strong> parametresi<a class="anchor" aria-label="anchor" href="#size-parametresi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.8.3</span> <strong>size</strong> parametresi<a class="anchor" aria-label="anchor" href="#size-parametresi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>parametreler için veri setinden bir değişken değeri seçilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span>, size <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li>
 <strong>size</strong> parametresi üst üste binen noktaları kaydırarak ayırma</li>
 </ul>
-<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, <span class="va">OK_YETERLIK</span>, size <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"jitter"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="katmanlar" class="section level2" number="13.9">
+<div id="katmanlar" class="section level2" number="14.9">
 <h2>
-<span class="header-section-number">13.9</span> Katmanlar<a class="anchor" aria-label="anchor" href="#katmanlar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9</span> Katmanlar<a class="anchor" aria-label="anchor" href="#katmanlar"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="images/v4.PNG"></div>
-<div id="alpha" class="section level3" number="13.9.1">
+<div id="alpha" class="section level3" number="14.9.1">
 <h3>
-<span class="header-section-number">13.9.1</span> alpha<a class="anchor" aria-label="anchor" href="#alpha"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.1</span> alpha<a class="anchor" aria-label="anchor" href="#alpha"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Şeffaflık düzeyi için <strong>alpa</strong>
 </li>
 </ul>
-<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">ODOKUMA1</span>, <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li>Katmanları nesneye ekleme
 <strong>grafik1</strong> adlı nesneye istenilen katmanlar eklenebilir.</li>
 </ul>
-<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">ODOKUMA1</span>, <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">grafik1</span> <span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">1.2</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p><strong>grafik1</strong> adlı nesneye CINSIYET değişkenine göre şekil ekleme</p>
-<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb568"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">grafik1</span> <span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape<span class="op">=</span><span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="text" class="section level3" number="13.9.2">
+<div id="text" class="section level3" number="14.9.2">
 <h3>
-<span class="header-section-number">13.9.2</span> <strong>text</strong><a class="anchor" aria-label="anchor" href="#text"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.2</span> <strong>text</strong><a class="anchor" aria-label="anchor" href="#text"><i class="fas fa-link"></i></a>
 </h3>
 <p>Değişken adları <strong>text</strong> komutu ile veri sembolu olarak eklenebilir. Gösterim amacıyla <strong>df</strong> veri setinin sadece ilk 10 satırı kullanılmıştır.</p>
-<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,<span class="op">]</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">ODOKUMA1</span>, <span class="va">OK_YETERLIK</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>         <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="scale" class="section level3" number="13.9.3">
+<div id="scale" class="section level3" number="14.9.3">
 <h3>
-<span class="header-section-number">13.9.3</span> Scale<a class="anchor" aria-label="anchor" href="#scale"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.3</span> Scale<a class="anchor" aria-label="anchor" href="#scale"><i class="fas fa-link"></i></a>
 </h3>
 <p>Scale fonksiyonları
 - scale_x()
@@ -10062,33 +10064,33 @@
 - scale_shape()
 - scale_linetype()
 - scale_size()</p>
-<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ODOKUMA1</span>,y <span class="op">=</span> <span class="va">OK_YETERLIK</span>, color <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"jitter"</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Okuma Puanları"</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete</a></span><span class="op">(</span><span class="st">"Cinsiyet"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="limits" class="section level3" number="13.9.4">
+<div id="limits" class="section level3" number="14.9.4">
 <h3>
-<span class="header-section-number">13.9.4</span> *limits**<a class="anchor" aria-label="anchor" href="#limits"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.4</span> *limits**<a class="anchor" aria-label="anchor" href="#limits"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ODOKUMA1</span>,</span>
 <span>y <span class="op">=</span> <span class="va">OK_YETERLIK</span>,</span>
 <span>color <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"jitter"</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Okuma Puanları"</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">900</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete</a></span><span class="op">(</span><span class="st">"Cinsiyet"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="breaks" class="section level3" number="13.9.5">
+<div id="breaks" class="section level3" number="14.9.5">
 <h3>
-<span class="header-section-number">13.9.5</span> *breaks<a class="anchor" aria-label="anchor" href="#breaks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.5</span> *breaks<a class="anchor" aria-label="anchor" href="#breaks"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ODOKUMA1</span>,</span>
 <span>y <span class="op">=</span> <span class="va">OK_YETERLIK</span>,</span>
 <span>color <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -10096,14 +10098,14 @@
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span><span class="st">"Okuma Puanları"</span>,limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">900</span><span class="op">)</span>,</span>
 <span>         breaks<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">900</span>,<span class="fl">100</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete</a></span><span class="op">(</span><span class="st">"Cinsiyet"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="expand" class="section level3" number="13.9.6">
+<div id="expand" class="section level3" number="14.9.6">
 <h3>
-<span class="header-section-number">13.9.6</span> expand<a class="anchor" aria-label="anchor" href="#expand"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.6</span> expand<a class="anchor" aria-label="anchor" href="#expand"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ODOKUMA1</span>,</span>
 <span>y <span class="op">=</span> <span class="va">OK_YETERLIK</span>,</span>
 <span>color <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -10112,14 +10114,14 @@
 <span>                   breaks<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">900</span>,<span class="fl">100</span><span class="op">)</span>,</span>
 <span>                   expand<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete</a></span><span class="op">(</span><span class="st">"Cinsiyet"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="labs" class="section level3" number="13.9.7">
+<div id="labs" class="section level3" number="14.9.7">
 <h3>
-<span class="header-section-number">13.9.7</span> labs<a class="anchor" aria-label="anchor" href="#labs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9.7</span> labs<a class="anchor" aria-label="anchor" href="#labs"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ODOKUMA1</span>,</span>
 <span>y <span class="op">=</span> <span class="va">OK_YETERLIK</span>,</span>
 <span>color <span class="op">=</span> <span class="va">CINSIYET</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -10127,25 +10129,25 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"\nBasari Puanları"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"\nYeterlik Puanları"</span>,</span>
 <span>       color <span class="op">=</span> <span class="st">"Grup"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: Removed 4 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 3 rows containing missing values (`geom_point()`).</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="bar-grafiği" class="section level2" number="13.10">
+<div id="bar-grafiği" class="section level2" number="14.10">
 <h2>
-<span class="header-section-number">13.10</span> Bar Grafiği<a class="anchor" aria-label="anchor" href="#bar-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.10</span> Bar Grafiği<a class="anchor" aria-label="anchor" href="#bar-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, fill <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Cinsiyet"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"Frekans"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="scale_fill" class="section level2" number="13.11">
+<div id="scale_fill" class="section level2" number="14.11">
 <h2>
-<span class="header-section-number">13.11</span> scale_fill<a class="anchor" aria-label="anchor" href="#scale_fill"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.11</span> scale_fill<a class="anchor" aria-label="anchor" href="#scale_fill"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">CINSIYET</span>, fill <span class="op">=</span> <span class="va">SINIF</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Cinsiyet"</span>,</span>
@@ -10154,11 +10156,11 @@
 <span>                                           <span class="st">"darkblue"</span>,<span class="st">"purple"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="bar-grafikleri" class="section level2" number="13.12">
+<div id="bar-grafikleri" class="section level2" number="14.12">
 <h2>
-<span class="header-section-number">13.12</span> Bar Grafikleri<a class="anchor" aria-label="anchor" href="#bar-grafikleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.12</span> Bar Grafikleri<a class="anchor" aria-label="anchor" href="#bar-grafikleri"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">ST004D01T</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>ort <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">PV1READ</span><span class="op">)</span>,</span>
@@ -10168,10 +10170,8 @@
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">PISA_STU_2018</span>, mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ST004D01T</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Don't know how to automatically pick scale for object of type
-## &lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.</code></pre>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span>, Cinsiyet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span></span>
 <span>  <span class="va">ST004D01T</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>,</span>
@@ -10181,7 +10181,7 @@
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dat</span>, mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Cinsiyet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-59-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dat</span>, mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Cinsiyet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="op">(</span><span class="va">..count..</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">..count..</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Yüzde"</span>, labels<span class="op">=</span><span class="fu">scales</span><span class="fu">::</span><span class="va"><a href="https://scales.r-lib.org/reference/percent_format.html">percent</a></span><span class="op">)</span> </span></code></pre></div>
@@ -10197,7 +10197,7 @@
 <p>--</p>
 <ul>
 <li><p>😕</p></li>
-<li><p>😄</p></li>
+<li><p>😆</p></li>
 </ul>
 </div>
 </div>
@@ -10205,59 +10205,59 @@
 
 
 <div class="chapter-nav">
-<div class="prev"><a href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></div>
+<div class="prev"><a href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></div>
 <div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#betimleyici-istatistik"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="nav-link" href="#betimleyici-istatistik"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li>
-<a class="nav-link" href="#veri-y%C3%BCkleme"><span class="header-section-number">13.1</span> Veri Yükleme</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#minimum-and-maximum"><span class="header-section-number">13.1.1</span> Minimum and maximum</a></li>
-<li><a class="nav-link" href="#ortalama"><span class="header-section-number">13.1.2</span> Ortalama</a></li>
-<li><a class="nav-link" href="#medyan"><span class="header-section-number">13.1.3</span> Medyan</a></li>
+<a class="nav-link" href="#veri-y%C3%BCkleme"><span class="header-section-number">14.1</span> Veri Yükleme</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#minimum-and-maximum"><span class="header-section-number">14.1.1</span> Minimum and maximum</a></li>
+<li><a class="nav-link" href="#ortalama"><span class="header-section-number">14.1.2</span> Ortalama</a></li>
+<li><a class="nav-link" href="#medyan"><span class="header-section-number">14.1.3</span> Medyan</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#i.-ve-iii.-%C3%A7eyrek"><span class="header-section-number">13.2</span> I. ve III. Çeyrek</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#standart-sapma-ve-varyans"><span class="header-section-number">13.2.1</span> Standart sapma ve varyans</a></li>
-<li><a class="nav-link" href="#t%C3%BCm-%C3%B6zet-istatistikler"><span class="header-section-number">13.2.2</span> Tüm özet istatistikler</a></li>
-<li><a class="nav-link" href="#de%C4%9Fi%C5%9Fkenlik-katsay%C4%B1s%C4%B1"><span class="header-section-number">13.2.3</span> Değişkenlik katsayısı</a></li>
-<li><a class="nav-link" href="#mod"><span class="header-section-number">13.2.4</span> Mod</a></li>
+<a class="nav-link" href="#i.-ve-iii.-%C3%A7eyrek"><span class="header-section-number">14.2</span> I. ve III. Çeyrek</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#standart-sapma-ve-varyans"><span class="header-section-number">14.2.1</span> Standart sapma ve varyans</a></li>
+<li><a class="nav-link" href="#t%C3%BCm-%C3%B6zet-istatistikler"><span class="header-section-number">14.2.2</span> Tüm özet istatistikler</a></li>
+<li><a class="nav-link" href="#de%C4%9Fi%C5%9Fkenlik-katsay%C4%B1s%C4%B1"><span class="header-section-number">14.2.3</span> Değişkenlik katsayısı</a></li>
+<li><a class="nav-link" href="#mod"><span class="header-section-number">14.2.4</span> Mod</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#frekans-tablosu-olu%C5%9Fturma"><span class="header-section-number">13.3</span> Frekans tablosu oluşturma</a></li>
-<li><a class="nav-link" href="#g%C3%B6rselle%C5%9Ftirme"><span class="header-section-number">13.4</span> Görselleştirme</a></li>
-<li><a class="nav-link" href="#ggplot"><span class="header-section-number">13.5</span> ggplot</a></li>
+<li><a class="nav-link" href="#frekans-tablosu-olu%C5%9Fturma"><span class="header-section-number">14.3</span> Frekans tablosu oluşturma</a></li>
+<li><a class="nav-link" href="#g%C3%B6rselle%C5%9Ftirme"><span class="header-section-number">14.4</span> Görselleştirme</a></li>
+<li><a class="nav-link" href="#ggplot"><span class="header-section-number">14.5</span> ggplot</a></li>
 <li>
-<a class="nav-link" href="#sa%C3%A7%C4%B1l%C4%B1m-grafi%C4%9Fi"><span class="header-section-number">13.6</span> Saçılım Grafiği</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#katman-eklenmesi"><span class="header-section-number">13.6.1</span> Katman eklenmesi</a></li>
-<li><a class="nav-link" href="#y%C3%BCzey-eklenmesi"><span class="header-section-number">13.6.2</span> Yüzey eklenmesi</a></li>
-<li><a class="nav-link" href="#gruplama-de%C4%9Fi%C5%9Fkenleri"><span class="header-section-number">13.6.3</span> gruplama değişkenleri</a></li>
+<a class="nav-link" href="#sa%C3%A7%C4%B1l%C4%B1m-grafi%C4%9Fi"><span class="header-section-number">14.6</span> Saçılım Grafiği</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#katman-eklenmesi"><span class="header-section-number">14.6.1</span> Katman eklenmesi</a></li>
+<li><a class="nav-link" href="#y%C3%BCzey-eklenmesi"><span class="header-section-number">14.6.2</span> Yüzey eklenmesi</a></li>
+<li><a class="nav-link" href="#gruplama-de%C4%9Fi%C5%9Fkenleri"><span class="header-section-number">14.6.3</span> gruplama değişkenleri</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#grafik-nesnesi"><span class="header-section-number">13.7</span> Grafik nesnesi</a></li>
+<li><a class="nav-link" href="#grafik-nesnesi"><span class="header-section-number">14.7</span> Grafik nesnesi</a></li>
 <li>
-<a class="nav-link" href="#aesthetics"><span class="header-section-number">13.8</span> AESTHETICS</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#color-parametresi"><span class="header-section-number">13.8.1</span> color parametresi</a></li>
-<li><a class="nav-link" href="#size-ve-shape-parametresi"><span class="header-section-number">13.8.2</span> size ve shape parametresi</a></li>
-<li><a class="nav-link" href="#size-parametresi"><span class="header-section-number">13.8.3</span> size parametresi</a></li>
+<a class="nav-link" href="#aesthetics"><span class="header-section-number">14.8</span> AESTHETICS</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#color-parametresi"><span class="header-section-number">14.8.1</span> color parametresi</a></li>
+<li><a class="nav-link" href="#size-ve-shape-parametresi"><span class="header-section-number">14.8.2</span> size ve shape parametresi</a></li>
+<li><a class="nav-link" href="#size-parametresi"><span class="header-section-number">14.8.3</span> size parametresi</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#katmanlar"><span class="header-section-number">13.9</span> Katmanlar</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#alpha"><span class="header-section-number">13.9.1</span> alpha</a></li>
-<li><a class="nav-link" href="#text"><span class="header-section-number">13.9.2</span> text</a></li>
-<li><a class="nav-link" href="#scale"><span class="header-section-number">13.9.3</span> Scale</a></li>
-<li><a class="nav-link" href="#limits"><span class="header-section-number">13.9.4</span> *limits**</a></li>
-<li><a class="nav-link" href="#breaks"><span class="header-section-number">13.9.5</span> *breaks</a></li>
-<li><a class="nav-link" href="#expand"><span class="header-section-number">13.9.6</span> expand</a></li>
-<li><a class="nav-link" href="#labs"><span class="header-section-number">13.9.7</span> labs</a></li>
+<a class="nav-link" href="#katmanlar"><span class="header-section-number">14.9</span> Katmanlar</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#alpha"><span class="header-section-number">14.9.1</span> alpha</a></li>
+<li><a class="nav-link" href="#text"><span class="header-section-number">14.9.2</span> text</a></li>
+<li><a class="nav-link" href="#scale"><span class="header-section-number">14.9.3</span> Scale</a></li>
+<li><a class="nav-link" href="#limits"><span class="header-section-number">14.9.4</span> *limits**</a></li>
+<li><a class="nav-link" href="#breaks"><span class="header-section-number">14.9.5</span> *breaks</a></li>
+<li><a class="nav-link" href="#expand"><span class="header-section-number">14.9.6</span> expand</a></li>
+<li><a class="nav-link" href="#labs"><span class="header-section-number">14.9.7</span> labs</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#bar-grafi%C4%9Fi"><span class="header-section-number">13.10</span> Bar Grafiği</a></li>
-<li><a class="nav-link" href="#scale_fill"><span class="header-section-number">13.11</span> scale_fill</a></li>
-<li><a class="nav-link" href="#bar-grafikleri"><span class="header-section-number">13.12</span> Bar Grafikleri</a></li>
+<li><a class="nav-link" href="#bar-grafi%C4%9Fi"><span class="header-section-number">14.10</span> Bar Grafiği</a></li>
+<li><a class="nav-link" href="#scale_fill"><span class="header-section-number">14.11</span> scale_fill</a></li>
+<li><a class="nav-link" href="#bar-grafikleri"><span class="header-section-number">14.12</span> Bar Grafikleri</a></li>
 </ul>
 
       <div class="book-extra">
@@ -10478,7 +10478,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

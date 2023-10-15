@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.9.17)  18 SEP 2023 15:46
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.10.14)  15 OCT 2023 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **template.tex
 (./template.tex
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+L3 programming layer <2023-10-10>
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -98,9 +98,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-08-29 L3 programming layer (loader) 
+Package: expl3 2023-10-10 L3 programming layer (loader) 
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
+File: l3backend-xetex.def 2023-10-10 L3 backend support: XeTeX
 \g__graphics_track_int=\count268
 \l__pdf_internal_box=\box53
 \g__pdf_backend_object_int=\count269
@@ -111,9 +111,9 @@ Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2023-08-29 L3 Experimental document command parser
+Package: xparse 2023-10-10 L3 Experimental document command parser
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2023-08-29 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -317,7 +317,7 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 \Gin@req@height=\dimen184
 \Gin@req@width=\dimen185
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2023/06/19 version 6.0.4 text color boxes
+Package: tcolorbox 2023/09/26 version 6.1.0 text color boxes
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen186
@@ -573,12 +573,35 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen298
 \c@nlinenum=\count333
 \TeXr@lab=\toks45
+) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen299
+\captionmargin=\dimen300
+\caption@leftmargin=\dimen301
+\caption@rightmargin=\dimen302
+\caption@width=\dimen303
+\caption@indent=\dimen304
+\caption@parindent=\dimen305
+\caption@hangindent=\dimen306
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count334
+\c@continuedfloat=\count335
+Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+(c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip69
 \bibsep=\skip70
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count334
+\c@NAT@ctr=\count336
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -606,17 +629,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count337
 )
-\@linkdim=\dimen299
-\Hy@linkcounter=\count336
-\Hy@pagecounter=\count337
+\@linkdim=\dimen307
+\Hy@linkcounter=\count338
+\Hy@pagecounter=\count339
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
 ) (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count338
+\Hy@SavedSpaceFactor=\count340
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
 )
@@ -628,21 +651,21 @@ Package hyperref Info: Plain pages OFF on input line 4182.
 Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count339
+\c@Hy@tempcnt=\count341
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen300
+\XeTeXLinkMargin=\dimen308
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count340
-\Field@Width=\dimen301
-\Fld@charsize=\dimen302
+\Fld@menulength=\count342
+\Field@Width=\dimen309
+\Fld@charsize=\dimen310
 Package hyperref Info: Hyper figures OFF on input line 6051.
 Package hyperref Info: Link nesting OFF on input line 6056.
 Package hyperref Info: Hyper index ON on input line 6059.
@@ -654,9 +677,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6081.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count341
-\c@Item=\count342
-\c@Hfootnote=\count343
+\Hy@abspage=\count343
+\c@Item=\count344
+\c@Hfootnote=\count345
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
@@ -665,10 +688,10 @@ File: hxetex.def 2023-07-08 v7.01b Hyperref driver for XeTeX
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \pdfm@box=\box90
-\c@Hy@AnnotLevel=\count344
-\HyField@AnnotCount=\count345
-\Fld@listcount=\count346
-\c@bookmark@seq@number=\count347
+\c@Hy@AnnotLevel=\count346
+\HyField@AnnotCount=\count347
+\Fld@listcount=\count348
+\c@bookmark@seq@number=\count349
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
@@ -684,40 +707,40 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 No file template.aux.
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 187.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 187.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 187.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 187.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 187.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 187.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 187.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 188.
 
 Package fontspec Info: latinmodern-math scale = 0.9989520677190833.
 
@@ -742,11 +765,11 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             <->s*[0.9989520677190833]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf(0) on input line 187.
-LaTeX Font Info:    No file T1latinmodern-math.otf(0).fd. on input line 187.
+LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf(0) on input line 188.
+LaTeX Font Info:    No file T1latinmodern-math.otf(0).fd. on input line 188.
 
 LaTeX Font Warning: Font shape `T1/latinmodern-math.otf(0)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 187.
+(Font)              using `T1/cmr/m/n' instead on input line 188.
 
 
 Package unicode-math Warning: The first font loaded by unicode-math must be an
@@ -786,20 +809,20 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             <->s*[0.9989520677190833]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf(1) on input line 187.
-LaTeX Font Info:    No file T1latinmodern-math.otf(1).fd. on input line 187.
+LaTeX Font Info:    Trying to load font information for T1+latinmodern-math.otf(1) on input line 188.
+LaTeX Font Info:    No file T1latinmodern-math.otf(1).fd. on input line 188.
 
 LaTeX Font Warning: Font shape `T1/latinmodern-math.otf(1)/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 187.
+(Font)              using `T1/cmr/m/n' instead on input line 188.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 187.
+(Font)              `operators' in the math version `normal' on input line 188.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> T1/latinmodern-math.otf(1)/m/n on input line 187.
+(Font)                  OT1/lmr/m/n --> T1/latinmodern-math.otf(1)/m/n on input line 188.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 187.
+(Font)              `operators' in the math version `bold' on input line 188.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/latinmodern-math.otf(1)/b/n on input line 187.
+(Font)                  OT1/lmr/bx/n --> T1/latinmodern-math.otf(1)/b/n on input line 188.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -834,36 +857,39 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 187.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 188.
 \@outlinefile=\write5
 \openout5 = `template.out'.
 
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 189.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 190.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 189.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 190.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 189.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 190.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 189.
+(Font)              <12> on input line 190.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 189.
+(Font)              <8> on input line 190.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 189.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 189.
+(Font)              <6> on input line 190.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 190.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 189.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 190.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -910,22 +936,56 @@ File: index_files/figure-latex/fa-icon-b6db0f254c80bc493dbb13c250115ecc.pdf Grap
 File: index_files/figure-latex/fa-icon-f768fe0dd920858851ba0f42fb5fcbf3.pdf Graphic file (type pdf)
 <use index_files/figure-latex/fa-icon-f768fe0dd920858851ba0f42fb5fcbf3.pdf>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 210.
+(Font)              <10> on input line 211.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 210.
+(Font)              <7> on input line 211.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 210.
+(Font)              <5> on input line 211.
 File: index_files/figure-latex/fa-icon-f768fe0dd920858851ba0f42fb5fcbf3.pdf Graphic file (type pdf)
 <use index_files/figure-latex/fa-icon-f768fe0dd920858851ba0f42fb5fcbf3.pdf>
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 📖 ("1F4D6) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 📖 ("1F4D6) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 📖 ("1F4D6) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no İ ("130) in font ec-lmbx12!
-Missing character: There is no ş ("15F) in font ec-lmbx12!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 📖 ("1F4D6) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 📖 ("1F4D6) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no 👨 ("1F468) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 256.
+(c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 [2
 
 ]
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+[3]
 Chapter 1.
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -955,7 +1015,6 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -977,6 +1036,9 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -1025,13 +1087,10 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no İ ("130) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[3
+[4
 
 ]
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -1189,6 +1248,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+[5]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -1233,7 +1293,6 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[4]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
@@ -1281,7 +1340,10 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1375,12 +1437,9 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 403.
-(c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+[6]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 404.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 438.
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1389,7 +1448,6 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[5]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
@@ -1442,6 +1500,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+[7]
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -1460,7 +1519,6 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[6]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1485,7 +1543,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no Ş ("15E) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-LaTeX Warning: Reference `fig:img-rstudio' on page 7 undefined on input line 455.
+LaTeX Warning: Reference `fig:img-rstudio' on page 8 undefined on input line 489.
 
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -1507,11 +1565,19 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 1325) in paragraph at lines 472--473
+Underfull \hbox (badness 1325) in paragraph at lines 506--507
 []\T1/lmr/m/n/10 Bu ders boyunca R Stu-dio'da bu-lu-nan özel-lik-lerin nasl kul-lan-laca hakknda daha fa-zla bilgi
  []
 
-[7]
+[8]
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
@@ -1566,13 +1632,14 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no İ ("130) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+[9]
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[8]
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1616,6 +1683,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 File: images/objects-enviro.png Graphic file (type bmp)
 <images/objects-enviro.png>
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -1652,7 +1720,7 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
-[9]
+[10]
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1692,7 +1760,10 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[10]
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+[11]
 Chapter 2.
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -1748,6 +1819,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 File: images/packagebulb.png Graphic file (type bmp)
 <images/packagebulb.png>
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -1758,7 +1830,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[11
+[12
 
 ]
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1815,6 +1887,21 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
@@ -1831,6 +1918,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+[13]
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1851,7 +1939,6 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[12]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1865,7 +1952,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 
-Overfull \hbox (20.56702pt too wide) in paragraph at lines 899--900
+Overfull \hbox (20.56702pt too wide) in paragraph at lines 949--950
 []\T1/lmr/m/n/10 Belirli bir fonksiyon için hangi paketi kul-lan-mak iste-di-inizi be-lirt-mek is-tiy-or-sanz, örnein \T1/lmtt/m/n/10 package::function
  []
 
@@ -1947,6 +2034,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+[14]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1959,7 +2047,6 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[13]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -1971,10 +2058,11 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 
-Overfull \hbox (1955.73793pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1955.73793pt too wide) in paragraph at lines 1043--1043
 []\T1/lmtt/m/n/10 ##     author = {Hadley Wickham and Mara Averick and Jennifer Bryan and Winston Chang and Lucy D'Agostino McGowan and Romain François and Garrett Grolemund and Alex Hayes and Lionel Henry and Jim Hester and Max Kuhn and Thomas Lin Pedersen and Evan Miller and Stephan Milton Bache and Kirill Müller and Jeroen Ooms and David Robinson and Dana Paige Seidel and Vitalie Spinu and Kohske Takahashi and Davis Vaughan and Claus Wilke and Kara Woo and Hiroaki Yutani},[] 
  []
 
+[15]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -2000,7 +2088,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[14] [15]
+[16]
 Chapter 3.
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -2154,7 +2242,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[16
+[17
 
 ]
 Missing character: There is no ı ("131) in font ec-lmbx10!
@@ -2316,7 +2404,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no Ş ("15E) in font ec-lmr10!
 
-LaTeX Warning: Reference `fig:img-autocomplete' on page 17 undefined on input line 1189.
+LaTeX Warning: Reference `fig:img-autocomplete' on page 18 undefined on input line 1239.
 
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -2350,7 +2438,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx10!
 Missing character: There is no ı ("131) in font ec-lmbx10!
 Missing character: There is no ı ("131) in font ec-lmbx10!
-[17]
+[18]
 File: images/autocomplete.png Graphic file (type bmp)
 <images/autocomplete.png>
 Missing character: There is no ş ("15F) in font ec-lmbx12!
@@ -2391,7 +2479,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[18]
+[19]
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmtti10!
@@ -2444,7 +2532,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[19]
+[20]
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -2538,156 +2626,98 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[20]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
 [21]
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -2815,7 +2845,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1622--1623
+Underfull \hbox (badness 10000) in paragraph at lines 1621--1622
 
  []
 
@@ -2823,7 +2853,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1630--1631
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1630
 
  []
 
@@ -2837,94 +2867,95 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1638--1639
+Underfull \hbox (badness 10000) in paragraph at lines 1637--1638
 
  []
 
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1668--1669
-
- []
-
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1676--1677
-
- []
-
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1684--1685
-
- []
-
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1708--1709
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1716--1717
-
- []
-
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1724--1725
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1667--1668
+
+ []
+
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1675--1676
+
+ []
+
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1683--1684
+
+ []
+
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1707--1708
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1715--1716
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1723--1724
 
  []
 
@@ -2945,27 +2976,30 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1748--1749
+Underfull \hbox (badness 10000) in paragraph at lines 1747--1748
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1756--1757
+Underfull \hbox (badness 10000) in paragraph at lines 1755--1756
 
  []
 
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1776--1777
+Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1784--1785
+Underfull \hbox (badness 10000) in paragraph at lines 1783--1784
 
  []
 
@@ -2974,16 +3008,63 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1806--1807
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1814--1815
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1806
 
  []
 
 [24]
+Underfull \hbox (badness 10000) in paragraph at lines 1813--1814
+
+ []
+
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+[25]
 Chapter 4.
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3002,7 +3083,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[25
+[26
 
 ]
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -3026,7 +3107,7 @@ Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
-[26]
+[27]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
@@ -3050,7 +3131,7 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[27]
+[28]
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3072,7 +3153,7 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[28]
+[29]
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3106,40 +3187,40 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[29]
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
 [30]
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
 [31]
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+[32]
 Chapter 5.
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3152,7 +3233,7 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
 
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 2724.
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 2751.
 
 Missing character: There is no İ ("130) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
@@ -3164,7 +3245,7 @@ Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmtti10!
 Missing character: There is no ğ ("11F) in font ec-lmtti10!
 Missing character: There is no ğ ("11F) in font ec-lmtti10!
-[32
+[33
 
 ]
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3229,7 +3310,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[33]
+[34]
 Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ş ("15F) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmbx12!
@@ -3275,7 +3356,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 
-Overfull \hbox (21.73552pt too wide) in paragraph at lines 2971--2973
+Overfull \hbox (21.73552pt too wide) in paragraph at lines 2998--3000
 []\T1/lmr/m/n/10 1'den 10'a kadar birer birer ar-tan say-lar-dan dizi olu-tu-ru-la-cak kodu olu-tu-runuz. \T1/lmtt/m/n/10 seq(from=1,to=10,by=...)
  []
 
@@ -3297,7 +3378,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 
-Overfull \hbox (45.26411pt too wide) in paragraph at lines 2977--2978
+Overfull \hbox (45.26411pt too wide) in paragraph at lines 3004--3005
 []\T1/lmr/m/n/10 length argü-mann kul-la-narak aadaki çkty olu-tu-ra-cak kodu olu-tu-runuz. _________________________ 
  []
 
@@ -3316,7 +3397,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 
-Overfull \hbox (77.8198pt too wide) in paragraph at lines 2987--2988
+Overfull \hbox (77.8198pt too wide) in paragraph at lines 3014--3015
 []\T1/lmr/m/n/10 by argü-mann ile art mik-tarn kul-la-narak aadaki çkty olu-tu-ra-cak kodu olu-tu-runuz. _______________________ 
  []
 
@@ -3334,7 +3415,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-[34]
+[35]
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
@@ -3356,7 +3437,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 
-Overfull \hbox (52.09862pt too wide) in paragraph at lines 3044--3045
+Overfull \hbox (52.09862pt too wide) in paragraph at lines 3071--3072
 []\T1/lmtt/m/n/10 a <- c(3,5,7) \T1/lmr/m/n/10 vek-törünü kul-la-narak aadaki çkty elde ede-cek kodu hazr-laynz. _____________________ 
  []
 
@@ -3401,7 +3482,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-[35]
+[36]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3453,7 +3534,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 5.1 on input line 3227.
+(longtable)                in table 5.1 on input line 3254.
 
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3464,7 +3545,7 @@ Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
-[36]
+[37]
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3514,7 +3595,7 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmtt10!
 Missing character: There is no ı ("131) in font ec-lmtt10!
 Missing character: There is no ı ("131) in font ec-lmtt10!
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 3251.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 3278.
 (c:/Users/MONSTER/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -3526,69 +3607,222 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no 😄 ("1F604) in font ec-lmr10!
-[37]
+[38]
 Chapter 6.
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ş ("15F) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
-[38
+Missing character: There is no ş ("15F) in font ec-lmtti10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+[39
 
 ]
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no Ş ("15E) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ş ("15F) in font ec-lmbx12!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no İ ("130) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-[39]
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
@@ -3599,57 +3833,174 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
-File: 06-veriseti_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
-<use 06-veriseti_files/figure-latex/unnamed-chunk-18-1.pdf>
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 [40]
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmbx12!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 [41]
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
@@ -3661,368 +4012,429 @@ Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+
+LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 3543.
+
+Missing character: There is no ş ("15F) in font ec-lmtt10!
+Missing character: There is no ı ("131) in font ec-lmtt10!
+Missing character: There is no ş ("15F) in font ec-lmtt10!
+Missing character: There is no ğ ("11F) in font ec-lmtt10!
+Missing character: There is no ş ("15F) in font ec-lmtt10!
+Missing character: There is no ş ("15F) in font ec-lmtt10!
 [42]
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-
-Underfull \hbox (badness 1292) in paragraph at lines 3773--3774
-[]\T1/lmr/m/n/10 df verisinde kilosu 50'in al-t-nda olan ki-il-er-den oluan veri seti olu-turma ko-dunu tamam-laynz
- []
-
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 [43]
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no İ ("130) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 [44]
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ğ ("11F) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ğ ("11F) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx12!
+Missing character: There is no İ ("130) in font ec-lmbx12!
+Missing character: There is no Ş ("15E) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmtti10!
 Missing character: There is no ş ("15F) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
 [45]
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ş ("15F) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmtt10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmr10!
+Missing character: There is no ı ("131) in font ec-lmbx10!
 [46]
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ğ ("11F) in font ec-lmtti10!
-Missing character: There is no ş ("15F) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmtt10!
-Missing character: There is no ı ("131) in font ec-lmtt10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
 Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-[47]
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-[48]
-Chapter 7.
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx10!
-Missing character: There is no ş ("15F) in font ec-lmbx10!
-Missing character: There is no ı ("131) in font ec-lmbx10!
-Missing character: There is no ğ ("11F) in font ec-lmbx10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no İ ("130) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-File: images/importmenu.png Graphic file (type bmp)
-<images/importmenu.png>
-Missing character: There is no İ ("130) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no İ ("130) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-File: images/excel1.png Graphic file (type bmp)
-<images/excel1.png>
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no İ ("130) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-File: images/spss1.png Graphic file (type bmp)
-<images/spss1.png>
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-[49
+LaTeX Font Info:    Calculating math sizes for size <20> on input line 3908.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20> on input line 3908.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.99994> on input line 3908.
 
-] [50]
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no İ ("130) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmbx10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ş ("15F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-[51]
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmbx12!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ş ("15F) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no ş ("15F) in font ec-lmtti10!
-Missing character: There is no ı ("131) in font ec-lmtti10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-[52]
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-Missing character: There is no 🔗 ("1F517) in font ec-lmr10!
-[53]
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ğ ("11F) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-Missing character: There is no ı ("131) in font ec-lmr10!
-! Undefined control sequence.
-<recently read> \n 
-                   
-l.4642   \n
-            ne ise yaradi? 
+! Package xcolor Error: Undefined color `lightgrey'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3916 ...lcolor{lightgrey}{\textbf{versicolor}} &
+                                                   \cellcolor{lightgrey}{\te... 
 Here is how much of TeX's memory you used:
- 28883 strings out of 477590
- 565239 string characters out of 5817011
- 1927432 words of memory out of 5000000
- 49612 multiletter control sequences out of 15000+600000
- 607985 words of font info for 92 fonts, out of 8000000 for 9000
+ 30230 strings out of 477166
+ 591418 string characters out of 5810174
+ 1926674 words of memory out of 5000000
+ 51375 multiletter control sequences out of 15000+600000
+ 618282 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,119p,746b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,9n,119p,727b,481s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on template.pdf (54 pages).
+Output written on template.pdf (47 pages).

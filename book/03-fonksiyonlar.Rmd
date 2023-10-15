@@ -96,6 +96,7 @@ rnorm(sd = 1, n = 6, mean = 3)
 knitr::include_graphics("images/autocomplete.png")
 
 ```
+
 ## Kişisel tanımlı fonksiyon
 
 - Kişisel tanımlı fonksiyon yazılması şablonu aşağıdaki gibidir.

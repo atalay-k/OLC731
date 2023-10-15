@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 9 Veri duzenleme - II | OLC731</title>
+<title>Chapter 10 Veri duzenleme - II | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 9 Veri duzenleme - II | OLC731">
+<meta name="description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  10.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 10 Veri duzenleme - II | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---ii.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta property="og:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  10.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 9 Veri duzenleme - II | OLC731">
-<meta name="twitter:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  9.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
+<meta name="twitter:title" content="Chapter 10 Veri duzenleme - II | OLC731">
+<meta name="twitter:description" content="Veriyi üst düzeyde toplama 📊 count() fonksiyonu grup_by() ve summarize() summarize_all() ve summarize_if() ve summarize_at() top_n()  10.1 count() fonksiyonu count() fonksiyonu frekans tablosu...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="active" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="active" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---ii" class="section level1" number="9">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---ii" class="section level1" number="10">
 <h1>
-<span class="header-section-number">9</span> Veri duzenleme - II<a class="anchor" aria-label="anchor" href="#veri-duzenleme---ii"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Veri duzenleme - II<a class="anchor" aria-label="anchor" href="#veri-duzenleme---ii"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p>Veriyi üst düzeyde toplama 📊</p></li>
@@ -111,17 +112,17 @@
 <li><p><strong>summarize_all()</strong> ve <strong>summarize_if()</strong> ve <strong>summarize_at()</strong></p></li>
 <li><p><strong>top_n()</strong></p></li>
 </ul>
-<div id="count-fonksiyonu" class="section level2" number="9.1">
+<div id="count-fonksiyonu" class="section level2" number="10.1">
 <h2>
-<span class="header-section-number">9.1</span> count() fonksiyonu<a class="anchor" aria-label="anchor" href="#count-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1</span> count() fonksiyonu<a class="anchor" aria-label="anchor" href="#count-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>count()</strong> fonksiyonu frekans tablosu oluşturmak için kullanılabilir.</p></li>
 <li><p><strong>count()</strong> fonksiyonunun pipe ile kullanımıı</p></li>
 </ul>
-<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri_seti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">degisken_adı</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb388"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_OGR_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_STU_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span>
@@ -140,7 +141,7 @@
 <li>Cinsiyete göre dağılım
 👦 👧</li>
 </ul>
-<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ST004D01T</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -164,7 +165,7 @@
 <li>Cinsiyete göre dağılım - <strong>sort</strong> argümanı ile sıralanabilir.
 👦 👧</li>
 </ul>
-<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">ST004D01T</span>,sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -188,7 +189,7 @@
 <li><p>PISA_OGR_2018 öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.</p></li>
 <li><p>Bu veri setini kullanarak öğrencilerin göçmenlik durumları ve cinsiyetlere göre dağılımını inceleyelim.</p></li>
 </ul>
-<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">Gocmenlik</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -298,7 +299,7 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">SINIF</span>, sort<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -415,9 +416,9 @@
 <strong>count()</strong> fonksiyonunun yardım sayfasını inceleyiniz <strong>wt</strong> argümanını ne amaçala kullanılmıştır açıklayınız.</li>
 </ul>
 </div>
-<div id="summarize-fonksiyonları" class="section level2" number="9.2">
+<div id="summarize-fonksiyonları" class="section level2" number="10.2">
 <h2>
-<span class="header-section-number">9.2</span> summarize() fonksiyonları<a class="anchor" aria-label="anchor" href="#summarize-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.2</span> summarize() fonksiyonları<a class="anchor" aria-label="anchor" href="#summarize-fonksiyonlar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>summarize()</strong> seçilen sütunlar için her satırı kullanarak istatistikler hesaplar.</p></li>
@@ -458,7 +459,7 @@
 </li>
 <li><p>PISA veri setindeki başarısı için hesaplanan 10 olası puan değerinden (plausible value) ilki kullanılmıştır.</p></li>
 </ul>
-<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb393"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -475,7 +476,7 @@
 <li><p><strong>summarise()</strong> fonksiyonu içinde isimlendirme yapmazsanız, oluşan veri setinde isimlendirme fonksiyon adı/ları olacaktır.</p></li>
 <li><p>isimlendirilmiş çıktı</p></li>
 </ul>
-<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -491,7 +492,7 @@
 <ul>
 <li>Özet bilgiler elde etmek için birden fazla özetleyici fonksiyon kullanabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb395"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>            ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,</span>
@@ -521,7 +522,7 @@
 <li><p><strong>group_by()</strong> dan sonra kullanılan fonksiyonlar her grup için hesaplanır. Fonksiyonu içinde sürekli değişken <strong>kullanılmaz.</strong></p></li>
 <li><p>Cinsiyete göre ODOKUMA1 puanlarına ilişkin istatistikler</p></li>
 </ul>
-<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,min<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,max<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -560,7 +561,7 @@
 <li><p>Özet bilgileri veri setinde yer alan birden fazla kategorik değişken içinde hesaplayabilirsiniz.</p></li>
 <li><p>Öğrencilerin cinsiyet ve sınıf düzeylerine göre elde edilen betimsel istatistikleri ortalamaya göre sıralandırılmıştır.</p></li>
 </ul>
-<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb397"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">betimsel</span>  <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">SINIF</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
@@ -669,13 +670,13 @@
 <strong>group_by()</strong> fonksiyonu ile elde ettiğiniz çıktılarda aşağıdaki gibi
 gruplandırılmış veri <strong>Groups</strong> çıktısı ile alınır.</li>
 </ul>
-<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># A tibble: 12 x 5</span></span>
 <span><span class="co"># Groups:   CINSIYET [2]</span></span></code></pre></div>
 <ul>
 <li>Gruplandırılmış elde edilen veri setlerinde tekrar işlem yapmak istiyorsanız bunu <strong>ungroup()</strong> fonksiyonu ile yapabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">SINIF</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,ortalama<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span>,sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -778,9 +779,9 @@ gruplandırılmış veri <strong>Groups</strong> çıktısı ile alınır.</li>
 </tbody>
 </table></div>
 </div>
-<div id="summarize_at" class="section level3" number="9.2.1">
+<div id="summarize_at" class="section level3" number="10.2.1">
 <h3>
-<span class="header-section-number">9.2.1</span> summarize_at()<a class="anchor" aria-label="anchor" href="#summarize_at"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.2.1</span> summarize_at()<a class="anchor" aria-label="anchor" href="#summarize_at"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>dplyr paket fonksiyonlarının **_at<strong>, </strong>_if<strong>, </strong>_all** uzantılı varyasyonları bulunmaktadır.</p></li>
@@ -789,7 +790,7 @@ gruplandırılmış veri <strong>Groups</strong> çıktısı ile alınır.</li>
 fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yerine geçmektedir.</p></li>
 <li><p>Hesaplama işlemlerini ise <strong>list()</strong> fonksiyonu içinde tanımlayabilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb400"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># adlandırmaya dikkat edin!</span></span>
 <span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_at</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html">vars</a></span><span class="op">(</span><span class="va">ODOKUMA1</span>, <span class="va">ODFEN1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -810,20 +811,20 @@ fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yer
 </table></div>
 </div>
 </div>
-<div id="summarize_all-ve-summarize_if" class="section level3" number="9.2.2">
+<div id="summarize_all-ve-summarize_if" class="section level3" number="10.2.2">
 <h3>
-<span class="header-section-number">9.2.2</span> summarize_all() ve summarize_if()<a class="anchor" aria-label="anchor" href="#summarize_all-ve-summarize_if"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.2.2</span> summarize_all() ve summarize_if()<a class="anchor" aria-label="anchor" href="#summarize_all-ve-summarize_if"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Elinizde tüm sütunları sayısal (numeric) olan bir veri seti olsun. Tüm sütunların ortalamasını <strong>summarize_all()</strong> fonksiyonu ile hesaplayabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veriseti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_all</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/funs.html">funs</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını <strong>summarize_if()</strong> fonksiyonu ile hesaplayabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<div class="sourceCode" id="cb402"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">Gocmenlik</span>,<span class="va">ODOKUMA1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarize_if</a></span><span class="op">(</span><span class="va">is.numeric</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/funs.html">funs</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -856,15 +857,15 @@ fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yer
 </div>
 </div>
 </div>
-<div id="top_n" class="section level2" number="9.3">
+<div id="top_n" class="section level2" number="10.3">
 <h2>
-<span class="header-section-number">9.3</span> top_n()<a class="anchor" aria-label="anchor" href="#top_n"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.3</span> top_n()<a class="anchor" aria-label="anchor" href="#top_n"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
 <strong>top_n()</strong> fonksiyonu ile istediğiniz bir değişkenin <strong>en yüksek</strong> ya da <strong>en düşük</strong> değerlerine göre verisetinde seçim yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb403"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">4</span>, <span class="fl">1</span>, <span class="fl">6</span>, <span class="fl">3</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Selecting by x</code></pre>
@@ -886,7 +887,7 @@ fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yer
 <ul>
 <li>Okuma puanı <strong>en yüksek</strong> olan üç kız ve üç erkek öğrencinin bilgileri</li>
 </ul>
-<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -927,14 +928,14 @@ fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yer
 </table></div>
 </div>
 </div>
-<div id="top_n---operatoru" class="section level2" number="9.4">
+<div id="top_n---operatoru" class="section level2" number="10.4">
 <h2>
-<span class="header-section-number">9.4</span> top_n() &amp; - operatoru<a class="anchor" aria-label="anchor" href="#top_n---operatoru"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.4</span> top_n() &amp; - operatoru<a class="anchor" aria-label="anchor" href="#top_n---operatoru"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Okuma puanı <strong>en düşük</strong> olan üç kız ve beş erkek öğrencinin bilgileri</li>
 </ul>
-<div class="sourceCode" id="cb374"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CINSIYET</span>,<span class="va">ODOKUMA1</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ODOKUMA1</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -975,9 +976,9 @@ fonksiyonu içinde belirtilebilir. Bu işlem <strong>select</strong> işlemi yer
 </table></div>
 </div>
 </div>
-<div id="dataeditr-paketi" class="section level2" number="9.5">
+<div id="dataeditr-paketi" class="section level2" number="10.5">
 <h2>
-<span class="header-section-number">9.5</span> DataEditR paketi<a class="anchor" aria-label="anchor" href="#dataeditr-paketi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.5</span> DataEditR paketi<a class="anchor" aria-label="anchor" href="#dataeditr-paketi"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bu paketi paketin <a href="https://github.com/DillonHammill/DataEditR">github sayfasından</a> inceleyelim.</p>
 <p>teşekkürler !</p>
@@ -1187,22 +1188,22 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></div>
-<div class="next"><a href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></div>
+<div class="prev"><a href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></div>
+<div class="next"><a href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#veri-duzenleme---ii"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="nav-link" href="#count-fonksiyonu"><span class="header-section-number">9.1</span> count() fonksiyonu</a></li>
+<li><a class="nav-link" href="#veri-duzenleme---ii"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="nav-link" href="#count-fonksiyonu"><span class="header-section-number">10.1</span> count() fonksiyonu</a></li>
 <li>
-<a class="nav-link" href="#summarize-fonksiyonlar%C4%B1"><span class="header-section-number">9.2</span> summarize() fonksiyonları</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#summarize_at"><span class="header-section-number">9.2.1</span> summarize_at()</a></li>
-<li><a class="nav-link" href="#summarize_all-ve-summarize_if"><span class="header-section-number">9.2.2</span> summarize_all() ve summarize_if()</a></li>
+<a class="nav-link" href="#summarize-fonksiyonlar%C4%B1"><span class="header-section-number">10.2</span> summarize() fonksiyonları</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#summarize_at"><span class="header-section-number">10.2.1</span> summarize_at()</a></li>
+<li><a class="nav-link" href="#summarize_all-ve-summarize_if"><span class="header-section-number">10.2.2</span> summarize_all() ve summarize_if()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#top_n"><span class="header-section-number">9.3</span> top_n()</a></li>
-<li><a class="nav-link" href="#top_n---operatoru"><span class="header-section-number">9.4</span> top_n() &amp; - operatoru</a></li>
-<li><a class="nav-link" href="#dataeditr-paketi"><span class="header-section-number">9.5</span> DataEditR paketi</a></li>
+<li><a class="nav-link" href="#top_n"><span class="header-section-number">10.3</span> top_n()</a></li>
+<li><a class="nav-link" href="#top_n---operatoru"><span class="header-section-number">10.4</span> top_n() &amp; - operatoru</a></li>
+<li><a class="nav-link" href="#dataeditr-paketi"><span class="header-section-number">10.5</span> DataEditR paketi</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1220,7 +1221,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

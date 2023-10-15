@@ -120,6 +120,7 @@ summary(PISA_STU_2018$PV1READ)
 
 
 ```{r}
+PISA_STU_2018 <- expss::drop_var_labs(PISA_STU_2018)
 by(PISA_STU_2018$PV1READ, PISA_STU_2018$IMMIG, summary)
 ```
 ```{r}

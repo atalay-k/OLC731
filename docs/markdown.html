@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Markdown | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Bu bölümde kullanacağımız paketler şunlardır. knitr::opts_chunk$set(message = FALSE, warning = FALSE) # bu bölüm için gerekli paketler library(tidyverse) # çeşitli veri manipülasyon fonksiyonları...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Markdown | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/markdown.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Bu bölümde kullanacağımız paketler şunlardır. knitr::opts_chunk$set(message = FALSE, warning = FALSE) # bu bölüm için gerekli paketler library(tidyverse) # çeşitli veri manipülasyon fonksiyonları...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Markdown | OLC731">
+<meta name="twitter:description" content="Bu bölümde kullanacağımız paketler şunlardır. knitr::opts_chunk$set(message = FALSE, warning = FALSE) # bu bölüm için gerekli paketler library(tidyverse) # çeşitli veri manipülasyon fonksiyonları...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="active" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="markdown" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Markdown<a class="anchor" aria-label="anchor" href="#markdown"><i class="fas fa-link"></i></a>
+</h1>
+<p>Bu bölümde kullanacağımız paketler şunlardır.</p>
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>message <span class="op">=</span> <span class="cn">FALSE</span>, warning <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co"># bu bölüm için gerekli paketler</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># çeşitli veri manipülasyon fonksiyonları</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># tablo ve görüntü gösterimi için</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span> <span class="co"># tabloları şekillendirmek için</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/crsh/papaja">papaja</a></span><span class="op">)</span> <span class="co"># APA tarzı tablolar için</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span> <span class="co"># süslü tablolar için</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span> <span class="co"># etkileşimli tablolar için</span></span></code></pre></div>
+<p>🔗İndir <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a>.</p>
+<div id="neden-tekrarlanabilir-raporlar-kullanılmalı" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Neden tekrarlanabilir raporlar kullanılmalı?<a class="anchor" aria-label="anchor" href="#neden-tekrarlanabilir-raporlar-kullan%C4%B1lmal%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Bir rapor hazırladığınızı düşünün</p>
+<ul>
+<li><p>içinde analiz sonuçları olan tablolar</p></li>
+<li><p>grafikler ve görsel olsun</p></li>
+<li><p>bu raporu güncellemeniz gerektiğinde veri seti, grafikler, analizler başka dizinlerde olabilir.</p></li>
+<li><p>Tekrarlanabilir raporlar, tüm analizleri gerçekleştirmek ve tabloları oluşturmak için gereken kodla birlikte rapor metnini tek bir belgede bir araya getirmektir.</p></li>
+<li><p>Bu, başlangıçta biraz fazladan çaba gerektirse de, herhangi bir değişiklik olduğunda tek bir düğmeye basarak tüm raporunuzu güncellemenizi sağlayarak size fazlasıyla geri ödeme yapacaktır.</p></li>
+<li><p>Araştırmalar ayrıca, bilimsel literatürdeki makalelerin çoğunda olmasa bile birçoğunda raporlama hataları olduğunu göstermektedir. Tekrarlanabilir raporlar, transkripsiyon ve yuvarlama hatalarını önlemeye yardımcı olur.</p></li>
+<li><p>Rapor daha sonra orijinal formattan HTML, word ve ya PDF gibi daha taşınabilir başka bir formata "derlenir". Bu, örneğin Microsoft Excel'de veya SPSS gibi bir istatistik programında bir grafik oluşturup ardından bunu Microsoft Word'e yapıştırdığınız geleneksel kesme ve yapıştırma yaklaşımlarından farklıdır.</p></li>
+</ul>
+</div>
+<div id="bir-proje-düzenlemek" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Bir proje düzenlemek<a class="anchor" aria-label="anchor" href="#bir-proje-d%C3%BCzenlemek"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>İlk olarak, organize olmamız gerekiyor. RStudio'daki projeler, bir proje için ihtiyaç duyduğunuz tüm dosyaları gruplandırmanın bir yoludur. Çoğu proje komut dosyalarını, veri dosyalarını ve komut dosyası veya görüntüler tarafından oluşturulan PDF raporu gibi çıktı dosyalarını içerir.
+### Dosya Sistemi</p></li>
+<li><p>Bilgisayarınızın dosya sistemi, hem dosyaları hem de "alt dizinleri" içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.</p></li>
+<li><p>Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: <strong>/Users/Kubra/Desktop/report.Rmd</strong> , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için ~ kısayolunu da kullanabilirsiniz: ~/Desktop/report.Rmd.</p></li>
+</ul>
+<div id="çalışma-dizini" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Çalışma Dizini<a class="anchor" aria-label="anchor" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını <strong>data/import</strong> adlı bir dizine koyabilir ve tüm görüntü dosyalarını <strong>images</strong> adlı bir dizine kaydedebilirsiniz.</p></li>
+<li><p>Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalara başvurulmalıdır.</p></li>
+</ul>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="44%">
+<col width="55%">
+</colgroup>
+<thead><tr class="header">
+<th>Yer</th>
+<th>Örnek</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>web</td>
+<td>"<a href="https://atalay-k.github.io/OLC731/import/veri1.txt" class="uri">https://atalay-k.github.io/OLC731/import/veri1.txt</a>"</td>
+</tr>
+<tr class="even">
+<td>dizin içinde</td>
+<td>"veri1.txt"</td>
+</tr>
+<tr class="odd">
+<td>alt dizin içinde</td>
+<td>"import/veri1.txt"</td>
+</tr>
+</tbody>
+</table></div>
+<div class="warning">
+<p>Bir komut dosyasında asla çalışma dizininizi ayarlamayın veya değiştirmeyin.</p>
+</div>
+<ul>
+<li><p>R Markdown dosyaları otomatik olarak <strong>.Rmd</strong> dosyasının bulunduğu dizini çalışma dizini olarak kullanacaktır.</p></li>
+<li><p>Kodunuz çalışma dizininizin bir alt dizinindeki bir dosyaya ihtiyaç duyuyorsa (örneğin, import/veri1.txt), çalışma dizinini başka bir konuma veya bilgisayara taşıdığınızda erişilebilir olması için dosyayı göreli bir yol kullanarak yükleyin:</p></li>
+</ul>
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"import/veri1.txt"</span><span class="op">)</span>  <span class="co"># dogru</span></span></code></pre></div>
+<p>Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:</p>
+<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"</span><span class="op">)</span>  <span class="co"># yanlıs</span></span></code></pre></div>
+<div class="info">
+<p>Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.</p>
+</div>
+</div>
+<div id="nesneleri-adlandırma" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Nesneleri Adlandırma<a class="anchor" aria-label="anchor" href="#nesneleri-adland%C4%B1rma"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dosyaları, hem insanların hem de bilgisayarların kolayca bulabileceği şekilde adlandırın. İşte bazı önemli ilkeler:</p>
+<ul>
+<li>dosya ve dizin adları yalnızca harf, rakam, tire ve alt çizgi içermeli, dosya adı ve uzantısı arasında nokta (.) olmalıdır (bu boşluk olmadığı anlamına gelir!)</li>
+<li>Büyük harf kullanımı konusunda tutarlı olun (hatırlamayı kolaylaştırmak için bir kural belirleyin, örneğin her zaman küçük harf kullanın)</li>
+<li>dosya adının bölümlerini ayırmak için alt çizgi (_) ve bir bölümdeki sözcükleri ayırmak için tire (-) kullanın</li>
+<li>dosyaları mantıklı bir sırayla alfabetik hale getiren ve aradığınız dosyayı bulmanızı kolaylaştıran bir kalıpla adlandırın</li>
+<li>bir dosya adını listenin en üstüne taşımak için önüne alt çizgi ekleyin veya sıralarını kontrol etmek için tüm dosyaların önüne sayı ekleyin</li>
+<li>tarihler için YYYY-MM-DD biçimini kullanın, böylece kronolojik sıraya göre sıralanırlar</li>
+</ul>
+<p>Örneğin, bu dosya adları tam bir karmaşa:</p>
+<ul>
+<li><code class="path">Data (Participants) 11-15.xls</code></li>
+<li><code class="path">final report2.doc</code></li>
+<li><code class="path">Participants Data Nov 12.xls</code></li>
+<li><code class="path">project notes.txt</code></li>
+<li><code class="path">Questionnaire Data November 15.xls</code></li>
+<li><code class="path">report.doc</code></li>
+<li><code class="path">report final.doc</code></li>
+</ul>
+<p>Benzer dosyaların aynı yapıya sahip olması ve dosyaları taramanın veya ilgili dosyaları bulmak için kod kullanmasının kolay olması için dosyaları yapılandırabilirsiniz.</p>
+<ul>
+<li><code class="path">_project-notes.txt</code></li>
+<li><code class="path">data_participants_2021-11-12.xls</code></li>
+<li><code class="path">data_participants_2021-11-15.xls</code></li>
+<li><code class="path">data_questionnaire_2021-11-15.xls</code></li>
+<li><code class="path">report_v1.doc</code></li>
+<li><code class="path">report_v2.doc</code></li>
+<li><code class="path">report_v3.doc</code></li>
+</ul>
+<div class="try">
+<p>Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje dosyalarınızdan bazılarına bakın ve neleri geliştirebileceğinizi görün.</p>
+</div>
+</div>
+<div id="yeni-bir-projeye-başlamak" class="section level3" number="6.2.3">
+<h3>
+<span class="header-section-number">6.2.3</span> Yeni bir projeye başlamak<a class="anchor" aria-label="anchor" href="#yeni-bir-projeye-ba%C5%9Flamak"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Artık dosya sisteminin nasıl çalıştığını ve komut dosyalarının bunlara erişmesini kolaylaştırmak için nesneleri nasıl adlandıracağımızı anladığımıza göre, projemizi yapmaya hazırız.</p></li>
+<li><p>Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimkine OLC731_2023 adını verdim). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.</p></li>
+</ul>
+<div class="warning">
+<p>Bu dizin OneDrive'daysa veya tam dosya yolu özel karakterler içeriyorsa ya da bazı Windows makinelerinde 260 karakterden fazlaysa bazen sorunlara neden olabilir.</p>
+</div>
+<ul>
+<li>Ardından, OLC731 adında yeni bir proje oluşturmak için <strong><code>File</code></strong> menüsü altında <strong><code>New Project...</code></strong> öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.</li>
+</ul>
+<p>Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren OLC731_OLC731_2023.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.</p>
+<div class="info">
+<p>Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.user adlı bir dizin de görebilirsiniz. Bu ve nokta ile başlayan diğer "görünmez" dosyaları yok sayabilirsiniz.</p>
+</div>
+</div>
+</div>
+<div id="r-markdown" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> R Markdown<a class="anchor" aria-label="anchor" href="#r-markdown"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Bu derste, bir içindekiler tablosu, uygun başlıklar, kod parçaları, tablolar, resimler, satır içi R ve bir kaynakça içeren bir R Markdown belgesi oluşturmayı öğreneceğiz.</li>
+</ul>
+<div class="info">
+<p>R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste <a href="https://quarto.org/" target="_blank">quarto</a> kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.</p>
+</div>
+<ul>
+<li><p>Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="demo/repo.Rmd">Örnek Dosyayı beraber inceleyelim.</a></p></li>
+<li><p>Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.</p></li>
+</ul>
+<div class="try">
+<p><strong><code>File &gt; New File &gt; R Markdown...</code></strong> menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı repro.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.</p>
+</div>
+<div id="yaml" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> YAML Header<a class="anchor" aria-label="anchor" href="#yaml"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>🔗 <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">YAML başlığı çeşitli seçenekleri ayarlayabileceğiniz bölümdür.</a>
+</li>
+</ul>
+<pre><code>---
+title: "Demo"
+author: "Kubra"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+      number_sections: false
+---</code></pre>
+<div class="info">
+<p>Seçeneklerin ne işe yaradığını görmek için değerleri <code>false</code> tan <code>true</code> ya değiştirmeyi deneyin.</p>
+</div>
+<ul>
+<li><p><code>df_print: kable</code> seçeneği <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable</a></code> kullanarak veri setleri yazdırır. Aşağıda tabloları nasıl daha fazla özelleştirebileceğinizi öğreneceksiniz.</p></li>
+<li><p>Varsayılan temalar şunlardır: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united ve yeti. Linkten 🔗<a href="https://rpubs.com/ranydc/rmarkdown_themes">daha fazla temayı inceleyebilirsiniz.</a>.</p></li>
+</ul>
+</div>
+<div id="kurulum" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Kurulum<a class="anchor" aria-label="anchor" href="#kurulum"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Varsayılan şablonu kullanarak RStudio'da yeni bir R Markdown dosyası oluşturduğunuzda, otomatik olarak bir kurulum blogu oluşturulur.</li>
+</ul>
+<div class="verbatim">
+<pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
+<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
+</div>
+<ul>
+<li>Kod parçaları için daha fazla varsayılan seçeneği buradan ayarlayabilirsiniz. Olası seçeneklerin açıklamaları için knitr seçenekleri belgelerine bakın. <a href="https://yihui.name/knitr/options/" target="_blank">knitr dokumanı</a>
+</li>
+</ul>
+<div class="verbatim">
+<pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span></span>
+<span>  fig.width  <span class="op">=</span> <span class="fl">8</span>,</span>
+<span>  fig.height <span class="op">=</span> <span class="fl">5</span>,</span>
+<span>  fig.path   <span class="op">=</span> <span class="st">'images/'</span>,</span>
+<span>  echo       <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  warning    <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  message    <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  cache      <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
+</div>
+<p>Yukarıdaki kod aşağıdaki seçenekleri ayarlar:</p>
+<ul>
+<li><p>fig.width = 8 : varsayılan şekil genişliği 8 inçtir (bunu tek tek şekiller için değiştirebilirsiniz)</p></li>
+<li><p>fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir fig.path = 'images/' : şekiller "images" dizinine kaydedilir</p></li>
+<li><p>echo = FALSE : işlenen belgede kod parçalarını gösterme</p></li>
+<li><p>warning = FALSE : herhangi bir işlev uyarısı gösterme</p></li>
+<li><p>message = FALSE : herhangi bir işlev mesajı gösterme</p></li>
+<li><p>cache = FALSE : her örgü ördüğünüzde tüm görüntüleri ve nesneleri oluşturmak için tüm kodu çalıştırın (zaman alıcı kodunuz varsa TRUE olarak ayarlayın) Konsola <code><span><span class="fu"><a target="_blank" href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a target="_blank" href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code> yazarak geçerli kod bloğu seçeneklerinin bir listesini bulun.</p></li>
+</ul>
+<p>İhtiyacınız olan paketleri <code><span><span class="kw"><a target="_blank" href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="op">)</span></span></code>kullanarak da bu bloğunuza ekleyebilirsiniz. Genellikle bir komut dosyası üzerinde çalışırken, başka bir eklenti paketi yüklemeniz gerektiğini fark edersiniz. <code><a href="https://rdrr.io/r/base/library.html">library(...)</a></code> çağrısını kodun en altına gömmeyin. En üste koyun, böylece kullanıcı hangi paketlerin gerekli olduğuna dair genel bir fikir elde edilir.</p>
+<div class="try">
+<p>tidyverse paketinden fonksiyon kullanacağız, bu yüzden kurulum bloğunuza yükleyin.</p>
+</div>
+</div>
+<div id="yapı" class="section level3" number="6.3.3">
+<h3>
+<span class="header-section-number">6.3.3</span> Yapı<a class="anchor" aria-label="anchor" href="#yap%C4%B1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Bir içindekiler tablosu (<code>toc</code>) eklerseniz, bu tablo belge başlıklarınızdan oluşturulur. Markdown'daki başlıklar, başlık başlığının önüne bir veya daha fazla hash (#) eklenerek oluşturulur.</p></li>
+<li><p>Kendi analiz komut dosyalarınızı geliştirirken aşağıdaki yapıyı kullanın:</p></li>
+<li><p>Kullanmanız gereken tüm eklenti paketlerini yükleyin</p></li>
+<li><p>herhangi bir özel fonksiyon tanımlayın</p></li>
+<li><p>birlikte çalışacağınız verileri yükleyin veya simüle edin</p></li>
+<li><p>kaydetmeniz gereken her şeyi kaydedin</p></li>
+</ul>
+<div class="try">
+<p>Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize biraz yapı ekleyin. Bazı verileri yükleyeceğiz, bir özet tablo oluşturacağız, verileri çizeceğiz ve analiz edeceğiz.</p>
+</div>
+</div>
+<div id="kod-blokları" class="section level3" number="6.3.4">
+<h3>
+<span class="header-section-number">6.3.4</span> Kod Blokları<a class="anchor" aria-label="anchor" href="#kod-bloklar%C4%B1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Metninize eklemek için görüntüler, tablolar veya hesaplamalar oluşturan ve görüntüleyen kod parçaları ekleyebilirsiniz. Bazı verileri yükleyerek başlayalım.</p></li>
+<li><p>İlk olarak, belgenizde bir kod yığını oluşturun. Bu kod web'den bazı verileri yükler</p></li>
+</ul>
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="yorumlar" class="section level3" number="6.3.5">
+<h3>
+<span class="header-section-number">6.3.5</span> Yorumlar<a class="anchor" aria-label="anchor" href="#yorumlar"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Kod blokları içine hash sembolü (#) ile yorum ekleyebilirsiniz. R yorumlayıcısı, hash'ten satır sonuna kadar olan karakterleri yoksayacaktır.</li>
+</ul>
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="co"># toplam satır sayısı</span></span>
+<span><span class="va">mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span>  <span class="co"># yaprak uzunluğu ortalaması</span></span>
+<span><span class="va">sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span> <span class="co"># yaprak uzunluğu ortalaması SD'si</span></span>
+<span></span>
+<span></span>
+<span><span class="va">simule_deger</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">mu</span>, <span class="va">sd</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li><p>Bir kod parçasını, özellikle kod rapor metninde açıklanmamışsa, orada ne yaptığınızı açıklayan bir yorumla başlatmak genellikle iyi bir uygulamadır.</p></li>
+<li><p>Nesnelerinizi açık bir şekilde adlandırırsanız, genellikle açıklayıcı yorumlar eklemeniz gerekmez. Örneğin, yukarıdaki üç nesneyi n_iris, ort_petal ve sd_petal olarak adlandırmış olsaydım, yorumları atlardım.</p></li>
+<li><p>Yorumların bir başka kullanımı da çalıştırmak istemediğiniz ancak silmek de istemediğiniz bir kod bölümünü "yorumlamaktır". Örneğin, bir paketi yüklemek için kullanılan kodu kodunuza dahil edebilirsiniz, ancak kodun her çalıştırıldığında uzun bir yüklemeye zorlamaması için her zaman yorumlamanız gerekir.</p></li>
+</ul>
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("dplyr")</span></span>
+<span><span class="co"># install.packages("tidyr")</span></span>
+<span><span class="co"># install.packages("ggplot2")</span></span></code></pre></div>
+<div class="info">
+<p>Satırları seçip Cmd-shift-C (Mac) veya Ctrl-shift-C (Windows) yazarak aynı anda birden fazla satıra yorum yazabilir veya yorumu kaldırabilirsiniz.</p>
+</div>
+<ul>
+<li>Kodunuzu iyi bir şekilde yorumlamak biraz sanattır. Bu beceriyi geliştirmenin en iyi yolu, başkalarının kodlarını okumak ve başkalarının kodunuzu incelemesini sağlamaktır.</li>
+</ul>
+</div>
+<div id="inline-r" class="section level3" number="6.3.6">
+<h3>
+<span class="header-section-number">6.3.6</span> Satır İçi kodlar<a class="anchor" aria-label="anchor" href="#inline-r"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Şimdi setosa ve virginica çiçek türlerinde yaprak uzunluklarını analiz edelim. Önce analiz kodunu çalıştıracağız. Daha sonra makalemizde kullanmak isteyebileceğimiz sayıları değişkenlere kaydedeceğiz ve uygun şekilde yuvarlayacağız. Son olarak, bir sonuçları biçimlendirmek için glue::glue() kullanacağız.</li>
+</ul>
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># analiz</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="va">setosa_petal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">)</span></span>
+<span><span class="va">virginica_petal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">)</span></span>
+<span><span class="va">petal_test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">setosa_petal</span>, <span class="va">virginica_petal</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># rapor edilecek degerleri yorumlama</span></span>
+<span><span class="va">t</span> <span class="op">&lt;-</span> <span class="va">petal_test</span><span class="op">$</span><span class="va">statistic</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">petal_test</span><span class="op">$</span><span class="va">parameter</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="va">petal_test</span><span class="op">$</span><span class="va">p.value</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co"># handle p-values &lt; .001</span></span>
+<span><span class="va">p_symbol</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">p</span> <span class="op">&lt;</span> <span class="fl">.001</span>, <span class="st">"&lt;"</span>, <span class="st">"="</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">p</span> <span class="op">&lt;</span> <span class="fl">.001</span><span class="op">)</span> <span class="va">p</span> <span class="op">&lt;-</span> <span class="fl">.001</span></span>
+<span></span>
+<span><span class="co"># sonucları birleştirme</span></span>
+<span><span class="va">petal_result</span> <span class="op">&lt;-</span> <span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html">glue</a></span><span class="op">(</span><span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Sonuçları, aşağıdaki gibi görünen satır içi R kodu ile bir paragrafa ekleyebilirsiniz:</li>
+</ul>
+<pre><code> virginica çiçeklerinin yaprakları setosa çiçeklerinin yapraklarından uzundur(`r petal_result`).</code></pre>
+<p>virginica çiçeklerinin yaprakları setosa çiçeklerinin yapraklarından uzundur (t = -49.99, df = 58.6, p &lt; 0.001).</p>
+</div>
+<div id="repro-tables" class="section level3" number="6.3.7">
+<h3>
+<span class="header-section-number">6.3.7</span> Tablolar<a class="anchor" aria-label="anchor" href="#repro-tables"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Çalışmaların yöntem bölümüne betimsel bilgiler eklemek istediğimizde</li>
+</ul>
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ozet_tablo</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    ortalama <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">)</span>,</span>
+<span>    sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="va">ozet_tablo</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+ortalama
+</th>
+<th style="text-align:right;">
+sd
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+setosa
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+1.462
+</td>
+<td style="text-align:right;">
+0.1736640
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+versicolor
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+4.260
+</td>
+<td style="text-align:right;">
+0.4699110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+virginica
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+5.552
+</td>
+<td style="text-align:right;">
+0.5518947
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="warning">
+<p>Yukarıdaki tablo etkileşimli görünümde tibble biçiminde yazdırılacak, ancak ördüğünüzde YAML başlığındaki df_print ayarındaki biçimi kullanacaktır.</p>
+</div>
+<ul>
+<li>Yukarıdaki tabloda, sütun etiketlerini değiştirerek, ortalamaları yuvarlayarak ve bir başlık ekleyerek daha okuyucu dostu hale getirlebilir. Bunun için <code><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a target="_blank" href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code> işlevini veya tablolarınızı biçimlendirmek için diğer paketlerdeki daha özel işlevleri kullanabilirsiniz.</li>
+</ul>
+<div class="tab">
+<button class="tablinks" onclick="openCity(event, 'knitr')">
+knitr
+</button>
+<button class="tablinks" onclick="openCity(event, 'kableExtra')">
+kableExtra
+</button>
+<button class="tablinks" onclick="openCity(event, 'papaja')">
+papaja
+</button>
+<button class="tablinks" onclick="openCity(event, 'gt')">
+gt
+</button>
+<div id="knitr" class="tabcontent">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">yeni_ad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
+<span>             digits <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>             col.names <span class="op">=</span> <span class="va">yeni_ad</span>,</span>
+<span>             caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:kable-demo">Table 6.1: </span>Petal Uzulukları için Özet Tablo
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Çiçek Türü
+</th>
+<th style="text-align:right;">
+Frekans
+</th>
+<th style="text-align:right;">
+Ortalama
+</th>
+<th style="text-align:right;">
+Sd
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+setosa
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+1.46
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+versicolor
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+4.26
+</td>
+<td style="text-align:right;">
+0.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+virginica
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+5.55
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="kableExtra" class="tabcontent">
+<p><strong><a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html">kableExtra</a> paketi çok sayıda seçenek sunar.</strong></p>
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
+<span>      digits <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>      col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span><span class="op">)</span>,</span>
+<span>      caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_classic.html">kable_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span>full_width <span class="op">=</span> <span class="cn">FALSE</span>, font_size <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/add_header_above.html">add_header_above</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">" "</span> <span class="op">=</span> <span class="fl">2</span>, <span class="st">"Degerler"</span> <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/row_spec.html">row_spec</a></span><span class="op">(</span><span class="fl">2</span>, bold <span class="op">=</span> <span class="cn">TRUE</span>, background <span class="op">=</span> <span class="st">"lightgrey"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class=" lightable-classic table" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; font-size: 20px; width: auto !important; margin-left: auto; margin-right: auto;'>
+<caption style="font-size: initial !important;">
+<span id="tab:kableExtra-demo">Table 6.2: </span>Petal Uzulukları için Özet Tablo
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;" colspan="2">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+Degerler
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Çiçek Türü
+</th>
+<th style="text-align:right;">
+Frekans
+</th>
+<th style="text-align:right;">
+Ortalama
+</th>
+<th style="text-align:right;">
+Sd
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+setosa
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+1.46
+</td>
+<td style="text-align:right;">
+0.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: lightgrey !important;">
+versicolor
+</td>
+<td style="text-align:right;font-weight: bold;background-color: lightgrey !important;">
+50
+</td>
+<td style="text-align:right;font-weight: bold;background-color: lightgrey !important;">
+4.26
+</td>
+<td style="text-align:right;font-weight: bold;background-color: lightgrey !important;">
+0.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+virginica
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+5.55
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="papaja" class="tabcontent">
+<p><strong><a href="https://crsh.github.io/papaja_man/reporting.html#tables">papaja</a> paketi ile APA formatında tablolar elde edebilirsiniz.</strong></p>
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">papaja</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/papaja/man/apa_table.html">apa_table</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
+<span>                  col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span><span class="op">)</span>,</span>
+<span>                  caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span>,</span>
+<span>                  col_spanners <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Means"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:papaja-demo">Table 6.3: </span> Petal Uzulukları için Özet Tablo</caption>
+<thead><tr class="header">
+<th align="left">Çiçek Türü</th>
+<th align="left">Frekans</th>
+<th align="left">Ortalama</th>
+<th align="left">Sd</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">setosa</td>
+<td align="left">50</td>
+<td align="left">1.46</td>
+<td align="left">0.17</td>
+</tr>
+<tr class="even">
+<td align="left">versicolor</td>
+<td align="left">50</td>
+<td align="left">4.26</td>
+<td align="left">0.47</td>
+</tr>
+<tr class="odd">
+<td align="left">virginica</td>
+<td align="left">50</td>
+<td align="left">5.55</td>
+<td align="left">0.55</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="gt" class="tabcontent">
+<p><strong><a href="https://gt.rstudio.com/index.html">gt</a> paketinde de çok sayıda seçenek bulunmaktadır.</strong></p>
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="va">ozet_tablo</span>, caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ortalama</span>, <span class="va">sd</span><span class="op">)</span>,</span>
+<span>             decimals <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_label.html">cols_label</a></span><span class="op">(</span>Species <span class="op">=</span> <span class="st">"Çiçek Türü"</span>,</span>
+<span>             n <span class="op">=</span> <span class="st">"Frekans"</span>,</span>
+<span>             ortalama <span class="op">=</span> <span class="st">"ortalama"</span>,</span>
+<span>             sd <span class="op">=</span> <span class="st">"sd"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_spanner.html">tab_spanner</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Degerler"</span>,</span>
+<span>              columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ortalama</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fl">6</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
+<div id="ctaaqzdxtj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ctaaqzdxtj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ctaaqzdxtj thead, #ctaaqzdxtj tbody, #ctaaqzdxtj tfoot, #ctaaqzdxtj tr, #ctaaqzdxtj td, #ctaaqzdxtj th {
+  border-style: none;
+}
+
+#ctaaqzdxtj p {
+  margin: 0;
+  padding: 0;
+}
+
+#ctaaqzdxtj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ctaaqzdxtj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ctaaqzdxtj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ctaaqzdxtj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ctaaqzdxtj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ctaaqzdxtj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ctaaqzdxtj .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ctaaqzdxtj .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ctaaqzdxtj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ctaaqzdxtj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ctaaqzdxtj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ctaaqzdxtj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ctaaqzdxtj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ctaaqzdxtj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#ctaaqzdxtj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ctaaqzdxtj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ctaaqzdxtj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ctaaqzdxtj .gt_stub {
+  color: #333333;
+  background-color: #89D3FE;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ctaaqzdxtj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ctaaqzdxtj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ctaaqzdxtj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ctaaqzdxtj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ctaaqzdxtj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ctaaqzdxtj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ctaaqzdxtj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_striped {
+  background-color: #EDF7FC;
+}
+
+#ctaaqzdxtj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#ctaaqzdxtj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ctaaqzdxtj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ctaaqzdxtj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ctaaqzdxtj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ctaaqzdxtj .gt_left {
+  text-align: left;
+}
+
+#ctaaqzdxtj .gt_center {
+  text-align: center;
+}
+
+#ctaaqzdxtj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ctaaqzdxtj .gt_font_normal {
+  font-weight: normal;
+}
+
+#ctaaqzdxtj .gt_font_bold {
+  font-weight: bold;
+}
+
+#ctaaqzdxtj .gt_font_italic {
+  font-style: italic;
+}
+
+#ctaaqzdxtj .gt_super {
+  font-size: 65%;
+}
+
+#ctaaqzdxtj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ctaaqzdxtj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ctaaqzdxtj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ctaaqzdxtj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ctaaqzdxtj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ctaaqzdxtj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ctaaqzdxtj .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<div class="inline-table"><table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>
+<span id="tab:gt-demo">Table 6.4: </span>Petal Uzulukları için Özet Tablo</caption>
+  <thead>
+<tr class="gt_col_headings gt_spanner_row">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Çiçek Türü">Çiçek Türü</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Frekans">Frekans</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Degerler">
+        <span class="gt_column_spanner">Degerler</span>
+      </th>
+    </tr>
+<tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ortalama">ortalama</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="sd">sd</th>
+    </tr>
+</thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="Species" class="gt_row gt_center">setosa</td>
+<td headers="n" class="gt_row gt_right">50</td>
+<td headers="ortalama" class="gt_row gt_right">1.46</td>
+<td headers="sd" class="gt_row gt_right">0.17</td>
+</tr>
+<tr>
+<td headers="Species" class="gt_row gt_center gt_striped">versicolor</td>
+<td headers="n" class="gt_row gt_right gt_striped">50</td>
+<td headers="ortalama" class="gt_row gt_right gt_striped">4.26</td>
+<td headers="sd" class="gt_row gt_right gt_striped">0.47</td>
+</tr>
+<tr>
+<td headers="Species" class="gt_row gt_center">virginica</td>
+<td headers="n" class="gt_row gt_right">50</td>
+<td headers="ortalama" class="gt_row gt_right">5.55</td>
+<td headers="sd" class="gt_row gt_right">0.55</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div id="repro-figures" class="section level3" number="6.3.8">
+<h3>
+<span class="header-section-number">6.3.8</span> Görseller<a class="anchor" aria-label="anchor" href="#repro-figures"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Şekil başlığının kod bloğında nasıl biçimlendirildiğine dikkat edin.</li>
+</ul>
+<div class="verbatim">
+<pre class="sourceCode r"><code class="sourceCode R">```{r boxplot, fig.cap="Sekil 1 1. Türlere göre yaprak uzunluğu"}</code></pre>
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">!=</span> <span class="st">"versicolor"</span><span class="op">)</span></span>
+<span><span class="va">dat</span><span class="op">$</span><span class="va">Species</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Species</span>, <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.25</span>,</span>
+<span>               show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>  <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Petal Uzunluğu"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">20</span>, family <span class="op">=</span> <span class="st">"Times"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="06-markdown_files/figure-html/unnamed-chunk-9-1.png" alt="Petal Uzunlukları ve Türler" width="100%"><p class="caption">
+Figure 6.1: Petal Uzunlukları ve Türler
+</p>
+</div>
+<pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pet-plot-out"></span>
+<img src="06-markdown_files/figure-html/pet-plot-out-1.png" alt=" Petal Uzunlukları ve Türler" width="100%"><p class="caption">
+Figure 6.2:  Petal Uzunlukları ve Türler
+</p>
+</div>
+<div class="info">
+<p>Son satır varsayılan metin boyutunu ve yazı tipini değiştirir, bu da bir derginin gereksinimlerini karşılayan şekiller oluşturmak için yararlı olabilir.</p>
+</div>
+<ul>
+<li>Kodlarla oluşturamadığınız şekilleri de resim dosyaları ile dökümana ekleyebilirsiniz:</li>
+</ul>
+<div class="sourceCode" id="cb242"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb242-1"><a href="markdown.html#cb242-1" tabindex="-1"></a><span class="al">![neden R](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TX77o_zJ4zbpJ3vN4BkLsg.jpeg)</span>{style="width: 50%"}</span></code></pre></div>
+<div class="float">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*TX77o_zJ4zbpJ3vN4BkLsg.jpeg" style="width: 50%" alt="neden R"><div class="figcaption">neden R</div>
+</div>
+</div>
+<div id="bağlantılı-dökümanlar" class="section level3" number="6.3.9">
+<h3>
+<span class="header-section-number">6.3.9</span> Bağlantılı Dökümanlar<a class="anchor" aria-label="anchor" href="#ba%C4%9Flant%C4%B1l%C4%B1-d%C3%B6k%C3%BCmanlar"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Markdown bölümler arasında bağlantılar içeren daha uzun raporlar oluşturmanıza yardımcı olur.</p></li>
+<li><p>Başlığı olan tüm şekillere veya tablolara otomatik olarak şekil ve tablo numaraları ekler ve bunlara referansla bağlantı vermenize olanak sağlar.</p></li>
+<li><p>Tablolara ve şekillere bağlantılar oluşturmak için, şekillerinizi veya tablolarınızı oluşturan kod bloklarınız adlandırmanız ve ardından satır içi kodlamanızda bu adları çağırmanız gerekir:</p></li>
+</ul>
+<div class="verbatim">
+<pre class="sourceCode r"><code class="sourceCode R">```{r tablo1}</code></pre>
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># kodlar</span></span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
+</div>
+<div class="verbatim">
+<pre class="sourceCode r"><code class="sourceCode R">```{r sekil1}</code></pre>
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># kodlar</span></span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
+</div>
+<pre><code>Bakınız Tablo\ \@ref(tab:tablo1) or Sekil\ \@ref(fig:sekil1).</code></pre>
+<div class="warning">
+<p>Kod blok adları yalnızca harf, rakam ve tire içerebilir. Boşluk veya alt çizgi gibi başka karakterler içeriyorlarsa, referanslama çalışmayacaktır.</p>
+</div>
+<p>Başlıklarınızı {#} ile adlandırarak da raporunuzun farklı bölümlerine bağlantı verebilirsiniz:</p>
+<pre><code># Baslık 1 {#baslık-1}
+
+## Baslık 2 {#baslık-2}
+
+Bakınız Bolum\ \@ref(baslık-1) and Bolum\ \@ref(baslık-2)</code></pre>
+<ul>
+<li>Aşağıdaki kod, ggplot2 paketindeki <code>diamonds</code> veri seti kullanarak tam bir raporda metnin şekillere veya tablolara nasıl bağlanacağını göstermektedir - bu belgeyi şimdi oluşturmak için aşağıdaki kodları kullanın.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Dokuman burada
+</button>
+<div class="sourceCode" id="cb247"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb247-1"><a href="markdown.html#cb247-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb247-2"><a href="markdown.html#cb247-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ornek Dosya"</span></span>
+<span id="cb247-3"><a href="markdown.html#cb247-3" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb247-4"><a href="markdown.html#cb247-4" tabindex="-1"></a><span class="co">  bookdown::html_document2:</span></span>
+<span id="cb247-5"><a href="markdown.html#cb247-5" tabindex="-1"></a><span class="co">    number_sections: true</span></span>
+<span id="cb247-6"><a href="markdown.html#cb247-6" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb247-7"><a href="markdown.html#cb247-7" tabindex="-1"></a></span>
+<span id="cb247-8"><a href="markdown.html#cb247-8" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb247-9"><a href="markdown.html#cb247-9" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = FALSE,</span></span>
+<span id="cb247-10"><a href="markdown.html#cb247-10" tabindex="-1"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb247-11"><a href="markdown.html#cb247-11" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb247-12"><a href="markdown.html#cb247-12" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb247-13"><a href="markdown.html#cb247-13" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
+<span id="cb247-14"><a href="markdown.html#cb247-14" tabindex="-1"></a><span class="in">theme_set(theme_minimal())</span></span>
+<span id="cb247-15"><a href="markdown.html#cb247-15" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb247-16"><a href="markdown.html#cb247-16" tabindex="-1"></a></span>
+<span id="cb247-17"><a href="markdown.html#cb247-17" tabindex="-1"></a>Pırlanta ücretleri çeşitli faktörlere bağlıdır</span>
+<span id="cb247-18"><a href="markdown.html#cb247-18" tabindex="-1"></a></span>
+<span id="cb247-19"><a href="markdown.html#cb247-19" tabindex="-1"></a><span class="ss">- </span>cut (See Table\ \@ref(tab:kesim))</span>
+<span id="cb247-20"><a href="markdown.html#cb247-20" tabindex="-1"></a><span class="ss">- </span>colour (See Table\ \@ref(tab:renk))</span>
+<span id="cb247-21"><a href="markdown.html#cb247-21" tabindex="-1"></a><span class="ss">- </span>clarity (See Figure\ \@ref(fig:parlaklık))</span>
+<span id="cb247-22"><a href="markdown.html#cb247-22" tabindex="-1"></a><span class="ss">- </span>carats (See Figure\ \@ref(fig:karat))</span>
+<span id="cb247-23"><a href="markdown.html#cb247-23" tabindex="-1"></a><span class="ss">- </span>Bakınız Bolum\ \@ref(sonuclar) sonuclar icin</span>
+<span id="cb247-24"><a href="markdown.html#cb247-24" tabindex="-1"></a></span>
+<span id="cb247-25"><a href="markdown.html#cb247-25" tabindex="-1"></a><span class="fu">## Tablolar</span></span>
+<span id="cb247-26"><a href="markdown.html#cb247-26" tabindex="-1"></a></span>
+<span id="cb247-27"><a href="markdown.html#cb247-27" tabindex="-1"></a><span class="fu">### Kesim</span></span>
+<span id="cb247-28"><a href="markdown.html#cb247-28" tabindex="-1"></a></span>
+<span id="cb247-29"><a href="markdown.html#cb247-29" tabindex="-1"></a><span class="in">```{r tab:kesim}</span></span>
+<span id="cb247-30"><a href="markdown.html#cb247-30" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb247-31"><a href="markdown.html#cb247-31" tabindex="-1"></a><span class="in">  group_by(cut) %&gt;%</span></span>
+<span id="cb247-32"><a href="markdown.html#cb247-32" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb247-33"><a href="markdown.html#cb247-33" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb247-34"><a href="markdown.html#cb247-34" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb247-35"><a href="markdown.html#cb247-35" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb247-36"><a href="markdown.html#cb247-36" tabindex="-1"></a><span class="in">        caption = "Kesime göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb247-37"><a href="markdown.html#cb247-37" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb247-38"><a href="markdown.html#cb247-38" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb247-39"><a href="markdown.html#cb247-39" tabindex="-1"></a></span>
+<span id="cb247-40"><a href="markdown.html#cb247-40" tabindex="-1"></a><span class="fu">### Renk</span></span>
+<span id="cb247-41"><a href="markdown.html#cb247-41" tabindex="-1"></a></span>
+<span id="cb247-42"><a href="markdown.html#cb247-42" tabindex="-1"></a><span class="in">```{r renk}</span></span>
+<span id="cb247-43"><a href="markdown.html#cb247-43" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb247-44"><a href="markdown.html#cb247-44" tabindex="-1"></a><span class="in">  group_by(color) %&gt;%</span></span>
+<span id="cb247-45"><a href="markdown.html#cb247-45" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb247-46"><a href="markdown.html#cb247-46" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb247-47"><a href="markdown.html#cb247-47" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb247-48"><a href="markdown.html#cb247-48" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb247-49"><a href="markdown.html#cb247-49" tabindex="-1"></a><span class="in">        caption = "Renge göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb247-50"><a href="markdown.html#cb247-50" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb247-51"><a href="markdown.html#cb247-51" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb247-52"><a href="markdown.html#cb247-52" tabindex="-1"></a></span>
+<span id="cb247-53"><a href="markdown.html#cb247-53" tabindex="-1"></a><span class="fu">## Grafikler</span></span>
+<span id="cb247-54"><a href="markdown.html#cb247-54" tabindex="-1"></a></span>
+<span id="cb247-55"><a href="markdown.html#cb247-55" tabindex="-1"></a><span class="fu">### Parlaklık</span></span>
+<span id="cb247-56"><a href="markdown.html#cb247-56" tabindex="-1"></a></span>
+<span id="cb247-57"><a href="markdown.html#cb247-57" tabindex="-1"></a><span class="in">```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}</span></span>
+<span id="cb247-58"><a href="markdown.html#cb247-58" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = clarity, y = price)) +</span></span>
+<span id="cb247-59"><a href="markdown.html#cb247-59" tabindex="-1"></a><span class="in">  geom_boxplot() </span></span>
+<span id="cb247-60"><a href="markdown.html#cb247-60" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb247-61"><a href="markdown.html#cb247-61" tabindex="-1"></a></span>
+<span id="cb247-62"><a href="markdown.html#cb247-62" tabindex="-1"></a><span class="fu">### Karat</span></span>
+<span id="cb247-63"><a href="markdown.html#cb247-63" tabindex="-1"></a></span>
+<span id="cb247-64"><a href="markdown.html#cb247-64" tabindex="-1"></a><span class="in">```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}</span></span>
+<span id="cb247-65"><a href="markdown.html#cb247-65" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = carat, y = price)) +</span></span>
+<span id="cb247-66"><a href="markdown.html#cb247-66" tabindex="-1"></a><span class="in">  stat_smooth()</span></span>
+<span id="cb247-67"><a href="markdown.html#cb247-67" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb247-68"><a href="markdown.html#cb247-68" tabindex="-1"></a></span>
+<span id="cb247-69"><a href="markdown.html#cb247-69" tabindex="-1"></a><span class="fu">### Sonuclar {#sonuclar}</span></span>
+<span id="cb247-70"><a href="markdown.html#cb247-70" tabindex="-1"></a></span>
+<span id="cb247-71"><a href="markdown.html#cb247-71" tabindex="-1"></a>"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "</span></code></pre></div>
+</div>
+<p>Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız <code>YAML</code> bölümünde <code>number_sections: false</code> ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, <code>\@ref(sonuclar)</code> gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı sözdizimini kullanmanız gerekir:</p>
+<pre><code>Son açıklamalar için [son bölüme](#sonuclar) bakınız.</code></pre>
+</div>
+</div>
+<div id="kaynakça" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Kaynakça<a class="anchor" aria-label="anchor" href="#kaynak%C3%A7a"><i class="fas fa-link"></i></a>
+</h2>
+<p>R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve <span class="citation">(<a href="references.html#ref-tidyverse">Wickham, 2017</a>)</span> gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir Citation Style Language (.csl) dosyası da ekleyebilirsiniz.</p>
+<p>a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html" target="_blank">bibliography</a></p>
+<pre><code>---
+title: "My Paper"
+author: "Me"
+output:
+  html_document:
+    toc: true
+bibliography: refs.bib
+csl: apa.csl
+---</code></pre>
+<div id="referans-yazılımdan-dönüştürme" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> Referans yazılımdan dönüştürme<a class="anchor" aria-label="anchor" href="#referans-yaz%C4%B1l%C4%B1mdan-d%C3%B6n%C3%BC%C5%9Ft%C3%BCrme"><i class="fas fa-link"></i></a>
+</h3>
+<p>EndNote veya Zotero gibi çoğu referans yazılımı BibTeX formatına aktarabilen dışa aktarma seçeneklerine sahiptir. Ortaya çıkan dosyadaki kısa adları kontrol etmeniz yeterlidir.</p>
+<div class="warning">
+<p>Bir referans programı kullanmak hayatınızı çok daha kolaylaştıracaktır. Zotero muhtemelen en iyisidir.</p>
+</div>
+<p>Dışa aktarılan dosya şu şekilde görünmelidir:</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode bib"><code class="sourceCode bibtex"><span id="cb250-1"><a href="markdown.html#cb250-1" tabindex="-1"></a></span>
+<span id="cb250-2"><a href="markdown.html#cb250-2" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
+<span id="cb250-3"><a href="markdown.html#cb250-3" tabindex="-1"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
+<span id="cb250-4"><a href="markdown.html#cb250-4" tabindex="-1"></a>    <span class="dt">volume</span> = {7},</span>
+<span id="cb250-5"><a href="markdown.html#cb250-5" tabindex="-1"></a>    <span class="dt">issn</span> = {2474-7394},</span>
+<span id="cb250-6"><a href="markdown.html#cb250-6" tabindex="-1"></a>    <span class="dt">shorttitle</span> = {Easing {Into} {Open} {Science}},</span>
+<span id="cb250-7"><a href="markdown.html#cb250-7" tabindex="-1"></a>    <span class="dt">url</span> = {https://doi.org/10.1525/collabra.18684},</span>
+<span id="cb250-8"><a href="markdown.html#cb250-8" tabindex="-1"></a>    <span class="dt">doi</span> = {10.1525/collabra.18684},</span>
+<span id="cb250-9"><a href="markdown.html#cb250-9" tabindex="-1"></a>    <span class="dt">abstract</span> = {This article provides a roadmap to assist graduate students and their advisors to engage in open science practices. We suggest eight open science practices that novice graduate students could begin adopting today. The topics we cover include journal clubs, project workflow, preprints, reproducible code, data sharing, transparent writing, preregistration, and registered reports. To address concerns about not knowing how to engage in open science practices, we provide a difficulty rating of each behavior (easy, medium, difficult), present them in order of suggested adoption, and follow the format of what, why, how, and worries. We give graduate students ideas on how to approach conversations with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. We emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined.},</span>
+<span id="cb250-10"><a href="markdown.html#cb250-10" tabindex="-1"></a>    <span class="dt">number</span> = {1},</span>
+<span id="cb250-11"><a href="markdown.html#cb250-11" tabindex="-1"></a>    <span class="dt">urldate</span> = {2022-09-07},</span>
+<span id="cb250-12"><a href="markdown.html#cb250-12" tabindex="-1"></a>    <span class="dt">journal</span> = {Collabra: Psychology},</span>
+<span id="cb250-13"><a href="markdown.html#cb250-13" tabindex="-1"></a>    <span class="dt">author</span> = {Kathawalla, Ummul-Kiram and Silverstein, Priya and Syed, Moin},</span>
+<span id="cb250-14"><a href="markdown.html#cb250-14" tabindex="-1"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
+<span id="cb250-15"><a href="markdown.html#cb250-15" tabindex="-1"></a>    <span class="dt">year</span> = {2021},</span>
+<span id="cb250-16"><a href="markdown.html#cb250-16" tabindex="-1"></a>    <span class="dt">pages</span> = {18684},</span>
+<span id="cb250-17"><a href="markdown.html#cb250-17" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="bibtex-dosyası-oluşturma" class="section level3" number="6.4.2">
+<h3>
+<span class="header-section-number">6.4.2</span> BibTeX Dosyası Oluşturma<a class="anchor" aria-label="anchor" href="#bibtex-dosyas%C4%B1-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+</h3>
+<p>Referansları manuel olarak da ekleyebilirsiniz. RStudio'da <strong><code>File</code></strong> &gt; <strong><code>New File...</code></strong> &gt; <strong><code>Text File</code></strong> seçeneğine gidin. &gt; Metin Dosyası'na gidin ve dosyayı "refs.bib" olarak kaydedin.</p>
+<p>Ardından, YAML başlığınıza <code>bibliography: refs.bib</code> satırını ekleyin.</p>
+</div>
+<div id="referans-ekleme" class="section level3" number="6.4.3">
+<h3>
+<span class="header-section-number">6.4.3</span> Referans ekleme<a class="anchor" aria-label="anchor" href="#referans-ekleme"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bir dergi makalesine aşağıdaki formatta referanslar ekleyebilirsiniz:</p>
+<pre><code>@article{shortname,
+  author = {Author One and Author Two and Author Three},
+  title = {Paper Title},
+  journal = {Journal Title},
+  volume = {vol},
+  number = {issue},
+  pages = {startpage--endpage},
+  year = {year},
+  doi = {doi}
+}</code></pre>
+<p>Kitaplara, teknik raporlara ve daha fazlasına atıfta bulunma talimatları için BibTeX formatına ilişkin eksiksiz bir kılavuza bakın.</p>
+<p>citation() ve toBibtex() fonksiyonlarını kullanarak bir R paketi için referans alabilirsiniz. Bibtex girişini bibliography.bib dosyanıza yapıştırabilirsiniz. Referansa atıfta bulunmak için ilk virgülden önce kısa bir ad (örneğin, "ggplot2") eklediğinizden emin olun.</p>
+<p>See <a href="https://www.bibtex.com/g/bibtex-format/" target="_blank">A complete guide to the BibTeX format</a> kitaplara, teknik raporlara ve daha fazlasına atıfta bulunma talimatları için.</p>
+<p>Bir R paketinin referansını <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> ve <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code> fonksiyonlarını kullanarak alabilirsiniz. Bibtex girişini bibliography.bib dosyanıza yapıştırabilirsiniz. Referansa atıfta bulunmak için ilk virgülden önce kısa bir ad (örneğin, "ggplot2") eklediğinizden emin olun.</p>
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"ggplot2"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## @Book{,
+##   author = {Hadley Wickham},
+##   title = {ggplot2: Elegant Graphics for Data Analysis},
+##   publisher = {Springer-Verlag New York},
+##   year = {2016},
+##   isbn = {978-3-319-24277-4},
+##   url = {https://ggplot2.tidyverse.org},
+## }</code></pre>
+<p><a href="https://scholar.google.com/">Google Scholar</a> girişlerinde BibTeX atıf seçeneği vardır. DOI'yi kendiniz eklemeniz gerekse de, Zotero tarayıcı bağlayıcısı aracılığıyla bir atıf ekleyemiyorsanız, ilgili değerleri almanın en kolay yolu genellikle budur. Önerilen kısa adı koruyabilir veya sizin için daha anlamlı olan bir adla değiştirebilirsiniz.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:google-scholar"></span>
+<img src="images/google-scholar.png" alt="Get BibTex citations from Google Scholar." width="100%"><p class="caption">
+Figure 6.3: Get BibTex citations from Google Scholar.
+</p>
+</div>
+</div>
+<div id="referanslara-atıfta-bulunma" class="section level3" number="6.4.4">
+<h3>
+<span class="header-section-number">6.4.4</span> Referanslara atıfta bulunma<a class="anchor" aria-label="anchor" href="#referanslara-at%C4%B1fta-bulunma"><i class="fas fa-link"></i></a>
+</h3>
+<p>Metin içinde referansları bu şekilde gösterebilirsiniz:</p>
+<pre><code>This tutorial uses several R packages [@tidyverse;@rmarkdown].</code></pre>
+<p>Bu eğitimde çeşitli R paketleri kullanılmaktadır (Allaire vd., 2018; Wickham, 2017).</p>
+</div>
+<div id="atıf-yapılmayan-referanslar" class="section level3" number="6.4.5">
+<h3>
+<span class="header-section-number">6.4.5</span> Atıf yapılmayan referanslar<a class="anchor" aria-label="anchor" href="#at%C4%B1f-yap%C4%B1lmayan-referanslar"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bir öğeyi kaynak göstermeden referans bölümüne eklemek istiyorsanız, bunu YAML başlığına şu şekilde ekleyin:</p>
+<pre><code>nocite: |
+  @kathawalla_easing_2021, @broman2018data, @nordmann2022data</code></pre>
+<p>Ya da .bib dosyasındaki tüm öğeleri şu şekilde ekleyin:</p>
+<pre><code>nocite: '@*'</code></pre>
+</div>
+<div id="atıf-stilleri" class="section level3" number="6.4.6">
+<h3>
+<span class="header-section-number">6.4.6</span> Atıf Stilleri<a class="anchor" aria-label="anchor" href="#at%C4%B1f-stilleri"><i class="fas fa-link"></i></a>
+</h3>
+<p>Çeşitli dergiler için <a href="https://www.zotero.org/styles" target="_blank">stil dosyalarının</a> bir listesini arayabilir ve kaynakçanızı belirli bir derginin stiline göre biçimlendirecek bir dosya indirebilirsiniz. YAML başlığınıza <code>csl: filename.csl</code> satırını eklemeniz gerekir.</p>
+<div class="try">
+<p>refs.bib dosyanıza bazı alıntılar ekleyin, metninizde bunlara atıfta bulunun ve otomatik olarak oluşturulan referans bölümünü görmek için makalenizi işleyin. Birkaç farklı atıf stili dosyası deneyin.</p>
+</div>
+</div>
+<div id="referens-bölümü" class="section level3" number="6.4.7">
+<h3>
+<span class="header-section-number">6.4.7</span> Referens Bölümü<a class="anchor" aria-label="anchor" href="#referens-b%C3%B6l%C3%BCm%C3%BC"><i class="fas fa-link"></i></a>
+</h3>
+<p>Varsayılan olarak, referans bölümü belgenin sonuna eklenir. Konumu değiştirmek istiyorsanız (örneğin, referanslardan sonra şekil ve tablo eklemek için), referansları istediğiniz yere <code>&lt;div id="refs"&gt;&lt;/div&gt;</code> ekleyin.</p>
+<div class="try">
+<p>Raporunuza metin içi alıntılar ve bir referans listesi ekleyin.</p>
+</div>
+</div>
+</div>
+<div id="özel-şablonlar" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Özel Şablonlar<a class="anchor" aria-label="anchor" href="#%C3%B6zel-%C5%9Fablonlar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Bazı paketler özel R Markdown şablonları sağlar. reprores, YAML başlığındaki tüm olası seçenekleri gösteren, kaynakça ve stil dosyalarına sahip olan ve bağlantılı şekil ve tabloların nasıl ayarlanacağını açıklayan bir Rapor şablonuna sahiptir. Birden fazla dosya içerdiğinden, RStudio sizden tüm dosyaları tutmak için yeni bir klasör oluşturmanızı isteyecektir.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-custom-rmd"></span>
+<img src="images/custom-rmd.png" alt="Şablonlar" width="75%"><p class="caption">
+Figure 6.4: Şablonlar
+</p>
+</div>
+<div class="try">
+<p>Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi veya silmeyi deneyin.</p>
+</div>
+</div>
+<div id="diğer-kaynaklar" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Diğer Kaynaklar<a class="anchor" aria-label="anchor" href="#di%C4%9Fer-kaynaklar"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="http://r4ds.had.co.nz/r-markdown.html">Chapter 27: R Markdown</a> in <em>R for Data Science</em>
+</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown reference Guide</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown Tutorial</a></li>
+<li>
+<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, &amp; Garrett Grolemund</li>
+<li>
+<a href="https://slides.djnavarro.net/project-structure/">Project Structure</a> by Danielle Navarro</li>
+<li>
+<a href="https://speakerdeck.com/jennybc/how-to-name-files">How to name files</a> by Jenny Bryan</li>
+<li>
+<a href="https://crsh.github.io/papaja_man/">Papaja</a> Reproducible APA Manuscripts</li>
+<li><a href="https://the-turing-way.netlify.app/">The Turing Way</a></li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></div>
+<div class="next"><a href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#markdown"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="nav-link" href="#neden-tekrarlanabilir-raporlar-kullan%C4%B1lmal%C4%B1"><span class="header-section-number">6.1</span> Neden tekrarlanabilir raporlar kullanılmalı?</a></li>
+<li>
+<a class="nav-link" href="#bir-proje-d%C3%BCzenlemek"><span class="header-section-number">6.2</span> Bir proje düzenlemek</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">6.2.1</span> Çalışma Dizini</a></li>
+<li><a class="nav-link" href="#nesneleri-adland%C4%B1rma"><span class="header-section-number">6.2.2</span> Nesneleri Adlandırma</a></li>
+<li><a class="nav-link" href="#yeni-bir-projeye-ba%C5%9Flamak"><span class="header-section-number">6.2.3</span> Yeni bir projeye başlamak</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#r-markdown"><span class="header-section-number">6.3</span> R Markdown</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#yaml"><span class="header-section-number">6.3.1</span> YAML Header</a></li>
+<li><a class="nav-link" href="#kurulum"><span class="header-section-number">6.3.2</span> Kurulum</a></li>
+<li><a class="nav-link" href="#yap%C4%B1"><span class="header-section-number">6.3.3</span> Yapı</a></li>
+<li><a class="nav-link" href="#kod-bloklar%C4%B1"><span class="header-section-number">6.3.4</span> Kod Blokları</a></li>
+<li><a class="nav-link" href="#yorumlar"><span class="header-section-number">6.3.5</span> Yorumlar</a></li>
+<li><a class="nav-link" href="#inline-r"><span class="header-section-number">6.3.6</span> Satır İçi kodlar</a></li>
+<li><a class="nav-link" href="#repro-tables"><span class="header-section-number">6.3.7</span> Tablolar</a></li>
+<li><a class="nav-link" href="#repro-figures"><span class="header-section-number">6.3.8</span> Görseller</a></li>
+<li><a class="nav-link" href="#ba%C4%9Flant%C4%B1l%C4%B1-d%C3%B6k%C3%BCmanlar"><span class="header-section-number">6.3.9</span> Bağlantılı Dökümanlar</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#kaynak%C3%A7a"><span class="header-section-number">6.4</span> Kaynakça</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#referans-yaz%C4%B1l%C4%B1mdan-d%C3%B6n%C3%BC%C5%9Ft%C3%BCrme"><span class="header-section-number">6.4.1</span> Referans yazılımdan dönüştürme</a></li>
+<li><a class="nav-link" href="#bibtex-dosyas%C4%B1-olu%C5%9Fturma"><span class="header-section-number">6.4.2</span> BibTeX Dosyası Oluşturma</a></li>
+<li><a class="nav-link" href="#referans-ekleme"><span class="header-section-number">6.4.3</span> Referans ekleme</a></li>
+<li><a class="nav-link" href="#referanslara-at%C4%B1fta-bulunma"><span class="header-section-number">6.4.4</span> Referanslara atıfta bulunma</a></li>
+<li><a class="nav-link" href="#at%C4%B1f-yap%C4%B1lmayan-referanslar"><span class="header-section-number">6.4.5</span> Atıf yapılmayan referanslar</a></li>
+<li><a class="nav-link" href="#at%C4%B1f-stilleri"><span class="header-section-number">6.4.6</span> Atıf Stilleri</a></li>
+<li><a class="nav-link" href="#referens-b%C3%B6l%C3%BCm%C3%BC"><span class="header-section-number">6.4.7</span> Referens Bölümü</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%C3%B6zel-%C5%9Fablonlar"><span class="header-section-number">6.5</span> Özel Şablonlar</a></li>
+<li><a class="nav-link" href="#di%C4%9Fer-kaynaklar"><span class="header-section-number">6.6</span> Diğer Kaynaklar</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/06-markdown.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/06-markdown.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

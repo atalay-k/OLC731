@@ -111,6 +111,7 @@ PISA_OGR_2018 %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
 
 
 ```r
+PISA_OGR_2018 <- expss::drop_var_labs(PISA_OGR_2018)
 PISA_OGR_2018 %>% select(OKULID:SINIF,-KITAPCIK) %>% head(6)
 ```
 

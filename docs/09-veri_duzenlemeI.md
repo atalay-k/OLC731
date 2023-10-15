@@ -608,7 +608,8 @@ x!=1
 
 
 ```r
-PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
+df2 <- expss::drop_var_labs(PISA_STU_2018)
+df2 %>%  filter(MISCED== 6) %>% head(4)
 ```
 
 <div class="kable-table">
@@ -628,7 +629,7 @@ PISA_STU_2018 %>% filter(MISCED==6) %>% head(4)
 
 
 ```r
-PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
+df2 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 ```
 
 <div class="kable-table">
@@ -647,7 +648,7 @@ PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 
 
 ```r
-PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
+df2 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
 ```
 
 <div class="kable-table">

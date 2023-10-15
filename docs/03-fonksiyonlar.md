@@ -109,6 +109,7 @@ rnorm(sd = 1, n = 6, mean = 3)
 <img src="images/autocomplete.png" alt="Tab ile otomatik durdurma" width="100%" />
 <p class="caption">(\#fig:img-autocomplete)Tab ile otomatik durdurma</p>
 </div>
+
 ## Kişisel tanımlı fonksiyon
 
 - Kişisel tanımlı fonksiyon yazılması şablonu aşağıdaki gibidir.
@@ -286,7 +287,7 @@ ls()
 - Çok fazla kod yazıyorsanız, enviroment (veya çalışma alanının) birçok nesne ile darmadağın olduğunu fark edebilirsiniz. Bu, hangi nesneye ihtiyacınız olduğunu bulmanızı zorlaştırabilir ve bu nedenle yanlış veri seti kullanma riskiyle karşı karşıya kalabilirsiniz. Yeni bir veri kümesi üzerinde çalışıyorsanız veya son sürümü elde etmeden önce çok sayıda farklı kod denediyseniz, yanlış nesneyi kullanmaktan kaçınmak için ortamı/çalışma alanını temizlemeyi unutmamak iyi bir uygulamadır. Bunu birkaç şekilde yapabilirsiniz.
 
 1. Nesneleri tek tek kaldırmak için konsola `rm(nesne_adı)` yazabilirsiniz. Önceki bölümde oluşturduğunuz nesnelerden birini kaldırmak için bunu şimdi deneyin. 
-2. Ortamdaki tüm nesneleri temizlemek için konsolda `rm(liste = ls())` komutunu çalıştırın.
+2. Ortamdaki tüm nesneleri temizlemek için konsolda `rm(list = ls())` komutunu çalıştırın.
 3. Ortamdaki tüm nesneleri temizlemek için ortam bölmesindeki süpürge simgesine de tıklayabilirsiniz. 
 
 4. Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.

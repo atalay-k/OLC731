@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Veri duzenleme - I | OLC731</title>
+<title>Chapter 9 Veri duzenleme - I | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="8.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Veri duzenleme - I | OLC731">
+<meta name="description" content="9.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Veri duzenleme - I | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-duzenleme---i.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
-<meta property="og:description" content="8.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta property="og:description" content="9.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Veri duzenleme - I | OLC731">
-<meta name="twitter:description" content="8.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
+<meta name="twitter:title" content="Chapter 9 Veri duzenleme - I | OLC731">
+<meta name="twitter:description" content="9.1 dplyr paket tanıtımı Veri düzenlemede en sık kullanılan paketlerden biri dplyr paketidir. Veri manipulasyonunun grammeri paketin tanıtımında kullanılmıştır. Paketin en sık kullanılan...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="active" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="active" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,13 +101,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---i" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-duzenleme---i" class="section level1" number="9">
 <h1>
-<span class="header-section-number">8</span> Veri duzenleme - I<a class="anchor" aria-label="anchor" href="#veri-duzenleme---i"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Veri duzenleme - I<a class="anchor" aria-label="anchor" href="#veri-duzenleme---i"><i class="fas fa-link"></i></a>
 </h1>
-<div id="dplyr-paket-tanıtımı" class="section level2" number="8.1">
+<div id="dplyr-paket-tanıtımı" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">8.1</span> dplyr paket tanıtımı<a class="anchor" aria-label="anchor" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> dplyr paket tanıtımı<a class="anchor" aria-label="anchor" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Veri düzenlemede en sık kullanılan paketlerden biri <strong>dplyr</strong> paketidir.</p></li>
@@ -127,9 +128,9 @@
 </li>
 </ul>
 </div>
-<div id="paket-vignetteleri" class="section level2" number="8.2">
+<div id="paket-vignetteleri" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">8.2</span> Paket vignetteleri 📊<a class="anchor" aria-label="anchor" href="#paket-vignetteleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> Paket vignetteleri 📊<a class="anchor" aria-label="anchor" href="#paket-vignetteleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗 <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/base.html">From base R to dplyr</a></p></li>
@@ -145,13 +146,13 @@
 <li><p>🔗 paketin indirilme istatistikleri <a href="https://ipub.com/dev-corner/apps/r-package-downloads/">link</a></p></li>
 </ul>
 </div>
-<div id="uluslararası-eğitim-araştırmaları" class="section level2" number="8.3">
+<div id="uluslararası-eğitim-araştırmaları" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">8.3</span> Uluslararası Eğitim Araştırmaları<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> Uluslararası Eğitim Araştırmaları<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="pisa" class="section level3" number="8.3.1">
+<div id="pisa" class="section level3" number="9.3.1">
 <h3>
-<span class="header-section-number">8.3.1</span> PISA<a class="anchor" aria-label="anchor" href="#pisa"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.1</span> PISA<a class="anchor" aria-label="anchor" href="#pisa"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Program for International Student Assessment-PISA (Uluslararası Öğrenci Değerlendirme Programı)</p></li>
@@ -160,9 +161,9 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li><p>Ekonomik İşbirliği ve Kalkınma Örgütü (OECD) tarafından düzenlenir.</p></li>
 </ul>
 </div>
-<div id="timss" class="section level3" number="8.3.2">
+<div id="timss" class="section level3" number="9.3.2">
 <h3>
-<span class="header-section-number">8.3.2</span> TIMSS<a class="anchor" aria-label="anchor" href="#timss"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3.2</span> TIMSS<a class="anchor" aria-label="anchor" href="#timss"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Trends in International Mathematics and Science Study (Uluslararası Matematik ve Fen Eğilimleri Araştırması)</p></li>
@@ -171,9 +172,9 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 </ul>
 </div>
 </div>
-<div id="veri-setleri-1" class="section level2" number="8.4">
+<div id="veri-setleri-1" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">8.4</span> Veri Setleri<a class="anchor" aria-label="anchor" href="#veri-setleri-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> Veri Setleri<a class="anchor" aria-label="anchor" href="#veri-setleri-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗 <a href="https://www.oecd.org/pisa/data/">PISA database</a> <br></p></li>
@@ -182,13 +183,13 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li><p>🔗 <a href="https://timssandpirls.bc.edu/timss2011/international-database.html">TIMSS 2015 database</a></p></li>
 </ul>
 </div>
-<div id="uluslararası-sınavlarla-ilgili-r-paketleri" class="section level2" number="8.5">
+<div id="uluslararası-sınavlarla-ilgili-r-paketleri" class="section level2" number="9.5">
 <h2>
-<span class="header-section-number">8.5</span> Uluslararası Sınavlarla İlgili R paketleri<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5</span> Uluslararası Sınavlarla İlgili R paketleri<a class="anchor" aria-label="anchor" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri"><i class="fas fa-link"></i></a>
 </h2>
-<div id="instvy-paketi-international-assessment-data-manager" class="section level3" number="8.5.1">
+<div id="instvy-paketi-international-assessment-data-manager" class="section level3" number="9.5.1">
 <h3>
-<span class="header-section-number">8.5.1</span> <strong>instvy</strong> paketi: International Assessment Data Manager<a class="anchor" aria-label="anchor" href="#instvy-paketi-international-assessment-data-manager"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.1</span> <strong>instvy</strong> paketi: International Assessment Data Manager<a class="anchor" aria-label="anchor" href="#instvy-paketi-international-assessment-data-manager"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p><strong>intsvy</strong> paketi (Caro ve Biecek, 2017) TIMSS, PIRLS, PISA ve ICILS gibi uluslararası değerlendirme çalışmalarının verilerini aktarma, birleştirme ve analiz etme amacıyla geliştirilmiştir.</p></li>
@@ -196,35 +197,35 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li><p>İlgili fonksiyon bir SPSS dosyası okuduğu için <strong>.sav</strong> uzantılı dosyaların okunmasında kullanılan <strong>foreign</strong> paketi sistemde yüklü olmalıdır.</p></li>
 <li><p>Türkiye öğrenci anketi veri dosyasında yer alan sekiz ve Türkiye okul anketi veri dosyasında yer alan üç değişken seçilerek ve “pisa2015” nesnesi oluşturmuştur.</p></li>
 </ul>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="veri-duzenleme---i.html#cb304-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"intsvy"</span>)</span>
-<span id="cb304-2"><a href="veri-duzenleme---i.html#cb304-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"foreign"</span>)</span>
-<span id="cb304-3"><a href="veri-duzenleme---i.html#cb304-3" tabindex="-1"></a>pisa2015 <span class="ot">&lt;-</span> <span class="fu">pisa.select.merge</span>(<span class="at">folder=</span><span class="st">"F:</span><span class="sc">\\</span><span class="st">PISA"</span>, <span class="co"># folder=getwd()</span></span>
-<span id="cb304-4"><a href="veri-duzenleme---i.html#cb304-4" tabindex="-1"></a><span class="at">student.file=</span><span class="st">"CY6_MS_CMB_STU_QQQ.sav"</span>,</span>
-<span id="cb304-5"><a href="veri-duzenleme---i.html#cb304-5" tabindex="-1"></a><span class="at">school.file=</span><span class="st">"CY6_MS_CMB_SCH_QQQ.sav"</span>,</span>
-<span id="cb304-6"><a href="veri-duzenleme---i.html#cb304-6" tabindex="-1"></a><span class="at">student=</span><span class="fu">c</span>(<span class="st">"ST001D01T"</span>,<span class="st">"ST004D01T"</span>,<span class="st">"STRATUM"</span>,<span class="st">"MISCED"</span>,<span class="st">"FISCED"</span>,<span class="st">"IMMIG"</span>,<span class="st">"LANGN"</span>,<span class="st">"ESCS"</span>,)</span>
-<span id="cb304-7"><a href="veri-duzenleme---i.html#cb304-7" tabindex="-1"></a><span class="at">school=</span><span class="fu">c</span>(<span class="st">"SCHSIZE"</span>,<span class="st">"CLSIZE"</span>,<span class="st">"STRATIO"</span>),</span>
-<span id="cb304-8"><a href="veri-duzenleme---i.html#cb304-8" tabindex="-1"></a>  <span class="at">countries=</span><span class="fu">c</span>(<span class="st">"TUR"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="veri-duzenleme---i.html#cb336-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"intsvy"</span>)</span>
+<span id="cb336-2"><a href="veri-duzenleme---i.html#cb336-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"foreign"</span>)</span>
+<span id="cb336-3"><a href="veri-duzenleme---i.html#cb336-3" tabindex="-1"></a>pisa2015 <span class="ot">&lt;-</span> <span class="fu">pisa.select.merge</span>(<span class="at">folder=</span><span class="st">"F:</span><span class="sc">\\</span><span class="st">PISA"</span>, <span class="co"># folder=getwd()</span></span>
+<span id="cb336-4"><a href="veri-duzenleme---i.html#cb336-4" tabindex="-1"></a><span class="at">student.file=</span><span class="st">"CY6_MS_CMB_STU_QQQ.sav"</span>,</span>
+<span id="cb336-5"><a href="veri-duzenleme---i.html#cb336-5" tabindex="-1"></a><span class="at">school.file=</span><span class="st">"CY6_MS_CMB_SCH_QQQ.sav"</span>,</span>
+<span id="cb336-6"><a href="veri-duzenleme---i.html#cb336-6" tabindex="-1"></a><span class="at">student=</span><span class="fu">c</span>(<span class="st">"ST001D01T"</span>,<span class="st">"ST004D01T"</span>,<span class="st">"STRATUM"</span>,<span class="st">"MISCED"</span>,<span class="st">"FISCED"</span>,<span class="st">"IMMIG"</span>,<span class="st">"LANGN"</span>,<span class="st">"ESCS"</span>,)</span>
+<span id="cb336-7"><a href="veri-duzenleme---i.html#cb336-7" tabindex="-1"></a><span class="at">school=</span><span class="fu">c</span>(<span class="st">"SCHSIZE"</span>,<span class="st">"CLSIZE"</span>,<span class="st">"STRATIO"</span>),</span>
+<span id="cb336-8"><a href="veri-duzenleme---i.html#cb336-8" tabindex="-1"></a>  <span class="at">countries=</span><span class="fu">c</span>(<span class="st">"TUR"</span>))</span></code></pre></div>
 <p>Komutların çalısması uzun zaman alabilir. Büyük dosyaların okunması sırasında, dosya büyüklüğüne ve bilgisayar özelliklerine bağlı olarak, mevcut <strong>bellek (memory)</strong> hata mesajı alınabilir.</p>
 </div>
-<div id="edsurvey-paketi" class="section level3" number="8.5.2">
+<div id="edsurvey-paketi" class="section level3" number="9.5.2">
 <h3>
-<span class="header-section-number">8.5.2</span> <strong>EdSurvey</strong> paketi<a class="anchor" aria-label="anchor" href="#edsurvey-paketi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.2</span> <strong>EdSurvey</strong> paketi<a class="anchor" aria-label="anchor" href="#edsurvey-paketi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>PISA, TALIS, PIAAC, TIMSS, PIRLS, ICILS gibi sınavların veri setlerini indirmede, karmaşık veri setlerini <strong>olası puanları</strong> dikkate alarak analiz etmede kullanılan bir pakettir.</li>
 </ul>
-<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.air.org/project/nces-data-r-project-edsurvey">EdSurvey</a></span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Örnek olarak aşağıda yer alan kod 2012 yılı PISA veri setini, bilgisayarınızda istediğiniz yere indirecektir.</li>
 </ul>
-<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">downloadPISA</span><span class="op">(</span>years <span class="op">=</span> <span class="fl">2012</span>, database <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"INT"</span><span class="op">)</span>, root<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa <strong>zaman alan</strong> bir işlemdir.</p></li>
 <li><p>Aşağıdaki kod sgp olarak kodlu olan Singapur ülkesine ilişkin verileri çeker.</p></li>
 </ul>
-<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sgp2012</span> <span class="op">&lt;-</span> <span class="fu">readPISA</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"sunum/PISA/2012"</span>, database <span class="op">=</span> <span class="st">"INT"</span>, countries <span class="op">=</span> <span class="st">"sgp"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa zaman alan bir işlemdir.</p></li>
@@ -232,28 +233,28 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li><p>Oluşan dosya tekrar R ortamına <strong>readRDS()</strong> ya da <strong>load()</strong> fonksiyonu ile aktarılabilir.</p></li>
 <li><p>Oluşan sgp2012 verisinden istediğiniz sütunları <strong>getData()</strong> fonksiyonu ile seçebilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># okuma ve agirlandirma degiskenlerini gg nesnesine atama</span></span>
 <span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu">EdSurvey</span><span class="fu">::</span><span class="fu">getData</span><span class="op">(</span><span class="va">sgp2012</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cnt"</span>,<span class="st">"read"</span>,<span class="st">"w_fstuwt"</span><span class="op">)</span><span class="op">)</span>  </span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gg</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">edsurveyTable</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">st04q01</span> <span class="op">+</span> <span class="va">st20q01</span>, data <span class="op">=</span> <span class="va">sgp2012</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="ralsa" class="section level3" number="8.5.3">
+<div id="ralsa" class="section level3" number="9.5.3">
 <h3>
-<span class="header-section-number">8.5.3</span> RALSA<a class="anchor" aria-label="anchor" href="#ralsa"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.3</span> RALSA<a class="anchor" aria-label="anchor" href="#ralsa"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>🔗 <a href="http://ralsa.ineri.org/user-guide/">RALSA</a></p></li>
 <li><p>The R Analyzer for Large-Scale Assessments (RALSA)</p></li>
 </ul>
-<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ralsa.ineri.org/">RALSA</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div id="olası-değer" class="section level2" number="8.6">
+<div id="olası-değer" class="section level2" number="9.6">
 <h2>
-<span class="header-section-number">8.6</span> Olası Değer<a class="anchor" aria-label="anchor" href="#olas%C4%B1-de%C4%9Fer"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6</span> Olası Değer<a class="anchor" aria-label="anchor" href="#olas%C4%B1-de%C4%9Fer"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>450 kişilik bir grupta 150 kadın 300 erkek olduğu bir evrenden 60 kişinin oluşturduğu bir örneklemin rastgele seçildiğini düşünelim.</p></li>
@@ -263,7 +264,7 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li><p>Erkeklerin örnekleme seçilme olasılığı = 30/300=0.1</p></li>
 <li><p>örnekleme ilişkin ölçümler</p></li>
 </ul>
-<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
 <span><span class="va">kadin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">50</span><span class="op">:</span><span class="fl">90</span>,<span class="fl">30</span><span class="op">)</span></span>
 <span><span class="va">erkek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">70</span>,<span class="fl">30</span><span class="op">)</span></span>
@@ -271,32 +272,32 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <span><span class="va">kadin</span></span></code></pre></div>
 <pre><code>##  [1] 89 84 54 81 57 78 55 71 80 62 87 67 70 83 82 61 66 53 50 69 79 64 85 51 73
 ## [26] 74 88 52 72 90</code></pre>
-<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">erkek</span></span></code></pre></div>
 <pre><code>##  [1] 45 56 57 39 37 42 47 50 68 49 62 63 58 69 31 59 52 64 65 66 55 48 30 33 46
 ## [26] 53 51 67 40 41</code></pre>
-<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 70.9</code></pre>
-<div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb349"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 51.43333</code></pre>
 <ul>
 <li>örneklem ağırlıklandırılması <strong>kullanılmadan</strong> ortalama</li>
 </ul>
-<div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">60</span></span></code></pre></div>
 <pre><code>## [1] 61.16667</code></pre>
 <ul>
 <li>örneklem ağırlıklandırılması <strong>kullanılarak</strong> ortalama</li>
 </ul>
-<div class="sourceCode" id="cb321"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">kadin</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">0.2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">erkek</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">0.1</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">450</span></span></code></pre></div>
 <pre><code>## [1] 57.92222</code></pre>
 </div>
-<div id="türkiye-veri-setleri" class="section level2" number="8.7">
+<div id="türkiye-veri-setleri" class="section level2" number="9.7">
 <h2>
-<span class="header-section-number">8.7</span> Türkiye Veri Setleri<a class="anchor" aria-label="anchor" href="#t%C3%BCrkiye-veri-setleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.7</span> Türkiye Veri Setleri<a class="anchor" aria-label="anchor" href="#t%C3%BCrkiye-veri-setleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Türkiye Uluslararası Eğitim Verisi <strong>(tuev)</strong> geniş kapsamlı uluslararası başarı değerlendirme programlarından <strong>PISA</strong> ve <strong>TIMSS</strong> Türkiye verilerini depolayan bir R kütüphanesidir.</p></li>
@@ -313,15 +314,15 @@ veri setleri kullanılacaktır.</li>
 </li>
 </ul>
 </div>
-<div id="tuev-paketin-yüklenmesi" class="section level2" number="8.8">
+<div id="tuev-paketin-yüklenmesi" class="section level2" number="9.8">
 <h2>
-<span class="header-section-number">8.8</span> <strong>tuev</strong> paketin yüklenmesi<a class="anchor" aria-label="anchor" href="#tuev-paketin-y%C3%BCklenmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.8</span> <strong>tuev</strong> paketin yüklenmesi<a class="anchor" aria-label="anchor" href="#tuev-paketin-y%C3%BCklenmesi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>githubdan paket yükleyebilmek için yüklenmesi gereken paket 📦 <br>
 </li>
 </ul>
-<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span><span class="co"># devtools paketinin etkinleştirilmesi</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></span></code></pre></div>
@@ -329,7 +330,7 @@ veri setleri kullanılacaktır.</li>
 <li>tuev paketinin yüklenmesi 📦 <br>
 </li>
 </ul>
-<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"tuevpaket/tuev"</span><span class="op">)</span></span>
 <span><span class="co">#paketin etkinleştirilmesi</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tuevpaket/tuev">tuev</a></span><span class="op">)</span></span></code></pre></div>
@@ -337,29 +338,29 @@ veri setleri kullanılacaktır.</li>
 <li>
 </ul>
 </div>
-<div id="pisa-2018-verisi" class="section level2" number="8.9">
+<div id="pisa-2018-verisi" class="section level2" number="9.9">
 <h2>
-<span class="header-section-number">8.9</span> PISA 2018 Verisi<a class="anchor" aria-label="anchor" href="#pisa-2018-verisi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.9</span> PISA 2018 Verisi<a class="anchor" aria-label="anchor" href="#pisa-2018-verisi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>bilissel veri seti</li>
 </ul>
-<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_COG_2018.rda"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>ogrenci veri seti</li>
 </ul>
-<div class="sourceCode" id="cb326"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb358"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_STU_2018.rda"</span><span class="op">)</span> <span class="co"># ogrenci verisi</span></span></code></pre></div>
 <ul>
 <li>okul veri seti</li>
 </ul>
-<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/PISA_SCH_2018.rda"</span><span class="op">)</span> <span class="co"># okul verisi</span></span></code></pre></div>
 </div>
-<div id="pipe" class="section level2" number="8.10">
+<div id="pipe" class="section level2" number="9.10">
 <h2>
-<span class="header-section-number">8.10</span> pipe <strong>%&gt;%</strong><a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.10</span> pipe <strong>%&gt;%</strong><a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>dplyr()</strong> paketindeki tüm fonksiyonlar daha az değişken oluşturmak amacıyla pipe operatorü <strong>%&gt;%</strong> ile kullanılabilir.</p></li>
@@ -368,20 +369,20 @@ veri setleri kullanılacaktır.</li>
 <li><p>kısa yolu(mac) :<strong>Cmd + Shift + M</strong></p></li>
 <li><p><strong>%&gt;%</strong> operatorün yer aldığı paket ise <strong>magrittr</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb360"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>%&gt;%</strong> solundaki nesneye sağındaki fonksiyonu uygular.</li>
 </ul>
-<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">f</span><span class="op">(</span><span class="va">y</span><span class="op">)</span> <span class="op">=</span> <span class="fu">f</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>%&gt;%</strong> 👉<br>
 </li>
 </ul>
-<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
 <span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Canada"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -423,7 +424,7 @@ veri setleri kullanılacaktır.</li>
 <li><p>Veri düzenleme işlerinde her zaman kullanışlıdır.</p></li>
 <li><p>pipe, her bir fonksiyonu ayrı bir satırda bulundurduğunuzda en net şekilde okunur.</p></li>
 </ul>
-<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ilk_fonksiyon</span><span class="op">(</span><span class="va">.....</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">ikinci_fonksiyon</span><span class="op">(</span><span class="va">.....</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -434,49 +435,49 @@ veri setleri kullanılacaktır.</li>
 <li><p>Bazı fonksiyonların, ilk argümanı veri seti olmayabilir. Bu durumda veri seti argüman değeri <strong>.</strong> olarak kullanılabilir.</p></li>
 <li><p>Veri seti regresyon modelinde ilk argüman değildir.</p></li>
 </ul>
-<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">degisken1</span> <span class="op">~</span> <span class="va">degisken2</span>, data<span class="op">=</span> <span class="va">.</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>pipe kullanımı ile oluşan çıktıdan yeni bir nesne oluşturmak istiyorsanız, atama operatorü <strong>&lt;-</strong>
 kullanmalısınız 🔗.</li>
 </ul>
-<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yeninesne</span> <span class="op">&lt;-</span> <span class="va">veri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">degisken1</span> <span class="op">~</span> <span class="va">degisken2</span>, data<span class="op">=</span> <span class="va">.</span><span class="op">)</span></span></code></pre></div>
 <p>Bağlama işlemleri ne kadar uzun olursa olsun <strong>&lt;-</strong> operatorü en başta olmalıdır.</p>
 <ul>
 <li>Veri setlerinde yapı incelemek için <strong>glimpse()</strong>, <strong>str()</strong> gibi fonksiyonlar kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">PISA_COG_2018</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Veri setlerinde yapı incelemek için <strong>glimpse()</strong>, <strong>str()</strong> gibi fonksiyonlar kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">PISA_SCH_2018</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="select" class="section level2" number="8.11">
+<div id="select" class="section level2" number="9.11">
 <h2>
-<span class="header-section-number">8.11</span> <strong>select()</strong><a class="anchor" aria-label="anchor" href="#select"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.11</span> <strong>select()</strong><a class="anchor" aria-label="anchor" href="#select"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Veri setinden sütun bazında seçim yapmak için <strong>select()</strong> fonksiyonu kullanılabilir.</p></li>
 <li><p><strong>select()</strong> fonksiyonu kullanımı</p></li>
 </ul>
-<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">veri_seti</span>, <span class="va">degisken_adi</span>, <span class="va">degisken_adi</span>,<span class="va">..</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>select()</strong> fonksiyonunun pipe ile kullanımı</li>
 </ul>
-<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri_seti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">degisken_adi</span>, <span class="va">degisken_adi</span>,<span class="va">..</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>6890 satır 1119 sütunlu veri seti
 PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 </ul>
-<div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CNTSTUID</span>,<span class="va">ST001D01T</span>,<span class="va">ST004D01T</span>,<span class="va">ESCS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -528,32 +529,32 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 </table></div>
 </div>
 </div>
-<div id="arrange" class="section level2" number="8.12">
+<div id="arrange" class="section level2" number="9.12">
 <h2>
-<span class="header-section-number">8.12</span> <strong>arrange()</strong><a class="anchor" aria-label="anchor" href="#arrange"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.12</span> <strong>arrange()</strong><a class="anchor" aria-label="anchor" href="#arrange"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>arrange()</strong> veri setini satırlara göre tekrar sıralar.</p></li>
 <li><p>Bu sıralamayı alfabetik yapar.</p></li>
 <li><p><strong>arrange()</strong> fonksiyonu kullanımı</p></li>
 </ul>
-<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb372"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">veri_seti</span>, <span class="va">degisken_adi</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>arrange()</strong> fonksiyonunun pipe ile kullanımı</li>
 </ul>
-<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri_seti</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">degisken_adi</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Veri setinden dört değişken seçip yeni bir veri setine atama</li>
 </ul>
-<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb374"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CNTSTUID</span>,<span class="va">ST001D01T</span>,<span class="va">ST004D01T</span>,<span class="va">ESCS</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Yeni oluşan df1 veri setini ESCS (sosyaekonomik düzey) puanlarına göre sıralama</li>
 </ul>
-<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">df1</span>,<span class="va">ESCS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -607,7 +608,7 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 <li>
 <strong>desc()</strong> fonksiyonu ile sıralama büyükten küçüğe de yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb376"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">df1</span>,<span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">ESCS</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -660,7 +661,7 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 <ul>
 <li>Yaptığımız işlemleri pipe operatoru ile bağlayabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb377"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">CNTSTUID</span>,<span class="va">ST001D01T</span>,<span class="va">ST004D01T</span>,<span class="va">ESCS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">ESCS</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -714,29 +715,29 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 </table></div>
 </div>
 </div>
-<div id="filter" class="section level2" number="8.13">
+<div id="filter" class="section level2" number="9.13">
 <h2>
-<span class="header-section-number">8.13</span> <strong>filter()</strong><a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.13</span> <strong>filter()</strong><a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Satır bazında veri seçim işlemi yapmak amacıyla kullanılır.</p></li>
 <li><p><strong>filter()</strong> fonksiyonu kullanımı</p></li>
 </ul>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="veri-duzenleme---i.html#cb346-1" tabindex="-1"></a><span class="fu">filter</span>(veri_seti, kosul ve<span class="sc">/</span>veya kosullar)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="veri-duzenleme---i.html#cb378-1" tabindex="-1"></a><span class="fu">filter</span>(veri_seti, kosul ve<span class="sc">/</span>veya kosullar)</span></code></pre></div>
 <ul>
 <li>
 <strong>filter()</strong> fonksiyonunun pipe ile kullanımı</li>
 </ul>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="veri-duzenleme---i.html#cb347-1" tabindex="-1"></a>veri_seti <span class="sc">%&gt;%</span> <span class="fu">filter</span>(kosul ve<span class="sc">/</span>veya kosullar)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="veri-duzenleme---i.html#cb379-1" tabindex="-1"></a>veri_seti <span class="sc">%&gt;%</span> <span class="fu">filter</span>(kosul ve<span class="sc">/</span>veya kosullar)</span></code></pre></div>
 <ul>
 <li><p><strong>filter()</strong> fonksiyonunu <strong>mantıksal operatorler</strong> kullanarak satır bazında seçim yapar.</p></li>
 <li><p><strong>mantıksal operatorler</strong> koşulları test eder.</p></li>
 </ul>
-<div class="sourceCode" id="cb348"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
 <span><span class="va">x</span><span class="op">==</span><span class="fl">1</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb350"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
 <span><span class="va">x</span><span class="op">!=</span><span class="fl">1</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
@@ -768,8 +769,9 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 </li>
 <li><p>PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi</p></li>
 </ul>
-<div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">PISA_STU_2018</span><span class="op">)</span></span>
+<span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span> <span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
@@ -7505,8 +7507,8 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 <ul>
 <li>PISA verisinde anne eğitim düzeyi <strong>ve</strong> baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span><span class="fl">6</span> <span class="op">&amp;</span> <span class="va">FISCED</span><span class="op">==</span><span class="fl">6</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span><span class="fl">6</span> <span class="op">&amp;</span> <span class="va">FISCED</span><span class="op">==</span><span class="fl">6</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
@@ -14242,8 +14244,8 @@ PISA_STU_2018'yı kullanarak yeni bir veri seti oluşturalım.</li>
 <ul>
 <li>PISA verisinde anne eğitim düzeyi <strong>ve ya</strong> baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">PISA_STU_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span><span class="fl">6</span> <span class="op">|</span> <span class="va">FISCED</span><span class="op">==</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">MISCED</span><span class="op">==</span><span class="fl">6</span> <span class="op">|</span> <span class="va">FISCED</span><span class="op">==</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
@@ -21181,36 +21183,36 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></div>
-<div class="next"><a href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></div>
+<div class="prev"><a href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></div>
+<div class="next"><a href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#veri-duzenleme---i"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="nav-link" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1"><span class="header-section-number">8.1</span> dplyr paket tanıtımı</a></li>
-<li><a class="nav-link" href="#paket-vignetteleri"><span class="header-section-number">8.2</span> Paket vignetteleri 📊</a></li>
+<li><a class="nav-link" href="#veri-duzenleme---i"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="nav-link" href="#dplyr-paket-tan%C4%B1t%C4%B1m%C4%B1"><span class="header-section-number">9.1</span> dplyr paket tanıtımı</a></li>
+<li><a class="nav-link" href="#paket-vignetteleri"><span class="header-section-number">9.2</span> Paket vignetteleri 📊</a></li>
 <li>
-<a class="nav-link" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1"><span class="header-section-number">8.3</span> Uluslararası Eğitim Araştırmaları</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pisa"><span class="header-section-number">8.3.1</span> PISA</a></li>
-<li><a class="nav-link" href="#timss"><span class="header-section-number">8.3.2</span> TIMSS</a></li>
+<a class="nav-link" href="#uluslararas%C4%B1-e%C4%9Fitim-ara%C5%9Ft%C4%B1rmalar%C4%B1"><span class="header-section-number">9.3</span> Uluslararası Eğitim Araştırmaları</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pisa"><span class="header-section-number">9.3.1</span> PISA</a></li>
+<li><a class="nav-link" href="#timss"><span class="header-section-number">9.3.2</span> TIMSS</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#veri-setleri-1"><span class="header-section-number">8.4</span> Veri Setleri</a></li>
+<li><a class="nav-link" href="#veri-setleri-1"><span class="header-section-number">9.4</span> Veri Setleri</a></li>
 <li>
-<a class="nav-link" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri"><span class="header-section-number">8.5</span> Uluslararası Sınavlarla İlgili R paketleri</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#instvy-paketi-international-assessment-data-manager"><span class="header-section-number">8.5.1</span> instvy paketi: International Assessment Data Manager</a></li>
-<li><a class="nav-link" href="#edsurvey-paketi"><span class="header-section-number">8.5.2</span> EdSurvey paketi</a></li>
-<li><a class="nav-link" href="#ralsa"><span class="header-section-number">8.5.3</span> RALSA</a></li>
+<a class="nav-link" href="#uluslararas%C4%B1-s%C4%B1navlarla-ilgili-r-paketleri"><span class="header-section-number">9.5</span> Uluslararası Sınavlarla İlgili R paketleri</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#instvy-paketi-international-assessment-data-manager"><span class="header-section-number">9.5.1</span> instvy paketi: International Assessment Data Manager</a></li>
+<li><a class="nav-link" href="#edsurvey-paketi"><span class="header-section-number">9.5.2</span> EdSurvey paketi</a></li>
+<li><a class="nav-link" href="#ralsa"><span class="header-section-number">9.5.3</span> RALSA</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#olas%C4%B1-de%C4%9Fer"><span class="header-section-number">8.6</span> Olası Değer</a></li>
-<li><a class="nav-link" href="#t%C3%BCrkiye-veri-setleri"><span class="header-section-number">8.7</span> Türkiye Veri Setleri</a></li>
-<li><a class="nav-link" href="#tuev-paketin-y%C3%BCklenmesi"><span class="header-section-number">8.8</span> tuev paketin yüklenmesi</a></li>
-<li><a class="nav-link" href="#pisa-2018-verisi"><span class="header-section-number">8.9</span> PISA 2018 Verisi</a></li>
-<li><a class="nav-link" href="#pipe"><span class="header-section-number">8.10</span> pipe %&gt;%</a></li>
-<li><a class="nav-link" href="#select"><span class="header-section-number">8.11</span> select()</a></li>
-<li><a class="nav-link" href="#arrange"><span class="header-section-number">8.12</span> arrange()</a></li>
-<li><a class="nav-link" href="#filter"><span class="header-section-number">8.13</span> filter()</a></li>
+<li><a class="nav-link" href="#olas%C4%B1-de%C4%9Fer"><span class="header-section-number">9.6</span> Olası Değer</a></li>
+<li><a class="nav-link" href="#t%C3%BCrkiye-veri-setleri"><span class="header-section-number">9.7</span> Türkiye Veri Setleri</a></li>
+<li><a class="nav-link" href="#tuev-paketin-y%C3%BCklenmesi"><span class="header-section-number">9.8</span> tuev paketin yüklenmesi</a></li>
+<li><a class="nav-link" href="#pisa-2018-verisi"><span class="header-section-number">9.9</span> PISA 2018 Verisi</a></li>
+<li><a class="nav-link" href="#pipe"><span class="header-section-number">9.10</span> pipe %&gt;%</a></li>
+<li><a class="nav-link" href="#select"><span class="header-section-number">9.11</span> select()</a></li>
+<li><a class="nav-link" href="#arrange"><span class="header-section-number">9.12</span> arrange()</a></li>
+<li><a class="nav-link" href="#filter"><span class="header-section-number">9.13</span> filter()</a></li>
 </ul>
 
       <div class="book-extra">
@@ -21228,7 +21230,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

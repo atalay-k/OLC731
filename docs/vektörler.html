@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Vektörler | OLC731</title>
+<title>Chapter 4 Vektörler | OLC731</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="R lineer cebir temelli bir programlama dilidir. Vektörler tek boyutludur. R'da vektörler birleştirmek (combine/concatenate) anlamına gelen c() fonksiyonu ile oluşturulmaktadır. R da veriler bir...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Vektörler | OLC731">
+<meta name="generator" content="bookdown 0.35 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Vektörler | OLC731">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC731/vektörler.html">
 <meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <meta property="og:description" content="R lineer cebir temelli bir programlama dilidir. Vektörler tek boyutludur. R'da vektörler birleştirmek (combine/concatenate) anlamına gelen c() fonksiyonu ile oluşturulmaktadır. R da veriler bir...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Vektörler | OLC731">
+<meta name="twitter:title" content="Chapter 4 Vektörler | OLC731">
 <meta name="twitter:description" content="R lineer cebir temelli bir programlama dilidir. Vektörler tek boyutludur. R'da vektörler birleştirmek (combine/concatenate) anlamına gelen c() fonksiyonu ile oluşturulmaktadır. R da veriler bir...">
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -76,16 +76,17 @@
 <li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
 <li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
-<li><a class="" href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></li>
-<li><a class="active" href="vekt%C3%B6rler.html"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="" href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></li>
-<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">7</span> Veri Okuma ve Yazma</a></li>
-<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">8</span> Veri duzenleme - I</a></li>
-<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">9</span> Veri duzenleme - II</a></li>
-<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">10</span> Veri duzenleme - III</a></li>
-<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">11</span> Veri duzenleme - IV</a></li>
-<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">12</span> Veri duzenleme - V</a></li>
-<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">13</span> Betimleyici İstatistik</a></li>
+<li><a class="active" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="" href="veri-duzenleme---v.html"><span class="header-section-number">13</span> Veri duzenleme - V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -100,9 +101,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="vektörler" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="vektörler" class="section level1" number="4">
 <h1>
-<span class="header-section-number">5</span> Vektörler<a class="anchor" aria-label="anchor" href="#vekt%C3%B6rler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> Vektörler<a class="anchor" aria-label="anchor" href="#vekt%C3%B6rler"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p>R lineer cebir temelli bir programlama dilidir.</p></li>
@@ -119,34 +120,34 @@
 </ul>
 </li>
 </ul>
-<div id="vektör-oluşturma" class="section level2" number="5.1">
+<div id="vektör-oluşturma" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">5.1</span> Vektör Oluşturma<a class="anchor" aria-label="anchor" href="#vekt%C3%B6r-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Vektör Oluşturma<a class="anchor" aria-label="anchor" href="#vekt%C3%B6r-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">sayisal_vektor</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">karakter_vektor</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span><span class="op">)</span><span class="op">)</span>  <span class="co">## cift tirnak</span></span></code></pre></div>
 <pre><code>## [1] "a" "b" "c"</code></pre>
-<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">mantiksal_vektor</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE FALSE</code></pre>
 </div>
-<div id="vektör-işlemleri" class="section level2" number="5.2">
+<div id="vektör-işlemleri" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">5.2</span> Vektör İşlemleri<a class="anchor" aria-label="anchor" href="#vekt%C3%B6r-i%C5%9Flemleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Vektör İşlemleri<a class="anchor" aria-label="anchor" href="#vekt%C3%B6r-i%C5%9Flemleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Vektör uzunluğu <code><a href="https://rdrr.io/r/base/length.html">length()</a></code> fonksiyonu ile vektör türleri ise <code><a href="https://rdrr.io/r/base/class.html">class()</a></code>, <code><a href="https://rdrr.io/r/base/mode.html">mode()</a></code> ya da <code><a href="https://rdrr.io/r/base/typeof.html">typeof()</a></code> fonksiyonları ise tur belirlemek için kullanılmaktadır.</p></li>
 <li><p>Vektörler bir veya daha fazla elemandan oluşabilmektedir.</p></li>
 </ul>
-<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span>  <span class="co"># tek elemandan oluşur.</span></span>
 <span><span class="co"># Vektör uzunluğunu öğrenmek icin length() fonksiyonu</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span></code></pre></div>
 <ul>
 <li><p>bir vektöründeki verilerin toplanması <code>sum(x)</code> 55</p></li>
@@ -160,7 +161,7 @@
 <li><p>En küçük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi <code>which.min(x)</code> 1</p></li>
 <li><p>Vektörlerden eleman sırası, isim ve mantıksal operatörler olmak üzere üç farklı yolla eleman seçilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,</span>
 <span><span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span></code></pre></div>
 <ul>
@@ -174,44 +175,44 @@
 <li><p>Vektörün son üç elemanını yazdıracak kodu oluşturunuz <code>r</code>fitb("ad[8:10]")`</p></li>
 </ul>
 </div>
-<div id="vektöre-eleman-eklenmesi" class="section level2" number="5.3">
+<div id="vektöre-eleman-eklenmesi" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">5.3</span> Vektöre eleman eklenmesi<a class="anchor" aria-label="anchor" href="#vekt%C3%B6re-eleman-eklenmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Vektöre eleman eklenmesi<a class="anchor" aria-label="anchor" href="#vekt%C3%B6re-eleman-eklenmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span><span class="op">[</span><span class="fl">11</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Asu"</span>; <span class="va">ad</span></span></code></pre></div>
 <pre><code>##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
 ## [10] "Arda"  "Asu"</code></pre>
 <ul>
 <li>vektöre birden fazla eleman eklenmesi</li>
 </ul>
-<div class="sourceCode" id="cb184"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span><span class="op">[</span><span class="fl">12</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ahu"</span>,<span class="st">"Han"</span><span class="op">)</span>; <span class="va">ad</span></span></code></pre></div>
 <pre><code>##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
 ## [10] "Arda"  "Asu"   "Ahu"   "Han"</code></pre>
 <ul>
 <li>Vektörün ortasına eleman eklenmesi <strong>append()</strong> fonksiyonu ile yapılabilir. Fonksiyon yardım sayfasını inceleyiniz.</li>
 </ul>
-<div class="sourceCode" id="cb186"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">ad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/append.html">append</a></span><span class="op">(</span><span class="va">ad</span>, <span class="st">"Taha"</span>, after <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Aras"  "Berk"  "Can"   "Ece"  
 ## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"</code></pre>
 <ul>
 <li>ya da <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> fonksiyonu ile yapılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb188"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ad</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>,<span class="st">"Selim"</span>,<span class="va">ad</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">ad</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>; <span class="va">ad</span></span></code></pre></div>
 <pre><code>##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Selim" "Berk"  "Can"   "Ece"  
 ## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"</code></pre>
 </div>
-<div id="alıştırma-1" class="section level2" number="5.4">
+<div id="alıştırma-1" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">5.4</span> Alıştırma<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> Alıştırma<a class="anchor" aria-label="anchor" href="#al%C4%B1%C5%9Ft%C4%B1rma-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>10 kişiden oluşan bir gruptaki kişilerinin boy ve kilo ölçümleri için ise aşağıdaki vektör oluşturulmuştur.</li>
 </ul>
-<div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,</span>
 <span><span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
@@ -219,7 +220,7 @@
 <ul>
 <li>Eğer elimizdeki vektör isimlendirilmiş bir vektör ise eleman seçimini isimle de yapabiliriz.</li>
 </ul>
-<div class="sourceCode" id="cb191"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#isimsiz boy vektoru</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span> <span class="co"># names() fonksiyonu ile isimlendirme yapılabilir.</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -228,28 +229,28 @@
 <li><p>Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? <code>r</code>fitb("boy["Arda"]")`</p></li>
 </ul>
 </div>
-<div id="örüntülerle-vektör-oluşturma" class="section level2" number="5.5">
+<div id="örüntülerle-vektör-oluşturma" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">5.5</span> Örüntülerle Vektör Oluşturma<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BClerle-vekt%C3%B6r-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Örüntülerle Vektör Oluşturma<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BClerle-vekt%C3%B6r-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Vektör oluşturmanın farklı yolları bulunmaktadır.</p></li>
 <li><p>En basit yolu iki nokta <code>":"</code> operatörünü kullanmaktır.</p></li>
 </ul>
-<div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rakamlar</span> <span class="op">&lt;-</span> <span class="fl">0</span><span class="op">:</span><span class="fl">9</span></span>
 <span><span class="va">rakamlar</span></span></code></pre></div>
 <pre><code>##  [1] 0 1 2 3 4 5 6 7 8 9</code></pre>
 <ul>
 <li>büyükten küçüğe rakamlardan vektör oluşturulması</li>
 </ul>
-<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rakamlar</span> <span class="op">&lt;-</span> <span class="fl">9</span><span class="op">:</span><span class="fl">0</span></span>
 <span><span class="va">rakamlar</span></span></code></pre></div>
 <pre><code>##  [1] 9 8 7 6 5 4 3 2 1 0</code></pre>
-<div id="seq" class="section level3" number="5.5.1">
+<div id="seq" class="section level3" number="4.5.1">
 <h3>
-<span class="header-section-number">5.5.1</span> seq()<a class="anchor" aria-label="anchor" href="#seq"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1</span> seq()<a class="anchor" aria-label="anchor" href="#seq"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Belirli bir kurala göre sayı dizileri oluşturmak için ise <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code>, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> ve <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonlarından yararlanılabilir. İlk olarak bu fonksiyonların yardım sayfalarını inceleyelim.</p></li>
@@ -270,16 +271,16 @@
 </ul>
 <pre><code>## [1] 1.0 1.5 2.0 2.5 3.0</code></pre>
 </div>
-<div id="rep" class="section level3" number="5.5.2">
+<div id="rep" class="section level3" number="4.5.2">
 <h3>
-<span class="header-section-number">5.5.2</span> rep()<a class="anchor" aria-label="anchor" href="#rep"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2</span> rep()<a class="anchor" aria-label="anchor" href="#rep"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> fonksiyonu için örnekler</p>
-<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># üç elemanlı bir vektörün üç kere tekrar ettirilmesi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 3 4 5 3 4 5 3 4 5</code></pre>
-<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># rakamların üç kere tekrar ettirilmesi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">9</span>, times <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </span></code></pre></div>
 <pre><code>##  [1] 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9</code></pre>
@@ -306,18 +307,18 @@
 </ul>
 <pre><code>## [1] 1 2 2 3 3 3</code></pre>
 </div>
-<div id="paste" class="section level3" number="5.5.3">
+<div id="paste" class="section level3" number="4.5.3">
 <h3>
-<span class="header-section-number">5.5.3</span> paste()<a class="anchor" aria-label="anchor" href="#paste"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.3</span> paste()<a class="anchor" aria-label="anchor" href="#paste"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
 <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code>fonksiyonu çıktısı her zaman için karakterdir.</li>
 </ul>
-<div class="sourceCode" id="cb208"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="co"># çıktısı karakterdir</span></span></code></pre></div>
 <pre><code>## [1] "1" "2" "3" "4"</code></pre>
-<div class="sourceCode" id="cb210"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] "character"</code></pre>
 <ul>
@@ -339,34 +340,34 @@
 <pre><code>## [1] "test A" "test B" "test C" "test D" "test 1" "test 2" "test 3" "test 4"</code></pre>
 </div>
 </div>
-<div id="rasgele-veri-oluşturma" class="section level2" number="5.6">
+<div id="rasgele-veri-oluşturma" class="section level2" number="4.6">
 <h2>
-<span class="header-section-number">5.6</span> Rasgele Veri Oluşturma<a class="anchor" aria-label="anchor" href="#rasgele-veri-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6</span> Rasgele Veri Oluşturma<a class="anchor" aria-label="anchor" href="#rasgele-veri-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Farklı fonksiyonlarla rastgele veri üretilebilir. Örneğin 0-100 arasında 20 farklı değer elde edilmek istenilsin. Bunu yapmak için <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>,<code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> ya da <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> fonksiyonlarından yararlanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 41 36 15 32  3</code></pre>
-<div class="sourceCode" id="cb217"><pre class="downlit sourceCode r">
+<pre><code>## [1]  35  76  70  40 100</code></pre>
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10</span>,  <span class="fl">0</span>, <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  [1] 3.4163254 3.7071070 1.7303669 1.6604065 4.1729497 0.4808435 3.1099590
-##  [8] 3.7564198 1.9075630 2.6916190</code></pre>
-<div class="sourceCode" id="cb219"><pre class="downlit sourceCode r">
+<pre><code>##  [1] 4.750377 0.132758 4.424394 1.877847 3.992286 1.659567 2.432146 1.833095
+##  [9] 4.585427 1.584431</code></pre>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">50</span>,<span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  [1] 48.05098 46.39229 52.53704 52.27989 49.81344 48.98356 51.18120 51.77852
-##  [9] 52.81062 57.92124</code></pre>
+<pre><code>##  [1] 58.61512 45.74637 56.51182 52.52097 56.48265 52.40754 55.78174 50.51598
+##  [9] 53.24886 54.71823</code></pre>
 <ul>
 <li>Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.</li>
 </ul>
 </div>
-<div id="işlemler-1" class="section level2" number="5.7">
+<div id="işlemler" class="section level2" number="4.7">
 <h2>
-<span class="header-section-number">5.7</span> İşlemler<a class="anchor" aria-label="anchor" href="#i%C5%9Flemler-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> İşlemler<a class="anchor" aria-label="anchor" href="#i%C5%9Flemler"><i class="fas fa-link"></i></a>
 </h2>
 <p>BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)? <input class="webex-solveme nospaces" size="5" data-answer='["20.44"]'></p>
-<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
 <span><span class="va">kilo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">55</span>,<span class="fl">57</span>,<span class="fl">50</span>,<span class="fl">48</span>,<span class="fl">65</span>,<span class="fl">58</span>,<span class="fl">62</span>,<span class="fl">45</span>,<span class="fl">47</span><span class="op">)</span></span></code></pre></div>
@@ -374,7 +375,7 @@
 <button>
 Çözüm!,bakmadan yapmalısın!
 </button>
-<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># BKI  hesaplanması</span></span>
 <span><span class="va">boy_m</span>  <span class="op">&lt;-</span> <span class="va">boy</span><span class="op">/</span><span class="fl">100</span></span>
 <span><span class="va">BKI</span> <span class="op">&lt;-</span> <span class="va">kilo</span><span class="op">/</span><span class="op">(</span> <span class="va">boy_m</span> <span class="op">*</span> <span class="va">boy_m</span><span class="op">)</span></span>
@@ -384,9 +385,9 @@
 ##  [9] 17.57812 17.47472
 ## [1] 20.44</code></pre>
 </div>
-<div id="kendinizi-test-edin" class="section level3" number="5.7.1">
+<div id="kendinizi-test-edin" class="section level3" number="4.7.1">
 <h3>
-<span class="header-section-number">5.7.1</span> Kendinizi Test Edin<a class="anchor" aria-label="anchor" href="#kendinizi-test-edin"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.1</span> Kendinizi Test Edin<a class="anchor" aria-label="anchor" href="#kendinizi-test-edin"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>S1.</strong> Aşağıdaki tabloda yer alan üç sütun için birer vektör oluşturunuz. Öğrencilerin geçme notu her iki sınavın ortalaması olarak hesaplanacaktır. Bu öğrencilerin geçme notlarını hesaplayınız. Geçme notlarının betimsel istatistiklerini hesaplayınız.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -431,16 +432,16 @@
 <li>birden n'e kadar olan sayların toplamı: (n*(n+1))/2</li>
 </ul>
 <p><strong>S3.</strong> 1'den n' e kadar olan sayıların toplamını hesaplayan fonksiyonu argümansız olarak aşağıdaki şekilde yazmayı deneyiniz. Fonksiyonu çalıştırdığınızda ekranda/konsolda kaça kadar olan sayların toplamı hesaplansın: yazsın, kullanıcının girdiği değere göre aşağıda çıktısı çıksın.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="vekt%C3%B6rler.html#cb224-1" tabindex="-1"></a><span class="fu">toplam</span>()</span>
-<span id="cb224-2"><a href="vekt%C3%B6rler.html#cb224-2" tabindex="-1"></a></span>
-<span id="cb224-3"><a href="vekt%C3%B6rler.html#cb224-3" tabindex="-1"></a>kaça kadar olan sayların toplamı hesaplansın<span class="sc">:</span> <span class="dv">10</span></span>
-<span id="cb224-4"><a href="vekt%C3%B6rler.html#cb224-4" tabindex="-1"></a></span>
-<span id="cb224-5"><a href="vekt%C3%B6rler.html#cb224-5" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">" 10 'e kadar olan sayların toplamı: 55</span></span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="vekt%C3%B6rler.html#cb117-1" tabindex="-1"></a><span class="fu">toplam</span>()</span>
+<span id="cb117-2"><a href="vekt%C3%B6rler.html#cb117-2" tabindex="-1"></a></span>
+<span id="cb117-3"><a href="vekt%C3%B6rler.html#cb117-3" tabindex="-1"></a>kaça kadar olan sayların toplamı hesaplansın<span class="sc">:</span> <span class="dv">10</span></span>
+<span id="cb117-4"><a href="vekt%C3%B6rler.html#cb117-4" tabindex="-1"></a></span>
+<span id="cb117-5"><a href="vekt%C3%B6rler.html#cb117-5" tabindex="-1"></a>[<span class="dv">1</span> <span class="st">" 10 'e kadar olan sayların toplamı: 55</span></span></code></pre></div>
 </div>
 </div>
-<div id="odev" class="section level2" number="5.8">
+<div id="odev" class="section level2" number="4.8">
 <h2>
-<span class="header-section-number">5.8</span> <strong>ODEV</strong><a class="anchor" aria-label="anchor" href="#odev"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8</span> <strong>ODEV</strong><a class="anchor" aria-label="anchor" href="#odev"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Kitap Bölüm 2 1. Soruyu tamamlayınız.</p></li>
@@ -651,34 +652,34 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="r-nesneler.html"><span class="header-section-number">4</span> R Nesneler</a></div>
-<div class="next"><a href="veri-setleri.html"><span class="header-section-number">6</span> Veri Setleri</a></div>
+<div class="prev"><a href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></div>
+<div class="next"><a href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#vekt%C3%B6rler"><span class="header-section-number">5</span> Vektörler</a></li>
-<li><a class="nav-link" href="#vekt%C3%B6r-olu%C5%9Fturma"><span class="header-section-number">5.1</span> Vektör Oluşturma</a></li>
-<li><a class="nav-link" href="#vekt%C3%B6r-i%C5%9Flemleri"><span class="header-section-number">5.2</span> Vektör İşlemleri</a></li>
-<li><a class="nav-link" href="#vekt%C3%B6re-eleman-eklenmesi"><span class="header-section-number">5.3</span> Vektöre eleman eklenmesi</a></li>
-<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma-1"><span class="header-section-number">5.4</span> Alıştırma</a></li>
+<li><a class="nav-link" href="#vekt%C3%B6rler"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="nav-link" href="#vekt%C3%B6r-olu%C5%9Fturma"><span class="header-section-number">4.1</span> Vektör Oluşturma</a></li>
+<li><a class="nav-link" href="#vekt%C3%B6r-i%C5%9Flemleri"><span class="header-section-number">4.2</span> Vektör İşlemleri</a></li>
+<li><a class="nav-link" href="#vekt%C3%B6re-eleman-eklenmesi"><span class="header-section-number">4.3</span> Vektöre eleman eklenmesi</a></li>
+<li><a class="nav-link" href="#al%C4%B1%C5%9Ft%C4%B1rma-1"><span class="header-section-number">4.4</span> Alıştırma</a></li>
 <li>
-<a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BClerle-vekt%C3%B6r-olu%C5%9Fturma"><span class="header-section-number">5.5</span> Örüntülerle Vektör Oluşturma</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#seq"><span class="header-section-number">5.5.1</span> seq()</a></li>
-<li><a class="nav-link" href="#rep"><span class="header-section-number">5.5.2</span> rep()</a></li>
-<li><a class="nav-link" href="#paste"><span class="header-section-number">5.5.3</span> paste()</a></li>
+<a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BClerle-vekt%C3%B6r-olu%C5%9Fturma"><span class="header-section-number">4.5</span> Örüntülerle Vektör Oluşturma</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#seq"><span class="header-section-number">4.5.1</span> seq()</a></li>
+<li><a class="nav-link" href="#rep"><span class="header-section-number">4.5.2</span> rep()</a></li>
+<li><a class="nav-link" href="#paste"><span class="header-section-number">4.5.3</span> paste()</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#rasgele-veri-olu%C5%9Fturma"><span class="header-section-number">5.6</span> Rasgele Veri Oluşturma</a></li>
+<li><a class="nav-link" href="#rasgele-veri-olu%C5%9Fturma"><span class="header-section-number">4.6</span> Rasgele Veri Oluşturma</a></li>
 <li>
-<a class="nav-link" href="#i%C5%9Flemler-1"><span class="header-section-number">5.7</span> İşlemler</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#kendinizi-test-edin"><span class="header-section-number">5.7.1</span> Kendinizi Test Edin</a></li></ul>
+<a class="nav-link" href="#i%C5%9Flemler"><span class="header-section-number">4.7</span> İşlemler</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#kendinizi-test-edin"><span class="header-section-number">4.7.1</span> Kendinizi Test Edin</a></li></ul>
 </li>
-<li><a class="nav-link" href="#odev"><span class="header-section-number">5.8</span> ODEV</a></li>
+<li><a class="nav-link" href="#odev"><span class="header-section-number">4.8</span> ODEV</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/06-vektorler.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/06-vektorler.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/04-vektorler.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/04-vektorler.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -690,7 +691,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-06.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

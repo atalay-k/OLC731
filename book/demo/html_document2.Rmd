@@ -1,0 +1,71 @@
+---
+title: "Ornek Dosya"
+output: 
+  bookdown::html_document2:
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+library(kableExtra)
+theme_set(theme_minimal())
+```
+
+Pırlanta ücretleri çeşitli faktörlere bağlıdır
+
+- cut (See Table\ \@ref(tab:kesim))
+- colour (See Table\ \@ref(tab:renk))
+- clarity (See Figure\ \@ref(fig:parlaklık))
+- carats (See Figure\ \@ref(fig:karat))
+- Bakınız Bolum\ \@ref(sonuclar) sonuclar icin
+
+## Tablolar
+
+### Kesim
+
+```{r tab:kesim}
+diamonds %>%
+  group_by(cut) %>%
+  summarise(avg = mean(price),
+            .groups = "drop") %>%
+  kable(digits = 0, 
+        col.names = c("Cut", "Average Price"),
+        caption = "Kesime göre ortalama pırlanta fiyatı.") %>%
+  kable_material()
+```
+
+### Renk
+
+```{r renk}
+diamonds %>%
+  group_by(color) %>%
+  summarise(avg = mean(price),
+            .groups = "drop") %>%
+  kable(digits = 0, 
+        col.names = c("Cut", "Average Price"),
+        caption = "Renge göre ortalama pırlanta fiyatı.") %>%
+  kable_material()
+```
+
+## Grafikler
+
+### Parlaklık
+
+```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}
+ggplot(diamonds, aes(x = clarity, y = price)) +
+  geom_boxplot() 
+```
+
+### Karat
+
+```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}
+ggplot(diamonds, aes(x = carat, y = price)) +
+  stat_smooth()
+```
+
+### Sonuclar {#sonuclar}
+
+"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "
