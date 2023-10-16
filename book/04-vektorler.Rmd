@@ -132,9 +132,9 @@ kilo <-c(50,55,57,50,48,65,58,62,45,47)
 names(boy) # names() fonksiyonu ile isimlendirme yapılabilir.
 ```
 
--   ad vektörünü boy vektörünü isimlendirirken nasıl kullanabiliriz? `r fitb("names(boy) <- ad")`
+-   ad vektörünü boy vektörü ile  isimlendirirken nasıl kullanabiliriz? `r fitb("names(boy)<-ad")`
 
--   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? `r `fitb("boy["Arda"]")`
+-   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak `boy["Arda"]` ile yazdırırsınız 
 
 ## Örüntülerle Vektör Oluşturma
 
@@ -279,7 +279,7 @@ rnorm(10,50,5)
 
 ## İşlemler
 
-BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  `r fitb("20.44")` 
+BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  `r fitb("20.44")` 
 
 ```{r}
 ad  <-  c("Ali","Elif","Su","Deniz","Aras","Berk","Can","Ece","Efe","Arda")

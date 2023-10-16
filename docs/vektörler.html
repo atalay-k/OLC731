@@ -225,8 +225,8 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span> <span class="co"># names() fonksiyonu ile isimlendirme yapılabilir.</span></span></code></pre></div>
 <pre><code>## NULL</code></pre>
 <ul>
-<li><p>ad vektörünü boy vektörünü isimlendirirken nasıl kullanabiliriz? <input class="webex-solveme nospaces" size="16" data-answer='["names(boy) &lt;- ad"]'></p></li>
-<li><p>Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? <code>r</code>fitb("boy["Arda"]")`</p></li>
+<li><p>ad vektörünü boy vektörü ile isimlendirirken nasıl kullanabiliriz? <input class="webex-solveme nospaces" size="14" data-answer='["names(boy)&lt;-ad"]'></p></li>
+<li><p>Arda 'nın boyunu isimlendirilmiş vektörü kullanarak <code>boy["Arda"]</code> ile yazdırırsınız</p></li>
 </ul>
 </div>
 <div id="örüntülerle-vektör-oluşturma" class="section level2" number="4.5">
@@ -349,15 +349,15 @@
 </ul>
 <div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 95 36 81 11 23</code></pre>
+<pre><code>## [1] 12 47 86 10 75</code></pre>
 <div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">10</span>,  <span class="fl">0</span>, <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  [1] 1.6996979 3.0390501 3.2115541 0.6271951 2.0654358 1.4309886 1.5813091
-##  [8] 3.3767529 1.9822674 4.2593103</code></pre>
+<pre><code>##  [1] 4.6080101 0.9343791 3.5281531 1.7096646 1.1021169 3.3880912 1.1507135
+##  [8] 0.2963166 4.9777343 3.3704355</code></pre>
 <div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">50</span>,<span class="fl">5</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  [1] 50.72038 48.68847 51.48190 54.96335 47.94577 43.30927 44.54128 58.81842
-##  [9] 48.10435 44.31959</code></pre>
+<pre><code>##  [1] 57.70739 44.29452 48.89897 53.57579 54.16637 53.24350 58.76780 48.60010
+##  [9] 46.30540 51.50819</code></pre>
 <ul>
 <li>Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.</li>
 </ul>
@@ -366,7 +366,7 @@
 <h2>
 <span class="header-section-number">4.7</span> İşlemler<a class="anchor" aria-label="anchor" href="#i%C5%9Flemler"><i class="fas fa-link"></i></a>
 </h2>
-<p>BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)? <input class="webex-solveme nospaces" size="5" data-answer='["20.44"]'></p>
+<p>BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)? <input class="webex-solveme nospaces" size="5" data-answer='["20.44"]'></p>
 <div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>

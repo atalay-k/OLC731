@@ -366,15 +366,15 @@ length(harf52)
 
 ### Günün Sorusu
 
--   Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz.
+-   Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz. Madde güçlük değerlerini runif() fonksiyonu ile oluşturabilirsiniz. 
 
 
 ```
-##  [1] "1. maddenin guclugu: 0.25"  "2. maddenin guclugu: 0.57" 
-##  [3] "3. maddenin guclugu: 0.59"  "4. maddenin guclugu: 0.73" 
-##  [5] "5. maddenin guclugu: 0.98"  "6. maddenin guclugu: 0.78" 
-##  [7] "7. maddenin guclugu: 0.24"  "8. maddenin guclugu: 0.22" 
-##  [9] "9. maddenin guclugu: 0.29"  "10. maddenin guclugu: 0.59"
+##  [1] "1. maddenin guclugu: 0.71"  "2. maddenin guclugu: 0.18" 
+##  [3] "3. maddenin guclugu: 0.44"  "4. maddenin guclugu: 0.43" 
+##  [5] "5. maddenin guclugu: 0.6"   "6. maddenin guclugu: 0.79" 
+##  [7] "7. maddenin guclugu: 0.74"  "8. maddenin guclugu: 0.56" 
+##  [9] "9. maddenin guclugu: 0.59"  "10. maddenin guclugu: 0.82"
 ```
 
 Bunun birden fazla yolu olabilir, farklı şekillerde yapabilirsiniz. 
@@ -660,7 +660,7 @@ ad_soyad<- c("Ayse-Sel","Can-Yucel","Cem-Togay","Banu-Cift")
 
 
 
-aşağıdaki çıktıyı oluşturmaya calisiniz.
+aşağıdaki çıktıyı oluşturmaya çalısınız.
 
 
 ```

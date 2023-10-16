@@ -77,7 +77,7 @@ library (dslabs)
 - Hazır veri setleri çalışma ortamına `data()` fonksiyonu ile aktarılabilir.
 
 ```{r}
-data(WorldPhones) # environmete kontrol ediniz. 
+data(WorldPhones) # environmet(calisma alanini) kontrol ediniz. 
 ```
 
 - hazır veri setlerini incelememek için aşağıdaki komutlar kullanılabilir. 
@@ -157,7 +157,7 @@ View(df)
 ```
 
 
-## Elaman Seçme
+## Eleman Seçme
 
 Veri setlerinde eleman seçme matrislerdeki gibidir.
 
@@ -177,7 +177,7 @@ df[1,]
 df[,1]
 ```
 
-- df'nin ikinci satir elemanlarının seçilmesi  `r fitb("df[2,]")`
+- df'nin ikinci satır elemanlarının seçilmesi  `r fitb("df[2,]")`
 
  
 ```{r echo=FALSE}
@@ -190,7 +190,7 @@ df[2,]
 df[,2]
 ```
 
-- df'nin birinci satir üçüncü sütun elemanlarının seçilmesi  `r fitb("df[1,3]")`
+- df'nin birinci satır üçüncü sütun elemanlarının seçilmesi  `r fitb("df[1,3]")`
 
 ```{r echo=FALSE}
 df[1,3]
@@ -221,14 +221,14 @@ df[,1,drop=FALSE]
 
 `subset(veriseti, kosul/Kosullar)`
 
-- Boyu 165cm den uzun öğrencilerin bilgilerinin seçilmesi
+- Boyu 165cm'den uzun öğrencilerin bilgilerinin seçilmesi
 
 ```{r}
 subset(df, boy >165)
 ```
 
 
-- `subset()` Fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
+- `subset()` fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
 
 ```{r}
 subset(airquality, Temp > 90,select = c(Ozone, Temp))

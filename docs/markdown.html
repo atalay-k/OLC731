@@ -136,14 +136,20 @@
 <span class="header-section-number">6.2</span> Bir proje düzenlemek<a class="anchor" aria-label="anchor" href="#bir-proje-d%C3%BCzenlemek"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li><p>İlk olarak, organize olmamız gerekiyor. RStudio'daki projeler, bir proje için ihtiyaç duyduğunuz tüm dosyaları gruplandırmanın bir yoludur. Çoğu proje komut dosyalarını, veri dosyalarını ve komut dosyası veya görüntüler tarafından oluşturulan PDF raporu gibi çıktı dosyalarını içerir.
-### Dosya Sistemi</p></li>
-<li><p>Bilgisayarınızın dosya sistemi, hem dosyaları hem de "alt dizinleri" içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.</p></li>
-<li><p>Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: <strong>/Users/Kubra/Desktop/report.Rmd</strong> , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için ~ kısayolunu da kullanabilirsiniz: ~/Desktop/report.Rmd.</p></li>
+<li>İlk olarak, organize olmamız gerekiyor. RStudio'daki projeler, bir proje için ihtiyaç duyduğunuz tüm dosyaları gruplandırmanın bir yoludur. Çoğu proje komut dosyalarını, veri dosyalarını ve komut dosyası veya görüntüler tarafından oluşturulan PDF raporu gibi çıktı dosyalarını içerir.</li>
 </ul>
-<div id="çalışma-dizini" class="section level3" number="6.2.1">
+<div id="dosya-sistemi" class="section level3" number="6.2.1">
 <h3>
-<span class="header-section-number">6.2.1</span> Çalışma Dizini<a class="anchor" aria-label="anchor" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.1</span> Dosya Sistemi<a class="anchor" aria-label="anchor" href="#dosya-sistemi"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Bilgisayarınızın dosya sistemi, hem dosyaları hem de "alt dizinleri" içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.</p></li>
+<li><p>Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: <strong>/Users/Kubra/Desktop/report.Rmd</strong> , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için ~ kısayolunu da kullanabilirsiniz: <strong>~/Desktop/report.Rmd.</strong></p></li>
+</ul>
+</div>
+<div id="çalışma-dizini" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Çalışma Dizini<a class="anchor" aria-label="anchor" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını <strong>data/import</strong> adlı bir dizine koyabilir ve tüm görüntü dosyalarını <strong>images</strong> adlı bir dizine kaydedebilirsiniz.</p></li>
@@ -189,9 +195,9 @@
 <p>Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.</p>
 </div>
 </div>
-<div id="nesneleri-adlandırma" class="section level3" number="6.2.2">
+<div id="nesneleri-adlandırma" class="section level3" number="6.2.3">
 <h3>
-<span class="header-section-number">6.2.2</span> Nesneleri Adlandırma<a class="anchor" aria-label="anchor" href="#nesneleri-adland%C4%B1rma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.3</span> Nesneleri Adlandırma<a class="anchor" aria-label="anchor" href="#nesneleri-adland%C4%B1rma"><i class="fas fa-link"></i></a>
 </h3>
 <p>Dosyaları, hem insanların hem de bilgisayarların kolayca bulabileceği şekilde adlandırın. İşte bazı önemli ilkeler:</p>
 <ul>
@@ -226,9 +232,9 @@
 <p>Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje dosyalarınızdan bazılarına bakın ve neleri geliştirebileceğinizi görün.</p>
 </div>
 </div>
-<div id="yeni-bir-projeye-başlamak" class="section level3" number="6.2.3">
+<div id="yeni-bir-projeye-başlamak" class="section level3" number="6.2.4">
 <h3>
-<span class="header-section-number">6.2.3</span> Yeni bir projeye başlamak<a class="anchor" aria-label="anchor" href="#yeni-bir-projeye-ba%C5%9Flamak"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.4</span> Yeni bir projeye başlamak<a class="anchor" aria-label="anchor" href="#yeni-bir-projeye-ba%C5%9Flamak"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Artık dosya sisteminin nasıl çalıştığını ve komut dosyalarının bunlara erişmesini kolaylaştırmak için nesneleri nasıl adlandıracağımızı anladığımıza göre, projemizi yapmaya hazırız.</p></li>
@@ -257,7 +263,7 @@
 <p>R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste <a href="https://quarto.org/" target="_blank">quarto</a> kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.</p>
 </div>
 <ul>
-<li><p>Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="demo/repo.Rmd">Örnek Dosyayı beraber inceleyelim.</a></p></li>
+<li><p>Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="repo.Rmd">Örnek Dosyayı beraber inceleyelim.</a></p></li>
 <li><p>Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.</p></li>
 </ul>
 <div class="try">
@@ -733,23 +739,23 @@ virginica
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_spanner.html">tab_spanner</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Degerler"</span>,</span>
 <span>              columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ortalama</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fl">6</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
-<div id="fieyaupvud" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fieyaupvud table {
+<div id="haimpdujgm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#haimpdujgm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fieyaupvud thead, #fieyaupvud tbody, #fieyaupvud tfoot, #fieyaupvud tr, #fieyaupvud td, #fieyaupvud th {
+#haimpdujgm thead, #haimpdujgm tbody, #haimpdujgm tfoot, #haimpdujgm tr, #haimpdujgm td, #haimpdujgm th {
   border-style: none;
 }
 
-#fieyaupvud p {
+#haimpdujgm p {
   margin: 0;
   padding: 0;
 }
 
-#fieyaupvud .gt_table {
+#haimpdujgm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -775,12 +781,12 @@ virginica
   border-left-color: #D3D3D3;
 }
 
-#fieyaupvud .gt_caption {
+#haimpdujgm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fieyaupvud .gt_title {
+#haimpdujgm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -792,7 +798,7 @@ virginica
   border-bottom-width: 0;
 }
 
-#fieyaupvud .gt_subtitle {
+#haimpdujgm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -804,7 +810,7 @@ virginica
   border-top-width: 0;
 }
 
-#fieyaupvud .gt_heading {
+#haimpdujgm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -816,13 +822,13 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#fieyaupvud .gt_bottom_border {
+#haimpdujgm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_col_headings {
+#haimpdujgm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -837,7 +843,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#fieyaupvud .gt_col_heading {
+#haimpdujgm .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -857,7 +863,7 @@ virginica
   overflow-x: hidden;
 }
 
-#fieyaupvud .gt_column_spanner_outer {
+#haimpdujgm .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -869,15 +875,15 @@ virginica
   padding-right: 4px;
 }
 
-#fieyaupvud .gt_column_spanner_outer:first-child {
+#haimpdujgm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fieyaupvud .gt_column_spanner_outer:last-child {
+#haimpdujgm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fieyaupvud .gt_column_spanner {
+#haimpdujgm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -889,11 +895,11 @@ virginica
   width: 100%;
 }
 
-#fieyaupvud .gt_spanner_row {
+#haimpdujgm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fieyaupvud .gt_group_heading {
+#haimpdujgm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -919,7 +925,7 @@ virginica
   text-align: left;
 }
 
-#fieyaupvud .gt_empty_group_heading {
+#haimpdujgm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -934,15 +940,15 @@ virginica
   vertical-align: middle;
 }
 
-#fieyaupvud .gt_from_md > :first-child {
+#haimpdujgm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fieyaupvud .gt_from_md > :last-child {
+#haimpdujgm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fieyaupvud .gt_row {
+#haimpdujgm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -961,7 +967,7 @@ virginica
   overflow-x: hidden;
 }
 
-#fieyaupvud .gt_stub {
+#haimpdujgm .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -974,7 +980,7 @@ virginica
   padding-right: 5px;
 }
 
-#fieyaupvud .gt_stub_row_group {
+#haimpdujgm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -988,15 +994,15 @@ virginica
   vertical-align: top;
 }
 
-#fieyaupvud .gt_row_group_first td {
+#haimpdujgm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fieyaupvud .gt_row_group_first th {
+#haimpdujgm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fieyaupvud .gt_summary_row {
+#haimpdujgm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1006,16 +1012,16 @@ virginica
   padding-right: 5px;
 }
 
-#fieyaupvud .gt_first_summary_row {
+#haimpdujgm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_first_summary_row.thick {
+#haimpdujgm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fieyaupvud .gt_last_summary_row {
+#haimpdujgm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1025,7 +1031,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_grand_summary_row {
+#haimpdujgm .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1035,7 +1041,7 @@ virginica
   padding-right: 5px;
 }
 
-#fieyaupvud .gt_first_grand_summary_row {
+#haimpdujgm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1045,7 +1051,7 @@ virginica
   border-top-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_last_grand_summary_row_top {
+#haimpdujgm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1055,11 +1061,11 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_striped {
+#haimpdujgm .gt_striped {
   background-color: #EDF7FC;
 }
 
-#fieyaupvud .gt_table_body {
+#haimpdujgm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1068,7 +1074,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#fieyaupvud .gt_footnotes {
+#haimpdujgm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1082,7 +1088,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#fieyaupvud .gt_footnote {
+#haimpdujgm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1091,7 +1097,7 @@ virginica
   padding-right: 5px;
 }
 
-#fieyaupvud .gt_sourcenotes {
+#haimpdujgm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1105,7 +1111,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#fieyaupvud .gt_sourcenote {
+#haimpdujgm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1113,63 +1119,63 @@ virginica
   padding-right: 5px;
 }
 
-#fieyaupvud .gt_left {
+#haimpdujgm .gt_left {
   text-align: left;
 }
 
-#fieyaupvud .gt_center {
+#haimpdujgm .gt_center {
   text-align: center;
 }
 
-#fieyaupvud .gt_right {
+#haimpdujgm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fieyaupvud .gt_font_normal {
+#haimpdujgm .gt_font_normal {
   font-weight: normal;
 }
 
-#fieyaupvud .gt_font_bold {
+#haimpdujgm .gt_font_bold {
   font-weight: bold;
 }
 
-#fieyaupvud .gt_font_italic {
+#haimpdujgm .gt_font_italic {
   font-style: italic;
 }
 
-#fieyaupvud .gt_super {
+#haimpdujgm .gt_super {
   font-size: 65%;
 }
 
-#fieyaupvud .gt_footnote_marks {
+#haimpdujgm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fieyaupvud .gt_asterisk {
+#haimpdujgm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fieyaupvud .gt_indent_1 {
+#haimpdujgm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fieyaupvud .gt_indent_2 {
+#haimpdujgm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fieyaupvud .gt_indent_3 {
+#haimpdujgm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fieyaupvud .gt_indent_4 {
+#haimpdujgm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fieyaupvud .gt_indent_5 {
+#haimpdujgm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1743,9 +1749,10 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#neden-tekrarlanabilir-raporlar-kullan%C4%B1lmal%C4%B1"><span class="header-section-number">6.1</span> Neden tekrarlanabilir raporlar kullanılmalı?</a></li>
 <li>
 <a class="nav-link" href="#bir-proje-d%C3%BCzenlemek"><span class="header-section-number">6.2</span> Bir proje düzenlemek</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">6.2.1</span> Çalışma Dizini</a></li>
-<li><a class="nav-link" href="#nesneleri-adland%C4%B1rma"><span class="header-section-number">6.2.2</span> Nesneleri Adlandırma</a></li>
-<li><a class="nav-link" href="#yeni-bir-projeye-ba%C5%9Flamak"><span class="header-section-number">6.2.3</span> Yeni bir projeye başlamak</a></li>
+<li><a class="nav-link" href="#dosya-sistemi"><span class="header-section-number">6.2.1</span> Dosya Sistemi</a></li>
+<li><a class="nav-link" href="#%C3%A7al%C4%B1%C5%9Fma-dizini"><span class="header-section-number">6.2.2</span> Çalışma Dizini</a></li>
+<li><a class="nav-link" href="#nesneleri-adland%C4%B1rma"><span class="header-section-number">6.2.3</span> Nesneleri Adlandırma</a></li>
+<li><a class="nav-link" href="#yeni-bir-projeye-ba%C5%9Flamak"><span class="header-section-number">6.2.4</span> Yeni bir projeye başlamak</a></li>
 </ul>
 </li>
 <li>

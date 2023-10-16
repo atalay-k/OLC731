@@ -179,9 +179,9 @@ names(boy) # names() fonksiyonu ile isimlendirme yapılabilir.
 ## NULL
 ```
 
--   ad vektörünü boy vektörünü isimlendirirken nasıl kullanabiliriz? <input class='webex-solveme nospaces' size='16' data-answer='["names(boy) <- ad"]'/>
+-   ad vektörünü boy vektörü ile  isimlendirirken nasıl kullanabiliriz? <input class='webex-solveme nospaces' size='14' data-answer='["names(boy)<-ad"]'/>
 
--   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? `r `fitb("boy["Arda"]")`
+-   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak `boy["Arda"]` ile yazdırırsınız 
 
 ## Örüntülerle Vektör Oluşturma
 
@@ -350,7 +350,7 @@ sample(0:100,5)
 ```
 
 ```
-## [1] 95 36 81 11 23
+## [1] 12 47 86 10 75
 ```
 
 
@@ -359,8 +359,8 @@ runif(10,  0, 5)
 ```
 
 ```
-##  [1] 1.6996979 3.0390501 3.2115541 0.6271951 2.0654358 1.4309886 1.5813091
-##  [8] 3.3767529 1.9822674 4.2593103
+##  [1] 4.6080101 0.9343791 3.5281531 1.7096646 1.1021169 3.3880912 1.1507135
+##  [8] 0.2963166 4.9777343 3.3704355
 ```
 
 
@@ -369,15 +369,15 @@ rnorm(10,50,5)
 ```
 
 ```
-##  [1] 50.72038 48.68847 51.48190 54.96335 47.94577 43.30927 44.54128 58.81842
-##  [9] 48.10435 44.31959
+##  [1] 57.70739 44.29452 48.89897 53.57579 54.16637 53.24350 58.76780 48.60010
+##  [9] 46.30540 51.50819
 ```
 
 -   Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
 
 ## İşlemler
 
-BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  <input class='webex-solveme nospaces' size='5' data-answer='["20.44"]'/> 
+BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  <input class='webex-solveme nospaces' size='5' data-answer='["20.44"]'/> 
 
 
 ```r

@@ -76,6 +76,7 @@ günün-sorusu-1
 markdown
 neden-tekrarlanabilir-raporlar-kullanılmalı
 bir-proje-düzenlemek
+dosya-sistemi
 çalışma-dizini
 nesneleri-adlandırma
 yeni-bir-projeye-başlamak
@@ -102,7 +103,7 @@ diğer-kaynaklar
 veri-setleri
 hazır-veri-setleri
 inceleme
-elaman-seçme
+eleman-seçme
 eleman-ekleme
 eleman-çıkarma
 satır-ekleme

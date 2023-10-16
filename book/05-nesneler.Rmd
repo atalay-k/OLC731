@@ -213,7 +213,7 @@ length(harf52)
 
 ### Günün Sorusu
 
--   Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz.
+-   Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz. Madde güçlük değerlerini runif() fonksiyonu ile oluşturabilirsiniz. 
 
 ```{r echo=FALSE}
 maddeno <- 1:10
@@ -388,7 +388,7 @@ ad_soyad<- c("Ayse-Sel","Can-Yucel","Cem-Togay","Banu-Cift")
 
 
 
-aşağıdaki çıktıyı oluşturmaya calisiniz.
+aşağıdaki çıktıyı oluşturmaya çalısınız.
 
 ```{r echo=FALSE}
 unlist(strsplit (ad_soyad,"-"))[c(1,3,5,7)]
