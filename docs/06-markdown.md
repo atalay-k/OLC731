@@ -142,7 +142,7 @@ Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.
 R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste [quarto](https://quarto.org/){target="_blank"} kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.
 :::
 
--   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](repo.Rmd)
+-   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd)
 
 
 
@@ -544,23 +544,23 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 ```
 
 ```{=html}
-<div id="haimpdujgm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#haimpdujgm table {
+<div id="hqzpfvpowv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hqzpfvpowv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#haimpdujgm thead, #haimpdujgm tbody, #haimpdujgm tfoot, #haimpdujgm tr, #haimpdujgm td, #haimpdujgm th {
+#hqzpfvpowv thead, #hqzpfvpowv tbody, #hqzpfvpowv tfoot, #hqzpfvpowv tr, #hqzpfvpowv td, #hqzpfvpowv th {
   border-style: none;
 }
 
-#haimpdujgm p {
+#hqzpfvpowv p {
   margin: 0;
   padding: 0;
 }
 
-#haimpdujgm .gt_table {
+#hqzpfvpowv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -586,12 +586,12 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-left-color: #D3D3D3;
 }
 
-#haimpdujgm .gt_caption {
+#hqzpfvpowv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#haimpdujgm .gt_title {
+#hqzpfvpowv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -603,7 +603,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-width: 0;
 }
 
-#haimpdujgm .gt_subtitle {
+#hqzpfvpowv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -615,7 +615,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-width: 0;
 }
 
-#haimpdujgm .gt_heading {
+#hqzpfvpowv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -627,13 +627,13 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#haimpdujgm .gt_bottom_border {
+#hqzpfvpowv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_col_headings {
+#hqzpfvpowv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -648,7 +648,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#haimpdujgm .gt_col_heading {
+#hqzpfvpowv .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -668,7 +668,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#haimpdujgm .gt_column_spanner_outer {
+#hqzpfvpowv .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -680,15 +680,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 4px;
 }
 
-#haimpdujgm .gt_column_spanner_outer:first-child {
+#hqzpfvpowv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#haimpdujgm .gt_column_spanner_outer:last-child {
+#hqzpfvpowv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#haimpdujgm .gt_column_spanner {
+#hqzpfvpowv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -700,11 +700,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   width: 100%;
 }
 
-#haimpdujgm .gt_spanner_row {
+#hqzpfvpowv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#haimpdujgm .gt_group_heading {
+#hqzpfvpowv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -730,7 +730,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   text-align: left;
 }
 
-#haimpdujgm .gt_empty_group_heading {
+#hqzpfvpowv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -745,15 +745,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: middle;
 }
 
-#haimpdujgm .gt_from_md > :first-child {
+#hqzpfvpowv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#haimpdujgm .gt_from_md > :last-child {
+#hqzpfvpowv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#haimpdujgm .gt_row {
+#hqzpfvpowv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -772,7 +772,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#haimpdujgm .gt_stub {
+#hqzpfvpowv .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -785,7 +785,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#haimpdujgm .gt_stub_row_group {
+#hqzpfvpowv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -799,15 +799,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: top;
 }
 
-#haimpdujgm .gt_row_group_first td {
+#hqzpfvpowv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#haimpdujgm .gt_row_group_first th {
+#hqzpfvpowv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#haimpdujgm .gt_summary_row {
+#hqzpfvpowv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -817,16 +817,16 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#haimpdujgm .gt_first_summary_row {
+#hqzpfvpowv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_first_summary_row.thick {
+#hqzpfvpowv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#haimpdujgm .gt_last_summary_row {
+#hqzpfvpowv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -836,7 +836,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_grand_summary_row {
+#hqzpfvpowv .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -846,7 +846,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#haimpdujgm .gt_first_grand_summary_row {
+#hqzpfvpowv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -856,7 +856,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_last_grand_summary_row_top {
+#hqzpfvpowv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -866,11 +866,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_striped {
+#hqzpfvpowv .gt_striped {
   background-color: #EDF7FC;
 }
 
-#haimpdujgm .gt_table_body {
+#hqzpfvpowv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -879,7 +879,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#haimpdujgm .gt_footnotes {
+#hqzpfvpowv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -893,7 +893,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#haimpdujgm .gt_footnote {
+#hqzpfvpowv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -902,7 +902,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#haimpdujgm .gt_sourcenotes {
+#hqzpfvpowv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -916,7 +916,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#haimpdujgm .gt_sourcenote {
+#hqzpfvpowv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -924,63 +924,63 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#haimpdujgm .gt_left {
+#hqzpfvpowv .gt_left {
   text-align: left;
 }
 
-#haimpdujgm .gt_center {
+#hqzpfvpowv .gt_center {
   text-align: center;
 }
 
-#haimpdujgm .gt_right {
+#hqzpfvpowv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#haimpdujgm .gt_font_normal {
+#hqzpfvpowv .gt_font_normal {
   font-weight: normal;
 }
 
-#haimpdujgm .gt_font_bold {
+#hqzpfvpowv .gt_font_bold {
   font-weight: bold;
 }
 
-#haimpdujgm .gt_font_italic {
+#hqzpfvpowv .gt_font_italic {
   font-style: italic;
 }
 
-#haimpdujgm .gt_super {
+#hqzpfvpowv .gt_super {
   font-size: 65%;
 }
 
-#haimpdujgm .gt_footnote_marks {
+#hqzpfvpowv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#haimpdujgm .gt_asterisk {
+#hqzpfvpowv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#haimpdujgm .gt_indent_1 {
+#hqzpfvpowv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#haimpdujgm .gt_indent_2 {
+#hqzpfvpowv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#haimpdujgm .gt_indent_3 {
+#hqzpfvpowv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#haimpdujgm .gt_indent_4 {
+#hqzpfvpowv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#haimpdujgm .gt_indent_5 {
+#hqzpfvpowv .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
