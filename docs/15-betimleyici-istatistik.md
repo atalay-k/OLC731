@@ -1186,7 +1186,11 @@ ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
 
 - 😕
 
+<<<<<<< HEAD
 - 😆
+=======
+- 😀
+>>>>>>> 0d7dfe2e0520aad595526b603786ccc1fbe9b63c
 
 
 
