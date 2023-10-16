@@ -83,7 +83,7 @@ ad  <-  c("Ali","Elif","Su","Deniz",
 
 -   Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz `r fitb("ad[-c(1,5)]")`
 
--   Vektörün son üç elemanını yazdıracak kodu oluşturunuz `r `fitb("ad[8:10]")`
+-   Vektörün son üç elemanını yazdıracak kodu oluşturunuz `r fitb("ad[8:10]")`
 
 ## Vektöre eleman eklenmesi
 
@@ -211,7 +211,7 @@ rep(a, each = 3)
 rep(a,each=3,times=3) 
 ```
 
--   Çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(1:4,c(2,2,2,2))")`
+-   Çıktıyı elde edecek kodu hazırlayınız. `r fitb("rep(1:4,2)")`
 
 ```{r echo=FALSE}
 # Çıktıyı elde edecek kodlar hazırlayınız.

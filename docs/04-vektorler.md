@@ -105,7 +105,7 @@ ad  <-  c("Ali","Elif","Su","Deniz",
 
 -   Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz <input class='webex-solveme nospaces' size='11' data-answer='["ad[-c(1,5)]"]'/>
 
--   Vektörün son üç elemanını yazdıracak kodu oluşturunuz `r `fitb("ad[8:10]")`
+-   Vektörün son üç elemanını yazdıracak kodu oluşturunuz <input class='webex-solveme nospaces' size='8' data-answer='["ad[8:10]"]'/>
 
 ## Vektöre eleman eklenmesi
 
@@ -280,7 +280,7 @@ rep(0:9, times = 3)
 ##  [1] 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7
 ```
 
--   Çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='19' data-answer='["rep(1:4,c(2,2,2,2))"]'/>
+-   Çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='10' data-answer='["rep(1:4,2)"]'/>
 
 
 ```
@@ -350,7 +350,7 @@ sample(0:100,5)
 ```
 
 ```
-## [1]  35  76  70  40 100
+## [1] 61 63  7 60  2
 ```
 
 
@@ -359,8 +359,8 @@ runif(10,  0, 5)
 ```
 
 ```
-##  [1] 4.750377 0.132758 4.424394 1.877847 3.992286 1.659567 2.432146 1.833095
-##  [9] 4.585427 1.584431
+##  [1] 2.47451425 1.47840320 1.02943342 4.72612762 2.90453063 0.06331178
+##  [7] 3.83463970 0.53442583 2.52640137 4.68727539
 ```
 
 
@@ -369,8 +369,8 @@ rnorm(10,50,5)
 ```
 
 ```
-##  [1] 58.61512 45.74637 56.51182 52.52097 56.48265 52.40754 55.78174 50.51598
-##  [9] 53.24886 54.71823
+##  [1] 54.42424 49.95763 37.96132 53.74404 45.71543 40.29669 41.73731 57.62644
+##  [9] 54.51408 49.25207
 ```
 
 -   Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
