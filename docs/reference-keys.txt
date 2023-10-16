@@ -230,4 +230,3 @@ alert-boxes
 code-chunks
 glossary
 glossary-1
-dosya-sistemi
