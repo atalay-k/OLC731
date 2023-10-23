@@ -33,15 +33,13 @@
 
 `A` dan tüm satırları, mümkün olduğunda `B` ile eşleştir (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.6\linewidth]{images/left_join} \end{center}
+<img src="images/left_join.PNG" width="60%" style="display: block; margin: auto;" />
 
 - **A %>% right_join(B)**
 
 `B` den tüm satırları, mümkün olduğunda `A` ile eşleştir (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.6\linewidth]{images/right_join} \end{center}
+<img src="images/right_join.PNG" width="60%" style="display: block; margin: auto;" />
 
 -  Pratikte genellike **left_join()** kullanılır.
 
@@ -52,8 +50,7 @@
 <br>
 yanlızca `A` ve `B` nin eşleşen satırlarını birleştirir. Hem `A` hem de `B` den gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.75\linewidth]{images/inner_join} \end{center}
+<img src="images/inner_join.PNG" width="75%" style="display: block; margin: auto;" />
 
 
 
@@ -63,8 +60,7 @@ yanlızca `A` ve `B` nin eşleşen satırlarını birleştirir. Hem `A` hem de `
 
 `A` ve `B` den tüm satırları birleştirir. Hem `A` hem de `B` den gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.75\linewidth]{images/full_join} \end{center}
+<img src="images/full_join.PNG" width="75%" style="display: block; margin: auto;" />
 
 
 
@@ -76,8 +72,7 @@ yanlızca `A` ve `B` nin eşleşen satırlarını birleştirir. Hem `A` hem de `
 
 `A` nın `B` ile eşleşen satırlarını alır.  Sadece `A` dan gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.75\linewidth]{images/semi_join} \end{center}
+<img src="images/semi_join.PNG" width="75%" style="display: block; margin: auto;" />
 
 
 
@@ -88,8 +83,7 @@ yanlızca `A` ve `B` nin eşleşen satırlarını birleştirir. Hem `A` hem de `
 <br>
 `A` nın `B` ile eşleşemeyen satırlarını alır. Sadece `A` dan gelen sütunları alır.
 
-
-\begin{center}\includegraphics[width=0.75\linewidth]{images/anti_join} \end{center}
+<img src="images/anti_join.PNG" width="75%" style="display: block; margin: auto;" />
 
 
 
@@ -109,12 +103,15 @@ cinsiyet1
 cinsiyet1
 ```
 
-```
-##        ogrenci cinsiyet
-## 1    Mert Kaya    Erkek
-## 2 Zeynep Turan      Kiz
-## 3  Zeynep Inal      Kiz
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |
+|:------------|:--------|
+|Mert Kaya    |Erkek    |
+|Zeynep Turan |Kiz      |
+|Zeynep Inal  |Kiz      |
+
+</div>
 
 kangrubu1
 
@@ -124,12 +121,15 @@ kangrubu1
 kangrubu1
 ```
 
-```
-##        ogrenci kangrubu
-## 1 Zeynep Turan  A Rh(-)
-## 2  Zeynep Inal 0 Rh (+)
-## 3     Can Eser   ARh(+)
-```
+<div class="kable-table">
+
+|ogrenci      |kangrubu |
+|:------------|:--------|
+|Zeynep Turan |A Rh(-)  |
+|Zeynep Inal  |0 Rh (+) |
+|Can Eser     |ARh(+)   |
+
+</div>
 
 
 ```r
@@ -140,12 +140,15 @@ left_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##        ogrenci cinsiyet kangrubu
-## 1    Mert Kaya    Erkek     <NA>
-## 2 Zeynep Turan      Kiz  A Rh(-)
-## 3  Zeynep Inal      Kiz 0 Rh (+)
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |kangrubu |
+|:------------|:--------|:--------|
+|Mert Kaya    |Erkek    |NA       |
+|Zeynep Turan |Kiz      |A Rh(-)  |
+|Zeynep Inal  |Kiz      |0 Rh (+) |
+
+</div>
 
 
 ```r
@@ -156,12 +159,15 @@ right_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##        ogrenci cinsiyet kangrubu
-## 1 Zeynep Turan      Kiz  A Rh(-)
-## 2  Zeynep Inal      Kiz 0 Rh (+)
-## 3     Can Eser     <NA>   ARh(+)
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |kangrubu |
+|:------------|:--------|:--------|
+|Zeynep Turan |Kiz      |A Rh(-)  |
+|Zeynep Inal  |Kiz      |0 Rh (+) |
+|Can Eser     |NA       |ARh(+)   |
+
+</div>
 
 
 
@@ -171,12 +177,15 @@ cinsiyet1
 cinsiyet1
 ```
 
-```
-##        ogrenci cinsiyet
-## 1    Mert Kaya    Erkek
-## 2 Zeynep Turan      Kiz
-## 3  Zeynep Inal      Kiz
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |
+|:------------|:--------|
+|Mert Kaya    |Erkek    |
+|Zeynep Turan |Kiz      |
+|Zeynep Inal  |Kiz      |
+
+</div>
 
 kangrubu1
 
@@ -184,12 +193,15 @@ kangrubu1
 kangrubu1
 ```
 
-```
-##        ogrenci kangrubu
-## 1 Zeynep Turan  A Rh(-)
-## 2  Zeynep Inal 0 Rh (+)
-## 3     Can Eser   ARh(+)
-```
+<div class="kable-table">
+
+|ogrenci      |kangrubu |
+|:------------|:--------|
+|Zeynep Turan |A Rh(-)  |
+|Zeynep Inal  |0 Rh (+) |
+|Can Eser     |ARh(+)   |
+
+</div>
 
 
 
@@ -201,11 +213,14 @@ inner_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##        ogrenci cinsiyet kangrubu
-## 1 Zeynep Turan      Kiz  A Rh(-)
-## 2  Zeynep Inal      Kiz 0 Rh (+)
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |kangrubu |
+|:------------|:--------|:--------|
+|Zeynep Turan |Kiz      |A Rh(-)  |
+|Zeynep Inal  |Kiz      |0 Rh (+) |
+
+</div>
 
 
 
@@ -217,13 +232,16 @@ full_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##        ogrenci cinsiyet kangrubu
-## 1    Mert Kaya    Erkek     <NA>
-## 2 Zeynep Turan      Kiz  A Rh(-)
-## 3  Zeynep Inal      Kiz 0 Rh (+)
-## 4     Can Eser     <NA>   ARh(+)
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |kangrubu |
+|:------------|:--------|:--------|
+|Mert Kaya    |Erkek    |NA       |
+|Zeynep Turan |Kiz      |A Rh(-)  |
+|Zeynep Inal  |Kiz      |0 Rh (+) |
+|Can Eser     |NA       |ARh(+)   |
+
+</div>
 
 
 
@@ -233,12 +251,15 @@ cinsiyet1
 cinsiyet1
 ```
 
-```
-##        ogrenci cinsiyet
-## 1    Mert Kaya    Erkek
-## 2 Zeynep Turan      Kiz
-## 3  Zeynep Inal      Kiz
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |
+|:------------|:--------|
+|Mert Kaya    |Erkek    |
+|Zeynep Turan |Kiz      |
+|Zeynep Inal  |Kiz      |
+
+</div>
 
 kangrubu1
 
@@ -246,12 +267,15 @@ kangrubu1
 kangrubu1
 ```
 
-```
-##        ogrenci kangrubu
-## 1 Zeynep Turan  A Rh(-)
-## 2  Zeynep Inal 0 Rh (+)
-## 3     Can Eser   ARh(+)
-```
+<div class="kable-table">
+
+|ogrenci      |kangrubu |
+|:------------|:--------|
+|Zeynep Turan |A Rh(-)  |
+|Zeynep Inal  |0 Rh (+) |
+|Can Eser     |ARh(+)   |
+
+</div>
 
 
 
@@ -263,11 +287,14 @@ semi_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##        ogrenci cinsiyet
-## 1 Zeynep Turan      Kiz
-## 2  Zeynep Inal      Kiz
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |
+|:------------|:--------|
+|Zeynep Turan |Kiz      |
+|Zeynep Inal  |Kiz      |
+
+</div>
 
 
 
@@ -279,10 +306,13 @@ anti_join(cinsiyet1,kangrubu1)
 ## Joining with `by = join_by(ogrenci)`
 ```
 
-```
-##     ogrenci cinsiyet
-## 1 Mert Kaya    Erkek
-```
+<div class="kable-table">
+
+|ogrenci   |cinsiyet |
+|:---------|:--------|
+|Mert Kaya |Erkek    |
+
+</div>
 
 
 
@@ -293,12 +323,15 @@ cinsiyet1
 cinsiyet2
 ```
 
-```
-##        ogrenci cinsiyet
-## 1    Mert Kaya    Erkek
-## 2 Zeynep Turan      Kiz
-## 3  Zeynep Inal      Kiz
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |
+|:------------|:--------|
+|Mert Kaya    |Erkek    |
+|Zeynep Turan |Kiz      |
+|Zeynep Inal  |Kiz      |
+
+</div>
 
 kangrubu1
 
@@ -306,12 +339,15 @@ kangrubu1
 kangrubu2
 ```
 
-```
-##             ad kangrubu
-## 1 Zeynep Turan  A Rh(-)
-## 2  Zeynep Inal 0 Rh (+)
-## 3     Can Eser   ARh(+)
-```
+<div class="kable-table">
+
+|ad           |kangrubu |
+|:------------|:--------|
+|Zeynep Turan |A Rh(-)  |
+|Zeynep Inal  |0 Rh (+) |
+|Can Eser     |ARh(+)   |
+
+</div>
 
 
 
@@ -320,12 +356,15 @@ cinsiyet2 %>%
 left_join(kangrubu2,by=c("ogrenci"="ad"))
 ```
 
-```
-##        ogrenci cinsiyet kangrubu
-## 1    Mert Kaya    Erkek     <NA>
-## 2 Zeynep Turan      Kiz  A Rh(-)
-## 3  Zeynep Inal      Kiz 0 Rh (+)
-```
+<div class="kable-table">
+
+|ogrenci      |cinsiyet |kangrubu |
+|:------------|:--------|:--------|
+|Mert Kaya    |Erkek    |NA       |
+|Zeynep Turan |Kiz      |A Rh(-)  |
+|Zeynep Inal  |Kiz      |0 Rh (+) |
+
+</div>
 
 
 
@@ -334,16 +373,18 @@ kangrubu2 %>%
 left_join(cinsiyet2,by=c("ad"="ogrenci"))
 ```
 
-```
-##             ad kangrubu cinsiyet
-## 1 Zeynep Turan  A Rh(-)      Kiz
-## 2  Zeynep Inal 0 Rh (+)      Kiz
-## 3     Can Eser   ARh(+)     <NA>
-```
+<div class="kable-table">
+
+|ad           |kangrubu |cinsiyet |
+|:------------|:--------|:--------|
+|Zeynep Turan |A Rh(-)  |Kiz      |
+|Zeynep Inal  |0 Rh (+) |Kiz      |
+|Can Eser     |ARh(+)   |NA       |
+
+</div>
 
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{images/kumeislemleri} \end{center}
+<img src="images/kumeislemleri.png" width="70%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -399,15 +440,14 @@ miniOGR <- PISA_OGR_2018 %>% select(OKULID,OGRENCIID,CINSIYET,KITAPSAYISI,ST196Q
 miniOGR %>% head(2)
 ```
 
-```
-## # A tibble: 2 x 10
-##     OKULID OGRENCIID   CINSIYET KITAPSAYISI ST196Q02HA ST196Q03HA ST196Q04HA
-##      <dbl>     <dbl> <hvn_lbll>  <hvn_lbll> <hvn_lbll> <hvn_lbll> <hvn_lbll>
-## 1 79200001  79200768          2           2          3          3          4
-## 2 79200001  79201064          2           3          3          3          4
-## # i 3 more variables: ST196Q05HA <hvn_lbll>, ST196Q06HA <hvn_lbll>,
-## #   ST196Q07HA <hvn_lbll>
-```
+<div class="kable-table">
+
+|   OKULID| OGRENCIID| CINSIYET| KITAPSAYISI| ST196Q02HA| ST196Q03HA| ST196Q04HA| ST196Q05HA| ST196Q06HA| ST196Q07HA|
+|--------:|---------:|--------:|-----------:|----------:|----------:|----------:|----------:|----------:|----------:|
+| 79200001|  79200768|        2|           2|          3|          3|          4|          4|          3|          4|
+| 79200001|  79201064|        2|           3|          3|          3|          4|          4|          3|          2|
+
+</div>
 
 
 ```r
@@ -415,13 +455,14 @@ miniSCH <- PISA_SCH_2018 %>% select(CNTSCHID,okulbuyukluk = SCHSIZE,sinifbuyuk= 
 miniSCH %>% head(2)
 ```
 
-```
-## # A tibble: 2 x 3
-##   CNTSCHID okulbuyukluk sinifbuyuk
-##      <dbl>   <hvn_lbll> <hvn_lbll>
-## 1 79200001          775         33
-## 2 79200002         1178         53
-```
+<div class="kable-table">
+
+| CNTSCHID| okulbuyukluk| sinifbuyuk|
+|--------:|------------:|----------:|
+| 79200001|          775|         33|
+| 79200002|         1178|         53|
+
+</div>
 
 
 
@@ -431,19 +472,18 @@ miniSCH %>% head(2)
 left_join(miniOGR,miniSCH,by=c("OKULID"="CNTSCHID")) %>% head(6)
 ```
 
-```
-## # A tibble: 6 x 12
-##     OKULID OGRENCIID   CINSIYET KITAPSAYISI ST196Q02HA ST196Q03HA ST196Q04HA
-##      <dbl>     <dbl> <hvn_lbll>  <hvn_lbll> <hvn_lbll> <hvn_lbll> <hvn_lbll>
-## 1 79200001  79200768          2           2          3          3          4
-## 2 79200001  79201064          2           3          3          3          4
-## 3 79200001  79201118          1           1          1          2          3
-## 4 79200001  79201275          2           1          1          1          1
-## 5 79200001  79201481          2           2          1          4          4
-## 6 79200001  79201556          2           2          1          1          1
-## # i 5 more variables: ST196Q05HA <hvn_lbll>, ST196Q06HA <hvn_lbll>,
-## #   ST196Q07HA <hvn_lbll>, okulbuyukluk <hvn_lbll>, sinifbuyuk <hvn_lbll>
-```
+<div class="kable-table">
+
+|   OKULID| OGRENCIID| CINSIYET| KITAPSAYISI| ST196Q02HA| ST196Q03HA| ST196Q04HA| ST196Q05HA| ST196Q06HA| ST196Q07HA| okulbuyukluk| sinifbuyuk|
+|--------:|---------:|--------:|-----------:|----------:|----------:|----------:|----------:|----------:|----------:|------------:|----------:|
+| 79200001|  79200768|        2|           2|          3|          3|          4|          4|          3|          4|          775|         33|
+| 79200001|  79201064|        2|           3|          3|          3|          4|          4|          3|          2|          775|         33|
+| 79200001|  79201118|        1|           1|          1|          2|          3|          2|          2|          2|          775|         33|
+| 79200001|  79201275|        2|           1|          1|          1|          1|          1|          1|          1|          775|         33|
+| 79200001|  79201481|        2|           2|          1|          4|          4|          1|          4|          4|          775|         33|
+| 79200001|  79201556|        2|           2|          1|          1|          1|          1|          1|          1|          775|         33|
+
+</div>
 
 
 

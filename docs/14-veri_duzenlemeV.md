@@ -129,15 +129,18 @@ genisveri <- data.frame(
 genisveri %>% head(6)
 ```
 
-```
-##      ID Sure_1 Sure_2 Sure_3
-## 1 ID101     55     49     46
-## 2 ID102     60     51     42
-## 3 ID103     50     41     36
-## 4 ID104     51     40     45
-## 5 ID105     59     53     48
-## 6 ID106     55     49     42
-```
+<div class="kable-table">
+
+|ID    | Sure_1| Sure_2| Sure_3|
+|:-----|------:|------:|------:|
+|ID101 |     52|     40|     47|
+|ID102 |     60|     47|     45|
+|ID103 |     56|     51|     45|
+|ID104 |     54|     53|     43|
+|ID105 |     56|     54|     43|
+|ID106 |     57|     46|     36|
+
+</div>
 
 
 - gather() fonksiyonu geniş veriyi, uzun veri haline getirir.
@@ -155,24 +158,30 @@ uzun <- genisveri %>% gather(Sure, Zaman, Sure_1:Sure_3)
 uzun %>% head(3)
 ```
 
-```
-##      ID   Sure Zaman
-## 1 ID101 Sure_1    55
-## 2 ID102 Sure_1    60
-## 3 ID103 Sure_1    50
-```
+<div class="kable-table">
+
+|ID    |Sure   | Zaman|
+|:-----|:------|-----:|
+|ID101 |Sure_1 |    52|
+|ID102 |Sure_1 |    60|
+|ID103 |Sure_1 |    56|
+
+</div>
 
 
 ```r
 uzun %>% tail(3)
 ```
 
-```
-##       ID   Sure Zaman
-## 58 ID118 Sure_3    37
-## 59 ID119 Sure_3    40
-## 60 ID120 Sure_3    41
-```
+<div class="kable-table">
+
+|   |ID    |Sure   | Zaman|
+|:--|:-----|:------|-----:|
+|58 |ID118 |Sure_3 |    49|
+|59 |ID119 |Sure_3 |    43|
+|60 |ID120 |Sure_3 |    41|
+
+</div>
 
 - Gördüğünüz gibi, şimdi iki sütunumuz var: Biri *Sure* için, diğeri **Zaman** için. Her katılımcı icin üc farkli süre degeri olduğu için her bir ID değeri üç kere tekrarlamaktadır.
 
@@ -194,12 +203,15 @@ uzun_ayrı <- uzun %>%
 uzun_ayrı %>% head(3)
 ```
 
-```
-##      ID Sure Sayı Zaman
-## 1 ID101 Sure    1    55
-## 2 ID102 Sure    1    60
-## 3 ID103 Sure    1    50
-```
+<div class="kable-table">
+
+|ID    |Sure |Sayı | Zaman|
+|:-----|:----|:----|-----:|
+|ID101 |Sure |1    |    52|
+|ID102 |Sure |1    |    60|
+|ID103 |Sure |1    |    56|
+
+</div>
 
 
 ## **unite()** fonksiyonu
@@ -213,12 +225,15 @@ uzun_birles <- uzun_ayrı %>% unite(SURE, Sure, Sayı, sep = ".")
 uzun_birles %>% head(3)
 ```
 
-```
-##      ID   SURE Zaman
-## 1 ID101 Sure.1    55
-## 2 ID102 Sure.1    60
-## 3 ID103 Sure.1    50
-```
+<div class="kable-table">
+
+|ID    |SURE   | Zaman|
+|:-----|:------|-----:|
+|ID101 |Sure.1 |    52|
+|ID102 |Sure.1 |    60|
+|ID103 |Sure.1 |    56|
+
+</div>
 
 
 ## **spread()** fonksiyonu
@@ -231,15 +246,18 @@ tekrar_genis <- uzun_birles %>% spread(SURE, Zaman)
 tekrar_genis %>% head(6)
 ```
 
-```
-##      ID Sure.1 Sure.2 Sure.3
-## 1 ID101     55     49     46
-## 2 ID102     60     51     42
-## 3 ID103     50     41     36
-## 4 ID104     51     40     45
-## 5 ID105     59     53     48
-## 6 ID106     55     49     42
-```
+<div class="kable-table">
+
+|ID    | Sure.1| Sure.2| Sure.3|
+|:-----|------:|------:|------:|
+|ID101 |     52|     40|     47|
+|ID102 |     60|     47|     45|
+|ID103 |     56|     51|     45|
+|ID104 |     54|     53|     43|
+|ID105 |     56|     54|     43|
+|ID106 |     57|     46|     36|
+
+</div>
 
 
 

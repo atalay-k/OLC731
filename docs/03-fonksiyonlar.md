@@ -66,16 +66,16 @@ rnorm(n = 5, mean = 10, sd = 2)
 - Bu kez R yine 5 rastgele sayı üretti, ancak şimdi bu sayı kümesi belirtildiği gibi 10 ortalama ve 2 sd değerine sahip. Bir fonksiyonun hangi argümanları gerektirdiğini anlamanıza yardımcı olması için yardım belgelerini kullanmayı her zaman unutmayın.
 
 
-\begin{info}
-Eğer internette kod örneklerine bakıyorsanız, sık sık
-\texttt{set.seed()} fonksiyonu ile başlayan kodlar görebilirsiniz. Bu
-fonksiyon rastgele sayı üretecini kontrol eder - rastgele sayı üreten
-herhangi bir fonksiyon kullanıyorsanız (\texttt{rnorm()} gibi),
-\texttt{set.seed()} fonksiyonunu çalıştırmak aynı sonucu almanızı
+<div class="info">
+<p>Eğer internette kod örneklerine bakıyorsanız, sık sık
+<code>set.seed()</code> fonksiyonu ile başlayan kodlar görebilirsiniz.
+Bu fonksiyon rastgele sayı üretecini kontrol eder - rastgele sayı üreten
+herhangi bir fonksiyon kullanıyorsanız (<code>rnorm()</code> gibi),
+<code>set.seed()</code> fonksiyonunu çalıştırmak aynı sonucu almanızı
 sağlayacaktır (bazı durumlarda yapmak istediğiniz şey bu olmayabilir).
-Bu örnekte \texttt{set.seed()} diyoruz, bu aynı rastgele sayıları
-alacağınız anlamına geliyor.
-\end{info}
+Bu örnekte <code>set.seed()</code> diyoruz, bu aynı rastgele sayıları
+alacağınız anlamına geliyor.</p>
+</div>
 
 ## Argüman isimleri
 
@@ -105,14 +105,10 @@ rnorm(sd = 1, n = 6, mean = 3)
 
 - R Studio'nun çok kullanışlı bir özelliği, fonksiyonlar için TAB otomatik tamamlama özelliğidir (bkz. Şekil \@ref(fig:img-autocomplete)). Fonksiyonun adını yazıp tab tuşuna basarsanız, R Studio size fonksiyonun aldığı argümanları kısa bir açıklama ile birlikte gösterecektir. Argüman adının üzerinde enter tuşuna basarsanız, tıpkı telefonunuzdaki otomatik tamamlama gibi adı sizin için dolduracaktır. Bu, R'yi ilk öğrenirken inanılmaz derecede kullanışlıdır ve bu özelliği sık sık kullanmayı **unutmamalısınız.** 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/autocomplete} 
-
-}
-
-\caption{Tab ile otomatik durdurma}(\#fig:img-autocomplete)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/autocomplete.png" alt="Tab ile otomatik durdurma" width="100%" />
+<p class="caption">(\#fig:img-autocomplete)Tab ile otomatik durdurma</p>
+</div>
 
 ## Kişisel tanımlı fonksiyon
 
@@ -297,14 +293,10 @@ ls()
 4. Konsolda yer alan işlemleri silmek için ise: CTRL + L (clear console) ya da süpürge işareti kullanılabilir.
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/broom} 
-
-}
-
-\caption{Clearing the workspace}(\#fig:img-broom)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/broom.png" alt="Clearing the workspace" width="100%" />
+<p class="caption">(\#fig:img-broom)Clearing the workspace</p>
+</div>
 
 
 ## R Çalışma Dizini
@@ -354,14 +346,10 @@ ls()
 
 'Oturum - R'yi Yeniden Başlat'a tıklayın. 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/new_session} 
-
-}
-
-\caption{The truth about programming}(\#fig:img-session)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/new_session.png" alt="The truth about programming" width="100%" />
+<p class="caption">(\#fig:img-session)The truth about programming</p>
+</div>
 
 ## Hata ayıklama ipuçları
 
@@ -401,14 +389,7 @@ Programlamada iyi olmak demek, bir şeyler denemek, internette yardım aramak ve
 
 ## Alıştırma : Kendini test et
 
-**Soru 1.** Neden `install.packages()` kodunu analiz kodlarında asla dahil **etmemelisiniz**? 
-
-* (A) Bunun yerine library() kullanmalısınız  
-* (B) Paketler zaten temel R'ın bir parçasıdır  
-* (C) Siz (veya bir başkası) yanlışlıkla kodunuzun çalışmasını durduran bir paket güncellemesi yükleyebilirsiniz  
-* (D) Paketin en son sürümüne zaten sahipsiniz  
-
- 
+**Soru 1.** Neden `install.packages()` kodunu analiz kodlarında asla dahil **etmemelisiniz**? <select class='webex-select'><option value='blank'></option><option value=''>Bunun yerine library() kullanmalısınız</option><option value=''>Paketler zaten temel R'ın bir parçasıdır</option><option value='answer'>Siz (veya bir başkası) yanlışlıkla kodunuzun çalışmasını durduran bir paket güncellemesi yükleyebilirsiniz</option><option value=''>Paketin en son sürümüne zaten sahipsiniz</option></select> 
 
 
 <div class='webex-solution'><button>Açıklama</button>
@@ -426,14 +407,7 @@ rnorm(6, 50, 10)
 ```
 
 
-
-
-* (A) Ortalaması 6 ve SD'si 50 olan 10 sayıdan oluşan bir veri seti  
-* (B) Ortalaması 50 ve SD'si 10 olan 6 sayıdan oluşan bir veri seti  
-* (C) Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti  
-* (D) Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti  
-
-  
+<select class='webex-select'><option value='blank'></option><option value=''>Ortalaması 6 ve SD'si 50 olan 10 sayıdan oluşan bir veri seti</option><option value='answer'>Ortalaması 50 ve SD'si 10 olan 6 sayıdan oluşan bir veri seti</option><option value=''>Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti</option><option value=''>Ortalaması 10 ve SD'si 6 olan 50 sayıdan oluşan bir veri seti</option></select>  
 
 
 <div class='webex-solution'><button>Açıklama</button>
@@ -445,14 +419,7 @@ rnorm(6, 50, 10)
 <br>
 **Soru 3.** Aynı isimde fonksiyonlara sahip iki paketiniz varsa ve tam olarak hangi paketin kullanılacağını belirtmek istiyorsanız, hangi kodu kullanırsınız? 
 
-
-
-* (A) package::function  
-* (B) function::package  
-* (C) library(package)  
-* (D) install.packages(package)  
-
-  
+<select class='webex-select'><option value='blank'></option><option value='answer'>package::function</option><option value=''>function::package</option><option value=''>library(package)</option><option value=''>install.packages(package)</option></select>  
 
 
 <div class='webex-solution'><button>Açıklama</button>
@@ -463,29 +430,11 @@ rnorm(6, 50, 10)
   
 
 
-**Soru 4.** Aşağıdakilerden hangisinin bir arguman olması en muhtemeldir? 
+**Soru 4.** Aşağıdakilerden hangisinin bir arguman olması en muhtemeldir? <select class='webex-select'><option value='blank'></option><option value='answer'>35</option><option value=''>read_csv()</option><option value=''><-</option></select>
 
-* (A) 35  
-* (B) read_csv()  
-* (C) <-  
+**Soru 5.** Fonksiyonları oluşturmanın için aşağıdakilerden hangisini kullanmalıyız? <select class='webex-select'><option value='blank'></option><option value=''>()</option><option value=''>[]</option><option value='answer'>{}</option></select>.
 
-
-
-**Soru 5.** Fonksiyonları oluşturmanın için aşağıdakilerden hangisini kullanmalıyız? 
-
-* (A) ()  
-* (B) []  
-* (C) {}  
-
-.
-
-**Soru 6.** <-`'nin görevi, fonksiyondan elde edilen çıktıyı bir/bir  ..................... atamaktır. 
-
-* (A) nesne  
-* (B) atama  
-* (C) arguman  
-
-.
+**Soru 6.** <-`'nin görevi, fonksiyondan elde edilen çıktıyı bir/bir  ..................... atamaktır. <select class='webex-select'><option value='blank'></option><option value='answer'>nesne</option><option value=''>atama</option><option value=''>arguman</option></select>.
 
 
 

@@ -16,6 +16,8 @@ library(DT) # etkileşimli tablolar için
 
 🔗İndir [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet).
 
+🔗İndir [R Markdown Cheat Sheet TURKCE](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
 
 ::: {.try data-latex=""}
 🔗[R markdon sunusu](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)
@@ -97,13 +99,56 @@ dat <- read.table("c:/Users/Kubra/Desktop/OLC731/import/veri1.txt")  # yanlıs
                     dec= ","))
 ```
 
-```
-##    no m_1  m_2 m_3  m_4 m_5
-## 1 522  12 14.0  16 20.0  10
-## 2 222   5   NA  20 10.0  10
-## 3 454   5 10.2   6  4.0  10
-## 4 567  10 20.0  NA 12.2  20
-```
+<div class="kable-table">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> no </th>
+   <th style="text-align:right;"> m_1 </th>
+   <th style="text-align:right;"> m_2 </th>
+   <th style="text-align:right;"> m_3 </th>
+   <th style="text-align:right;"> m_4 </th>
+   <th style="text-align:right;"> m_5 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 522 </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 14.0 </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 20.0 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 222 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 10.0 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 454 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 10.2 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 4.0 </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 567 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 20.0 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 12.2 </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 
 ::: {.info data-latex=""}
@@ -372,14 +417,40 @@ ozet_tablo <- iris %>%
 ozet_tablo
 ```
 
-```
-## # A tibble: 3 x 4
-##   Species        n ortalama    sd
-##   <fct>      <int>    <dbl> <dbl>
-## 1 setosa        50     1.46 0.174
-## 2 versicolor    50     4.26 0.470
-## 3 virginica     50     5.55 0.552
-```
+<div class="kable-table">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Species </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> ortalama </th>
+   <th style="text-align:right;"> sd </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> setosa </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 1.462 </td>
+   <td style="text-align:right;"> 0.1736640 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> versicolor </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 4.260 </td>
+   <td style="text-align:right;"> 0.4699110 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> virginica </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 5.552 </td>
+   <td style="text-align:right;"> 0.5518947 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 ::: {.warning data-latex=""}
 Yukarıdaki tablo etkileşimli görünümde tibble biçiminde yazdırılacak, ancak ördüğünüzde YAML başlığındaki df_print ayarındaki biçimi kullanacaktır.
@@ -409,22 +480,37 @@ knitr::kable(ozet_tablo,
              caption = "Petal Uzulukları için Özet Tablo")
 ```
 
-\begin{table}
-
-\caption{(\#tab:kable-demo)Petal Uzulukları için Özet Tablo}
-\centering
-\begin{tabular}[t]{l|r|r|r}
-\hline
-Çiçek Türü & Frekans & Ortalama & Sd\\
-\hline
-setosa & 50 & 1.46 & 0.17\\
-\hline
-versicolor & 50 & 4.26 & 0.47\\
-\hline
-virginica & 50 & 5.55 & 0.55\\
-\hline
-\end{tabular}
-\end{table}
+<table>
+<caption>(\#tab:kable-demo)Petal Uzulukları için Özet Tablo</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Çiçek Türü </th>
+   <th style="text-align:right;"> Frekans </th>
+   <th style="text-align:right;"> Ortalama </th>
+   <th style="text-align:right;"> Sd </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> setosa </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 0.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> versicolor </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 4.26 </td>
+   <td style="text-align:right;"> 0.47 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> virginica </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 5.55 </td>
+   <td style="text-align:right;"> 0.55 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -448,25 +534,41 @@ kable(ozet_tablo,
   kableExtra::row_spec(2, bold = TRUE, background = "lightgrey")
 ```
 
-\begin{table}
-
-\caption{(\#tab:kableExtra-demo)Petal Uzulukları için Özet Tablo}
-\centering
-\fontsize{20}{22}\selectfont
-\begin{tabular}[t]{l|r|r|r}
-\hline
-\multicolumn{2}{c|}{ } & \multicolumn{2}{c}{Degerler} \\
-\cline{3-4}
-Çiçek Türü & Frekans & Ortalama & Sd\\
-\hline
-setosa & 50 & 1.46 & 0.17\\
-\hline
-\cellcolor{lightgrey}{\textbf{versicolor}} & \cellcolor{lightgrey}{\textbf{50}} & \cellcolor{lightgrey}{\textbf{4.26}} & \cellcolor{lightgrey}{\textbf{0.47}}\\
-\hline
-virginica & 50 & 5.55 & 0.55\\
-\hline
-\end{tabular}
-\end{table}
+<table class=" lightable-classic table" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; font-size: 20px; width: auto !important; margin-left: auto; margin-right: auto;'>
+<caption style="font-size: initial !important;">(\#tab:kableExtra-demo)Petal Uzulukları için Özet Tablo</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;" colspan="2"></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Degerler</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;"> Çiçek Türü </th>
+   <th style="text-align:right;"> Frekans </th>
+   <th style="text-align:right;"> Ortalama </th>
+   <th style="text-align:right;"> Sd </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> setosa </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 1.46 </td>
+   <td style="text-align:right;"> 0.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: lightgrey !important;"> versicolor </td>
+   <td style="text-align:right;font-weight: bold;background-color: lightgrey !important;"> 50 </td>
+   <td style="text-align:right;font-weight: bold;background-color: lightgrey !important;"> 4.26 </td>
+   <td style="text-align:right;font-weight: bold;background-color: lightgrey !important;"> 0.47 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> virginica </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 5.55 </td>
+   <td style="text-align:right;"> 0.55 </td>
+  </tr>
+</tbody>
+</table>
 </div>
 
 
@@ -484,32 +586,14 @@ papaja::apa_table(ozet_tablo,
                   col_spanners = list("Means" = c(3, 4)))
 ```
 
+Table: (\#tab:papaja-demo) Petal Uzulukları için Özet Tablo
 
 
-
-\begin{table}[tbp]
-
-\begin{center}
-\begin{threeparttable}
-
-\caption{\label{tab:papaja-demo}Petal Uzulukları için Özet Tablo}
-
-\begin{tabular}{llll}
-\toprule
- &  & \multicolumn{2}{c}{Means} \\
-\cmidrule(r){3-4}
-Çiçek Türü & Frekans & Ortalama & Sd\\
-\midrule
-setosa & 50 & 1.46 & 0.17\\
-versicolor & 50 & 4.26 & 0.47\\
-virginica & 50 & 5.55 & 0.55\\
-\bottomrule
-\end{tabular}
-
-\end{threeparttable}
-\end{center}
-
-\end{table}
+Çiçek Türü   Frekans   Ortalama   Sd   
+-----------  --------  ---------  -----
+setosa       50        1.46       0.17 
+versicolor   50        4.26       0.47 
+virginica    50        5.55       0.55 
 
 </div>
 
@@ -533,17 +617,482 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   opt_stylize(style = 6, color = "blue")
 ```
 
-\begin{longtable}{crrr}
-\toprule
- &  & \multicolumn{2}{c}{Degerler} \\ 
-\cmidrule(lr){3-4}
-Çiçek Türü & Frekans & ortalama & sd \\ 
-\midrule\addlinespace[2.5pt]
-setosa & 50 & $1.46$ & $0.17$ \\ 
-versicolor & 50 & $4.26$ & $0.47$ \\ 
-virginica & 50 & $5.55$ & $0.55$ \\ 
-\bottomrule
-\end{longtable}
+```{=html}
+<div id="aguswklrfw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aguswklrfw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#aguswklrfw thead, #aguswklrfw tbody, #aguswklrfw tfoot, #aguswklrfw tr, #aguswklrfw td, #aguswklrfw th {
+  border-style: none;
+}
+
+#aguswklrfw p {
+  margin: 0;
+  padding: 0;
+}
+
+#aguswklrfw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#aguswklrfw .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#aguswklrfw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#aguswklrfw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#aguswklrfw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aguswklrfw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#aguswklrfw .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#aguswklrfw .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#aguswklrfw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#aguswklrfw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#aguswklrfw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#aguswklrfw .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#aguswklrfw .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#aguswklrfw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#aguswklrfw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#aguswklrfw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#aguswklrfw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#aguswklrfw .gt_stub {
+  color: #333333;
+  background-color: #89D3FE;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aguswklrfw .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#aguswklrfw .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#aguswklrfw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#aguswklrfw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aguswklrfw .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#aguswklrfw .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aguswklrfw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_striped {
+  background-color: #EDF7FC;
+}
+
+#aguswklrfw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#aguswklrfw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aguswklrfw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aguswklrfw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#aguswklrfw .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#aguswklrfw .gt_left {
+  text-align: left;
+}
+
+#aguswklrfw .gt_center {
+  text-align: center;
+}
+
+#aguswklrfw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#aguswklrfw .gt_font_normal {
+  font-weight: normal;
+}
+
+#aguswklrfw .gt_font_bold {
+  font-weight: bold;
+}
+
+#aguswklrfw .gt_font_italic {
+  font-style: italic;
+}
+
+#aguswklrfw .gt_super {
+  font-size: 65%;
+}
+
+#aguswklrfw .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#aguswklrfw .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#aguswklrfw .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#aguswklrfw .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#aguswklrfw .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#aguswklrfw .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#aguswklrfw .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <caption>(#tab:gt-demo)Petal Uzulukları için Özet Tablo</caption>
+  <thead>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="Çiçek Türü">Çiçek Türü</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="2" colspan="1" scope="col" id="Frekans">Frekans</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2" scope="colgroup" id="Degerler">
+        <span class="gt_column_spanner">Degerler</span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ortalama">ortalama</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="sd">sd</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Species" class="gt_row gt_center">setosa</td>
+<td headers="n" class="gt_row gt_right">50</td>
+<td headers="ortalama" class="gt_row gt_right">1.46</td>
+<td headers="sd" class="gt_row gt_right">0.17</td></tr>
+    <tr><td headers="Species" class="gt_row gt_center gt_striped">versicolor</td>
+<td headers="n" class="gt_row gt_right gt_striped">50</td>
+<td headers="ortalama" class="gt_row gt_right gt_striped">4.26</td>
+<td headers="sd" class="gt_row gt_right gt_striped">0.47</td></tr>
+    <tr><td headers="Species" class="gt_row gt_center">virginica</td>
+<td headers="n" class="gt_row gt_right">50</td>
+<td headers="ortalama" class="gt_row gt_right">5.55</td>
+<td headers="sd" class="gt_row gt_right">0.55</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+```
 
 </div>
 </div>
@@ -566,24 +1115,15 @@ ggplot(dat, aes(Species, Petal.Length)) +
   theme(text = element_text(size = 20, family = "Times"))
 ```
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="06-markdown_files/figure-html/unnamed-chunk-10-1.png" alt="Petal Uzunlukları ve Türler" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-10)Petal Uzunlukları ve Türler</p>
+</div><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
-{\centering \includegraphics[width=1\linewidth]{06-markdown_files/figure-latex/unnamed-chunk-10-1} 
-
-}
-
-\caption{Petal Uzunlukları ve Türler}(\#fig:unnamed-chunk-10)
-\end{figure}
-<pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{06-markdown_files/figure-latex/pet-plot-out-1} 
-
-}
-
-\caption{ Petal Uzunlukları ve Türler}(\#fig:pet-plot-out)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="06-markdown_files/figure-html/pet-plot-out-1.png" alt=" Petal Uzunlukları ve Türler" width="100%" />
+<p class="caption">(\#fig:pet-plot-out) Petal Uzunlukları ve Türler</p>
+</div>
 
 ::: {.info data-latex=""}
 Son satır varsayılan metin boyutunu ve yazı tipini değiştirir, bu da bir derginin gereksinimlerini karşılayan şekiller oluşturmak için yararlı olabilir.
@@ -830,14 +1370,10 @@ citation(package="ggplot2") %>% toBibtex()
 
 [Google Scholar](https://scholar.google.com/)  girişlerinde BibTeX atıf seçeneği vardır. DOI'yi kendiniz eklemeniz gerekse de, Zotero tarayıcı bağlayıcısı aracılığıyla bir atıf ekleyemiyorsanız, ilgili değerleri almanın en kolay yolu genellikle budur. Önerilen kısa adı koruyabilir veya sizin için daha anlamlı olan bir adla değiştirebilirsiniz.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/google-scholar} 
-
-}
-
-\caption{Get BibTex citations from Google Scholar.}(\#fig:google-scholar)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/google-scholar.png" alt="Get BibTex citations from Google Scholar." width="100%" />
+<p class="caption">(\#fig:google-scholar)Get BibTex citations from Google Scholar.</p>
+</div>
 
 ### Referanslara atıfta bulunma
 
@@ -887,14 +1423,10 @@ Raporunuza metin içi alıntılar ve bir referans listesi ekleyin.
 
 Bazı paketler özel R Markdown şablonları sağlar. reprores, YAML başlığındaki tüm olası seçenekleri gösteren, kaynakça ve stil dosyalarına sahip olan ve bağlantılı şekil ve tabloların nasıl ayarlanacağını açıklayan bir Rapor şablonuna sahiptir. Birden fazla dosya içerdiğinden, RStudio sizden tüm dosyaları tutmak için yeni bir klasör oluşturmanızı isteyecektir.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{images/custom-rmd} 
-
-}
-
-\caption{Şablonlar}(\#fig:img-custom-rmd)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/custom-rmd.png" alt="Şablonlar" width="75%" />
+<p class="caption">(\#fig:img-custom-rmd)Şablonlar</p>
+</div>
 
 ::: {.try data-latex=""}
 Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi veya silmeyi deneyin.

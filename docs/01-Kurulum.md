@@ -2,12 +2,11 @@
 
 Bu bölümde, **R ve RStudio'nun** nasıl kullanılacağının yanı sıra bazı temel programlama kavramları ve terminolojisi, yaygın tuzaklar, faydalı ipuçları ve nereden yardım alınabileceği konularını ele alacağız. Programlama deneyimi olmayanlar bu bölümü özellikle yararlı bulacaktır, ancak daha önce R kullanmış olsanız bile bazı yararlı ipuçları ve püf noktaları bulabilirsiniz.
 
-\begin{info}
-Bu bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade
-etmeyebilir:)
-
-Biraz sabretmenizi bekliyorum !
-\end{info}
+<div class="info">
+<p>Bu bölüm kendi kodunuzu yazmaya başlayana kadar bir anlam ifade
+etmeyebilir:)</p>
+<p>Biraz sabretmenizi bekliyorum !</p>
+</div>
 
 
 
@@ -152,14 +151,10 @@ install.packages("devtools")
 
 -   Varsayılan olarak, R Studio'yu açtığınızda, kodunuz ve oluşturduğunuz tüm nesneler dahil olmak üzere en son ne üzerinde çalıştığınızı gösterir. Bu yararlı gibi görünebilir, ancak aslında değerinden daha fazla soruna neden olma eğilimindedir, çünkü yanlışlıkla bir nesnenin eski bir sürümünü kullanma riskiniz olduğu anlamına gelir. R Studio'yu her başlattığınızda yeni bir kopya açacak şekilde ayarları değiştirmenizi öneririz. Bunu `Araçlar` - `Global Seçenekler` seçeneğine tıklayarak ve ardından aşağıdaki gibi görünmesi için kutuların seçimini kaldırarak yapabilirsiniz.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/global_options} 
-
-}
-
-\caption{Global options}(\#fig:img-options)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/global_options.jpg" alt="Global options" width="100%" />
+<p class="caption">(\#fig:img-options)Global options</p>
+</div>
 
 -   Dönem boyunca Rstudio kullanımına aşina olacaksınız. Bu süreci kolaylaştırmak için bağlantıları verilen dökümanlara göz atabilirsiniz.
 
@@ -181,14 +176,10 @@ install.packages("devtools")
 
 -   Ayrıca kod editörü (sol üst), "Ortam" sekmesinde oluşturduğunuz fonksiyonları ve nesneleri gösteren bir pencere ( sağ üst pencere) ve grafikleri, dosya paketlerini ve yardım belgelerini gösteren bir pencere ise (sağ alt) bulunur.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/Rstudio} 
-
-}
-
-\caption{RStudio arayüzü}(\#fig:img-rstudio)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/Rstudio.png" alt="RStudio arayüzü" width="100%" />
+<p class="caption">(\#fig:img-rstudio)RStudio arayüzü</p>
+</div>
 
 -   Bu ders boyunca R Studio'da bulunan özelliklerin nasıl kullanılacağı hakkında daha fazla bilgi edineceksiniz, ancak R Studio ekibinden [RStudio Essentials 1](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/) izlemenizi şiddetle tavsiye ederim. Video yaklaşık 30 dakika sürmekte ve R Studio'nun ana bölümlerini tanıtmaktadır.
 
@@ -291,14 +282,10 @@ yeniyil <- as.Date("2024-01-01")
 veri <- rnorm(n = 10, mean = 15, sd = 3)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/objects-enviro} 
-
-}
-
-\caption{Calisma alanındaki nesneler}(\#fig:img-objects-enviro)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/objects-enviro.png" alt="Calisma alanındaki nesneler" width="100%" />
+<p class="caption">(\#fig:img-objects-enviro)Calisma alanındaki nesneler</p>
+</div>
 
 -   Bu örneklerde, `ad`, `yas` ve `yeniyil` her zaman `ada`, `36` değerlerini ve 2024 Yeni Yıl Günü tarihini içerecektir, ancak `gun` tarihi işletim sisteminden alacaktır ve `veri` rastgele oluşturulmuş bir veri kümesi olacaktır, bu nedenle bu nesnelerin değerleri statik olmayacaktır.
 
@@ -314,7 +301,7 @@ mean(veri)
 ```
 [1] 46
 Time difference of 70 days
-[1] 14.34768
+[1] 14.4987
 ```
 
 -   Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:
@@ -324,18 +311,18 @@ Time difference of 70 days
 n1 <- yas + 10
 ```
 
-\begin{try}
-\textless-\texttt{ifadesini}içerir\texttt{şeklinde\ okumak\ faydalı\ olabilir,\ örneğin}ad\texttt{ifadesi}ada`
-metnini içerir.
-\end{try}
+<div class="try">
+<p>&lt;-<code>ifadesini</code>içerir<code>şeklinde okumak faydalı olabilir, örneğin</code>ad<code>ifadesi</code>ada`
+metnini içerir.</p>
+</div>
 
 -   Bu ders boyunca sürekli olarak nesneler yaratacaksınız ve ilerledikçe onlar ve nasıl davrandıkları hakkında daha fazla bilgi edineceksiniz, ancak şimdilik bunların değerleri kaydetmenin bir yolu olduğunu, bu değerlerin sayı, metin veya işlemlerin sonucu olabileceğini ve yeni değişkenler oluşturmak için başka işlemlerde kullanılabileceğini anlamak yeterlidir.
 
-\begin{info}
-Nesnelerin `değişkenler' olarak adlandırıldığını da görebilirsiniz.
+<div class="info">
+<p>Nesnelerin ‘değişkenler’ olarak adlandırıldığını da görebilirsiniz.
 Programlama terimlerinde ikisi arasında fark vardır, ancak çok sık
-eşanlamlı olarak kullanılırlar.
-\end{info}
+eşanlamlı olarak kullanılırlar.</p>
+</div>
 
 **Alıştırma Nesneler oluşturma**
 

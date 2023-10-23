@@ -16,6 +16,8 @@ library(DT) # etkileşimli tablolar için
 
 `r emo::ji("link")`İndir [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet).
 
+`r emo::ji("link")`İndir [R Markdown Cheat Sheet TURKCE](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
 
 ::: {.try data-latex=""}
 `r emo::ji("link")`[R markdon sunusu](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)

@@ -8,14 +8,10 @@ RStudio is the easiest component to update. Typically, updates to RStudio won't 
 
 Click `Help - Check for updates`
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/update_rstudio} 
-
-}
-
-\caption{Updating RStudio}(\#fig:img-updaterstudio)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/update_rstudio.jpg" alt="Updating RStudio" width="100%" />
+<p class="caption">(\#fig:img-updaterstudio)Updating RStudio</p>
+</div>
 
 If an update is available, it will prompt you to download it and you can install it as usual.
 
@@ -64,14 +60,10 @@ install.packages("tidyverse")
 
 To update multiple packages, or indeed all packages, RStudio provides helpful tools. Click `Tools - Check for Package Updates`. A dialogue box will appear and you can select the packages you wish to update. Be aware that if you select all packages, this may take some time and you will be unable to use R whilst the process completes.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/update_packages} 
-
-}
-
-\caption{Updating packages with RStudio}(\#fig:img-updateall)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/update_packages.jpg" alt="Updating packages with RStudio" width="100%" />
+<p class="caption">(\#fig:img-updateall)Updating packages with RStudio</p>
+</div>
 
 
 ## Troubleshooting {#package-install-troubleshooting}

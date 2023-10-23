@@ -35,12 +35,13 @@ load("import/PISA_STU_2018.rda") # ogrenci verisi
 PISA_STU_2018 %>% count()
 ```
 
-```
-## # A tibble: 1 x 1
-##       n
-##   <int>
-## 1  6890
-```
+<div class="kable-table">
+
+|    n|
+|----:|
+| 6890|
+
+</div>
 
 - Cinsiyete göre dağılım
 👦 👧
@@ -49,13 +50,14 @@ PISA_STU_2018 %>% count()
 PISA_STU_2018 %>% count(ST004D01T)
 ```
 
-```
-## # A tibble: 2 x 2
-##    ST004D01T     n
-##   <hvn_lbll> <int>
-## 1          1  3396
-## 2          2  3494
-```
+<div class="kable-table">
+
+| ST004D01T|    n|
+|---------:|----:|
+|         1| 3396|
+|         2| 3494|
+
+</div>
 
 - Cinsiyete göre dağılım - **sort** argümanı ile sıralanabilir.
 👦 👧
@@ -65,13 +67,14 @@ PISA_STU_2018 %>% count(ST004D01T)
 PISA_STU_2018 %>% count(ST004D01T,sort=TRUE)
 ```
 
-```
-## # A tibble: 2 x 2
-##    ST004D01T     n
-##   <hvn_lbll> <int>
-## 1          2  3494
-## 2          1  3396
-```
+<div class="kable-table">
+
+| ST004D01T|    n|
+|---------:|----:|
+|         2| 3494|
+|         1| 3396|
+
+</div>
 
 - PISA_OGR_2018 öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.
 
@@ -82,38 +85,39 @@ PISA_STU_2018 %>% count(ST004D01T,sort=TRUE)
 PISA_OGR_2018 %>% count(CINSIYET,Gocmenlik)
 ```
 
-```
-## # A tibble: 8 x 3
-##     CINSIYET  Gocmenlik     n
-##   <hvn_lbll> <hvn_lbll> <int>
-## 1          1          1  3306
-## 2          1          2    17
-## 3          1          3    10
-## 4          1         NA    63
-## 5          2          1  3357
-## 6          2          2    20
-## 7          2          3     7
-## 8          2         NA   110
-```
+<div class="kable-table">
+
+| CINSIYET| Gocmenlik|    n|
+|--------:|---------:|----:|
+|        1|         1| 3306|
+|        1|         2|   17|
+|        1|         3|   10|
+|        1|        NA|   63|
+|        2|         1| 3357|
+|        2|         2|   20|
+|        2|         3|    7|
+|        2|        NA|  110|
+
+</div>
 
 
 - `PISA_OGR_2018 %>% count(CINSIYET,Gocmenlik) %>% ...` birey sayısını büyükten küçüğe sıralayınız. 
-___________
+<input class='webex-solveme nospaces' size='11' data-answer='["arrange(-n)"]'/>
 
+<div class="kable-table">
 
-```
-## # A tibble: 8 x 3
-##     CINSIYET  Gocmenlik     n
-##   <hvn_lbll> <hvn_lbll> <int>
-## 1          2          1  3357
-## 2          1          1  3306
-## 3          2         NA   110
-## 4          1         NA    63
-## 5          2          2    20
-## 6          1          2    17
-## 7          1          3    10
-## 8          2          3     7
-```
+| CINSIYET| Gocmenlik|    n|
+|--------:|---------:|----:|
+|        2|         1| 3357|
+|        1|         1| 3306|
+|        2|        NA|  110|
+|        1|        NA|   63|
+|        2|         2|   20|
+|        1|         2|   17|
+|        1|         3|   10|
+|        2|         3|    7|
+
+</div>
 
 
 
@@ -121,38 +125,39 @@ ___________
 PISA_OGR_2018 %>% count(SINIF, sort=TRUE)
 ```
 
-```
-## # A tibble: 6 x 2
-##        SINIF     n
-##   <hvn_lbll> <int>
-## 1         10  5360
-## 2          9  1295
-## 3         11   207
-## 4          8    19
-## 5         12     6
-## 6          7     3
-```
+<div class="kable-table">
 
-- `PISA_OGR_2018 %>% count(.....)` siz de  SINIF ve CINSIYET'e göre dağılımı bulunuz? ________________________
+| SINIF|    n|
+|-----:|----:|
+|    10| 5360|
+|     9| 1295|
+|    11|  207|
+|     8|   19|
+|    12|    6|
+|     7|    3|
 
+</div>
 
-```
-## # A tibble: 12 x 3
-##      CINSIYET      SINIF     n
-##    <hvn_lbll> <hvn_lbll> <int>
-##  1          1         10  2707
-##  2          2         10  2653
-##  3          2          9   747
-##  4          1          9   548
-##  5          1         11   124
-##  6          2         11    83
-##  7          1          8    11
-##  8          2          8     8
-##  9          1         12     5
-## 10          2          7     2
-## 11          1          7     1
-## 12          2         12     1
-```
+- `PISA_OGR_2018 %>% count(.....)` siz de  SINIF ve CINSIYET'e göre dağılımı bulunuz? <input class='webex-solveme nospaces' size='24' data-answer='["CINSIYET,SINIF,sort=TRUE"]'/>
+
+<div class="kable-table">
+
+| CINSIYET| SINIF|    n|
+|--------:|-----:|----:|
+|        1|    10| 2707|
+|        2|    10| 2653|
+|        2|     9|  747|
+|        1|     9|  548|
+|        1|    11|  124|
+|        2|    11|   83|
+|        1|     8|   11|
+|        2|     8|    8|
+|        1|    12|    5|
+|        2|     7|    2|
+|        1|     7|    1|
+|        2|    12|    1|
+
+</div>
 
 - **count()** fonksiyonunun yardım sayfasını inceleyiniz **wt** argümanını ne amaçala kullanılmıştır açıklayınız. 
 
@@ -197,12 +202,13 @@ PISA_OGR_2018 %>%
 summarise(mean(ODOKUMA1))
 ```
 
-```
-## # A tibble: 1 x 1
-##   `mean(ODOKUMA1)`
-##              <dbl>
-## 1             464.
-```
+<div class="kable-table">
+
+| mean(ODOKUMA1)|
+|--------------:|
+|       464.2299|
+
+</div>
 
 - **summarise()** fonksiyonu içinde isimlendirme yapmazsanız, oluşan veri setinde isimlendirme fonksiyon adı/ları olacaktır.
 
@@ -214,12 +220,13 @@ PISA_OGR_2018 %>%
   summarise(ortalama=mean(ODOKUMA1))
 ```
 
-```
-## # A tibble: 1 x 1
-##   ortalama
-##      <dbl>
-## 1     464.
-```
+<div class="kable-table">
+
+| ortalama|
+|--------:|
+| 464.2299|
+
+</div>
 
 
 - Özet bilgiler elde etmek için birden fazla özetleyici fonksiyon kullanabilirsiniz.
@@ -234,12 +241,13 @@ PISA_OGR_2018 %>%
             max=max(ODOKUMA1))
 ```
 
-```
-## # A tibble: 1 x 5
-##       n ortalama    sd   min   max
-##   <int>    <dbl> <dbl> <dbl> <dbl>
-## 1  6890     464.  87.8  176.  772.
-```
+<div class="kable-table">
+
+|    n| ortalama|       sd|     min|     max|
+|----:|--------:|--------:|-------:|-------:|
+| 6890| 464.2299| 87.78006| 175.608| 771.508|
+
+</div>
 
 
 
@@ -255,13 +263,14 @@ PISA_OGR_2018 %>%
   summarise(n = n(),ortalama=mean(ODOKUMA1),sd=sd(ODOKUMA1),min=min(ODOKUMA1),max=max(ODOKUMA1))
 ```
 
-```
-## # A tibble: 2 x 6
-##     CINSIYET     n ortalama    sd   min   max
-##   <hvn_lbll> <int>    <dbl> <dbl> <dbl> <dbl>
-## 1          1  3396     478.  83.7  236.  772.
-## 2          2  3494     451.  89.6  176.  747.
-```
+<div class="kable-table">
+
+| CINSIYET|    n| ortalama|       sd|     min|     max|
+|--------:|----:|--------:|--------:|-------:|-------:|
+|        1| 3396| 478.1378| 83.65322| 236.389| 771.508|
+|        2| 3494| 450.7121| 89.57864| 175.608| 747.491|
+
+</div>
 
 
 - siz de bu işlemi göçmenlik statüsüne göre  yapınız.
@@ -281,24 +290,24 @@ betimsel  <- PISA_OGR_2018 %>%
 betimsel
 ```
 
-```
-## # A tibble: 12 x 5
-## # Groups:   CINSIYET [2]
-##      CINSIYET      SINIF     n ortalama    sd
-##    <hvn_lbll> <hvn_lbll> <int>    <dbl> <dbl>
-##  1          1         10  2707     482.  79.9
-##  2          1         11   124     473.  85.0
-##  3          1          9   548     462.  96.9
-##  4          2         10  2653     459.  85.0
-##  5          2         11    83     448.  87.9
-##  6          2          9   747     422.  98.7
-##  7          1         12     5     422.  96.6
-##  8          2          8     8     363.  82.8
-##  9          1          8    11     356.  62.5
-## 10          1          7     1     344.  NA  
-## 11          2          7     2     330.  62.1
-## 12          2         12     1     322.  NA
-```
+<div class="kable-table">
+
+| CINSIYET| SINIF|    n| ortalama|       sd|
+|--------:|-----:|----:|--------:|--------:|
+|        1|    10| 2707| 482.2966| 79.87708|
+|        1|    11|  124| 472.6618| 84.95710|
+|        1|     9|  548| 462.0539| 96.90558|
+|        2|    10| 2653| 459.2322| 85.00155|
+|        2|    11|   83| 447.9737| 87.87190|
+|        2|     9|  747| 422.1915| 98.74913|
+|        1|    12|    5| 421.8288| 96.60689|
+|        2|     8|    8| 362.9183| 82.82819|
+|        1|     8|   11| 355.5180| 62.47101|
+|        1|     7|    1| 343.5010|       NA|
+|        2|     7|    2| 330.3725| 62.13135|
+|        2|    12|    1| 322.0710|       NA|
+
+</div>
 
 
 
@@ -324,23 +333,24 @@ PISA_OGR_2018 %>%
   ungroup()
 ```
 
-```
-## # A tibble: 12 x 5
-##      CINSIYET      SINIF     n ortalama    sd
-##    <hvn_lbll> <hvn_lbll> <int>    <dbl> <dbl>
-##  1          1         10  2707     482.  79.9
-##  2          1         11   124     473.  85.0
-##  3          1          9   548     462.  96.9
-##  4          2         10  2653     459.  85.0
-##  5          2         11    83     448.  87.9
-##  6          2          9   747     422.  98.7
-##  7          1         12     5     422.  96.6
-##  8          2          8     8     363.  82.8
-##  9          1          8    11     356.  62.5
-## 10          1          7     1     344.  NA  
-## 11          2          7     2     330.  62.1
-## 12          2         12     1     322.  NA
-```
+<div class="kable-table">
+
+| CINSIYET| SINIF|    n| ortalama|       sd|
+|--------:|-----:|----:|--------:|--------:|
+|        1|    10| 2707| 482.2966| 79.87708|
+|        1|    11|  124| 472.6618| 84.95710|
+|        1|     9|  548| 462.0539| 96.90558|
+|        2|    10| 2653| 459.2322| 85.00155|
+|        2|    11|   83| 447.9737| 87.87190|
+|        2|     9|  747| 422.1915| 98.74913|
+|        1|    12|    5| 421.8288| 96.60689|
+|        2|     8|    8| 362.9183| 82.82819|
+|        1|     8|   11| 355.5180| 62.47101|
+|        1|     7|    1| 343.5010|       NA|
+|        2|     7|    2| 330.3725| 62.13135|
+|        2|    12|    1| 322.0710|       NA|
+
+</div>
 
 
 ### summarize_at()
@@ -362,12 +372,13 @@ PISA_OGR_2018 %>%
     summarize_at(vars(ODOKUMA1, ODFEN1), list(~mean(.), ~sd(.)))
 ```
 
-```
-## # A tibble: 1 x 4
-##   ODOKUMA1_mean ODFEN1_mean ODOKUMA1_sd ODFEN1_sd
-##           <dbl>       <dbl>       <dbl>     <dbl>
-## 1          464.        467.        87.8      83.1
-```
+<div class="kable-table">
+
+| ODOKUMA1_mean| ODFEN1_mean| ODOKUMA1_sd| ODFEN1_sd|
+|-------------:|-----------:|-----------:|---------:|
+|      464.2299|    467.4865|    87.78006|  83.11351|
+
+</div>
 
 
 ### summarize_all() ve summarize_if()
@@ -388,13 +399,13 @@ expss::drop_var_labs(PISA_OGR_2018) %>%
     summarize_if(is.numeric, funs(mean, sd))
 ```
 
-```
-## # A tibble: 1 x 6
-##   CINSIYET_mean Gocmenlik_mean ODOKUMA1_mean CINSIYET_sd Gocmenlik_sd
-##           <dbl>          <dbl>         <dbl>       <dbl>        <dbl>
-## 1          1.51             NA          464.       0.500           NA
-## # i 1 more variable: ODOKUMA1_sd <dbl>
-```
+<div class="kable-table">
+
+| CINSIYET_mean| Gocmenlik_mean| ODOKUMA1_mean| CINSIYET_sd| Gocmenlik_sd| ODOKUMA1_sd|
+|-------------:|--------------:|-------------:|-----------:|------------:|-----------:|
+|      1.507112|             NA|      464.2299|   0.4999857|           NA|    87.78006|
+
+</div>
 
 
 ## top_n()
@@ -411,11 +422,14 @@ df %>% top_n(2)
 ## Selecting by x
 ```
 
-```
-##    x
-## 1 10
-## 2  6
-```
+<div class="kable-table">
+
+|  x|
+|--:|
+| 10|
+|  6|
+
+</div>
 
 
 
@@ -429,18 +443,18 @@ PISA_OGR_2018 %>%
   top_n(3,ODOKUMA1)
 ```
 
-```
-## # A tibble: 6 x 2
-## # Groups:   CINSIYET [2]
-##     CINSIYET ODOKUMA1
-##   <hvn_lbll>    <dbl>
-## 1          1     772.
-## 2          1     748.
-## 3          2     747.
-## 4          1     743.
-## 5          2     737.
-## 6          2     714.
-```
+<div class="kable-table">
+
+| CINSIYET| ODOKUMA1|
+|--------:|--------:|
+|        1|  771.508|
+|        1|  748.371|
+|        2|  747.491|
+|        1|  742.969|
+|        2|  737.448|
+|        2|  713.531|
+
+</div>
 
 
 ## top_n() & - operatoru
@@ -456,18 +470,18 @@ PISA_OGR_2018 %>%
   top_n(-3,ODOKUMA1)
 ```
 
-```
-## # A tibble: 6 x 2
-## # Groups:   CINSIYET [2]
-##     CINSIYET ODOKUMA1
-##   <hvn_lbll>    <dbl>
-## 1          1     250.
-## 2          1     242.
-## 3          1     236.
-## 4          2     199.
-## 5          2     177.
-## 6          2     176.
-```
+<div class="kable-table">
+
+| CINSIYET| ODOKUMA1|
+|--------:|--------:|
+|        1|  249.789|
+|        1|  241.820|
+|        1|  236.389|
+|        2|  198.944|
+|        2|  176.962|
+|        2|  175.608|
+
+</div>
 
 
 
