@@ -65,12 +65,12 @@ install.packages("tidyverse")
 
 - Bir paketi yalnızca bir kez yüklemeniz gerekir, ancak R'yi her başlattığınızda kullanmak istediğiniz paketleri yüklemeniz gerekir, benzer şekilde telefonunuza bir uygulamayı bir kez yüklemeniz gerekir, ancak her kullanmak istediğinizde açmanız gerekir.
 
-<div class="info">
-<p><strong>UYARI: WARNING: Rtools is required to build R packages” gibi
-bir hata mesajı alırsanız, [Rtools]
+\begin{info}
+\textbf{UYARI: WARNING: Rtools is required to build R packages'' gibi
+bir hata mesajı alırsanız, {[}Rtools{]}
 (https://cran.r-project.org/bin/windows/Rtools/) adlı ekstra bir yazılım
-indirmeniz ve yüklemeniz gerekebilir.</strong></p>
-</div>
+indirmeniz ve yüklemeniz gerekebilir.}
+\end{info}
 
 
 ### Alıştırma : tidyverse etkinleştir
@@ -161,13 +161,12 @@ MASS::select()
 
 - `install.packages()` fonksiyonunu çalıştırdığınızda, her zaman paketin en son sürümü yüklenir ve yüklemiş olabileceğiniz eski sürümlerin üzerine yazılır. Bazen bu bir sorun teşkil etmez, ancak bazen paket önemli ölçüde değiştiği için güncellemenin kodunuzun artık çalışmadığı anlamına geldiğini görürsünüz. Bir paketin eski bir sürümüne geri dönmek mümkündür ancak yine de bundan kaçınmaya çalışın.
 
-<div class="info">
-<p>Bir paketin üzerine yanlışlıkla daha sonraki bir sürümün yazılmasını
+\begin{info}
+Bir paketin üzerine yanlışlıkla daha sonraki bir sürümün yazılmasını
 önlemek için, sizin veya bir başkasının kodu yanlışlıkla çalıştırması
-ihtimaline karşı analiz komut dosyalarınıza
-<code>install.packages()</code> i <strong>asla</strong> dahil
-etmemelisiniz.</p>
-</div>
+ihtimaline karşı analiz komut dosyalarınıza \texttt{install.packages()}
+i \textbf{asla} dahil etmemelisiniz.
+\end{info}
 
 
 ## R ve RStudio'ya nasıl alıntı yapılır

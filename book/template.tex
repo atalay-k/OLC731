@@ -169,12 +169,12 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Uretilebilir Rapor},
-  pdfauthor={Kubra},
+  pdftitle={OLC731},
+  pdfauthor={Kubra Atalay Kabasakal},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Uretilebilir Rapor}
+\title{OLC731}
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
@@ -182,8 +182,8 @@
 }
 \makeatother
 \subtitle{R YAZILIMI ILE VERI ANALIZI}
-\author{Kubra}
-\date{2023-10-15}
+\author{Kubra Atalay Kabasakal}
+\date{2023-10-23}
 
 \begin{document}
 \maketitle
@@ -657,8 +657,8 @@ Biraz sabretmenizi bekliyorum !
 
 \begin{verbatim}
 [1] 46
-Time difference of 78 days
-[1] 14.91133
+Time difference of 70 days
+[1] 14.34768
 \end{verbatim}
 
 \begin{itemize}
@@ -1852,6 +1852,592 @@ Açıklama
   \href{https://cran.r-project.org/doc/contrib/Short-refcard.pdf}{Referens kart} sayfasının çıktısını alarak duvarınıza asmanızı öneririm.
 \end{itemize}
 
+\hypertarget{vektuxf6rler}{%
+\chapter{Vektörler}\label{vektuxf6rler}}
+
+\begin{itemize}
+\item
+  R lineer cebir temelli bir programlama dilidir.
+\item
+  Vektörler tek boyutludur.
+\item
+  R'da vektörler birleştirmek (combine/concatenate) anlamına gelen \texttt{c()} fonksiyonu ile oluşturulmaktadır.
+\item
+  R da veriler bir araya gelerek veri yapılarını oluşturur.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    vektör (vector)
+  \item
+    liste (list)
+  \item
+    matris (matrix)
+  \item
+    veri seti (data.frame)
+  \item
+    dizi (array)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{vektuxf6r-oluux15fturma}{%
+\section{Vektör Oluşturma}\label{vektuxf6r-oluux15fturma}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(sayisal\_vektor }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(karakter\_vektor }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{,}\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{))  }\DocumentationTok{\#\# cift tirnak}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(mantiksal\_vektor }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE FALSE
+\end{verbatim}
+
+\hypertarget{vektuxf6r-iux15flemleri}{%
+\section{Vektör İşlemleri}\label{vektuxf6r-iux15flemleri}}
+
+\begin{itemize}
+\item
+  Vektör uzunluğu \texttt{length()} fonksiyonu ile vektör türleri ise \texttt{class()}, \texttt{mode()} ya da \texttt{typeof()} fonksiyonları ise tur belirlemek için kullanılmaktadır.
+\item
+  Vektörler bir veya daha fazla elemandan oluşabilmektedir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{1}  \CommentTok{\# tek elemandan oluşur.}
+\CommentTok{\# Vektör uzunluğunu öğrenmek icin length() fonksiyonu}
+\FunctionTok{length}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  bir vektöründeki verilerin toplanması \texttt{sum(x)} 55
+\item
+  bir vektöründeki verilerin çarpılması \texttt{prod(x)} \ensuremath{3.6288\times 10^{6}}
+\item
+  bir vektöründeki verilerin küçükten büyüğe sıralanması \texttt{sort(x)} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+\item
+  bir vektörünün elemanların sıralarının tersine çevrilmesi \texttt{rev(x)} 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+\item
+  bir vektöründeki verilerin standart sapmasının hesaplanması \texttt{sd(x)} 3.0276504
+\item
+  bir vektöründeki en büyük verinin gösterilmesi \texttt{max(x)} 10
+\item
+  bir vektöründeki en küçük verinin gösterilmesi \texttt{min(x)} 1
+\item
+  En büyük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi \texttt{which.max(x)} 10
+\item
+  En küçük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi \texttt{which.min(x)} 1
+\item
+  Vektörlerden eleman sırası, isim ve mantıksal operatörler olmak üzere üç farklı yolla eleman seçilebilir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}
+\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item
+  ad vektörünün 1. elemanı \texttt{ad{[}1{]}} Ali
+\item
+  ad vektörünün 5. elemanını yazdıracak kodu oluşturunuz. \_\_\_\_\_
+\item
+  ad vektörünün son elemanını yazdıracak kodu oluşturunuz. \_\_\_\_\_\_
+\item
+  ad vektörünün son elemanını yazdıracak kodu vektörün 10 elemanlı olduğunu bilmediğiniz de ne yaparsınız? \_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\item
+  Vektörün sadece 1., 5. 8 elemanının yazdıracak kodu oluşturunuz.\_\_\_\_\_\_\_\_\_\_\_\_
+\item
+  Vektörün sadece 1. elemanının hariç tutacak kodu oluşturunuz \_\_\_\_\_\_
+\item
+  Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz \_\_\_\_\_\_\_\_\_\_\_
+\item
+  Vektörün son üç elemanını yazdıracak kodu oluşturunuz \_\_\_\_\_\_\_\_
+\end{itemize}
+
+\hypertarget{vektuxf6re-eleman-eklenmesi}{%
+\section{Vektöre eleman eklenmesi}\label{vektuxf6re-eleman-eklenmesi}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad[}\DecValTok{11}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"Asu"}\NormalTok{; ad}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+## [10] "Arda"  "Asu"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  vektöre birden fazla eleman eklenmesi
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad[}\DecValTok{12}\SpecialCharTok{:}\DecValTok{13}\NormalTok{] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Ahu"}\NormalTok{,}\StringTok{"Han"}\NormalTok{); ad}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+## [10] "Arda"  "Asu"   "Ahu"   "Han"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Vektörün ortasına eleman eklenmesi \textbf{append()} fonksiyonu ile yapılabilir. Fonksiyon yardım sayfasını inceleyiniz.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(ad }\OtherTok{\textless{}{-}} \FunctionTok{append}\NormalTok{(ad, }\StringTok{"Taha"}\NormalTok{, }\AttributeTok{after =} \DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Aras"  "Berk"  "Can"   "Ece"  
+## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  ya da \texttt{c()} fonksiyonu ile yapılabilir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(ad[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{],}\StringTok{"Selim"}\NormalTok{,ad[}\DecValTok{7}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(ad)]); ad}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Selim" "Berk"  "Can"   "Ece"  
+## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"
+\end{verbatim}
+
+\hypertarget{alux131ux15ftux131rma-1}{%
+\section{Alıştırma}\label{alux131ux15ftux131rma-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  10 kişiden oluşan bir gruptaki kişilerinin boy ve kilo ölçümleri için ise aşağıdaki vektör oluşturulmuştur.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}
+\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
+\NormalTok{boy }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{160}\NormalTok{,}\DecValTok{165}\NormalTok{,}\DecValTok{170}\NormalTok{,}\DecValTok{155}\NormalTok{,}\DecValTok{167}\NormalTok{,}\DecValTok{162}\NormalTok{,}\DecValTok{169}\NormalTok{,}\DecValTok{158}\NormalTok{,}\DecValTok{160}\NormalTok{,}\DecValTok{164}\NormalTok{)}
+\NormalTok{kilo }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{,}\DecValTok{55}\NormalTok{,}\DecValTok{57}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{48}\NormalTok{,}\DecValTok{65}\NormalTok{,}\DecValTok{58}\NormalTok{,}\DecValTok{62}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{47}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Eğer elimizdeki vektör isimlendirilmiş bir vektör ise eleman seçimini isimle de yapabiliriz.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#isimsiz boy vektoru}
+\FunctionTok{names}\NormalTok{(boy) }\CommentTok{\# names() fonksiyonu ile isimlendirme yapılabilir.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+\begin{itemize}
+\item
+  ad vektörünü boy vektörü ile isimlendirirken nasıl kullanabiliriz? \_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\item
+  Arda 'nın boyunu isimlendirilmiş vektörü kullanarak \texttt{boy{[}"Arda"{]}} ile yazdırırsınız
+\end{itemize}
+
+\hypertarget{uxf6ruxfcntuxfclerle-vektuxf6r-oluux15fturma}{%
+\section{Örüntülerle Vektör Oluşturma}\label{uxf6ruxfcntuxfclerle-vektuxf6r-oluux15fturma}}
+
+\begin{itemize}
+\item
+  Vektör oluşturmanın farklı yolları bulunmaktadır.
+\item
+  En basit yolu iki nokta \texttt{":"} operatörünü kullanmaktır.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rakamlar }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{9}
+\NormalTok{rakamlar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0 1 2 3 4 5 6 7 8 9
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  büyükten küçüğe rakamlardan vektör oluşturulması
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rakamlar }\OtherTok{\textless{}{-}} \DecValTok{9}\SpecialCharTok{:}\DecValTok{0}
+\NormalTok{rakamlar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 9 8 7 6 5 4 3 2 1 0
+\end{verbatim}
+
+\hypertarget{seq}{%
+\subsection{seq()}\label{seq}}
+
+\begin{itemize}
+\item
+  Belirli bir kurala göre sayı dizileri oluşturmak için ise \texttt{seq()}, \texttt{rep()} ve \texttt{paste()} fonksiyonlarından yararlanılabilir. İlk olarak bu fonksiyonların yardım sayfalarını inceleyelim.
+\item
+  1'den 10'a kadar birer birer artan sayılardan dizi oluşturulacak kodu oluşturunuz. \texttt{seq(from=1,to=10,by=...)} \_
+\item
+  Bir önceki işlemi argümansız olarak oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_
+\item
+  Aynı çıktıyı tek bir argümanla elde edebilir misiniz? \_\_\_\_\_\_\_\_\_\_
+\item
+  length argümanını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 1.0 1.4 1.8 2.2 2.6 3.0
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  by argümanını ile artış miktarını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 1.0 1.5 2.0 2.5 3.0
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Belirli bir aralıkta kaç elemanın yer alacağını length.out argümanı kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 1.0 1.5 2.0 2.5 3.0
+\end{verbatim}
+
+\hypertarget{rep}{%
+\subsection{rep()}\label{rep}}
+
+\texttt{rep()} fonksiyonu için örnekler
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# üç elemanlı bir vektörün üç kere tekrar ettirilmesi}
+\FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{), }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 4 5 3 4 5 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# rakamların üç kere tekrar ettirilmesi}
+\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\AttributeTok{times =} \DecValTok{3}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{a\ \textless{}-\ c(3,5,7)} vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 3 3 3 5 5 5 7 7 7
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{a\ \textless{}-\ c(3,5,7)} vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+##  [1] 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 1 1 2 2 3 3 4 4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] 1 2 2 3 3 3
+\end{verbatim}
+
+\hypertarget{paste}{%
+\subsection{paste()}\label{paste}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{paste()}fonksiyonu çıktısı her zaman için karakterdir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{paste}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{) }\CommentTok{\# çıktısı karakterdir}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1" "2" "3" "4"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Çıktıyı elde edecek kodu tamamlayınız \texttt{paste("test",...)} \_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+##  [1] "test 1"  "test 2"  "test 3"  "test 4"  "test 5"  "test 6"  "test 7" 
+##  [8] "test 8"  "test 9"  "test 10"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Çıktıyı elde edecek kodu tamamlayınız\texttt{paste("test",1:10,"...",sep="\_")} \_\_\_\_
+\end{itemize}
+
+\begin{verbatim}
+##  [1] "test_1_puan"  "test_2_puan"  "test_3_puan"  "test_4_puan"  "test_5_puan" 
+##  [6] "test_6_puan"  "test_7_puan"  "test_8_puan"  "test_9_puan"  "test_10_puan"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Çıktıyı elde edecek kodu tamamlayınız \texttt{paste("test",c("A","B","C","D",...))} \_\_\_
+\end{itemize}
+
+\begin{verbatim}
+## [1] "test A" "test B" "test C" "test D" "test 1" "test 2" "test 3" "test 4"
+\end{verbatim}
+
+\hypertarget{rasgele-veri-oluux15fturma}{%
+\section{Rasgele Veri Oluşturma}\label{rasgele-veri-oluux15fturma}}
+
+\begin{itemize}
+\tightlist
+\item
+  Farklı fonksiyonlarla rastgele veri üretilebilir. Örneğin 0-100 arasında 20 farklı değer elde edilmek istenilsin. Bunu yapmak için \texttt{sample()},\texttt{runif()} ya da \texttt{rnorm()} fonksiyonlarından yararlanılabilir.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sample}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{100}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 83 54 94 87  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{,  }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 3.5227613 4.0081999 3.7562672 2.3261348 2.5009933 2.0598770 4.1288741
+##  [8] 4.7385931 0.7225128 1.4613490
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 42.88861 50.54615 47.05873 50.16599 46.81834 53.32444 43.01495 47.79592
+##  [9] 40.80267 41.49262
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
+\end{itemize}
+
+\hypertarget{iux15flemler}{%
+\section{İşlemler}\label{iux15flemler}}
+
+BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)? \_\_\_\_\_
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
+\NormalTok{boy }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{160}\NormalTok{,}\DecValTok{165}\NormalTok{,}\DecValTok{170}\NormalTok{,}\DecValTok{155}\NormalTok{,}\DecValTok{167}\NormalTok{,}\DecValTok{162}\NormalTok{,}\DecValTok{169}\NormalTok{,}\DecValTok{158}\NormalTok{,}\DecValTok{160}\NormalTok{,}\DecValTok{164}\NormalTok{)}
+\NormalTok{kilo }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{55}\NormalTok{,}\DecValTok{55}\NormalTok{,}\DecValTok{57}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{48}\NormalTok{,}\DecValTok{65}\NormalTok{,}\DecValTok{58}\NormalTok{,}\DecValTok{62}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{47}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Çözüm!,bakmadan yapmalısın!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# BKI  hesaplanması}
+\NormalTok{boy\_m  }\OtherTok{\textless{}{-}}\NormalTok{ boy}\SpecialCharTok{/}\DecValTok{100}
+\NormalTok{BKI }\OtherTok{\textless{}{-}}\NormalTok{ kilo}\SpecialCharTok{/}\NormalTok{( boy\_m }\SpecialCharTok{*}\NormalTok{ boy\_m)}
+\NormalTok{BKI}
+\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(BKI),}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 21.48437 20.20202 19.72318 20.81165 17.21109 24.76757 20.30741 24.83576
+##  [9] 17.57812 17.47472
+## [1] 20.44
+\end{verbatim}
+
+\hypertarget{kendinizi-test-edin}{%
+\subsection{Kendinizi Test Edin}\label{kendinizi-test-edin}}
+
+\textbf{S1.} Aşağıdaki tabloda yer alan üç sütun için birer vektör oluşturunuz. Öğrencilerin geçme notu her iki sınavın ortalaması olarak hesaplanacaktır. Bu öğrencilerin geçme notlarını hesaplayınız. Geçme notlarının betimsel istatistiklerini hesaplayınız.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Öğrenci & Vize & Final \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ogrenci1 & 50 & 45 \\
+Ogrenci2 & 55 & 65 \\
+Ogrenci3 & 60 & 85 \\
+Ogrenci4 & 70 & 90 \\
+Ogrenci5 & 80 & 85 \\
+\end{longtable}
+
+Geçme notlarının minumum değeri: \_\_\_\_
+
+Geçme notlarının ortalama değeri: \_\_\_\_
+
+Geçme notlarının maksimum değeri: \_\_\_\_
+
+\textbf{S2.} Birden n'e kadar olan sayların toplamını hesaplayan fonksiyon yazımı \texttt{toplam()} tek argümanlı fonksiyon oluşturunuz. Argüman değeri 5 olduğunda 1+2+3+4+5=15 değerini versin.
+
+\begin{itemize}
+\tightlist
+\item
+  birden n'e kadar olan sayların toplamı: (n*(n+1))/2
+\end{itemize}
+
+\textbf{S3.} 1'den n' e kadar olan sayıların toplamını hesaplayan fonksiyonu argümansız olarak aşağıdaki şekilde yazmayı deneyiniz. Fonksiyonu çalıştırdığınızda ekranda/konsolda kaça kadar olan sayların toplamı hesaplansın: yazsın, kullanıcının girdiği değere göre aşağıda çıktısı çıksın.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{toplam}\NormalTok{()}
+
+\NormalTok{kaça kadar olan sayların toplamı hesaplansın}\SpecialCharTok{:} \DecValTok{10}
+
+\NormalTok{[}\DecValTok{1} \StringTok{" 10 \textquotesingle{}e kadar olan sayların toplamı: 55}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{odev}{%
+\section{\texorpdfstring{\textbf{ODEV}}{ODEV}}\label{odev}}
+
+\begin{itemize}
+\item
+  Kitap Bölüm 2 1. Soruyu tamamlayınız.
+\item
+  swirl package - learn R in R (Programming ilk 6 modul)
+\item
+  datacamp ödevinizi yapmayını unutmayın 😄
+\end{itemize}
+
 \hypertarget{r-nesneler}{%
 \chapter{R Nesneler}\label{r-nesneler}}
 
@@ -2003,8 +2589,8 @@ R nesne (object) yönelimli bir programlama dilidir.
 ## [1] 2.5
 \end{verbatim}
 
-\hypertarget{iux15flemler}{%
-\section{İşlemler}\label{iux15flemler}}
+\hypertarget{iux15flemler-1}{%
+\section{İşlemler}\label{iux15flemler-1}}
 
 \begin{itemize}
 \tightlist
@@ -2357,15 +2943,15 @@ R nesne (object) yönelimli bir programlama dilidir.
 \begin{itemize}
 \tightlist
 \item
-  Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz.
+  Aşağıdaki çıktıyı oluşturacak olan kodu oluşturunuz. Madde güçlük değerlerini runif() fonksiyonu ile oluşturabilirsiniz.
 \end{itemize}
 
 \begin{verbatim}
-##  [1] "1. maddenin guclugu: 0.12" "2. maddenin guclugu: 0.5" 
-##  [3] "3. maddenin guclugu: 0.9"  "4. maddenin guclugu: 0.76"
-##  [5] "5. maddenin guclugu: 0.71" "6. maddenin guclugu: 0.46"
-##  [7] "7. maddenin guclugu: 0.91" "8. maddenin guclugu: 0.54"
-##  [9] "9. maddenin guclugu: 0.61" "10. maddenin guclugu: 0.4"
+##  [1] "1. maddenin guclugu: 0.92"  "2. maddenin guclugu: 0.48" 
+##  [3] "3. maddenin guclugu: 0.93"  "4. maddenin guclugu: 0.39" 
+##  [5] "5. maddenin guclugu: 0.34"  "6. maddenin guclugu: 0.6"  
+##  [7] "7. maddenin guclugu: 0.01"  "8. maddenin guclugu: 0.34" 
+##  [9] "9. maddenin guclugu: 0.53"  "10. maddenin guclugu: 0.66"
 \end{verbatim}
 
 Bunun birden fazla yolu olabilir, farklı şekillerde yapabilirsiniz.
@@ -2698,598 +3284,12 @@ Mantıksal operatörler programlamanın temeli ve vazgeçilmezidir.
 \end{Highlighting}
 \end{Shaded}
 
-aşağıdaki çıktıyı oluşturmaya calisiniz.
+aşağıdaki çıktıyı oluşturmaya çalısınız.
 
 \begin{verbatim}
 ## [1] "Ayse" "Can"  "Cem"  "Banu"
 ## [1] "Sel"   "Yucel" "Togay" "Cift"
 \end{verbatim}
-
-\hypertarget{vektuxf6rler}{%
-\chapter{Vektörler}\label{vektuxf6rler}}
-
-\begin{itemize}
-\item
-  R lineer cebir temelli bir programlama dilidir.
-\item
-  Vektörler tek boyutludur.
-\item
-  R'da vektörler birleştirmek (combine/concatenate) anlamına gelen \texttt{c()} fonksiyonu ile oluşturulmaktadır.
-\item
-  R da veriler bir araya gelerek veri yapılarını oluşturur.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    vektör (vector)
-  \item
-    liste (list)
-  \item
-    matris (matrix)
-  \item
-    veri seti (data.frame)
-  \item
-    dizi (array)
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{vektuxf6r-oluux15fturma}{%
-\section{Vektör Oluşturma}\label{vektuxf6r-oluux15fturma}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(sayisal\_vektor }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 1 2 3
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(karakter\_vektor }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{,}\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{))  }\DocumentationTok{\#\# cift tirnak}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "a" "b" "c"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(mantiksal\_vektor }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1]  TRUE  TRUE FALSE
-\end{verbatim}
-
-\hypertarget{vektuxf6r-iux15flemleri}{%
-\section{Vektör İşlemleri}\label{vektuxf6r-iux15flemleri}}
-
-\begin{itemize}
-\item
-  Vektör uzunluğu \texttt{length()} fonksiyonu ile vektör türleri ise \texttt{class()}, \texttt{mode()} ya da \texttt{typeof()} fonksiyonları ise tur belirlemek için kullanılmaktadır.
-\item
-  Vektörler bir veya daha fazla elemandan oluşabilmektedir.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{1}  \CommentTok{\# tek elemandan oluşur.}
-\CommentTok{\# Vektör uzunluğunu öğrenmek icin length() fonksiyonu}
-\FunctionTok{length}\NormalTok{(a)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 1
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\item
-  bir vektöründeki verilerin toplanması \texttt{sum(x)} 55
-\item
-  bir vektöründeki verilerin çarpılması \texttt{prod(x)} \ensuremath{3.6288\times 10^{6}}
-\item
-  bir vektöründeki verilerin küçükten büyüğe sıralanması \texttt{sort(x)} 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-\item
-  bir vektörünün elemanların sıralarının tersine çevrilmesi \texttt{rev(x)} 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-\item
-  bir vektöründeki verilerin standart sapmasının hesaplanması \texttt{sd(x)} 3.0276504
-\item
-  bir vektöründeki en büyük verinin gösterilmesi \texttt{max(x)} 10
-\item
-  bir vektöründeki en küçük verinin gösterilmesi \texttt{min(x)} 1
-\item
-  En büyük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi \texttt{which.max(x)} 10
-\item
-  En küçük verinin vektörün kaçıncı elemanı olduğunun gösterilmesi \texttt{which.min(x)} 1
-\item
-  Vektörlerden eleman sırası, isim ve mantıksal operatörler olmak üzere üç farklı yolla eleman seçilebilir.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}
-\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\item
-  ad vektörünün 1. elemanı \texttt{ad{[}1{]}} Ali
-\item
-  ad vektörünün 5. elemanını yazdıracak kodu oluşturunuz. \_\_\_\_\_
-\item
-  ad vektörünün son elemanını yazdıracak kodu oluşturunuz. \_\_\_\_\_\_
-\item
-  ad vektörünün son elemanını yazdıracak kodu vektörün 10 elemanlı olduğunu bilmediğiniz de ne yaparsınız? \_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\item
-  Vektörün sadece 1., 5. 8 elemanının yazdıracak kodu oluşturunuz.\_\_\_\_\_\_\_\_\_\_\_\_
-\item
-  Vektörün sadece 1. elemanının hariç tutacak kodu oluşturunuz \_\_\_\_\_\_
-\item
-  Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz \_\_\_\_\_\_\_\_\_\_\_
-\item
-  Vektörün son üç elemanını yazdıracak kodu oluşturunuz \texttt{r}fitb(``ad{[}8:10{]}'')`
-\end{itemize}
-
-\hypertarget{vektuxf6re-eleman-eklenmesi}{%
-\section{Vektöre eleman eklenmesi}\label{vektuxf6re-eleman-eklenmesi}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad[}\DecValTok{11}\NormalTok{] }\OtherTok{\textless{}{-}} \StringTok{"Asu"}\NormalTok{; ad}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
-## [10] "Arda"  "Asu"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  vektöre birden fazla eleman eklenmesi
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad[}\DecValTok{12}\SpecialCharTok{:}\DecValTok{13}\NormalTok{] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Ahu"}\NormalTok{,}\StringTok{"Han"}\NormalTok{); ad}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
-## [10] "Arda"  "Asu"   "Ahu"   "Han"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Vektörün ortasına eleman eklenmesi \textbf{append()} fonksiyonu ile yapılabilir. Fonksiyon yardım sayfasını inceleyiniz.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(ad }\OtherTok{\textless{}{-}} \FunctionTok{append}\NormalTok{(ad, }\StringTok{"Taha"}\NormalTok{, }\AttributeTok{after =} \DecValTok{3}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Aras"  "Berk"  "Can"   "Ece"  
-## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  ya da \texttt{c()} fonksiyonu ile yapılabilir.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(ad[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{],}\StringTok{"Selim"}\NormalTok{,ad[}\DecValTok{7}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(ad)]); ad}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] "Ali"   "Elif"  "Su"    "Taha"  "Deniz" "Selim" "Berk"  "Can"   "Ece"  
-## [10] "Efe"   "Arda"  "Asu"   "Ahu"   "Han"
-\end{verbatim}
-
-\hypertarget{alux131ux15ftux131rma-1}{%
-\section{Alıştırma}\label{alux131ux15ftux131rma-1}}
-
-\begin{itemize}
-\tightlist
-\item
-  10 kişiden oluşan bir gruptaki kişilerinin boy ve kilo ölçümleri için ise aşağıdaki vektör oluşturulmuştur.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}
-\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
-\NormalTok{boy }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{160}\NormalTok{,}\DecValTok{165}\NormalTok{,}\DecValTok{170}\NormalTok{,}\DecValTok{155}\NormalTok{,}\DecValTok{167}\NormalTok{,}\DecValTok{162}\NormalTok{,}\DecValTok{169}\NormalTok{,}\DecValTok{158}\NormalTok{,}\DecValTok{160}\NormalTok{,}\DecValTok{164}\NormalTok{)}
-\NormalTok{kilo }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{50}\NormalTok{,}\DecValTok{55}\NormalTok{,}\DecValTok{57}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{48}\NormalTok{,}\DecValTok{65}\NormalTok{,}\DecValTok{58}\NormalTok{,}\DecValTok{62}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{47}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\tightlist
-\item
-  Eğer elimizdeki vektör isimlendirilmiş bir vektör ise eleman seçimini isimle de yapabiliriz.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#isimsiz boy vektoru}
-\FunctionTok{names}\NormalTok{(boy) }\CommentTok{\# names() fonksiyonu ile isimlendirme yapılabilir.}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## NULL
-\end{verbatim}
-
-\begin{itemize}
-\item
-  ad vektörünü boy vektörünü isimlendirirken nasıl kullanabiliriz? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\item
-  Arda 'nın boyunu isimlendirilmiş vektörü kullanarak nasıl yazdırırsınız? \texttt{r}fitb(``boy{[}''Arda''{]}'')`
-\end{itemize}
-
-\hypertarget{uxf6ruxfcntuxfclerle-vektuxf6r-oluux15fturma}{%
-\section{Örüntülerle Vektör Oluşturma}\label{uxf6ruxfcntuxfclerle-vektuxf6r-oluux15fturma}}
-
-\begin{itemize}
-\item
-  Vektör oluşturmanın farklı yolları bulunmaktadır.
-\item
-  En basit yolu iki nokta \texttt{":"} operatörünü kullanmaktır.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{rakamlar }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{9}
-\NormalTok{rakamlar}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0 1 2 3 4 5 6 7 8 9
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  büyükten küçüğe rakamlardan vektör oluşturulması
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{rakamlar }\OtherTok{\textless{}{-}} \DecValTok{9}\SpecialCharTok{:}\DecValTok{0}
-\NormalTok{rakamlar}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 9 8 7 6 5 4 3 2 1 0
-\end{verbatim}
-
-\hypertarget{seq}{%
-\subsection{seq()}\label{seq}}
-
-\begin{itemize}
-\item
-  Belirli bir kurala göre sayı dizileri oluşturmak için ise \texttt{seq()}, \texttt{rep()} ve \texttt{paste()} fonksiyonlarından yararlanılabilir. İlk olarak bu fonksiyonların yardım sayfalarını inceleyelim.
-\item
-  1'den 10'a kadar birer birer artan sayılardan dizi oluşturulacak kodu oluşturunuz. \texttt{seq(from=1,to=10,by=...)} \_
-\item
-  Bir önceki işlemi argümansız olarak oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_
-\item
-  Aynı çıktıyı tek bir argümanla elde edebilir misiniz? \_\_\_\_\_\_\_\_\_\_
-\item
-  length argümanını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 1.0 1.4 1.8 2.2 2.6 3.0
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  by argümanını ile artış miktarını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 1.0 1.5 2.0 2.5 3.0
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Belirli bir aralıkta kaç elemanın yer alacağını length.out argümanı kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 1.0 1.5 2.0 2.5 3.0
-\end{verbatim}
-
-\hypertarget{rep}{%
-\subsection{rep()}\label{rep}}
-
-\texttt{rep()} fonksiyonu için örnekler
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# üç elemanlı bir vektörün üç kere tekrar ettirilmesi}
-\FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{), }\DecValTok{3}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 3 4 5 3 4 5 3 4 5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# rakamların üç kere tekrar ettirilmesi}
-\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\AttributeTok{times =} \DecValTok{3}\NormalTok{) }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{a\ \textless{}-\ c(3,5,7)} vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 3 3 3 5 5 5 7 7 7
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{a\ \textless{}-\ c(3,5,7)} vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-##  [1] 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 1 1 2 2 3 3 4 4
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Çıktıyı elde edecek kodu hazırlayınız. \_\_\_\_\_\_\_\_\_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] 1 2 2 3 3 3
-\end{verbatim}
-
-\hypertarget{paste}{%
-\subsection{paste()}\label{paste}}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{paste()}fonksiyonu çıktısı her zaman için karakterdir.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{paste}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{) }\CommentTok{\# çıktısı karakterdir}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "1" "2" "3" "4"
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{class}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "character"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Çıktıyı elde edecek kodu tamamlayınız \texttt{paste("test",...)} \_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-##  [1] "test 1"  "test 2"  "test 3"  "test 4"  "test 5"  "test 6"  "test 7" 
-##  [8] "test 8"  "test 9"  "test 10"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Çıktıyı elde edecek kodu tamamlayınız\texttt{paste("test",1:10,"...",sep="\_")} \_\_\_\_
-\end{itemize}
-
-\begin{verbatim}
-##  [1] "test_1_puan"  "test_2_puan"  "test_3_puan"  "test_4_puan"  "test_5_puan" 
-##  [6] "test_6_puan"  "test_7_puan"  "test_8_puan"  "test_9_puan"  "test_10_puan"
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Çıktıyı elde edecek kodu tamamlayınız \texttt{paste("test",c("A","B","C","D",...))} \_\_\_
-\end{itemize}
-
-\begin{verbatim}
-## [1] "test A" "test B" "test C" "test D" "test 1" "test 2" "test 3" "test 4"
-\end{verbatim}
-
-\hypertarget{rasgele-veri-oluux15fturma}{%
-\section{Rasgele Veri Oluşturma}\label{rasgele-veri-oluux15fturma}}
-
-\begin{itemize}
-\tightlist
-\item
-  Farklı fonksiyonlarla rastgele veri üretilebilir. Örneğin 0-100 arasında 20 farklı değer elde edilmek istenilsin. Bunu yapmak için \texttt{sample()},\texttt{runif()} ya da \texttt{rnorm()} fonksiyonlarından yararlanılabilir.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sample}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{100}\NormalTok{,}\DecValTok{5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 10 13 22 56 67
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{runif}\NormalTok{(}\DecValTok{10}\NormalTok{,  }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 2.42143712 0.37209134 0.02431584 2.87393761 1.58461072 3.27598250
-##  [7] 3.76409609 2.23755597 4.34402836 3.83567488
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{rnorm}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{5}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 50.54862 60.44580 51.97206 63.41112 55.59931 44.01045 54.47942 56.40121
-##  [9] 51.67216 49.22724
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
-\end{itemize}
-
-\hypertarget{iux15flemler-1}{%
-\section{İşlemler}\label{iux15flemler-1}}
-
-BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI derğerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)? \_\_\_\_\_
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ad  }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"Ali"}\NormalTok{,}\StringTok{"Elif"}\NormalTok{,}\StringTok{"Su"}\NormalTok{,}\StringTok{"Deniz"}\NormalTok{,}\StringTok{"Aras"}\NormalTok{,}\StringTok{"Berk"}\NormalTok{,}\StringTok{"Can"}\NormalTok{,}\StringTok{"Ece"}\NormalTok{,}\StringTok{"Efe"}\NormalTok{,}\StringTok{"Arda"}\NormalTok{)}
-\NormalTok{boy }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{160}\NormalTok{,}\DecValTok{165}\NormalTok{,}\DecValTok{170}\NormalTok{,}\DecValTok{155}\NormalTok{,}\DecValTok{167}\NormalTok{,}\DecValTok{162}\NormalTok{,}\DecValTok{169}\NormalTok{,}\DecValTok{158}\NormalTok{,}\DecValTok{160}\NormalTok{,}\DecValTok{164}\NormalTok{)}
-\NormalTok{kilo }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{55}\NormalTok{,}\DecValTok{55}\NormalTok{,}\DecValTok{57}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{48}\NormalTok{,}\DecValTok{65}\NormalTok{,}\DecValTok{58}\NormalTok{,}\DecValTok{62}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{47}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Çözüm!,bakmadan yapmalısın!
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# BKI  hesaplanması}
-\NormalTok{boy\_m  }\OtherTok{\textless{}{-}}\NormalTok{ boy}\SpecialCharTok{/}\DecValTok{100}
-\NormalTok{BKI }\OtherTok{\textless{}{-}}\NormalTok{ kilo}\SpecialCharTok{/}\NormalTok{( boy\_m }\SpecialCharTok{*}\NormalTok{ boy\_m)}
-\NormalTok{BKI}
-\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(BKI),}\DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##  [1] 21.48437 20.20202 19.72318 20.81165 17.21109 24.76757 20.30741 24.83576
-##  [9] 17.57812 17.47472
-## [1] 20.44
-\end{verbatim}
-
-\hypertarget{kendinizi-test-edin}{%
-\subsection{Kendinizi Test Edin}\label{kendinizi-test-edin}}
-
-\textbf{S1.} Aşağıdaki tabloda yer alan üç sütun için birer vektör oluşturunuz. Öğrencilerin geçme notu her iki sınavın ortalaması olarak hesaplanacaktır. Bu öğrencilerin geçme notlarını hesaplayınız. Geçme notlarının betimsel istatistiklerini hesaplayınız.
-
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Öğrenci & Vize & Final \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Ogrenci1 & 50 & 45 \\
-Ogrenci2 & 55 & 65 \\
-Ogrenci3 & 60 & 85 \\
-Ogrenci4 & 70 & 90 \\
-Ogrenci5 & 80 & 85 \\
-\end{longtable}
-
-Geçme notlarının minumum değeri: \_\_\_\_
-
-Geçme notlarının ortalama değeri: \_\_\_\_
-
-Geçme notlarının maksimum değeri: \_\_\_\_
-
-\textbf{S2.} Birden n'e kadar olan sayların toplamını hesaplayan fonksiyon yazımı \texttt{toplam()} tek argümanlı fonksiyon oluşturunuz. Argüman değeri 5 olduğunda 1+2+3+4+5=15 değerini versin.
-
-\begin{itemize}
-\tightlist
-\item
-  birden n'e kadar olan sayların toplamı: (n*(n+1))/2
-\end{itemize}
-
-\textbf{S3.} 1'den n' e kadar olan sayıların toplamını hesaplayan fonksiyonu argümansız olarak aşağıdaki şekilde yazmayı deneyiniz. Fonksiyonu çalıştırdığınızda ekranda/konsolda kaça kadar olan sayların toplamı hesaplansın: yazsın, kullanıcının girdiği değere göre aşağıda çıktısı çıksın.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{toplam}\NormalTok{()}
-
-\NormalTok{kaça kadar olan sayların toplamı hesaplansın}\SpecialCharTok{:} \DecValTok{10}
-
-\NormalTok{[}\DecValTok{1} \StringTok{" 10 \textquotesingle{}e kadar olan sayların toplamı: 55}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{odev}{%
-\section{\texorpdfstring{\textbf{ODEV}}{ODEV}}\label{odev}}
-
-\begin{itemize}
-\item
-  Kitap Bölüm 2 1. Soruyu tamamlayınız.
-\item
-  swirl package - learn R in R (Programming ilk 6 modul)
-\item
-  datacamp ödevinizi yapmayını unutmayın 😄
-\end{itemize}
 
 \hypertarget{markdown}{%
 \chapter{Markdown}\label{markdown}}
@@ -3310,6 +3310,16 @@ Bu bölümde kullanacağımız paketler şunlardır.
 \end{Shaded}
 
 🔗İndir \href{https://www.rstudio.org/links/r_markdown_cheat_sheet}{R Markdown Cheat Sheet}.
+
+\begin{try}
+🔗\href{https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html\#1}{R markdon sunusu}
+
+\end{try}
+
+\begin{try}
+🔗\href{https://www.markdownguide.org/cheat-sheet/}{markdown hatırlatıcı notlar}
+
+\end{try}
 
 \hypertarget{neden-tekrarlanabilir-raporlar-kullanux131lmalux131}{%
 \section{Neden tekrarlanabilir raporlar kullanılmalı?}\label{neden-tekrarlanabilir-raporlar-kullanux131lmalux131}}
@@ -3349,7 +3359,7 @@ Bir rapor hazırladığınızı düşünün
 \item
   Bilgisayarınızın dosya sistemi, hem dosyaları hem de ``alt dizinleri'' içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.
 \item
-  Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: \textbf{/Users/Kubra/Desktop/report.Rmd} , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için \textasciitilde{} kısayolunu da kullanabilirsiniz: \textasciitilde/Desktop/report.Rmd.
+  Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: \textbf{/Users/Kubra/Desktop/report.Rmd} , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için \textasciitilde{} kısayolunu da kullanabilirsiniz: \textbf{\textasciitilde/Desktop/report.Rmd.}
 \end{itemize}
 
 \hypertarget{uxe7alux131ux15fma-dizini}{%
@@ -3359,7 +3369,7 @@ Bir rapor hazırladığınızı düşünün
 \item
   Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını \textbf{data/import} adlı bir dizine koyabilir ve tüm görüntü dosyalarını \textbf{images} adlı bir dizine kaydedebilirsiniz.
 \item
-  Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalara başvurulmalıdır.
+  Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalar kullanılmalıdır.
 \end{itemize}
 
 \begin{longtable}[]{@{}
@@ -3394,7 +3404,7 @@ Bir komut dosyasında asla çalışma dizininizi ayarlamayın veya değiştirmey
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"import/veri1.txt"}\NormalTok{)  }\CommentTok{\# dogru}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"import/veri1.txt"}\NormalTok{)  }\CommentTok{\# dogru}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3402,9 +3412,32 @@ Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"}\NormalTok{)  }\CommentTok{\# yanlıs}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"}\NormalTok{)  }\CommentTok{\# yanlıs}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(veri1 }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"import/veri1.txt"}\NormalTok{,}
+                    \AttributeTok{header=} \ConstantTok{TRUE}\NormalTok{,}
+                    \AttributeTok{sep=} \StringTok{";"}\NormalTok{,}
+                    \AttributeTok{dec=} \StringTok{","}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    no m_1  m_2 m_3  m_4 m_5
+## 1 522  12 14.0  16 20.0  10
+## 2 222   5   NA  20 10.0  10
+## 3 454   5 10.2   6  4.0  10
+## 4 567  10 20.0  NA 12.2  20
+\end{verbatim}
 
 \begin{info}
 Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.
@@ -3437,19 +3470,19 @@ Dosyaları, hem insanların hem de bilgisayarların kolayca bulabileceği şekil
 \begin{itemize}
 \tightlist
 \item
-  Data (Participants) 11-15.xls
+  Veri (Katilimci) 04-15.xls
 \item
-  final report2.doc
+  final raporu2.doc
 \item
-  Participants Data Nov 12.xls
+  Katilimci Veri Nisan 12.xls
 \item
-  project notes.txt
+  proje notlari
 \item
-  Questionnaire Data November 15.xls
+  Anket Veri Kasim 15.xls
 \item
-  report.doc
+  rapor.doc
 \item
-  report final.doc
+  rapor son.doc
 \end{itemize}
 
 Benzer dosyaların aynı yapıya sahip olması ve dosyaları taramanın veya ilgili dosyaları bulmak için kod kullanmasının kolay olması için dosyaları yapılandırabilirsiniz.
@@ -3457,19 +3490,19 @@ Benzer dosyaların aynı yapıya sahip olması ve dosyaları taramanın veya ilg
 \begin{itemize}
 \tightlist
 \item
-  \_project-notes.txt
+  proje-notlari
 \item
-  data\_participants\_2021-11-12.xls
+  veri\_katilimci\_2021-04-12.xls
 \item
-  data\_participants\_2021-11-15.xls
+  veri\_katilimci\_2021-04-15.xls
 \item
-  data\_questionnaire\_2021-11-15.xls
+  veri\_anket\_2021-04-15.xls
 \item
-  report\_v1.doc
+  rapor\_v1.doc
 \item
-  report\_v2.doc
+  rapor\_v2.doc
 \item
-  report\_v3.doc
+  rapor\_v3.doc
 \end{itemize}
 
 \begin{try}
@@ -3484,7 +3517,7 @@ Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje
 \item
   Artık dosya sisteminin nasıl çalıştığını ve komut dosyalarının bunlara erişmesini kolaylaştırmak için nesneleri nasıl adlandıracağımızı anladığımıza göre, projemizi yapmaya hazırız.
 \item
-  Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimkine OLC731\_2023 adını verdim). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.
+  Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimki Ranaliz adınında). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.
 \end{itemize}
 
 \begin{warning}
@@ -3495,10 +3528,10 @@ Bu dizin OneDrive'daysa veya tam dosya yolu özel karakterler içeriyorsa ya da 
 \begin{itemize}
 \tightlist
 \item
-  Ardından, OLC731 adında yeni bir proje oluşturmak için \textbf{\texttt{File}} menüsü altında \textbf{\texttt{New\ Project...}} öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.
+  Ardından, OLC731\_2023 adında yeni bir proje oluşturmak için \textbf{\texttt{File}} menüsü altında \textbf{\texttt{New\ Project...}} öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.
 \end{itemize}
 
-Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren OLC731\_OLC731\_2023.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.
+Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren Ranaliz.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.
 
 \begin{info}
 Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.user adlı bir dizin de görebilirsiniz. Bu ve nokta ile başlayan diğer ``görünmez'' dosyaları yok sayabilirsiniz.
@@ -3520,66 +3553,14 @@ R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor fo
 \end{info}
 
 \begin{itemize}
-\tightlist
 \item
-  Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin \{r chunk-name, echo=FALSE\} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. \href{docs/veri-üretim.html}{Aşağıdaki örnek dosyanın çıktısına buradan bakabilirsiniz.}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{{-}{-}{-}}
-\AnnotationTok{title:}\CommentTok{ "Uretilebilir Rapor"}
-\AnnotationTok{author:}\CommentTok{ "Kubra"}
-\AnnotationTok{output:}
-\CommentTok{  html\_document:}
-\CommentTok{    theme: journal}
-\CommentTok{    toc: true}
-\CommentTok{    toc\_float:}
-\CommentTok{      collapsed: false}
-\CommentTok{      smooth\_scroll: false}
-\CommentTok{      number\_sections: false}
-\CommentTok{{-}{-}{-}}
-
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r setup, include=FALSE\}}
-\InformationTok{knitr::opts\_chunk$set(echo = TRUE)}
-\InformationTok{library(tidyverse)}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-
-\FunctionTok{\# Veri Üretim}
-
-\NormalTok{Burada iki koşullu bir çalışmadan elde edilen verileri simüle edeceğiz. }
-\NormalTok{A koşulundaki ortalama 0 ve B koşulundaki ortalama 1\textquotesingle{}dir.}
-
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r simulate\}}
-\InformationTok{n \textless{}{-} 100}
-
-\InformationTok{data \textless{}{-} data.frame(}
-\InformationTok{  id = 1:n,}
-\InformationTok{  condition = c("A", "B") |\textgreater{} rep(each = n/2),}
-\InformationTok{  dv = c(rnorm(n/2, 0), rnorm(n/2, 1))}
-\InformationTok{)}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-
-\FunctionTok{\#\# Grafik}
-
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r condition{-}plot, echo = FALSE\}}
-\InformationTok{library(ggplot2)}
-\InformationTok{ggplot(data, aes(condition, dv))  +}
-\InformationTok{  geom\_boxplot(width = 0.25,}
-\InformationTok{               aes(fill = condition),}
-\InformationTok{               show.legend = FALSE)}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{itemize}
-\tightlist
+  Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin \{r chunk-name, echo=FALSE\} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. \href{https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd}{Örnek Dosyayı beraber inceleyelim.}
 \item
   Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.
 \end{itemize}
 
 \begin{try}
-\textbf{\texttt{File\ \textgreater{}\ New\ File\ \textgreater{}\ R\ Markdown...}} menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı repro.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.
+\textbf{\texttt{File\ \textgreater{}\ New\ File\ \textgreater{}\ R\ Markdown...}} menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı Ornek1.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.
 
 \end{try}
 
@@ -3612,8 +3593,7 @@ Seçeneklerin ne işe yaradığını görmek için değerleri \texttt{false} tan
 \end{info}
 
 \begin{itemize}
-\item
-  \texttt{df\_print:\ kable} seçeneği \texttt{knitr::kable} kullanarak veri setleri yazdırır. Aşağıda tabloları nasıl daha fazla özelleştirebileceğinizi öğreneceksiniz.
+\tightlist
 \item
   Varsayılan temalar şunlardır: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united ve yeti. Linkten 🔗\href{https://rpubs.com/ranydc/rmarkdown_themes}{daha fazla temayı inceleyebilirsiniz.}.
 \end{itemize}
@@ -3642,11 +3622,11 @@ Seçeneklerin ne işe yaradığını görmek için değerleri \texttt{false} tan
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}
-  \AttributeTok{fig.width  =} \DecValTok{8}\NormalTok{, }
-  \AttributeTok{fig.height =} \DecValTok{5}\NormalTok{, }
+  \AttributeTok{fig.width  =} \DecValTok{8}\NormalTok{,}
+  \AttributeTok{fig.height =} \DecValTok{5}\NormalTok{,}
   \AttributeTok{fig.path   =} \StringTok{\textquotesingle{}images/\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{echo       =} \ConstantTok{FALSE}\NormalTok{, }
-  \AttributeTok{warning    =} \ConstantTok{TRUE}\NormalTok{, }
+  \AttributeTok{echo       =} \ConstantTok{FALSE}\NormalTok{,}
+  \AttributeTok{warning    =} \ConstantTok{TRUE}\NormalTok{,}
   \AttributeTok{message    =} \ConstantTok{FALSE}\NormalTok{,}
   \AttributeTok{cache      =} \ConstantTok{FALSE}
 \NormalTok{)}
@@ -3659,7 +3639,9 @@ Yukarıdaki kod aşağıdaki seçenekleri ayarlar:
 \item
   fig.width = 8 : varsayılan şekil genişliği 8 inçtir (bunu tek tek şekiller için değiştirebilirsiniz)
 \item
-  fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir fig.path = `images/' : şekiller ``images'' dizinine kaydedilir
+  fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir
+\item
+  fig.path = `images/' : şekiller ``images'' dizinine kaydedilir
 \item
   echo = FALSE : işlenen belgede kod parçalarını gösterme
 \item
@@ -3707,7 +3689,7 @@ Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize
 \item
   Metninize eklemek için görüntüler, tablolar veya hesaplamalar oluşturan ve görüntüleyen kod parçaları ekleyebilirsiniz. Bazı verileri yükleyerek başlayalım.
 \item
-  İlk olarak, belgenizde bir kod yığını oluşturun. Bu kod web'den bazı verileri yükler
+  İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler.
 \end{itemize}
 
 \begin{Shaded}
@@ -3729,8 +3711,8 @@ Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(iris) }\CommentTok{\# toplam satır sayısı}
-\NormalTok{mu }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length)  }\CommentTok{\# yaprak uzunluğu ortalaması}
-\NormalTok{sd }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length) }\CommentTok{\# yaprak uzunluğu ortalaması SD\textquotesingle{}si}
+\NormalTok{mu }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length)  }\CommentTok{\# taç yaprak uzunluğu ortalaması}
+\NormalTok{sd }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Length) }\CommentTok{\# taç yaprak uzunluğu standart sapması}
 
 
 \NormalTok{simule\_deger }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n, mu, sd)}
@@ -3957,7 +3939,7 @@ virginica & 50 & 5.55 & 0.55\\
 \end{table}
 
 \leavevmode\vadjust pre{\hypertarget{gt}{}}%
-** \href{https://gt.rstudio.com/index.html}{gt} paketinde de çok sayıda seçenek bulunmaktadır.**
+\textbf{\href{https://gt.rstudio.com/index.html}{gt} paketinde de çok sayıda seçenek bulunmaktadır.}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4012,11 +3994,11 @@ virginica & 50 & $5.55$ & $0.55$ \\
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{06-markdown_files/figure-latex/unnamed-chunk-9-1} 
+{\centering \includegraphics[width=1\linewidth]{06-markdown_files/figure-latex/unnamed-chunk-10-1} 
 
 }
 
-\caption{Petal Uzunlukları ve Türler}\label{fig:unnamed-chunk-9}
+\caption{Petal Uzunlukları ve Türler}\label{fig:unnamed-chunk-10}
 \end{figure}
 
 \begin{figure}
@@ -4195,11 +4177,12 @@ a \href{https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html}{bibliog
 ---
 title: "My Paper"
 author: "Me"
-output: 
+output:
   html_document:
     toc: true
 bibliography: refs.bib
 csl: apa.csl
+---
 \end{verbatim}
 
 \hypertarget{referans-yazux131lux131mdan-duxf6nuxfcux15ftuxfcrme}{%
@@ -4307,8 +4290,6 @@ This tutorial uses several R packages [@tidyverse;@rmarkdown].
 \end{verbatim}
 
 Bu eğitimde çeşitli R paketleri kullanılmaktadır (Allaire vd., 2018; Wickham, 2017).
-
-Sadece yılı istiyorsanız @'nin önüne bir eksi koyun:
 
 \hypertarget{atux131f-yapux131lmayan-referanslar}{%
 \subsection{Atıf yapılmayan referanslar}\label{atux131f-yapux131lmayan-referanslar}}
@@ -4555,7 +4536,7 @@ Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi v
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{data}\NormalTok{(WorldPhones) }\CommentTok{\# environmete kontrol ediniz. }
+\FunctionTok{data}\NormalTok{(WorldPhones) }\CommentTok{\# environmet(calisma alanini) kontrol ediniz. }
 \end{Highlighting}
 \end{Shaded}
 
@@ -4705,8 +4686,8 @@ Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi v
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{elaman-seuxe7me}{%
-\section{Elaman Seçme}\label{elaman-seuxe7me}}
+\hypertarget{eleman-seuxe7me}{%
+\section{Eleman Seçme}\label{eleman-seuxe7me}}
 
 Veri setlerinde eleman seçme matrislerdeki gibidir.
 
@@ -4737,7 +4718,7 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 \begin{itemize}
 \tightlist
 \item
-  df'nin ikinci satir elemanlarının seçilmesi \_\_\_\_\_\_
+  df'nin ikinci satır elemanlarının seçilmesi \_\_\_\_\_\_
 \end{itemize}
 
 \begin{verbatim}
@@ -4758,7 +4739,7 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 \begin{itemize}
 \tightlist
 \item
-  df'nin birinci satir üçüncü sütun elemanlarının seçilmesi \_\_\_\_\_\_\_
+  df'nin birinci satır üçüncü sütun elemanlarının seçilmesi \_\_\_\_\_\_\_
 \end{itemize}
 
 \begin{verbatim}
@@ -4831,7 +4812,7 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 \begin{itemize}
 \tightlist
 \item
-  Boyu 165cm den uzun öğrencilerin bilgilerinin seçilmesi
+  Boyu 165cm'den uzun öğrencilerin bilgilerinin seçilmesi
 \end{itemize}
 
 \begin{Shaded}
@@ -4850,7 +4831,7 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 \begin{itemize}
 \tightlist
 \item
-  \texttt{subset()} Fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
+  \texttt{subset()} fonksiyonun yardım sayfasındaki örnekleri inceleyebilirsiniz.
 \end{itemize}
 
 \begin{Shaded}
@@ -4920,12 +4901,12 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2
-## 1 99 50.82081
-## 2 78 61.90663
-## 3  8 67.30629
-## 4 43 52.19744
-## 5  2 57.66014
-## 6 75 53.05883
+## 1 46 54.38738
+## 2 78 69.60219
+## 3 94 64.10908
+## 4 74 67.37621
+## 5 90 57.12122
+## 6 58 50.20062
 \end{verbatim}
 
 \begin{itemize}
@@ -4943,12 +4924,12 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2 S3
-## 1 99 50.82081 71
-## 2 78 61.90663 67
-## 3  8 67.30629 67
-## 4 43 52.19744 73
-## 5  2 57.66014 67
-## 6 75 53.05883 71
+## 1 46 54.38738 69
+## 2 78 69.60219 75
+## 3 94 64.10908 64
+## 4 74 67.37621 72
+## 5 90 57.12122 72
+## 6 58 50.20062 76
 \end{verbatim}
 
 \begin{itemize}
@@ -4967,12 +4948,12 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2 S3   ort
-## 1 99 50.82081 71 73.61
-## 2 78 61.90663 67 68.97
-## 3  8 67.30629 67 47.44
-## 4 43 52.19744 73 56.07
-## 5  2 57.66014 67 42.22
-## 6 75 53.05883 71 66.35
+## 1 46 54.38738 69 56.46
+## 2 78 69.60219 75 74.20
+## 3 94 64.10908 64 74.04
+## 4 74 67.37621 72 71.13
+## 5 90 57.12122 72 73.04
+## 6 58 50.20062 76 61.40
 \end{verbatim}
 
 \begin{itemize}
@@ -4989,26 +4970,26 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##    S1       S2 S3   ort S4
-## 1  99 50.82081 71 73.61 10
-## 2  78 61.90663 67 68.97 10
-## 3   8 67.30629 67 47.44 10
-## 4  43 52.19744 73 56.07 10
-## 5   2 57.66014 67 42.22 10
-## 6  75 53.05883 71 66.35 10
-## 7  51 53.00742 80 61.34 10
-## 8  85 51.88691 64 66.96 10
-## 9  98 69.02326 76 81.01 10
-## 10 22 65.29570 71 52.77 10
-## 11 48 51.34271 80 59.78 10
-## 12  1 60.81008 78 46.60 10
-## 13 92 57.96363 63 70.99 10
-## 14 10 66.65251 67 47.88 10
-## 15 67 57.74874 60 61.58 10
-## 16 69 60.96169 65 64.99 10
-## 17 12 57.55557 78 49.19 10
-## 18 82 55.12127 64 67.04 10
-## 19  5 63.28777 60 42.76 10
-## 20 30 68.28606 62 53.43 10
+## 1  46 54.38738 69 56.46 10
+## 2  78 69.60219 75 74.20 10
+## 3  94 64.10908 64 74.04 10
+## 4  74 67.37621 72 71.13 10
+## 5  90 57.12122 72 73.04 10
+## 6  58 50.20062 76 61.40 10
+## 7  41 53.76829 66 53.59 10
+## 8  61 64.36432 62 62.45 10
+## 9  51 56.25751 79 62.09 10
+## 10 48 50.65278 70 56.22 10
+## 11 93 60.00597 75 76.00 10
+## 12 36 65.94416 64 55.31 10
+## 13 60 68.96220 63 63.99 10
+## 14  8 54.16946 63 41.72 10
+## 15 63 54.20682 67 61.40 10
+## 16 57 64.21036 77 66.07 10
+## 17 33 64.77966 67 54.93 10
+## 18 67 54.32018 70 63.77 10
+## 19 55 67.90852 78 66.97 10
+## 20 16 65.45204 80 53.82 10
 \end{verbatim}
 
 \hypertarget{eleman-uxe7ux131karma}{%
@@ -5029,9 +5010,9 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2 S3   ort
-## 1 99 50.82081 71 73.61
-## 2 78 61.90663 67 68.97
-## 3  8 67.30629 67 47.44
+## 1 46 54.38738 69 56.46
+## 2 78 69.60219 75 74.20
+## 3 94 64.10908 64 74.04
 \end{verbatim}
 
 \begin{Shaded}
@@ -5043,9 +5024,9 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2 S3
-## 1 99 50.82081 71
-## 2 78 61.90663 67
-## 3  8 67.30629 67
+## 1 46 54.38738 69
+## 2 78 69.60219 75
+## 3 94 64.10908 64
 \end{verbatim}
 
 \begin{itemize}
@@ -5063,9 +5044,9 @@ Veri setlerinde eleman seçme matrislerdeki gibidir.
 
 \begin{verbatim}
 ##   S1       S2
-## 1 99 50.82081
-## 2 78 61.90663
-## 3  8 67.30629
+## 1 46 54.38738
+## 2 78 69.60219
+## 3 94 64.10908
 \end{verbatim}
 
 \hypertarget{satux131r-ekleme}{%
@@ -5544,7 +5525,7 @@ Bir veri setini R'ye aktarmanın iki yolu vardır:
 
 \begin{itemize}
 \item
-  🔗Dosyaları buradan klasor halinde indirebilirsiniz. \href{import/import.rar}{DOSYALAR}
+  🔗Dosyaları buradan klasör halinde indirebilirsiniz. \href{import/import.rar}{DOSYALAR}
 \item
   🔗\href{import/veri1.txt}{veri1.txt}
 \end{itemize}
@@ -5614,6 +5595,7 @@ Bir veri setini R'ye aktarmanın iki yolu vardır:
 \begin{itemize}
 \tightlist
 \item
+  Değişkenlere isim verilmiş hali
 \end{itemize}
 
 \begin{verbatim}
@@ -5630,6 +5612,20 @@ Bir veri setini R'ye aktarmanın iki yolu vardır:
 \end{itemize}
 
 \begin{verbatim}
+## # A tibble: 50 x 3
+##       id bolge  puan
+##    <dbl> <dbl> <dbl>
+##  1     1     1     9
+##  2     2     1     8
+##  3     3     1     6
+##  4     4     1     8
+##  5     5     1    10
+##  6     6     1     4
+##  7     7     1     6
+##  8     8     1     5
+##  9     9     1     7
+## 10    10     1     7
+## # i 40 more rows
 ## tibble [50 x 3] (S3: tbl_df/tbl/data.frame)
 ##  $ id   : num [1:50] 1 2 3 4 5 6 7 8 9 10 ...
 ##   ..- attr(*, "format.spss")= chr "F6.2"
@@ -8640,12 +8636,12 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##      ID Sure_1 Sure_2 Sure_3
-## 1 ID101     56     40     44
-## 2 ID102     57     46     44
-## 3 ID103     53     49     41
-## 4 ID104     55     53     39
-## 5 ID105     50     43     47
-## 6 ID106     52     51     45
+## 1 ID101     55     49     46
+## 2 ID102     60     51     42
+## 3 ID103     50     41     36
+## 4 ID104     51     40     45
+## 5 ID105     59     53     48
+## 6 ID106     55     49     42
 \end{verbatim}
 
 \begin{itemize}
@@ -8674,9 +8670,9 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##      ID   Sure Zaman
-## 1 ID101 Sure_1    56
-## 2 ID102 Sure_1    57
-## 3 ID103 Sure_1    53
+## 1 ID101 Sure_1    55
+## 2 ID102 Sure_1    60
+## 3 ID103 Sure_1    50
 \end{verbatim}
 
 \begin{Shaded}
@@ -8687,9 +8683,9 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##       ID   Sure Zaman
-## 58 ID118 Sure_3    44
-## 59 ID119 Sure_3    49
-## 60 ID120 Sure_3    39
+## 58 ID118 Sure_3    37
+## 59 ID119 Sure_3    40
+## 60 ID120 Sure_3    41
 \end{verbatim}
 
 \begin{itemize}
@@ -8721,9 +8717,9 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##      ID Sure Sayı Zaman
-## 1 ID101 Sure    1    56
-## 2 ID102 Sure    1    57
-## 3 ID103 Sure    1    53
+## 1 ID101 Sure    1    55
+## 2 ID102 Sure    1    60
+## 3 ID103 Sure    1    50
 \end{verbatim}
 
 \hypertarget{unite-fonksiyonu}{%
@@ -8745,9 +8741,9 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##      ID   SURE Zaman
-## 1 ID101 Sure.1    56
-## 2 ID102 Sure.1    57
-## 3 ID103 Sure.1    53
+## 1 ID101 Sure.1    55
+## 2 ID102 Sure.1    60
+## 3 ID103 Sure.1    50
 \end{verbatim}
 
 \hypertarget{spread-fonksiyonu}{%
@@ -8768,12 +8764,12 @@ PDR & Erkek & 3 \\
 
 \begin{verbatim}
 ##      ID Sure.1 Sure.2 Sure.3
-## 1 ID101     56     40     44
-## 2 ID102     57     46     44
-## 3 ID103     53     49     41
-## 4 ID104     55     53     39
-## 5 ID105     50     43     47
-## 6 ID106     52     51     45
+## 1 ID101     55     49     46
+## 2 ID102     60     51     42
+## 3 ID103     50     41     36
+## 4 ID104     51     40     45
+## 5 ID105     59     53     48
+## 6 ID106     55     49     42
 \end{verbatim}
 
 \hypertarget{betimleyici-istatistik}{%
@@ -9810,7 +9806,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-42-1} \end{center}
@@ -9842,7 +9838,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-43-1} \end{center}
@@ -9855,7 +9851,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-44-1} \end{center}
@@ -9881,7 +9877,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{verbatim}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-45-1} \end{center}
@@ -9904,7 +9900,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{verbatim}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-46-1} \end{center}
@@ -9931,7 +9927,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-47-1} \end{center}
@@ -9951,7 +9947,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-48-1} \end{center}
@@ -9965,7 +9961,7 @@ Ortalama, \texttt{mean()} fonksiyonu ile hesaplanabilir:
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-49-1} \end{center}
@@ -10013,7 +10009,7 @@ Scale fonksiyonları
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-51-1} \end{center}
@@ -10033,7 +10029,7 @@ Scale fonksiyonları
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-52-1} \end{center}
@@ -10054,7 +10050,7 @@ Scale fonksiyonları
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-53-1} \end{center}
@@ -10076,7 +10072,7 @@ Scale fonksiyonları
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-54-1} \end{center}
@@ -10097,7 +10093,7 @@ Scale fonksiyonları
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 4 rows containing missing values (`geom_point()`).
 \end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{15-betimleyici-istatistik_files/figure-latex/unnamed-chunk-55-1} \end{center}
@@ -10195,7 +10191,7 @@ Scale fonksiyonları
 \item
   😕
 \item
-  😄
+  😃
 \end{itemize}
 
 \hypertarget{appendix-appendices}{%
@@ -10620,29 +10616,6 @@ If you want to contribute to the glossary, fork the \href{https://github.com/Psy
 \addcontentsline{toc}{chapter}{License}
 
 This book is licensed under Creative Commons Attribution-ShareAlike 4.0 International License \href{https://creativecommons.org/licenses/by-sa/4.0/}{(CC-BY-SA 4.0)}. You are free to share and adapt this book. You must give appropriate credit \citep{psyteachr-template}, provide a link to the license, and indicate if changes were made. If you adapt the material, you must distribute your contributions under the same license as the original.
-
-\hypertarget{veri-uxfcretim}{%
-\chapter{Veri Üretim}\label{veri-uxfcretim}}
-
-Burada iki koşullu bir çalışmadan elde edilen verileri simüle edeceğiz.
-A koşulundaki ortalama 0 ve B koşulundaki ortalama 1'dir.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{100}
-
-\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{id =} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n,}
-  \AttributeTok{condition =} \FunctionTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} \FunctionTok{rep}\NormalTok{(}\AttributeTok{each =}\NormalTok{ n}\SpecialCharTok{/}\DecValTok{2}\NormalTok{),}
-  \AttributeTok{dv =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(n}\SpecialCharTok{/}\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{), }\FunctionTok{rnorm}\NormalTok{(n}\SpecialCharTok{/}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{))}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{grafik}{%
-\section{Grafik}\label{grafik}}
-
-\begin{center}\includegraphics[width=1\linewidth]{repro_files/figure-latex/condition-plot-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 

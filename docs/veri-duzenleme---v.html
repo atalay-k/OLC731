@@ -284,13 +284,13 @@
 <ul>
 <li>Fonksiyonun kullanım şekli</li>
 </ul>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">key</span>, <span class="va">value</span>, <span class="va">...</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>       convert <span class="op">=</span> <span class="cn">FALSE</span>, factor_key <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Fonksiyonun kullanımı göstermek için veri seti oluşturma</li>
 </ul>
-<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">=</span><span class="fl">20</span></span>
 <span><span class="va">genisveri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>  ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"ID"</span>,<span class="fl">101</span><span class="op">:</span><span class="fl">120</span>,sep<span class="op">=</span><span class="st">""</span><span class="op">)</span>,</span>
@@ -298,7 +298,7 @@
 <span>  Sure_2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">40</span><span class="op">:</span><span class="fl">55</span>,<span class="fl">20</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>  Sure_3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">35</span><span class="op">:</span><span class="fl">50</span>,<span class="fl">20</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -311,39 +311,39 @@
 <tbody>
 <tr class="odd">
 <td align="left">ID101</td>
-<td align="right">54</td>
-<td align="right">47</td>
-<td align="right">35</td>
+<td align="right">51</td>
+<td align="right">46</td>
+<td align="right">45</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
-<td align="right">59</td>
+<td align="right">55</td>
+<td align="right">44</td>
 <td align="right">40</td>
-<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
 <td align="right">59</td>
-<td align="right">40</td>
-<td align="right">42</td>
+<td align="right">48</td>
+<td align="right">44</td>
 </tr>
 <tr class="even">
 <td align="left">ID104</td>
-<td align="right">58</td>
-<td align="right">49</td>
-<td align="right">40</td>
+<td align="right">51</td>
+<td align="right">47</td>
+<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td align="left">ID105</td>
-<td align="right">55</td>
-<td align="right">46</td>
-<td align="right">38</td>
+<td align="right">59</td>
+<td align="right">40</td>
+<td align="right">40</td>
 </tr>
 <tr class="even">
 <td align="left">ID106</td>
-<td align="right">60</td>
+<td align="right">56</td>
 <td align="right">46</td>
-<td align="right">42</td>
+<td align="right">48</td>
 </tr>
 </tbody>
 </table></div>
@@ -351,12 +351,12 @@
 <ul>
 <li>gather() fonksiyonu geniş veriyi, uzun veri haline getirir.</li>
 </ul>
-<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">Sure</span>, <span class="va">Zaman</span>, <span class="va">Sure_1</span><span class="op">:</span><span class="va">Sure_3</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Olusan veride Sure_1,Sure_2 ve Sure_3, Sure değişkenin değerleri haline geldi.</li>
 </ul>
-<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -369,12 +369,12 @@
 <tr class="odd">
 <td align="left">ID101</td>
 <td align="left">Sure_1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure_1</td>
-<td align="right">59</td>
+<td align="right">55</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
@@ -384,7 +384,7 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -399,19 +399,19 @@
 <td align="left">58</td>
 <td align="left">ID118</td>
 <td align="left">Sure_3</td>
-<td align="right">46</td>
+<td align="right">44</td>
 </tr>
 <tr class="even">
 <td align="left">59</td>
 <td align="left">ID119</td>
 <td align="left">Sure_3</td>
-<td align="right">50</td>
+<td align="right">36</td>
 </tr>
 <tr class="odd">
 <td align="left">60</td>
 <td align="left">ID120</td>
 <td align="left">Sure_3</td>
-<td align="right">40</td>
+<td align="right">43</td>
 </tr>
 </tbody>
 </table></div>
@@ -429,7 +429,7 @@
 <li><p>değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır.</p></li>
 <li><p>Olusan veride Sure_1,Sure_2 ve Sure_3 değerlerinin karakter ve sayısal değerlerini ayırmak için <strong>separate():</strong> fonkisyonu kullanabilirsiniz.</p></li>
 </ul>
-<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_ayrı</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>            <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">Sure</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sure"</span>,<span class="st">"Sayı"</span><span class="op">)</span>,<span class="st">"_"</span><span class="op">)</span> </span>
 <span></span>
@@ -447,13 +447,13 @@
 <td align="left">ID101</td>
 <td align="left">Sure</td>
 <td align="left">1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure</td>
 <td align="left">1</td>
-<td align="right">59</td>
+<td align="right">55</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
@@ -473,7 +473,7 @@
 <li>**gather*()** fonksiyonun tam tersi olarak iki sütunu alıp
 tek sutunda birlestirir.</li>
 </ul>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_ayrı</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">SURE</span>, <span class="va">Sure</span>, <span class="va">Sayı</span>, sep <span class="op">=</span> <span class="st">"."</span><span class="op">)</span></span>
 <span><span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -487,12 +487,12 @@ tek sutunda birlestirir.</li>
 <tr class="odd">
 <td align="left">ID101</td>
 <td align="left">Sure.1</td>
-<td align="right">54</td>
+<td align="right">51</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
 <td align="left">Sure.1</td>
-<td align="right">59</td>
+<td align="right">55</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
@@ -511,7 +511,7 @@ tek sutunda birlestirir.</li>
 <li>
 <strong>spread():</strong> **gather*()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.</li>
 </ul>
-<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">SURE</span>, <span class="va">Zaman</span><span class="op">)</span></span>
 <span><span class="va">tekrar_genis</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -525,39 +525,39 @@ tek sutunda birlestirir.</li>
 <tbody>
 <tr class="odd">
 <td align="left">ID101</td>
-<td align="right">54</td>
-<td align="right">47</td>
-<td align="right">35</td>
+<td align="right">51</td>
+<td align="right">46</td>
+<td align="right">45</td>
 </tr>
 <tr class="even">
 <td align="left">ID102</td>
-<td align="right">59</td>
+<td align="right">55</td>
+<td align="right">44</td>
 <td align="right">40</td>
-<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td align="left">ID103</td>
 <td align="right">59</td>
-<td align="right">40</td>
-<td align="right">42</td>
+<td align="right">48</td>
+<td align="right">44</td>
 </tr>
 <tr class="even">
 <td align="left">ID104</td>
-<td align="right">58</td>
-<td align="right">49</td>
-<td align="right">40</td>
+<td align="right">51</td>
+<td align="right">47</td>
+<td align="right">45</td>
 </tr>
 <tr class="odd">
 <td align="left">ID105</td>
-<td align="right">55</td>
-<td align="right">46</td>
-<td align="right">38</td>
+<td align="right">59</td>
+<td align="right">40</td>
+<td align="right">40</td>
 </tr>
 <tr class="even">
 <td align="left">ID106</td>
-<td align="right">60</td>
+<td align="right">56</td>
 <td align="right">46</td>
-<td align="right">42</td>
+<td align="right">48</td>
 </tr>
 </tbody>
 </table></div>
@@ -797,7 +797,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-20.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

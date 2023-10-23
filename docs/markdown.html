@@ -116,6 +116,12 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span> <span class="co"># süslü tablolar için</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span> <span class="co"># etkileşimli tablolar için</span></span></code></pre></div>
 <p>🔗İndir <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a>.</p>
+<div class="try">
+<p>🔗<a href="https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1">R markdon sunusu</a></p>
+</div>
+<div class="try">
+<p>🔗<a href="https://www.markdownguide.org/cheat-sheet/">markdown hatırlatıcı notlar</a></p>
+</div>
 <div id="neden-tekrarlanabilir-raporlar-kullanılmalı" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> Neden tekrarlanabilir raporlar kullanılmalı?<a class="anchor" aria-label="anchor" href="#neden-tekrarlanabilir-raporlar-kullan%C4%B1lmal%C4%B1"><i class="fas fa-link"></i></a>
@@ -153,7 +159,7 @@
 </h3>
 <ul>
 <li><p>Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını <strong>data/import</strong> adlı bir dizine koyabilir ve tüm görüntü dosyalarını <strong>images</strong> adlı bir dizine kaydedebilirsiniz.</p></li>
-<li><p>Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalara başvurulmalıdır.</p></li>
+<li><p>Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalar kullanılmalıdır.</p></li>
 </ul>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -187,10 +193,124 @@
 <li><p>Kodunuz çalışma dizininizin bir alt dizinindeki bir dosyaya ihtiyaç duyuyorsa (örneğin, import/veri1.txt), çalışma dizinini başka bir konuma veya bilgisayara taşıdığınızda erişilebilir olması için dosyayı göreli bir yol kullanarak yükleyin:</p></li>
 </ul>
 <div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"import/veri1.txt"</span><span class="op">)</span>  <span class="co"># dogru</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"import/veri1.txt"</span><span class="op">)</span>  <span class="co"># dogru</span></span></code></pre></div>
 <p>Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:</p>
 <div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"</span><span class="op">)</span>  <span class="co"># yanlıs</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"</span><span class="op">)</span>  <span class="co"># yanlıs</span></span></code></pre></div>
+<ul>
+<li>Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.</li>
+</ul>
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">veri1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"import/veri1.txt"</span>,</span>
+<span>                    header<span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                    sep<span class="op">=</span> <span class="st">";"</span>,</span>
+<span>                    dec<span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+no
+</th>
+<th style="text-align:right;">
+m_1
+</th>
+<th style="text-align:right;">
+m_2
+</th>
+<th style="text-align:right;">
+m_3
+</th>
+<th style="text-align:right;">
+m_4
+</th>
+<th style="text-align:right;">
+m_5
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+522
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+14.0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+20.0
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+222
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+10.2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+567
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+20.0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+12.2
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
 <div class="info">
 <p>Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.</p>
 </div>
@@ -210,23 +330,23 @@
 </ul>
 <p>Örneğin, bu dosya adları tam bir karmaşa:</p>
 <ul>
-<li><code class="path">Data (Participants) 11-15.xls</code></li>
-<li><code class="path">final report2.doc</code></li>
-<li><code class="path">Participants Data Nov 12.xls</code></li>
-<li><code class="path">project notes.txt</code></li>
-<li><code class="path">Questionnaire Data November 15.xls</code></li>
-<li><code class="path">report.doc</code></li>
-<li><code class="path">report final.doc</code></li>
+<li><code class="path">Veri (Katilimci) 04-15.xls</code></li>
+<li><code class="path">final raporu2.doc</code></li>
+<li><code class="path">Katilimci Veri Nisan 12.xls</code></li>
+<li><code class="path">proje notlari</code></li>
+<li><code class="path">Anket Veri Kasim 15.xls</code></li>
+<li><code class="path">rapor.doc</code></li>
+<li><code class="path">rapor son.doc</code></li>
 </ul>
 <p>Benzer dosyaların aynı yapıya sahip olması ve dosyaları taramanın veya ilgili dosyaları bulmak için kod kullanmasının kolay olması için dosyaları yapılandırabilirsiniz.</p>
 <ul>
-<li><code class="path">_project-notes.txt</code></li>
-<li><code class="path">data_participants_2021-11-12.xls</code></li>
-<li><code class="path">data_participants_2021-11-15.xls</code></li>
-<li><code class="path">data_questionnaire_2021-11-15.xls</code></li>
-<li><code class="path">report_v1.doc</code></li>
-<li><code class="path">report_v2.doc</code></li>
-<li><code class="path">report_v3.doc</code></li>
+<li><code class="path">proje-notlari</code></li>
+<li><code class="path">veri_katilimci_2021-04-12.xls</code></li>
+<li><code class="path">veri_katilimci_2021-04-15.xls</code></li>
+<li><code class="path">veri_anket_2021-04-15.xls</code></li>
+<li><code class="path">rapor_v1.doc</code></li>
+<li><code class="path">rapor_v2.doc</code></li>
+<li><code class="path">rapor_v3.doc</code></li>
 </ul>
 <div class="try">
 <p>Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje dosyalarınızdan bazılarına bakın ve neleri geliştirebileceğinizi görün.</p>
@@ -238,15 +358,15 @@
 </h3>
 <ul>
 <li><p>Artık dosya sisteminin nasıl çalıştığını ve komut dosyalarının bunlara erişmesini kolaylaştırmak için nesneleri nasıl adlandıracağımızı anladığımıza göre, projemizi yapmaya hazırız.</p></li>
-<li><p>Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimkine OLC731_2023 adını verdim). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.</p></li>
+<li><p>Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimki Ranaliz adınında). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.</p></li>
 </ul>
 <div class="warning">
 <p>Bu dizin OneDrive'daysa veya tam dosya yolu özel karakterler içeriyorsa ya da bazı Windows makinelerinde 260 karakterden fazlaysa bazen sorunlara neden olabilir.</p>
 </div>
 <ul>
-<li>Ardından, OLC731 adında yeni bir proje oluşturmak için <strong><code>File</code></strong> menüsü altında <strong><code>New Project...</code></strong> öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.</li>
+<li>Ardından, OLC731_2023 adında yeni bir proje oluşturmak için <strong><code>File</code></strong> menüsü altında <strong><code>New Project...</code></strong> öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.</li>
 </ul>
-<p>Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren OLC731_OLC731_2023.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.</p>
+<p>Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren Ranaliz.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.</p>
 <div class="info">
 <p>Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.user adlı bir dizin de görebilirsiniz. Bu ve nokta ile başlayan diğer "görünmez" dosyaları yok sayabilirsiniz.</p>
 </div>
@@ -262,16 +382,12 @@
 <div class="info">
 <p>R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste <a href="https://quarto.org/" target="_blank">quarto</a> kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.</p>
 </div>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-- Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd">Örnek Dosyayı beraber inceleyelim.</a>
-=======
-- Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="https://github.com/atalay-k/OLC731/blob/main/docs/repro.Rmd">Örnek Dosyayı beraber inceleyelim.</a>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0d7dfe2e0520aad595526b603786ccc1fbe9b63c</p>
 <ul>
-<li>Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.</li>
+<li><p>Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. <a href="https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd">Örnek Dosyayı beraber inceleyelim.</a></p></li>
+<li><p>Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.</p></li>
 </ul>
 <div class="try">
-<p><strong><code>File &gt; New File &gt; R Markdown...</code></strong> menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı repro.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.</p>
+<p><strong><code>File &gt; New File &gt; R Markdown...</code></strong> menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı Ornek1.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.</p>
 </div>
 <div id="yaml" class="section level3" number="6.3.1">
 <h3>
@@ -296,8 +412,7 @@ output:
 <p>Seçeneklerin ne işe yaradığını görmek için değerleri <code>false</code> tan <code>true</code> ya değiştirmeyi deneyin.</p>
 </div>
 <ul>
-<li><p><code>df_print: kable</code> seçeneği <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable</a></code> kullanarak veri setleri yazdırır. Aşağıda tabloları nasıl daha fazla özelleştirebileceğinizi öğreneceksiniz.</p></li>
-<li><p>Varsayılan temalar şunlardır: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united ve yeti. Linkten 🔗<a href="https://rpubs.com/ranydc/rmarkdown_themes">daha fazla temayı inceleyebilirsiniz.</a>.</p></li>
+<li>Varsayılan temalar şunlardır: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united ve yeti. Linkten 🔗<a href="https://rpubs.com/ranydc/rmarkdown_themes">daha fazla temayı inceleyebilirsiniz.</a>.</li>
 </ul>
 </div>
 <div id="kurulum" class="section level3" number="6.3.2">
@@ -309,7 +424,7 @@ output:
 </ul>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
@@ -319,7 +434,7 @@ output:
 </ul>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span></span>
 <span>  fig.width  <span class="op">=</span> <span class="fl">8</span>,</span>
 <span>  fig.height <span class="op">=</span> <span class="fl">5</span>,</span>
@@ -334,7 +449,8 @@ output:
 <p>Yukarıdaki kod aşağıdaki seçenekleri ayarlar:</p>
 <ul>
 <li><p>fig.width = 8 : varsayılan şekil genişliği 8 inçtir (bunu tek tek şekiller için değiştirebilirsiniz)</p></li>
-<li><p>fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir fig.path = 'images/' : şekiller "images" dizinine kaydedilir</p></li>
+<li><p>fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir</p></li>
+<li><p>fig.path = 'images/' : şekiller "images" dizinine kaydedilir</p></li>
 <li><p>echo = FALSE : işlenen belgede kod parçalarını gösterme</p></li>
 <li><p>warning = FALSE : herhangi bir işlev uyarısı gösterme</p></li>
 <li><p>message = FALSE : herhangi bir işlev mesajı gösterme</p></li>
@@ -367,9 +483,9 @@ output:
 </h3>
 <ul>
 <li><p>Metninize eklemek için görüntüler, tablolar veya hesaplamalar oluşturan ve görüntüleyen kod parçaları ekleyebilirsiniz. Bazı verileri yükleyerek başlayalım.</p></li>
-<li><p>İlk olarak, belgenizde bir kod yığını oluşturun. Bu kod web'den bazı verileri yükler</p></li>
+<li><p>İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler.</p></li>
 </ul>
-<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">datasets</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -380,10 +496,10 @@ output:
 <ul>
 <li>Kod blokları içine hash sembolü (#) ile yorum ekleyebilirsiniz. R yorumlayıcısı, hash'ten satır sonuna kadar olan karakterleri yoksayacaktır.</li>
 </ul>
-<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="co"># toplam satır sayısı</span></span>
-<span><span class="va">mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span>  <span class="co"># yaprak uzunluğu ortalaması</span></span>
-<span><span class="va">sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span> <span class="co"># yaprak uzunluğu ortalaması SD'si</span></span>
+<span><span class="va">mu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span>  <span class="co"># taç yaprak uzunluğu ortalaması</span></span>
+<span><span class="va">sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Petal.Length</span><span class="op">)</span> <span class="co"># taç yaprak uzunluğu standart sapması</span></span>
 <span></span>
 <span></span>
 <span><span class="va">simule_deger</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">mu</span>, <span class="va">sd</span><span class="op">)</span></span></code></pre></div>
@@ -392,7 +508,7 @@ output:
 <li><p>Nesnelerinizi açık bir şekilde adlandırırsanız, genellikle açıklayıcı yorumlar eklemeniz gerekmez. Örneğin, yukarıdaki üç nesneyi n_iris, ort_petal ve sd_petal olarak adlandırmış olsaydım, yorumları atlardım.</p></li>
 <li><p>Yorumların bir başka kullanımı da çalıştırmak istemediğiniz ancak silmek de istemediğiniz bir kod bölümünü "yorumlamaktır". Örneğin, bir paketi yüklemek için kullanılan kodu kodunuza dahil edebilirsiniz, ancak kodun her çalıştırıldığında uzun bir yüklemeye zorlamaması için her zaman yorumlamanız gerekir.</p></li>
 </ul>
-<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("dplyr")</span></span>
 <span><span class="co"># install.packages("tidyr")</span></span>
 <span><span class="co"># install.packages("ggplot2")</span></span></code></pre></div>
@@ -410,7 +526,7 @@ output:
 <ul>
 <li>Şimdi setosa ve virginica çiçek türlerinde yaprak uzunluklarını analiz edelim. Önce analiz kodunu çalıştıracağız. Daha sonra makalemizde kullanmak isteyebileceğimiz sayıları değişkenlere kaydedeceğiz ve uygun şekilde yuvarlayacağız. Son olarak, bir sonuçları biçimlendirmek için glue::glue() kullanacağız.</li>
 </ul>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># analiz</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="va">setosa_petal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">Petal.Length</span><span class="op">)</span></span>
@@ -440,7 +556,7 @@ output:
 <ul>
 <li>Çalışmaların yöntem bölümüne betimsel bilgiler eklemek istediğimizde</li>
 </ul>
-<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ozet_tablo</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
@@ -531,7 +647,7 @@ papaja
 gt
 </button>
 <div id="knitr" class="tabcontent">
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yeni_ad</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
@@ -604,7 +720,7 @@ virginica
 </div>
 <div id="kableExtra" class="tabcontent">
 <p><strong><a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html">kableExtra</a> paketi çok sayıda seçenek sunar.</strong></p>
-<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
@@ -692,7 +808,7 @@ virginica
 </div>
 <div id="papaja" class="tabcontent">
 <p><strong><a href="https://crsh.github.io/papaja_man/reporting.html#tables">papaja</a> paketi ile APA formatında tablolar elde edebilirsiniz.</strong></p>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">papaja</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/papaja/man/apa_table.html">apa_table</a></span><span class="op">(</span><span class="va">ozet_tablo</span>,</span>
 <span>                  col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span><span class="op">)</span>,</span>
 <span>                  caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span>,</span>
@@ -730,7 +846,7 @@ virginica
 </div>
 <div id="gt" class="tabcontent">
 <p><strong><a href="https://gt.rstudio.com/index.html">gt</a> paketinde de çok sayıda seçenek bulunmaktadır.</strong></p>
-<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="va">ozet_tablo</span>, caption <span class="op">=</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -743,23 +859,23 @@ virginica
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_spanner.html">tab_spanner</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Degerler"</span>,</span>
 <span>              columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ortalama</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fl">6</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
-<div id="lmjubkzfoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lmjubkzfoh table {
+<div id="wsrzgwgdir" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wsrzgwgdir table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lmjubkzfoh thead, #lmjubkzfoh tbody, #lmjubkzfoh tfoot, #lmjubkzfoh tr, #lmjubkzfoh td, #lmjubkzfoh th {
+#wsrzgwgdir thead, #wsrzgwgdir tbody, #wsrzgwgdir tfoot, #wsrzgwgdir tr, #wsrzgwgdir td, #wsrzgwgdir th {
   border-style: none;
 }
 
-#lmjubkzfoh p {
+#wsrzgwgdir p {
   margin: 0;
   padding: 0;
 }
 
-#lmjubkzfoh .gt_table {
+#wsrzgwgdir .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -785,12 +901,12 @@ virginica
   border-left-color: #D3D3D3;
 }
 
-#lmjubkzfoh .gt_caption {
+#wsrzgwgdir .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lmjubkzfoh .gt_title {
+#wsrzgwgdir .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -802,7 +918,7 @@ virginica
   border-bottom-width: 0;
 }
 
-#lmjubkzfoh .gt_subtitle {
+#wsrzgwgdir .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -814,7 +930,7 @@ virginica
   border-top-width: 0;
 }
 
-#lmjubkzfoh .gt_heading {
+#wsrzgwgdir .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -826,13 +942,13 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#lmjubkzfoh .gt_bottom_border {
+#wsrzgwgdir .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_col_headings {
+#wsrzgwgdir .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -847,7 +963,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#lmjubkzfoh .gt_col_heading {
+#wsrzgwgdir .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -867,7 +983,7 @@ virginica
   overflow-x: hidden;
 }
 
-#lmjubkzfoh .gt_column_spanner_outer {
+#wsrzgwgdir .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -879,15 +995,15 @@ virginica
   padding-right: 4px;
 }
 
-#lmjubkzfoh .gt_column_spanner_outer:first-child {
+#wsrzgwgdir .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lmjubkzfoh .gt_column_spanner_outer:last-child {
+#wsrzgwgdir .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lmjubkzfoh .gt_column_spanner {
+#wsrzgwgdir .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -899,11 +1015,11 @@ virginica
   width: 100%;
 }
 
-#lmjubkzfoh .gt_spanner_row {
+#wsrzgwgdir .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lmjubkzfoh .gt_group_heading {
+#wsrzgwgdir .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -929,7 +1045,7 @@ virginica
   text-align: left;
 }
 
-#lmjubkzfoh .gt_empty_group_heading {
+#wsrzgwgdir .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -944,15 +1060,15 @@ virginica
   vertical-align: middle;
 }
 
-#lmjubkzfoh .gt_from_md > :first-child {
+#wsrzgwgdir .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lmjubkzfoh .gt_from_md > :last-child {
+#wsrzgwgdir .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lmjubkzfoh .gt_row {
+#wsrzgwgdir .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -971,7 +1087,7 @@ virginica
   overflow-x: hidden;
 }
 
-#lmjubkzfoh .gt_stub {
+#wsrzgwgdir .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -984,7 +1100,7 @@ virginica
   padding-right: 5px;
 }
 
-#lmjubkzfoh .gt_stub_row_group {
+#wsrzgwgdir .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -998,15 +1114,15 @@ virginica
   vertical-align: top;
 }
 
-#lmjubkzfoh .gt_row_group_first td {
+#wsrzgwgdir .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lmjubkzfoh .gt_row_group_first th {
+#wsrzgwgdir .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lmjubkzfoh .gt_summary_row {
+#wsrzgwgdir .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1016,16 +1132,16 @@ virginica
   padding-right: 5px;
 }
 
-#lmjubkzfoh .gt_first_summary_row {
+#wsrzgwgdir .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_first_summary_row.thick {
+#wsrzgwgdir .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lmjubkzfoh .gt_last_summary_row {
+#wsrzgwgdir .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1035,7 +1151,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_grand_summary_row {
+#wsrzgwgdir .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1045,7 +1161,7 @@ virginica
   padding-right: 5px;
 }
 
-#lmjubkzfoh .gt_first_grand_summary_row {
+#wsrzgwgdir .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1055,7 +1171,7 @@ virginica
   border-top-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_last_grand_summary_row_top {
+#wsrzgwgdir .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1065,11 +1181,11 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_striped {
+#wsrzgwgdir .gt_striped {
   background-color: #EDF7FC;
 }
 
-#lmjubkzfoh .gt_table_body {
+#wsrzgwgdir .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1078,7 +1194,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#lmjubkzfoh .gt_footnotes {
+#wsrzgwgdir .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1092,7 +1208,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#lmjubkzfoh .gt_footnote {
+#wsrzgwgdir .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1101,7 +1217,7 @@ virginica
   padding-right: 5px;
 }
 
-#lmjubkzfoh .gt_sourcenotes {
+#wsrzgwgdir .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1115,7 +1231,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#lmjubkzfoh .gt_sourcenote {
+#wsrzgwgdir .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1123,63 +1239,63 @@ virginica
   padding-right: 5px;
 }
 
-#lmjubkzfoh .gt_left {
+#wsrzgwgdir .gt_left {
   text-align: left;
 }
 
-#lmjubkzfoh .gt_center {
+#wsrzgwgdir .gt_center {
   text-align: center;
 }
 
-#lmjubkzfoh .gt_right {
+#wsrzgwgdir .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lmjubkzfoh .gt_font_normal {
+#wsrzgwgdir .gt_font_normal {
   font-weight: normal;
 }
 
-#lmjubkzfoh .gt_font_bold {
+#wsrzgwgdir .gt_font_bold {
   font-weight: bold;
 }
 
-#lmjubkzfoh .gt_font_italic {
+#wsrzgwgdir .gt_font_italic {
   font-style: italic;
 }
 
-#lmjubkzfoh .gt_super {
+#wsrzgwgdir .gt_super {
   font-size: 65%;
 }
 
-#lmjubkzfoh .gt_footnote_marks {
+#wsrzgwgdir .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lmjubkzfoh .gt_asterisk {
+#wsrzgwgdir .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lmjubkzfoh .gt_indent_1 {
+#wsrzgwgdir .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lmjubkzfoh .gt_indent_2 {
+#wsrzgwgdir .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lmjubkzfoh .gt_indent_3 {
+#wsrzgwgdir .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lmjubkzfoh .gt_indent_4 {
+#wsrzgwgdir .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lmjubkzfoh .gt_indent_5 {
+#wsrzgwgdir .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1233,7 +1349,7 @@ virginica
 </ul>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r boxplot, fig.cap="Sekil 1 1. Türlere göre yaprak uzunluğu"}</code></pre>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">!=</span> <span class="st">"versicolor"</span><span class="op">)</span></span>
 <span><span class="va">dat</span><span class="op">$</span><span class="va">Species</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
 <span></span>
@@ -1243,8 +1359,8 @@ virginica
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Petal Uzunluğu"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">20</span>, family <span class="op">=</span> <span class="st">"Times"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:unnamed-chunk-9"></span>
-<img src="06-markdown_files/figure-html/unnamed-chunk-9-1.png" alt="Petal Uzunlukları ve Türler" width="100%"><p class="caption">
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="06-markdown_files/figure-html/unnamed-chunk-10-1.png" alt="Petal Uzunlukları ve Türler" width="100%"><p class="caption">
 Figure 6.1: Petal Uzunlukları ve Türler
 </p>
 </div>
@@ -1262,7 +1378,7 @@ Figure 6.2:  Petal Uzunlukları ve Türler
 <ul>
 <li>Kodlarla oluşturamadığınız şekilleri de resim dosyaları ile dökümana ekleyebilirsiniz:</li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb242-1"><a href="markdown.html#cb242-1" tabindex="-1"></a><span class="al">![neden R](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TX77o_zJ4zbpJ3vN4BkLsg.jpeg)</span>{style="width: 50%"}</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb243-1"><a href="markdown.html#cb243-1" tabindex="-1"></a><span class="al">![neden R](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TX77o_zJ4zbpJ3vN4BkLsg.jpeg)</span>{style="width: 50%"}</span></code></pre></div>
 <div class="float">
 <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*TX77o_zJ4zbpJ3vN4BkLsg.jpeg" style="width: 50%" alt="neden R"><div class="figcaption">neden R</div>
 </div>
@@ -1278,13 +1394,13 @@ Figure 6.2:  Petal Uzunlukları ve Türler
 </ul>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r tablo1}</code></pre>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># kodlar</span></span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r sekil1}</code></pre>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># kodlar</span></span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
@@ -1305,77 +1421,77 @@ Bakınız Bolum\ \@ref(baslık-1) and Bolum\ \@ref(baslık-2)</code></pre>
 <button>
 Dokuman burada
 </button>
-<div class="sourceCode" id="cb247"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb247-1"><a href="markdown.html#cb247-1" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb247-2"><a href="markdown.html#cb247-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ornek Dosya"</span></span>
-<span id="cb247-3"><a href="markdown.html#cb247-3" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
-<span id="cb247-4"><a href="markdown.html#cb247-4" tabindex="-1"></a><span class="co">  bookdown::html_document2:</span></span>
-<span id="cb247-5"><a href="markdown.html#cb247-5" tabindex="-1"></a><span class="co">    number_sections: true</span></span>
-<span id="cb247-6"><a href="markdown.html#cb247-6" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb247-7"><a href="markdown.html#cb247-7" tabindex="-1"></a></span>
-<span id="cb247-8"><a href="markdown.html#cb247-8" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb247-9"><a href="markdown.html#cb247-9" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = FALSE,</span></span>
-<span id="cb247-10"><a href="markdown.html#cb247-10" tabindex="-1"></a><span class="in">                      message = FALSE,</span></span>
-<span id="cb247-11"><a href="markdown.html#cb247-11" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
-<span id="cb247-12"><a href="markdown.html#cb247-12" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb247-13"><a href="markdown.html#cb247-13" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
-<span id="cb247-14"><a href="markdown.html#cb247-14" tabindex="-1"></a><span class="in">theme_set(theme_minimal())</span></span>
-<span id="cb247-15"><a href="markdown.html#cb247-15" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb247-16"><a href="markdown.html#cb247-16" tabindex="-1"></a></span>
-<span id="cb247-17"><a href="markdown.html#cb247-17" tabindex="-1"></a>Pırlanta ücretleri çeşitli faktörlere bağlıdır</span>
-<span id="cb247-18"><a href="markdown.html#cb247-18" tabindex="-1"></a></span>
-<span id="cb247-19"><a href="markdown.html#cb247-19" tabindex="-1"></a><span class="ss">- </span>cut (See Table\ \@ref(tab:kesim))</span>
-<span id="cb247-20"><a href="markdown.html#cb247-20" tabindex="-1"></a><span class="ss">- </span>colour (See Table\ \@ref(tab:renk))</span>
-<span id="cb247-21"><a href="markdown.html#cb247-21" tabindex="-1"></a><span class="ss">- </span>clarity (See Figure\ \@ref(fig:parlaklık))</span>
-<span id="cb247-22"><a href="markdown.html#cb247-22" tabindex="-1"></a><span class="ss">- </span>carats (See Figure\ \@ref(fig:karat))</span>
-<span id="cb247-23"><a href="markdown.html#cb247-23" tabindex="-1"></a><span class="ss">- </span>Bakınız Bolum\ \@ref(sonuclar) sonuclar icin</span>
-<span id="cb247-24"><a href="markdown.html#cb247-24" tabindex="-1"></a></span>
-<span id="cb247-25"><a href="markdown.html#cb247-25" tabindex="-1"></a><span class="fu">## Tablolar</span></span>
-<span id="cb247-26"><a href="markdown.html#cb247-26" tabindex="-1"></a></span>
-<span id="cb247-27"><a href="markdown.html#cb247-27" tabindex="-1"></a><span class="fu">### Kesim</span></span>
-<span id="cb247-28"><a href="markdown.html#cb247-28" tabindex="-1"></a></span>
-<span id="cb247-29"><a href="markdown.html#cb247-29" tabindex="-1"></a><span class="in">```{r tab:kesim}</span></span>
-<span id="cb247-30"><a href="markdown.html#cb247-30" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
-<span id="cb247-31"><a href="markdown.html#cb247-31" tabindex="-1"></a><span class="in">  group_by(cut) %&gt;%</span></span>
-<span id="cb247-32"><a href="markdown.html#cb247-32" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
-<span id="cb247-33"><a href="markdown.html#cb247-33" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
-<span id="cb247-34"><a href="markdown.html#cb247-34" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
-<span id="cb247-35"><a href="markdown.html#cb247-35" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
-<span id="cb247-36"><a href="markdown.html#cb247-36" tabindex="-1"></a><span class="in">        caption = "Kesime göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
-<span id="cb247-37"><a href="markdown.html#cb247-37" tabindex="-1"></a><span class="in">  kable_material()</span></span>
-<span id="cb247-38"><a href="markdown.html#cb247-38" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb247-39"><a href="markdown.html#cb247-39" tabindex="-1"></a></span>
-<span id="cb247-40"><a href="markdown.html#cb247-40" tabindex="-1"></a><span class="fu">### Renk</span></span>
-<span id="cb247-41"><a href="markdown.html#cb247-41" tabindex="-1"></a></span>
-<span id="cb247-42"><a href="markdown.html#cb247-42" tabindex="-1"></a><span class="in">```{r renk}</span></span>
-<span id="cb247-43"><a href="markdown.html#cb247-43" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
-<span id="cb247-44"><a href="markdown.html#cb247-44" tabindex="-1"></a><span class="in">  group_by(color) %&gt;%</span></span>
-<span id="cb247-45"><a href="markdown.html#cb247-45" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
-<span id="cb247-46"><a href="markdown.html#cb247-46" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
-<span id="cb247-47"><a href="markdown.html#cb247-47" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
-<span id="cb247-48"><a href="markdown.html#cb247-48" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
-<span id="cb247-49"><a href="markdown.html#cb247-49" tabindex="-1"></a><span class="in">        caption = "Renge göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
-<span id="cb247-50"><a href="markdown.html#cb247-50" tabindex="-1"></a><span class="in">  kable_material()</span></span>
-<span id="cb247-51"><a href="markdown.html#cb247-51" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb247-52"><a href="markdown.html#cb247-52" tabindex="-1"></a></span>
-<span id="cb247-53"><a href="markdown.html#cb247-53" tabindex="-1"></a><span class="fu">## Grafikler</span></span>
-<span id="cb247-54"><a href="markdown.html#cb247-54" tabindex="-1"></a></span>
-<span id="cb247-55"><a href="markdown.html#cb247-55" tabindex="-1"></a><span class="fu">### Parlaklık</span></span>
-<span id="cb247-56"><a href="markdown.html#cb247-56" tabindex="-1"></a></span>
-<span id="cb247-57"><a href="markdown.html#cb247-57" tabindex="-1"></a><span class="in">```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}</span></span>
-<span id="cb247-58"><a href="markdown.html#cb247-58" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = clarity, y = price)) +</span></span>
-<span id="cb247-59"><a href="markdown.html#cb247-59" tabindex="-1"></a><span class="in">  geom_boxplot() </span></span>
-<span id="cb247-60"><a href="markdown.html#cb247-60" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb247-61"><a href="markdown.html#cb247-61" tabindex="-1"></a></span>
-<span id="cb247-62"><a href="markdown.html#cb247-62" tabindex="-1"></a><span class="fu">### Karat</span></span>
-<span id="cb247-63"><a href="markdown.html#cb247-63" tabindex="-1"></a></span>
-<span id="cb247-64"><a href="markdown.html#cb247-64" tabindex="-1"></a><span class="in">```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}</span></span>
-<span id="cb247-65"><a href="markdown.html#cb247-65" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = carat, y = price)) +</span></span>
-<span id="cb247-66"><a href="markdown.html#cb247-66" tabindex="-1"></a><span class="in">  stat_smooth()</span></span>
-<span id="cb247-67"><a href="markdown.html#cb247-67" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb247-68"><a href="markdown.html#cb247-68" tabindex="-1"></a></span>
-<span id="cb247-69"><a href="markdown.html#cb247-69" tabindex="-1"></a><span class="fu">### Sonuclar {#sonuclar}</span></span>
-<span id="cb247-70"><a href="markdown.html#cb247-70" tabindex="-1"></a></span>
-<span id="cb247-71"><a href="markdown.html#cb247-71" tabindex="-1"></a>"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb248-1"><a href="markdown.html#cb248-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb248-2"><a href="markdown.html#cb248-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ornek Dosya"</span></span>
+<span id="cb248-3"><a href="markdown.html#cb248-3" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
+<span id="cb248-4"><a href="markdown.html#cb248-4" tabindex="-1"></a><span class="co">  bookdown::html_document2:</span></span>
+<span id="cb248-5"><a href="markdown.html#cb248-5" tabindex="-1"></a><span class="co">    number_sections: true</span></span>
+<span id="cb248-6"><a href="markdown.html#cb248-6" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb248-7"><a href="markdown.html#cb248-7" tabindex="-1"></a></span>
+<span id="cb248-8"><a href="markdown.html#cb248-8" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb248-9"><a href="markdown.html#cb248-9" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = FALSE,</span></span>
+<span id="cb248-10"><a href="markdown.html#cb248-10" tabindex="-1"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb248-11"><a href="markdown.html#cb248-11" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb248-12"><a href="markdown.html#cb248-12" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb248-13"><a href="markdown.html#cb248-13" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
+<span id="cb248-14"><a href="markdown.html#cb248-14" tabindex="-1"></a><span class="in">theme_set(theme_minimal())</span></span>
+<span id="cb248-15"><a href="markdown.html#cb248-15" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb248-16"><a href="markdown.html#cb248-16" tabindex="-1"></a></span>
+<span id="cb248-17"><a href="markdown.html#cb248-17" tabindex="-1"></a>Pırlanta ücretleri çeşitli faktörlere bağlıdır</span>
+<span id="cb248-18"><a href="markdown.html#cb248-18" tabindex="-1"></a></span>
+<span id="cb248-19"><a href="markdown.html#cb248-19" tabindex="-1"></a><span class="ss">- </span>cut (See Table\ \@ref(tab:kesim))</span>
+<span id="cb248-20"><a href="markdown.html#cb248-20" tabindex="-1"></a><span class="ss">- </span>colour (See Table\ \@ref(tab:renk))</span>
+<span id="cb248-21"><a href="markdown.html#cb248-21" tabindex="-1"></a><span class="ss">- </span>clarity (See Figure\ \@ref(fig:parlaklık))</span>
+<span id="cb248-22"><a href="markdown.html#cb248-22" tabindex="-1"></a><span class="ss">- </span>carats (See Figure\ \@ref(fig:karat))</span>
+<span id="cb248-23"><a href="markdown.html#cb248-23" tabindex="-1"></a><span class="ss">- </span>Bakınız Bolum\ \@ref(sonuclar) sonuclar icin</span>
+<span id="cb248-24"><a href="markdown.html#cb248-24" tabindex="-1"></a></span>
+<span id="cb248-25"><a href="markdown.html#cb248-25" tabindex="-1"></a><span class="fu">## Tablolar</span></span>
+<span id="cb248-26"><a href="markdown.html#cb248-26" tabindex="-1"></a></span>
+<span id="cb248-27"><a href="markdown.html#cb248-27" tabindex="-1"></a><span class="fu">### Kesim</span></span>
+<span id="cb248-28"><a href="markdown.html#cb248-28" tabindex="-1"></a></span>
+<span id="cb248-29"><a href="markdown.html#cb248-29" tabindex="-1"></a><span class="in">```{r tab:kesim}</span></span>
+<span id="cb248-30"><a href="markdown.html#cb248-30" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb248-31"><a href="markdown.html#cb248-31" tabindex="-1"></a><span class="in">  group_by(cut) %&gt;%</span></span>
+<span id="cb248-32"><a href="markdown.html#cb248-32" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb248-33"><a href="markdown.html#cb248-33" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb248-34"><a href="markdown.html#cb248-34" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb248-35"><a href="markdown.html#cb248-35" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb248-36"><a href="markdown.html#cb248-36" tabindex="-1"></a><span class="in">        caption = "Kesime göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb248-37"><a href="markdown.html#cb248-37" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb248-38"><a href="markdown.html#cb248-38" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb248-39"><a href="markdown.html#cb248-39" tabindex="-1"></a></span>
+<span id="cb248-40"><a href="markdown.html#cb248-40" tabindex="-1"></a><span class="fu">### Renk</span></span>
+<span id="cb248-41"><a href="markdown.html#cb248-41" tabindex="-1"></a></span>
+<span id="cb248-42"><a href="markdown.html#cb248-42" tabindex="-1"></a><span class="in">```{r renk}</span></span>
+<span id="cb248-43"><a href="markdown.html#cb248-43" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb248-44"><a href="markdown.html#cb248-44" tabindex="-1"></a><span class="in">  group_by(color) %&gt;%</span></span>
+<span id="cb248-45"><a href="markdown.html#cb248-45" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb248-46"><a href="markdown.html#cb248-46" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb248-47"><a href="markdown.html#cb248-47" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb248-48"><a href="markdown.html#cb248-48" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb248-49"><a href="markdown.html#cb248-49" tabindex="-1"></a><span class="in">        caption = "Renge göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb248-50"><a href="markdown.html#cb248-50" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb248-51"><a href="markdown.html#cb248-51" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb248-52"><a href="markdown.html#cb248-52" tabindex="-1"></a></span>
+<span id="cb248-53"><a href="markdown.html#cb248-53" tabindex="-1"></a><span class="fu">## Grafikler</span></span>
+<span id="cb248-54"><a href="markdown.html#cb248-54" tabindex="-1"></a></span>
+<span id="cb248-55"><a href="markdown.html#cb248-55" tabindex="-1"></a><span class="fu">### Parlaklık</span></span>
+<span id="cb248-56"><a href="markdown.html#cb248-56" tabindex="-1"></a></span>
+<span id="cb248-57"><a href="markdown.html#cb248-57" tabindex="-1"></a><span class="in">```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}</span></span>
+<span id="cb248-58"><a href="markdown.html#cb248-58" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = clarity, y = price)) +</span></span>
+<span id="cb248-59"><a href="markdown.html#cb248-59" tabindex="-1"></a><span class="in">  geom_boxplot() </span></span>
+<span id="cb248-60"><a href="markdown.html#cb248-60" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb248-61"><a href="markdown.html#cb248-61" tabindex="-1"></a></span>
+<span id="cb248-62"><a href="markdown.html#cb248-62" tabindex="-1"></a><span class="fu">### Karat</span></span>
+<span id="cb248-63"><a href="markdown.html#cb248-63" tabindex="-1"></a></span>
+<span id="cb248-64"><a href="markdown.html#cb248-64" tabindex="-1"></a><span class="in">```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}</span></span>
+<span id="cb248-65"><a href="markdown.html#cb248-65" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = carat, y = price)) +</span></span>
+<span id="cb248-66"><a href="markdown.html#cb248-66" tabindex="-1"></a><span class="in">  stat_smooth()</span></span>
+<span id="cb248-67"><a href="markdown.html#cb248-67" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb248-68"><a href="markdown.html#cb248-68" tabindex="-1"></a></span>
+<span id="cb248-69"><a href="markdown.html#cb248-69" tabindex="-1"></a><span class="fu">### Sonuclar {#sonuclar}</span></span>
+<span id="cb248-70"><a href="markdown.html#cb248-70" tabindex="-1"></a></span>
+<span id="cb248-71"><a href="markdown.html#cb248-71" tabindex="-1"></a>"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "</span></code></pre></div>
 </div>
 <p>Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız <code>YAML</code> bölümünde <code>number_sections: false</code> ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, <code>\@ref(sonuclar)</code> gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı sözdizimini kullanmanız gerekir:</p>
 <pre><code>Son açıklamalar için [son bölüme](#sonuclar) bakınız.</code></pre>
@@ -1405,23 +1521,23 @@ csl: apa.csl
 <p>Bir referans programı kullanmak hayatınızı çok daha kolaylaştıracaktır. Zotero muhtemelen en iyisidir.</p>
 </div>
 <p>Dışa aktarılan dosya şu şekilde görünmelidir:</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode bib"><code class="sourceCode bibtex"><span id="cb250-1"><a href="markdown.html#cb250-1" tabindex="-1"></a></span>
-<span id="cb250-2"><a href="markdown.html#cb250-2" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
-<span id="cb250-3"><a href="markdown.html#cb250-3" tabindex="-1"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
-<span id="cb250-4"><a href="markdown.html#cb250-4" tabindex="-1"></a>    <span class="dt">volume</span> = {7},</span>
-<span id="cb250-5"><a href="markdown.html#cb250-5" tabindex="-1"></a>    <span class="dt">issn</span> = {2474-7394},</span>
-<span id="cb250-6"><a href="markdown.html#cb250-6" tabindex="-1"></a>    <span class="dt">shorttitle</span> = {Easing {Into} {Open} {Science}},</span>
-<span id="cb250-7"><a href="markdown.html#cb250-7" tabindex="-1"></a>    <span class="dt">url</span> = {https://doi.org/10.1525/collabra.18684},</span>
-<span id="cb250-8"><a href="markdown.html#cb250-8" tabindex="-1"></a>    <span class="dt">doi</span> = {10.1525/collabra.18684},</span>
-<span id="cb250-9"><a href="markdown.html#cb250-9" tabindex="-1"></a>    <span class="dt">abstract</span> = {This article provides a roadmap to assist graduate students and their advisors to engage in open science practices. We suggest eight open science practices that novice graduate students could begin adopting today. The topics we cover include journal clubs, project workflow, preprints, reproducible code, data sharing, transparent writing, preregistration, and registered reports. To address concerns about not knowing how to engage in open science practices, we provide a difficulty rating of each behavior (easy, medium, difficult), present them in order of suggested adoption, and follow the format of what, why, how, and worries. We give graduate students ideas on how to approach conversations with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. We emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined.},</span>
-<span id="cb250-10"><a href="markdown.html#cb250-10" tabindex="-1"></a>    <span class="dt">number</span> = {1},</span>
-<span id="cb250-11"><a href="markdown.html#cb250-11" tabindex="-1"></a>    <span class="dt">urldate</span> = {2022-09-07},</span>
-<span id="cb250-12"><a href="markdown.html#cb250-12" tabindex="-1"></a>    <span class="dt">journal</span> = {Collabra: Psychology},</span>
-<span id="cb250-13"><a href="markdown.html#cb250-13" tabindex="-1"></a>    <span class="dt">author</span> = {Kathawalla, Ummul-Kiram and Silverstein, Priya and Syed, Moin},</span>
-<span id="cb250-14"><a href="markdown.html#cb250-14" tabindex="-1"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
-<span id="cb250-15"><a href="markdown.html#cb250-15" tabindex="-1"></a>    <span class="dt">year</span> = {2021},</span>
-<span id="cb250-16"><a href="markdown.html#cb250-16" tabindex="-1"></a>    <span class="dt">pages</span> = {18684},</span>
-<span id="cb250-17"><a href="markdown.html#cb250-17" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode bib"><code class="sourceCode bibtex"><span id="cb251-1"><a href="markdown.html#cb251-1" tabindex="-1"></a></span>
+<span id="cb251-2"><a href="markdown.html#cb251-2" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
+<span id="cb251-3"><a href="markdown.html#cb251-3" tabindex="-1"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
+<span id="cb251-4"><a href="markdown.html#cb251-4" tabindex="-1"></a>    <span class="dt">volume</span> = {7},</span>
+<span id="cb251-5"><a href="markdown.html#cb251-5" tabindex="-1"></a>    <span class="dt">issn</span> = {2474-7394},</span>
+<span id="cb251-6"><a href="markdown.html#cb251-6" tabindex="-1"></a>    <span class="dt">shorttitle</span> = {Easing {Into} {Open} {Science}},</span>
+<span id="cb251-7"><a href="markdown.html#cb251-7" tabindex="-1"></a>    <span class="dt">url</span> = {https://doi.org/10.1525/collabra.18684},</span>
+<span id="cb251-8"><a href="markdown.html#cb251-8" tabindex="-1"></a>    <span class="dt">doi</span> = {10.1525/collabra.18684},</span>
+<span id="cb251-9"><a href="markdown.html#cb251-9" tabindex="-1"></a>    <span class="dt">abstract</span> = {This article provides a roadmap to assist graduate students and their advisors to engage in open science practices. We suggest eight open science practices that novice graduate students could begin adopting today. The topics we cover include journal clubs, project workflow, preprints, reproducible code, data sharing, transparent writing, preregistration, and registered reports. To address concerns about not knowing how to engage in open science practices, we provide a difficulty rating of each behavior (easy, medium, difficult), present them in order of suggested adoption, and follow the format of what, why, how, and worries. We give graduate students ideas on how to approach conversations with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. We emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined.},</span>
+<span id="cb251-10"><a href="markdown.html#cb251-10" tabindex="-1"></a>    <span class="dt">number</span> = {1},</span>
+<span id="cb251-11"><a href="markdown.html#cb251-11" tabindex="-1"></a>    <span class="dt">urldate</span> = {2022-09-07},</span>
+<span id="cb251-12"><a href="markdown.html#cb251-12" tabindex="-1"></a>    <span class="dt">journal</span> = {Collabra: Psychology},</span>
+<span id="cb251-13"><a href="markdown.html#cb251-13" tabindex="-1"></a>    <span class="dt">author</span> = {Kathawalla, Ummul-Kiram and Silverstein, Priya and Syed, Moin},</span>
+<span id="cb251-14"><a href="markdown.html#cb251-14" tabindex="-1"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
+<span id="cb251-15"><a href="markdown.html#cb251-15" tabindex="-1"></a>    <span class="dt">year</span> = {2021},</span>
+<span id="cb251-16"><a href="markdown.html#cb251-16" tabindex="-1"></a>    <span class="dt">pages</span> = {18684},</span>
+<span id="cb251-17"><a href="markdown.html#cb251-17" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="bibtex-dosyası-oluşturma" class="section level3" number="6.4.2">
 <h3>
@@ -1449,7 +1565,7 @@ csl: apa.csl
 <p>citation() ve toBibtex() fonksiyonlarını kullanarak bir R paketi için referans alabilirsiniz. Bibtex girişini bibliography.bib dosyanıza yapıştırabilirsiniz. Referansa atıfta bulunmak için ilk virgülden önce kısa bir ad (örneğin, "ggplot2") eklediğinizden emin olun.</p>
 <p>See <a href="https://www.bibtex.com/g/bibtex-format/" target="_blank">A complete guide to the BibTeX format</a> kitaplara, teknik raporlara ve daha fazlasına atıfta bulunma talimatları için.</p>
 <p>Bir R paketinin referansını <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> ve <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code> fonksiyonlarını kullanarak alabilirsiniz. Bibtex girişini bibliography.bib dosyanıza yapıştırabilirsiniz. Referansa atıfta bulunmak için ilk virgülden önce kısa bir ad (örneğin, "ggplot2") eklediğinizden emin olun.</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span>package<span class="op">=</span><span class="st">"ggplot2"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## @Book{,
 ##   author = {Hadley Wickham},
@@ -1802,7 +1918,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-20.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

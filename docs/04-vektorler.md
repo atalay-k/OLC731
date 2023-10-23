@@ -67,7 +67,7 @@ x <- 1:10
 
 -   bir vektöründeki verilerin toplanması `sum(x)` 55
 
--   bir vektöründeki verilerin çarpılması `prod(x)` 3.6288\times 10^{6}
+-   bir vektöründeki verilerin çarpılması `prod(x)` \ensuremath{3.6288\times 10^{6}}
 
 -   bir vektöründeki verilerin küçükten büyüğe sıralanması `sort(x)` 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
@@ -93,19 +93,19 @@ ad  <-  c("Ali","Elif","Su","Deniz",
 
 -   ad vektörünün 1. elemanı `ad[1]` Ali
 
--   ad vektörünün 5. elemanını yazdıracak kodu oluşturunuz. <input class='webex-solveme nospaces' size='5' data-answer='["ad[5]"]'/>
+-   ad vektörünün 5. elemanını yazdıracak kodu oluşturunuz. _____
 
--   ad vektörünün son elemanını yazdıracak kodu oluşturunuz. <input class='webex-solveme nospaces' size='6' data-answer='["ad[10]"]'/>
+-   ad vektörünün son elemanını yazdıracak kodu oluşturunuz. ______
 
--   ad vektörünün son elemanını yazdıracak kodu vektörün 10 elemanlı olduğunu bilmediğiniz de ne yaparsınız? <input class='webex-solveme nospaces' size='14' data-answer='["ad[length(ad)]"]'/>
+-   ad vektörünün son elemanını yazdıracak kodu vektörün 10 elemanlı olduğunu bilmediğiniz de ne yaparsınız? ______________
 
--   Vektörün sadece 1., 5. 8 elemanının yazdıracak kodu oluşturunuz.<input class='webex-solveme nospaces' size='12' data-answer='["ad[c(1,5,8)]"]'/>
+-   Vektörün sadece 1., 5. 8 elemanının yazdıracak kodu oluşturunuz.____________
 
--   Vektörün sadece 1. elemanının hariç tutacak kodu oluşturunuz <input class='webex-solveme nospaces' size='6' data-answer='["ad[-1]"]'/>
+-   Vektörün sadece 1. elemanının hariç tutacak kodu oluşturunuz ______
 
--   Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz <input class='webex-solveme nospaces' size='11' data-answer='["ad[-c(1,5)]"]'/>
+-   Vektörün 1. ve 5. elemanının hariç tutacak kodu oluşturunuz ___________
 
--   Vektörün son üç elemanını yazdıracak kodu oluşturunuz <input class='webex-solveme nospaces' size='8' data-answer='["ad[8:10]"]'/>
+-   Vektörün son üç elemanını yazdıracak kodu oluşturunuz ________
 
 ## Vektöre eleman eklenmesi
 
@@ -179,7 +179,7 @@ names(boy) # names() fonksiyonu ile isimlendirme yapılabilir.
 ## NULL
 ```
 
--   ad vektörünü boy vektörü ile  isimlendirirken nasıl kullanabiliriz? <input class='webex-solveme nospaces' size='14' data-answer='["names(boy)<-ad"]'/>
+-   ad vektörünü boy vektörü ile  isimlendirirken nasıl kullanabiliriz? ______________
 
 -   Arda 'nın boyunu isimlendirilmiş vektörü kullanarak `boy["Arda"]` ile yazdırırsınız 
 
@@ -215,27 +215,27 @@ rakamlar
 
 -   Belirli bir kurala göre sayı dizileri oluşturmak için ise `seq()`, `rep()` ve `paste()` fonksiyonlarından yararlanılabilir. İlk olarak bu fonksiyonların yardım sayfalarını inceleyelim.
 
--   1'den 10'a kadar birer birer artan sayılardan dizi oluşturulacak kodu oluşturunuz. `seq(from=1,to=10,by=...)` <input class='webex-solveme nospaces' size='1' data-answer='["1"]'/>
+-   1'den 10'a kadar birer birer artan sayılardan dizi oluşturulacak kodu oluşturunuz. `seq(from=1,to=10,by=...)` _
 
--   Bir önceki işlemi argümansız olarak oluşturunuz. <input class='webex-solveme nospaces' size='11' data-answer='["seq(1,10,1)"]'/>
+-   Bir önceki işlemi argümansız olarak oluşturunuz. ___________
 
--   Aynı çıktıyı tek bir argümanla elde edebilir misiniz? <input class='webex-solveme nospaces' size='10' data-answer='["seq(to=10)"]'/>
+-   Aynı çıktıyı tek bir argümanla elde edebilir misiniz? __________
 
--   length argümanını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. <input class='webex-solveme nospaces' size='25' data-answer='["seq(from=1,to=3,length=6)"]'/>
+-   length argümanını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. _________________________
 
 
 ```
 ## [1] 1.0 1.4 1.8 2.2 2.6 3.0
 ```
 
--   by argümanını ile artış miktarını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. <input class='webex-solveme nospaces' size='23' data-answer='["seq(from=1,to=3,by=0.5)"]'/>
+-   by argümanını ile artış miktarını kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. _______________________
 
 
 ```
 ## [1] 1.0 1.5 2.0 2.5 3.0
 ```
 
--   Belirli bir aralıkta kaç elemanın yer alacağını length.out argümanı kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. <input class='webex-solveme nospaces' size='29' data-answer='["seq(from=1,to=3,length.out=5)"]'/>
+-   Belirli bir aralıkta kaç elemanın yer alacağını length.out argümanı kullanarak aşağıdaki çıktıyı oluşturacak kodu oluşturunuz. _____________________________
 
 
 ```
@@ -266,28 +266,28 @@ rep(0:9, times = 3)
 ##  [1] 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
 ```
 
--   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='13' data-answer='["rep(a,each=3)"]'/>
+-   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. _____________
 
 
 ```
 ## [1] 3 3 3 5 5 5 7 7 7
 ```
 
--   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='21' data-answer='["rep(a,each=3,times=3)"]'/>
+-   `a <- c(3,5,7)` vektörünü kullanarak aşağıdaki çıktıyı elde edecek kodu hazırlayınız. _____________________
 
 
 ```
 ##  [1] 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7 3 3 3 5 5 5 7 7 7
 ```
 
--   Çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='10' data-answer='["rep(1:4,2)"]'/>
+-   Çıktıyı elde edecek kodu hazırlayınız. __________
 
 
 ```
 ## [1] 1 1 2 2 3 3 4 4
 ```
 
--   Çıktıyı elde edecek kodu hazırlayınız. <input class='webex-solveme nospaces' size='12' data-answer='["rep(1:3,1:3)"]'/>
+-   Çıktıyı elde edecek kodu hazırlayınız. ____________
 
 
 ```
@@ -316,7 +316,7 @@ class(paste(1:4))
 ## [1] "character"
 ```
    
--   Çıktıyı elde edecek kodu tamamlayınız `paste("test",...)` <input class='webex-solveme nospaces' size='4' data-answer='["1:10"]'/>
+-   Çıktıyı elde edecek kodu tamamlayınız `paste("test",...)` ____
 
 
 ```
@@ -325,7 +325,7 @@ class(paste(1:4))
 ```
 
 
--   Çıktıyı elde edecek kodu tamamlayınız`paste("test",1:10,"...",sep="_")` <input class='webex-solveme nospaces' size='4' data-answer='["puan"]'/>
+-   Çıktıyı elde edecek kodu tamamlayınız`paste("test",1:10,"...",sep="_")` ____
 
 
 ```
@@ -333,7 +333,7 @@ class(paste(1:4))
 ##  [6] "test_6_puan"  "test_7_puan"  "test_8_puan"  "test_9_puan"  "test_10_puan"
 ```
 
--   Çıktıyı elde edecek kodu tamamlayınız `paste("test",c("A","B","C","D",...))`  <input class='webex-solveme nospaces' size='3' data-answer='["1:4"]'/> 
+-   Çıktıyı elde edecek kodu tamamlayınız `paste("test",c("A","B","C","D",...))`  ___ 
 
 
 ```
@@ -350,7 +350,7 @@ sample(0:100,5)
 ```
 
 ```
-## [1] 63 23 42 27 73
+## [1] 83 54 94 87  1
 ```
 
 
@@ -359,8 +359,8 @@ runif(10,  0, 5)
 ```
 
 ```
-##  [1] 2.1880153 1.6698377 3.2836536 0.8686798 1.3943143 4.5219789 4.8866728
-##  [8] 0.5059426 4.6616773 2.1433274
+##  [1] 3.5227613 4.0081999 3.7562672 2.3261348 2.5009933 2.0598770 4.1288741
+##  [8] 4.7385931 0.7225128 1.4613490
 ```
 
 
@@ -369,15 +369,15 @@ rnorm(10,50,5)
 ```
 
 ```
-##  [1] 51.11452 54.84716 49.97091 44.87764 52.60834 50.64496 40.27826 56.38525
-##  [9] 51.37474 50.17829
+##  [1] 42.88861 50.54615 47.05873 50.16599 46.81834 53.32444 43.01495 47.79592
+##  [9] 40.80267 41.49262
 ```
 
 -   Kullanılan üç fonksiyonun da yardım sayfalarını ve kullanım amaçlarını inceleyiniz.
 
 ## İşlemler
 
-BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  <input class='webex-solveme nospaces' size='5' data-answer='["20.44"]'/> 
+BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır(iki ondalığa yuvarlayınız)?  _____ 
 
 
 ```r
@@ -420,11 +420,11 @@ round(mean(BKI),2)
 | Ogrenci4 | 70 | 90 | 
 | Ogrenci5 | 80 | 85 |
 
-Geçme notlarının minumum değeri: <input class='webex-solveme nospaces' size='4' data-answer='["47.5"]'/>
+Geçme notlarının minumum değeri: ____
 
-Geçme notlarının ortalama değeri: <input class='webex-solveme nospaces' size='4' data-answer='["68.5"]'/>
+Geçme notlarının ortalama değeri: ____
 
-Geçme notlarının maksimum değeri: <input class='webex-solveme nospaces' size='4' data-answer='["82.5"]'/>
+Geçme notlarının maksimum değeri: ____
 
 
 

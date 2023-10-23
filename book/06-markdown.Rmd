@@ -16,6 +16,16 @@ library(DT) # etkileşimli tablolar için
 
 `r emo::ji("link")`İndir [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet).
 
+
+::: {.try data-latex=""}
+`r emo::ji("link")`[R markdon sunusu](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)
+:::
+
+::: {.try data-latex=""}
+`r emo::ji("link")`[markdown hatırlatıcı notlar](https://www.markdownguide.org/cheat-sheet/)
+:::
+
+
 ## Neden tekrarlanabilir raporlar kullanılmalı?
 
 Bir rapor hazırladığınızı düşünün
@@ -49,7 +59,7 @@ Bir rapor hazırladığınızı düşünün
 
 -   Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını **data/import** adlı bir dizine koyabilir ve tüm görüntü dosyalarını **images** adlı bir dizine kaydedebilirsiniz.
 
--   Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalara başvurulmalıdır.
+-   Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalar kullanılmalıdır. 
 
 | Yer              | Örnek                                                  |
 |--------------------------------|----------------------------------------|
@@ -66,14 +76,24 @@ Bir komut dosyasında asla çalışma dizininizi ayarlamayın veya değiştirmey
 -   Kodunuz çalışma dizininizin bir alt dizinindeki bir dosyaya ihtiyaç duyuyorsa (örneğin, import/veri1.txt), çalışma dizinini başka bir konuma veya bilgisayara taşıdığınızda erişilebilir olması için dosyayı göreli bir yol kullanarak yükleyin:
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
-dat <- read_csv("import/veri1.txt")  # dogru
+dat <- read.table("import/veri1.txt")  # dogru
 ```
 
 Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:
 
 ```{r eval=FALSE,  message=FALSE, warning=FALSE, include=TRUE}
-dat <- read_csv("c:/Users/Kubra/Desktop/OLC731/import/veri1.txt")  # yanlıs
+dat <- read.table("c:/Users/Kubra/Desktop/OLC731/import/veri1.txt")  # yanlıs
 ```
+
+- Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.
+
+```{r}
+(veri1 <- read.table("import/veri1.txt",
+                    header= TRUE,
+                    sep= ";",
+                    dec= ","))
+```
+
 
 ::: {.info data-latex=""}
 Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.
@@ -93,23 +113,23 @@ Dosyaları, hem insanların hem de bilgisayarların kolayca bulabileceği şekil
 
 Örneğin, bu dosya adları tam bir karmaşa:
 
--   `r path("Data (Participants) 11-15.xls")`
--   `r path("final report2.doc")`
--   `r path("Participants Data Nov 12.xls")`
--   `r path("project notes.txt")`
--   `r path("Questionnaire Data November 15.xls")`
--   `r path("report.doc")`
--   `r path("report final.doc")`
+-   `r path("Veri (Katilimci) 04-15.xls")`
+-   `r path("final raporu2.doc")`
+-   `r path("Katilimci Veri Nisan 12.xls")`
+-   `r path("proje notlari")`
+-   `r path("Anket Veri Kasim 15.xls")`
+-   `r path("rapor.doc")`
+-   `r path("rapor son.doc")`
 
 Benzer dosyaların aynı yapıya sahip olması ve dosyaları taramanın veya ilgili dosyaları bulmak için kod kullanmasının kolay olması için dosyaları yapılandırabilirsiniz.
 
--   `r path("_project-notes.txt")`
--   `r path("data_participants_2021-11-12.xls")`
--   `r path("data_participants_2021-11-15.xls")`
--   `r path("data_questionnaire_2021-11-15.xls")`
--   `r path("report_v1.doc")`
--   `r path("report_v2.doc")`
--   `r path("report_v3.doc")`
+-   `r path("proje-notlari")`
+-   `r path("veri_katilimci_2021-04-12.xls")`
+-   `r path("veri_katilimci_2021-04-15.xls")`
+-   `r path("veri_anket_2021-04-15.xls")`
+-   `r path("rapor_v1.doc")`
+-   `r path("rapor_v2.doc")`
+-   `r path("rapor_v3.doc")`
 
 ::: {.try data-latex=""}
 Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje dosyalarınızdan bazılarına bakın ve neleri geliştirebileceğinizi görün.
@@ -119,15 +139,15 @@ Yukarıdaki dosyaları adlandırmak için başka yollar düşünün. Kendi proje
 
 -   Artık dosya sisteminin nasıl çalıştığını ve komut dosyalarının bunlara erişmesini kolaylaştırmak için nesneleri nasıl adlandıracağımızı anladığımıza göre, projemizi yapmaya hazırız.
 
--   Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimkine OLC731_2023 adını verdim). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.
+-   Öncelikle, bu sınıf için tüm materyallerinizi tutacağınız yeni bir dizin oluşturun (benimki Ranaliz adınında). Bu dizini Global Options'ın general bölümü altında varsayılan çalışma dizini olarak ayarlayabilirsiniz. Bu, bir projede çalışmıyorsanız dosyaların varsayılan olarak buraya kaydedileceği anlamına gelir.
 
 ::: {.warning data-latex=""}
 Bu dizin OneDrive'daysa veya tam dosya yolu özel karakterler içeriyorsa ya da bazı Windows makinelerinde 260 karakterden fazlaysa bazen sorunlara neden olabilir.
 :::
 
--   Ardından, OLC731 adında yeni bir proje oluşturmak için **`File`** menüsü altında **`New Project...`** öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.
+-   Ardından, OLC731_2023 adında yeni bir proje oluşturmak için **`File`** menüsü altında **`New Project...`** öğesini seçin. Yeni oluşturduğunuz dizinin içine kaydettiğinizden emin olun. RStudio kendini yeniden başlatacak ve çalışma dizini olarak bu yeni proje dizini ile açılacaktır.
 
-Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren OLC731_OLC731_2023.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.
+Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine tıklayın. Tüm proje bilgilerini içeren Ranaliz.Rproj adlı bir dosya göreceksiniz, projeyi açmak için üzerine çift tıklayabilirsiniz.
 
 ::: {.info data-latex=""}
 Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.user adlı bir dizin de görebilirsiniz. Bu ve nokta ile başlayan diğer "görünmez" dosyaları yok sayabilirsiniz.
@@ -140,19 +160,15 @@ Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.
 R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste [quarto](https://quarto.org/){target="_blank"} kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.
 :::
 
-<<<<<<< HEAD
--   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd)
-=======
--   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](https://github.com/atalay-k/OLC731/blob/main/docs/repro.Rmd)
->>>>>>> 0d7dfe2e0520aad595526b603786ccc1fbe9b63c
 
+-   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd)
 
 
 
 -   Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.
 
 ::: {.try data-latex=""}
-**`File > New File > R Markdown...`** menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı repro.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.
+**`File > New File > R Markdown...`** menüsünden yeni bir R Markdown dosyası oluşturun. Başlığı ve yazarı değiştirin, dosyayı Ornek1.Rmd olarak kaydedin, ardından bir html dosyası oluşturmak için ör düğmesine tıklayın.
 :::
 
 ### YAML Header {#yaml}
@@ -176,8 +192,6 @@ output:
 ::: {.info data-latex=""}
 Seçeneklerin ne işe yaradığını görmek için değerleri `false` tan `true` ya değiştirmeyi deneyin.
 :::
-
--   `df_print: kable` seçeneği `knitr::kable` kullanarak veri setleri yazdırır. Aşağıda tabloları nasıl daha fazla özelleştirebileceğinizi öğreneceksiniz.
 
 -   Varsayılan temalar şunlardır: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united ve yeti. Linkten `r emo::ji("link")`[daha fazla temayı inceleyebilirsiniz.](https://rpubs.com/ranydc/rmarkdown_themes).
 
@@ -207,7 +221,9 @@ Yukarıdaki kod aşağıdaki seçenekleri ayarlar:
 
 -   fig.width = 8 : varsayılan şekil genişliği 8 inçtir (bunu tek tek şekiller için değiştirebilirsiniz)
 
--   fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir fig.path = 'images/' : şekiller "images" dizinine kaydedilir
+-   fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir 
+
+-   fig.path = 'images/' : şekiller "images" dizinine kaydedilir
 
 -   echo = FALSE : işlenen belgede kod parçalarını gösterme
 
@@ -247,7 +263,7 @@ Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize
 
 -   Metninize eklemek için görüntüler, tablolar veya hesaplamalar oluşturan ve görüntüleyen kod parçaları ekleyebilirsiniz. Bazı verileri yükleyerek başlayalım.
 
--   İlk olarak, belgenizde bir kod yığını oluşturun. Bu kod web'den bazı verileri yükler
+-   İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler. 
 
 ```{r}
 library(datasets)
@@ -262,8 +278,8 @@ data(iris)
 
 
 n <- nrow(iris) # toplam satır sayısı
-mu <- mean(iris$Petal.Length)  # yaprak uzunluğu ortalaması
-sd <- sd(iris$Petal.Length) # yaprak uzunluğu ortalaması SD'si
+mu <- mean(iris$Petal.Length)  # taç yaprak uzunluğu ortalaması
+sd <- sd(iris$Petal.Length) # taç yaprak uzunluğu standart sapması
 
 
 simule_deger <- rnorm(n, mu, sd)

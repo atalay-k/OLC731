@@ -24,32 +24,22 @@ glossary_table()
 
 <pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> term </th>
-   <th style="text-align:left;"> definition </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> data type </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> double </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> integer </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-</tbody>
-</table>
+\begin{table}
+\centering
+\begin{tabular}{l|l}
+\hline
+term & definition\\
+\hline
+character & \\
+\hline
+data type & \\
+\hline
+double & \\
+\hline
+integer & \\
+\hline
+\end{tabular}
+\end{table}
 
 
 
