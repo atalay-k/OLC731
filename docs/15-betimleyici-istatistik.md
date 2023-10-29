@@ -1186,7 +1186,7 @@ ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
 
 - 😕
 
-- 🙋
+- 😄
 
 
 

@@ -444,7 +444,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 
 -   Şekil başlığının kod bloğında nasıl biçimlendirildiğine dikkat edin.
 
-```{r  verbatim = 'r boxplot, fig.cap="Sekil 1 1. Türlere göre yaprak uzunluğu"'}
+```{r  verbatim = 'r boxplot'}
 #| fig.cap: "Petal Uzunlukları ve Türler"
 
 dat <- subset(iris, Species != "versicolor")
@@ -530,7 +530,7 @@ Bakınız Bolum\ \@ref(baslık-1) and Bolum\ \@ref(baslık-2)
 
 `r unhide()`
 
-Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız `YAML` bölümünde `number_sections: false` ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, `\@ref(sonuclar)` gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı sözdizimini kullanmanız gerekir:
+Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız `YAML` bölümünde `number_sections: false` ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, `\@ref(sonuclar)` gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı adresi kullanmanız gerekir:
 
 
 
@@ -540,7 +540,7 @@ Son açıklamalar için [son bölüme](#sonuclar) bakınız.
 
 ## Kaynakça
 
-R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir Citation Style Language (.csl) dosyası da ekleyebilirsiniz.
+R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir [Citation Style Language (.csl) dosyası da ekleyebilirsiniz.](https://github.com/citation-style-language/styles/blob/master/apa.csl)
 
 a [bibliography](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"}
 

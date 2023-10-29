@@ -1,9 +1,11 @@
 ---
-title: "Ornek Dosya"
+title: 
 output: 
   bookdown::html_document2:
     number_sections: true
 ---
+
+# ORNEK DOSYA
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
@@ -16,17 +18,17 @@ theme_set(theme_minimal())
 
 Pırlanta ücretleri çeşitli faktörlere bağlıdır
 
-- cut (See Table\ \@ref(tab:kesim))
-- colour (See Table\ \@ref(tab:renk))
-- clarity (See Figure\ \@ref(fig:parlaklık))
-- carats (See Figure\ \@ref(fig:karat))
+- cut (Bakınız Tablo\ \@ref(tab:kesim))
+- colour (Bakınız Tablo\ \@ref(tab:renk))
+- clarity (Bakınız Şekil\ \@ref(fig:parlaklik))
+- carats (Bakınız Şekil\ \@ref(fig:karat))
 - Bakınız Bolum\ \@ref(sonuclar) sonuclar icin
 
 ## Tablolar
 
 ### Kesim
 
-```{r tab:kesim}
+```{r kesim}
 diamonds %>%
   group_by(cut) %>%
   summarise(avg = mean(price),
@@ -54,7 +56,7 @@ diamonds %>%
 
 ### Parlaklık
 
-```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}
+```{r parlaklik, fig.cap = "Parlaklığa göre pırlanta fiyatı"}
 ggplot(diamonds, aes(x = clarity, y = price)) +
   geom_boxplot() 
 ```

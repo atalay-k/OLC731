@@ -618,23 +618,23 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 ```
 
 ```{=html}
-<div id="aguswklrfw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#aguswklrfw table {
+<div id="cppjerwtsd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cppjerwtsd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#aguswklrfw thead, #aguswklrfw tbody, #aguswklrfw tfoot, #aguswklrfw tr, #aguswklrfw td, #aguswklrfw th {
+#cppjerwtsd thead, #cppjerwtsd tbody, #cppjerwtsd tfoot, #cppjerwtsd tr, #cppjerwtsd td, #cppjerwtsd th {
   border-style: none;
 }
 
-#aguswklrfw p {
+#cppjerwtsd p {
   margin: 0;
   padding: 0;
 }
 
-#aguswklrfw .gt_table {
+#cppjerwtsd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -660,12 +660,12 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-left-color: #D3D3D3;
 }
 
-#aguswklrfw .gt_caption {
+#cppjerwtsd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#aguswklrfw .gt_title {
+#cppjerwtsd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -677,7 +677,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-width: 0;
 }
 
-#aguswklrfw .gt_subtitle {
+#cppjerwtsd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -689,7 +689,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-width: 0;
 }
 
-#aguswklrfw .gt_heading {
+#cppjerwtsd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -701,13 +701,13 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#aguswklrfw .gt_bottom_border {
+#cppjerwtsd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_col_headings {
+#cppjerwtsd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -722,7 +722,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#aguswklrfw .gt_col_heading {
+#cppjerwtsd .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -742,7 +742,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#aguswklrfw .gt_column_spanner_outer {
+#cppjerwtsd .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -754,15 +754,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 4px;
 }
 
-#aguswklrfw .gt_column_spanner_outer:first-child {
+#cppjerwtsd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aguswklrfw .gt_column_spanner_outer:last-child {
+#cppjerwtsd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aguswklrfw .gt_column_spanner {
+#cppjerwtsd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -774,11 +774,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   width: 100%;
 }
 
-#aguswklrfw .gt_spanner_row {
+#cppjerwtsd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#aguswklrfw .gt_group_heading {
+#cppjerwtsd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +804,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   text-align: left;
 }
 
-#aguswklrfw .gt_empty_group_heading {
+#cppjerwtsd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -819,15 +819,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: middle;
 }
 
-#aguswklrfw .gt_from_md > :first-child {
+#cppjerwtsd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aguswklrfw .gt_from_md > :last-child {
+#cppjerwtsd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aguswklrfw .gt_row {
+#cppjerwtsd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +846,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#aguswklrfw .gt_stub {
+#cppjerwtsd .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -859,7 +859,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#aguswklrfw .gt_stub_row_group {
+#cppjerwtsd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -873,15 +873,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: top;
 }
 
-#aguswklrfw .gt_row_group_first td {
+#cppjerwtsd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aguswklrfw .gt_row_group_first th {
+#cppjerwtsd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#aguswklrfw .gt_summary_row {
+#cppjerwtsd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -891,16 +891,16 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#aguswklrfw .gt_first_summary_row {
+#cppjerwtsd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_first_summary_row.thick {
+#cppjerwtsd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aguswklrfw .gt_last_summary_row {
+#cppjerwtsd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -910,7 +910,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_grand_summary_row {
+#cppjerwtsd .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -920,7 +920,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#aguswklrfw .gt_first_grand_summary_row {
+#cppjerwtsd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -930,7 +930,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_last_grand_summary_row_top {
+#cppjerwtsd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,11 +940,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_striped {
+#cppjerwtsd .gt_striped {
   background-color: #EDF7FC;
 }
 
-#aguswklrfw .gt_table_body {
+#cppjerwtsd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -953,7 +953,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#aguswklrfw .gt_footnotes {
+#cppjerwtsd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -967,7 +967,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#aguswklrfw .gt_footnote {
+#cppjerwtsd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -976,7 +976,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#aguswklrfw .gt_sourcenotes {
+#cppjerwtsd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -990,7 +990,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#aguswklrfw .gt_sourcenote {
+#cppjerwtsd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -998,63 +998,63 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#aguswklrfw .gt_left {
+#cppjerwtsd .gt_left {
   text-align: left;
 }
 
-#aguswklrfw .gt_center {
+#cppjerwtsd .gt_center {
   text-align: center;
 }
 
-#aguswklrfw .gt_right {
+#cppjerwtsd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aguswklrfw .gt_font_normal {
+#cppjerwtsd .gt_font_normal {
   font-weight: normal;
 }
 
-#aguswklrfw .gt_font_bold {
+#cppjerwtsd .gt_font_bold {
   font-weight: bold;
 }
 
-#aguswklrfw .gt_font_italic {
+#cppjerwtsd .gt_font_italic {
   font-style: italic;
 }
 
-#aguswklrfw .gt_super {
+#cppjerwtsd .gt_super {
   font-size: 65%;
 }
 
-#aguswklrfw .gt_footnote_marks {
+#cppjerwtsd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#aguswklrfw .gt_asterisk {
+#cppjerwtsd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aguswklrfw .gt_indent_1 {
+#cppjerwtsd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#aguswklrfw .gt_indent_2 {
+#cppjerwtsd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#aguswklrfw .gt_indent_3 {
+#cppjerwtsd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#aguswklrfw .gt_indent_4 {
+#cppjerwtsd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#aguswklrfw .gt_indent_5 {
+#cppjerwtsd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1102,7 +1102,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 
 -   Şekil başlığının kod bloğında nasıl biçimlendirildiğine dikkat edin.
 
-<div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{r boxplot, fig.cap="Sekil 1 1. Türlere göre yaprak uzunluğu"}</code></pre>
+<div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{r boxplot}</code></pre>
 
 ```r
 dat <- subset(iris, Species != "versicolor")
@@ -1188,11 +1188,13 @@ Bakınız Bolum\ \@ref(baslık-1) and Bolum\ \@ref(baslık-2)
 
 ````md
 ---
-title: "Ornek Dosya"
+title: 
 output: 
   bookdown::html_document2:
     number_sections: true
 ---
+
+# ORNEK DOSYA
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
@@ -1205,17 +1207,17 @@ theme_set(theme_minimal())
 
 Pırlanta ücretleri çeşitli faktörlere bağlıdır
 
-- cut (See Table\ \@ref(tab:kesim))
-- colour (See Table\ \@ref(tab:renk))
-- clarity (See Figure\ \@ref(fig:parlaklık))
-- carats (See Figure\ \@ref(fig:karat))
+- cut (Bakınız Tablo\ \@ref(tab:kesim))
+- colour (Bakınız Tablo\ \@ref(tab:renk))
+- clarity (Bakınız Şekil\ \@ref(fig:parlaklik))
+- carats (Bakınız Şekil\ \@ref(fig:karat))
 - Bakınız Bolum\ \@ref(sonuclar) sonuclar icin
 
 ## Tablolar
 
 ### Kesim
 
-```{r tab:kesim}
+```{r kesim}
 diamonds %>%
   group_by(cut) %>%
   summarise(avg = mean(price),
@@ -1243,7 +1245,7 @@ diamonds %>%
 
 ### Parlaklık
 
-```{r parlaklık, fig.cap = "Parlaklığa göre pırlanta fiyatı"}
+```{r parlaklik, fig.cap = "Parlaklığa göre pırlanta fiyatı"}
 ggplot(diamonds, aes(x = clarity, y = price)) +
   geom_boxplot() 
 ```
@@ -1264,7 +1266,7 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 </div>
 
 
-Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız `YAML` bölümünde `number_sections: false` ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, `\@ref(sonuclar)` gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı sözdizimini kullanmanız gerekir:
+Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız `YAML` bölümünde `number_sections: false` ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, `\@ref(sonuclar)` gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı adresi kullanmanız gerekir:
 
 
 
@@ -1274,7 +1276,7 @@ Son açıklamalar için [son bölüme](#sonuclar) bakınız.
 
 ## Kaynakça
 
-R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir Citation Style Language (.csl) dosyası da ekleyebilirsiniz.
+R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir [Citation Style Language (.csl) dosyası da ekleyebilirsiniz.](https://github.com/citation-style-language/styles/blob/master/apa.csl)
 
 a [bibliography](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"}
 
