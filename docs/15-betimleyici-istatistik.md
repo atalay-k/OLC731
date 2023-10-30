@@ -848,7 +848,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" />
@@ -872,7 +872,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;" />
@@ -885,7 +885,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;" />
@@ -905,7 +905,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" />
@@ -923,7 +923,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
@@ -943,7 +943,7 @@ ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
@@ -958,7 +958,7 @@ grafik1 +geom_point(alpha = 1.2)
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
@@ -971,7 +971,7 @@ grafik1 +geom_point(aes(shape=CINSIYET))
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1017,7 +1017,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1035,7 +1035,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1054,7 +1054,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1075,7 +1075,7 @@ scale_color_discrete("Cinsiyet")
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1094,7 +1094,7 @@ geom_point(position = "jitter") +
 ```
 
 ```
-## Warning: Removed 7 rows containing missing values (`geom_point()`).
+## Warning: Removed 6 rows containing missing values (`geom_point()`).
 ```
 
 <img src="15-betimleyici-istatistik_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" />
@@ -1186,7 +1186,7 @@ ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
 
 - 😕
 
-- 😄
+- 😃
 
 
 

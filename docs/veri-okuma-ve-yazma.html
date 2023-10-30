@@ -219,7 +219,7 @@
 <h2>
 <span class="header-section-number">8.3</span> Excel dosyası aktarma<a class="anchor" aria-label="anchor" href="#excel-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"xlsx"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/colearendt/xlsx">"xlsx"</a></span><span class="op">)</span></span>
@@ -230,7 +230,7 @@
 <h3>
 <span class="header-section-number">8.3.1</span> SPSS dosyası aktarma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb326"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># yükle ve aktive et </span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"foreign"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://svn.r-project.org/R-packages/trunk/foreign/">"foreign"</a></span><span class="op">)</span></span>
@@ -246,7 +246,7 @@
 <ul>
 <li>text dosyaları okumak için paket yüklemeye gerek yoktur.</li>
 </ul>
-<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># , ile ayrılmış csv dosyaları</span></span>
 <span><span class="va">csv_dosya</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"dizin/dosyaadi.csv"</span>,header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -906,7 +906,7 @@
 <h2>
 <span class="header-section-number">8.5</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
 <span><span class="va">boy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">160</span>,<span class="fl">165</span>,<span class="fl">170</span>,<span class="fl">155</span>,<span class="fl">167</span>,<span class="fl">162</span>,<span class="fl">169</span>,<span class="fl">158</span>,<span class="fl">160</span>,<span class="fl">164</span><span class="op">)</span></span>
 <span><span class="va">kilo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>,<span class="fl">55</span>,<span class="fl">57</span>,<span class="fl">50</span>,<span class="fl">48</span>,<span class="fl">65</span>,<span class="fl">58</span>,<span class="fl">62</span>,<span class="fl">45</span>,<span class="fl">47</span><span class="op">)</span></span>
@@ -985,18 +985,18 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span><span class="op">)</span><span class="co"># df dosyasi nerede, gorunumu nasil</span></span></code></pre></div>
-<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co"># karakter nesnler tirnak icinde ne yapmali?</span></span></code></pre></div>
-<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">df</span>, file<span class="op">=</span><span class="st">"df.txt"</span>,row.names <span class="op">=</span> <span class="cn">FALSE</span>,col.names <span class="op">=</span> <span class="cn">FALSE</span>,quote<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>yeni gözlem eklemek istiyorsaniz append argümanı kullanılabilir.</p>
-<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">ek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ad<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ahmet"</span>,<span class="st">"Ali"</span><span class="op">)</span>, boy<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">180</span>,<span class="fl">170</span><span class="op">)</span>, kilo<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">70</span><span class="op">)</span>, </span>
 <span>                 beden<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"S"</span>,<span class="st">"L"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">ek</span>, <span class="st">"df.txt"</span>,row.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>            col.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>            quote<span class="op">=</span><span class="cn">FALSE</span>,append<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -1014,7 +1014,7 @@
 <li>fonksiyonlarla yapılan hesaplama çıktısı da yazabilmektedir.</li>
 <li>Bu nedenle bir R oturumu sırasında not alınmak istenilen bilgileri bir dosyaya yazdırmak için kullanılabilir.</li>
 </ul>
-<div class="sourceCode" id="cb335"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi "</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">boy</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
 <span>      <span class="st">"ogrencilerin kilo ortalamasi"</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">kilo</span><span class="op">)</span>, <span class="st">"\n"</span>,</span>
 <span>     file<span class="op">=</span><span class="st">"bilgi.txt"</span><span class="op">)</span></span></code></pre></div>
@@ -1027,7 +1027,7 @@
 <h2>
 <span class="header-section-number">8.6</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi: 163 cm\n"</span>,</span>
 <span>            <span class="st">"ogrencilerin kilo ortalamasi: 53.7 kg"</span>,</span>
 <span>            con<span class="op">=</span><span class="st">"bilgi2.txt"</span><span class="op">)</span></span></code></pre></div>

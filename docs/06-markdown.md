@@ -18,7 +18,6 @@ library(DT) # etkileşimli tablolar için
 
 🔗İndir [R Markdown Cheat Sheet TURKCE](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 
-
 ::: {.try data-latex=""}
 🔗[R markdon sunusu](https://atalay-k.github.io/OLC750/sunu/T_Dokumantasyon.html#1)
 :::
@@ -26,7 +25,6 @@ library(DT) # etkileşimli tablolar için
 ::: {.try data-latex=""}
 🔗[markdown hatırlatıcı notlar](https://www.markdownguide.org/cheat-sheet/)
 :::
-
 
 ## Neden tekrarlanabilir raporlar kullanılmalı?
 
@@ -50,10 +48,9 @@ Bir rapor hazırladığınızı düşünün
 
 -   İlk olarak, organize olmamız gerekiyor. RStudio'daki projeler, bir proje için ihtiyaç duyduğunuz tüm dosyaları gruplandırmanın bir yoludur. Çoğu proje komut dosyalarını, veri dosyalarını ve komut dosyası veya görüntüler tarafından oluşturulan PDF raporu gibi çıktı dosyalarını içerir.
 
-
 ### Dosya Sistemi
 
--    Bilgisayarınızın dosya sistemi, hem dosyaları hem de "alt dizinleri" içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.
+-   Bilgisayarınızın dosya sistemi, hem dosyaları hem de "alt dizinleri" içeren büyük dizin gibidir. Bir dosyanın konumunu adıyla ve içinde bulunduğu tüm dizinlerin adlarıyla belirtebilirsiniz.
 
 -   Örneğin, Kubra Masaüstünde report.Rmd adında bir dosya arıyorsa, tam dosya yolunu şu şekilde belirtebilir: **/Users/Kubra/Desktop/report.Rmd** , çünkü Masaüstü dizini, tüm dosya sisteminin tabanında bulunan Kullanıcılar/Users dizininin içindeki Kubra dizininin içindedir. Bu dosya masaüstünüzde olsaydı, kullanıcı dizininizin adı da Kubra değilse muhtemelen farklı bir yola sahip olurdunuz. Şu anda oturum açmış olan kişinin kullanıcı dizinini temsil etmek için \~ kısayolunu da kullanabilirsiniz: **\~/Desktop/report.Rmd.**
 
@@ -61,7 +58,7 @@ Bir rapor hazırladığınızı düşünün
 
 -   Tüm dosyalarınızı nereye koymalısınız? Genellikle tek bir proje için tüm komut dosyalarınızın ve veri dosyalarınızın bilgisayarınızdaki tek bir klasörde, o projenin çalışma dizininde olmasını istersiniz. Dosyaları bu ana proje dizini içindeki alt dizinlerde düzenleyebilirsiniz, örneğin tüm ham veri dosyalarını **data/import** adlı bir dizine koyabilir ve tüm görüntü dosyalarını **images** adlı bir dizine kaydedebilirsiniz.
 
--   Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalar kullanılmalıdır. 
+-   Kodunuz, uygun biçimi kullanarak yalnızca üç tür konumdaki dosyalar kullanılmalıdır.
 
 | Yer              | Örnek                                                  |
 |--------------------------------|----------------------------------------|
@@ -89,7 +86,7 @@ Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:
 dat <- read.table("c:/Users/Kubra/Desktop/OLC731/import/veri1.txt")  # yanlıs
 ```
 
-- Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.
+-   Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.
 
 
 ```r
@@ -150,11 +147,9 @@ dat <- read.table("c:/Users/Kubra/Desktop/OLC731/import/veri1.txt")  # yanlıs
 
 </div>
 
-
 ::: {.info data-latex=""}
 Ayrıca, Windows'a özgü geriye doğru eğik çizgi kullanma kuralının aksine, ileriye doğru eğik çizgi kullanma kuralına dikkat edin. Bu, dosyalara yapılan referansların işletim sistemlerinden bağımsız olarak herkes için çalışmasını sağlamak içindir.
 :::
-
 
 ### Nesneleri Adlandırma
 
@@ -208,6 +203,7 @@ Proje dizininin içeriğini görmek için sağ alt bölmedeki Files sekmesine t�
 ::: {.info data-latex=""}
 Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.user adlı bir dizin de görebilirsiniz. Bu ve nokta ile başlayan diğer "görünmez" dosyaları yok sayabilirsiniz.
 :::
+
 ## R Markdown
 
 -   Bu derste, bir içindekiler tablosu, uygun başlıklar, kod parçaları, tablolar, resimler, satır içi R ve bir kaynakça içeren bir R Markdown belgesi oluşturmayı öğreneceğiz.
@@ -216,10 +212,7 @@ Ayarlarınıza bağlı olarak, özel kullanıcı ayarlarınızı içeren .Rproj.
 R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor formatı var. Bu derste [quarto](https://quarto.org/){target="_blank"} kullanmayacağız çünkü aynı anda hem quarto hem de R Markdown öğreniyorsanız kafa karıştırıcı olabilecek birkaç küçük farkı var, ancak R Markdown'ı öğrendikten sonra quarto'yu çok kolay bir şekilde öğrenebilirsiniz.
 :::
 
-
 -   Tekrar üretilebilir raporlar oluşturmak için metin ve kodun karıştırılmasını sağlayan R Markdown kullanacağız. Yeniden üretilebilir bir komut dosyası, kod bloklarında kod bölümleri içerecektir. Bir kod bloğu arka arkaya üç backtick sembolü ile başlar ve biter, küme parantezleri arasında kod hakkında bazı bilgiler bulunur, örneğin {r chunk-name, echo=FALSE} (bu kodu çalıştırır, ancak derlenen belgede kod bloğunun metnini göstermez). Kod bloklarının dışındaki metin, başlıklar, paragraflar, listeler, kalınlaştırma ve bağlantılar gibi biçimlendirmeyi belirtmenin bir yolu olan markdown ile yazılır. [Örnek Dosyayı beraber inceleyelim.](https://raw.githubusercontent.com/atalay-k/OLC731/main/docs/repro.Rmd)
-
-
 
 -   Bir şablondan yeni bir R Markdown dosyası açarsanız, içinde birkaç kod bloğu bulunan örnek bir belge görürsünüz. Bir R Markdown (Rmd) belgesinden HTML veya PDF raporu oluşturmak için belgeyi derlersiniz. Bir belgeyi derlemeye RStudio'da örme denir. Dosyanızı bir rapora derlemek için üzerine tıkladığınız, içinden iğneler geçen bir iplik yumağına benzeyen bir düğme vardır.
 
@@ -229,9 +222,9 @@ R Markdown'a çok benzeyen quarto adında yeni bir tür tekrarlanabilir rapor fo
 
 ### YAML Header {#yaml}
 
--  🔗 [YAML başlığı çeşitli seçenekleri ayarlayabileceğiniz bölümdür.](https://bookdown.org/yihui/rmarkdown/html-document.html)
+-   🔗 [YAML başlığı çeşitli seçenekleri ayarlayabileceğiniz bölümdür.](https://bookdown.org/yihui/rmarkdown/html-document.html)
 
-```
+```         
 ---
 title: "Demo"
 author: "Kubra"
@@ -285,7 +278,7 @@ Yukarıdaki kod aşağıdaki seçenekleri ayarlar:
 
 -   fig.width = 8 : varsayılan şekil genişliği 8 inçtir (bunu tek tek şekiller için değiştirebilirsiniz)
 
--   fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir 
+-   fig.height = 5 : varsayılan şekil yüksekliği 5 inçtir
 
 -   fig.path = 'images/' : şekiller "images" dizinine kaydedilir
 
@@ -298,8 +291,6 @@ Yukarıdaki kod aşağıdaki seçenekleri ayarlar:
 -   cache = FALSE : her örgü ördüğünüzde tüm görüntüleri ve nesneleri oluşturmak için tüm kodu çalıştırın (zaman alıcı kodunuz varsa TRUE olarak ayarlayın) Konsola <code><span><span class='fu'><a target='_blank' href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a target='_blank' href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>get</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span></code> yazarak geçerli kod bloğu seçeneklerinin bir listesini bulun.
 
 İhtiyacınız olan paketleri <code><span><span class='kw'><a target='_blank' href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='op'>)</span></span></code>kullanarak da bu bloğunuza ekleyebilirsiniz. Genellikle bir komut dosyası üzerinde çalışırken, başka bir eklenti paketi yüklemeniz gerektiğini fark edersiniz. `library(...)` çağrısını kodun en altına gömmeyin. En üste koyun, böylece kullanıcı hangi paketlerin gerekli olduğuna dair genel bir fikir elde edilir.
-
-
 
 ::: {.try data-latex=""}
 tidyverse paketinden fonksiyon kullanacağız, bu yüzden kurulum bloğunuza yükleyin.
@@ -327,7 +318,7 @@ Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize
 
 -   Metninize eklemek için görüntüler, tablolar veya hesaplamalar oluşturan ve görüntüleyen kod parçaları ekleyebilirsiniz. Bazı verileri yükleyerek başlayalım.
 
--   İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler. 
+-   İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler.
 
 
 ```r
@@ -365,8 +356,6 @@ simule_deger <- rnorm(n, mu, sd)
 ::: {.info data-latex=""}
 Satırları seçip Cmd-shift-C (Mac) veya Ctrl-shift-C (Windows) yazarak aynı anda birden fazla satıra yorum yazabilir veya yorumu kaldırabilirsiniz.
 :::
-
-
 
 -   Kodunuzu iyi bir şekilde yorumlamak biraz sanattır. Bu beceriyi geliştirmenin en iyi yolu, başkalarının kodlarını okumak ve başkalarının kodunuzu incelemesini sağlamaktır.
 
@@ -456,20 +445,34 @@ ozet_tablo
 Yukarıdaki tablo etkileşimli görünümde tibble biçiminde yazdırılacak, ancak ördüğünüzde YAML başlığındaki df_print ayarındaki biçimi kullanacaktır.
 :::
 
-
-
 -   Yukarıdaki tabloda, sütun etiketlerini değiştirerek, ortalamaları yuvarlayarak ve bir başlık ekleyerek daha okuyucu dostu hale getirlebilir. Bunun için <code><span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a target='_blank' href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span></span></code> işlevini veya tablolarınızı biçimlendirmek için diğer paketlerdeki daha özel işlevleri kullanabilirsiniz.
 
+::: tab
+<button class="tablinks" onclick="openCity(event, &#39;knitr&#39;)">
 
-<div class="tab">
-<button class="tablinks" onclick="openCity(event, &#39;knitr&#39;)">knitr</button>
-<button class="tablinks" onclick="openCity(event, &#39;kableExtra&#39;)">kableExtra</button>
-<button class="tablinks" onclick="openCity(event, &#39;papaja&#39;)">papaja</button>
-<button class="tablinks" onclick="openCity(event, &#39;gt&#39;)">gt</button>
+knitr
 
+</button>
 
-<div id="knitr" class="tabcontent">
+<button class="tablinks" onclick="openCity(event, &#39;kableExtra&#39;)">
 
+kableExtra
+
+</button>
+
+<button class="tablinks" onclick="openCity(event, &#39;papaja&#39;)">
+
+papaja
+
+</button>
+
+<button class="tablinks" onclick="openCity(event, &#39;gt&#39;)">
+
+gt
+
+</button>
+
+::: {#knitr .tabcontent}
 
 ```r
 yeni_ad <- c("Çiçek Türü", "Frekans", "Ortalama", "Sd")
@@ -511,14 +514,10 @@ knitr::kable(ozet_tablo,
   </tr>
 </tbody>
 </table>
+:::
 
-</div>
-
-
-
-<div id="kableExtra" class="tabcontent">
-
-**[kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) paketi çok sayıda seçenek sunar.**
+::: {#kableExtra .tabcontent}
+[**kableExtra**](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) **paketi çok sayıda seçenek sunar.**
 
 
 ```r
@@ -569,14 +568,10 @@ kable(ozet_tablo,
   </tr>
 </tbody>
 </table>
-</div>
+:::
 
-
-
-
-<div id="papaja" class="tabcontent">
-
-**[papaja](https://crsh.github.io/papaja_man/reporting.html#tables) paketi ile APA formatında tablolar elde edebilirsiniz.**
+::: {#papaja .tabcontent}
+[**papaja**](https://crsh.github.io/papaja_man/reporting.html#tables) **paketi ile APA formatında tablolar elde edebilirsiniz.**
 
 
 ```r
@@ -594,12 +589,10 @@ Table: (\#tab:papaja-demo) Petal Uzulukları için Özet Tablo
 setosa       50        1.46       0.17 
 versicolor   50        4.26       0.47 
 virginica    50        5.55       0.55 
+:::
 
-</div>
-
-<div id="gt" class="tabcontent">
-
-**[gt](https://gt.rstudio.com/index.html) paketinde de çok sayıda seçenek bulunmaktadır.**
+::: {#gt .tabcontent}
+[**gt**](https://gt.rstudio.com/index.html) **paketinde de çok sayıda seçenek bulunmaktadır.**
 
 
 ```r
@@ -618,23 +611,23 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 ```
 
 ```{=html}
-<div id="cppjerwtsd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cppjerwtsd table {
+<div id="eykpvgmwml" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eykpvgmwml table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cppjerwtsd thead, #cppjerwtsd tbody, #cppjerwtsd tfoot, #cppjerwtsd tr, #cppjerwtsd td, #cppjerwtsd th {
+#eykpvgmwml thead, #eykpvgmwml tbody, #eykpvgmwml tfoot, #eykpvgmwml tr, #eykpvgmwml td, #eykpvgmwml th {
   border-style: none;
 }
 
-#cppjerwtsd p {
+#eykpvgmwml p {
   margin: 0;
   padding: 0;
 }
 
-#cppjerwtsd .gt_table {
+#eykpvgmwml .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -660,12 +653,12 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-left-color: #D3D3D3;
 }
 
-#cppjerwtsd .gt_caption {
+#eykpvgmwml .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cppjerwtsd .gt_title {
+#eykpvgmwml .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -677,7 +670,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-width: 0;
 }
 
-#cppjerwtsd .gt_subtitle {
+#eykpvgmwml .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -689,7 +682,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-width: 0;
 }
 
-#cppjerwtsd .gt_heading {
+#eykpvgmwml .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -701,13 +694,13 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#cppjerwtsd .gt_bottom_border {
+#eykpvgmwml .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_col_headings {
+#eykpvgmwml .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -722,7 +715,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#cppjerwtsd .gt_col_heading {
+#eykpvgmwml .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -742,7 +735,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#cppjerwtsd .gt_column_spanner_outer {
+#eykpvgmwml .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -754,15 +747,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 4px;
 }
 
-#cppjerwtsd .gt_column_spanner_outer:first-child {
+#eykpvgmwml .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cppjerwtsd .gt_column_spanner_outer:last-child {
+#eykpvgmwml .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cppjerwtsd .gt_column_spanner {
+#eykpvgmwml .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -774,11 +767,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   width: 100%;
 }
 
-#cppjerwtsd .gt_spanner_row {
+#eykpvgmwml .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cppjerwtsd .gt_group_heading {
+#eykpvgmwml .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -804,7 +797,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   text-align: left;
 }
 
-#cppjerwtsd .gt_empty_group_heading {
+#eykpvgmwml .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -819,15 +812,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: middle;
 }
 
-#cppjerwtsd .gt_from_md > :first-child {
+#eykpvgmwml .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cppjerwtsd .gt_from_md > :last-child {
+#eykpvgmwml .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cppjerwtsd .gt_row {
+#eykpvgmwml .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +839,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#cppjerwtsd .gt_stub {
+#eykpvgmwml .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -859,7 +852,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#cppjerwtsd .gt_stub_row_group {
+#eykpvgmwml .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -873,15 +866,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: top;
 }
 
-#cppjerwtsd .gt_row_group_first td {
+#eykpvgmwml .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cppjerwtsd .gt_row_group_first th {
+#eykpvgmwml .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cppjerwtsd .gt_summary_row {
+#eykpvgmwml .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -891,16 +884,16 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#cppjerwtsd .gt_first_summary_row {
+#eykpvgmwml .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_first_summary_row.thick {
+#eykpvgmwml .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cppjerwtsd .gt_last_summary_row {
+#eykpvgmwml .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -910,7 +903,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_grand_summary_row {
+#eykpvgmwml .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -920,7 +913,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#cppjerwtsd .gt_first_grand_summary_row {
+#eykpvgmwml .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -930,7 +923,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_last_grand_summary_row_top {
+#eykpvgmwml .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,11 +933,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_striped {
+#eykpvgmwml .gt_striped {
   background-color: #EDF7FC;
 }
 
-#cppjerwtsd .gt_table_body {
+#eykpvgmwml .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -953,7 +946,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#cppjerwtsd .gt_footnotes {
+#eykpvgmwml .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -967,7 +960,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#cppjerwtsd .gt_footnote {
+#eykpvgmwml .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -976,7 +969,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#cppjerwtsd .gt_sourcenotes {
+#eykpvgmwml .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -990,7 +983,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#cppjerwtsd .gt_sourcenote {
+#eykpvgmwml .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -998,63 +991,63 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#cppjerwtsd .gt_left {
+#eykpvgmwml .gt_left {
   text-align: left;
 }
 
-#cppjerwtsd .gt_center {
+#eykpvgmwml .gt_center {
   text-align: center;
 }
 
-#cppjerwtsd .gt_right {
+#eykpvgmwml .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cppjerwtsd .gt_font_normal {
+#eykpvgmwml .gt_font_normal {
   font-weight: normal;
 }
 
-#cppjerwtsd .gt_font_bold {
+#eykpvgmwml .gt_font_bold {
   font-weight: bold;
 }
 
-#cppjerwtsd .gt_font_italic {
+#eykpvgmwml .gt_font_italic {
   font-style: italic;
 }
 
-#cppjerwtsd .gt_super {
+#eykpvgmwml .gt_super {
   font-size: 65%;
 }
 
-#cppjerwtsd .gt_footnote_marks {
+#eykpvgmwml .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cppjerwtsd .gt_asterisk {
+#eykpvgmwml .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cppjerwtsd .gt_indent_1 {
+#eykpvgmwml .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cppjerwtsd .gt_indent_2 {
+#eykpvgmwml .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cppjerwtsd .gt_indent_3 {
+#eykpvgmwml .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cppjerwtsd .gt_indent_4 {
+#eykpvgmwml .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cppjerwtsd .gt_indent_5 {
+#eykpvgmwml .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1093,12 +1086,29 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 </table>
 </div>
 ```
+:::
+:::
 
-</div>
-</div>
+#### Manuel tablo
+
+Tablo eklemek için diğer bir yol ise elle tablo oluşturmaktadır. Tablo oluşturulmak istendiğinde aşağıdaki şekilde eklenebilir.
+
+
+```r
+| col1   |col2    |  
+|:------:|:------:|
+|içerik1 |içerik2 |
+```
+
+Yukarıdaki içerik örüldüğünde aşağıdaki tablo oluşmaktadır.
+
+| col1   |col2    |  
+|:------:|:------:|
+|içerik1 |içerik2 |
+
+Tablo eklemek için Rstudio yer alan Visual özelliğini kullanmakta pratiktir. Hazırladığınız markdown dosyasını Visual modunda açtığınızda Table menüsünde tablo oluşturma, satır sütun ekleme, hizalama gibi işlemler menü aracılığı ile yapılabilimektedir.
 
 ### Görseller {#repro-figures}
-
 
 -   Şekil başlığının kod bloğında nasıl biçimlendirildiğine dikkat edin.
 
@@ -1116,8 +1126,8 @@ ggplot(dat, aes(Species, Petal.Length)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="06-markdown_files/figure-html/unnamed-chunk-10-1.png" alt="Petal Uzunlukları ve Türler" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-10)Petal Uzunlukları ve Türler</p>
+<img src="06-markdown_files/figure-html/unnamed-chunk-11-1.png" alt="Petal Uzunlukları ve Türler" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-11)Petal Uzunlukları ve Türler</p>
 </div><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
 <div class="figure" style="text-align: center">
@@ -1161,7 +1171,7 @@ Son satır varsayılan metin boyutunu ve yazı tipini değiştirir, bu da bir de
 
 <pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>
 
-```
+```         
 Bakınız Tablo\ \@ref(tab:tablo1) or Sekil\ \@ref(fig:sekil1).
 ```
 
@@ -1171,7 +1181,7 @@ Kod blok adları yalnızca harf, rakam ve tire içerebilir. Boşluk veya alt çi
 
 Başlıklarınızı {#} ile adlandırarak da raporunuzun farklı bölümlerine bağlantı verebilirsiniz:
 
-```
+```         
 # Baslık 1 {#baslık-1}
 
 ## Baslık 2 {#baslık-2}
@@ -1268,19 +1278,17 @@ ggplot(diamonds, aes(x = carat, y = price)) +
 
 Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız `YAML` bölümünde `number_sections: false` ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, `\@ref(sonuclar)` gibi bağlantılar "??" gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı adresi kullanmanız gerekir:
 
-
-
-```
+```         
 Son açıklamalar için [son bölüme](#sonuclar) bakınız.
 ```
 
 ## Kaynakça
 
-R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir [Citation Style Language (.csl) dosyası da ekleyebilirsiniz.](https://github.com/citation-style-language/styles/blob/master/apa.csl)
+R Markdown'da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve [@tidyverse] gibi bir \@ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir [Citation Style Language (.csl) dosyası da ekleyebilirsiniz.](https://github.com/citation-style-language/styles/blob/master/apa.csl)
 
 a [bibliography](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"}
 
-```
+```         
 ---
 title: "My Paper"
 author: "Me"
@@ -1297,7 +1305,7 @@ csl: apa.csl
 EndNote veya Zotero gibi çoğu referans yazılımı BibTeX formatına aktarabilen dışa aktarma seçeneklerine sahiptir. Ortaya çıkan dosyadaki kısa adları kontrol etmeniz yeterlidir.
 
 ::: {.warning data-latex=""}
-Bir  referans programı kullanmak hayatınızı çok daha kolaylaştıracaktır. Zotero muhtemelen en iyisidir.
+Bir referans programı kullanmak hayatınızı çok daha kolaylaştıracaktır. Zotero muhtemelen en iyisidir.
 :::
 
 Dışa aktarılan dosya şu şekilde görünmelidir:
@@ -1333,7 +1341,7 @@ Ardından, YAML başlığınıza `bibliography: refs.bib` satırını ekleyin.
 
 Bir dergi makalesine aşağıdaki formatta referanslar ekleyebilirsiniz:
 
-```
+```         
 @article{shortname,
   author = {Author One and Author Two and Author Three},
   title = {Paper Title},
@@ -1370,7 +1378,7 @@ citation(package="ggplot2") %>% toBibtex()
 ## }
 ```
 
-[Google Scholar](https://scholar.google.com/)  girişlerinde BibTeX atıf seçeneği vardır. DOI'yi kendiniz eklemeniz gerekse de, Zotero tarayıcı bağlayıcısı aracılığıyla bir atıf ekleyemiyorsanız, ilgili değerleri almanın en kolay yolu genellikle budur. Önerilen kısa adı koruyabilir veya sizin için daha anlamlı olan bir adla değiştirebilirsiniz.
+[Google Scholar](https://scholar.google.com/) girişlerinde BibTeX atıf seçeneği vardır. DOI'yi kendiniz eklemeniz gerekse de, Zotero tarayıcı bağlayıcısı aracılığıyla bir atıf ekleyemiyorsanız, ilgili değerleri almanın en kolay yolu genellikle budur. Önerilen kısa adı koruyabilir veya sizin için daha anlamlı olan bir adla değiştirebilirsiniz.
 
 <div class="figure" style="text-align: center">
 <img src="images/google-scholar.png" alt="Get BibTex citations from Google Scholar." width="100%" />
@@ -1381,27 +1389,24 @@ citation(package="ggplot2") %>% toBibtex()
 
 Metin içinde referansları bu şekilde gösterebilirsiniz:
 
-```
+```         
 This tutorial uses several R packages [@tidyverse;@rmarkdown].
 ```
 
 Bu eğitimde çeşitli R paketleri kullanılmaktadır (Allaire vd., 2018; Wickham, 2017).
 
-
-
-
 ### Atıf yapılmayan referanslar
 
 Bir öğeyi kaynak göstermeden referans bölümüne eklemek istiyorsanız, bunu YAML başlığına şu şekilde ekleyin:
 
-```
+```         
 nocite: |
   @kathawalla_easing_2021, @broman2018data, @nordmann2022data
 ```
 
 Ya da .bib dosyasındaki tüm öğeleri şu şekilde ekleyin:
 
-```
+```         
 nocite: '@*'
 ```
 
@@ -1425,6 +1430,14 @@ Raporunuza metin içi alıntılar ve bir referans listesi ekleyin.
 
 Bazı paketler özel R Markdown şablonları sağlar. reprores, YAML başlığındaki tüm olası seçenekleri gösteren, kaynakça ve stil dosyalarına sahip olan ve bağlantılı şekil ve tabloların nasıl ayarlanacağını açıklayan bir Rapor şablonuna sahiptir. Birden fazla dosya içerdiğinden, RStudio sizden tüm dosyaları tutmak için yeni bir klasör oluşturmanızı isteyecektir.
 
+Ödevinizi yapmak için aşağdaki kodla reproses pakeini yükleyebilirsiniz.
+
+
+```r
+# devtools::install_github("psyteachr/reprores-v3")
+```
+Daha sonra aşağıdaki gibi taslağı (template) açabilirsiniz. Örnek dosyayı inceledikten sonra kendi içerieğinizi oluşturabilirsiniz.
+
 <div class="figure" style="text-align: center">
 <img src="images/custom-rmd.png" alt="Şablonlar" width="75%" />
 <p class="caption">(\#fig:img-custom-rmd)Şablonlar</p>
@@ -1433,6 +1446,14 @@ Bazı paketler özel R Markdown şablonları sağlar. reprores, YAML başlığı
 ::: {.try data-latex=""}
 Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi veya silmeyi deneyin.
 :::
+
+## Ödev
+
+- rpubs sayfalarını oluşturup, bu bilgiyi bana ulaştırınız.
+
+- rpubs sayfasında ilk dört haftada öğrendiklerinizin kısa biz özetini paylaşınız.
+
+- Ayrıca [linkte](REGRESYONODEVI.html) yer alan çoklu regresyon ile ilgili dökümanı repores paketinin Report şablonu ile oluşturmanızı bekliyorum.Bu dökümana eklenmiş ayrıca bir adet görsel bulunmaktadır. Görsele buradan [ulaşabilirsiniz.](images/LS.png). Bu ödeviniz gönderdiğim dosyaya benzerliğine göre puanlanacaktır.
 
 ## Diğer Kaynaklar
 
@@ -1445,4 +1466,3 @@ Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi v
 -   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
 -   [Papaja](https://crsh.github.io/papaja_man/) Reproducible APA Manuscripts
 -   [The Turing Way](https://the-turing-way.netlify.app/)
-

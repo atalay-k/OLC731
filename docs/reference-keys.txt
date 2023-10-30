@@ -8,7 +8,7 @@ tab:kable-demo
 tab:kableExtra-demo
 tab:papaja-demo
 tab:gt-demo
-fig:unnamed-chunk-10
+fig:unnamed-chunk-11
 fig:pet-plot-out
 fig:google-scholar
 fig:img-custom-rmd
@@ -88,6 +88,7 @@ kod-blokları
 yorumlar
 inline-r
 repro-tables
+manuel-tablo
 repro-figures
 bağlantılı-dökümanlar
 kaynakça
@@ -99,6 +100,7 @@ atıf-yapılmayan-referanslar
 atıf-stilleri
 referens-bölümü
 özel-şablonlar
+ödev-2
 diğer-kaynaklar
 veri-setleri
 hazır-veri-setleri
