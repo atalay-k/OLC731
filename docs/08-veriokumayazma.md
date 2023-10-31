@@ -134,6 +134,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 -   🔗Dosyaları buradan klasör halinde indirebilirsiniz. [DOSYALAR](import/import.rar)
 
+### txt uzantılı dosya okuma
+
 -   🔗[veri1.txt](import/veri1.txt)
 
 <div class="kable-table">
@@ -147,6 +149,7 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
+### csv uzantılı dosya okuma
 
 -   🔗[veri1.csv](import/veri1.csv)
 
@@ -162,6 +165,7 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
+#### dosya okurken yeniden isimlendirme
 - 
 <div class="kable-table">
 
@@ -186,6 +190,7 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
+### sütun genişliğine göre okuma
 
 -   🔗[verifwf.txt](import/fwf.txt)
 -
@@ -212,6 +217,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
+### SPSS dosyası okuma
+
 -   🔗[factor.sav](import/factor.sav)
 
 <div class="kable-table">
@@ -224,50 +231,6 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 |  4|     1|    8|
 |  5|     1|   10|
 |  6|     1|    4|
-|  7|     1|    6|
-|  8|     1|    5|
-|  9|     1|    7|
-| 10|     1|    7|
-| 11|     2|    7|
-| 12|     2|    9|
-| 13|     2|    6|
-| 14|     2|    6|
-| 15|     2|    6|
-| 16|     2|   11|
-| 17|     2|    6|
-| 18|     2|    3|
-| 19|     2|    8|
-| 20|     2|    7|
-| 21|     3|   11|
-| 22|     3|   13|
-| 23|     3|    8|
-| 24|     3|    6|
-| 25|     3|   14|
-| 26|     3|   11|
-| 27|     3|   13|
-| 28|     3|   13|
-| 29|     3|   10|
-| 30|     3|   11|
-| 31|     4|   12|
-| 32|     4|   11|
-| 33|     4|   16|
-| 34|     4|   11|
-| 35|     4|    9|
-| 36|     4|   23|
-| 37|     4|   12|
-| 38|     4|   10|
-| 39|     4|   19|
-| 40|     4|   11|
-| 41|     5|   10|
-| 42|     5|   19|
-| 43|     5|   14|
-| 44|     5|    5|
-| 45|     5|   10|
-| 46|     5|   11|
-| 47|     5|   14|
-| 48|     5|   15|
-| 49|     5|   11|
-| 50|     5|   11|
 
 </div>
 
@@ -281,6 +244,7 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 ##   ..- attr(*, "format.spss")= chr "F6.2"
 ```
 
+### webden  dosya okuma
 
 -   🔗 <https://www.statmodel.com/usersguide/chap3/ex3.1.dat>
 
@@ -290,7 +254,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 ##  [8]  1.888854  0.461254  2.237483
 ```
 
-- 
+- sütun haline getirme
+
 
 ```
 ##  [1] "   -0.354517     0.573051    -0.175230"

@@ -131,6 +131,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 -   `r emo::ji('link')`Dosyaları buradan klasör halinde indirebilirsiniz. [DOSYALAR](import/import.rar)
 
+### txt uzantılı dosya okuma
+
 -   `r emo::ji('link')`[veri1.txt](import/veri1.txt)
 
 ```{r echo=FALSE}
@@ -138,6 +140,7 @@ veritxt <- read.table("import/veri1.txt", header=TRUE, sep=";",dec=",")
 veritxt
 ```
 
+### csv uzantılı dosya okuma
 
 -   `r emo::ji('link')`[veri1.csv](import/veri1.csv)
 
@@ -147,6 +150,7 @@ vericsv <- read.csv("import/veri1.csv",dec=",")
 vericsv
 ```
 
+#### dosya okurken yeniden isimlendirme
 - 
 ```{r  echo=FALSE}
 vericsv_1<- read.csv("import/veri1.csv", 
@@ -163,6 +167,7 @@ vericsv_2 <- read.csv("import/veri1.csv",
 vericsv_2
 ```
 
+### sütun genişliğine göre okuma
 
 -   `r emo::ji('link')`[verifwf.txt](import/fwf.txt)
 -
@@ -185,14 +190,17 @@ col.names=c("sira", "no", "kitapcik",
 head(verifwf,3)
 ```
 
+### SPSS dosyası okuma
+
 -   `r emo::ji('link')`[factor.sav](import/factor.sav)
 
 ```{r echo=FALSE}
 factor <- haven::read_sav("import/factor.sav")
-factor
+head(factor)
 str(factor)
 ```
 
+### webden  dosya okuma
 
 -   `r emo::ji('link')` <https://www.statmodel.com/usersguide/chap3/ex3.1.dat>
 
@@ -206,7 +214,8 @@ head(ex3_1$y1, n = 10)
 
 ```
 
-- 
+- sütun haline getirme
+
 ```{r echo=FALSE}
 sonuc <- readLines("https://www.statmodel.com/usersguide/chap3/ex3.1.dat")
 sonuc[1:10]

@@ -122,6 +122,12 @@ excel-dosyası-aktarma
 spss-dosyası-aktarma
 text-dosyası-aktarma
 uygulama
+txt-uzantılı-dosya-okuma
+csv-uzantılı-dosya-okuma
+dosya-okurken-yeniden-isimlendirme
+sütun-genişliğine-göre-okuma
+spss-dosyası-okuma
+webden-dosya-okuma
 veri-yazma
 cat-fonksiyonu
 writelines-fonksiyonu

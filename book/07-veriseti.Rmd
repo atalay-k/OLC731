@@ -384,21 +384,46 @@ summary(cars$speed)
 
 ```{r}
 summary(women$height)   
-attach(women)
-summary(height)   # Ayni nesne isimi ile çağırılır.
-height <- height*2.54   # Bunu yapmamaya calisin!!
-find("height")
+
 
 ```
 
+```{r}
+attach(women)
+
+```
+
+```{r}
+summary(height)   # Ayni nesne isimi ile çağırılır.
+
+```
+
+```{r}
+height <- height*2.54   # Bunu yapmamaya calisin!!
+```
+
+```{r}
+find("height")
+```
 
 ```{r}
 summary(height)         # Yeni değişken
-rm(height)
-detach("women")
-summary(women$height)   # unchanged
+
 ```
 
+```{r}
+rm(height)
+
+```
+
+```{r}
+detach("women")
+
+```
+
+```{r}
+summary(women$height)   # unchanged
+```
 
 
 ### Kendinizi Test Edin

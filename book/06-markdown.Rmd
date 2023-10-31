@@ -683,9 +683,9 @@ Rapor şablonu ile bir rapor başlatın ve örün. Seçenekleri değiştirmeyi v
 
 - rpubs sayfalarını oluşturup, bu bilgiyi bana ulaştırınız.
 
-- rpubs sayfasında ilk dört haftada öğrendiklerinizin kısa biz özetini paylaşınız.
+- rpubs sayfasında ilk dört haftada öğrendiklerinizin kısa bir özetini paylaşınız.
 
-- Ayrıca [linkte](REGRESYONODEVI.html) yer alan çoklu regresyon ile ilgili dökümanı repores paketinin Report şablonu ile oluşturmanızı bekliyorum.Bu dökümana eklenmiş ayrıca bir adet görsel bulunmaktadır. Görsele buradan [ulaşabilirsiniz.](images/LS.png). Bu ödeviniz gönderdiğim dosyaya benzerliğine göre puanlanacaktır.
+- Ayrıca [linkte](REGRESYONODEVI.html) yer alan çoklu regresyon ile ilgili dökümanı repores paketinin Report şablonu ile oluşturmanızı bekliyorum. Bu dökümana eklenmiş ayrıca bir adet görsel bulunmaktadır. Görsele buradan [ulaşabilirsiniz](images/LS.png). Bu ödeviniz gönderdiğim dosyaya benzerliğine göre puanlanacaktır.
 
 - not:   şanlonda (templatede)  alan YMAL header  css: extras/style.css # path to css file kısmını siliniz. 
 
