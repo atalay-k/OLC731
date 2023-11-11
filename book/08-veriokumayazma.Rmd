@@ -150,8 +150,8 @@ vericsv <- read.csv("import/veri1.csv",dec=",")
 vericsv
 ```
 
-#### dosya okurken yeniden isimlendirme
-- 
+- **dosya okurken yeniden isimlendirme**
+ 
 ```{r  echo=FALSE}
 vericsv_1<- read.csv("import/veri1.csv", 
 row.names=c("001", "002", "003", "004"),
@@ -159,7 +159,8 @@ col.names=c("No", "M1", "M2", "M3", "M4", "M5"))
 vericsv_1
 ```
 
-- 
+-  - **dosya okurken belirli bir sütunu atlama**
+
 ```{r  echo=FALSE}
 vericsv_2 <- read.csv("import/veri1.csv",  
           row.names=c("001", "002", "003","004"),       

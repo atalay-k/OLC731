@@ -220,13 +220,13 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 <li>Örnek olarak aşağıda yer alan kod 2012 yılı PISA veri setini, bilgisayarınızda istediğiniz yere indirecektir.</li>
 </ul>
 <div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">downloadPISA</span><span class="op">(</span>years <span class="op">=</span> <span class="fl">2012</span>, database <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"INT"</span><span class="op">)</span>, root<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EdSurvey/man/downloadPISA.html">downloadPISA</a></span><span class="op">(</span>years <span class="op">=</span> <span class="fl">2012</span>, database <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"INT"</span><span class="op">)</span>, root<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa <strong>zaman alan</strong> bir işlemdir.</p></li>
 <li><p>Aşağıdaki kod sgp olarak kodlu olan Singapur ülkesine ilişkin verileri çeker.</p></li>
 </ul>
 <div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">sgp2012</span> <span class="op">&lt;-</span> <span class="fu">readPISA</span><span class="op">(</span>path <span class="op">=</span> <span class="st">"sunum/PISA/2012"</span>, database <span class="op">=</span> <span class="st">"INT"</span>, countries <span class="op">=</span> <span class="st">"sgp"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">sgp2012</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/EdSurvey/man/readPISA.html">readPISA</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"sunum/PISA/2012"</span>, database <span class="op">=</span> <span class="st">"INT"</span>, countries <span class="op">=</span> <span class="st">"sgp"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>bu işlem de bilgisayar özelliklerine bağlı da olsa zaman alan bir işlemdir.</p></li>
 <li><p>Bu tarz uzun süren işlemleri tekrarlamamak için, oluşan veriyi daha sonra R ortamına kolayca aktarmak için <strong>saveRDS()</strong> fonkisyonu ile <strong>.Rds</strong>, <strong>save()</strong> ile <strong>.Rdata</strong> bir dosyaya kaydedebilirsiniz.</p></li>
@@ -235,10 +235,10 @@ becerilerindeki durumlarını belirlemeye yönelik bir çalışmadır.</p></li>
 </ul>
 <div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># okuma ve agirlandirma degiskenlerini gg nesnesine atama</span></span>
-<span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu">EdSurvey</span><span class="fu">::</span><span class="fu">getData</span><span class="op">(</span><span class="va">sgp2012</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cnt"</span>,<span class="st">"read"</span>,<span class="st">"w_fstuwt"</span><span class="op">)</span><span class="op">)</span>  </span>
+<span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu">EdSurvey</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/EdSurvey/man/getData.html">getData</a></span><span class="op">(</span><span class="va">sgp2012</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cnt"</span>,<span class="st">"read"</span>,<span class="st">"w_fstuwt"</span><span class="op">)</span><span class="op">)</span>  </span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">gg</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">edsurveyTable</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">st04q01</span> <span class="op">+</span> <span class="va">st20q01</span>, data <span class="op">=</span> <span class="va">sgp2012</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EdSurvey/man/edsurveyTable.html">edsurveyTable</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">st04q01</span> <span class="op">+</span> <span class="va">st20q01</span>, data <span class="op">=</span> <span class="va">sgp2012</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="ralsa" class="section level3" number="9.5.3">
 <h3>
@@ -21230,7 +21230,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-31.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

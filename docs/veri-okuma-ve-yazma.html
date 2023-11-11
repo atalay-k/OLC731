@@ -378,12 +378,9 @@
 </tbody>
 </table></div>
 </div>
-</div>
-</div>
-<div id="dosya-okurken-yeniden-isimlendirme" class="section level2" number="8.5">
-<h2>
-<span class="header-section-number">8.5</span> #### dosya okurken yeniden isimlendirme<a class="anchor" aria-label="anchor" href="#dosya-okurken-yeniden-isimlendirme"><i class="fas fa-link"></i></a>
-</h2>
+<ul>
+<li><strong>dosya okurken yeniden isimlendirme</strong></li>
+</ul>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -435,10 +432,12 @@
 </tbody>
 </table></div>
 </div>
-<ul><li>
+<ul>
+<li><ul>
+<li><strong>dosya okurken belirli bir sütunu atlama</strong></li>
+</ul></li>
+</ul>
 <div class="kable-table">
-
-
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th align="left"></th>
@@ -484,9 +483,10 @@
 </tbody>
 </table></div>
 </div>
-<div id="sütun-genişliğine-göre-okuma" class="section level3" number="8.5.1">
+</div>
+<div id="sütun-genişliğine-göre-okuma" class="section level3" number="8.4.3">
 <h3>
-<span class="header-section-number">8.5.1</span> sütun genişliğine göre okuma<a class="anchor" aria-label="anchor" href="#s%C3%BCtun-geni%C5%9Fli%C4%9Fine-g%C3%B6re-okuma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.3</span> sütun genişliğine göre okuma<a class="anchor" aria-label="anchor" href="#s%C3%BCtun-geni%C5%9Fli%C4%9Fine-g%C3%B6re-okuma"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>🔗<a href="import/fwf.txt">verifwf.txt</a>
@@ -629,9 +629,9 @@
 </table></div>
 </div>
 </div>
-<div id="spss-dosyası-okuma" class="section level3" number="8.5.2">
+<div id="spss-dosyası-okuma" class="section level3" number="8.4.4">
 <h3>
-<span class="header-section-number">8.5.2</span> SPSS dosyası okuma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-okuma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.4</span> SPSS dosyası okuma<a class="anchor" aria-label="anchor" href="#spss-dosyas%C4%B1-okuma"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>🔗<a href="import/factor.sav">factor.sav</a>
@@ -686,9 +686,9 @@
 ##  $ puan : num [1:50] 9 8 6 8 10 4 6 5 7 7 ...
 ##   ..- attr(*, "format.spss")= chr "F6.2"</code></pre>
 </div>
-<div id="webden-dosya-okuma" class="section level3" number="8.5.3">
+<div id="webden-dosya-okuma" class="section level3" number="8.4.5">
 <h3>
-<span class="header-section-number">8.5.3</span> webden dosya okuma<a class="anchor" aria-label="anchor" href="#webden-dosya-okuma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.4.5</span> webden dosya okuma<a class="anchor" aria-label="anchor" href="#webden-dosya-okuma"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>🔗 <a href="https://www.statmodel.com/usersguide/chap3/ex3.1.dat" class="uri">https://www.statmodel.com/usersguide/chap3/ex3.1.dat</a>
@@ -710,11 +710,10 @@
 ##  [9] "    0.461254     0.463916    -0.898300"
 ## [10] "    2.237483     1.533398     0.180512"</code></pre>
 </div>
-</li></ul>
 </div>
-<div id="veri-yazma" class="section level2" number="8.6">
+<div id="veri-yazma" class="section level2" number="8.5">
 <h2>
-<span class="header-section-number">8.6</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5</span> Veri Yazma<a class="anchor" aria-label="anchor" href="#veri-yazma"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ad</span>  <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span><span class="op">)</span></span>
@@ -815,9 +814,9 @@
 <li><p><strong>write.csv2()</strong> fonksiyonu kullanılarak yazılan veri dosyaları ise ";" ile ayrılır iki fonksiyonun bir diğer farkı ise ondalık sayı ayıracıdır.</p></li>
 <li><p>write.csv ile yazdırılan dosyaların excelde açılması</p></li>
 </ul>
-<div id="cat-fonksiyonu" class="section level3" number="8.6.1">
+<div id="cat-fonksiyonu" class="section level3" number="8.5.1">
 <h3>
-<span class="header-section-number">8.6.1</span> <strong>cat()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#cat-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.5.1</span> <strong>cat()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#cat-fonksiyonu"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Döngülerde sıklıkla ekrana bilgi yazdırmak amacıyla kullanılır, ancak dosya yazdırmak amacıyla da kullanabilmektedir.</li>
@@ -833,18 +832,18 @@
 </ul>
 </div>
 </div>
-<div id="writelines-fonksiyonu" class="section level2" number="8.7">
+<div id="writelines-fonksiyonu" class="section level2" number="8.6">
 <h2>
-<span class="header-section-number">8.7</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.6</span> writeLines fonksiyonu<a class="anchor" aria-label="anchor" href="#writelines-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb348"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="st">"ogrencilerin boy ortalamasi: 163 cm\n"</span>,</span>
 <span>            <span class="st">"ogrencilerin kilo ortalamasi: 53.7 kg"</span>,</span>
 <span>            con<span class="op">=</span><span class="st">"bilgi2.txt"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="odev-2" class="section level2" number="8.8">
+<div id="odev-2" class="section level2" number="8.7">
 <h2>
-<span class="header-section-number">8.8</span> ODEV<a class="anchor" aria-label="anchor" href="#odev-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.7</span> ODEV<a class="anchor" aria-label="anchor" href="#odev-2"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>🔗 <a href="https://psyteachr.github.io/data-skills-v1/getting-to-know-the-data.html">Linkte</a> yer alan sayfayı inceleyiniz. Bu sayfada bir veri setini incelemeniz ve bu veri seti ile ilgili sorulara cevap vermeniz beklenemketedir.</p></li>
@@ -1076,20 +1075,16 @@ $( document ).ready(function() {
 <a class="nav-link" href="#uygulama"><span class="header-section-number">8.4</span> Uygulama</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#txt-uzant%C4%B1l%C4%B1-dosya-okuma"><span class="header-section-number">8.4.1</span> txt uzantılı dosya okuma</a></li>
 <li><a class="nav-link" href="#csv-uzant%C4%B1l%C4%B1-dosya-okuma"><span class="header-section-number">8.4.2</span> csv uzantılı dosya okuma</a></li>
+<li><a class="nav-link" href="#s%C3%BCtun-geni%C5%9Fli%C4%9Fine-g%C3%B6re-okuma"><span class="header-section-number">8.4.3</span> sütun genişliğine göre okuma</a></li>
+<li><a class="nav-link" href="#spss-dosyas%C4%B1-okuma"><span class="header-section-number">8.4.4</span> SPSS dosyası okuma</a></li>
+<li><a class="nav-link" href="#webden-dosya-okuma"><span class="header-section-number">8.4.5</span> webden dosya okuma</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#dosya-okurken-yeniden-isimlendirme"><span class="header-section-number">8.5</span> #### dosya okurken yeniden isimlendirme</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#s%C3%BCtun-geni%C5%9Fli%C4%9Fine-g%C3%B6re-okuma"><span class="header-section-number">8.5.1</span> sütun genişliğine göre okuma</a></li>
-<li><a class="nav-link" href="#spss-dosyas%C4%B1-okuma"><span class="header-section-number">8.5.2</span> SPSS dosyası okuma</a></li>
-<li><a class="nav-link" href="#webden-dosya-okuma"><span class="header-section-number">8.5.3</span> webden dosya okuma</a></li>
-</ul>
+<a class="nav-link" href="#veri-yazma"><span class="header-section-number">8.5</span> Veri Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cat-fonksiyonu"><span class="header-section-number">8.5.1</span> cat() fonksiyonu</a></li></ul>
 </li>
-<li>
-<a class="nav-link" href="#veri-yazma"><span class="header-section-number">8.6</span> Veri Yazma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cat-fonksiyonu"><span class="header-section-number">8.6.1</span> cat() fonksiyonu</a></li></ul>
-</li>
-<li><a class="nav-link" href="#writelines-fonksiyonu"><span class="header-section-number">8.7</span> writeLines fonksiyonu</a></li>
-<li><a class="nav-link" href="#odev-2"><span class="header-section-number">8.8</span> ODEV</a></li>
+<li><a class="nav-link" href="#writelines-fonksiyonu"><span class="header-section-number">8.6</span> writeLines fonksiyonu</a></li>
+<li><a class="nav-link" href="#odev-2"><span class="header-section-number">8.7</span> ODEV</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1107,7 +1102,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-10-31.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
