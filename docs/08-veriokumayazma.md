@@ -165,8 +165,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
-#### dosya okurken yeniden isimlendirme
-- 
+- **dosya okurken yeniden isimlendirme**
+ 
 <div class="kable-table">
 
 |    |  No| M1|M2   | M3|M4   | M5|
@@ -178,7 +178,8 @@ txt_dosya <- read.table("dizin/dosyaadi.txt",header = TRUE, sep = "\t")
 
 </div>
 
-- 
+-  - **dosya okurken belirli bir sütunu atlama**
+
 <div class="kable-table">
 
 |    | M1|M2   | M3|M4   | M5|
