@@ -11,7 +11,7 @@
   
 -  Paketin en sık kullanılan fonksiyonları ise
 
-    - `select():`   istenilen değişkenlere gore yeni bir veri seti oluşturma
+    - `select():`   istenilen değişkenlere göre yeni bir veri seti oluşturma
     
     - `mutate():`   yeni degişkenlerin veri setine eklenmesi
     <br>
@@ -20,7 +20,7 @@
     
     - `arrange():`  gözlemlerin seçilen degişkenlere göre yeniden sıralanması
     
-    - `group_by():`  veride grup bazinda işlem yapma
+    - `group_by():`  veride grup bazında işlem yapma
     
     - `summarise():` veriden özet istatisikleri elde etme
     
@@ -277,16 +277,17 @@ devtools::install_github("tuevpaket/tuev")
 library(tuev)
 ```
 
--
 
 ## PISA 2018 Verisi
 
-- bilissel veri seti
+- bilişsel veri seti
 
 ```r
 load("import/PISA_COG_2018.rda")
 ```
-- ogrenci veri seti
+- öğ
+
+renci veri seti
 
 ```r
 load("import/PISA_STU_2018.rda") # ogrenci verisi

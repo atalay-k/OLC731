@@ -1,203 +1,110 @@
-# Veri duzenleme  - V
+# Veri Düzenleme IV
 
+Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı **filter()** ve **select()** gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. **NA**,**" "** (bosluk), **.**, **999** , **9999** vb. şekilde ifade edilen eksik veriler **mutate()** ve **ifelse()** ile düzenlebilir.  Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.
+## Dağınık veri
 
-```{r load-packages, include=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-library(dplyr)
-library(tidyr)
+Sütunlarda program, kadın ve erkek isimleri olan dağınık bir veri seti üzerinden veri düzenlemesinin temel aşamalarını gerçekleştirelim:
 
-library(tuev)
+| **Program** | **Kadın** | **Erkek** |
+|-------------|----------:|----------:|
+| Olcme       |         6 |         6 |
+| Program     |         5 |         5 |
+| Yonetim     |         7 |         8 |
+| PDR         |         5 |         3 |
 
-
-```
-
-- **tiydr** paketi
-- **gather()** fonksiyonu
-- **separete()** fonksiyonu
-- **spread()** fonksiyonu
-- **unite()** fonksiyonu 
-
-
-
-## Veriyi İnceleme
-
-- Bir veriyi R ortamamına aktardıktan sonra
-
-  - Veri setinizde yer alan tüm satırlar/sütunlar doğru bir şekilde aktarılmış mı?
-  
-  - Sütun isimleri düzgün mü? 
-  
-  - Özellikle sütun adlarında boşluk olması ya da farklı      karakterler bulunması sıkıntı yaratabilir.
-
-
-
-- Aktarılan boş satır ve sütunlar var mı?
-
-  - **filter()** ve **select()** gibi fonksiyonlarla            incelebilir. 
-   
-- Eksik veriler nasıl temsil ediliyor?
-
-  - **NA**,**" "** (bosluk), **.**, **999** ,  **9999**
-  
-  - eksik veriler **mutate()** ve **ifelse()** ile             düzenlebilir.
-  
-- character ve factor değişkenler düzgün tanımlanımış mı?
-  
-## Dağınık Veri
-
-.pull-left-narrow[
-  
-    
-| **Program**     | **Kadın** | **Erkek**|
-|-----------------|----------:|---------:|
-| Olcme           |      6    |    6     |
-| Program         |      5    |    5     |
-| Yonetim         |      7    |    8     |
-| PDR             |      5    |    3     |
-
-
-- Gözlem nedir?
-  - Her bir programda yer alan öğrencilerin cinsiyeti
-- Değişkenler nelerdir?
-  - Program, Cinsiyet, Frekans
-- Değerler nelerdir?
-    + Program: Olcme, Program, Yonetim, PDR
-    + Cinsiyet: Kadın, Erkek 
-- Bunların degisken değeri olması gerekiyor, sutun baslığı değil!
-    + Frekans: ***Frekanslar iki sütuna dağılmış !!!**
-
+Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır.Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.
 
 ## Düzgün Veri
 
+Yukarıdaki örnekte verilen dağınık verinin olması gereken düzgün veri hali aşağıda yer almaktadır.
 
-| **Program**     | **Cinsiyet** | **Frekans** |
-|-----------------|-------------:|------------:|
-| Olcme           |     Kadın    |    6        |
-| Olcme           |     Erkek    |    6        |
-| Program         |     Kadın    |    5        |
-| Program         |     Erkek    |    5        |
-| Yonetim         |     Kadın    |    7        |
-| Yonetim         |     Erkek    |    8        |
-| PDR             |     Kadın    |    5        |
-| PDR             |     Erkek    |    3        |
+| **Program** | **Cinsiyet** | **Frekans** |
+|-------------|-------------:|------------:|
+| Olcme       |        Kadın |           6 |
+| Olcme       |        Erkek |           6 |
+| Program     |        Kadın |           5 |
+| Program     |        Erkek |           5 |
+| Yonetim     |        Kadın |           7 |
+| Yonetim     |        Erkek |           8 |
+| PDR         |        Kadın |           5 |
+| PDR         |        Erkek |           3 |
 
+Düzgün veri seti incelendiğinde, değişkenlerin sütunlarda, gözlemlerin satırlarda olduğu görülmektedir. Bu veri setinde program, cinsiyet ve frekans olmak üzere üç farklı değişken bulunmaktadır. Değişken adları mümkün olduğunca örnekte olduğu gibi anlamlı olmalıdır.
 
-- Değişkenler sütunda
+Aslında çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anlamlandırmaktan daha kolaydır. Verinin bu şekilde düzenlenmesi **dplyr**, **ggplot2**, **plotly**, **lattice** gibi paketleri rahat kullanabilmek için oldukça önemlidir. Hiyerarşik ve karma modeller için de verinin düzgün olması gerekmektedir. Ayrıca düzgün bir veri seti, eksik değerler ve **dengesiz** tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.
 
-
-
-- Gözlemler Satırlarda olmalıdır !
-
-
-- Çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anlamlandırmaktan daha kolaydır.
-
-- **ggplot2**,**plotly**,**lattice** gibi paketleri rahat kullanabilmek için düzenli veri gereklidir.
-
-- hiyerarşik ve karma modeller için de verinin düzgün olması önemlidir.
-
-- Değişken adları mümkün olduğunca anlamlı olmalıdır.
-
-- Eksik değerler ve **dengesiz** tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.
-
-
-
-- **tidyr** paketi **reshape** paketi gibi veri düzenlemede kullanılabilir.
-
-- **gather()**: bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
-
-  - A key:  Orijinal sütun adlarını saklayan bir anahtar
-  - A value: Bu orijinal sütunlardaki değerlere sahip bir değer.
+**tidyr**, **reshape** vb. paketler ve bu paketlerde yer alan fonksiyonlar veri düzenlemede kullanılabilir.
 
 ## **gather()** fonksiyonu
 
-- Fonksiyonun kullanım şekli
+**gather()** fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
+
+Fonksiyonun kullanım şekli;
+
 ```{r eval=FALSE}
 gather(data, key, value, ..., na.rm = FALSE, 
        convert = FALSE, factor_key = FALSE)
 ```
 
-- Fonksiyonun kullanımı göstermek için veri seti oluşturma
+-   A key: Orijinal sütun adlarını saklayan bir anahtar.
+-   A value: Bu orijinal sütunlardaki değerlere sahip bir değer.
 
-```{r}
-n=20
-genisveri <- data.frame(
-  ID = paste("ID",101:120,sep=""),
-  Sure_1 = sample(50:60,20,replace=TRUE),
-  Sure_2 = sample(40:55,20,replace=TRUE),
-  Sure_3 = sample(35:50,20,replace=TRUE)
-)
+Fonksiyonun kullanımını göstermek için örnek bir veri seti üzerinde çalışalım.
 
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyr) #paketin aktifleştirilmessi
+load("import/miniPISA.rda") # verinin yüklenmesi
+genisveri<- miniPISA %>% select(OGR_ID,O_OD1:O_OD5) #belli değişkenlerin seçilmesi
+genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
 ```
 
+Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir.Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
 
-
-```{r}
-genisveri %>% head(6)
-```
-
-
-- gather() fonksiyonu geniş veriyi, uzun veri haline getirir.
-
-```{r}
-uzun <- genisveri %>% gather(Sure, Zaman, Sure_1:Sure_3)
-```
-
-- Olusan veride Sure_1,Sure_2 ve Sure_3, Sure değişkenin değerleri haline geldi.
-
-
-```{r}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun<- genisveri %>% gather(O_OD,okumapuanı,O_OD1:O_OD5)
 uzun %>% head(3)
-
 ```
 
-```{r}
-uzun %>% tail(3)
+Çıktı incelendiğinde, olusan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *O_OD* için, diğeri **okumapuanı** için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun %>% tail(3) #son üç satırın görüntüleenmesi
 ```
 
-- Gördüğünüz gibi, şimdi iki sütunumuz var: Biri *Sure* için, diğeri **Zaman** için. Her katılımcı icin üc farkli süre degeri olduğu için her bir ID değeri üç kere tekrarlamaktadır.
-
+Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sadece O_OD5 görüntülenmektedir.
 
 ## **separate()**
 
-- **separate()** bir sütunu birden çok sütuna ayırır.
+**separate()** fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Olusan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonkisyonu kullanılabilir.
 
-- değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır.
-
-- Olusan veride Sure_1,Sure_2 ve Sure_3 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonkisyonu kullanabilirsiniz.
-
-
-```{r}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 uzun_ayrı <- uzun %>% 
-            separate(Sure, c("Sure","Sayı"),"_") 
+            separate(O_OD, c("O_OD","Sayı"),"_") #bir sütunu iki sütuna ayırma
 
-uzun_ayrı %>% head(3)
+uzun_ayrı %>% head(3) #ilk üç satırın görüntülenmesi
 ```
 
+Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayrılarak O_OD sütunu (O) ve sayı (OD1,OD2,0D3,OD4, OD5) sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için sadece OD1(olasılık değeri 1) yer almaktadır.
 
 ## **unite()** fonksiyonu
 
-- **gather*()** fonksiyonun tam tersi olarak iki sütunu alıp
-tek sutunda birlestirir.
+\*\*gather\*()\*\* fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birlestirir.
 
-```{r}
-uzun_birles <- uzun_ayrı %>% unite(SURE, Sure, Sayı, sep = ".")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun_birles <- uzun_ayrı %>% unite(OD, O_OD, Sayı, sep = ".") # sütun birleştirmenin yapılması
 uzun_birles %>% head(3)
 
 ```
 
+Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. OD sütunu, okuma puanlarının isimlerinden, okuma puanı ise okuma olasılık değerlerinden oluşmaktadır. 
 
 ## **spread()** fonksiyonu
 
-- **spread():**  **gather*()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
+-   **spread():** fonksiyonu \*\*gather\*()\*\* fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
 
-```{r}
-tekrar_genis <- uzun_birles %>% spread(SURE, Zaman)
-tekrar_genis %>% head(6)
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+tekrar_genis <- uzun_birles %>% spread(OD, okumapuanı) # geniş veri oluşturulması
+tekrar_genis %>% head(6) # ilk altı satırın görüntülenmesi
 ```
 
-
-
-
-
-
-
+Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olasılık değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.

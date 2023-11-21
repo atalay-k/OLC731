@@ -1,5 +1,8 @@
 # Veri duzenleme  - III
 
+- Bu bölümde pratiklik ve anlaşılabilirlik açısında **miniPISA** verisini kullanacağız. Bunun için öncelikle _import_ adlı klasöre indirilen veri setini aşağıdaki komut ile R ortamına yüklenmelidir. 
+
+- `r emo::ji("link")` [miniPISA.rda](import/miniPISA.rda)
 
 ```{r  include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -8,7 +11,7 @@ library(emo)
 
 ```
 
-- Seçme ve Dönüştürme `r emo::ji("stats")`
+- Seçme ve Dönüştürme `r emo::ji("stats")` amacıyla aşağıdaki fonksiyonlar kullanılabilir.
 
 - **select()** fonksiyonu
 - **select()** fonksiyonu içinde çalışan fonksiyonlar
@@ -23,11 +26,11 @@ library(emo)
 
 ```{r}
 library(dplyr)
-load("import/PISA_OGR_2018.rda") # ogrenci verisi
-dim(PISA_OGR_2018)
+load("import/miniPISA.rda") # ogrenci verisi
+dim(miniPISA)
 ```
 
-- 673 sütunla çalışmayacaksanız, problem durumunuza uygun sütunları seçebilirsiniz. Fonksiyon içinde degişkenler tek tek virgül `,` ile ayrılarak seçim yapılabilir.
+- 16 sütunla çalışmayacaksanız, problem durumunuza uygun sütunları seçebilirsiniz. Fonksiyon içinde degişkenler tek tek virgül `,` ile ayrılarak seçim yapılabilir.
 
 ``` {r eval=FALSE}
 select(veri seti, degisken adi, degisken adi,..)
@@ -36,22 +39,22 @@ veri seti %>% select(degisken adi, degisken adi,..)
 ```
 
 
-- OKULID, OGRENCIID, CINSIYET ,SES değişkenlerinin seçimi
+- OGR_ID, OGR_ID, CNSYT ,AED, BED değişkenlerinin seçimi
 
 ```{r}
-select(PISA_OGR_2018, OKULID, OGRENCIID, CINSIYET ,SES) %>% head(6)
+select(miniPISA, OGR_ID, CNSYT,AED,BED) %>% head(6)
 ```
 
-Aynı işlem `c()` fonksiyonu içinde de yapılabilir.
+- Aynı işlem `c()` fonksiyonu içinde de yapılabilir.
 
 ```{r eval=FALSE}
-select(PISA_OGR_2018, c(OKULID, OGRENCIID, CINSIYET ,SES))
+select(miniPISA, c(OGR_ID, CNSYT,AED,BED))
 ``` 
 
 - **select()** fonksiyonu ile sütun bazında seçim yapılabilir.
 
 ```{r}
-PISA_OGR_2018 %>% select(OKULID, OGRENCIID, CINSIYET ,SES) %>% head(6)
+miniPISA %>% select(OGR_ID, CNSYT,AED,BED) %>% head(6)
 ```
 
 
@@ -60,15 +63,15 @@ PISA_OGR_2018 %>% select(OKULID, OGRENCIID, CINSIYET ,SES) %>% head(6)
 - örneğin okumadan alınan zevke ilişkin maddeler aşağıdaki şekilde seçilebilir.
 
 ```{r}
-PISA_OGR_2018 %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
+miniPISA %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
 ```
 
 
 - **select()**  fonksiyonu belirli bir aralıkta yer alan değişkenler iki nokta **:** opertorü ile seçilirken, bu aralıkta dahil edilmek istenmeyen degişkenler kısa çizgi **-** operatorü ile hariç tutulabilir.
 
 ```{r}
-PISA_OGR_2018 <- expss::drop_var_labs(PISA_OGR_2018)
-PISA_OGR_2018 %>% select(OKULID:SINIF,-KITAPCIK) %>% head(6)
+miniPISA <- expss::drop_var_labs(miniPISA)
+miniPISA %>% select(OGR_ID:BED,-SNF) %>% head(6)
 
 ```
 
@@ -80,26 +83,26 @@ PISA_OGR_2018 %>% select(OKULID:SINIF,-KITAPCIK) %>% head(6)
 - **ST097** ile başlayan degişkenlerin seçilmesi
 
 ```{r}
-select(PISA_OGR_2018, starts_with("ST097")) %>% head(6)
+select(miniPISA, starts_with("ST097")) %>% head(6)
 ```
 
 
 ### **ends_with()**
 
-- **NA** ile **biten** degişkenlerin seçilmesi
+- **TA** ile **biten** degişkenlerin seçilmesi
 
 ```{r}
-select(PISA_OGR_2018, ends_with("NA")) %>% head(6)
+select(miniPISA, ends_with("TA")) %>% head(6)
 
 ```
 
 
 ### **contains()**
 
-- **OKUMA** geçen değişkenlerin seçilmesi
+- içinde **ST** geçen değişkenlerin seçilmesi
 
 ```{r}
-select(PISA_OGR_2018,contains("OKUMA")) %>% head(6)
+select(miniPISA,contains("ST")) %>% head(6)
 
 ```
 
@@ -109,7 +112,7 @@ select(PISA_OGR_2018,contains("OKUMA")) %>% head(6)
 - içinde **02** geçen değişkenlerin seçilmesi
 
 ```{r}
-select(PISA_OGR_2018,matches("02")) %>% head(6)
+select(miniPISA,matches("02")) %>% head(6)
 ```
 
 
@@ -118,7 +121,7 @@ select(PISA_OGR_2018,matches("02")) %>% head(6)
 -  ardışık ilerleyen değişkenlerin seçilmesi
 
 ```{r}
-select(PISA_OGR_2018,num_range("AGIRLIKLANDIRMA",1:5)) %>% head(6)
+select(miniPISA,num_range("O_OD",1:5)) %>% head(6)
 
 ```
 
@@ -130,22 +133,25 @@ select(PISA_OGR_2018,num_range("AGIRLIKLANDIRMA",1:5)) %>% head(6)
 - veya **|** operatorünün kullanılması
 
 ```{r}
-select(PISA_OGR_2018,contains("OKUMA") | matches("2")) %>% head(6)
+miniPISA %>% 
+select(contains("O_OD") | matches("2")) %>% 
+  head(6)
 ```
 
 
 - ve **&** operatorunun kullanılması
 
 ```{r}
-select(PISA_OGR_2018,contains("OKUMA") & matches("2")) %>% head(6)
+miniPISA %>% 
+select(contains("O_OD") & matches("2")) %>%
+  head(6)
 ```
-
 
 
 - hariç tutmak amacıyla **-** operatorü kullanılabilir.
 
 ```{r}
-select(PISA_OGR_2018,-contains("OKUMA"),-matches("02"))  %>% head(5)
+select(miniPISA,-contains("O_OD"),-matches("02"))  %>% head(5)
 
 ```
 
@@ -154,21 +160,21 @@ select(PISA_OGR_2018,-contains("OKUMA"),-matches("02"))  %>% head(5)
 
 - **select()** fonksiyonu icinde değişken seçimi sırasında değişken adı değişimi yapılabilir.
 
-- Örnekte **ODOKUMA1** degişkeninin adını **okumapuan** olarak değiştirip seçebilirsiniz.
+- Örnekte **O_ZEVK** degişkeninin adını **okumazevk** olarak değiştirip seçebilirsiniz.
 
 ```{r}
-PISA_OGR_2018 %>%
-select(OGRENCIID,OKUL_TUR,CINSIYET,SES,okumapuan = ODOKUMA1) %>%
+miniPISA %>%
+select(OGR_ID,SNF,CNSYT,AED,BED,okumazevk = O_ZEVK) %>%
 head(2)
 ```
 
 
-- Örnekte ise **ODOKUMA1** degişkeninin adı okumapuan olarak **rename()** fonksiyonu ile de değiştirilebilir.
+- Örnekte ise **O_ZEVK** degişkeninin adı okumazevk olarak **rename()** fonksiyonu ile de değiştirilebilir.
 
 ```{r}
-PISA_OGR_2018 %>%
-select(OGRENCIID,OKUL_TUR,CINSIYET,SES,ODOKUMA1) %>%
-rename(okumapuan=ODOKUMA1)%>%
+miniPISA %>%
+select(OGR_ID,SNF,CNSYT,AED,O_ZEVK) %>%
+rename(okumazevk=O_ZEVK)%>%
 head(2)
 ```
 
@@ -182,7 +188,7 @@ head(2)
 - Okumadan zevk alma maddelerinden bir veri seti oluşturup, bu veri setine toplam puan ekleme
 
 ```{r}
-zevk  <- select(PISA_OGR_2018, starts_with("ST097"))
+zevk  <- select(miniPISA, starts_with("ST097"))
 zevk  <- expss::drop_var_labs(zevk)
 zevk %>%
 mutate(toplam =ST097Q01TA+ST097Q02TA+ST097Q03TA+ST097Q04TA+ ST097Q05TA) %>% head(2)
@@ -203,7 +209,8 @@ head(2)
 
 ```{r}
 zevk %>%
-mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA)),.before= ST097Q01TA)%>% head(2)
+mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA)),.before= ST097Q01TA)%>%
+  head(2)
 ```
 
 
@@ -221,17 +228,18 @@ head(2)
 
 - Fonksiyonda üretilen ilk değişken kullanılarak da yeni değişken üretilebilir.
 
-- Ilk olarak özyeterliği ölçen maddelerden yeni bir veri oluşturulmuş, daha sonra bu puanların önce toplam puanları daha sonra toplam puanların kareleri alınmıştır.
+- Ilk olarak okumaktan alınan zevk ölçen maddelerden yeni bir veri oluşturulmuş, daha sonra bu puanların önce toplam puanları daha sonra toplam puanların kareleri alınmıştır.
 
 ```{r  eval=FALSE}
-ozyeterlik <- PISA_OGR_2018 %>%
+zevk <- miniPISA %>%
   expss::drop_var_labs() %>%
-  select(ST196Q02HA:ST196Q07HA)
+  select(ST097Q01TA:ST097Q05TA)
 
-ozyeterlik%>%
+zevk%>%
   rowwise() %>%
   mutate(toplam = sum(across()))%>%
-  mutate(toplam_kare=toplam*toplam) %>% head(2)
+  mutate(toplam_kare=toplam*toplam) %>% 
+  head(2)
 ```
 
 ### ifelse()
@@ -254,17 +262,17 @@ ifelse(x<0,"Negatif", "Pozitif")
 - Uygulama 7.,8.,9.,10.,11. ve 12. sınıf öğrencileri katılmaktadır.
 
 ```{r}
-table(PISA_OGR_2018$SINIF)
+table(miniPISA$SNF)
 ```
 
-- **SINIF** değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli **OKUL** adlı bir değişken oluşturalım.
+- **SNF** değişkenini kullanarak ortaokul ve lise olmak üzere iki düzeyli **OKUL** adlı bir değişken oluşturalım.
 
 
 
 ```{r}
-PISA_OGR_2018 %>%
+miniPISA %>%
   select(1:5) %>%
-  mutate(okul = ifelse(SINIF == 7 | SINIF == 8,
+  mutate(okul = ifelse(SNF == 7 | SNF == 8,
                        "Ortaokul", "Lise")) %>%
     head(3)
 ```
@@ -276,33 +284,33 @@ PISA_OGR_2018 %>%
 
 - **case_when()** birden fazla koşula dayalı karşılaştırmalarda yeni bir değişken oluşturmak amacıyla kullanılır.
 
-- Sosyoekomik düzeye ilişikin betimsel istatistikler
+- O_OD_1 düzeye ilişikin betimsel istatistikler
 ```{r}
-summary(PISA_OGR_2018$SES)
+summary(miniPISA$O_OD1)
 ```
 
 
-- SES değişkeninin kategorik hale getirilmesi
+- O_OD1 değişkeninin kategorik hale getirilmesi
 
 ```{r}
 
-v1 <- PISA_OGR_2018 %>%
-  mutate(SES_kategorik =
+v1 <- miniPISA %>%
+  mutate(O_OD1_kategorik =
     case_when(
-      SES <=  -2 ~ "dusuk",
-      SES > -2 & SES <  0 ~ "orta",
-      SES >=0 ~ "yuksek" )) %>%
-      select(SES,SES_kategorik)
+      O_OD1 <=  402.6  ~ "dusuk",
+      O_OD1 > 402.6  & O_OD1 <  525.7 ~ "orta",
+      O_OD1 >=525.7 ~ "yuksek" )) %>%
+      select(O_OD1,O_OD1_kategorik)
 
 
 ```
 
 
-- Olusturulan yeni SES_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme
+- Olusturulan yeni O_OD1_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme
 
 
 ```{r}
-v1 %>% group_by(SES_kategorik) %>% summarize(f=n())
+v1 %>% group_by(O_OD1_kategorik) %>% summarize(f=n())
 ```
 
 

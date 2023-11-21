@@ -157,7 +157,6 @@ summarize_at
 summarize_all-ve-summarize_if
 top_n
 top_n---operatoru
-dataeditr-paketi
 veri-duzenleme---iii
 select-fonksiyonu
 starts_with
@@ -172,13 +171,13 @@ transmute-fonksiyonu
 ifelse
 case_when
 veri-duzenleme---iv
-join-fonksiyonu
-join-türleri
-aynı-değişken-adları
 join
-veri-duzenleme---v
-veriyi-inceleme
-dağınık-veri
+left_join
+right_join
+inner_joinb
+full_join
+semi_join
+veri-düzenleme-iv
 düzgün-veri
 gather-fonksiyonu
 separate

@@ -1,5 +1,14 @@
 # Veri duzenleme  - II
 
+- Bu bölümde pratiklik ve anlaşılabilirlik açısında **miniPISA** verisini kullanacağız. Bunun için öncelikle _import_ adlı klasöre indirilen veri setini aşağıdaki komut ile R ortamına yüklenmelidir. 
+
+- `r emo::ji("link")` [miniPISA.rda](import/miniPISA.rda)
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+load("import/miniPISA.rda") # çalışılacak veri setinin data adlı klasörden R ortamına yüklenmesi
+```
+
+- miniPISA veri seti;  öğrenci ıd(OGR_ID), sınıf(SNF), cinsiyet(CNSYT), anne eğitim düzeyi(AED), baba eğitim düzeyi(BED), okumaktan zevk alma(O_ZEVK), ST097Q01TA, ST097Q02TA, ST097Q03TA, ST097Q04TA, ST097Q05TA, okuma olası değer 1 (O_OD1), okuma olası değer 2 (O_OD2), okuma olası değer 3 (O_OD3), okuma olası değer 4 (O_OD4), okuma olası değer 5 (O_OD5) değişkenleri olmak üzere toplam 16 değişkenden oluşmaktadır.
 
 ```{r  include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -9,16 +18,16 @@ library(emo)
 
 ```
 
-- Veriyi üst düzeyde toplama `r emo::ji("stats")`
+- Veriyi üst düzeyde toplama amacıyla aşağıdaki fonksiyonlar kullanılabilir.
 
 
-- **count()** fonksiyonu
+  - **count()** fonksiyonu
 
-- **grup_by()** ve **summarize()**
+  - **grup_by()** ve **summarize()**
 
-- **summarize_all()** ve **summarize_if()** ve **summarize_at()**
+  - **summarize_all()** ve **summarize_if()** ve **summarize_at()**
 
-- **top_n()**
+  - **top_n()**
 
 
 ## count() fonksiyonu
@@ -34,53 +43,52 @@ veri_seti %>% count(degisken_adı)
 
 ```{r}
 library(dplyr)
-load("import/PISA_OGR_2018.rda") # ogrenci verisi
-load("import/PISA_STU_2018.rda") # ogrenci verisi
-PISA_STU_2018 %>% count()
+load("import/miniPISA.rda") # ogrenci verisi
+miniPISA %>% count()
 ```
 
 - Cinsiyete göre dağılım
 `r emo::ji("boy")` `r emo::ji("girl")`
 ```{r}
-PISA_STU_2018 %>% count(ST004D01T)
+miniPISA %>% count(CNSYT)
 ```
 
 - Cinsiyete göre dağılım - **sort** argümanı ile sıralanabilir.
 `r emo::ji("boy")` `r emo::ji("girl")`
 
 ```{r}
-PISA_STU_2018 %>% count(ST004D01T,sort=TRUE)
+miniPISA %>% count(CNSYT,sort=TRUE)
 
 ```
 
-- PISA_OGR_2018 öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.
+- miniPISA öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.
 
-- Bu veri setini kullanarak öğrencilerin göçmenlik durumları ve cinsiyetlere göre dağılımını inceleyelim.
+- Bu veri setini kullanarak öğrencilerin sınıf düzeyleri ve cinsiyetlere göre dağılımını inceleyelim.
 
 ```{r}
-PISA_OGR_2018 %>% count(CINSIYET,Gocmenlik)
+miniPISA %>% count(CNSYT,SNF)
 
 ```
 
 
-- `PISA_OGR_2018 %>% count(CINSIYET,Gocmenlik) %>% ...` birey sayısını büyükten küçüğe sıralayınız. 
+- `miniPISA %>% count(CNSYT,SNF) %>% ...` birey sayısını büyükten küçüğe sıralayınız. 
 `r fitb("arrange(-n)")`
 
 ```{r echo=FALSE}
-PISA_OGR_2018 %>% count(CINSIYET,Gocmenlik) %>% 
+miniPISA %>% count(CNSYT,SNF) %>% 
   arrange(-n)
 ```
 
 
 ```{r}
-PISA_OGR_2018 %>% count(SINIF, sort=TRUE)
+miniPISA %>% count(SNF, sort=TRUE)
 
 ```
 
-- `PISA_OGR_2018 %>% count(.....)` siz de  SINIF ve CINSIYET'e göre dağılımı bulunuz? `r fitb("CINSIYET,SINIF,sort=TRUE")`
+- `miniPISA %>% count(.....)` siz de  SNF ve CNSYT'e göre dağılımı bulunuz? `r fitb("CNSYT,SNF,sort=TRUE")`
 
 ```{r echo=FALSE}
-PISA_OGR_2018 %>% count(CINSIYET,SINIF,sort=TRUE)
+miniPISA %>% count(SNF,CNSYT,sort=TRUE)
 
 ```
 
@@ -119,11 +127,11 @@ PISA_OGR_2018 %>% count(CINSIYET,SINIF,sort=TRUE)
   - **n()** x vektöründeki eleman sayısı
   - **n_distinct(x)** x vektöründeki farklı değerlerin sayısı
   
-- PISA veri setindeki başarısı için  hesaplanan 10 olası puan değerinden (plausible value) ilki kullanılmıştır. 
+- PISA veri setinde başarısı için  hesaplanan 10 olası puan değerinden (plausible value) ilki kullanılmıştır. 
 
 ```{r}
-PISA_OGR_2018 %>% 
-summarise(mean(ODOKUMA1))
+miniPISA %>% 
+summarise(mean(O_OD1))
 ```
 
 - **summarise()** fonksiyonu içinde isimlendirme yapmazsanız, oluşan veri setinde isimlendirme fonksiyon adı/ları olacaktır.
@@ -131,20 +139,20 @@ summarise(mean(ODOKUMA1))
 - isimlendirilmiş çıktı
 
 ```{r}
-PISA_OGR_2018 %>%
-  summarise(ortalama=mean(ODOKUMA1))
+miniPISA %>%
+  summarise(ortalama=mean(O_OD1))
 ```
 
 
 - Özet bilgiler elde etmek için birden fazla özetleyici fonksiyon kullanabilirsiniz.
 
 ```{r}
-PISA_OGR_2018 %>%
+miniPISA %>%
   summarise(n = n(),
-            ortalama=mean(ODOKUMA1),
-            sd=sd(ODOKUMA1),
-            min=min(ODOKUMA1),
-            max=max(ODOKUMA1))
+            ortalama=mean(O_OD1),
+            sd=sd(O_OD1),
+            min=min(O_OD1),
+            max=max(O_OD1))
 ```
 
 
@@ -155,9 +163,13 @@ PISA_OGR_2018 %>%
 
 - Cinsiyete göre ODOKUMA1 puanlarına ilişkin istatistikler
 ```{r}
-PISA_OGR_2018 %>%
-  group_by(CINSIYET) %>%
-  summarise(n = n(),ortalama=mean(ODOKUMA1),sd=sd(ODOKUMA1),min=min(ODOKUMA1),max=max(ODOKUMA1))
+miniPISA %>%
+  group_by(CNSYT) %>%
+  summarise(n = n(),
+            ortalama=mean(O_OD1),
+            sd=sd(O_OD1),
+            min=min(O_OD1),
+            max=max(O_OD1))
 ```
 
 
@@ -169,9 +181,9 @@ PISA_OGR_2018 %>%
 - Öğrencilerin cinsiyet ve sınıf düzeylerine göre elde edilen betimsel istatistikleri ortalamaya göre sıralandırılmıştır.
 
 ```{r message=FALSE}
-betimsel  <- PISA_OGR_2018 %>%
-  group_by(CINSIYET,SINIF) %>%
-  summarise(n = n(),ortalama=mean(ODOKUMA1),sd=sd(ODOKUMA1)) %>%  
+betimsel  <- miniPISA %>%
+  group_by(CNSYT,SNF) %>%
+  summarise(n = n(),ortalama=mean(O_OD1),sd=sd(O_OD1)) %>%  
   arrange(desc(ortalama)) 
 
 betimsel
@@ -184,7 +196,7 @@ gruplandırılmış veri **Groups**  çıktısı ile alınır.
 
 ```{r message=FALSE}
 # A tibble: 12 x 5
-# Groups:   CINSIYET [2]
+# Groups:   CNSYT [2]
 ```
 
 
@@ -192,9 +204,11 @@ gruplandırılmış veri **Groups**  çıktısı ile alınır.
 - Gruplandırılmış elde edilen veri setlerinde tekrar işlem yapmak istiyorsanız bunu **ungroup()** fonksiyonu ile yapabilirsiniz.
 
 ```{r message=FALSE}
-PISA_OGR_2018 %>%
-  group_by(CINSIYET,SINIF) %>%
-  summarise(n = n(),ortalama=mean(ODOKUMA1),sd=sd(ODOKUMA1)) %>%
+miniPISA %>%
+  group_by(CNSYT,SNF) %>%
+  summarise(n = n(),
+            ortalama=mean(O_OD1),
+            sd=sd(O_OD1)) %>%
   arrange(desc(ortalama)) %>% 
   ungroup()
 
@@ -203,23 +217,23 @@ PISA_OGR_2018 %>%
 
 ### summarize_at()
 
-- dplyr paket fonksiyonlarının **_at**, **_if**, **_all** uzantılı varyasyonları bulunmaktadır.
+- dplyr paket fonksiyonlarının **_at, _if, _all** uzantılı varyasyonları bulunmaktadır.
 
 - Sadece bir grup sütunun ortalamasını ve standart sapmasını hesaplamanız gerektiğinde **summarize_at()** fonksiyonunu kullanabilirsiniz.
 
 
-- **summarize_at()** fonksiyonu ile secilecek değişkenler **vars()**
+- **summarize_at()** fonksiyonu ile seçilecek değişkenler **vars()**
 fonksiyonu içinde belirtilebilir. Bu işlem **select** işlemi yerine geçmektedir.
 
 - Hesaplama işlemlerini ise **list()** fonksiyonu içinde tanımlayabilirsiniz.
 
 ```{r message=FALSE}
 # adlandırmaya dikkat edin!
-PISA_OGR_2018 %>%
-    summarize_at(vars(ODOKUMA1, ODFEN1), list(~mean(.), ~sd(.)))
+miniPISA %>%
+    summarize_at(vars(O_OD1, O_ZEVK), list(~mean(.), ~sd(.)))
 
 ```
-
+- eksik veriler olduğu için çıktıda NA görünüyor!
 
 ### summarize_all() ve summarize_if()
 
@@ -233,9 +247,9 @@ veriseti %>% summarize_all(funs(mean, sd))
 - Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını **summarize_if()** fonksiyonu ile hesaplayabilirsiniz.
 
 ```{r message=FALSE, warning=FALSE}
-expss::drop_var_labs(PISA_OGR_2018) %>% 
-    select(CINSIYET,Gocmenlik,ODOKUMA1) %>% 
-    summarize_if(is.numeric, funs(mean, sd))
+expss::drop_var_labs(miniPISA) %>% 
+    select(O_ZEVK,O_OD1) %>% 
+    summarize_if(is.numeric, funs(mean, sd),na.rm=TRUE)
 ```
 
 
@@ -252,11 +266,11 @@ df %>% top_n(2)
 
 - Okuma puanı **en yüksek** olan üç kız ve üç erkek öğrencinin bilgileri
 ```{r}
-PISA_OGR_2018 %>%
-  select(CINSIYET,ODOKUMA1)%>% 
-  arrange(desc(ODOKUMA1))%>% 
-  group_by(CINSIYET) %>% 
-  top_n(3,ODOKUMA1)
+miniPISA %>%
+  select(CNSYT,O_OD1)%>% 
+  arrange(desc(O_OD1))%>% 
+  group_by(CNSYT) %>% 
+  top_n(3,O_OD1)
 ```
 
 
@@ -265,18 +279,12 @@ PISA_OGR_2018 %>%
 - Okuma puanı **en düşük** olan üç kız ve beş erkek öğrencinin bilgileri
 
 ```{r}
-PISA_OGR_2018 %>%
-  select(CINSIYET,ODOKUMA1)%>% 
-  arrange(desc(ODOKUMA1))%>% 
-  group_by(CINSIYET) %>% 
-  top_n(-3,ODOKUMA1)
+miniPISA %>%
+  select(CNSYT,O_OD1)%>% 
+  arrange(desc(O_OD1))%>% 
+  group_by(CNSYT) %>% 
+  top_n(-3,O_OD1)
 ```
-
-
-
-## DataEditR paketi
-
-Bu paketi paketin [github sayfasından](https://github.com/DillonHammill/DataEditR) inceleyelim.
 
 
 

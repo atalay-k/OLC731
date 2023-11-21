@@ -1,5 +1,4 @@
-# Veri duzenleme  - IV
-
+# Veri duzenleme - IV
 
 ```{r  include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -8,277 +7,137 @@ library(emo)
 
 ```
 
-- **join()** fonksiyonlari
-  - **left_join()**
-  - **right_join()**
-  - **full_join()**
-  - **inner_join()**
-  - **semi_join()**
-  - **anti_join()**
+-   **join()** fonksiyonlari ile iki farklı veri seti birleştirilebilir.
 
+    -   **left_join()**
+    -   **right_join()**
+    -   **full_join()**
+    -   **inner_join()**
+    -   **semi_join()**
+    -   **anti_join()**
 
-## **join()** fonksiyonu
+## join()
 
-- **join()** fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla kullanılırlar..
+-   **join()** fonksiyonları iki veri setini istenilen şekilde birleştirme amacıyla kullanılırlar. Örneğin elimizde A ve B olmak üzere iki farklı veri seti olsun. Her iki veri setini birleştirmek istediğimizde bu veri setlerinden hangi **satır** veya **sütunları** seçeceğimizi, satırların **eşleşip eşleşmeyeceğini** hangi değişkenlerle belirleneceğinin bilinmesi gerekmektedir. Bu nedenle de her bir amaca yönelik **join** fonksiyon türleri belirlenmiştir. Bunlar; `left_join()`, `right_join()`, `full_join()`, `inner_join()`, `semi_join()`, `anti_join()` fonksiyonlarıdır.
 
-- **A** ve **B** veri setlerini birleştirmek istediğimizde 
+## left_join()
 
-  - Her iki veri setinden de hangi **satırları** almak istiyoruz?
+-   `A %\>% left_join(B)` ile A verisindeki tüm satırlar, mümkün olduğunda B verisi ile eşleştirilerek (olmadığında "NA" verir), hem A hem de B'den gelen sütunlar alınır.
 
-  - Her iki veri setinden de hangi **sütunları** almak istiyoruz?
+![Şekil 1. left_join fonksiyonu ](images/left_join.png){width=70%}
 
-  - Satırların **eşleşip eşleşmeyeceğini** hangi değişkenlerle belirleyeceğiz?
+Şekil 1'de, `left_join()` fonksiyonu ile öncelikle X1 değişkenine ait tüm gözlemler alınmıştır. X2 değişkenine ait ID numarası "1" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri (NA) olaraK girilmiştir. Burada birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.
 
+Örnek bir veri seti üzerinden açıklayalım. miniPISA1, miniPISA verisinden öğrenci ıd, cinsiyet ve ST097Q01TA,ST097Q02TA değişkenlerinin ve bu veri setinin ilk altı satırının seçilmesi ile oluşturulur.
 
-
-## Join Türleri
-
-- Çok sayıda **join()** fonksiyonu bulunmaktadır. 
-- **A %>% left_join(B)**
-
-`A` dan tüm satırları, mümkün olduğunda `B` ile eşleştir (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunları alır.
-
-```{r echo=FALSE, fig.align='center',out.width="60%"}
-knitr::include_graphics("images/left_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(dplyr) # paketin aktifleştirilmesi
+load("import/miniPISA.rda") # verinin yüklenmesi
+miniPISA1 <- miniPISA %>% select(OGR_ID,CNSYT,ST097Q01TA,ST097Q02TA) #değişkenlerin seçimi
+miniPISA1<-miniPISA1[1:6,] #veri setinin ilk 6 satırının seçilmesi
+miniPISA1
 ```
 
-- **A %>% right_join(B)**
+miniPISA1 verisinin oluşturulmasından sonra miniPISA2 verisi oluşturulur. Öncelikle miniPISA verisinden öğrenci id, okumaktan zevk alma ve okuma olası değer1 puanları değişkenleri seçilir. Ardından bu veri setinin ilk yedi satırı seçilir ve üçüncü satır silinir. Sonuç olarak altı satırlık bir miniPISA2 veri seti elde edilmiş olur.
 
-`B` den tüm satırları, mümkün olduğunda `A` ile eşleştir (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunları alır.
-
-```{r echo=FALSE, fig.align='center', out.width="60%"}
-knitr::include_graphics("images/right_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA2<- miniPISA %>% select(OGR_ID,O_ZEVK,O_OD1) #değişkenlerin seçimi
+miniPISA2<-miniPISA2[1:7,] #veri setinin ilk 7 satırının seçilmesi
+miniPISA2<-miniPISA2[-3,] #veri setinin 3. satırının çıkarılması
+miniPISA2
 ```
 
--  Pratikte genellike **left_join()** kullanılır.
+Elimizde bulunan miniPISA1 ve miniPISA2 veri setlerini kullanaral `left_join()` fonksiyonu ile birleştirme işlemi uygulanır.
 
-
-
-
-- **A %>% inner_join(B)**
-<br>
-yanlızca `A` ve `B` nin eşleşen satırlarını birleştirir. Hem `A` hem de `B` den gelen sütunları alır.
-
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("images/inner_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% left_join(miniPISA2) #veri birleştirme
 ```
 
+Elde edilen çıktı incelendiğinde, miniPISA1 verisindeki tüm satırlar, miniPISA2 verisi ile eşleştirilmiş, "79201652"ıd numaralı öğrenci miniPISA1 de olmadığından hiç alınmamıştır. "79201118" ıd numaralı öğrenci ise miniPISA2 verisinde yer almadığında okumaktan zevk alma ve okuma olası değer1 değişkenleri "NA" olarak oluşturulmuştur.
+
+## right_join()
+
+`A %\>% left_join(B)` ile B verisindeki tüm satırlar, mümkün olduğunda A verisi ile eşleştirilerek (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunlar alınır.
+
+![Şekil 2. right_join fonksiyonu](images/right_join.png){width=70%}   
 
 
 
 
-- **A %>% full_join(B)** 
+Şekil 2'de, `right_join()` fonksiyonu ile öncelikle X2 değişkenine ait tüm gözlemler alınmıştır. X1 değişkenine ait ID numarası "3" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri(NA) olaraK girilmiştir. Burada da `left_join()` fonksiyonunda olduğu gibi birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.
 
-`A` ve `B` den tüm satırları birleştirir. Hem `A` hem de `B` den gelen sütunları alır.
+Örnek veri seti üzerinden açıklayalım:
 
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("images/full_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% right_join(miniPISA2) # veri birleştirme
 ```
 
+Elde edilen çıktı incelendiğinde, miniPISA2 verisindeki tüm satırlar, miniPISA1 verisi ile eşleştirilmiş, "79201118"ıd numaralı öğrenci miniPISA2 de olmadığından oluşturulan veri setine hiç alınmamıştır. "79201652" ıd numaralı öğrenci ise miniPISA1 verisinde yer almadığında cinsiyet,ST097Q01TA,ST097Q01TA değişkenleri "NA" olarak oluşturulmuştur. Görüldüğü üzere `left_join()` ile `right_join()` fonksiyonları arasındaki fark eşleştirme öncesi temel alınacak ana veri setinin farklı olmasıdır. Fakat pratikte genellikle `left_join()` fonksiyonu kullanılır.
+
+## inner_join(B)
+
+-   `A %>% inner_join(B)` ile sadece `A` ve `B` nin eşleşen satırlarını birleştirir. Yani hem `A` hem de `B` den gelen sütunları alır.
+
+![Şekil 3. inner_join fonksiyonu](images/inner_join.png){width=70%}   
 
 
+  
+Şekil 3'te, `inner_join()` fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olan satırlar yani 2. satır birleştirilir.
 
-
-
-
-- **A %>% semi_join(B)**
-
-`A` nın `B` ile eşleşen satırlarını alır.  Sadece `A` dan gelen sütunları alır.
-
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("images/semi_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% inner_join(miniPISA2) # veri birleştirme
 ```
 
+"OGR_ID" değişkeni ortak değişken olduğundan bu değişkene göre birleştirme işlemi yapılmış ve sadece her iki veri setinde yer alan öğrenciler seçilmiştir. Bu durumda "79201118" ve "79201652" id numaraya sahip öğrenciler birleştirme işleminden sonra yeni veri setinde yer almamıştır. Böylece yeni veri seti dört satırdan oluşmuştur.
 
+## full_join()
 
+`A %\>% full_join(B)` ile A ve B veri setinde yer alan tüm satırları birleştirir. Hem A hem de B den gelen sütunları alır.
 
+![Şekil 4. full_join fonksiyonu](images/full_join.png){width=70%}     
+  
+  
+Şekil 4'te, `full_join()` fonksiyonu ile öncelikle "ID" değişkeni baz alınarak iki veri setinde de yer alan tüm değişkenler birleştirilir.
 
-
--  **A %>% anti_join(B)**
-<br>
-`A` nın `B` ile eşleşemeyen satırlarını alır. Sadece `A` dan gelen sütunları alır.
-
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("images/anti_join.PNG")
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% full_join(miniPISA2) # veri birleştirme
 ```
 
+"OGR_ID" değişkeni ortak değişken olduğundan bu değişkene göre birleştirme işlemi yapılmış ve her ikiveri setinde yer alan tüm öğrenciler seçilmiştir.Bu durumda "79201118" ve "79201652" id numaraya sahip öğrenciler birleştirme işleminden sonra yeni veri setinde yer almıştır. Böylece yeni veri seti yedi satırdan oluşmuştur.
 
+## semi_join()
 
-- Aynı değerleri içeren satırların olduğu sütunların *eşleşmesi* gerektiğini söylüyoruz.
+`A %\>% semi_join(B)` ile A veri setinin B ile eşleşen satırları alınarak sadece A dan gelen sütunlar yeni veri setinde yer alır.
 
-- Bunları birleştirme için bir **by =** argümanını kullanıyoruz.
+![Şekil 5. semi_join fonksiyonu](images/semi_join.png){width=70%}   
 
-- Eğer birleştirme yapmak istediğimiz sütun/ların isimleri aynı ise **by =** argümanını kullanmaya gerek yoktur. 
+Şekil 5'te, `semi_join()` fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olan satırlar yani 2. satır birleştirilir. Fakat yine sadece A veri setinde yer alan değişken ya da değişkenler alınır.
 
-
-
-cinsiyet1
-```{r include =FALSE}
-cinsiyet1 <- 
-data.frame(ogrenci = c("Mert Kaya", "Zeynep Turan", "Zeynep Inal"),
-           cinsiyet = c("Erkek", "Kiz", "Kiz"))
-cinsiyet2 <- 
-data.frame(ogrenci = c("Mert Kaya", "Zeynep Turan", "Zeynep Inal"),
-           cinsiyet = c("Erkek", "Kiz", "Kiz"))
-
-# saveRDS(cinsiyet1,file="sunum/data/cinsiyet1.Rds")
-# saveRDS(cinsiyet2,file="sunum/data/cinsiyet2.Rds")
-
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% semi_join(miniPISA2)
 ```
 
-```{r}
-cinsiyet1
+Çıktıda miniPISA1 verisinin miniPISA2 verisi ile eşleşen satırları ele alındığından "79201118" id numaralı öğrenci yeni veri setine dahil edilmemiştir. Ayrıca yeni veri setinde sadece miniPISA1 değişkeninde yer alan cinsiyet,ST097Q01TA,ST097Q02TA değişkenleri yer almıştır.
+
+**A %\>% anti_join(B)**
+
+`A %\>% anti_join(B)` ile A nın B ile eşleşemeyen satırları alınarak yeni veri setinde sadece A dan gelen sütunlara yer verilir.
+
+![Şekil 6. anti_join fonksiyonu](images/anti_join.png){width=70%}     
+  
+  
+Şekil 6'da, `anti_join()` fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olmayan satırlar yani sadece 1. satır ve A veri setindeki değişken (X1) alınmıştır.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+miniPISA1%>% anti_join(miniPISA2) # veri birleştirme
 ```
 
-kangrubu1
-```{r include =FALSE}
-kangrubu1 <- 
-data.frame(ogrenci = c("Zeynep Turan", "Zeynep Inal","Can Eser"), 
-kangrubu = c("A Rh(-)", "0 Rh (+)", "ARh(+)"))
-kangrubu2 <- 
-data.frame(ad = c("Zeynep Turan", "Zeynep Inal","Can Eser"), 
-kangrubu = c("A Rh(-)", "0 Rh (+)", "ARh(+)"))
-# saveRDS(kangrubu1,file="sunum/data/kangrubu1.Rds")
-# saveRDS(kangrubu2,file="sunum/data/kangrubu2.Rds")
+Çıktıda miniPISA1 verisinin miniPISA2 verisi ile eşleşmeyen satırları ele alındığından "79201118" id numaralı öğrenci yeni veri setine dahil edilmiştir. Ayrıca yeni veri setinde sadece miniPISA1 değişkeninde yer alan cinsiyet, ST097Q01TA, ST097Q02TA değişkenleri yer almıştır.
+
+**Not**: Aynı değerleri içeren satırların olduğu sütunların eşleşmesi gerektiğini söyledik. Bunları birleştirme için aslında bir by = argümanını da kullanılır. Fakat birleştirme yapmak istediğimiz sütun/ların isimleri aynı olduğunda by = argümanını kullanmaya gerek kalmaz. Buraya kadar yapılan örnekler aşağıdaki gibi pipe operatörü kullanılmadan da yapılabilir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+left_join(miniPISA1,miniPISA2, by=join_by(OGR_ID))
 ```
 
-```{r}
-kangrubu1
-```
-
-```{r}
-left_join(cinsiyet1,kangrubu1)
-```
-
-```{r}
-right_join(cinsiyet1,kangrubu1)
-```
-
-
-
-cinsiyet1
-```{r}
-cinsiyet1
-```
-
-kangrubu1
-```{r}
-kangrubu1
-```
-
-
-```{r}
-inner_join(cinsiyet1,kangrubu1)
-```
-
-
-```{r}
-full_join(cinsiyet1,kangrubu1)
-```
-
-
-
-cinsiyet1
-```{r}
-cinsiyet1
-```
-
-kangrubu1
-```{r}
-kangrubu1
-```
-
-
-```{r}
-semi_join(cinsiyet1,kangrubu1)
-```
-
-
-```{r}
-anti_join(cinsiyet1,kangrubu1)
-```
-
-
-
-
-cinsiyet1
-```{r}
-cinsiyet2
-```
-
-kangrubu1
-```{r}
-kangrubu2
-```
-
-
-```{r}
-cinsiyet2 %>% 
-left_join(kangrubu2,by=c("ogrenci"="ad"))
-```
-
-
-```{r}
-kangrubu2 %>% 
-left_join(cinsiyet2,by=c("ad"="ogrenci"))
-```
-
-
-```{r echo=FALSE, fig.align='center', out.width="70%"}
-knitr::include_graphics("images/kumeislemleri.png")
-```
-
-```{r}
-intersect(1:5, 4:8)
-union(1:5, 4:8)
-setdiff(1:5, 4:8)
-setdiff(4:8, 1:5)
-```
-
-
-
-
-## Aynı değişken adları
-
-```{r}
-load("import/PISA_STU_2018.rda")
-load("import/PISA_SCH_2018.rda")
-load("import/PISA_COG_2018.rda")
-load("import/PISA_OGR_2018.rda")
-intersect(names(PISA_STU_2018), names(PISA_SCH_2018))
-```
-
-```{r}
-intersect(names(PISA_STU_2018), names(PISA_COG_2018))
-```
-
-
-## join 
-
-```{r}
-miniOGR <- PISA_OGR_2018 %>% select(OKULID,OGRENCIID,CINSIYET,KITAPSAYISI,ST196Q02HA:ST196Q07HA)
-miniOGR %>% head(2)
-```
-
-```{r}
-miniSCH <- PISA_SCH_2018 %>% select(CNTSCHID,okulbuyukluk = SCHSIZE,sinifbuyuk= CLSIZE)
-miniSCH %>% head(2)
-```
-
-
-
-- veri setinde eşleştirme yapılması istenilen değişkenin farklı adları olduğunda 
-```{r}
-left_join(miniOGR,miniSCH,by=c("OKULID"="CNTSCHID")) %>% head(6)
-```
-
-
-
-- konu ile ilgili daha fazla alıştırma için [adresini](https://rpubs.com/williamsurles/293454) inceleyebilirsiniz.
-
-teşekkürler !
-
-
-
-
-
+Elde edilen çıktı `miniPISA1%>% left_join(miniPISA2)` fonksiyonu ile elde edilen çıktı ile aynıdır.

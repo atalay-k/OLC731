@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 13 Veri Düzenleme IV | OLC731</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun...">
+<meta name="generator" content="bookdown 0.36 with bs4_book()">
+<meta property="og:title" content="Chapter 13 Veri Düzenleme IV | OLC731">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC731/veri-düzenleme-iv.html">
+<meta property="og:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<meta property="og:description" content="Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 13 Veri Düzenleme IV | OLC731">
+<meta name="twitter:description" content="Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun...">
+<meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R YAZILIMI ILE VERI ANALIZI">OLC731</a>:
+        <small class="text-muted">R YAZILIMI ILE VERI ANALIZI</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="active" href="veri-d%C3%BCzenleme-iv.html"><span class="header-section-number">13</span> Veri Düzenleme IV</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-düzenleme-iv" class="section level1" number="13">
+<h1>
+<span class="header-section-number">13</span> Veri Düzenleme IV<a class="anchor" aria-label="anchor" href="#veri-d%C3%BCzenleme-iv"><i class="fas fa-link"></i></a>
+</h1>
+<p>Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı <strong>filter()</strong> ve <strong>select()</strong> gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. <strong>NA</strong>,<strong>" "</strong> (bosluk), <strong>.</strong>, <strong>999</strong> , <strong>9999</strong> vb. şekilde ifade edilen eksik veriler <strong>mutate()</strong> ve <strong>ifelse()</strong> ile düzenlebilir. Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.
+## Dağınık veri</p>
+<p>Sütunlarda program, kadın ve erkek isimleri olan dağınık bir veri seti üzerinden veri düzenlemesinin temel aşamalarını gerçekleştirelim:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th><strong>Program</strong></th>
+<th align="right"><strong>Kadın</strong></th>
+<th align="right"><strong>Erkek</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Olcme</td>
+<td align="right">6</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td>Program</td>
+<td align="right">5</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td>Yonetim</td>
+<td align="right">7</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td>PDR</td>
+<td align="right">5</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır.Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.</p>
+<div id="düzgün-veri" class="section level2" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> Düzgün Veri<a class="anchor" aria-label="anchor" href="#d%C3%BCzg%C3%BCn-veri"><i class="fas fa-link"></i></a>
+</h2>
+<p>Yukarıdaki örnekte verilen dağınık verinin olması gereken düzgün veri hali aşağıda yer almaktadır.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th><strong>Program</strong></th>
+<th align="right"><strong>Cinsiyet</strong></th>
+<th align="right"><strong>Frekans</strong></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Olcme</td>
+<td align="right">Kadın</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td>Olcme</td>
+<td align="right">Erkek</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td>Program</td>
+<td align="right">Kadın</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td>Program</td>
+<td align="right">Erkek</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td>Yonetim</td>
+<td align="right">Kadın</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td>Yonetim</td>
+<td align="right">Erkek</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td>PDR</td>
+<td align="right">Kadın</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td>PDR</td>
+<td align="right">Erkek</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Düzgün veri seti incelendiğinde, değişkenlerin sütunlarda, gözlemlerin satırlarda olduğu görülmektedir. Bu veri setinde program, cinsiyet ve frekans olmak üzere üç farklı değişken bulunmaktadır. Değişken adları mümkün olduğunca örnekte olduğu gibi anlamlı olmalıdır.</p>
+<p>Aslında çok sayıda <strong>satırı</strong> anlamlandırmak, çok sayıda <strong>sütunu</strong> anlamlandırmaktan daha kolaydır. Verinin bu şekilde düzenlenmesi <strong>dplyr</strong>, <strong>ggplot2</strong>, <strong>plotly</strong>, <strong>lattice</strong> gibi paketleri rahat kullanabilmek için oldukça önemlidir. Hiyerarşik ve karma modeller için de verinin düzgün olması gerekmektedir. Ayrıca düzgün bir veri seti, eksik değerler ve <strong>dengesiz</strong> tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.</p>
+<p><strong>tidyr</strong>, <strong>reshape</strong> vb. paketler ve bu paketlerde yer alan fonksiyonlar veri düzenlemede kullanılabilir.</p>
+</div>
+<div id="gather-fonksiyonu" class="section level2" number="13.2">
+<h2>
+<span class="header-section-number">13.2</span> <strong>gather()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#gather-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>gather()</strong> fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.</p>
+<p>Fonksiyonun kullanım şekli;</p>
+<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">key</span>, <span class="va">value</span>, <span class="va">...</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>       convert <span class="op">=</span> <span class="cn">FALSE</span>, factor_key <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>A key: Orijinal sütun adlarını saklayan bir anahtar.</li>
+<li>A value: Bu orijinal sütunlardaki değerlere sahip bir değer.</li>
+</ul>
+<p>Fonksiyonun kullanımını göstermek için örnek bir veri seti üzerinde çalışalım.</p>
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span> <span class="co">#paketin aktifleştirilmessi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/miniPISA.rda"</span><span class="op">)</span> <span class="co"># verinin yüklenmesi</span></span>
+<span><span class="va">genisveri</span><span class="op">&lt;-</span> <span class="va">miniPISA</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGR_ID</span>,<span class="va">O_OD1</span><span class="op">:</span><span class="va">O_OD5</span><span class="op">)</span> <span class="co">#belli değişkenlerin seçilmesi</span></span>
+<span><span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># verinin ilk 6 satırının görüntülenmesi</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">OGR_ID</th>
+<th align="right">O_OD1</th>
+<th align="right">O_OD2</th>
+<th align="right">O_OD3</th>
+<th align="right">O_OD4</th>
+<th align="right">O_OD5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">79200768</td>
+<td align="right">376.02</td>
+<td align="right">417.75</td>
+<td align="right">420.63</td>
+<td align="right">413.84</td>
+<td align="right">434.43</td>
+</tr>
+<tr class="even">
+<td align="right">79201064</td>
+<td align="right">512.32</td>
+<td align="right">473.23</td>
+<td align="right">563.90</td>
+<td align="right">485.40</td>
+<td align="right">500.39</td>
+</tr>
+<tr class="odd">
+<td align="right">79201118</td>
+<td align="right">396.38</td>
+<td align="right">413.86</td>
+<td align="right">423.12</td>
+<td align="right">452.12</td>
+<td align="right">392.43</td>
+</tr>
+<tr class="even">
+<td align="right">79201275</td>
+<td align="right">393.01</td>
+<td align="right">428.76</td>
+<td align="right">364.85</td>
+<td align="right">382.52</td>
+<td align="right">378.56</td>
+</tr>
+<tr class="odd">
+<td align="right">79201481</td>
+<td align="right">552.46</td>
+<td align="right">570.11</td>
+<td align="right">562.96</td>
+<td align="right">530.84</td>
+<td align="right">532.49</td>
+</tr>
+<tr class="even">
+<td align="right">79201556</td>
+<td align="right">441.29</td>
+<td align="right">415.68</td>
+<td align="right">406.59</td>
+<td align="right">437.00</td>
+<td align="right">473.04</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir.Bu değişkenler sütunlarda yer almaktadır. <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
+<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun</span><span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuanı</span>,<span class="va">O_OD1</span><span class="op">:</span><span class="va">O_OD5</span><span class="op">)</span></span>
+<span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">OGR_ID</th>
+<th align="left">O_OD</th>
+<th align="right">okumapuanı</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">79200768</td>
+<td align="left">O_OD1</td>
+<td align="right">376.02</td>
+</tr>
+<tr class="even">
+<td align="right">79201064</td>
+<td align="left">O_OD1</td>
+<td align="right">512.32</td>
+</tr>
+<tr class="odd">
+<td align="right">79201118</td>
+<td align="left">O_OD1</td>
+<td align="right">396.38</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Çıktı incelendiğinde, olusan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri <em>O_OD</em> için, diğeri <strong>okumapuanı</strong> için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.</p>
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co">#son üç satırın görüntüleenmesi</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">OGR_ID</th>
+<th align="left">O_OD</th>
+<th align="right">okumapuanı</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">34448</td>
+<td align="right">79205156</td>
+<td align="left">O_OD5</td>
+<td align="right">469.65</td>
+</tr>
+<tr class="even">
+<td align="left">34449</td>
+<td align="right">79206039</td>
+<td align="left">O_OD5</td>
+<td align="right">437.95</td>
+</tr>
+<tr class="odd">
+<td align="left">34450</td>
+<td align="right">79206096</td>
+<td align="left">O_OD5</td>
+<td align="right">377.13</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sadece O_OD5 görüntülenmektedir.</p>
+</div>
+<div id="separate" class="section level2" number="13.3">
+<h2>
+<span class="header-section-number">13.3</span> <strong>separate()</strong><a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>separate()</strong> fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Olusan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için <strong>separate():</strong> fonkisyonu kullanılabilir.</p>
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun_ayrı</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>            <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">O_OD</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"O_OD"</span>,<span class="st">"Sayı"</span><span class="op">)</span>,<span class="st">"_"</span><span class="op">)</span> <span class="co">#bir sütunu iki sütuna ayırma</span></span>
+<span></span>
+<span><span class="va">uzun_ayrı</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co">#ilk üç satırın görüntülenmesi</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">OGR_ID</th>
+<th align="left">O_OD</th>
+<th align="left">Sayı</th>
+<th align="right">okumapuanı</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">79200768</td>
+<td align="left">O</td>
+<td align="left">OD1</td>
+<td align="right">376.02</td>
+</tr>
+<tr class="even">
+<td align="right">79201064</td>
+<td align="left">O</td>
+<td align="left">OD1</td>
+<td align="right">512.32</td>
+</tr>
+<tr class="odd">
+<td align="right">79201118</td>
+<td align="left">O</td>
+<td align="left">OD1</td>
+<td align="right">396.38</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayrılarak O_OD sütunu (O) ve sayı (OD1,OD2,0D3,OD4, OD5) sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için sadece OD1(olasılık değeri 1) yer almaktadır.</p>
+</div>
+<div id="unite-fonksiyonu" class="section level2" number="13.4">
+<h2>
+<span class="header-section-number">13.4</span> <strong>unite()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#unite-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
+<p>**gather*()** fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birlestirir.</p>
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_ayrı</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">OD</span>, <span class="va">O_OD</span>, <span class="va">Sayı</span>, sep <span class="op">=</span> <span class="st">"."</span><span class="op">)</span> <span class="co"># sütun birleştirmenin yapılması</span></span>
+<span><span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">OGR_ID</th>
+<th align="left">OD</th>
+<th align="right">okumapuanı</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">79200768</td>
+<td align="left">O.OD1</td>
+<td align="right">376.02</td>
+</tr>
+<tr class="even">
+<td align="right">79201064</td>
+<td align="left">O.OD1</td>
+<td align="right">512.32</td>
+</tr>
+<tr class="odd">
+<td align="right">79201118</td>
+<td align="left">O.OD1</td>
+<td align="right">396.38</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. OD sütunu, okuma puanlarının isimlerinden, okuma puanı ise okuma olasılık değerlerinden oluşmaktadır.</p>
+</div>
+<div id="spread-fonksiyonu" class="section level2" number="13.5">
+<h2>
+<span class="header-section-number">13.5</span> <strong>spread()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#spread-fonksiyonu"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>spread():</strong> fonksiyonu **gather*()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.</li>
+</ul>
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">OD</span>, <span class="va">okumapuanı</span><span class="op">)</span> <span class="co"># geniş veri oluşturulması</span></span>
+<span><span class="va">tekrar_genis</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># ilk altı satırın görüntülenmesi</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">OGR_ID</th>
+<th align="right">O.OD1</th>
+<th align="right">O.OD2</th>
+<th align="right">O.OD3</th>
+<th align="right">O.OD4</th>
+<th align="right">O.OD5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">79200001</td>
+<td align="right">449.88</td>
+<td align="right">457.57</td>
+<td align="right">413.43</td>
+<td align="right">430.04</td>
+<td align="right">439.07</td>
+</tr>
+<tr class="even">
+<td align="right">79200002</td>
+<td align="right">669.16</td>
+<td align="right">665.85</td>
+<td align="right">684.98</td>
+<td align="right">664.62</td>
+<td align="right">659.67</td>
+</tr>
+<tr class="odd">
+<td align="right">79200003</td>
+<td align="right">451.88</td>
+<td align="right">502.21</td>
+<td align="right">443.83</td>
+<td align="right">456.08</td>
+<td align="right">436.97</td>
+</tr>
+<tr class="even">
+<td align="right">79200004</td>
+<td align="right">346.94</td>
+<td align="right">317.13</td>
+<td align="right">339.05</td>
+<td align="right">325.05</td>
+<td align="right">367.12</td>
+</tr>
+<tr class="odd">
+<td align="right">79200005</td>
+<td align="right">466.96</td>
+<td align="right">497.88</td>
+<td align="right">415.39</td>
+<td align="right">470.79</td>
+<td align="right">446.27</td>
+</tr>
+<tr class="even">
+<td align="right">79200006</td>
+<td align="right">366.30</td>
+<td align="right">364.38</td>
+<td align="right">384.40</td>
+<td align="right">420.32</td>
+<td align="right">351.43</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olasılık değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></div>
+<div class="next"><a href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-d%C3%BCzenleme-iv"><span class="header-section-number">13</span> Veri Düzenleme IV</a></li>
+<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">13.1</span> Düzgün Veri</a></li>
+<li><a class="nav-link" href="#gather-fonksiyonu"><span class="header-section-number">13.2</span> gather() fonksiyonu</a></li>
+<li><a class="nav-link" href="#separate"><span class="header-section-number">13.3</span> separate()</a></li>
+<li><a class="nav-link" href="#unite-fonksiyonu"><span class="header-section-number">13.4</span> unite() fonksiyonu</a></li>
+<li><a class="nav-link" href="#spread-fonksiyonu"><span class="header-section-number">13.5</span> spread() fonksiyonu</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/14-veri_duzenlemeV.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/14-veri_duzenlemeV.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-21.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
