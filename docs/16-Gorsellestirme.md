@@ -714,7 +714,7 @@ ggplot(data = df2, mapping = aes(x = CINSIYET)) +
 
 - 😕
 
-- 😆
+- 😃
 
 
 
