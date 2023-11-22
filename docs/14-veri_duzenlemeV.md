@@ -1,4 +1,4 @@
-# Veri Düzenleme IV
+# Veri Düzenleme V
 
 Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı **filter()** ve **select()** gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. **NA**,**" "** (bosluk), **.**, **999** , **9999** vb. şekilde ifade edilen eksik veriler **mutate()** ve **ifelse()** ile düzenlebilir.  Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.
 ## Dağınık veri

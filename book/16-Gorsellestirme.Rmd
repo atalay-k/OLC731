@@ -1,4 +1,4 @@
-# Betimleyici İstatistik 
+# Görselleştirme
 
 <!-- https://statsandr.com/blog/descriptive-statistics-in-r/ -->
 
@@ -7,7 +7,7 @@
  <!-- https://rpubs.com/odenipinedo/introduction-to-data-visualization-with-ggplot2 -->
 
 
-## Görselleştirme
+
 
 ![](images\v1.PNG){width=50%}
 
@@ -43,36 +43,35 @@ library(expss)
 
 - Grafikler oluşturulurken, genellikle birden fazla değişkene ilişkin gözlemlerin yer aldığı veri setleri kullanılır.
 
-- Grafiklerin kolay okunması adına `PISA_OGR_2018`  veri setinden veri sayısının azaltılması amacıyla sınıf düzeylerine ilişkin değişkenin her düzeyinden 15'şer kişilik örneklem seçilip toplam 60 gözlemle "df1" nesnesi oluşturulmuştur. 
+- Grafiklerin kolay okunması adına `PISA_OGR_2018`  veri setinden veri sayısının azaltılması amacıyla sınıf (9. ve 10.) düzeylerine ilişkin değişkenin her düzeyinden 100'şer kişilik örneklem seçilip toplam 200 gözlemle "df1" nesnesi oluşturulmuştur. 
 
-- Grafik çizimlerinde grup değişkenlerine ihtiyaç duyulduğu için sınıf düzeylerine ve cinsiyete ilişkin değişkenler `as.factor()`fonksiyonuyla kategorik hale getirilmiştir.
 
 
 ```{r veri okuma, message=FALSE, warning=FALSE, paged.print=TRUE}
 load("import/PISA_OGR_2018.rda")
+library(dplyr)
 df1 <- PISA_OGR_2018 %>%
-dplyr::select(SINIF,CINSIYET,OK_YETERLIK,ODOKUMA1,starts_with("ST097"))  %>%   
-  na.omit()%>%
- expss::drop_var_labs() 
+select(SINIF,CINSIYET,OK_YETERLIK,ODOKUMA1,starts_with("ST097"))  %>%   
+  na.omit()
 
 head(df1)
 ```
 
-```{r , message=FALSE, warning=FALSE, paged.print=TRUE}
 
+- Grafik çizimlerinde grup değişkenlerine ihtiyaç duyulduğu için sınıf düzeylerine ve cinsiyete ilişkin değişkenler `as.factor()` fonksiyonuyla kategorik hale getirilmiştir.
+
+
+```{r , message=FALSE, warning=FALSE, paged.print=TRUE}
+library(expss)
 df2 <- df1 %>% 
   drop_var_labs() %>% 
-  filter(SINIF %in%c(8,9,10,11))%>% 
+  filter(SINIF %in%c(9,10))%>% 
   group_by(SINIF)%>%
-  sample_n(15, replace=TRUE) %>%
+  sample_n(100, replace=TRUE) %>%
     ungroup()%>%  
   mutate(SINIF=as.factor(SINIF), CINSIYET=as.factor(CINSIYET)) 
                        
 ```
-
-
-
-
 
 
 ## ggplot
@@ -91,7 +90,7 @@ df2 <- df1 %>%
 
 ```{r}
 library(ggplot2)
-ggplot(PISA_STU_2018,aes(x=PV1READ)) + geom_histogram()
+ggplot(df2,aes(x=ODOKUMA1)) + geom_histogram()
 ```
 
 -   **ggplot2** paketi, **lattice** paketi gibi verilerdeki birden çok değişkeni aynı grafik üzerinde göstermek ve veriler arasındaki çok düzeyli ilişkileri özetlemek amacıyla geliştirilmiştir.
@@ -141,7 +140,7 @@ ls(pattern = '^geom_', env = as.environment('package:ggplot2'))
 - Aşağıdaki kod sadece ilk katmanı oluşturur.
 
 ```{r out.width="80%"}
-grafik_1 <- ggplot(df1, aes(x=ODOKUMA1))
+grafik_1 <- ggplot(df2, aes(x=ODOKUMA1))
 grafik_1 
 ```
 
@@ -182,14 +181,14 @@ grafik_1 +
 
 ```{r message=FALSE, warning=FALSE}
 library(haven)
-PISA_OGR_2018 <- 
-  PISA_OGR_2018 %>% 
+df2 <- 
+  df2 %>% 
   mutate_if(is.labelled, funs(as_factor(.)))
 
 ```
 
 ```{r warning=FALSE, out.width="80%"}
- ggplot(PISA_OGR_2018, aes(x=ODOKUMA1)) +
+ ggplot(df2, aes(x=ODOKUMA1)) +
   geom_histogram()+
   facet_grid(SINIF~CINSIYET)
 ```
@@ -198,21 +197,21 @@ PISA_OGR_2018 <-
 - Yüzeylerin sütunda oluşturulması
 
 ```{r message=FALSE, warning=FALSE, out.width="40%"}
-ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
+ggplot(df2,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(.~CINSIYET)
 ```
 
 - Yüzeylerin satırlarda oluşturulması
 ```{r  message=FALSE, warning=FALSE,out.width="40%"}
-ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
+ggplot(df2,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(CINSIYET~.)
 ```
 
 
 ```{r  fig.height=4, fig.width=6}
-ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
+ggplot(df2,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(.~SINIF)
 ```
@@ -221,7 +220,7 @@ ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
 
 
 ```{r fig.height=4, fig.width=6}
-ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
+ggplot(df2,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(SINIF~.)
 ```
@@ -238,7 +237,7 @@ ggplot(PISA_OGR_2018,aes(x=ODOKUMA1))+
 
 ```{r  fig.height=4, fig.width=6  }
 p1 <- ggplot(
-      PISA_OGR_2018 %>% 
+      df2 %>% 
       group_by(SINIF,CINSIYET) %>%
       mutate(ort=mean(ODOKUMA1)) %>% ungroup(),
      aes(x=SINIF, y=ort, color=CINSIYET )) +
@@ -253,7 +252,7 @@ p1
 
 
 ```{r  fig.height=4, fig.width=6}
-ggplot(PISA_OGR_2018,aes(x=ODOKUMA1,y=OK_YETERLIK,color=CINSIYET)) +
+ggplot(df2,aes(x=ODOKUMA1,y=OK_YETERLIK,color=CINSIYET)) +
   geom_point()+
   facet_grid(.~SINIF)	
 
@@ -300,7 +299,7 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
 
 ```{r  fig.height=4, fig.width=6}
 
-ggplot(PISA_OGR_2018, aes(CINSIYET, OK_YETERLIK)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK)) +
   geom_point(color = "blue")
 ```
 
@@ -308,17 +307,17 @@ ggplot(PISA_OGR_2018, aes(CINSIYET, OK_YETERLIK)) +
 
 - her iki parametrenin de olağan değeri 1 dir. 
 ```{r  fig.height=4, fig.width=6}
-ggplot(PISA_OGR_2018, aes(CINSIYET, OK_YETERLIK)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK)) +
   geom_point(color = "blue",size=5,shape="a")
 ```
 
 
-- Veri seti her bir okul türünden 5 kişi alınarak veri seti boyutu küçültülmüştür.
+- color argümanı ile renklendirme
 
 ```{r fig.height=4, fig.width=6}
-df <- PISA_OGR_2018 %>% group_by(OKUL_TUR)%>% sample_n(5) %>% ungroup()
 
-ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+
+ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
   geom_point()
 
 ```
@@ -337,7 +336,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 
 ```{r fig.height=4, fig.width=6}
 
-ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
   geom_point()
 
 ```
@@ -345,7 +344,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 
 ```{r fig.height=4, fig.width=6}
 
-ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
   geom_point(position = "jitter")
 
 ```
@@ -355,14 +354,14 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
 - parametreler için veri setinden bir değişken değeri seçilebilir.
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
   geom_point()
 ```
 
 - **size** parametresi  üst üste binen noktaları kaydırarak ayırma
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
+ggplot(df2, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
   geom_point(position = "jitter")
 ```
 
@@ -375,7 +374,7 @@ ggplot(df, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 
 - Şeffaflık düzeyi için **alpa**
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
+ggplot(df2, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
   geom_point(alpha = 0.4)
 ```
 
@@ -383,12 +382,13 @@ ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
 **grafik1** adlı nesneye istenilen katmanlar eklenebilir.
 
 ```{r}
-grafik1 <- ggplot(df, aes(ODOKUMA1, OK_YETERLIK, color = SINIF))
+grafik1 <- ggplot(df2, aes(ODOKUMA1, OK_YETERLIK, color = SINIF))
 grafik1 +geom_point(alpha = 1.2)
 ```
 
 
 **grafik1** adlı nesneye CINSIYET değişkenine göre şekil ekleme
+
 ```{r}
 grafik1 +geom_point(aes(shape=CINSIYET))
 ```
@@ -396,11 +396,11 @@ grafik1 +geom_point(aes(shape=CINSIYET))
 
 ### **text**
 
-Değişken adları **text** komutu ile veri sembolu olarak eklenebilir. Gösterim amacıyla **df** veri setinin sadece ilk 10 satırı kullanılmıştır.
+Değişken adları **text** komutu ile veri sembolü olarak eklenebilir. Gösterim amacıyla **df** veri setinin sadece ilk 10 satırı kullanılmıştır.
 
 ```{r}
 
-ggplot(df[1:10,], aes(ODOKUMA1, OK_YETERLIK))+
+ggplot(df2[1:10,], aes(ODOKUMA1, OK_YETERLIK))+
          geom_text(aes(label = CINSIYET))
 ```
 
@@ -424,7 +424,7 @@ Scale fonksiyonları
 
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(x = ODOKUMA1,y = OK_YETERLIK, color = CINSIYET)) +
+ggplot(df2, aes(x = ODOKUMA1,y = OK_YETERLIK, color = CINSIYET)) +
 geom_point(position = "jitter") +
 scale_x_continuous("Okuma Puanları") +
 scale_color_discrete("Cinsiyet")
@@ -433,7 +433,7 @@ scale_color_discrete("Cinsiyet")
 ### *limits**
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(x = ODOKUMA1,
+ggplot(df2, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -445,7 +445,7 @@ scale_color_discrete("Cinsiyet")
 ### *breaks
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(x = ODOKUMA1,
+ggplot(df2, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -458,7 +458,7 @@ scale_color_discrete("Cinsiyet")
 ###  expand
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(x = ODOKUMA1,
+ggplot(df2, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -471,7 +471,7 @@ scale_color_discrete("Cinsiyet")
 ### labs
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(x = ODOKUMA1,
+ggplot(df2, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -485,7 +485,7 @@ geom_point(position = "jitter") +
 
 ```{r fig.height=4, fig.width=6}
 
-ggplot(df, aes(CINSIYET, fill = SINIF)) +   geom_bar() +
+ggplot(df2, aes(CINSIYET, fill = SINIF)) +   geom_bar() +
   labs(x = "Cinsiyet",
        y = "Frekans")
 ```
@@ -493,7 +493,7 @@ ggplot(df, aes(CINSIYET, fill = SINIF)) +   geom_bar() +
 ## scale_fill
 
 ```{r fig.height=4, fig.width=6}
-ggplot(df, aes(CINSIYET, fill = SINIF)) +
+ggplot(df2, aes(CINSIYET, fill = SINIF)) +
   geom_bar() +
    labs(x = "Cinsiyet",
        y = "Frekans") +
@@ -505,29 +505,25 @@ ggplot(df, aes(CINSIYET, fill = SINIF)) +
 
 ## Bar Grafikleri
 ```{r}
-dat <- PISA_STU_2018 %>%
-  group_by(ST004D01T) %>%
-  summarise(ort = mean(PV1READ),
-            sd = sd(PV1READ),
-            n = n()) %>%
-  ungroup()
 
-ggplot(data = PISA_STU_2018, mapping = aes(x = ST004D01T)) +
+ggplot(data = PISA_OGR_2018, mapping = aes(x = CINSIYET)) +
   geom_bar()
 ```
-```{r}
-dat <- mutate(PISA_STU_2018, Cinsiyet = factor(
-  ST004D01T,
-  c(1, 2),
-  c("kiz", "erkek")
-))
 
-ggplot(data = dat, mapping = aes(x = Cinsiyet)) +
+
+```{r}
+# df2 <- mutate(df2, Cinsiyet = factor(
+#   CINSIYET,
+#   c(1, 2),
+#   c("kiz", "erkek")
+# ))
+
+ggplot(data = df2, mapping = aes(x = CINSIYET)) +
   geom_bar()
 ```
 
 ```{r}
-ggplot(data = dat, mapping = aes(x = Cinsiyet)) + 
+ggplot(data = df2, mapping = aes(x = CINSIYET)) + 
   geom_bar(aes(y = (..count..)/sum(..count..))) + 
   scale_y_continuous(name = "Yüzde", labels=scales::percent) 
 ```
