@@ -109,7 +109,7 @@
 <ul>
 <li><p>Bu bölümde pratiklik ve anlaşılabilirlik açısında <strong>miniPISA</strong> verisini kullanacağız. Bunun için öncelikle <em>import</em> adlı klasöre indirilen veri setini aşağıdaki komut ile R ortamına yüklenmelidir.</p></li>
 <li><p>🔗 <a href="import/miniPISA.rda">miniPISA.rda</a></p></li>
-<li><p>Seçme ve Dönüştürme 📊 amacıyla aşağıdaki fonksiyonlar kullanılabilir.</p></li>
+<li><p>Seçme ve dönüştürme amacıyla aşağıdaki fonksiyonlar kullanılabilir.</p></li>
 <li><p><strong>select()</strong> fonksiyonu</p></li>
 <li><p><strong>select()</strong> fonksiyonu içinde çalışan fonksiyonlar</p></li>
 <li><p><strong>rename()</strong> fonksiyonu</p></li>
@@ -134,10 +134,10 @@
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="veri-duzenleme---iii.html#cb423-1" tabindex="-1"></a><span class="fu">select</span>(veri seti, degisken adi, degisken adi,..)</span>
 <span id="cb423-2"><a href="veri-duzenleme---iii.html#cb423-2" tabindex="-1"></a>veri seti <span class="sc">%&gt;%</span> <span class="fu">select</span>(degisken adi, degisken adi,..)</span></code></pre></div>
 <ul>
-<li>OGR_ID, OGR_ID, CNSYT ,AED, BED değişkenlerinin seçimi</li>
+<li>OGR_ID, CNSYT ,AED, BED değişkenlerinin seçimi</li>
 </ul>
 <div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">miniPISA</span>, <span class="va">OGR_ID</span>, <span class="va">CNSYT</span>,<span class="va">AED</span>,<span class="va">BED</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">miniPISA</span>, <span class="va">OGR_ID</span>, <span class="va">CNSYT</span>, <span class="va">AED</span>, <span class="va">BED</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -190,7 +190,7 @@
 <li>Aynı işlem <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> fonksiyonu içinde de yapılabilir.</li>
 </ul>
 <div class="sourceCode" id="cb425"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">miniPISA</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">OGR_ID</span>, <span class="va">CNSYT</span>,<span class="va">AED</span>,<span class="va">BED</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">miniPISA</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">OGR_ID</span>, <span class="va">CNSYT</span>, <span class="va">AED</span>, <span class="va">BED</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>select()</strong> fonksiyonu ile sütun bazında seçim yapılabilir.</li>
@@ -955,7 +955,8 @@
 <code class="sourceCode R"><span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">miniPISA</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"ST097"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">zevk</span>  <span class="op">&lt;-</span> <span class="fu">expss</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/expss/man/var_lab.html">drop_var_labs</a></span><span class="op">(</span><span class="va">zevk</span><span class="op">)</span></span>
 <span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam <span class="op">=</span><span class="va">ST097Q01TA</span><span class="op">+</span><span class="va">ST097Q02TA</span><span class="op">+</span><span class="va">ST097Q03TA</span><span class="op">+</span><span class="va">ST097Q04TA</span><span class="op">+</span> <span class="va">ST097Q05TA</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam <span class="op">=</span><span class="va">ST097Q01TA</span><span class="op">+</span><span class="va">ST097Q02TA</span><span class="op">+</span><span class="va">ST097Q03TA</span><span class="op">+</span><span class="va">ST097Q04TA</span><span class="op">+</span> <span class="va">ST097Q05TA</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1028,8 +1029,9 @@
 </ul>
 <div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">zevk</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span>,.before<span class="op">=</span> <span class="va">ST097Q01TA</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>toplam<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">.</span>, <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>       .before<span class="op">=</span> <span class="va">ST097Q01TA</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>       <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -1473,7 +1475,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-22.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

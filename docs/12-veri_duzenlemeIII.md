@@ -6,7 +6,7 @@
 
 
 
-- Seçme ve Dönüştürme 📊 amacıyla aşağıdaki fonksiyonlar kullanılabilir.
+- Seçme ve dönüştürme amacıyla aşağıdaki fonksiyonlar kullanılabilir.
 
 - **select()** fonksiyonu
 - **select()** fonksiyonu içinde çalışan fonksiyonlar
@@ -39,11 +39,11 @@ veri seti %>% select(degisken adi, degisken adi,..)
 ```
 
 
-- OGR_ID, OGR_ID, CNSYT ,AED, BED değişkenlerinin seçimi
+- OGR_ID, CNSYT ,AED, BED değişkenlerinin seçimi
 
 
 ```r
-select(miniPISA, OGR_ID, CNSYT,AED,BED) %>% head(6)
+select(miniPISA, OGR_ID, CNSYT, AED, BED) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -63,7 +63,7 @@ select(miniPISA, OGR_ID, CNSYT,AED,BED) %>% head(6)
 
 
 ```r
-select(miniPISA, c(OGR_ID, CNSYT,AED,BED))
+select(miniPISA, c(OGR_ID, CNSYT, AED, BED))
 ```
 
 - **select()** fonksiyonu ile sütun bazında seçim yapılabilir.
@@ -375,7 +375,8 @@ head(2)
 zevk  <- select(miniPISA, starts_with("ST097"))
 zevk  <- expss::drop_var_labs(zevk)
 zevk %>%
-mutate(toplam =ST097Q01TA+ST097Q02TA+ST097Q03TA+ST097Q04TA+ ST097Q05TA) %>% head(2)
+mutate(toplam =ST097Q01TA+ST097Q02TA+ST097Q03TA+ST097Q04TA+ ST097Q05TA) %>%  
+head(2)
 ```
 
 <div class="kable-table">
@@ -413,8 +414,9 @@ head(2)
 
 ```r
 zevk %>%
-mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA)),.before= ST097Q01TA)%>%
-  head(2)
+mutate(toplam=rowSums(select(., ST097Q01TA:ST097Q05TA)),
+       .before= ST097Q01TA)%>%
+       head(2)
 ```
 
 <div class="kable-table">

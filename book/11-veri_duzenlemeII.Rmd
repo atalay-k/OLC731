@@ -217,7 +217,7 @@ miniPISA %>%
 
 ### summarize_at()
 
-- dplyr paket fonksiyonlarının **_at, _if, _all** uzantılı varyasyonları bulunmaktadır.
+- dplyr paket fonksiyonlarının **_at,_if,_all** uzantılı varyasyonları bulunmaktadır.
 
 - Sadece bir grup sütunun ortalamasını ve standart sapmasını hesaplamanız gerektiğinde **summarize_at()** fonksiyonunu kullanabilirsiniz.
 
