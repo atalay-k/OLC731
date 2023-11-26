@@ -178,6 +178,7 @@ inner_joinb
 full_join
 semi_join
 veri-düzenleme-v
+dağınık-veri
 düzgün-veri
 gather-fonksiyonu
 separate
