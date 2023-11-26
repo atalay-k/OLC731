@@ -106,8 +106,11 @@
 <h1>
 <span class="header-section-number">13</span> Veri Düzenleme V<a class="anchor" aria-label="anchor" href="#veri-d%C3%BCzenleme-v"><i class="fas fa-link"></i></a>
 </h1>
-<p>Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı <strong>filter()</strong> ve <strong>select()</strong> gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. <strong>NA</strong>,<strong>" "</strong> (bosluk), <strong>.</strong>, <strong>999</strong> , <strong>9999</strong> vb. şekilde ifade edilen eksik veriler <strong>mutate()</strong> ve <strong>ifelse()</strong> ile düzenlebilir. Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.
-## Dağınık veri</p>
+<p>Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı <strong>filter()</strong> ve <strong>select()</strong> gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. <strong>NA</strong>,<strong>" "</strong> (bosluk), <strong>.</strong>, <strong>999</strong> , <strong>9999</strong> vb. şekilde ifade edilen eksik veriler <strong>mutate()</strong> ve <strong>ifelse()</strong> ile düzenlebilir. Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.</p>
+<div id="dağınık-veri" class="section level2" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> Dağınık veri<a class="anchor" aria-label="anchor" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><i class="fas fa-link"></i></a>
+</h2>
 <p>Sütunlarda program, kadın ve erkek isimleri olan dağınık bir veri seti üzerinden veri düzenlemesinin temel aşamalarını gerçekleştirelim:</p>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -138,10 +141,11 @@
 </tr>
 </tbody>
 </table></div>
-<p>Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır.Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.</p>
-<div id="düzgün-veri" class="section level2" number="13.1">
+<p>Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır. Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.</p>
+</div>
+<div id="düzgün-veri" class="section level2" number="13.2">
 <h2>
-<span class="header-section-number">13.1</span> Düzgün Veri<a class="anchor" aria-label="anchor" href="#d%C3%BCzg%C3%BCn-veri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.2</span> Düzgün Veri<a class="anchor" aria-label="anchor" href="#d%C3%BCzg%C3%BCn-veri"><i class="fas fa-link"></i></a>
 </h2>
 <p>Yukarıdaki örnekte verilen dağınık verinin olması gereken düzgün veri hali aşağıda yer almaktadır.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -197,9 +201,9 @@
 <p>Aslında çok sayıda <strong>satırı</strong> anlamlandırmak, çok sayıda <strong>sütunu</strong> anlamlandırmaktan daha kolaydır. Verinin bu şekilde düzenlenmesi <strong>dplyr</strong>, <strong>ggplot2</strong>, <strong>plotly</strong>, <strong>lattice</strong> gibi paketleri rahat kullanabilmek için oldukça önemlidir. Hiyerarşik ve karma modeller için de verinin düzgün olması gerekmektedir. Ayrıca düzgün bir veri seti, eksik değerler ve <strong>dengesiz</strong> tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.</p>
 <p><strong>tidyr</strong>, <strong>reshape</strong> vb. paketler ve bu paketlerde yer alan fonksiyonlar veri düzenlemede kullanılabilir.</p>
 </div>
-<div id="gather-fonksiyonu" class="section level2" number="13.2">
+<div id="gather-fonksiyonu" class="section level2" number="13.3">
 <h2>
-<span class="header-section-number">13.2</span> <strong>gather()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#gather-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.3</span> <strong>gather()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#gather-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>gather()</strong> fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.</p>
 <p>Fonksiyonun kullanım şekli;</p>
@@ -278,7 +282,7 @@
 </tbody>
 </table></div>
 </div>
-<p>Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir.Bu değişkenler sütunlarda yer almaktadır. <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
+<p>Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
 <div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span><span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuanı</span>,<span class="va">O_OD1</span><span class="op">:</span><span class="va">O_OD5</span><span class="op">)</span></span>
 <span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
@@ -308,7 +312,7 @@
 </tbody>
 </table></div>
 </div>
-<p>Çıktı incelendiğinde, olusan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri <em>O_OD</em> için, diğeri <strong>okumapuanı</strong> için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.</p>
+<p>Çıktı incelendiğinde, oluşan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri <em>O_OD</em> için, diğeri <strong>okumapuanı</strong> için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.</p>
 <div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co">#son üç satırın görüntüleenmesi</span></span></code></pre></div>
 <div class="kable-table">
@@ -343,11 +347,11 @@
 </div>
 <p>Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sadece O_OD5 görüntülenmektedir.</p>
 </div>
-<div id="separate" class="section level2" number="13.3">
+<div id="separate" class="section level2" number="13.4">
 <h2>
-<span class="header-section-number">13.3</span> <strong>separate()</strong><a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.4</span> <strong>separate()</strong><a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
 </h2>
-<p><strong>separate()</strong> fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Olusan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için <strong>separate():</strong> fonkisyonu kullanılabilir.</p>
+<p><strong>separate()</strong> fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için <strong>separate():</strong> fonksiyonu kullanılabilir.</p>
 <div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_ayrı</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>            <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">O_OD</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"O_OD"</span>,<span class="st">"Sayı"</span><span class="op">)</span>,<span class="st">"_"</span><span class="op">)</span> <span class="co">#bir sütunu iki sütuna ayırma</span></span>
@@ -385,11 +389,11 @@
 </div>
 <p>Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayrılarak O_OD sütunu (O) ve sayı (OD1,OD2,0D3,OD4, OD5) sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için sadece OD1(olasılık değeri 1) yer almaktadır.</p>
 </div>
-<div id="unite-fonksiyonu" class="section level2" number="13.4">
+<div id="unite-fonksiyonu" class="section level2" number="13.5">
 <h2>
-<span class="header-section-number">13.4</span> <strong>unite()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#unite-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.5</span> <strong>unite()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#unite-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
-<p>**gather*()** fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birlestirir.</p>
+<p><strong>gather()</strong> fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birleştirir.</p>
 <div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_ayrı</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">OD</span>, <span class="va">O_OD</span>, <span class="va">Sayı</span>, sep <span class="op">=</span> <span class="st">"."</span><span class="op">)</span> <span class="co"># sütun birleştirmenin yapılması</span></span>
 <span><span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
@@ -421,13 +425,13 @@
 </div>
 <p>Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. OD sütunu, okuma puanlarının isimlerinden, okuma puanı ise okuma olasılık değerlerinden oluşmaktadır.</p>
 </div>
-<div id="spread-fonksiyonu" class="section level2" number="13.5">
+<div id="spread-fonksiyonu" class="section level2" number="13.6">
 <h2>
-<span class="header-section-number">13.5</span> <strong>spread()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#spread-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.6</span> <strong>spread()</strong> fonksiyonu<a class="anchor" aria-label="anchor" href="#spread-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
-<strong>spread():</strong> fonksiyonu **gather*()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.</li>
+<strong>spread():</strong> fonksiyonu <strong>gather()</strong> fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.</li>
 </ul>
 <div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">OD</span>, <span class="va">okumapuanı</span><span class="op">)</span> <span class="co"># geniş veri oluşturulması</span></span>
@@ -706,11 +710,12 @@ $( document ).ready(function() {
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#veri-d%C3%BCzenleme-v"><span class="header-section-number">13</span> Veri Düzenleme V</a></li>
-<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">13.1</span> Düzgün Veri</a></li>
-<li><a class="nav-link" href="#gather-fonksiyonu"><span class="header-section-number">13.2</span> gather() fonksiyonu</a></li>
-<li><a class="nav-link" href="#separate"><span class="header-section-number">13.3</span> separate()</a></li>
-<li><a class="nav-link" href="#unite-fonksiyonu"><span class="header-section-number">13.4</span> unite() fonksiyonu</a></li>
-<li><a class="nav-link" href="#spread-fonksiyonu"><span class="header-section-number">13.5</span> spread() fonksiyonu</a></li>
+<li><a class="nav-link" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><span class="header-section-number">13.1</span> Dağınık veri</a></li>
+<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">13.2</span> Düzgün Veri</a></li>
+<li><a class="nav-link" href="#gather-fonksiyonu"><span class="header-section-number">13.3</span> gather() fonksiyonu</a></li>
+<li><a class="nav-link" href="#separate"><span class="header-section-number">13.4</span> separate()</a></li>
+<li><a class="nav-link" href="#unite-fonksiyonu"><span class="header-section-number">13.5</span> unite() fonksiyonu</a></li>
+<li><a class="nav-link" href="#spread-fonksiyonu"><span class="header-section-number">13.6</span> spread() fonksiyonu</a></li>
 </ul>
 
       <div class="book-extra">

@@ -1,6 +1,7 @@
 # Veri Düzenleme V
 
 Bir veriyi R ortamamına aktardıktan sonra veri setinde yer alan tüm satır ya da sütunların doğru bir şekilde aktarılıp aktarılmadığı, değişken isimlerinin düzgün olup olmadığı yani özellikle sütun adlarında boşluk olmaması ya da farklı karakterler bulunmaması kontrol edilmelidir. İlk olarak R ortamına aktarılan boş satır ve sütunlar olup olmadığı **filter()** ve **select()** gibi fonksiyonlarla incelebilir. Eksik verilerin nasıl temsil edildiği kontrol edilmelidir. **NA**,**" "** (bosluk), **.**, **999** , **9999** vb. şekilde ifade edilen eksik veriler **mutate()** ve **ifelse()** ile düzenlebilir.  Ayrıca karakter (character) ve faktör (factor) değişkenlerinin de düzgün tanımlanıp tanımlanmadığı incelenmelidir.
+
 ## Dağınık veri
 
 Sütunlarda program, kadın ve erkek isimleri olan dağınık bir veri seti üzerinden veri düzenlemesinin temel aşamalarını gerçekleştirelim:
@@ -12,7 +13,7 @@ Sütunlarda program, kadın ve erkek isimleri olan dağınık bir veri seti üze
 | Yonetim     |         7 |         8 |
 | PDR         |         5 |         3 |
 
-Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır.Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.
+Bir veri setindeki gözlem, değişken ve değişken değerlerinin ne olduğu öncelikle belirlenmelidir. Örnekteki veri setinde her bir programda yer alan öğrencilerin cinsiyeti gözlem; program, cinsiyet, frekans ise değişkenleri oluşturmalıdır. Program: Olcme, Program, Yonetim, PDR; Cinsiyet: Kadın, Erkek ten oluşmalı ve bunların degişken değeri olması gerekiyor, örnekteki gibi sütun başlığı değil. Frekansların ise iki sütuna dağıldığı görülmektedir.
 
 ## Düzgün Veri
 
@@ -73,7 +74,7 @@ genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
 
 </div>
 
-Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir.Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
+Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
 
 
 ```r
@@ -91,7 +92,7 @@ uzun %>% head(3)
 
 </div>
 
-Çıktı incelendiğinde, olusan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *O_OD* için, diğeri **okumapuanı** için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.
+Çıktı incelendiğinde, oluşan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *O_OD* için, diğeri **okumapuanı** için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.
 
 
 ```r
@@ -112,7 +113,7 @@ Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sad
 
 ## **separate()**
 
-**separate()** fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Olusan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonkisyonu kullanılabilir.
+**separate()** fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonksiyonu kullanılabilir.
 
 
 ```r
@@ -136,7 +137,7 @@ Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayr�
 
 ## **unite()** fonksiyonu
 
-\*\*gather\*()\*\* fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birlestirir.
+**gather()** fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birleştirir.
 
 
 ```r
@@ -158,7 +159,7 @@ Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütun
 
 ## **spread()** fonksiyonu
 
--   **spread():** fonksiyonu \*\*gather\*()\*\* fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
+-   **spread():** fonksiyonu **gather()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
 
 
 ```r

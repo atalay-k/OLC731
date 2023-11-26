@@ -17,11 +17,11 @@
 
 ## left_join()
 
--   `A %\>% left_join(B)` ile A verisindeki tüm satırlar, mümkün olduğunda B verisi ile eşleştirilerek (olmadığında "NA" verir), hem A hem de B'den gelen sütunlar alınır.
+-   `A %>% left_join(B)` ile A verisindeki tüm satırlar, mümkün olduğunda B verisi ile eşleştirilerek (olmadığında "NA" verir), hem A hem de B'den gelen sütunlar alınır.
 
 ![Şekil 1. left_join fonksiyonu ](images/left_join.png){width=70%}
 
-Şekil 1'de, `left_join()` fonksiyonu ile öncelikle X1 değişkenine ait tüm gözlemler alınmıştır. X2 değişkenine ait ID numarası "1" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri (NA) olaraK girilmiştir. Burada birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.
+Şekil 1'de, `left_join()` fonksiyonu ile öncelikle X1 değişkenine ait tüm gözlemler alınmıştır. X2 değişkenine ait ID numarası "1" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri (NA) olarak girilmiştir. Burada birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.
 
 Örnek bir veri seti üzerinden açıklayalım. miniPISA1, miniPISA verisinden öğrenci ıd, cinsiyet ve ST097Q01TA,ST097Q02TA değişkenlerinin ve bu veri setinin ilk altı satırının seçilmesi ile oluşturulur.
 
@@ -70,11 +70,11 @@ miniPISA2
 
 </div>
 
-Elimizde bulunan miniPISA1 ve miniPISA2 veri setlerini kullanaral `left_join()` fonksiyonu ile birleştirme işlemi uygulanır.
+Elimizde bulunan miniPISA1 ve miniPISA2 veri setlerini kullanılarak `left_join()` fonksiyonu ile birleştirme işlemi uygulanır.
 
 
 ```r
-miniPISA1%>% left_join(miniPISA2) #veri birleştirme
+miniPISA1 %>% left_join(miniPISA2) #veri birleştirme
 ```
 
 <div class="kable-table">
@@ -90,15 +90,13 @@ miniPISA1%>% left_join(miniPISA2) #veri birleştirme
 
 </div>
 
-Elde edilen çıktı incelendiğinde, miniPISA1 verisindeki tüm satırlar, miniPISA2 verisi ile eşleştirilmiş, "79201652"ıd numaralı öğrenci miniPISA1 de olmadığından hiç alınmamıştır. "79201118" ıd numaralı öğrenci ise miniPISA2 verisinde yer almadığında okumaktan zevk alma ve okuma olası değer1 değişkenleri "NA" olarak oluşturulmuştur.
+Elde edilen çıktı incelendiğinde, miniPISA1 verisindeki tüm satırlar, miniPISA2 verisi ile eşleştirilmiş, "79201652" ıd numaralı öğrenci miniPISA1 de olmadığından hiç alınmamıştır. "79201118" ıd numaralı öğrenci ise miniPISA2 verisinde yer almadığında okumaktan zevk alma ve okuma olası değer1 değişkenleri "NA" olarak oluşturulmuştur.
 
 ## right_join()
 
-`A %\>% left_join(B)` ile B verisindeki tüm satırlar, mümkün olduğunda A verisi ile eşleştirilerek (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunlar alınır.
+`A %>%  left_join(B)` ile B verisindeki tüm satırlar, mümkün olduğunda A verisi ile eşleştirilerek (olmadığında "NA" verir), hem `A` hem de `B` den gelen sütunlar alınır.
 
 ![Şekil 2. right_join fonksiyonu](images/right_join.png){width=70%}   
-
-
 
 
 Şekil 2'de, `right_join()` fonksiyonu ile öncelikle X2 değişkenine ait tüm gözlemler alınmıştır. X1 değişkenine ait ID numarası "3" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri(NA) olaraK girilmiştir. Burada da `left_join()` fonksiyonunda olduğu gibi birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.
@@ -107,7 +105,7 @@ Elde edilen çıktı incelendiğinde, miniPISA1 verisindeki tüm satırlar, mini
 
 
 ```r
-miniPISA1%>% right_join(miniPISA2) # veri birleştirme
+miniPISA1 %>% right_join(miniPISA2) # veri birleştirme
 ```
 
 <div class="kable-table">
@@ -123,7 +121,7 @@ miniPISA1%>% right_join(miniPISA2) # veri birleştirme
 
 </div>
 
-Elde edilen çıktı incelendiğinde, miniPISA2 verisindeki tüm satırlar, miniPISA1 verisi ile eşleştirilmiş, "79201118"ıd numaralı öğrenci miniPISA2 de olmadığından oluşturulan veri setine hiç alınmamıştır. "79201652" ıd numaralı öğrenci ise miniPISA1 verisinde yer almadığında cinsiyet,ST097Q01TA,ST097Q01TA değişkenleri "NA" olarak oluşturulmuştur. Görüldüğü üzere `left_join()` ile `right_join()` fonksiyonları arasındaki fark eşleştirme öncesi temel alınacak ana veri setinin farklı olmasıdır. Fakat pratikte genellikle `left_join()` fonksiyonu kullanılır.
+Elde edilen çıktı incelendiğinde, miniPISA2 verisindeki tüm satırlar, miniPISA1 verisi ile eşleştirilmiş, "79201118" ıd numaralı öğrenci miniPISA2 de olmadığından oluşturulan veri setine hiç alınmamıştır. "79201652" ıd numaralı öğrenci ise miniPISA1 verisinde yer almadığında cinsiyet, ST097Q01TA, ST097Q01TA değişkenleri "NA" olarak oluşturulmuştur. Görüldüğü üzere `left_join()` ile `right_join()` fonksiyonları arasındaki fark eşleştirme öncesi temel alınacak ana veri setinin farklı olmasıdır. Fakat pratikte genellikle `left_join()` fonksiyonu kullanılır.
 
 ## inner_join(B)
 
@@ -137,7 +135,7 @@ Elde edilen çıktı incelendiğinde, miniPISA2 verisindeki tüm satırlar, mini
 
 
 ```r
-miniPISA1%>% inner_join(miniPISA2) # veri birleştirme
+miniPISA1 %>% inner_join(miniPISA2) # veri birleştirme
 ```
 
 <div class="kable-table">
@@ -156,7 +154,7 @@ miniPISA1%>% inner_join(miniPISA2) # veri birleştirme
 
 ## full_join()
 
-`A %\>% full_join(B)` ile A ve B veri setinde yer alan tüm satırları birleştirir. Hem A hem de B den gelen sütunları alır.
+`A %>%  full_join(B)` ile A ve B veri setinde yer alan tüm satırları birleştirir. Hem A hem de B den gelen sütunları alır.
 
 ![Şekil 4. full_join fonksiyonu](images/full_join.png){width=70%}     
   
@@ -165,7 +163,7 @@ miniPISA1%>% inner_join(miniPISA2) # veri birleştirme
 
 
 ```r
-miniPISA1%>% full_join(miniPISA2) # veri birleştirme
+miniPISA1 %>% full_join(miniPISA2) # veri birleştirme
 ```
 
 <div class="kable-table">
@@ -186,7 +184,7 @@ miniPISA1%>% full_join(miniPISA2) # veri birleştirme
 
 ## semi_join()
 
-`A %\>% semi_join(B)` ile A veri setinin B ile eşleşen satırları alınarak sadece A dan gelen sütunlar yeni veri setinde yer alır.
+`A %>% semi_join(B)` ile A veri setinin B ile eşleşen satırları alınarak sadece A dan gelen sütunlar yeni veri setinde yer alır.
 
 ![Şekil 5. semi_join fonksiyonu](images/semi_join.png){width=70%}   
 
@@ -194,7 +192,7 @@ miniPISA1%>% full_join(miniPISA2) # veri birleştirme
 
 
 ```r
-miniPISA1%>% semi_join(miniPISA2)
+miniPISA1 %>% semi_join(miniPISA2)
 ```
 
 <div class="kable-table">
@@ -211,9 +209,9 @@ miniPISA1%>% semi_join(miniPISA2)
 
 Çıktıda miniPISA1 verisinin miniPISA2 verisi ile eşleşen satırları ele alındığından "79201118" id numaralı öğrenci yeni veri setine dahil edilmemiştir. Ayrıca yeni veri setinde sadece miniPISA1 değişkeninde yer alan cinsiyet,ST097Q01TA,ST097Q02TA değişkenleri yer almıştır.
 
-**A %\>% anti_join(B)**
+**A %>%  anti_join(B)**
 
-`A %\>% anti_join(B)` ile A nın B ile eşleşemeyen satırları alınarak yeni veri setinde sadece A dan gelen sütunlara yer verilir.
+`A %>% anti_join(B)` ile A nın B ile eşleşemeyen satırları alınarak yeni veri setinde sadece A dan gelen sütunlara yer verilir.
 
 ![Şekil 6. anti_join fonksiyonu](images/anti_join.png){width=70%}     
   
@@ -222,7 +220,7 @@ miniPISA1%>% semi_join(miniPISA2)
 
 
 ```r
-miniPISA1%>% anti_join(miniPISA2) # veri birleştirme
+miniPISA1 %>%  anti_join(miniPISA2) # veri birleştirme
 ```
 
 <div class="kable-table">
@@ -235,7 +233,7 @@ miniPISA1%>% anti_join(miniPISA2) # veri birleştirme
 
 Çıktıda miniPISA1 verisinin miniPISA2 verisi ile eşleşmeyen satırları ele alındığından "79201118" id numaralı öğrenci yeni veri setine dahil edilmiştir. Ayrıca yeni veri setinde sadece miniPISA1 değişkeninde yer alan cinsiyet, ST097Q01TA, ST097Q02TA değişkenleri yer almıştır.
 
-**Not**: Aynı değerleri içeren satırların olduğu sütunların eşleşmesi gerektiğini söyledik. Bunları birleştirme için aslında bir by = argümanını da kullanılır. Fakat birleştirme yapmak istediğimiz sütun/ların isimleri aynı olduğunda by = argümanını kullanmaya gerek kalmaz. Buraya kadar yapılan örnekler aşağıdaki gibi pipe operatörü kullanılmadan da yapılabilir.
+**Not**: Aynı değerleri içeren satırların olduğu sütunların eşleşmesi gerektiğini söyledik. Bunları birleştirme için aslında  by = argümanını da kullanılır. Fakat birleştirme yapmak istediğimiz sütun/ların isimleri aynı olduğunda by = argümanını kullanmaya gerek kalmaz. Buraya kadar yapılan örnekler aşağıdaki gibi pipe operatörü kullanılmadan da yapılabilir.
 
 
 ```r
@@ -255,4 +253,4 @@ left_join(miniPISA1,miniPISA2, by=join_by(OGR_ID))
 
 </div>
 
-Elde edilen çıktı `miniPISA1%>% left_join(miniPISA2)` fonksiyonu ile elde edilen çıktı ile aynıdır.
+Elde edilen çıktı `miniPISA1 %>% left_join(miniPISA2)` fonksiyonu ile elde edilen çıktı ile aynıdır.
