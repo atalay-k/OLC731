@@ -1,10 +1,44 @@
 # Veri duzenleme  - III
 
-- Bu bölümde pratiklik ve anlaşılabilirlik açısında **miniPISA** verisini kullanacağız. Bunun için öncelikle _import_ adlı klasöre indirilen veri setini aşağıdaki komut ile R ortamına yüklenmelidir. 
-
-- 🔗 [miniPISA.rda](import/miniPISA.rda)
+- Bu bölümde pratiklik ve anlaşılabilirlik açısında **midiPISA** verisini kullanacağız.   Verinin oluşturulması aşağıdaki kodla sağlanabilir.
 
 
+```r
+library(tuev)
+data(PISA_OGR_2018)
+midiPISA <- PISA_OGR_2018 %>% 
+  select(OGRENCIID,SINIF,CINSIYET,
+         Anne_Egitim,Baba_Egitim,OKUMA_ZEVK,
+         ST097Q01TA:ST097Q05TA,ODOKUMA1:ODOKUMA5)
+```
+
+- midiPISA veri seti; öğrenci id (OGRENCIID), sınıf düzeyi (SINIF), cinsiyet (CINSIYET), anne eğitim düzeyi (Anne_Egitim), baba eğitim düzeyi (Baba_Egitim), okumaktan zevk alma (OKUMA_ZEVK), ST097Q01TA, ST097Q02TA, ST097Q03TA, ST097Q04TA, ST097Q05TA, okuma puanı olası değer 1 (ODOKUMA1), okuma puanı olası değer 2 (ODOKUMA2), okuma puanı olası değer 3 (ODOKUMA3), okuma puanı olası değer 4 (ODOKUMA4), okuma puanı olası değer 5 (ODOKUMA5) değişkenleri olmak üzere toplam 16 değişkenden oluşmaktadır.
+
+
+
+
+- PISA verileri OECD web adresinden SPSS formatında çekildiği için değişken etiketleri(label) ile birlikte gelmektedir. Bu etiket isimleri bazen R paketlerindeki fonksiyonlar ile birlikte çalışmamaktadır. Bu nedenle "`expss::drop_var_labs`" bu etiketlerin kaldırılmasını sağlar ve midiPISA veri seti üzerine kaydedilir.
+
+
+```r
+midiPISA <- expss::drop_var_labs(midiPISA)
+```
+
+
+- Bir diğer alternatif ise değişken etiketlerini faktör düzeyi olarak kaydetmektir. Bu işlem aşağıdaki kodlarla sağlanabilir.
+
+
+```r
+library(sjlabelled)
+midiPISA <- midiPISA %>% mutate_if(is_labelled, as_factor)
+# Faktor degiskenlere duzey atama amacıyla yazılan fonksiyon
+levelsnames <- function(x){
+  levels(x) <- names(attr(x,"labels"))
+  x
+}
+# Yazılan fonkisyonun faktor degiskenlere uygulanması
+midiPISA <-mutate_if(midiPISA,is.factor, levelsnames)
+```
 
 - Seçme ve dönüştürme amacıyla aşağıdaki fonksiyonlar kullanılabilir.
 
@@ -22,8 +56,8 @@
 
 ```r
 library(dplyr)
-load("import/miniPISA.rda") # ogrenci verisi
-dim(miniPISA)
+
+dim(midiPISA)
 ```
 
 ```
@@ -43,19 +77,20 @@ veri seti %>% select(degisken adi, degisken adi,..)
 
 
 ```r
-select(miniPISA, OGR_ID, CNSYT, AED, BED) %>% head(6)
+midiPISA %>%
+  select(OGRENCIID,ST097Q01TA,ST097Q04TA,OKUMA_ZEVK)%>% 
+head(5) 
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| CNSYT| AED| BED|
-|--------:|-----:|---:|---:|
-| 79200768|     2|   2|   2|
-| 79201064|     2|   2|   2|
-| 79201118|     1|   1|   2|
-| 79201275|     2|   6|   6|
-| 79201481|     2|   4|   4|
-| 79201556|     2|   4|   6|
+| OGRENCIID| ST097Q01TA| ST097Q04TA| OKUMA_ZEVK|
+|---------:|----------:|----------:|----------:|
+|  79200768|          1|          1|    -0.2891|
+|  79201064|          3|          3|     0.6040|
+|  79201118|          2|          3|     0.6380|
+|  79201275|          2|          1|    -1.1538|
+|  79201481|          3|          3|     0.6669|
 
 </div>
 
@@ -63,26 +98,26 @@ select(miniPISA, OGR_ID, CNSYT, AED, BED) %>% head(6)
 
 
 ```r
-select(miniPISA, c(OGR_ID, CNSYT, AED, BED))
+select(midiPISA, c(OGRENCIID,ST097Q01TA,ST097Q04TA,OKUMA_ZEVK))
 ```
 
 - **select()** fonksiyonu ile sütun bazında seçim yapılabilir.
 
 
 ```r
-miniPISA %>% select(OGR_ID, CNSYT,AED,BED) %>% head(6)
+midiPISA %>% select(OGRENCIID,ST097Q01TA,ST097Q04TA,OKUMA_ZEVK) %>% head(6)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| CNSYT| AED| BED|
-|--------:|-----:|---:|---:|
-| 79200768|     2|   2|   2|
-| 79201064|     2|   2|   2|
-| 79201118|     1|   1|   2|
-| 79201275|     2|   6|   6|
-| 79201481|     2|   4|   4|
-| 79201556|     2|   4|   6|
+| OGRENCIID| ST097Q01TA| ST097Q04TA| OKUMA_ZEVK|
+|---------:|----------:|----------:|----------:|
+|  79200768|          1|          1|    -0.2891|
+|  79201064|          3|          3|     0.6040|
+|  79201118|          2|          3|     0.6380|
+|  79201275|          2|          1|    -1.1538|
+|  79201481|          3|          3|     0.6669|
+|  79201556|          3|          2|     0.3568|
 
 </div>
 
@@ -93,7 +128,7 @@ miniPISA %>% select(OGR_ID, CNSYT,AED,BED) %>% head(6)
 
 
 ```r
-miniPISA %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
+midiPISA %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -114,20 +149,19 @@ miniPISA %>% select(ST097Q01TA:ST097Q05TA) %>% head(6)
 
 
 ```r
-miniPISA <- expss::drop_var_labs(miniPISA)
-miniPISA %>% select(OGR_ID:BED,-SNF) %>% head(6)
+midiPISA %>% select(OGRENCIID:ST097Q04TA,-CINSIYET) %>% head(6)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| CNSYT| AED| BED|
-|--------:|-----:|---:|---:|
-| 79200768|     2|   2|   2|
-| 79201064|     2|   2|   2|
-| 79201118|     1|   1|   2|
-| 79201275|     2|   6|   6|
-| 79201481|     2|   4|   4|
-| 79201556|     2|   4|   6|
+| OGRENCIID| SINIF| Anne_Egitim| Baba_Egitim| OKUMA_ZEVK| ST097Q01TA| ST097Q02TA| ST097Q03TA| ST097Q04TA|
+|---------:|-----:|-----------:|-----------:|----------:|----------:|----------:|----------:|----------:|
+|  79200768|    10|           2|           2|    -0.2891|          1|          2|          1|          1|
+|  79201064|    10|           2|           2|     0.6040|          3|          2|          3|          3|
+|  79201118|    10|           1|           2|     0.6380|          2|          3|          3|          3|
+|  79201275|     9|           6|           6|    -1.1538|          2|          2|          3|          1|
+|  79201481|     9|           4|           4|     0.6669|          3|          3|          4|          3|
+|  79201556|    10|           4|           6|     0.3568|          3|          3|          2|          2|
 
 </div>
 
@@ -140,7 +174,7 @@ miniPISA %>% select(OGR_ID:BED,-SNF) %>% head(6)
 
 
 ```r
-select(miniPISA, starts_with("ST097")) %>% head(6)
+select(midiPISA, starts_with("ST097")) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -163,7 +197,7 @@ select(miniPISA, starts_with("ST097")) %>% head(6)
 
 
 ```r
-select(miniPISA, ends_with("TA")) %>% head(6)
+select(midiPISA, ends_with("TA")) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -186,7 +220,7 @@ select(miniPISA, ends_with("TA")) %>% head(6)
 
 
 ```r
-select(miniPISA,contains("ST")) %>% head(6)
+select(midiPISA,contains("ST")) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -209,7 +243,7 @@ select(miniPISA,contains("ST")) %>% head(6)
 
 
 ```r
-select(miniPISA,matches("02")) %>% head(6)
+select(midiPISA,matches("02")) %>% head(6)
 ```
 
 <div class="kable-table">
@@ -232,19 +266,19 @@ select(miniPISA,matches("02")) %>% head(6)
 
 
 ```r
-select(miniPISA,num_range("O_OD",1:5)) %>% head(6)
+select(midiPISA,num_range("ODOKUMA",1:5)) %>% head(6)
 ```
 
 <div class="kable-table">
 
-|  O_OD1|  O_OD2|  O_OD3|  O_OD4|  O_OD5|
-|------:|------:|------:|------:|------:|
-| 376.02| 417.75| 420.63| 413.84| 434.43|
-| 512.32| 473.23| 563.90| 485.40| 500.39|
-| 396.38| 413.86| 423.12| 452.12| 392.43|
-| 393.01| 428.76| 364.85| 382.52| 378.56|
-| 552.46| 570.11| 562.96| 530.84| 532.49|
-| 441.29| 415.68| 406.59| 437.00| 473.04|
+| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5|
+|--------:|--------:|--------:|--------:|--------:|
+|  376.022|  417.746|  420.630|  413.837|  434.434|
+|  512.316|  473.229|  563.902|  485.396|  500.394|
+|  396.383|  413.859|  423.121|  452.124|  392.434|
+|  393.006|  428.757|  364.850|  382.522|  378.563|
+|  552.457|  570.109|  562.955|  530.835|  532.487|
+|  441.286|  415.682|  406.586|  437.001|  473.036|
 
 </div>
 
@@ -257,21 +291,21 @@ select(miniPISA,num_range("O_OD",1:5)) %>% head(6)
 
 
 ```r
-miniPISA %>% 
-select(contains("O_OD") | matches("2")) %>% 
+midiPISA %>% 
+select(contains("ODOKUMA") | matches("2")) %>% 
   head(6)
 ```
 
 <div class="kable-table">
 
-|  O_OD1|  O_OD2|  O_OD3|  O_OD4|  O_OD5| ST097Q02TA|
-|------:|------:|------:|------:|------:|----------:|
-| 376.02| 417.75| 420.63| 413.84| 434.43|          2|
-| 512.32| 473.23| 563.90| 485.40| 500.39|          2|
-| 396.38| 413.86| 423.12| 452.12| 392.43|          3|
-| 393.01| 428.76| 364.85| 382.52| 378.56|          2|
-| 552.46| 570.11| 562.96| 530.84| 532.49|          3|
-| 441.29| 415.68| 406.59| 437.00| 473.04|          3|
+| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5| ST097Q02TA|
+|--------:|--------:|--------:|--------:|--------:|----------:|
+|  376.022|  417.746|  420.630|  413.837|  434.434|          2|
+|  512.316|  473.229|  563.902|  485.396|  500.394|          2|
+|  396.383|  413.859|  423.121|  452.124|  392.434|          3|
+|  393.006|  428.757|  364.850|  382.522|  378.563|          2|
+|  552.457|  570.109|  562.955|  530.835|  532.487|          3|
+|  441.286|  415.682|  406.586|  437.001|  473.036|          3|
 
 </div>
 
@@ -280,21 +314,21 @@ select(contains("O_OD") | matches("2")) %>%
 
 
 ```r
-miniPISA %>% 
-select(contains("O_OD") & matches("2")) %>%
+midiPISA %>% 
+select(contains("ODOKUMA") & matches("2")) %>%
   head(6)
 ```
 
 <div class="kable-table">
 
-|  O_OD2|
-|------:|
-| 417.75|
-| 473.23|
-| 413.86|
-| 428.76|
-| 570.11|
-| 415.68|
+| ODOKUMA2|
+|--------:|
+|  417.746|
+|  473.229|
+|  413.859|
+|  428.757|
+|  570.109|
+|  415.682|
 
 </div>
 
@@ -303,18 +337,18 @@ select(contains("O_OD") & matches("2")) %>%
 
 
 ```r
-select(miniPISA,-contains("O_OD"),-matches("02"))  %>% head(5)
+select(midiPISA,-contains("ODOKUMA"),-matches("02"))  %>% head(5)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| SNF| CNSYT| AED| BED| O_ZEVK| ST097Q01TA| ST097Q03TA| ST097Q04TA| ST097Q05TA|
-|--------:|---:|-----:|---:|---:|------:|----------:|----------:|----------:|----------:|
-| 79200768|  10|     2|   2|   2|  -0.29|          1|          1|          1|          1|
-| 79201064|  10|     2|   2|   2|   0.60|          3|          3|          3|          3|
-| 79201118|  10|     1|   1|   2|   0.64|          2|          3|          3|          3|
-| 79201275|   9|     2|   6|   6|  -1.15|          2|          3|          1|          1|
-| 79201481|   9|     2|   4|   4|   0.67|          3|          4|          3|          1|
+| OGRENCIID| SINIF| CINSIYET| Anne_Egitim| Baba_Egitim| OKUMA_ZEVK| ST097Q01TA| ST097Q03TA| ST097Q04TA| ST097Q05TA|
+|---------:|-----:|--------:|-----------:|-----------:|----------:|----------:|----------:|----------:|----------:|
+|  79200768|    10|        2|           2|           2|    -0.2891|          1|          1|          1|          1|
+|  79201064|    10|        2|           2|           2|     0.6040|          3|          3|          3|          3|
+|  79201118|    10|        1|           1|           2|     0.6380|          2|          3|          3|          3|
+|  79201275|     9|        2|           6|           6|    -1.1538|          2|          3|          1|          1|
+|  79201481|     9|        2|           4|           4|     0.6669|          3|          4|          3|          1|
 
 </div>
 
@@ -327,17 +361,17 @@ select(miniPISA,-contains("O_OD"),-matches("02"))  %>% head(5)
 
 
 ```r
-miniPISA %>%
-select(OGR_ID,SNF,CNSYT,AED,BED,okumazevk = O_ZEVK) %>%
+midiPISA %>%
+select(OGRENCIID,SINIF,CINSIYET,Anne_Egitim,Baba_Egitim,okumazevk = OKUMA_ZEVK) %>%
 head(2)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| SNF| CNSYT| AED| BED| okumazevk|
-|--------:|---:|-----:|---:|---:|---------:|
-| 79200768|  10|     2|   2|   2|     -0.29|
-| 79201064|  10|     2|   2|   2|      0.60|
+| OGRENCIID| SINIF| CINSIYET| Anne_Egitim| Baba_Egitim| okumazevk|
+|---------:|-----:|--------:|-----------:|-----------:|---------:|
+|  79200768|    10|        2|           2|           2|   -0.2891|
+|  79201064|    10|        2|           2|           2|    0.6040|
 
 </div>
 
@@ -346,18 +380,18 @@ head(2)
 
 
 ```r
-miniPISA %>%
-select(OGR_ID,SNF,CNSYT,AED,O_ZEVK) %>%
-rename(okumazevk=O_ZEVK)%>%
+midiPISA %>%
+select(OGRENCIID,SINIF,CINSIYET,Anne_Egitim,Baba_Egitim,OKUMA_ZEVK) %>%
+rename(okumazevk=OKUMA_ZEVK)%>%
 head(2)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| SNF| CNSYT| AED| okumazevk|
-|--------:|---:|-----:|---:|---------:|
-| 79200768|  10|     2|   2|     -0.29|
-| 79201064|  10|     2|   2|      0.60|
+| OGRENCIID| SINIF| CINSIYET| Anne_Egitim| Baba_Egitim| okumazevk|
+|---------:|-----:|--------:|-----------:|-----------:|---------:|
+|  79200768|    10|        2|           2|           2|   -0.2891|
+|  79201064|    10|        2|           2|           2|    0.6040|
 
 </div>
 
@@ -372,7 +406,7 @@ head(2)
 
 
 ```r
-zevk  <- select(miniPISA, starts_with("ST097"))
+zevk  <- select(midiPISA, starts_with("ST097"))
 zevk  <- expss::drop_var_labs(zevk)
 zevk %>%
 mutate(toplam =ST097Q01TA+ST097Q02TA+ST097Q03TA+ST097Q04TA+ ST097Q05TA) %>%  
@@ -457,7 +491,7 @@ head(2)
 
 
 ```r
-zevk <- miniPISA %>%
+zevk <- midiPISA %>%
   expss::drop_var_labs() %>%
   select(ST097Q01TA:ST097Q05TA)
 
@@ -493,7 +527,7 @@ ifelse(x<0,"Negatif", "Pozitif")
 
 
 ```r
-table(miniPISA$SNF)
+table(midiPISA$SINIF)
 ```
 
 ```
@@ -508,20 +542,20 @@ table(miniPISA$SNF)
 
 
 ```r
-miniPISA %>%
+midiPISA %>%
   select(1:5) %>%
-  mutate(okul = ifelse(SNF == 7 | SNF == 8,
+  mutate(okul = ifelse(SINIF  == 7 | SINIF  == 8,
                        "Ortaokul", "Lise")) %>%
     head(3)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID| SNF| CNSYT| AED| BED|okul |
-|--------:|---:|-----:|---:|---:|:----|
-| 79200768|  10|     2|   2|   2|Lise |
-| 79201064|  10|     2|   2|   2|Lise |
-| 79201118|  10|     1|   1|   2|Lise |
+| OGRENCIID| SINIF| CINSIYET| Anne_Egitim| Baba_Egitim|okul |
+|---------:|-----:|--------:|-----------:|-----------:|:----|
+|  79200768|    10|        2|           2|           2|Lise |
+|  79201064|    10|        2|           2|           2|Lise |
+|  79201118|    10|        1|           1|           2|Lise |
 
 </div>
 
@@ -535,7 +569,7 @@ miniPISA %>%
 - O_OD_1 düzeye ilişikin betimsel istatistikler
 
 ```r
-summary(miniPISA$O_OD1)
+summary(midiPISA$ODOKUMA1)
 ```
 
 ```
@@ -544,35 +578,35 @@ summary(miniPISA$O_OD1)
 ```
 
 
-- O_OD1 değişkeninin kategorik hale getirilmesi
+- ODOKUMA1 değişkeninin kategorik hale getirilmesi
 
 
 ```r
-v1 <- miniPISA %>%
-  mutate(O_OD1_kategorik =
+v1 <- midiPISA %>%
+  mutate(ODOKUMA1_kat =
     case_when(
-      O_OD1 <=  402.6  ~ "dusuk",
-      O_OD1 > 402.6  & O_OD1 <  525.7 ~ "orta",
-      O_OD1 >=525.7 ~ "yuksek" )) %>%
-      select(O_OD1,O_OD1_kategorik)
+      ODOKUMA1 <=  402.6  ~ "dusuk",
+      ODOKUMA1 > 402.6  & ODOKUMA1 <  525.7 ~ "orta",
+      ODOKUMA1 >=525.7 ~ "yuksek" )) %>%
+      select(ODOKUMA1,ODOKUMA1_kat)
 ```
 
 
-- Olusturulan yeni O_OD1_kategorik degişkeninin veri setinde nasıl dağıldığını inceleme
+- Olusturulan yeni ODOKUMA1_kat degişkeninin veri setinde nasıl dağıldığını inceleme
 
 
 
 ```r
-v1 %>% group_by(O_OD1_kategorik) %>% summarize(f=n())
+v1 %>% group_by(ODOKUMA1_kat) %>% summarize(f=n())
 ```
 
 <div class="kable-table">
 
-|O_OD1_kategorik |    f|
-|:---------------|----:|
-|dusuk           | 1724|
-|orta            | 3443|
-|yuksek          | 1723|
+|ODOKUMA1_kat |    f|
+|:------------|----:|
+|dusuk        | 1724|
+|orta         | 3443|
+|yuksek       | 1723|
 
 </div>
 

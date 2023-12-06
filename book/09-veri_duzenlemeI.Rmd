@@ -489,19 +489,27 @@ x!=1
 
 
 
-- PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
+- PISA verisinde anne eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi örneği aşağıda verilmiştir.
+Aşağıdaki örnek kod hata verecek ve çalışmayacaktır. 
+Bu hata SPSS dosyasının etiketlerinden kaynaklanmakatdır.
 
-```{r}
-df2 <- expss::drop_var_labs(PISA_STU_2018)
-df2 %>%  filter(MISCED== 6) %>% head(4)
+
+```{r eval=FALSE, include=TRUE}
+PISA_STU_2018 %>%  filter(MISCED== 6) %>% head(4)
 ```
 
+- Yukarıda verilen kodu düzgün çalıştırmak için aşağıdaki kod aracılığı ile veri etiketlerini kaldırabilirsiniz. 
+
+```{r message=FALSE, warning=FALSE}
+library(expss)
+PISA_STU_2018 <- drop_val_labs(PISA_STU_2018)
+```
 
 
 - PISA verisinde anne eğitim düzeyi **ve** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 ```{r}
-df2 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
+PISA_STU_2018 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 
 ```
 
@@ -509,7 +517,7 @@ df2 %>% filter(MISCED==6 & FISCED==6)  %>% head(4)
 - PISA verisinde anne eğitim düzeyi **ve ya** baba eğitim düzeyi lisansüstü olan öğrencilerin seçilmesi
 
 ```{r}
-df2 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
+PISA_STU_2018 %>% filter(MISCED==6 | FISCED==6) %>% head(4)
 
 ```
 

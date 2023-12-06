@@ -238,3 +238,10 @@ alert-boxes
 code-chunks
 glossary
 glossary-1
+summarise-fonksiyonları
+across
+summarise-and-across
+gather
+spread
+pivot_longer-ve-pivot_wider
+unite

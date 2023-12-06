@@ -36,9 +36,12 @@ Aslında çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anl
 
 **tidyr**, **reshape** vb. paketler ve bu paketlerde yer alan fonksiyonlar veri düzenlemede kullanılabilir.
 
-## **gather()** fonksiyonu
 
-**gather()** fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
+Aslında çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anlamlandırmaktan daha kolaydır. Verinin bu şekilde düzenlenmesi **dplyr**, **ggplot2**, **plotly**, **lattice** gibi paketleri rahat kullanabilmek için oldukça önemlidir. Hiyerarşik ve karma modeller için de verinin düzgün olması gerekmektedir. Ayrıca düzgün bir veri seti, eksik değerler ve dengesiz tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.
+
+## gather()
+
+`gather()` fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
 
 Fonksiyonun kullanım şekli;
 
@@ -53,59 +56,89 @@ gather(data, key, value, ..., na.rm = FALSE,
 Fonksiyonun kullanımını göstermek için örnek bir veri seti üzerinde çalışalım.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-library(tidyr) #paketin aktifleştirilmessi
-load("import/miniPISA.rda") # verinin yüklenmesi
-genisveri<- miniPISA %>% select(OGR_ID,O_OD1:O_OD5) #belli değişkenlerin seçilmesi
+library(tuev)
+data(PISA_OGR_2018)
+midiPISA <- PISA_OGR_2018 %>% 
+  select(OGRENCIID,SINIF,CINSIYET,
+         Anne_Egitim,Baba_Egitim,OKUMA_ZEVK,
+         ST097Q01TA:ST097Q05TA,ODOKUMA1:ODOKUMA5)
+
+genisveri<- midiPISA %>% select(OGRENCIID,ODOKUMA1:ODOKUMA5) #belli değişkenlerin seçilmesi
 genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
 ```
 
-Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
+Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-uzun<- genisveri %>% gather(O_OD,okumapuanı,O_OD1:O_OD5)
-uzun %>% head(3)
+uzun <- genisveri %>% gather(O_OD,okumapuan,ODOKUMA1:ODOKUMA5)
+uzun %>%  arrange(OGRENCIID) %>% head(10)
 ```
 
-Çıktı incelendiğinde, oluşan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *O_OD* için, diğeri **okumapuanı** için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.
+Çıktı incelendiğinde, oluşan veride ODOKUMA1, ODOKUMA2, ODOKUMA3, ODOKUMA4 ve ODOKUMA5 okumapuanı değişkeninin değerleri hâline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri kategorik diğeri sayısal değerleri içerir. Her katılımcı icin beş farklı okuma olası değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk on satırı görüntülendiğinden sadece 79200001 ve 79200002 id numaralı öğrenciler görüntülenmektedir.
+
+## spread()
+
+-   `spread()` fonksiyonu uzun veriden tekrar geniş veri olusturmaya yarar. `gather()` fonksiyonunun tersi olan işlevi yapar
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-uzun %>% tail(3) #son üç satırın görüntüleenmesi
-```
-
-Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sadece O_OD5 görüntülenmektedir.
-
-## **separate()**
-
-**separate()** fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonksiyonu kullanılabilir.
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-uzun_ayrı <- uzun %>% 
-            separate(O_OD, c("O_OD","Sayı"),"_") #bir sütunu iki sütuna ayırma
-
-uzun_ayrı %>% head(3) #ilk üç satırın görüntülenmesi
-```
-
-Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayrılarak O_OD sütunu (O) ve sayı (OD1,OD2,0D3,OD4, OD5) sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için sadece OD1(olasılık değeri 1) yer almaktadır.
-
-## **unite()** fonksiyonu
-
-**gather()** fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birleştirir.
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-uzun_birles <- uzun_ayrı %>% unite(OD, O_OD, Sayı, sep = ".") # sütun birleştirmenin yapılması
-uzun_birles %>% head(3)
-
-```
-
-Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. OD sütunu, okuma puanlarının isimlerinden, okuma puanı ise okuma olasılık değerlerinden oluşmaktadır. 
-
-## **spread()** fonksiyonu
-
--   **spread():** fonksiyonu **gather()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-tekrar_genis <- uzun_birles %>% spread(OD, okumapuanı) # geniş veri oluşturulması
+tekrar_genis <- uzun %>% spread(O_OD,okumapuan) # geniş veri oluşturulması
 tekrar_genis %>% head(6) # ilk altı satırın görüntülenmesi
 ```
 
-Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olasılık değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.
+Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olası değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.
+
+## pivot_longer() ve pivot_wider() 
+
+Verilerin girilme şekli genellikle geniş ve uzun olmak üzere iki formattan oluşur. Geniş formatta veriler, bir gözlemin özellikleri veya yanıtlar tek bir satırda verilir. Genellikle veriler bu şekilde girilmesine rağmen geniş format her zaman kullanışlı olmayabilir. Geniş verinin uzun veriye dönüştürülmesini `gather()` ve uzun verinin geniş veriye dönüşütürülmesini `spread()`fonksiyonu ile gerçekleştirdik. Ancak bahsedilen iki fonksiyona alternatif yeni fonksiyonlar üretilmiştir. Bu bölümde bu iki fonksiyon açıklanacaktır.
+
+
+midiPISA verisetinden daha az değişken içerecek şekilde bir geniş veri seti örneği oluşturalım.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+genisveri <- midiPISA %>% select(OGRENCIID,ODOKUMA1:ODOKUMA5) #belli değişkenlerin seçilmesi
+genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
+```
+
+Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almakta olup geniş veri formatındadır. `pivot_longer` fonksiyonu geniş veriyi, uzun veri haline getirir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun <- genisveri %>% pivot_longer(names_to="okumapuan",values_to="deger",cols=ODOKUMA1:ODOKUMA5)
+uzun %>% head(5)
+```
+
+Çıktı incelendiğinde, oluşan veride ODOKUMA1, ODOKUMA2, ODOKUMA3, ODOKUMA4 ve ODOKUMA5 ayrı bir sütunun değerleri haline gelmiştir. Bu okuma puan türlerinin sütununun yer aldığı değişken names_to argümanı ile "okumapuan" olarak isimlendirilmiştir. Ayrıca values_to argümanı ise okuma puanı değerlerinin yer aldığı sütun isimlendirilmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *okuma puanı türü* için, diğeri **okuma puanı türleri** için. Her katılımcı icin beş farklı okuma olası değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk beş satırı görüntülendiğinden sadece 792200768 id numaralı öğrencinin değerleri görüntülenmektedir.
+
+Bir veri setini daha iyi yorumlayabilmek amacıyla uzun veri formatından geniş veri formatına dönüştürülür. Genellikle bir gözlem için değerlerin birden çok satırda yer aldığı durumlarda tercih edilir. Bunun için `pivot_wider()` fonksiyonu kullanılır.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+genis<- uzun %>% pivot_wider(names_from="okumapuan",values_from="deger")
+genis %>% head(5)
+```
+
+## separate()
+
+`separate()` fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride okuma puanı değerlerinin karakter ve sayısal değerlerini ayırmak için `separate()`fonkisyonu kullanılabilir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun_v1 <- uzun %>% separate(okumapuan, c("OD","Sayi"),"MA") # bir sütunu iki sütuna ayırma
+
+uzun_v1 %>% head(3) #ilk üç satırın görüntülenmesi
+```
+
+Elde edilen çıktıya göre, okuma puanı olası değerlerinin yer aldığı sütun ikiye ayrılarak OD sütunu ve sayı sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için tek bir öğrenciye ait üç olası değerler yer almaktadır.
+
+## unite()
+
+`separate()` fonksiyonunun tam tersi olarak iki sütunu alıp tek sütunda birleştirir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+uzun_birles <- uzun_v1 %>% unite(ODOKUMA, OD, Sayi, sep = "_") # sütun birleştirmenin yapılması
+uzun_birles %>% head(3) # ilk üç satırın görüntülenmesi
+```
+
+Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. ODOKUMA sütunu, okuma puanlarının isimlerinden, değer ise okuma olası puanı değerlerinden oluşmaktadır.
+
+`separate()` fonksiyonunun alternatifi `extract()`   ve `unite()`   fonksiyonunun ile yapılabilecek olan işlemler `mutate()` fonksiyonu ile de yapılabilir.
+
+Bu alternatiflerin uygunluğunun özel kullanım durumunuza ve verilerinizin niteliğine bağlı olduğunu unutmayın. Paketler zaman içinde yeni fonksiyonlara veya iyileştirmelere sahip olabileceğinden, en son güncellemeler için her zaman fonksiyon yardım sayfalarını kontrol etmenizi öneriyoruz.
+

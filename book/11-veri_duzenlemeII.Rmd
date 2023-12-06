@@ -1,20 +1,41 @@
 # Veri duzenleme  - II
 
-- Bu bölümde pratiklik ve anlaşılabilirlik açısında **miniPISA** verisini kullanacağız. Bunun için öncelikle _import_ adlı klasöre indirilen veri setini aşağıdaki komut ile R ortamına yüklenmelidir. 
-
-- `r emo::ji("link")` [miniPISA.rda](import/miniPISA.rda)
+- Bu bölümde pratiklik ve anlaşılabilirlik açısında **midiPISA** verisini kullanacağız.   Verinin oluşturulması aşağıdaki kodla sağlanabilir.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-load("import/miniPISA.rda") # çalışılacak veri setinin data adlı klasörden R ortamına yüklenmesi
+library(tuev)
+data(PISA_OGR_2018)
+midiPISA <- PISA_OGR_2018 %>% 
+  select(OGRENCIID,SINIF,CINSIYET,
+         Anne_Egitim,Baba_Egitim,OKUMA_ZEVK,
+         ST097Q01TA:ST097Q05TA,ODOKUMA1:ODOKUMA5)
 ```
 
-- miniPISA veri seti;  öğrenci ıd(OGR_ID), sınıf(SNF), cinsiyet(CNSYT), anne eğitim düzeyi(AED), baba eğitim düzeyi(BED), okumaktan zevk alma(O_ZEVK), ST097Q01TA, ST097Q02TA, ST097Q03TA, ST097Q04TA, ST097Q05TA, okuma olası değer 1 (O_OD1), okuma olası değer 2 (O_OD2), okuma olası değer 3 (O_OD3), okuma olası değer 4 (O_OD4), okuma olası değer 5 (O_OD5) değişkenleri olmak üzere toplam 16 değişkenden oluşmaktadır.
+- midiPISA veri seti; öğrenci id (OGRENCIID), sınıf düzeyi (SINIF), cinsiyet (CINSIYET), anne eğitim düzeyi (Anne_Egitim), baba eğitim düzeyi (Baba_Egitim), okumaktan zevk alma (OKUMA_ZEVK), ST097Q01TA, ST097Q02TA, ST097Q03TA, ST097Q04TA, ST097Q05TA, okuma puanı olası değer 1 (ODOKUMA1), okuma puanı olası değer 2 (ODOKUMA2), okuma puanı olası değer 3 (ODOKUMA3), okuma puanı olası değer 4 (ODOKUMA4), okuma puanı olası değer 5 (ODOKUMA5) değişkenleri olmak üzere toplam 16 değişkenden oluşmaktadır.
 
 ```{r  include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(dplyr)
 library(tuev)
 library(emo)
+
+```
+
+
+- PISA verileri OECD web adresinden SPSS formatında çekildiği için değişken etiketleri(label) ile birlikte gelmektedir. Bu etiket isimleri bazen R paketlerindeki fonksiyonlar ile birlikte çalışmamaktadır. Bu nedenle "`expss::drop_var_labs`" bu etiketlerin kaldırılmasını sağlar ve midiPISA veri seti üzerine kaydedilir.
+
+- Bir diğer alternatif ise değişken etiketlerini faktör düzeyi olarak kaydetmektir. Bu işlem aşağıdaki kodlarla sağlanabilir.
+
+```{r message=FALSE, warning=FALSE}
+library(sjlabelled)
+midiPISA <- midiPISA %>% mutate_if(is_labelled, as_factor)
+# Faktor degiskenlere duzey atama amacıyla yazılan fonksiyon
+levelsnames <- function(x){
+  levels(x) <- names(attr(x,"labels"))
+  x
+}
+# Yazılan fonkisyonun faktor degiskenlere uygulanması
+midiPISA <-mutate_if(midiPISA,is.factor, levelsnames)
 
 ```
 
@@ -43,52 +64,51 @@ veri_seti %>% count(degisken_adı)
 
 ```{r}
 library(dplyr)
-load("import/miniPISA.rda") # ogrenci verisi
-miniPISA %>% count()
+midiPISA %>% count()
 ```
 
 - Cinsiyete göre dağılım
 `r emo::ji("boy")` `r emo::ji("girl")`
 ```{r}
-miniPISA %>% count(CNSYT)
+midiPISA %>% count(CINSIYET)
 ```
 
 - Cinsiyete göre dağılım - **sort** argümanı ile sıralanabilir.
 `r emo::ji("boy")` `r emo::ji("girl")`
 
 ```{r}
-miniPISA %>% count(CNSYT,sort=TRUE)
+midiPISA %>% count(CINSIYET,sort=TRUE)
 
 ```
 
-- miniPISA öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.
+- midiPISA öğrenci verisindeki değişken adlarının türkçeleştirilmiş halidir.
 
 - Bu veri setini kullanarak öğrencilerin sınıf düzeyleri ve cinsiyetlere göre dağılımını inceleyelim.
 
 ```{r}
-miniPISA %>% count(CNSYT,SNF)
+midiPISA %>% count(CINSIYET,SINIF)
 
 ```
 
 
-- `miniPISA %>% count(CNSYT,SNF) %>% ...` birey sayısını büyükten küçüğe sıralayınız. 
+- `midiPISA %>% count(CINSIYET,SINIF) %>% ...` birey sayısını büyükten küçüğe sıralayınız. 
 `r fitb("arrange(-n)")`
 
 ```{r echo=FALSE}
-miniPISA %>% count(CNSYT,SNF) %>% 
+midiPISA %>% count(CINSIYET,SINIF) %>% 
   arrange(-n)
 ```
 
 
 ```{r}
-miniPISA %>% count(SNF, sort=TRUE)
+midiPISA %>% count(SINIF, sort=TRUE)
 
 ```
 
-- `miniPISA %>% count(.....)` siz de  SNF ve CNSYT'e göre dağılımı bulunuz? `r fitb("CNSYT,SNF,sort=TRUE")`
+- `midiPISA %>% count(.....)` siz de  SINIF ve CINSIYET'e göre dağılımı bulunuz? `r fitb("SINIF,CINSIYET,sort=TRUE")`
 
 ```{r echo=FALSE}
-miniPISA %>% count(SNF,CNSYT,sort=TRUE)
+midiPISA %>% count(SINIF,CINSIYET,sort=TRUE)
 
 ```
 
@@ -97,9 +117,9 @@ miniPISA %>% count(SNF,CNSYT,sort=TRUE)
 
 
 
-## summarize() fonksiyonları
+## summarise() fonksiyonları
 
-- **summarize()** seçilen sütunlar için her satırı kullanarak istatistikler hesaplar.
+- **summarise()** seçilen sütunlar için her satırı kullanarak istatistikler hesaplar.
 
 - kaç satır olduğu
 
@@ -130,8 +150,8 @@ miniPISA %>% count(SNF,CNSYT,sort=TRUE)
 - PISA veri setinde başarısı için  hesaplanan 10 olası puan değerinden (plausible value) ilki kullanılmıştır. 
 
 ```{r}
-miniPISA %>% 
-summarise(mean(O_OD1))
+midiPISA %>% 
+summarise(mean(ODOKUMA1))
 ```
 
 - **summarise()** fonksiyonu içinde isimlendirme yapmazsanız, oluşan veri setinde isimlendirme fonksiyon adı/ları olacaktır.
@@ -139,20 +159,20 @@ summarise(mean(O_OD1))
 - isimlendirilmiş çıktı
 
 ```{r}
-miniPISA %>%
-  summarise(ortalama=mean(O_OD1))
+midiPISA %>%
+  summarise(ortalama=mean(ODOKUMA1))
 ```
 
 
 - Özet bilgiler elde etmek için birden fazla özetleyici fonksiyon kullanabilirsiniz.
 
 ```{r}
-miniPISA %>%
+midiPISA %>%
   summarise(n = n(),
-            ortalama=mean(O_OD1),
-            sd=sd(O_OD1),
-            min=min(O_OD1),
-            max=max(O_OD1))
+            ortalama=mean(ODOKUMA1),
+            sd=sd(ODOKUMA1),
+            min=min(ODOKUMA1),
+            max=max(ODOKUMA1))
 ```
 
 
@@ -163,13 +183,13 @@ miniPISA %>%
 
 - Cinsiyete göre ODOKUMA1 puanlarına ilişkin istatistikler
 ```{r}
-miniPISA %>%
-  group_by(CNSYT) %>%
+midiPISA %>%
+  group_by(CINSIYET) %>%
   summarise(n = n(),
-            ortalama=mean(O_OD1),
-            sd=sd(O_OD1),
-            min=min(O_OD1),
-            max=max(O_OD1))
+            ortalama=mean(ODOKUMA1),
+            sd=sd(ODOKUMA1),
+            min=min(ODOKUMA1),
+            max=max(ODOKUMA1))
 ```
 
 
@@ -181,9 +201,9 @@ miniPISA %>%
 - Öğrencilerin cinsiyet ve sınıf düzeylerine göre elde edilen betimsel istatistikleri ortalamaya göre sıralandırılmıştır.
 
 ```{r message=FALSE}
-betimsel  <- miniPISA %>%
-  group_by(CNSYT,SNF) %>%
-  summarise(n = n(),ortalama=mean(O_OD1),sd=sd(O_OD1)) %>%  
+betimsel  <- midiPISA %>%
+  group_by(CINSIYET,SINIF) %>%
+  summarise(n = n(),ortalama=mean(ODOKUMA1),sd=sd(ODOKUMA1)) %>%  
   arrange(desc(ortalama)) 
 
 betimsel
@@ -204,53 +224,68 @@ gruplandırılmış veri **Groups**  çıktısı ile alınır.
 - Gruplandırılmış elde edilen veri setlerinde tekrar işlem yapmak istiyorsanız bunu **ungroup()** fonksiyonu ile yapabilirsiniz.
 
 ```{r message=FALSE}
-miniPISA %>%
-  group_by(CNSYT,SNF) %>%
+midiPISA %>%
+  group_by(CINSIYET,SINIF) %>%
   summarise(n = n(),
-            ortalama=mean(O_OD1),
-            sd=sd(O_OD1)) %>%
+            ortalama=mean(ODOKUMA1),
+            sd=sd(ODOKUMA1)) %>%
   arrange(desc(ortalama)) %>% 
   ungroup()
 
 ```
 
+## across()
 
-### summarize_at()
+Bir veri setinde aynı anda birden fazla sütuna aynı işlem uygulanmak istendiğinde dplyr paketi içindeki `across()` fonksiyonu sıklıkla kullanılmaktadır. Bu fonksiyon veri düzenleme ile ilgili birçok temel fonksiyon içinde düzgün çalışabilmektedir. Fakat genellikle `select()`, `mutate()`, `filter()` veya `summarise()` içinde kullanılır.
 
-- dplyr paket fonksiyonlarının **_at,_if,_all** uzantılı varyasyonları bulunmaktadır.
+cols = argümanına sütunlar ve .fns = argümanına uygulanacak fonksiyonlar atanır.
 
-- Sadece bir grup sütunun ortalamasını ve standart sapmasını hesaplamanız gerektiğinde **summarize_at()** fonksiyonunu kullanabilirsiniz.
+midiPISA verisinde okuma puanı olası değer 1 ve 2 sütunlarına ait ortalama değerleri `across()` fonksiyonu ile hesaplayalım.
 
-
-- **summarize_at()** fonksiyonu ile seçilecek değişkenler **vars()**
-fonksiyonu içinde belirtilebilir. Bu işlem **select** işlemi yerine geçmektedir.
-
-- Hesaplama işlemlerini ise **list()** fonksiyonu içinde tanımlayabilirsiniz.
-
-```{r message=FALSE}
-# adlandırmaya dikkat edin!
-miniPISA %>%
-    summarize_at(vars(O_OD1, O_ZEVK), list(~mean(.), ~sd(.)))
-
-```
-- eksik veriler olduğu için çıktıda NA görünüyor!
-
-### summarize_all() ve summarize_if()
-
-- Elinizde tüm sütunları sayısal (numeric) olan bir veri seti olsun. Tüm sütunların ortalamasını **summarize_all()** fonksiyonu ile hesaplayabilirsiniz.
-
-```{r eval=FALSE}
-veriseti %>% summarize_all(funs(mean, sd))
-
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+midiPISA %>%
+     summarise(across(.cols=c(ODOKUMA1,ODOKUMA2),.fns=mean, .names = "{col}_mean"))
 ```
 
-- Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını **summarize_if()** fonksiyonu ile hesaplayabilirsiniz.
+ODOKUMA1 ve ODOKUMA2 sütunlarına ait ortalamalar hesaplanmış ve bu ortalama değerlerini veren sütunlar .names = "{col}\_mean" ile isimlendirilmiştir.
 
-```{r message=FALSE, warning=FALSE}
-expss::drop_var_labs(miniPISA) %>% 
-    select(O_ZEVK,O_OD1) %>% 
-    summarize_if(is.numeric, funs(mean, sd),na.rm=TRUE)
+Birden fazla istatistiksel bilgi hesaplanmak istendiğinde list() argümanı kullanılabilir. "OD" ile başlayan sütunlara ait ortalama ve standart sapma değerlerini hesaplayalım.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+midiPISA %>%
+       summarise(across(.cols=starts_with("OD"), .fns=list(mean = mean, sd = sd)))
 ```
+
+
+## summarise() and across()
+
+dplyr paket fonksiyonlarının \*\*\_at,\_if,\_all\*\* uzantılı varyasyonları bulunmaktadır. Bunlardan biri olan `summarise_at()` fonksiyonunu bir grup sütunun ortalamasını ve standart sapmasını hesaplamak gerektiğinde kullanabilirsiniz. `summarise_at()` fonksiyonu ile seçilecek değişkenler `vars()` fonksiyonu içinde belirtilebilir. Bu işlem `select()` işlemi yerine geçmektedir. Hesaplama işlemlerini ise `list()` fonksiyonu içinde tanımlayabilirsiniz.
+
+```{r echo=TRUE}
+midiPISA %>%
+    summarise_at(vars(ODOKUMA1, ODOKUMA2), list(~mean(.), ~sd(.)))
+```
+
+`summarise_at()` fonksiyonu kullanılmak istenildiğinde kullanımdan kaldırılmış olduğu (deprecated) uyarısı görünür. Bir fonksiyonun daha iyi bir alternatifi mevcut ise kullanımdan kaldırılabilir. Daha önce de bahsedilen `across()` fonksiyonu değişken seçmek için yukarıdaki örnekte `vars()` fonksiyonu yerine aşağıdaki şekilde kullanılabilir. Bu sayede `summarise_at()` fonksiyonu yerine `summarise()` fonksiyonu kullanılmış olur.
+
+```{r}
+midiPISA %>%
+  summarise(
+    across(c(ODOKUMA1, ODOKUMA2), list(mean = ~mean(.), sd = ~sd(.)))
+  )
+```
+
+
+Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını `summarise_if()` fonksiyonu ile hesaplayabilirsiniz. Bu hesaplamanın  `summarise()` ve `across()` fonksiyonu ile nasıl yapıldığı gösterilmiştir.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+midiPISA %>%
+  summarise(across(where(is.numeric), list(mean = mean, sd = sd), na.rm = TRUE))
+
+```
+
+Mevcut kodunuzu _if, _at veya _all işlevleri yerine across() işlevini kullanacak şekilde güncellemek istiyorsanız `summarise_at()`, `summarise_all()` ve `summarise_if()` fonksiyonlarının yerini **`summarise()`** fonksiyonu içinde de kullanılabilen **`across()`** yardımcı fonksiyonunu kullanabilirsiniz.
 
 
 ## top_n()
@@ -266,24 +301,23 @@ df %>% top_n(2)
 
 - Okuma puanı **en yüksek** olan üç kız ve üç erkek öğrencinin bilgileri
 ```{r}
-miniPISA %>%
-  select(CNSYT,O_OD1)%>% 
-  arrange(desc(O_OD1))%>% 
-  group_by(CNSYT) %>% 
-  top_n(3,O_OD1)
+midiPISA %>%
+  select(CINSIYET,ODOKUMA1)%>% 
+  arrange(desc(ODOKUMA1))%>% 
+  group_by(CINSIYET) %>% 
+  top_n(3,ODOKUMA1)
 ```
-
 
 ## top_n() & - operatoru
 
 - Okuma puanı **en düşük** olan üç kız ve beş erkek öğrencinin bilgileri
 
 ```{r}
-miniPISA %>%
-  select(CNSYT,O_OD1)%>% 
-  arrange(desc(O_OD1))%>% 
-  group_by(CNSYT) %>% 
-  top_n(-3,O_OD1)
+midiPISA %>%
+  select(CINSIYET,ODOKUMA1)%>% 
+  arrange(desc(ODOKUMA1))%>% 
+  group_by(CINSIYET) %>% 
+  top_n(-3,ODOKUMA1)
 ```
 
 

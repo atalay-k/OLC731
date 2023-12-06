@@ -36,9 +36,12 @@ Aslında çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anl
 
 **tidyr**, **reshape** vb. paketler ve bu paketlerde yer alan fonksiyonlar veri düzenlemede kullanılabilir.
 
-## **gather()** fonksiyonu
 
-**gather()** fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
+Aslında çok sayıda **satırı** anlamlandırmak, çok sayıda **sütunu** anlamlandırmaktan daha kolaydır. Verinin bu şekilde düzenlenmesi **dplyr**, **ggplot2**, **plotly**, **lattice** gibi paketleri rahat kullanabilmek için oldukça önemlidir. Hiyerarşik ve karma modeller için de verinin düzgün olması gerekmektedir. Ayrıca düzgün bir veri seti, eksik değerler ve dengesiz tekrarlanan ölçüm verileriyle ilgili daha az sorun sağlar.
+
+## gather()
+
+`gather()` fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.
 
 Fonksiyonun kullanım şekli;
 
@@ -55,129 +58,196 @@ Fonksiyonun kullanımını göstermek için örnek bir veri seti üzerinde çal�
 
 
 ```r
-library(tidyr) #paketin aktifleştirilmessi
-load("import/miniPISA.rda") # verinin yüklenmesi
-genisveri<- miniPISA %>% select(OGR_ID,O_OD1:O_OD5) #belli değişkenlerin seçilmesi
+library(tuev)
+data(PISA_OGR_2018)
+midiPISA <- PISA_OGR_2018 %>% 
+  select(OGRENCIID,SINIF,CINSIYET,
+         Anne_Egitim,Baba_Egitim,OKUMA_ZEVK,
+         ST097Q01TA:ST097Q05TA,ODOKUMA1:ODOKUMA5)
+
+genisveri<- midiPISA %>% select(OGRENCIID,ODOKUMA1:ODOKUMA5) #belli değişkenlerin seçilmesi
 genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
 ```
 
 <div class="kable-table">
 
-|   OGR_ID|  O_OD1|  O_OD2|  O_OD3|  O_OD4|  O_OD5|
-|--------:|------:|------:|------:|------:|------:|
-| 79200768| 376.02| 417.75| 420.63| 413.84| 434.43|
-| 79201064| 512.32| 473.23| 563.90| 485.40| 500.39|
-| 79201118| 396.38| 413.86| 423.12| 452.12| 392.43|
-| 79201275| 393.01| 428.76| 364.85| 382.52| 378.56|
-| 79201481| 552.46| 570.11| 562.96| 530.84| 532.49|
-| 79201556| 441.29| 415.68| 406.59| 437.00| 473.04|
+| OGRENCIID| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5|
+|---------:|--------:|--------:|--------:|--------:|--------:|
+|  79200768|  376.022|  417.746|  420.630|  413.837|  434.434|
+|  79201064|  512.316|  473.229|  563.902|  485.396|  500.394|
+|  79201118|  396.383|  413.859|  423.121|  452.124|  392.434|
+|  79201275|  393.006|  428.757|  364.850|  382.522|  378.563|
+|  79201481|  552.457|  570.109|  562.955|  530.835|  532.487|
+|  79201556|  441.286|  415.682|  406.586|  437.001|  473.036|
 
 </div>
 
-Elde edilen çıktıda öğrenci ıd ve beş okuma olasılık değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
+Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. `gather()` fonksiyonu geniş veriyi, uzun veri haline getirir.
 
 
 ```r
-uzun<- genisveri %>% gather(O_OD,okumapuanı,O_OD1:O_OD5)
-uzun %>% head(3)
+uzun <- genisveri %>% gather(O_OD,okumapuan,ODOKUMA1:ODOKUMA5)
+uzun %>%  arrange(OGRENCIID) %>% head(10)
 ```
 
 <div class="kable-table">
 
-|   OGR_ID|O_OD  | okumapuanı|
-|--------:|:-----|----------:|
-| 79200768|O_OD1 |     376.02|
-| 79201064|O_OD1 |     512.32|
-| 79201118|O_OD1 |     396.38|
+| OGRENCIID|O_OD     | okumapuan|
+|---------:|:--------|---------:|
+|  79200001|ODOKUMA1 |   449.876|
+|  79200001|ODOKUMA2 |   457.572|
+|  79200001|ODOKUMA3 |   413.428|
+|  79200001|ODOKUMA4 |   430.044|
+|  79200001|ODOKUMA5 |   439.072|
+|  79200002|ODOKUMA1 |   669.156|
+|  79200002|ODOKUMA2 |   665.848|
+|  79200002|ODOKUMA3 |   684.978|
+|  79200002|ODOKUMA4 |   664.624|
+|  79200002|ODOKUMA5 |   659.670|
 
 </div>
 
-Çıktı incelendiğinde, oluşan veride O_OD1, O_OD2, O_OD3, O_OD4 ve O_OD5 okumapuanı değişkeninin değerleri haline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *O_OD* için, diğeri **okumapuanı** için. Her katılımcı icin beş farklı okuma olasılık değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk üç satırı görüntülendiğinden sadece O_OD1 görüntülenmektedir.
+Çıktı incelendiğinde, oluşan veride ODOKUMA1, ODOKUMA2, ODOKUMA3, ODOKUMA4 ve ODOKUMA5 okumapuanı değişkeninin değerleri hâline gelmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri kategorik diğeri sayısal değerleri içerir. Her katılımcı icin beş farklı okuma olası değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk on satırı görüntülendiğinden sadece 79200001 ve 79200002 id numaralı öğrenciler görüntülenmektedir.
+
+## spread()
+
+-   `spread()` fonksiyonu uzun veriden tekrar geniş veri olusturmaya yarar. `gather()` fonksiyonunun tersi olan işlevi yapar
 
 
 ```r
-uzun %>% tail(3) #son üç satırın görüntüleenmesi
-```
-
-<div class="kable-table">
-
-|      |   OGR_ID|O_OD  | okumapuanı|
-|:-----|--------:|:-----|----------:|
-|34448 | 79205156|O_OD5 |     469.65|
-|34449 | 79206039|O_OD5 |     437.95|
-|34450 | 79206096|O_OD5 |     377.13|
-
-</div>
-
-Elde edilen çıktıda veri setinin son üç satırı görüntülendiğinden sadece O_OD5 görüntülenmektedir.
-
-## **separate()**
-
-**separate()** fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride O_OD1,O_OD2, O_OD3, O_OD4 ve O_OD5 değerlerinin karakter ve sayısal değerlerini ayırmak için **separate():** fonksiyonu kullanılabilir.
-
-
-```r
-uzun_ayrı <- uzun %>% 
-            separate(O_OD, c("O_OD","Sayı"),"_") #bir sütunu iki sütuna ayırma
-
-uzun_ayrı %>% head(3) #ilk üç satırın görüntülenmesi
-```
-
-<div class="kable-table">
-
-|   OGR_ID|O_OD |Sayı | okumapuanı|
-|--------:|:----|:----|----------:|
-| 79200768|O    |OD1  |     376.02|
-| 79201064|O    |OD1  |     512.32|
-| 79201118|O    |OD1  |     396.38|
-
-</div>
-
-Elde edilen çıktıya göre, O_OD değerlerinin yer aldığı sütun ikiye ayrılarak O_OD sütunu (O) ve sayı (OD1,OD2,0D3,OD4, OD5) sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için sadece OD1(olasılık değeri 1) yer almaktadır.
-
-## **unite()** fonksiyonu
-
-**gather()** fonksiyonun tam tersi olarak iki sütunu alıp tek sutunda birleştirir.
-
-
-```r
-uzun_birles <- uzun_ayrı %>% unite(OD, O_OD, Sayı, sep = ".") # sütun birleştirmenin yapılması
-uzun_birles %>% head(3)
-```
-
-<div class="kable-table">
-
-|   OGR_ID|OD    | okumapuanı|
-|--------:|:-----|----------:|
-| 79200768|O.OD1 |     376.02|
-| 79201064|O.OD1 |     512.32|
-| 79201118|O.OD1 |     396.38|
-
-</div>
-
-Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. OD sütunu, okuma puanlarının isimlerinden, okuma puanı ise okuma olasılık değerlerinden oluşmaktadır. 
-
-## **spread()** fonksiyonu
-
--   **spread():** fonksiyonu **gather()** fonksiyonun tam tersini yaparak uzun veriden genis veri olusturmaya yarar.
-
-
-```r
-tekrar_genis <- uzun_birles %>% spread(OD, okumapuanı) # geniş veri oluşturulması
+tekrar_genis <- uzun %>% spread(O_OD,okumapuan) # geniş veri oluşturulması
 tekrar_genis %>% head(6) # ilk altı satırın görüntülenmesi
 ```
 
 <div class="kable-table">
 
-|   OGR_ID|  O.OD1|  O.OD2|  O.OD3|  O.OD4|  O.OD5|
-|--------:|------:|------:|------:|------:|------:|
-| 79200001| 449.88| 457.57| 413.43| 430.04| 439.07|
-| 79200002| 669.16| 665.85| 684.98| 664.62| 659.67|
-| 79200003| 451.88| 502.21| 443.83| 456.08| 436.97|
-| 79200004| 346.94| 317.13| 339.05| 325.05| 367.12|
-| 79200005| 466.96| 497.88| 415.39| 470.79| 446.27|
-| 79200006| 366.30| 364.38| 384.40| 420.32| 351.43|
+| OGRENCIID| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5|
+|---------:|--------:|--------:|--------:|--------:|--------:|
+|  79200001|  449.876|  457.572|  413.428|  430.044|  439.072|
+|  79200002|  669.156|  665.848|  684.978|  664.624|  659.670|
+|  79200003|  451.875|  502.208|  443.832|  456.082|  436.965|
+|  79200004|  346.944|  317.129|  339.054|  325.048|  367.116|
+|  79200005|  466.959|  497.879|  415.394|  470.793|  446.268|
+|  79200006|  366.303|  364.383|  384.399|  420.318|  351.426|
 
 </div>
 
-Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olasılık değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.
+Öğrenci id değişkeni ile birlikte okuma puanlarının isimlerinin ve değerlerinin yer aldığı iki sütundan oluşan (id hariç) uzun veri seti, beş olası değerinin de ayrı birer sütun olarak yer aldığı toplam beş sütundan(id hariç) oluşan geniş veri setine dönüştürülmüştür.
+
+## pivot_longer() ve pivot_wider() 
+
+Verilerin girilme şekli genellikle geniş ve uzun olmak üzere iki formattan oluşur. Geniş formatta veriler, bir gözlemin özellikleri veya yanıtlar tek bir satırda verilir. Genellikle veriler bu şekilde girilmesine rağmen geniş format her zaman kullanışlı olmayabilir. Geniş verinin uzun veriye dönüştürülmesini `gather()` ve uzun verinin geniş veriye dönüşütürülmesini `spread()`fonksiyonu ile gerçekleştirdik. Ancak bahsedilen iki fonksiyona alternatif yeni fonksiyonlar üretilmiştir. Bu bölümde bu iki fonksiyon açıklanacaktır.
+
+
+midiPISA verisetinden daha az değişken içerecek şekilde bir geniş veri seti örneği oluşturalım.
+
+
+```r
+genisveri <- midiPISA %>% select(OGRENCIID,ODOKUMA1:ODOKUMA5) #belli değişkenlerin seçilmesi
+genisveri %>% head(6) # verinin ilk 6 satırının görüntülenmesi
+```
+
+<div class="kable-table">
+
+| OGRENCIID| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5|
+|---------:|--------:|--------:|--------:|--------:|--------:|
+|  79200768|  376.022|  417.746|  420.630|  413.837|  434.434|
+|  79201064|  512.316|  473.229|  563.902|  485.396|  500.394|
+|  79201118|  396.383|  413.859|  423.121|  452.124|  392.434|
+|  79201275|  393.006|  428.757|  364.850|  382.522|  378.563|
+|  79201481|  552.457|  570.109|  562.955|  530.835|  532.487|
+|  79201556|  441.286|  415.682|  406.586|  437.001|  473.036|
+
+</div>
+
+Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almakta olup geniş veri formatındadır. `pivot_longer` fonksiyonu geniş veriyi, uzun veri haline getirir.
+
+
+```r
+uzun <- genisveri %>% pivot_longer(names_to="okumapuan",values_to="deger",cols=ODOKUMA1:ODOKUMA5)
+uzun %>% head(5)
+```
+
+<div class="kable-table">
+
+| OGRENCIID|okumapuan |   deger|
+|---------:|:---------|-------:|
+|  79200768|ODOKUMA1  | 376.022|
+|  79200768|ODOKUMA2  | 417.746|
+|  79200768|ODOKUMA3  | 420.630|
+|  79200768|ODOKUMA4  | 413.837|
+|  79200768|ODOKUMA5  | 434.434|
+
+</div>
+
+Çıktı incelendiğinde, oluşan veride ODOKUMA1, ODOKUMA2, ODOKUMA3, ODOKUMA4 ve ODOKUMA5 ayrı bir sütunun değerleri haline gelmiştir. Bu okuma puan türlerinin sütununun yer aldığı değişken names_to argümanı ile "okumapuan" olarak isimlendirilmiştir. Ayrıca values_to argümanı ise okuma puanı değerlerinin yer aldığı sütun isimlendirilmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri *okuma puanı türü* için, diğeri **okuma puanı türleri** için. Her katılımcı icin beş farklı okuma olası değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk beş satırı görüntülendiğinden sadece 792200768 id numaralı öğrencinin değerleri görüntülenmektedir.
+
+Bir veri setini daha iyi yorumlayabilmek amacıyla uzun veri formatından geniş veri formatına dönüştürülür. Genellikle bir gözlem için değerlerin birden çok satırda yer aldığı durumlarda tercih edilir. Bunun için `pivot_wider()` fonksiyonu kullanılır.
+
+
+```r
+genis<- uzun %>% pivot_wider(names_from="okumapuan",values_from="deger")
+genis %>% head(5)
+```
+
+<div class="kable-table">
+
+| OGRENCIID| ODOKUMA1| ODOKUMA2| ODOKUMA3| ODOKUMA4| ODOKUMA5|
+|---------:|--------:|--------:|--------:|--------:|--------:|
+|  79200768|  376.022|  417.746|  420.630|  413.837|  434.434|
+|  79201064|  512.316|  473.229|  563.902|  485.396|  500.394|
+|  79201118|  396.383|  413.859|  423.121|  452.124|  392.434|
+|  79201275|  393.006|  428.757|  364.850|  382.522|  378.563|
+|  79201481|  552.457|  570.109|  562.955|  530.835|  532.487|
+
+</div>
+
+## separate()
+
+`separate()` fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride okuma puanı değerlerinin karakter ve sayısal değerlerini ayırmak için `separate()`fonkisyonu kullanılabilir.
+
+
+```r
+uzun_v1 <- uzun %>% separate(okumapuan, c("OD","Sayi"),"MA") # bir sütunu iki sütuna ayırma
+
+uzun_v1 %>% head(3) #ilk üç satırın görüntülenmesi
+```
+
+<div class="kable-table">
+
+| OGRENCIID|OD    |Sayi |   deger|
+|---------:|:-----|:----|-------:|
+|  79200768|ODOKU |1    | 376.022|
+|  79200768|ODOKU |2    | 417.746|
+|  79200768|ODOKU |3    | 420.630|
+
+</div>
+
+Elde edilen çıktıya göre, okuma puanı olası değerlerinin yer aldığı sütun ikiye ayrılarak OD sütunu ve sayı sütunundan oluşmaktadır. Çıktının ilk üç satırı görüntülendiği için tek bir öğrenciye ait üç olası değerler yer almaktadır.
+
+## unite()
+
+`separate()` fonksiyonunun tam tersi olarak iki sütunu alıp tek sütunda birleştirir.
+
+
+```r
+uzun_birles <- uzun_v1 %>% unite(ODOKUMA, OD, Sayi, sep = "_") # sütun birleştirmenin yapılması
+uzun_birles %>% head(3) # ilk üç satırın görüntülenmesi
+```
+
+<div class="kable-table">
+
+| OGRENCIID|ODOKUMA |   deger|
+|---------:|:-------|-------:|
+|  79200768|ODOKU_1 | 376.022|
+|  79200768|ODOKU_2 | 417.746|
+|  79200768|ODOKU_3 | 420.630|
+
+</div>
+
+Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. ODOKUMA sütunu, okuma puanlarının isimlerinden, değer ise okuma olası puanı değerlerinden oluşmaktadır.
+
+`separate()` fonksiyonunun alternatifi `extract()`   ve `unite()`   fonksiyonunun ile yapılabilecek olan işlemler `mutate()` fonksiyonu ile de yapılabilir.
+
+Bu alternatiflerin uygunluğunun özel kullanım durumunuza ve verilerinizin niteliğine bağlı olduğunu unutmayın. Paketler zaman içinde yeni fonksiyonlara veya iyileştirmelere sahip olabileceğinden, en son güncellemeler için her zaman fonksiyon yardım sayfalarını kontrol etmenizi öneriyoruz.
+
