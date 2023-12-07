@@ -179,7 +179,7 @@ ls(pattern = '^geom_', env = as.environment('package:ggplot2'))
 ```
 
 
-## Saçılım Grafiği
+## Histogram 
 
 - Aşağıdaki kod sadece ilk katmanı oluşturur.
 
@@ -714,7 +714,7 @@ ggplot(data = df2, mapping = aes(x = CINSIYET)) +
 
 - 😕
 
-- 😄
+- 🙋
 
 
 

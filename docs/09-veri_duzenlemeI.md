@@ -615,7 +615,7 @@ Bu hata SPSS dosyasının etiketlerinden kaynaklanmakatdır.
 PISA_STU_2018 %>%  filter(MISCED== 6) %>% head(4)
 ```
 
-Yukarıda verilen kodu düzgün çalıştırmak için aşağıdaki kod aracılığı ile veri etiketlerini kaldırabilirsiniz. 
+- Yukarıda verilen kodu düzgün çalıştırmak için aşağıdaki kod aracılığı ile veri etiketlerini kaldırabilirsiniz. 
 
 
 ```r

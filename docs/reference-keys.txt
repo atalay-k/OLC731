@@ -245,3 +245,4 @@ gather
 spread
 pivot_longer-ve-pivot_wider
 unite
+histogram

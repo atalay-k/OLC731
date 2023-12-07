@@ -472,7 +472,6 @@ midiPISA %>%
 
 </div>
 
-Çıktıda tüm değişkenlerin eksik veriler silinerek ortalamasının alındığı görülmektedir.
 
 Elinizdeki bir veri setinin sayısal (numeric) olan sütunlarının ortalamasını `summarise_if()` fonksiyonu ile hesaplayabilirsiniz. Bu hesaplamanın  `summarise()` ve `across()` fonksiyonu ile nasıl yapıldığı gösterilmiştir.
 

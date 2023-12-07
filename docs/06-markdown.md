@@ -611,23 +611,23 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
 ```
 
 ```{=html}
-<div id="hgevrtjthr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hgevrtjthr table {
+<div id="eojedwakuq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eojedwakuq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hgevrtjthr thead, #hgevrtjthr tbody, #hgevrtjthr tfoot, #hgevrtjthr tr, #hgevrtjthr td, #hgevrtjthr th {
+#eojedwakuq thead, #eojedwakuq tbody, #eojedwakuq tfoot, #eojedwakuq tr, #eojedwakuq td, #eojedwakuq th {
   border-style: none;
 }
 
-#hgevrtjthr p {
+#eojedwakuq p {
   margin: 0;
   padding: 0;
 }
 
-#hgevrtjthr .gt_table {
+#eojedwakuq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -653,12 +653,12 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-left-color: #D3D3D3;
 }
 
-#hgevrtjthr .gt_caption {
+#eojedwakuq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hgevrtjthr .gt_title {
+#eojedwakuq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -670,7 +670,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-width: 0;
 }
 
-#hgevrtjthr .gt_subtitle {
+#eojedwakuq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -682,7 +682,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-width: 0;
 }
 
-#hgevrtjthr .gt_heading {
+#eojedwakuq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -694,13 +694,13 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#hgevrtjthr .gt_bottom_border {
+#eojedwakuq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_col_headings {
+#eojedwakuq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -715,7 +715,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#hgevrtjthr .gt_col_heading {
+#eojedwakuq .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -735,7 +735,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#hgevrtjthr .gt_column_spanner_outer {
+#eojedwakuq .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -747,15 +747,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 4px;
 }
 
-#hgevrtjthr .gt_column_spanner_outer:first-child {
+#eojedwakuq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hgevrtjthr .gt_column_spanner_outer:last-child {
+#eojedwakuq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hgevrtjthr .gt_column_spanner {
+#eojedwakuq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -767,11 +767,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   width: 100%;
 }
 
-#hgevrtjthr .gt_spanner_row {
+#eojedwakuq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hgevrtjthr .gt_group_heading {
+#eojedwakuq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -797,7 +797,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   text-align: left;
 }
 
-#hgevrtjthr .gt_empty_group_heading {
+#eojedwakuq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -812,15 +812,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: middle;
 }
 
-#hgevrtjthr .gt_from_md > :first-child {
+#eojedwakuq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hgevrtjthr .gt_from_md > :last-child {
+#eojedwakuq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hgevrtjthr .gt_row {
+#eojedwakuq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -839,7 +839,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   overflow-x: hidden;
 }
 
-#hgevrtjthr .gt_stub {
+#eojedwakuq .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -852,7 +852,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#hgevrtjthr .gt_stub_row_group {
+#eojedwakuq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -866,15 +866,15 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   vertical-align: top;
 }
 
-#hgevrtjthr .gt_row_group_first td {
+#eojedwakuq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hgevrtjthr .gt_row_group_first th {
+#eojedwakuq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hgevrtjthr .gt_summary_row {
+#eojedwakuq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -884,16 +884,16 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#hgevrtjthr .gt_first_summary_row {
+#eojedwakuq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_first_summary_row.thick {
+#eojedwakuq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hgevrtjthr .gt_last_summary_row {
+#eojedwakuq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -903,7 +903,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_grand_summary_row {
+#eojedwakuq .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -913,7 +913,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#hgevrtjthr .gt_first_grand_summary_row {
+#eojedwakuq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -923,7 +923,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-top-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_last_grand_summary_row_top {
+#eojedwakuq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -933,11 +933,11 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_striped {
+#eojedwakuq .gt_striped {
   background-color: #EDF7FC;
 }
 
-#hgevrtjthr .gt_table_body {
+#eojedwakuq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -946,7 +946,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-bottom-color: #5F5F5F;
 }
 
-#hgevrtjthr .gt_footnotes {
+#eojedwakuq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -960,7 +960,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#hgevrtjthr .gt_footnote {
+#eojedwakuq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -969,7 +969,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#hgevrtjthr .gt_sourcenotes {
+#eojedwakuq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -983,7 +983,7 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   border-right-color: #D3D3D3;
 }
 
-#hgevrtjthr .gt_sourcenote {
+#eojedwakuq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -991,63 +991,63 @@ gt(ozet_tablo, caption = "Petal Uzulukları için Özet Tablo") |>
   padding-right: 5px;
 }
 
-#hgevrtjthr .gt_left {
+#eojedwakuq .gt_left {
   text-align: left;
 }
 
-#hgevrtjthr .gt_center {
+#eojedwakuq .gt_center {
   text-align: center;
 }
 
-#hgevrtjthr .gt_right {
+#eojedwakuq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hgevrtjthr .gt_font_normal {
+#eojedwakuq .gt_font_normal {
   font-weight: normal;
 }
 
-#hgevrtjthr .gt_font_bold {
+#eojedwakuq .gt_font_bold {
   font-weight: bold;
 }
 
-#hgevrtjthr .gt_font_italic {
+#eojedwakuq .gt_font_italic {
   font-style: italic;
 }
 
-#hgevrtjthr .gt_super {
+#eojedwakuq .gt_super {
   font-size: 65%;
 }
 
-#hgevrtjthr .gt_footnote_marks {
+#eojedwakuq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hgevrtjthr .gt_asterisk {
+#eojedwakuq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hgevrtjthr .gt_indent_1 {
+#eojedwakuq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hgevrtjthr .gt_indent_2 {
+#eojedwakuq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hgevrtjthr .gt_indent_3 {
+#eojedwakuq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hgevrtjthr .gt_indent_4 {
+#eojedwakuq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hgevrtjthr .gt_indent_5 {
+#eojedwakuq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
