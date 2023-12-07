@@ -103,5 +103,5 @@ Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı i
 * `r emo::ji("link")`[Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
 
 
-
+rf
 
