@@ -71,7 +71,31 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 13</span> Veri Düzenleme V</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="r-ve-rstudio-temeller.html"><span class="header-section-number">1</span> R ve Rstudio Temeller</a></li>
+<li><a class="" href="r-paketler.html"><span class="header-section-number">2</span> R Paketler</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">3</span> Fonksiyonlar</a></li>
+<li><a class="" href="vekt%C3%B6rler.html"><span class="header-section-number">4</span> Vektörler</a></li>
+<li><a class="" href="r-nesneler.html"><span class="header-section-number">5</span> R Nesneler</a></li>
+<li><a class="" href="markdown.html"><span class="header-section-number">6</span> Markdown</a></li>
+<li><a class="" href="veri-setleri.html"><span class="header-section-number">7</span> Veri Setleri</a></li>
+<li><a class="" href="veri-okuma-ve-yazma.html"><span class="header-section-number">8</span> Veri Okuma ve Yazma</a></li>
+<li><a class="" href="veri-duzenleme---i.html"><span class="header-section-number">9</span> Veri duzenleme - I</a></li>
+<li><a class="" href="veri-duzenleme---ii.html"><span class="header-section-number">10</span> Veri duzenleme - II</a></li>
+<li><a class="" href="veri-duzenleme---iii.html"><span class="header-section-number">11</span> Veri duzenleme - III</a></li>
+<li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
+<li><a class="active" href="veri-d%C3%BCzenleme-v.html"><span class="header-section-number">13</span> Veri Düzenleme V</a></li>
+<li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
+<li><a class="" href="g%C3%B6rselle%C5%9Ftirme.html"><span class="header-section-number">15</span> Görselleştirme</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/atalay-k/OLC731">View book source <i class="fab fa-github"></i></a></p>
@@ -182,26 +206,26 @@
 <h2>
 <span class="header-section-number">13.3</span> gather()<a class="anchor" aria-label="anchor" href="#gather"><i class="fas fa-link"></i></a>
 </h2>
-<p><code>gather()</code> fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.</p>
+<p><code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonu bir dizi sütun alır ve onları iki yeni sütuna (kendi adını verebileceğin) dönüştürür.</p>
 <p>Fonksiyonun kullanım şekli;</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">gather</span><span class="op">(</span><span class="va">data</span>, <span class="va">key</span>, <span class="va">value</span>, <span class="va">...</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">key</span>, <span class="va">value</span>, <span class="va">...</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span>, </span>
 <span>       convert <span class="op">=</span> <span class="cn">FALSE</span>, factor_key <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>A key: Orijinal sütun adlarını saklayan bir anahtar.</li>
 <li>A value: Bu orijinal sütunlardaki değerlere sahip bir değer.</li>
 </ul>
 <p>Fonksiyonun kullanımını göstermek için örnek bir veri seti üzerinde çalışalım.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tuevpaket/tuev">tuev</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">PISA_OGR_2018</span><span class="op">)</span></span>
-<span><span class="va">midiPISA</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">SINIF</span>,<span class="va">CINSIYET</span>,</span>
+<span><span class="va">midiPISA</span> <span class="op">&lt;-</span> <span class="va">PISA_OGR_2018</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">SINIF</span>,<span class="va">CINSIYET</span>,</span>
 <span>         <span class="va">Anne_Egitim</span>,<span class="va">Baba_Egitim</span>,<span class="va">OKUMA_ZEVK</span>,</span>
 <span>         <span class="va">ST097Q01TA</span><span class="op">:</span><span class="va">ST097Q05TA</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">genisveri</span><span class="op">&lt;-</span> <span class="va">midiPISA</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span> <span class="co">#belli değişkenlerin seçilmesi</span></span>
-<span><span class="va">genisveri</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># verinin ilk 6 satırının görüntülenmesi</span></span></code></pre></div>
+<span><span class="va">genisveri</span><span class="op">&lt;-</span> <span class="va">midiPISA</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span> <span class="co">#belli değişkenlerin seçilmesi</span></span>
+<span><span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># verinin ilk 6 satırının görüntülenmesi</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -264,10 +288,10 @@
 </tbody>
 </table></div>
 </div>
-<p>Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. <code>gather()</code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op">%&gt;%</span> <span class="fu">gather</span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuan</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span></span>
-<span><span class="va">uzun</span> <span class="op">%&gt;%</span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">OGRENCIID</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<p>Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almaktadır. <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuan</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span></span>
+<span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">OGRENCIID</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -337,11 +361,11 @@
 </h2>
 <ul>
 <li>
-<code>spread()</code> fonksiyonu uzun veriden tekrar geniş veri olusturmaya yarar. <code>gather()</code> fonksiyonunun tersi olan işlevi yapar</li>
+<code><a href="https://tidyr.tidyverse.org/reference/spread.html">spread()</a></code> fonksiyonu uzun veriden tekrar geniş veri olusturmaya yarar. <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> fonksiyonunun tersi olan işlevi yapar</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op">%&gt;%</span> <span class="fu">spread</span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuan</span><span class="op">)</span> <span class="co"># geniş veri oluşturulması</span></span>
-<span><span class="va">tekrar_genis</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># ilk altı satırın görüntülenmesi</span></span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tekrar_genis</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span><span class="op">(</span><span class="va">O_OD</span>,<span class="va">okumapuan</span><span class="op">)</span> <span class="co"># geniş veri oluşturulması</span></span>
+<span><span class="va">tekrar_genis</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># ilk altı satırın görüntülenmesi</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -410,11 +434,11 @@
 <h2>
 <span class="header-section-number">13.5</span> pivot_longer() ve pivot_wider()<a class="anchor" aria-label="anchor" href="#pivot_longer-ve-pivot_wider"><i class="fas fa-link"></i></a>
 </h2>
-<p>Verilerin girilme şekli genellikle geniş ve uzun olmak üzere iki formattan oluşur. Geniş formatta veriler, bir gözlemin özellikleri veya yanıtlar tek bir satırda verilir. Genellikle veriler bu şekilde girilmesine rağmen geniş format her zaman kullanışlı olmayabilir. Geniş verinin uzun veriye dönüştürülmesini <code>gather()</code> ve uzun verinin geniş veriye dönüşütürülmesini <code>spread()</code>fonksiyonu ile gerçekleştirdik. Ancak bahsedilen iki fonksiyona alternatif yeni fonksiyonlar üretilmiştir. Bu bölümde bu iki fonksiyon açıklanacaktır.</p>
+<p>Verilerin girilme şekli genellikle geniş ve uzun olmak üzere iki formattan oluşur. Geniş formatta veriler, bir gözlemin özellikleri veya yanıtlar tek bir satırda verilir. Genellikle veriler bu şekilde girilmesine rağmen geniş format her zaman kullanışlı olmayabilir. Geniş verinin uzun veriye dönüştürülmesini <code><a href="https://tidyr.tidyverse.org/reference/gather.html">gather()</a></code> ve uzun verinin geniş veriye dönüşütürülmesini <code><a href="https://tidyr.tidyverse.org/reference/spread.html">spread()</a></code>fonksiyonu ile gerçekleştirdik. Ancak bahsedilen iki fonksiyona alternatif yeni fonksiyonlar üretilmiştir. Bu bölümde bu iki fonksiyon açıklanacaktır.</p>
 <p>midiPISA verisetinden daha az değişken içerecek şekilde bir geniş veri seti örneği oluşturalım.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">genisveri</span> <span class="op">&lt;-</span> <span class="va">midiPISA</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span> <span class="co">#belli değişkenlerin seçilmesi</span></span>
-<span><span class="va">genisveri</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># verinin ilk 6 satırının görüntülenmesi</span></span></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">genisveri</span> <span class="op">&lt;-</span> <span class="va">midiPISA</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGRENCIID</span>,<span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span> <span class="co">#belli değişkenlerin seçilmesi</span></span>
+<span><span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span> <span class="co"># verinin ilk 6 satırının görüntülenmesi</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -478,9 +502,9 @@
 </table></div>
 </div>
 <p>Elde edilen çıktıda öğrenci ıd ve beş okuma olası değerinin yer aldığı toplam altı değişkenden yer alan veri seti görüntülenmektedir. Bu değişkenler sütunlarda yer almakta olup geniş veri formatındadır. <code>pivot_longer</code> fonksiyonu geniş veriyi, uzun veri haline getirir.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op">%&gt;%</span> <span class="fu">pivot_longer</span><span class="op">(</span>names_to<span class="op">=</span><span class="st">"okumapuan"</span>,values_to<span class="op">=</span><span class="st">"deger"</span>,cols<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span></span>
-<span><span class="va">uzun</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun</span> <span class="op">&lt;-</span> <span class="va">genisveri</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>names_to<span class="op">=</span><span class="st">"okumapuan"</span>,values_to<span class="op">=</span><span class="st">"deger"</span>,cols<span class="op">=</span><span class="va">ODOKUMA1</span><span class="op">:</span><span class="va">ODOKUMA5</span><span class="op">)</span></span>
+<span><span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -518,10 +542,10 @@
 </table></div>
 </div>
 <p>Çıktı incelendiğinde, oluşan veride ODOKUMA1, ODOKUMA2, ODOKUMA3, ODOKUMA4 ve ODOKUMA5 ayrı bir sütunun değerleri haline gelmiştir. Bu okuma puan türlerinin sütununun yer aldığı değişken names_to argümanı ile "okumapuan" olarak isimlendirilmiştir. Ayrıca values_to argümanı ise okuma puanı değerlerinin yer aldığı sütun isimlendirilmiştir. Çıktıda görüldüğü gibi, şimdi ID dışında iki sütunumuz var: Biri <em>okuma puanı türü</em> için, diğeri <strong>okuma puanı türleri</strong> için. Her katılımcı icin beş farklı okuma olası değeri olduğu için her bir ID değeri beş kere tekrarlanmaktadır. Burada veri setinin ilk beş satırı görüntülendiğinden sadece 792200768 id numaralı öğrencinin değerleri görüntülenmektedir.</p>
-<p>Bir veri setini daha iyi yorumlayabilmek amacıyla uzun veri formatından geniş veri formatına dönüştürülür. Genellikle bir gözlem için değerlerin birden çok satırda yer aldığı durumlarda tercih edilir. Bunun için <code>pivot_wider()</code> fonksiyonu kullanılır.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">genis</span><span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op">%&gt;%</span> <span class="fu">pivot_wider</span><span class="op">(</span>names_from<span class="op">=</span><span class="st">"okumapuan"</span>,values_from<span class="op">=</span><span class="st">"deger"</span><span class="op">)</span></span>
-<span><span class="va">genis</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<p>Bir veri setini daha iyi yorumlayabilmek amacıyla uzun veri formatından geniş veri formatına dönüştürülür. Genellikle bir gözlem için değerlerin birden çok satırda yer aldığı durumlarda tercih edilir. Bunun için <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code> fonksiyonu kullanılır.</p>
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">genis</span><span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from<span class="op">=</span><span class="st">"okumapuan"</span>,values_from<span class="op">=</span><span class="st">"deger"</span><span class="op">)</span></span>
+<span><span class="va">genis</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -581,11 +605,11 @@
 <h2>
 <span class="header-section-number">13.6</span> separate()<a class="anchor" aria-label="anchor" href="#separate"><i class="fas fa-link"></i></a>
 </h2>
-<p><code>separate()</code> fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride okuma puanı değerlerinin karakter ve sayısal değerlerini ayırmak için <code>separate()</code>fonkisyonu kullanılabilir.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">uzun_v1</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op">%&gt;%</span> <span class="fu">separate</span><span class="op">(</span><span class="va">okumapuan</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"OD"</span>,<span class="st">"Sayi"</span><span class="op">)</span>,<span class="st">"MA"</span><span class="op">)</span> <span class="co"># bir sütunu iki sütuna ayırma</span></span>
+<p><code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> fonksiyonu bir sütunu birden çok sütuna ayırır. Değerlerin sütun adlarına gömüldüğü toplanmış verilerde ortaktır. Oluşan veride okuma puanı değerlerinin karakter ve sayısal değerlerini ayırmak için <code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code>fonkisyonu kullanılabilir.</p>
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun_v1</span> <span class="op">&lt;-</span> <span class="va">uzun</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">okumapuan</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"OD"</span>,<span class="st">"Sayi"</span><span class="op">)</span>,<span class="st">"MA"</span><span class="op">)</span> <span class="co"># bir sütunu iki sütuna ayırma</span></span>
 <span></span>
-<span><span class="va">uzun_v1</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co">#ilk üç satırın görüntülenmesi</span></span></code></pre></div>
+<span><span class="va">uzun_v1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co">#ilk üç satırın görüntülenmesi</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -622,10 +646,10 @@
 <h2>
 <span class="header-section-number">13.7</span> unite()<a class="anchor" aria-label="anchor" href="#unite"><i class="fas fa-link"></i></a>
 </h2>
-<p><code>separate()</code> fonksiyonunun tam tersi olarak iki sütunu alıp tek sütunda birleştirir.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_v1</span> <span class="op">%&gt;%</span> <span class="fu">unite</span><span class="op">(</span><span class="va">ODOKUMA</span>, <span class="va">OD</span>, <span class="va">Sayi</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="co"># sütun birleştirmenin yapılması</span></span>
-<span><span class="va">uzun_birles</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co"># ilk üç satırın görüntülenmesi</span></span></code></pre></div>
+<p><code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> fonksiyonunun tam tersi olarak iki sütunu alıp tek sütunda birleştirir.</p>
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">uzun_birles</span> <span class="op">&lt;-</span> <span class="va">uzun_v1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ODOKUMA</span>, <span class="va">OD</span>, <span class="va">Sayi</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="co"># sütun birleştirmenin yapılması</span></span>
+<span><span class="va">uzun_birles</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="co"># ilk üç satırın görüntülenmesi</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -653,7 +677,7 @@
 </table></div>
 </div>
 <p>Elde edilen çıktı incelendiğinde, öğrenci id değişkeni hariç iki sütunun olduğu görülmektedir. ODOKUMA sütunu, okuma puanlarının isimlerinden, değer ise okuma olası puanı değerlerinden oluşmaktadır.</p>
-<p><code>separate()</code> fonksiyonunun alternatifi <code>extract()</code> ve <code>unite()</code> fonksiyonunun ile yapılabilecek olan işlemler <code>mutate()</code> fonksiyonu ile de yapılabilir.</p>
+<p><code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> fonksiyonunun alternatifi <code><a href="https://magrittr.tidyverse.org/reference/aliases.html">extract()</a></code> ve <code><a href="https://tidyr.tidyverse.org/reference/unite.html">unite()</a></code> fonksiyonunun ile yapılabilecek olan işlemler <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> fonksiyonu ile de yapılabilir.</p>
 <p>Bu alternatiflerin uygunluğunun özel kullanım durumunuza ve verilerinizin niteliğine bağlı olduğunu unutmayın. Paketler zaman içinde yeni fonksiyonlara veya iyileştirmelere sahip olabileceğinden, en son güncellemeler için her zaman fonksiyon yardım sayfalarını kontrol etmenizi öneriyoruz.</p>
 
 </div>
@@ -860,15 +884,25 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></div>
+<div class="next"><a href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-d%C3%BCzenleme-v"><span class="header-section-number">13</span> Veri Düzenleme V</a></li>
+<li><a class="nav-link" href="#da%C4%9F%C4%B1n%C4%B1k-veri"><span class="header-section-number">13.1</span> Dağınık veri</a></li>
+<li><a class="nav-link" href="#d%C3%BCzg%C3%BCn-veri"><span class="header-section-number">13.2</span> Düzgün Veri</a></li>
+<li><a class="nav-link" href="#gather"><span class="header-section-number">13.3</span> gather()</a></li>
+<li><a class="nav-link" href="#spread"><span class="header-section-number">13.4</span> spread()</a></li>
+<li><a class="nav-link" href="#pivot_longer-ve-pivot_wider"><span class="header-section-number">13.5</span> pivot_longer() ve pivot_wider()</a></li>
+<li><a class="nav-link" href="#separate"><span class="header-section-number">13.6</span> separate()</a></li>
+<li><a class="nav-link" href="#unite"><span class="header-section-number">13.7</span> unite()</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/atalay-k/OLC731/blob/master/book/14-veri_duzenlemeV.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/atalay-k/OLC731/edit/master/book/14-veri_duzenlemeV.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -880,7 +914,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-27.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-12-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://github.com/atalay-k/OLC731/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -141,7 +141,7 @@
 </div>
 <p>Şekil 1'de, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code> fonksiyonu ile öncelikle X1 değişkenine ait tüm gözlemler alınmıştır. X2 değişkenine ait ID numarası "1" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri (NA) olarak girilmiştir. Burada birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.</p>
 <p>Örnek bir veri seti üzerinden açıklayalım. miniPISA1, miniPISA verisinden öğrenci ıd, cinsiyet ve ST097Q01TA,ST097Q02TA değişkenlerinin ve bu veri setinin ilk altı satırının seçilmesi ile oluşturulur.</p>
-<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span> <span class="co"># paketin aktifleştirilmesi</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span><span class="op">(</span><span class="st">"import/miniPISA.rda"</span><span class="op">)</span> <span class="co"># verinin yüklenmesi</span></span>
 <span><span class="va">miniPISA1</span> <span class="op">&lt;-</span> <span class="va">miniPISA</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGR_ID</span>,<span class="va">CNSYT</span>,<span class="va">ST097Q01TA</span>,<span class="va">ST097Q02TA</span><span class="op">)</span> <span class="co">#değişkenlerin seçimi</span></span>
@@ -196,7 +196,7 @@
 </table></div>
 </div>
 <p>miniPISA1 verisinin oluşturulmasından sonra miniPISA2 verisi oluşturulur. Öncelikle miniPISA verisinden öğrenci id, okumaktan zevk alma ve okuma olası değer1 puanları değişkenleri seçilir. Ardından bu veri setinin ilk yedi satırı seçilir ve üçüncü satır silinir. Sonuç olarak altı satırlık bir miniPISA2 veri seti elde edilmiş olur.</p>
-<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA2</span><span class="op">&lt;-</span> <span class="va">miniPISA</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">OGR_ID</span>,<span class="va">O_ZEVK</span>,<span class="va">O_OD1</span><span class="op">)</span> <span class="co">#değişkenlerin seçimi</span></span>
 <span><span class="va">miniPISA2</span><span class="op">&lt;-</span><span class="va">miniPISA2</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span>,<span class="op">]</span> <span class="co">#veri setinin ilk 7 satırının seçilmesi</span></span>
 <span><span class="va">miniPISA2</span><span class="op">&lt;-</span><span class="va">miniPISA2</span><span class="op">[</span><span class="op">-</span><span class="fl">3</span>,<span class="op">]</span> <span class="co">#veri setinin 3. satırının çıkarılması</span></span>
@@ -250,7 +250,7 @@
 </table></div>
 </div>
 <p>Elimizde bulunan miniPISA1 ve miniPISA2 veri setlerini kullanılarak <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code> fonksiyonu ile birleştirme işlemi uygulanır.</p>
-<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span> <span class="co">#veri birleştirme</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -326,7 +326,7 @@
 </div>
 <p>Şekil 2'de, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join()</a></code> fonksiyonu ile öncelikle X2 değişkenine ait tüm gözlemler alınmıştır. X1 değişkenine ait ID numarası "3" olan gözlem olmadığı için yeni veri setinde bu kısım kayıp veri(NA) olaraK girilmiştir. Burada da <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code> fonksiyonunda olduğu gibi birleştirme yapılacak iki veri setine ait ortak bir değişkenin ("ID") olması önemlidir.</p>
 <p>Örnek veri seti üzerinden açıklayalım:</p>
-<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span> <span class="co"># veri birleştirme</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -404,7 +404,7 @@
 <img src="images/inner_join.png" style="width:70.0%" alt="Şekil 3. inner_join fonksiyonu"><div class="figcaption">Şekil 3. inner_join fonksiyonu</div>
 </div>
 <p>Şekil 3'te, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join()</a></code> fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olan satırlar yani 2. satır birleştirilir.</p>
-<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span> <span class="co"># veri birleştirme</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -471,7 +471,7 @@
 <img src="images/full_join.png" style="width:70.0%" alt="Şekil 4. full_join fonksiyonu"><div class="figcaption">Şekil 4. full_join fonksiyonu</div>
 </div>
 <p>Şekil 4'te, <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join()</a></code> fonksiyonu ile öncelikle "ID" değişkeni baz alınarak iki veri setinde de yer alan tüm değişkenler birleştirilir.</p>
-<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span> <span class="co"># veri birleştirme</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -554,7 +554,7 @@
 <img src="images/semi_join.png" style="width:70.0%" alt="Şekil 5. semi_join fonksiyonu"><div class="figcaption">Şekil 5. semi_join fonksiyonu</div>
 </div>
 <p>Şekil 5'te, <code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join()</a></code> fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olan satırlar yani 2. satır birleştirilir. Fakat yine sadece A veri setinde yer alan değişken ya da değişkenler alınır.</p>
-<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -605,7 +605,7 @@
 <img src="images/anti_join.png" style="width:70.0%" alt="Şekil 6. anti_join fonksiyonu"><div class="figcaption">Şekil 6. anti_join fonksiyonu</div>
 </div>
 <p>Şekil 6'da, <code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join()</a></code> fonksiyonu ile öncelikle "ID" değişkeni baz alınarak ortak olmayan satırlar yani sadece 1. satır ve A veri setindeki değişken (X1) alınmıştır.</p>
-<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">miniPISA1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join</a></span><span class="op">(</span><span class="va">miniPISA2</span><span class="op">)</span> <span class="co"># veri birleştirme</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -625,7 +625,7 @@
 </div>
 <p>Çıktıda miniPISA1 verisinin miniPISA2 verisi ile eşleşmeyen satırları ele alındığından "79201118" id numaralı öğrenci yeni veri setine dahil edilmiştir. Ayrıca yeni veri setinde sadece miniPISA1 değişkeninde yer alan cinsiyet, ST097Q01TA, ST097Q02TA değişkenleri yer almıştır.</p>
 <p><strong>Not</strong>: Aynı değerleri içeren satırların olduğu sütunların eşleşmesi gerektiğini söyledik. Bunları birleştirme için aslında by = argümanını da kullanılır. Fakat birleştirme yapmak istediğimiz sütun/ların isimleri aynı olduğunda by = argümanını kullanmaya gerek kalmaz. Buraya kadar yapılan örnekler aşağıdaki gibi pipe operatörü kullanılmadan da yapılabilir.</p>
-<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">miniPISA1</span>,<span class="va">miniPISA2</span>, by<span class="op">=</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by</a></span><span class="op">(</span><span class="va">OGR_ID</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -924,7 +924,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-11-27.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-12-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

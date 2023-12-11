@@ -300,8 +300,8 @@ mean(veri)
 
 ```
 [1] 46
-Time difference of 24 days
-[1] 14.71991
+Time difference of 21 days
+[1] 17.43035
 ```
 
 -   Son olarak, bu işlemlerin sonucunu yeni bir nesnede saklayabilirsiniz:
