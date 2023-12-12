@@ -21,7 +21,9 @@
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/htmlwidgets-1.6.3/htmlwidgets.js"></script><script src="libs/plotly-binding-4.10.3/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -87,7 +89,8 @@
 <li><a class="" href="veri-duzenleme---iv.html"><span class="header-section-number">12</span> Veri duzenleme - IV</a></li>
 <li><a class="" href="veri-d%C3%BCzenleme-v.html"><span class="header-section-number">13</span> Veri Düzenleme V</a></li>
 <li><a class="" href="betimleyici-istatistik.html"><span class="header-section-number">14</span> Betimleyici İstatistik</a></li>
-<li><a class="" href="g%C3%B6rselle%C5%9Ftirme.html"><span class="header-section-number">15</span> Görselleştirme</a></li>
+<li><a class="" href="gorselle%C5%9Ftirme.html"><span class="header-section-number">15</span> Gorselleştirme</a></li>
+<li><a class="" href="plotly.html"><span class="header-section-number">16</span> plotly</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="appendix-updating-r.html"><span class="header-section-number">B</span> Updating R, RStudio, and packages</a></li>
@@ -861,23 +864,23 @@ virginica
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_spanner.html">tab_spanner</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Degerler"</span>,</span>
 <span>              columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">ortalama</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fl">6</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
-<div id="ratsnbgmvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ratsnbgmvh table {
+<div id="deyutulonm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#deyutulonm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ratsnbgmvh thead, #ratsnbgmvh tbody, #ratsnbgmvh tfoot, #ratsnbgmvh tr, #ratsnbgmvh td, #ratsnbgmvh th {
+#deyutulonm thead, #deyutulonm tbody, #deyutulonm tfoot, #deyutulonm tr, #deyutulonm td, #deyutulonm th {
   border-style: none;
 }
 
-#ratsnbgmvh p {
+#deyutulonm p {
   margin: 0;
   padding: 0;
 }
 
-#ratsnbgmvh .gt_table {
+#deyutulonm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -903,12 +906,12 @@ virginica
   border-left-color: #D3D3D3;
 }
 
-#ratsnbgmvh .gt_caption {
+#deyutulonm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ratsnbgmvh .gt_title {
+#deyutulonm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -920,7 +923,7 @@ virginica
   border-bottom-width: 0;
 }
 
-#ratsnbgmvh .gt_subtitle {
+#deyutulonm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -932,7 +935,7 @@ virginica
   border-top-width: 0;
 }
 
-#ratsnbgmvh .gt_heading {
+#deyutulonm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -944,13 +947,13 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#ratsnbgmvh .gt_bottom_border {
+#deyutulonm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_col_headings {
+#deyutulonm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -965,7 +968,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#ratsnbgmvh .gt_col_heading {
+#deyutulonm .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -985,7 +988,7 @@ virginica
   overflow-x: hidden;
 }
 
-#ratsnbgmvh .gt_column_spanner_outer {
+#deyutulonm .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -997,15 +1000,15 @@ virginica
   padding-right: 4px;
 }
 
-#ratsnbgmvh .gt_column_spanner_outer:first-child {
+#deyutulonm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ratsnbgmvh .gt_column_spanner_outer:last-child {
+#deyutulonm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ratsnbgmvh .gt_column_spanner {
+#deyutulonm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1017,11 +1020,11 @@ virginica
   width: 100%;
 }
 
-#ratsnbgmvh .gt_spanner_row {
+#deyutulonm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ratsnbgmvh .gt_group_heading {
+#deyutulonm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1047,7 +1050,7 @@ virginica
   text-align: left;
 }
 
-#ratsnbgmvh .gt_empty_group_heading {
+#deyutulonm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1062,15 +1065,15 @@ virginica
   vertical-align: middle;
 }
 
-#ratsnbgmvh .gt_from_md > :first-child {
+#deyutulonm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ratsnbgmvh .gt_from_md > :last-child {
+#deyutulonm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ratsnbgmvh .gt_row {
+#deyutulonm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1089,7 +1092,7 @@ virginica
   overflow-x: hidden;
 }
 
-#ratsnbgmvh .gt_stub {
+#deyutulonm .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -1102,7 +1105,7 @@ virginica
   padding-right: 5px;
 }
 
-#ratsnbgmvh .gt_stub_row_group {
+#deyutulonm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1116,15 +1119,15 @@ virginica
   vertical-align: top;
 }
 
-#ratsnbgmvh .gt_row_group_first td {
+#deyutulonm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ratsnbgmvh .gt_row_group_first th {
+#deyutulonm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ratsnbgmvh .gt_summary_row {
+#deyutulonm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1134,16 +1137,16 @@ virginica
   padding-right: 5px;
 }
 
-#ratsnbgmvh .gt_first_summary_row {
+#deyutulonm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_first_summary_row.thick {
+#deyutulonm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ratsnbgmvh .gt_last_summary_row {
+#deyutulonm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1153,7 +1156,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_grand_summary_row {
+#deyutulonm .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1163,7 +1166,7 @@ virginica
   padding-right: 5px;
 }
 
-#ratsnbgmvh .gt_first_grand_summary_row {
+#deyutulonm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1173,7 +1176,7 @@ virginica
   border-top-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_last_grand_summary_row_top {
+#deyutulonm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1183,11 +1186,11 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_striped {
+#deyutulonm .gt_striped {
   background-color: #EDF7FC;
 }
 
-#ratsnbgmvh .gt_table_body {
+#deyutulonm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1196,7 +1199,7 @@ virginica
   border-bottom-color: #5F5F5F;
 }
 
-#ratsnbgmvh .gt_footnotes {
+#deyutulonm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1210,7 +1213,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#ratsnbgmvh .gt_footnote {
+#deyutulonm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1219,7 +1222,7 @@ virginica
   padding-right: 5px;
 }
 
-#ratsnbgmvh .gt_sourcenotes {
+#deyutulonm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1233,7 +1236,7 @@ virginica
   border-right-color: #D3D3D3;
 }
 
-#ratsnbgmvh .gt_sourcenote {
+#deyutulonm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1241,63 +1244,63 @@ virginica
   padding-right: 5px;
 }
 
-#ratsnbgmvh .gt_left {
+#deyutulonm .gt_left {
   text-align: left;
 }
 
-#ratsnbgmvh .gt_center {
+#deyutulonm .gt_center {
   text-align: center;
 }
 
-#ratsnbgmvh .gt_right {
+#deyutulonm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ratsnbgmvh .gt_font_normal {
+#deyutulonm .gt_font_normal {
   font-weight: normal;
 }
 
-#ratsnbgmvh .gt_font_bold {
+#deyutulonm .gt_font_bold {
   font-weight: bold;
 }
 
-#ratsnbgmvh .gt_font_italic {
+#deyutulonm .gt_font_italic {
   font-style: italic;
 }
 
-#ratsnbgmvh .gt_super {
+#deyutulonm .gt_super {
   font-size: 65%;
 }
 
-#ratsnbgmvh .gt_footnote_marks {
+#deyutulonm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ratsnbgmvh .gt_asterisk {
+#deyutulonm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ratsnbgmvh .gt_indent_1 {
+#deyutulonm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ratsnbgmvh .gt_indent_2 {
+#deyutulonm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ratsnbgmvh .gt_indent_3 {
+#deyutulonm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ratsnbgmvh .gt_indent_4 {
+#deyutulonm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ratsnbgmvh .gt_indent_5 {
+#deyutulonm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1959,7 +1962,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-12-11.</p>
+    <p>"<strong>OLC731</strong>: R YAZILIMI ILE VERI ANALIZI" was written by Kubra Atalay Kabasakal. It was last built on 2023-12-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
