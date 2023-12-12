@@ -1,155 +1,164 @@
-# Görselleştirme
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Gorselleştirme
 
 <!-- https://statsandr.com/blog/descriptive-statistics-in-r/ -->
 
 <!-- https://rpubs.com/williamsurles/298945 -->
 
- <!-- https://rpubs.com/odenipinedo/introduction-to-data-visualization-with-ggplot2 -->
+<!-- https://rpubs.com/odenipinedo/introduction-to-data-visualization-with-ggplot2 -->
 
+![](images\v1.PNG){width="50%"}
 
+![](images\v2.PNG){width="50%"}
 
+-   Grafikler bir **veri kümesini anlamamıza yardımcı olur ve örüntüyü
+    yorumlayabilmek** önemli bir araçtır. Grafikler veriyi betimlemek
+    amacıyla kullanılır.
 
-![](images\v1.PNG){width=50%}
+-   Grafiklerin olabildiğince ayrıntı içermesine bunu yaparken de
+    ayrıntıların ne kadarına yorumlayabileceğinize odaklanın.
 
+-   Grafikleri sunarken editoryal kararlar gereklidir. Vurgulamak
+    istediğiniz temel özellikleri vurgulayın. Gereksiz ayrıntıları
+    ortadan kaldırın.
 
-![](images\v2.PNG){width=50%}
+-   Grafik sistemleri
 
-- Grafikler bir **veri kümesini anlamamıza yardımcı olur ve örüntüyü yorumlayabilmek** önemli bir araçtır.
+    -   **Base:** öğrenmesi en kolay olan
 
-- Grafikler veriyi betimlemek amacıyla kullanılır. 
+    -   **Grid:** diğer araçları geliştirmek için güçlü moduller
 
+    -   **lattice:** gridler üzerine kurulu genel amaçlı grafikler
 
-- Garfiklerin olabildiğince ayrıntı içermesine bunu yaparken de ayrıntıların ne kadarına yorumlayabileceğinize odaklanın.
+    -   **ggplot2:** grafiklerin grammeri
 
-- Grafikleri sunarken editoryal kararlar gereklidir. Vurgulamak istediğiniz temel özellikleri vurgulayın. Gereksiz ayrıntıları ortadan kaldırın.
-
-- Grafik sistemleri
-
-    - **Base:** öğrenmesi en kolay olan
-    
-    - **Grid:** diğer araçları geliştirmek için güçlü moduller
-    
-    - **lattice:** gridler üzerine kurulu genel amaçlı grafikler
-    
-    - **ggplot2:** grafiklerin grammeri
-
-- `tidyverse` paketi veri düzenlemeleri, görselleştirmeleri, modellemeleri kolay bir şekilde yapabilmemizi sağlayan, R'ın birçok paketini içinde bulunduran pakettir. Bu paketin içeriğinde veri görselleştirme amacıyla `ggplot2` paketi de yer almaktadır.
+-   `tidyverse` paketi veri düzenlemeleri, görselleştirmeleri,
+    modellemeleri kolay bir şekilde yapabilmemizi sağlayan, R'ın birçok
+    paketini içinde bulunduran pakettir. Bu paketin içeriğinde veri
+    görselleştirme amacıyla `ggplot2` paketi de yer almaktadır.
 
 
 ```r
 # install.packages("tidyverse", repos="https://cran.rstudio.com")
 library("tidyverse")
-library(expss)
 ```
 
-- Grafikler oluşturulurken, genellikle birden fazla değişkene ilişkin gözlemlerin yer aldığı veri setleri kullanılır.
+-   Grafikler oluşturulurken, genellikle birden fazla değişkene ilişkin
+    gözlemlerin yer aldığı veri setleri kullanılır.
 
-- Grafiklerin kolay okunması adına `PISA_OGR_2018`  veri setinden veri sayısının azaltılması amacıyla sınıf (9. ve 10.) düzeylerine ilişkin değişkenin her düzeyinden 100'şer kişilik örneklem seçilip toplam 200 gözlemle "df1" nesnesi oluşturulmuştur. 
+-   Grafiklerin kolay okunması adına `PISA_OGR_2018` veri setinden veri
+    sayısının azaltılması amacıyla select() fonksiyonu ile bazı
+    değişkenler seçilmiştir. Veri setinde sadece 9. ve 10. sınıflar
+    filitrelenmiştir.
 
-
+-   Faktor olan değişlenlerde `to_factor` fonksiyonu ile kaetgorik hale
+    dönüştürülmüştür.
 
 
 ```r
-load("import/PISA_OGR_2018.rda")
-library(dplyr)
+library(tuev)
+library(sjlabelled)
+data(PISA_OGR_2018)
 df1 <- PISA_OGR_2018 %>%
-select(SINIF,CINSIYET,OK_YETERLIK,ODOKUMA1,starts_with("ST097"))  %>%   
-  na.omit()
+select(CINSIYET, SINIF,KITAPSAYISI, SES, Anne_Egitim, Baba_Egitim,Okuloncesi_yil,OKUL_TUR,OKUMA_ZEVK,
+       OK_YETERLIK,ODOKUMA1) %>% 
+  filter(SINIF %in%c(9,10 ))
+# kategorik değişkenlerin faktör olarak kaydı
 
-head(df1)
+library(labelled)
+
+ 
+df1 <- df1 %>%  mutate(across(.cols=c(CINSIYET:KITAPSAYISI,
+                      Anne_Egitim:OKUL_TUR), labelled::to_factor))
 ```
-
-<div class="kable-table">
-
-| SINIF| CINSIYET| OK_YETERLIK| ODOKUMA1| ST097Q01TA| ST097Q02TA| ST097Q03TA| ST097Q04TA| ST097Q05TA|
-|-----:|--------:|-----------:|--------:|----------:|----------:|----------:|----------:|----------:|
-|    10|        2|     -0.6712|  376.022|          1|          2|          1|          1|          1|
-|    10|        2|      1.2374|  512.316|          3|          2|          3|          3|          3|
-|    10|        1|     -0.4089|  396.383|          2|          3|          3|          3|          3|
-|     9|        2|     -0.8250|  393.006|          2|          2|          3|          1|          1|
-|     9|        2|      1.8839|  552.457|          3|          3|          4|          3|          1|
-|    10|        2|      0.1222|  441.286|          3|          3|          2|          2|          3|
-
-</div>
-
-
-- Grafik çizimlerinde grup değişkenlerine ihtiyaç duyulduğu için sınıf düzeylerine ve cinsiyete ilişkin değişkenler `as.factor()` fonksiyonuyla kategorik hale getirilmiştir.
-
-
-
-```r
-library(expss)
-df2 <- df1 %>% 
-  drop_var_labs() %>% 
-  filter(SINIF %in%c(9,10))%>% 
-  group_by(SINIF)%>%
-  sample_n(100, replace=TRUE) %>%
-    ungroup()%>%  
-  mutate(SINIF=as.factor(SINIF), CINSIYET=as.factor(CINSIYET)) 
-```
-
 
 ## ggplot
 
-- Grafikleri iyi bilinen **ggplot2** paketi grafikleri üzerinden işleyeceğiz.
+-   Grafikleri iyi bilinen **ggplot2** paketi grafikleri üzerinden
+    işleyeceğiz.
 
-- **ggplot2** paketindeki grafikler genellikle daha iyi bir görünüme sahiptir ancak daha gelişmiş kodlama becerileri gerektirir (daha fazla bilgi edinmek için "Graphics in R with ggplot2" makalesine bakın). 
+-   **ggplot2** paketindeki grafikler genellikle daha iyi bir görünüme
+    sahiptir ancak daha gelişmiş kodlama becerileri gerektirir (daha
+    fazla bilgi edinmek için "Graphics in R with ggplot2" makalesine
+    bakın).
 
-- Grafiklerinizi yayınlamanız veya paylaşmanız gerekiyorsa, mümkünse **ggplot2** kullanmanızı öneririm, aksi takdirde varsayılan grafikler işinizi görecektir.
+-   Grafiklerinizi yayınlamanız veya paylaşmanız gerekiyorsa, mümkünse
+    **ggplot2** kullanmanızı öneririm, aksi takdirde varsayılan
+    grafikler işinizi görecektir.
 
-:::{.info data-latex=""}
-İpucu: Yakın zamanda [**esquisse**](https://dreamrs.github.io/esquisse/index.html) eklentilerinden ggplot2 oluşturucusunu keşfettim. Kendiniz kodlamak zorunda kalmadan **ggplot2** paketinden nasıl kolayca grafik çizebileceğinizi görün.
+::: {.info data-latex=""}
+İpucu: Yakın zamanda
+[**esquisse**](https://dreamrs.github.io/esquisse/index.html)
+eklentilerinden ggplot2 oluşturucusunu keşfettim. Kendiniz kodlamak
+zorunda kalmadan **ggplot2** paketinden nasıl kolayca grafik
+çizebileceğinizi görün.
 :::
 
-- Bu sayfa görüntülenen tüm grafikler özelleştirilebilir. Örneğin, başlığı, x ve y ekseni etiketlerini, rengi vb. düzenlemek mümkündür. 
+-   Bu sayfa görüntülenen tüm grafikler özelleştirilebilir. Örneğin,
+    başlığı, x ve y ekseni etiketlerini, rengi vb. düzenlemek mümkündür.
 
 
 ```r
 library(ggplot2)
-ggplot(df2,aes(x=ODOKUMA1)) + geom_histogram()
+ggplot(df1,aes(x=ODOKUMA1)) + geom_histogram()
 ```
 
 ```
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-1-1.png" width="100%" style="display: block; margin: auto;" />
 
--   **ggplot2** paketi, **lattice** paketi gibi verilerdeki birden çok değişkeni aynı grafik üzerinde göstermek ve veriler arasındaki çok düzeyli ilişkileri özetlemek amacıyla geliştirilmiştir.
+-   **ggplot2** paketi, **lattice** paketi gibi verilerdeki birden çok
+    değişkeni aynı grafik üzerinde göstermek ve veriler arasındaki çok
+    düzeyli ilişkileri özetlemek amacıyla geliştirilmiştir.
 
 -   Açılımı grafiğin grameri (grammer of graphics) şeklindedir.
 
--   **lattice** grafiklerindeki gibi grafikler nesneler olarak kaydedilmekte ve birden çok grafiği tek bir grafiğin üzerinde gösterebilmektedir.
+-   **lattice** grafiklerindeki gibi grafikler nesneler olarak
+    kaydedilmekte ve birden çok grafiği tek bir grafiğin üzerinde
+    gösterebilmektedir.
 
--   **lattice** paketine göre en önemli farkı **katman** mantığıyla çalışmasıdır.
-      -   Metin ekleme,
-      -   renklendirme,
-      -   açıklama kutucukları vb... özelleştirmeler toplama **(+)** işareti ile kodlara eklenebilmektedir.
+-   **lattice** paketine göre en önemli farkı **katman** mantığıyla
+    çalışmasıdır.
 
+    -   Metin ekleme,
+    -   renklendirme,
+    -   açıklama kutucukları vb... özelleştirmeler toplama **(+)**
+        işareti ile kodlara eklenebilmektedir.
 
-- **ggplot2** paketnde  Temel Fonksiyonların Kullanımı aşağıdaki şekildedir.
-      
-      -   **qplot()** ve **ggplot()** fonksiyonları
-      -   **qplot()**, hızlı grafik (quick plot) çizimi anlamına gelmektedir.
-      
-        -   **qplot(x, y, data, geom)** veya
-      
-        -   **ggplot(x, y, data, geom)** veya
-      
-        -   **ggplot( data, aes(x, y)) + geom.grafikismi()**
+-   **ggplot2** paketnde Temel Fonksiyonların Kullanımı aşağıdaki
+    şekildedir.
+
+    ```         
+    -   **qplot()** ve **ggplot()** fonksiyonları
+    -   **qplot()**, hızlı grafik (quick plot) çizimi anlamına gelmektedir.
+
+      -   **qplot(x, y, data, geom)** veya
+
+      -   **ggplot(x, y, data, geom)** veya
+
+      -   **ggplot( data, aes(x, y)) + geom.grafikismi()**
+    ```
 
 -   **aes()** her bir değişkenin alacağı rolü belirlemede kullanılır.
 
--   **geom()** argümanı çizilecek grafiği türünü belirlemek için kullanılmaktadır. Geometrik nesneler (geometric objects) olarak adlandırılmaktadır.
+-   **geom()** argümanı çizilecek grafiği türünü belirlemek için
+    kullanılmaktadır. Geometrik nesneler (geometric objects) olarak
+    adlandırılmaktadır.
 
-- Örneğin **yoğunluk grafiği** çizilmek istendiğinde; 
+-   Örneğin **yoğunluk grafiği** çizilmek istendiğinde;
 
-  - **ggplot(x, y, data, geom="density")** veya  
-  
-  - **ggplot( data, aes(x, y)) + geom.density()**
+    -   **ggplot(x, y, data, geom="density")** veya
 
+    -   **ggplot( data, aes(x, y)) + geom.density()**
 
-- ggplot2 paketinde yer alan tüm grafikler aşağıda listelenmiştir.
+-   ggplot2 paketinde yer alan tüm grafikler aşağıda listelenmiştir.
 
 
 ```r
@@ -178,18 +187,17 @@ ls(pattern = '^geom_', env = as.environment('package:ggplot2'))
 ## [52] "geom_violin"            "geom_vline"
 ```
 
+## Histogram
 
-## Histogram 
-
-- Aşağıdaki kod sadece ilk katmanı oluşturur.
+-   Aşağıdaki kod sadece ilk katmanı oluşturur.
 
 
 ```r
-grafik_1 <- ggplot(df2, aes(x=ODOKUMA1))
+grafik_1 <- ggplot(df1, aes(x=ODOKUMA1))
 grafik_1 
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-4-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;" />
 
 ### Katman eklenmesi
 
@@ -202,11 +210,9 @@ grafik_1 + geom_histogram()
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" />
 
-###  Yüzey eklenmesi
-
-
+### Yüzey eklenmesi
 
 
 ```r
@@ -219,8 +225,7 @@ grafik_1 +
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" />
-
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -233,31 +238,23 @@ grafik_1 +
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-7-1.png" width="50%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" />
 
-- **facet_grid** fonksiyonu ise hem tek hem de iki değişkenin panellerde gösterimi için 
+-   **facet_grid** fonksiyonu ise hem tek hem de iki değişkenin
+    panellerde gösterimi için
 
-  - **facet_grid(satırdeğişkeni~sütundeğişkeni)** 
-  
-  - **facet_grid(satırdeğişkeni~.)** veya     
-  
-  - **facet_grid(.~sütundeğişkeni)**
+    -   **facet_grid(satırdeğişkeni\~sütundeğişkeni)**
 
+    -   **facet_grid(satırdeğişkeni\~.)** veya
 
+    -   **facet_grid(.\~sütundeğişkeni)**
 
-- Yüzeyde kategorik değişkenlerin düzeylerini görebilmek için **factor** değişken olarak tanımlamak gerekir.
-
-
-```r
-library(haven)
-df2 <- 
-  df2 %>% 
-  mutate_if(is.labelled, funs(as_factor(.)))
-```
+-   Yüzeyde kategorik değişkenlerin düzeylerini görebilmek için
+    **factor** değişken olarak tanımlamak gerekir.
 
 
 ```r
- ggplot(df2, aes(x=ODOKUMA1)) +
+ ggplot(df1, aes(x=ODOKUMA1)) +
   geom_histogram()+
   facet_grid(SINIF~CINSIYET)
 ```
@@ -266,34 +263,33 @@ df2 <-
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-9-1.png" width="80%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-7-1.png" width="80%" style="display: block; margin: auto;" />
 
-
-- Yüzeylerin sütunda oluşturulması
+-   Yüzeylerin sütunda oluşturulması
 
 
 ```r
-ggplot(df2,aes(x=ODOKUMA1))+
+ggplot(df1,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(.~CINSIYET)
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-10-1.png" width="40%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-8-1.png" width="40%" style="display: block; margin: auto;" />
 
-- Yüzeylerin satırlarda oluşturulması
+-   Yüzeylerin satırlarda oluşturulması
+
 
 ```r
-ggplot(df2,aes(x=ODOKUMA1))+
+ggplot(df1,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(CINSIYET~.)
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-11-1.png" width="40%" style="display: block; margin: auto;" />
-
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-9-1.png" width="40%" style="display: block; margin: auto;" />
 
 
 ```r
-ggplot(df2,aes(x=ODOKUMA1))+
+ggplot(df1,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(.~SINIF)
 ```
@@ -302,14 +298,11 @@ ggplot(df2,aes(x=ODOKUMA1))+
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" />
-
-
-
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ```r
-ggplot(df2,aes(x=ODOKUMA1))+
+ggplot(df1,aes(x=ODOKUMA1))+
   geom_histogram()+
   facet_grid(SINIF~.)
 ```
@@ -318,22 +311,21 @@ ggplot(df2,aes(x=ODOKUMA1))+
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" />
 
+### gruplama değişkenleri
 
-###  gruplama değişkenleri
-
-- Renklendirme, sembol şekli, sembol büyüklüğü ve çizgi türü belirleyen fonksiyonlar yardımıyla gruplama yapılmaktadır.
-
+-   Renklendirme, sembol şekli, sembol büyüklüğü ve çizgi türü
+    belirleyen fonksiyonlar yardımıyla gruplama yapılmaktadır.
 
 #### color ile gruplandırma
 
-- Açıklama kutucukları otomatik çıkar!
+-   Açıklama kutucukları otomatik çıkar!
 
 
 ```r
 p1 <- ggplot(
-      df2 %>% 
+      df1 %>% 
       group_by(SINIF,CINSIYET) %>%
       mutate(ort=mean(ODOKUMA1)) %>% ungroup(),
      aes(x=SINIF, y=ort, color=CINSIYET )) +
@@ -344,26 +336,28 @@ p1 <- ggplot(
 p1
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" />
 
-- Yüzey eklenmiş garfiklerde de gruplama değişkeni kullanılabilir.
-
+-   Yüzey eklenmiş garfiklerde de gruplama değişkeni kullanılabilir.
 
 
 ```r
-ggplot(df2,aes(x=ODOKUMA1,y=OK_YETERLIK,color=CINSIYET)) +
+ggplot(df1,aes(x=ODOKUMA1,y=OK_YETERLIK,color=CINSIYET)) +
   geom_point()+
   facet_grid(.~SINIF)	
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## Grafik nesnesi
 
-- Oluşturulan grafik **p** nesnesine atanmıştır. **p** nesnesine **+** ile katmanlar eklenebilir.
-- Kategorik degişkenler eksen değerlerini belirler.
-
+-   Oluşturulan grafik **p** nesnesine atanmıştır. **p** nesnesine **+**
+    ile katmanlar eklenebilir.
+-   Kategorik degişkenler eksen değerlerini belirler.
 
 
 ```r
@@ -372,10 +366,10 @@ p <- ggplot(mtcars, aes(cyl, mpg)) +
 p
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
 
-
-- cyl değişkenin sadece 4,6 ve 8 değerlerini eksende belirtmek için factor olarak tanımlamak gerekir.
+-   cyl değişkenin sadece 4,6 ve 8 değerlerini eksende belirtmek için
+    factor olarak tanımlamak gerekir.
 
 
 ```r
@@ -383,115 +377,145 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
   geom_point()
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" />
 
-- Grafikler üç bölümden oluşur
+-   Grafikler üç bölümden oluşur
 
 ![](images/v3.PNG)
 
-## **AESTHETICS** 
+## **AESTHETICS**
 
-    -   fill
-    -   color
-    -   size
-    -   shape
-    -   alpha
-    -   linetype
-    -   labels
-
-
+```         
+-   fill
+-   color
+-   size
+-   shape
+-   alpha
+-   linetype
+-   labels
+```
 
 ### **color** parametresi
 
 
 ```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK)) +
+ggplot(df1, aes(CINSIYET, OK_YETERLIK)) +
   geom_point(color = "blue")
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
+
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" />
+
+### **size** ve **shape** parametresi
+
+-   her iki parametrenin de olağan değeri 1 dir.
+
+
+```r
+ggplot(df1, aes(CINSIYET, OK_YETERLIK)) +
+  geom_point(color = "blue",size=5,shape="a")
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
+
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" />
+
+-   color argümanı ile renklendirme
+
+
+```r
+ggplot(df1, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+  geom_point()
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
 ```
 
 <img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
 
-### **size** ve **shape** parametresi
+-   Üstüse gelen noktalar için **position**
 
-- her iki parametrenin de olağan değeri 1 dir. 
+-   identity
+
+-   dodge
+
+-   stack
+
+-   fill
+
+-   jitter
+
+-   jitterdodge
+
+-   nudge
+
 
 ```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK)) +
-  geom_point(color = "blue",size=5,shape="a")
+ggplot(df1, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+  geom_point()
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
 ```
 
 <img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" />
 
 
-- color argümanı ile renklendirme
-
-
 ```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
-  geom_point()
+ggplot(df1, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+  geom_point(position = "jitter")
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
 ```
 
 <img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" />
 
+### **size** parametresi
 
-- Üstüse gelen noktalar için **position**
-
--   identity
--   dodge
--   stack
--   fill
--   jitter
--   jitterdodge
--   nudge
-
+-   parametreler için veri setinden bir değişken değeri seçilebilir.
 
 
 ```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+ggplot(df1, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
   geom_point()
+```
+
+```
+## Warning: Using size for a discrete variable is not advised.
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
 ```
 
 <img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
+-   **size** parametresi üst üste binen noktaları kaydırarak ayırma
 
 
 ```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK, color = SINIF)) +
+ggplot(df1, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
   geom_point(position = "jitter")
+```
+
+```
+## Warning: Using size for a discrete variable is not advised.
+```
+
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
 ```
 
 <img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" />
-
-### **size** parametresi
-
-- parametreler için veri setinden bir değişken değeri seçilebilir.
-
-
-```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
-  geom_point()
-```
-
-```
-## Warning: Using size for a discrete variable is not advised.
-```
-
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" />
-
-- **size** parametresi  üst üste binen noktaları kaydırarak ayırma
-
-
-```r
-ggplot(df2, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
-  geom_point(position = "jitter")
-```
-
-```
-## Warning: Using size for a discrete variable is not advised.
-```
-
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;" />
-
 
 ## Katmanlar
 
@@ -499,26 +523,34 @@ ggplot(df2, aes(CINSIYET, OK_YETERLIK, size = SINIF)) +
 
 ### alpha
 
-- Şeffaflık düzeyi için **alpa**
+-   Şeffaflık düzeyi için **alpa**
+
 
 ```r
-ggplot(df2, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
+ggplot(df1, aes(ODOKUMA1, OK_YETERLIK, color = SINIF)) +
   geom_point(alpha = 0.4)
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
-- Katmanları nesneye ekleme
-**grafik1** adlı nesneye istenilen katmanlar eklenebilir.
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" />
+
+-   Katmanları nesneye ekleme **grafik1** adlı nesneye istenilen
+    katmanlar eklenebilir.
 
 
 ```r
-grafik1 <- ggplot(df2, aes(ODOKUMA1, OK_YETERLIK, color = SINIF))
+grafik1 <- ggplot(df1, aes(ODOKUMA1, OK_YETERLIK, color = SINIF))
 grafik1 +geom_point(alpha = 1.2)
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;" />
 
 **grafik1** adlı nesneye CINSIYET değişkenine göre şekil ekleme
 
@@ -527,55 +559,52 @@ grafik1 +geom_point(alpha = 1.2)
 grafik1 +geom_point(aes(shape=CINSIYET))
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### **text**
 
-Değişken adları **text** komutu ile veri sembolü olarak eklenebilir. Gösterim amacıyla **df** veri setinin sadece ilk 10 satırı kullanılmıştır.
+Değişken adları **text** komutu ile veri sembolü olarak eklenebilir.
+Gösterim amacıyla **df** veri setinin sadece ilk 10 satırı
+kullanılmıştır.
 
 
 ```r
-ggplot(df2[1:10,], aes(ODOKUMA1, OK_YETERLIK))+
+ggplot(df1[1:10,], aes(ODOKUMA1, OK_YETERLIK))+
          geom_text(aes(label = CINSIYET))
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### Scale
 
-Scale fonksiyonları
-  -   scale_x() 
-  -   scale_y() 
-  -   scale_color() 
-  -   scale_fill() 
-  -   scale_shape() 
-  -   scale_linetype() 
-  -   scale_size() 
-  -   scale_x_continuous() 
-  -   scale_y() 
-  -   scale_color_discrete() 
-  -   scale_fill() 
-  -   scale_shape() 
-  -   scale_linetype() 
-  -   scale_size() 
-
+Scale fonksiyonları - scale_x() - scale_y() - scale_color() -
+scale_fill() - scale_shape() - scale_linetype() - scale_size() -
+scale_x_continuous() - scale_y() - scale_color_discrete() -
+scale_fill() - scale_shape() - scale_linetype() - scale_size()
 
 
 ```r
-ggplot(df2, aes(x = ODOKUMA1,y = OK_YETERLIK, color = CINSIYET)) +
+ggplot(df1, aes(x = ODOKUMA1,y = OK_YETERLIK, color = CINSIYET)) +
 geom_point(position = "jitter") +
 scale_x_continuous("Okuma Puanları") +
 scale_color_discrete("Cinsiyet")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
-### *limits**
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;" />
+
+### \*limits
 
 
 ```r
-ggplot(df2, aes(x = ODOKUMA1,
+ggplot(df1, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -583,13 +612,17 @@ scale_x_continuous("Okuma Puanları",limits = c(100,900)) +
 scale_color_discrete("Cinsiyet")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-30-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
-### *breaks
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;" />
+
+### \*breaks
 
 
 ```r
-ggplot(df2, aes(x = ODOKUMA1,
+ggplot(df1, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -598,14 +631,17 @@ scale_x_continuous("Okuma Puanları",limits = c(100,900),
 scale_color_discrete("Cinsiyet")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-31-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
 
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;" />
 
-###  expand
+### expand
 
 
 ```r
-ggplot(df2, aes(x = ODOKUMA1,
+ggplot(df1, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -615,13 +651,17 @@ scale_x_continuous("Okuma Puanları",limits = c(100,900),
 scale_color_discrete("Cinsiyet")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-32-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
+
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-30-1.png" width="100%" style="display: block; margin: auto;" />
 
 ### labs
 
 
 ```r
-ggplot(df2, aes(x = ODOKUMA1,
+ggplot(df1, aes(x = ODOKUMA1,
 y = OK_YETERLIK,
 color = CINSIYET)) +
 geom_point(position = "jitter") +
@@ -630,24 +670,28 @@ geom_point(position = "jitter") +
        color = "Grup")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;" />
+```
+## Warning: Removed 190 rows containing missing values (`geom_point()`).
+```
+
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-31-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## Bar Grafiği
 
 
 ```r
-ggplot(df2, aes(CINSIYET, fill = SINIF)) +   geom_bar() +
+ggplot(df1, aes(CINSIYET, fill = SINIF)) +   geom_bar() +
   labs(x = "Cinsiyet",
        y = "Frekans")
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-34-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-32-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## scale_fill
 
 
 ```r
-ggplot(df2, aes(CINSIYET, fill = SINIF)) +
+ggplot(df1, aes(CINSIYET, fill = SINIF)) +
   geom_bar() +
    labs(x = "Cinsiyet",
        y = "Frekans") +
@@ -655,19 +699,17 @@ ggplot(df2, aes(CINSIYET, fill = SINIF)) +
                                            "darkblue","purple"))
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;" />
-
-
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## Bar Grafikleri
+
 
 ```r
 ggplot(data = PISA_OGR_2018, mapping = aes(x = CINSIYET)) +
   geom_bar()
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-36-1.png" width="100%" style="display: block; margin: auto;" />
-
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-34-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -677,15 +719,15 @@ ggplot(data = PISA_OGR_2018, mapping = aes(x = CINSIYET)) +
 #   c("kiz", "erkek")
 # ))
 
-ggplot(data = df2, mapping = aes(x = CINSIYET)) +
+ggplot(data = df1, mapping = aes(x = CINSIYET)) +
   geom_bar()
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-37-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ```r
-ggplot(data = df2, mapping = aes(x = CINSIYET)) + 
+ggplot(data = df1, mapping = aes(x = CINSIYET)) + 
   geom_bar(aes(y = (..count..)/sum(..count..))) + 
   scale_y_continuous(name = "Yüzde", labels=scales::percent) 
 ```
@@ -698,25 +740,23 @@ ggplot(data = df2, mapping = aes(x = CINSIYET)) +
 ## generated.
 ```
 
-<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-38-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="16-Gorsellestirme_files/figure-html/unnamed-chunk-36-1.png" width="100%" style="display: block; margin: auto;" />
 
+## Kaynaklar
 
+-   [ggplot2: elegant graphics for data
+    analysis](https://ggplot2-book.org/) by Hadley Wickham, Danielle
+    Navarro, and Thomas Lin Pedersen
 
+-   [Fundamentals of Data
+    Visualization](https://clauswilke.com/dataviz/) by Claus O. Wilke
 
+-   [Data Visualization: A practical introduction](https://socviz.co/)
+    by Kieran Healy
 
+```{=html}
+<!-- -->
+```
+-   😕
 
-
-
-- teşekkürler !
-
---
-
-
-- 😕
-
-- 😄
-
-
-
-
-
+-   😄

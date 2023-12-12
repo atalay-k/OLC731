@@ -1,0 +1,411 @@
+#  plotly
+
+- plotly paketi ile interaktif grafikler elde edilmektedir.
+- `r emo::ji("link")` PISA ve TIMMS dataları ile elde edilen interaktif [grafikleri linkten  inceleyebilirsiniz. ](https://rpubs.com/tuevpaket/775269)
+
+
+## Bar 
+
+- `mtcars` veri setini kullananarak basit bir bar grafiği elde edelim.  X ekseni silindir sayısı `cyl`,  Y ekseni ise her bir türün frekans değerini göstersin. `n` 
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly) # interaktif grafikler için
+```
+- silindir sayısı
+
+```{r}
+table(mtcars$cyl)
+```
+
+
+- Öncelikle ggplot ile çizelim.
+
+
+```{r fig.cap="Silindir Sayısı Frekans Grafiği", message=FALSE, warning=FALSE}
+ggplot(mtcars, aes(as.factor(cyl))) + 
+  geom_bar()+
+  xlab("Silindir Sayısı") + 
+  ylab("Frekans")
+
+```
+
+- grafiğin ineraktif hali
+
+```{r echo=FALSE,fig.cap="Silindir Sayısı Frekans Grafiği"}
+mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%  # convert cyl to categorical variable
+  count(cyl) %>%  ## count to get the frequency table (from dplyr package)
+  plot_ly(x=~cyl,
+          y=~n,
+          color=~cyl,
+          text = ~n,
+          ## below 3 lines for the bar label and hover text
+          textposition = "outside",
+          hovertext = ~paste("No. of cyl=", cyl, "\n", "Count=", n),
+          hoverinfo = "text") %>%  # apply plotly on the frequency data
+  add_bars(width=0.2) %>%  # use the width argument to adjust the width of the bars
+  layout(
+         xaxis = list(title="Slindir Sayısı "),
+         yaxis = list(title = "Frekans"))
+```
+
+
+
+## Plotly 
+
+- Plotly ile grafikleri nasıl çizeceğiz?
+
+```{r include=TRUE,eval=FALSE}
+data %>% 
+ plot_ly(x=~değişken,
+          y=~değişken)
+
+
+plot_ly(data,
+         x=~değişken,
+          y=~değişken)
+```
+
+- ggplotta + yerine plotlyde %>% kullanılıyor,
+değişkenler ~ ile tanımlanıyor
+
+
+```{r message=FALSE, warning=FALSE}
+bar1 <-  mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>% 
+  count(cyl) %>%    # Frekans tablosu oluştur
+  plot_ly(x=~cyl,
+          y=~n,
+          color=~cyl) %>% 
+layout(title="mtcars veri seti ile örnek bar grafiği",
+         xaxis = list(title="Silindir Sayısı "),
+         yaxis = list(title = "Frekans"))
+bar1
+```
+
+
+
+
+
+- Bar genişliğinin ve eksen adlarının değiştirlmesi
+
+
+```{r}
+ bar1 %>%   
+add_bars(width=0.5)  # bar genişliği
+
+```
+
+
+- eksenlerin değiştirilmesi
+
+
+```{r }
+mtcars %>%
+  mutate(cyl = as.factor(cyl)) %>%  # convert cyl to categorical variable
+  count(cyl) %>%  ## count to get the frequency table (from dplyr package)
+  plot_ly(y=~cyl,
+          x=~n,
+          color=~cyl,
+          text = ~n,
+          ## below 3 lines for the bar label and hover text
+          textposition = "outside",
+          hovertext = ~paste("No. of cyl=", cyl, "\n", "Count=", n),
+          hoverinfo = "text") %>%  # apply plotly on the frequency data
+  add_bars(width=0.2) %>%  # use the width argument to adjust the width of the bars
+  layout(title="mtcars veri seti ile örnek bar grafiği",
+         yaxis = list(title="Slindir Sayısı "),
+         xaxis = list(title = "Frekans"))
+```
+
+
+- İki kategorik değişken ile bar grafiği
+
+- `mtcars` veri setini kullananarak basit bir bar grafiği elde edelim.
+- X ekseni silindir sayısı `cyl` ve vites türüne göre gruplandırma ile `am`
+- Y ekseni ise her bir türün frekans değerini göstersin. `n` 
+
+
+
+```{r}
+mtcars %>% 
+  mutate(cyl = as.factor(cyl), 
+         am = as.factor(am)) %>% 
+    count(cyl, am)
+```
+
+- ggplot ile 
+
+```{r }
+ggplot(mtcars %>% 
+  mutate(cyl = as.factor(cyl), 
+         am = as.factor(am)), aes(cyl)) + geom_bar(aes(fill = am))
+```
+
+
+
+
+- plotly ile
+
+```{r message=FALSE, warning=FALSE}
+bar2 <- mtcars %>% 
+  mutate(cyl = as.factor(cyl), 
+         am = as.factor(am)) %>%  
+  count(cyl, am) %>% 
+  mutate(am=recode(am,
+`0`= "Otomatik", `1`="Manual")) %>% 
+    plot_ly(x=~cyl,       
+    y=~n, 
+  color=~am)
+bar2
+```
+
+- İki kategorik değişken ile bar grafiği barmode="stack"
+
+
+```{r message=FALSE, warning=FALSE}
+bar3 <- bar2  %>% 
+layout(title="mtcars veri seti ile 
+      örnek bar grafiği",
+         yaxis = list(title="Slindir Sayısı "),
+         xaxis = list(title = "Frekans"),
+         barmode="stack")
+bar3
+```
+
+
+## Histogram
+
+- Sürekli değişkenle histogram çizimi
+- `diamonds` veri setinde `price` değişkeninin histogramı
+
+```{r }
+ggplot(diamonds,
+      aes(x=price)) +
+  geom_histogram(bins=25) +
+  theme_bw() + 
+  xlab("Ücret") + 
+  ylab("Frekans")
+```
+
+
+
+```{r}
+hist1 <- diamonds %>% 
+  plot_ly() %>% 
+  add_histogram(x=~price)
+hist1 
+```
+- Histogram çubukları arasına boşluk
+
+```{r}
+hist2 <- diamonds %>% 
+  plot_ly() %>% 
+  add_histogram(x=~price) %>% 
+  layout(bargap=0.1)
+hist2 
+```
+
+
+- Çubuk sayısını ve rengini değiştirme
+
+```{r}
+hist3 <- diamonds %>% 
+  plot_ly(x=~price) %>% 
+  add_histogram(nbinsx = 50, color=I("green")) %>% 
+  layout(bargap=0.1)
+hist3
+```
+
+
+
+
+- Çubuk aralığı belirleme
+
+```{r}
+hist4 <- 
+diamonds %>% 
+plot_ly() %>% 
+add_histogram(x=~price, 
+xbins = list(start=0, end=20000, size=2000)) %>% 
+layout(bargap=0.1)
+hist4
+```
+
+
+
+ - Kategorik değişkenin histogramı/bar grafiği
+
+
+```{r}
+hist5 <- diamonds %>% 
+  plot_ly() %>% 
+  add_histogram(x=~cut) 
+
+hist5
+```
+
+
+-  İki kategorik değişkenin histogramı
+
+
+```{r}
+hist6 <- diamonds %>% 
+  plot_ly() %>% 
+  add_histogram(x=~cut, color=~clarity) 
+
+hist6
+```
+
+## Çizgi Grafiği
+
+- 1975 -2020 yılları arasında fırtına  türlerini içeren `storms` data setini kullanarak yıllara göre fırtına türlerinin gözleneme sayıları
+
+```{r}
+storm_n <- storms %>% 
+  count(year, status)
+storm_n
+```
+
+
+
+```{r}
+cizgi1 <- ggplot(storm_n,
+        aes(x=year, y= n, color=status))+ 
+  geom_line()
+cizgi1
+```
+
+
+
+
+## Çizgi Grafiği
+
+```{r}
+ggplotly(cizgi1)
+```
+
+
+
+## Çizgi Grafiği
+
+
+```{r}
+cizgi2 <- storm_n %>% 
+  plot_ly(x=~year, y=~n) %>% 
+  add_lines(color=~status)
+cizgi2
+```
+
+
+
+
+
+### Kutu Grafiği
+
+- ggplot ile
+
+```{r }
+kutu1 <- ggplot(diamonds,aes(price)) +
+  geom_boxplot()
+kutu1
+```
+
+- plotly ile
+
+```{r }
+kutu2<-  diamonds %>%
+  plot_ly()  %>%
+  add_boxplot(x=~price,
+  boxpoints = "outliers")
+kutu2
+```
+
+
+
+## Grafik Birleştirme
+
+- Grafik birleştirme işlemi `subplot`
+
+```{r}
+hist <- diamonds %>%
+  plot_ly() %>%
+  add_histogram(x=~price)
+
+kutu <- diamonds %>%
+  plot_ly()  %>%
+  add_boxplot(x=~price,
+  boxpoints = "outliers")
+
+comb <- subplot(hist, kutu , nrows = 2, 
+        shareX = TRUE) %>%
+  hide_legend()
+
+comb
+```
+
+
+
+## Hareketli Saçılım Grafiği
+
+
+```{r}
+library(gapminder)
+gapminder %>% 
+  str()
+```
+
+
+
+## Saçılım Grafiği
+
+- 2002 yılı için `LifeExp  ~ gdpPercap` ilişkisi
+
+
+```{r }
+library(gapminder)
+sacilim1 <- ggplot(gapminder %>% 
+  filter(year==2002), aes( x=gdpPercap, y=lifeExp)) +
+  geom_point()+theme_bw()
+sacilim1 
+ggplotly(sacilim1)
+```
+
+
+
+
+```{r}
+sacilim2 <- gapminder %>% 
+  filter(year==2002) %>%
+  plot_ly() %>% 
+  add_markers(x=~gdpPercap, y=~lifeExp) %>% 
+  layout(title="Plotly SSaçılım Grafiği",
+         xaxis=list(title="Kişi Başına 
+                    GBT(log ölçeğinde)", type="log"),
+         yaxis=list(title= "Bekelenen Ömür")) %>% 
+  hide_legend()
+
+sacilim2
+```
+
+
+- Frame argümanı ile aynı grafiği farklı yıllar için elde edebiliriz.
+
+```{r }
+sacilim3 <- gapminder %>% 
+  plot_ly() %>%  
+  add_markers(x=~gdpPercap, y=~lifeExp, 
+              frame=~year) %>% 
+    layout(title="Plotly SSaçılım Grafiği",
+         xaxis=list(title="Kişi Başına
+                    GBT(log ölçeğinde)", type="log"),
+         yaxis=list(title= "Bekelenen Ömür"))
+
+sacilim3
+```
+
+
+
+
+

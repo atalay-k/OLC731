@@ -12,6 +12,8 @@ fig:unnamed-chunk-11
 fig:pet-plot-out
 fig:google-scholar
 fig:img-custom-rmd
+fig:unnamed-chunk-3
+fig:unnamed-chunk-4
 fig:settings-general
 fig:settings-code
 fig:img-updaterstudio
@@ -196,7 +198,7 @@ tüm-özet-istatistikler
 değişkenlik-katsayısı
 mod
 frekans-tablosu-oluşturma
-görselleştirme
+gorselleştirme
 ggplot
 histogram
 katman-eklenmesi
@@ -219,6 +221,18 @@ labs
 bar-grafiği
 scale_fill
 bar-grafikleri
+kaynaklar-1
+plotly
+bar
+plotly-1
+histogram-1
+çizgi-grafiği
+çizgi-grafiği-1
+çizgi-grafiği-2
+kutu-grafiği
+grafik-birleştirme
+hareketli-saçılım-grafiği
+saçılım-grafiği
 installing-r
 installing-base-r
 installing-rstudio
