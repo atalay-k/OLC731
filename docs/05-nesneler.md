@@ -370,11 +370,11 @@ length(harf52)
 
 
 ```
-##  [1] "1. maddenin guclugu: 0.53"  "2. maddenin guclugu: 0.91" 
-##  [3] "3. maddenin guclugu: 0.06"  "4. maddenin guclugu: 0.79" 
-##  [5] "5. maddenin guclugu: 0.46"  "6. maddenin guclugu: 0.97" 
-##  [7] "7. maddenin guclugu: 0.96"  "8. maddenin guclugu: 0.22" 
-##  [9] "9. maddenin guclugu: 0.55"  "10. maddenin guclugu: 0.59"
+##  [1] "1. maddenin guclugu: 0.86"  "2. maddenin guclugu: 0.59" 
+##  [3] "3. maddenin guclugu: 0.95"  "4. maddenin guclugu: 0.54" 
+##  [5] "5. maddenin guclugu: 0.89"  "6. maddenin guclugu: 0.17" 
+##  [7] "7. maddenin guclugu: 0"     "8. maddenin guclugu: 0.13" 
+##  [9] "9. maddenin guclugu: 0.64"  "10. maddenin guclugu: 0.96"
 ```
 
 Bunun birden fazla yolu olabilir, farklı şekillerde yapabilirsiniz. 

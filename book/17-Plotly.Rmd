@@ -265,7 +265,7 @@ hist6
 ```{r}
 storm_n <- storms %>% 
   count(year, status)
-storm_n
+head(storm_n)
 ```
 
 

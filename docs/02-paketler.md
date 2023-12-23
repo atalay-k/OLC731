@@ -32,7 +32,7 @@ length(fonksiyonlar)
 ```
 
 ```
-## [1] 1380
+## [1] 1393
 ```
 
 
@@ -41,12 +41,9 @@ fonksiyonlar[910:920]
 ```
 
 ```
-##  [1] "Cstack_info"                "crossprod"                 
-##  [3] "cospi"                      "cosh"                      
-##  [5] "cos"                        "contributors"              
-##  [7] "Conj"                       "conflicts"                 
-##  [9] "conflictRules"              "conditionMessage.condition"
-## [11] "conditionMessage"
+##  [1] "cut.Date"       "cut"            "curlGetHeaders" "cumsum"        
+##  [5] "cumprod"        "cummin"         "cummax"         "Cstack_info"   
+##  [9] "crossprod"      "cospi"          "cosh"
 ```
 
 
@@ -182,12 +179,11 @@ citation()
 ```
 
 ```
-## 
 ## To cite R in publications use:
 ## 
-##   R Core Team (2022). R: A language and environment for statistical
-##   computing. R Foundation for Statistical Computing, Vienna, Austria.
-##   URL https://www.R-project.org/.
+##   R Core Team (2023). _R: A Language and Environment for Statistical
+##   Computing_. R Foundation for Statistical Computing, Vienna, Austria.
+##   <https://www.R-project.org/>.
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
@@ -196,7 +192,7 @@ citation()
 ##     author = {{R Core Team}},
 ##     organization = {R Foundation for Statistical Computing},
 ##     address = {Vienna, Austria},
-##     year = {2022},
+##     year = {2023},
 ##     url = {https://www.R-project.org/},
 ##   }
 ## 
@@ -213,7 +209,6 @@ citation("tidyverse")
 ```
 
 ```
-## 
 ## To cite package 'tidyverse' in publications use:
 ## 
 ##   Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R,

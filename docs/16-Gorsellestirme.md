@@ -66,8 +66,7 @@ library(sjlabelled)
 data(PISA_OGR_2018)
 df1 <- PISA_OGR_2018 %>%
 select(CINSIYET, SINIF,KITAPSAYISI, SES, Anne_Egitim, Baba_Egitim,Okuloncesi_yil,OKUL_TUR,OKUMA_ZEVK,
-       OK_YETERLIK,ODOKUMA1) %>% 
-  filter(SINIF %in%c(9,10 ))
+       OK_YETERLIK,ODOKUMA1) 
 # kategorik değişkenlerin faktör olarak kaydı
 
 library(labelled)
@@ -75,6 +74,8 @@ library(labelled)
  
 df1 <- df1 %>%  mutate(across(.cols=c(CINSIYET:KITAPSAYISI,
                       Anne_Egitim:OKUL_TUR), labelled::to_factor))
+
+df1 <- df1 %>%  filter(SINIF == "SINIF 9" | SINIF == "SINIF 10")
 ```
 
 ## ggplot
@@ -754,9 +755,8 @@ ggplot(data = df1, mapping = aes(x = CINSIYET)) +
 -   [Data Visualization: A practical introduction](https://socviz.co/)
     by Kieran Healy
 
-```{=html}
 <!-- -->
-```
+
 -   😕
 
 -   😄

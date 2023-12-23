@@ -2,7 +2,7 @@
 title: "OLC731" # edit
 subtitle: "R YAZILIMI ILE VERI ANALIZI" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2023-12-12"
+date: "2023-12-24"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
